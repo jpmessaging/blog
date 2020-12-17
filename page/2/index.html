@@ -3,6 +3,19 @@
 <head>
   <meta charset="utf-8">
   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-177637248-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
 
   
   <title>Japan Exchange &amp; Outlook Support Blog</title>
@@ -63,6 +76,8 @@
         
           <a class="main-nav-link" href="/blog/archives">Archives</a>
         
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
       </nav>
       <nav id="sub-nav">
         
@@ -78,6 +93,112 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Export-Office365LicenseStatus のご紹介" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Export-Office365LicenseStatus%20%E3%81%AE%E3%81%94%E7%B4%B9%E4%BB%8B/" class="article-date">
+  <time datetime="2018-05-28T15:00:00.000Z" itemprop="datePublished">2018-05-29</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/Export-Office365LicenseStatus%20%E3%81%AE%E3%81%94%E7%B4%B9%E4%BB%8B/">Export-Office365LicenseStatus のご紹介
+</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update: 
+        <a href="/blog/Export-Office365LicenseStatus%20%E3%81%AE%E3%81%94%E7%B4%B9%E4%BB%8B/" class="article-date-single">    
+    
+    <time datetime="2018-05-28T15:00:00.000Z" itemprop="dateUpdated">2018-05-29</time>
+    
+</a>              
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        今回は Office 365 の管理者の皆様に、ライセンス付与状況を出力する PowerShell スクリプトをご紹介します。
+Office 365 のライセンスを確認する場合、GUI ツールとしては Office 365 管理センターが利用できます。また、CUI ツールとしては MSOnline (Azure AD v1) モジュールの Get-MsolUser コマンドも利用できます。しかしながらどちらを利用しても、ライセンスに含まれる各サービス プランのステータスまで含めて一覧表示する機能が標準では用意されていません。
+Get-MsolUser コマンドの出力内容を整形する PowerShell スクリプトを書くことで実現が可能ですが、Get-MsolUser コマンドの出力は複雑な構造となっているため、スクリプティングに慣れていないと実装が難しい状況です。例えば Get-MsolU...
+        <p class="article-more-link">
+          <a href="/blog/Export-Office365LicenseStatus%20%E3%81%AE%E3%81%94%E7%B4%B9%E4%BB%8B/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Export-Office365LicenseStatus%20%E3%81%AE%E3%81%94%E7%B4%B9%E4%BB%8B/" data-id="ckitgoz2f000ztsst42reh2cd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Office 365 タイルの非表示方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Office%20365%20%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E9%9D%9E%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2018-04-02T15:00:00.000Z" itemprop="datePublished">2018-04-03</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/Office%20365%20%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E9%9D%9E%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95/">Office 365 タイルの非表示方法
+</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update: 
+        <a href="/blog/Office%20365%20%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E9%9D%9E%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95/" class="article-date-single">    
+    
+    <time datetime="2018-04-02T15:00:00.000Z" itemprop="dateUpdated">2018-04-03</time>
+    
+</a>              
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        こんにちは。いつも Office 365 を利用いただきまして、ありがとうございます。今回は、Office 365 タイルの非表示方法について、ご紹介いたします。
+Office 365 ポータルにアクセスしますと、トップページやアプリランチャーに各サービスのタイルが表示されます。管理者側で指定したサービスのみユーザーに使用させるには、不要なタイルを非表示に設定することが有効です。
+
+タイルを非表示にするには、基本的には、ユーザーに付与されたライセンスの中でサービスプランを無効化する方法となりますが、「ストア」のみ Office 365 管理センターのメニュー（サービスとアドイン）にて設定を行います。
+下記では、2018/4/3時点の Office 365 Enterprise E5 を使用している環境を元に手順をご案内いたします。各サービスごとにブログが公開しておりますので、今回の投稿は、...
+        <p class="article-more-link">
+          <a href="/blog/Office%20365%20%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E9%9D%9E%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Office%20365%20%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E9%9D%9E%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95/" data-id="ckitgoz39001qtsst4vvg9nrs" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-Office 365 のライセンス管理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -124,7 +245,7 @@ Office 365 でユーザーにライセンスを付与するには、GUI（Office
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Office%20365%20%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E7%AE%A1%E7%90%86/" data-id="ckevu8oof00198cst82sbba7s" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Office%20365%20%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E7%AE%A1%E7%90%86/" data-id="ckitgoz2j0016tsst87zpdecx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>
@@ -175,7 +296,7 @@ Exchange Online は特定の送信元 IP から急激なメール受信量の増
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%203%20%E3%81%A4%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%20(%E9%80%81%E4%BF%A1%E5%85%83%20%20%E7%B5%84%E7%B9%94%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC)/" data-id="ckevu8ook001r8cst2a2idoy0" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%203%20%E3%81%A4%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%20(%E9%80%81%E4%BF%A1%E5%85%83%20%20%E7%B5%84%E7%B9%94%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC)/" data-id="ckitgoz3a001utsst3cr27vn5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li></ul>
@@ -228,7 +349,7 @@ Title : Active Directory サイトを活用した Exchange 導入URL : https://j
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E3%82%AA%E3%83%B3%E3%83%97%E3%83%AC%E3%83%9F%E3%82%B9%E3%81%AE%20Exchange%20Server%20%E7%92%B0%E5%A2%83%E3%81%AB%E6%96%B0%E8%A6%8F%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%AE%E7%95%99%E6%84%8F%E4%BA%8B%E9%A0%85%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="ckevu8ooj001n8cstar4y4mku" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E3%82%AA%E3%83%B3%E3%83%97%E3%83%AC%E3%83%9F%E3%82%B9%E3%81%AE%20Exchange%20Server%20%E7%92%B0%E5%A2%83%E3%81%AB%E6%96%B0%E8%A6%8F%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%AE%E7%95%99%E6%84%8F%E4%BA%8B%E9%A0%85%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="ckitgoz3f0028tssta1ae9qpt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -282,7 +403,7 @@ Office 365 グループに関する設定の...
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Office%20365%20%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AE%E5%88%B6%E5%BE%A1%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="ckevu8oof001b8cstftvi0mzk" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Office%20365%20%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AE%E5%88%B6%E5%BE%A1%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="ckitgoz2m001etssteeqm6h4p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>
@@ -339,7 +460,7 @@ Office 365 にカスタムドメイン登録しようとしたときに、「ワ
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E3%82%BB%E3%83%AB%E3%83%95%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%20%E3%82%B5%E3%82%A4%E3%83%B3%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E7%99%BB%E9%8C%B2%E3%81%95%E3%82%8C%E3%81%9F%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/" data-id="ckevu8ool001t8cst4btd4ty3" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E3%82%BB%E3%83%AB%E3%83%95%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%20%E3%82%B5%E3%82%A4%E3%83%B3%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E7%99%BB%E9%8C%B2%E3%81%95%E3%82%8C%E3%81%9F%E3%83%89%E3%83%A1%E3%82%A4%E3%83%B3%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/" data-id="ckitgoz3c001ytsstdimn149z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>
@@ -392,7 +513,7 @@ Office 365 にカスタムドメイン登録しようとしたときに、「ワ
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E3%83%9E%E3%83%AB%E3%82%A6%E3%82%A7%E3%82%A2%E6%A4%9C%E4%BD%93%E3%81%AE%E6%8F%90%E5%87%BA%E6%96%B9%E6%B3%95%E3%81%AE%E5%A4%89%E6%9B%B4%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/" data-id="ckevu8ooo00218csta8tb99el" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E3%83%9E%E3%83%AB%E3%82%A6%E3%82%A7%E3%82%A2%E6%A4%9C%E4%BD%93%E3%81%AE%E6%8F%90%E5%87%BA%E6%96%B9%E6%B3%95%E3%81%AE%E5%A4%89%E6%9B%B4%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B/" data-id="ckitgoz3g002atsst99nneqf0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li></ul>
@@ -455,7 +576,7 @@ Office 365 を使用するユーザーは、2 種類があります。
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Office%20365%20%E3%81%AE%E8%A8%80%E8%AA%9E%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="ckevu8ooe00178cst7k6k0bt5" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Office%20365%20%E3%81%AE%E8%A8%80%E8%AA%9E%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="ckitgoz2k001atssthnyy5nik" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>
@@ -511,121 +632,10 @@ Office 365 を使用するユーザーは、2 種類があります。
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E7%92%B0%E5%A2%83%E3%81%A7%E3%82%AA%E3%83%B3%E3%83%97%E3%83%AC%E3%83%9F%E3%82%B9%E3%81%A8%20Exchange%20Online%20%E3%81%AE%E4%B8%A1%E6%96%B9%E3%81%AB%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E3%81%8C%E4%BD%9C%E6%88%90%E3%81%95%E3%82%8C%E3%82%8B%E4%BA%8B%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="ckevu8ooo001z8cstdiwra97i" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E7%92%B0%E5%A2%83%E3%81%A7%E3%82%AA%E3%83%B3%E3%83%97%E3%83%AC%E3%83%9F%E3%82%B9%E3%81%A8%20Exchange%20Online%20%E3%81%AE%E4%B8%A1%E6%96%B9%E3%81%AB%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E3%81%8C%E4%BD%9C%E6%88%90%E3%81%95%E3%82%8C%E3%82%8B%E4%BA%8B%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="ckitgoz3d0022tsst2sdie4vv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Exchange 2013-2016 のセーフティネットの保存期間" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/Exchange%202013-2016%20%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%95%E3%83%86%E3%82%A3%E3%83%8D%E3%83%83%E3%83%88%E3%81%AE%E4%BF%9D%E5%AD%98%E6%9C%9F%E9%96%93/" class="article-date">
-  <time datetime="2017-01-24T15:00:00.000Z" itemprop="datePublished">2017-01-25</time>
-</a>
-    <!--  -->
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header-single">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/Exchange%202013-2016%20%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%95%E3%83%86%E3%82%A3%E3%83%8D%E3%83%83%E3%83%88%E3%81%AE%E4%BF%9D%E5%AD%98%E6%9C%9F%E9%96%93/">Exchange 2013/2016 のセーフティネットの保存期間
-</a>
-    </h1>
-  
-
-      </header>
-      <div class="article-share">
-        Last Update: 
-        <a href="/blog/Exchange%202013-2016%20%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%95%E3%83%86%E3%82%A3%E3%83%8D%E3%83%83%E3%83%88%E3%81%AE%E4%BF%9D%E5%AD%98%E6%9C%9F%E9%96%93/" class="article-date-single">    
-    
-    <time datetime="2017-01-24T15:00:00.000Z" itemprop="dateUpdated">2017-01-25</time>
-    
-</a>              
-      </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        Exchange 2013/2016 を、Exchange 2010 など以前のバージョンとの混在環境で運用する場合の注意点をご案内します。
-以下の TechNet の情報のとおり、セーフティ ネットの既定の保存期間は 2 日です。
-  セーフティ ネット  https://technet.microsoft.com/ja-jp/library/jj657495(v=exchg.150).aspx
-この期間は、Exchange 管理シェルで
-1Get-TransportConfig | fl SafeteyNetHoldTime
-
-を実行することで確認することができます。
-しかし、この値を既定値から変更している環境で、累積的な更新プログラムをインストールする際に既定の 2 日にリセットされてしまう問題が報告されたため、Exchange 2013 CU9 および Exchange 2016 ...
-        <p class="article-more-link">
-          <a href="/blog/Exchange%202013-2016%20%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%95%E3%83%86%E3%82%A3%E3%83%8D%E3%83%83%E3%83%88%E3%81%AE%E4%BF%9D%E5%AD%98%E6%9C%9F%E9%96%93/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Exchange%202013-2016%20%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%95%E3%83%86%E3%82%A3%E3%83%8D%E3%83%83%E3%83%88%E3%81%AE%E4%BF%9D%E5%AD%98%E6%9C%9F%E9%96%93/" data-id="ckevu8oo5000k8cst6iqiaopl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-New-EdgeSubscription 実行時にスマート カード認証が求められる" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/New-EdgeSubscription%20%E5%AE%9F%E8%A1%8C%E6%99%82%E3%81%AB%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%20%E3%82%AB%E3%83%BC%E3%83%89%E8%AA%8D%E8%A8%BC%E3%81%8C%E6%B1%82%E3%82%81%E3%82%89%E3%82%8C%E3%82%8B/" class="article-date">
-  <time datetime="2016-12-20T15:00:00.000Z" itemprop="datePublished">2016-12-21</time>
-</a>
-    <!--  -->
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header-single">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/New-EdgeSubscription%20%E5%AE%9F%E8%A1%8C%E6%99%82%E3%81%AB%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%20%E3%82%AB%E3%83%BC%E3%83%89%E8%AA%8D%E8%A8%BC%E3%81%8C%E6%B1%82%E3%82%81%E3%82%89%E3%82%8C%E3%82%8B/">New-EdgeSubscription 実行時にスマート カード認証が求められる
-</a>
-    </h1>
-  
-
-      </header>
-      <div class="article-share">
-        Last Update: 
-        <a href="/blog/New-EdgeSubscription%20%E5%AE%9F%E8%A1%8C%E6%99%82%E3%81%AB%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%20%E3%82%AB%E3%83%BC%E3%83%89%E8%AA%8D%E8%A8%BC%E3%81%8C%E6%B1%82%E3%82%81%E3%82%89%E3%82%8C%E3%82%8B/" class="article-date-single">    
-    
-    <time datetime="2016-12-20T15:00:00.000Z" itemprop="dateUpdated">2016-12-21</time>
-    
-</a>              
-      </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        今回は、Exchange 2013/2016 のエッジ トランスポート サーバーをご利用でコマンドレット実行時にスマート カード認証を求められる場合の回避策についてご紹介します。
-事象概要証明書の更新などに伴いエッジ サブスクリプションの再構成を行う際、Exchange エッジ トランスポート サーバー上で New-EdgeSubscription コマンドレットや Remove-EdgeSubscription コマンドレットを実行すると、スマート カードでの認証が求められる場合があります。表示される画面には、以下の 2 つのパターンがあります。
-
-
-Exchange エッジ トランスポート サーバーにおいて Exchange Management Shell から New-EdgeSubscription コマンドレットや Remove-EdgeSubscription コマンドレット...
-        <p class="article-more-link">
-          <a href="/blog/New-EdgeSubscription%20%E5%AE%9F%E8%A1%8C%E6%99%82%E3%81%AB%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%20%E3%82%AB%E3%83%BC%E3%83%89%E8%AA%8D%E8%A8%BC%E3%81%8C%E6%B1%82%E3%82%81%E3%82%89%E3%82%8C%E3%82%8B/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/New-EdgeSubscription%20%E5%AE%9F%E8%A1%8C%E6%99%82%E3%81%AB%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%20%E3%82%AB%E3%83%BC%E3%83%89%E8%AA%8D%E8%A8%BC%E3%81%8C%E6%B1%82%E3%82%81%E3%82%89%E3%82%8C%E3%82%8B/" data-id="ckevu8ooe00158cstf2pab4xf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
 
     </footer>
   </div>
@@ -638,7 +648,7 @@ Exchange エッジ トランスポート サーバーにおいて Exchange Manag
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/blog/">Prev</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><a class="extend next" rel="next" href="/blog/page/3/">Next</a>
+    <a class="extend prev" rel="prev" href="/blog/">Prev</a><a class="page-number" href="/blog/">1</a><span class="page-number current">2</span><a class="page-number" href="/blog/page/3/">3</a><a class="page-number" href="/blog/page/4/">4</a><a class="page-number" href="/blog/page/5/">5</a><a class="extend next" rel="next" href="/blog/page/3/">Next</a>
   </nav>
 
 </section>
@@ -662,7 +672,7 @@ Exchange エッジ トランスポート サーバーにおいて Exchange Manag
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a></li></ul>
     </div>
   </div>
 
@@ -673,6 +683,15 @@ Exchange エッジ トランスポート サーバーにおいて Exchange Manag
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/Exchange%202016%20%E4%BB%A5%E9%99%8D%E3%81%A7%E3%81%AE%20UnifiedContent%20%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/">Exchange 2016 以降での UnifiedContent フォルダについて
+</a>
+          </li>
+        
+          <li>
+            <a href="/blog/about/">このブログについて</a>
+          </li>
         
           <li>
             <a href="/blog/Exchange%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/">Exchange サーバーのプロキシ設定について
@@ -686,16 +705,6 @@ Exchange エッジ トランスポート サーバーにおいて Exchange Manag
         
           <li>
             <a href="/blog/Exchange%20Admin%20Center%20%E3%81%AE%E8%A8%80%E8%AA%9E%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/">Exchange Admin Center の言語設定について
-</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Exchange%202013%20%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E4%B8%8A%E3%81%A7%E8%87%AA%E5%B7%B1%E7%BD%B2%E5%90%8D%E8%A8%BC%E6%98%8E%E6%9B%B8%E3%81%AE%E6%9C%89%E5%8A%B9%E6%9C%9F%E9%99%90%E3%81%8C%E5%88%87%E3%82%8C%E3%81%9F%E9%9A%9B%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9/">Exchange 2013 のメールボックス サーバー上で自己署名証明書の有効期限が切れた際の注意点
-</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Azure%20AD%20%E3%81%A8%20Exchange%20Online%20%E9%96%93%E3%81%AE%E5%90%8C%E6%9C%9F%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E3%82%A8%E3%83%A9%E3%83%BC%E3%81%AE%E4%BA%8B%E4%BE%8B%E9%9B%86/">Azure AD と Exchange Online 間の同期に関するエラーの事例集
 </a>
           </li>
         
@@ -721,6 +730,8 @@ Exchange エッジ トランスポート サーバーにおいて Exchange Manag
     <a href="/blog/" class="mobile-nav-link">Home</a>
   
     <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
   
 </nav>
     
