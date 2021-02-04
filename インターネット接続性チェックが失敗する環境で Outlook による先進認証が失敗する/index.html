@@ -30,7 +30,7 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://jpmessaging.github.io/blog/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E6%8E%A5%E7%B6%9A%E6%80%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B%E7%92%B0%E5%A2%83%E3%81%A7%20Outlook%20%E3%81%AB%E3%82%88%E3%82%8B%E5%85%88%E9%80%B2%E8%AA%8D%E8%A8%BC%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B/NCSI_NG.png">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E6%8E%A5%E7%B6%9A%E6%80%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B%E7%92%B0%E5%A2%83%E3%81%A7%20Outlook%20%E3%81%AB%E3%82%88%E3%82%8B%E5%85%88%E9%80%B2%E8%AA%8D%E8%A8%BC%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B/NCSI1.png">
 <meta property="article:published_time" content="2021-02-02T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-02-03T22:52:08.679Z">
+<meta property="article:modified_time" content="2021-02-04T00:05:56.997Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="EXO">
 <meta property="article:tag" content="Outlook">
@@ -130,13 +130,13 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="現象"><a href="#現象" class="headerlink" title="現象"></a>現象</h1><p>Windows OS の NCSI によりインターネット接続性がないと判断されている場合、Edge や Internet Explorer などのブラウザによるインターネット上のコンテンツ参照が可能であっても、Outlook による先進認証が失敗します。<br>多くの場合、以下の通り「現在接続できません。ネットワークを確認して、後でもう一度お試しください。」というメッセージのダイアログが表示されます。</p>
-<p><img src="NCSI_NG.png" alt="NCSI_Dialog"></p>
+<p><img src="NCSI_NG.png" alt=""></p>
 <p>NCSI がインターネット接続性なしと判断している場合、ライセンス認証や “Office へサインイン” など Office 共通の動作が失敗する場合もあります。</p>
 <p>本現象の特徴として、端末ごとに発生状況が異なっていたり、ネットワーク構成の変更などの変化点と事象の発生時期が一致しないなどがあり、切り分けが難しい傾向があります。</p>
 <h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>先進認証においては Azure AD などインターネット上のサービスへのアクセスが必要となります。<br>このため、Outlook を含む Office アプリケーションでは先進認証実行時に Windows OS の NCSI によるインターネットの接続性を確認するロジックが存在します。このロジックにより、インターネット接続性がないという応答が NCSI から返った場合、先進認証ができないと判断され認証処理が中断され、結果的に認証が失敗します。</p>
 <p>これは Office アプリケーションが先進認証を使用する際に発生する固有の動作です。<br>この動作は変更する方法がありません。</p>
 <h1 id="NCSI-のインジケーター"><a href="#NCSI-のインジケーター" class="headerlink" title="NCSI のインジケーター"></a>NCSI のインジケーター</h1><p>以下の画像の赤枠内にあるネットワーク接続性を示すインジケーター (小さなアイコン) も NCSI の機能の一部です。</p>
-<p><img src="NCSI1.png" alt="NCSI_icon"></p>
+<p><img src="NCSI1.png" alt=""></p>
 <p>こちらのアイコンでインターネット接続性が無い表示となっていると、多くの場合前述の現象が発生します。 </p>
 <h1 id="NCSI-によるインターネット接続性確認の動作"><a href="#NCSI-によるインターネット接続性確認の動作" class="headerlink" title="NCSI によるインターネット接続性確認の動作"></a>NCSI によるインターネット接続性確認の動作</h1><p>Windows OS の機能である NCSI がどのようにインターネット接続性を判定しているかについては以下の技術情報で公開されています。</p>
 <p><a href="https://docs.microsoft.com/ja-jp/troubleshoot/windows-client/networking/internet-explorer-edge-open-connect-corporate-public-network" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/troubleshoot/windows-client/networking/internet-explorer-edge-open-connect-corporate-public-network</a></p>
@@ -177,7 +177,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E6%8E%A5%E7%B6%9A%E6%80%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B%E7%92%B0%E5%A2%83%E3%81%A7%20Outlook%20%E3%81%AB%E3%82%88%E3%82%8B%E5%85%88%E9%80%B2%E8%AA%8D%E8%A8%BC%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B/" data-id="ckkq12nr5001y24sthy7257tx" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E6%8E%A5%E7%B6%9A%E6%80%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B%E7%92%B0%E5%A2%83%E3%81%A7%20Outlook%20%E3%81%AB%E3%82%88%E3%82%8B%E5%85%88%E9%80%B2%E8%AA%8D%E8%A8%BC%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B/" data-id="ckkq3p9i60021bgst75pw33mo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
