@@ -94,6 +94,111 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-トランザクション ログが削除されずにディスク領域が圧迫されたときの対処方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%20%E3%83%AD%E3%82%B0%E3%81%8C%E5%89%8A%E9%99%A4%E3%81%95%E3%82%8C%E3%81%9A%E3%81%AB%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E9%A0%98%E5%9F%9F%E3%81%8C%E5%9C%A7%E8%BF%AB%E3%81%95%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/" class="article-date">
+  <time datetime="2016-06-29T15:00:00.000Z" itemprop="datePublished">2016-06-30</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%20%E3%83%AD%E3%82%B0%E3%81%8C%E5%89%8A%E9%99%A4%E3%81%95%E3%82%8C%E3%81%9A%E3%81%AB%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E9%A0%98%E5%9F%9F%E3%81%8C%E5%9C%A7%E8%BF%AB%E3%81%95%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/">トランザクション ログが削除されずにディスク領域が圧迫されたときの対処方法
+</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update: 
+        <a href="/blog/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%20%E3%83%AD%E3%82%B0%E3%81%8C%E5%89%8A%E9%99%A4%E3%81%95%E3%82%8C%E3%81%9A%E3%81%AB%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E9%A0%98%E5%9F%9F%E3%81%8C%E5%9C%A7%E8%BF%AB%E3%81%95%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/" class="article-date-single">    
+    
+    <time datetime="2016-06-29T15:00:00.000Z" itemprop="dateUpdated">2016-06-30</time>
+    
+</a>              
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        Exchange Server ではデータベースへの変更が行われる際に、まず初めにトランザクション ログにその変更内容が記録され、その後、その内容がデータベースへ書き込まれます。このため、例えばあるタイミングで採取したバックアップ ファイルと、それ以降のトランザクション ログがあれば、トランザクション ログをバックアップしたデータベース ファイルに反映させることで、最新の状態にすることが可能です。
+トランザクション ログはデータベースの更新があるたびに記録されるため、一般的に多くのログが出力されます。日々 Exchange Server をご利用いただく中で、トランザクション ログによるディスクの空き容量が圧迫されることを防止するため、一般的には以下のいずれかを実行し、古いトランザクション ログを削除いただいているかと存じます。
+
+バックアップを採取する。
+データベースの循環ログを有効にす...
+        <p class="article-more-link">
+          <a href="/blog/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%20%E3%83%AD%E3%82%B0%E3%81%8C%E5%89%8A%E9%99%A4%E3%81%95%E3%82%8C%E3%81%9A%E3%81%AB%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E9%A0%98%E5%9F%9F%E3%81%8C%E5%9C%A7%E8%BF%AB%E3%81%95%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%20%E3%83%AD%E3%82%B0%E3%81%8C%E5%89%8A%E9%99%A4%E3%81%95%E3%82%8C%E3%81%9A%E3%81%AB%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E9%A0%98%E5%9F%9F%E3%81%8C%E5%9C%A7%E8%BF%AB%E3%81%95%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/" data-id="ckllnmq1g0029e0st8c3xhwyz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-よくわかる Exchange Online のメッセージ追跡 ～ Part 1 取得編 ～" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/%E3%82%88%E3%81%8F%E3%82%8F%E3%81%8B%E3%82%8B%20Exchange%20Online%20%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E8%BF%BD%E8%B7%A1%20%EF%BD%9E%20Part%201%20%E5%8F%96%E5%BE%97%E7%B7%A8%20%EF%BD%9E/" class="article-date">
+  <time datetime="2016-02-22T15:00:00.000Z" itemprop="datePublished">2016-02-23</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/%E3%82%88%E3%81%8F%E3%82%8F%E3%81%8B%E3%82%8B%20Exchange%20Online%20%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E8%BF%BD%E8%B7%A1%20%EF%BD%9E%20Part%201%20%E5%8F%96%E5%BE%97%E7%B7%A8%20%EF%BD%9E/">よくわかる Exchange Online のメッセージ追跡 ～ Part 1 取得編 ～
+</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update: 
+        <a href="/blog/%E3%82%88%E3%81%8F%E3%82%8F%E3%81%8B%E3%82%8B%20Exchange%20Online%20%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E8%BF%BD%E8%B7%A1%20%EF%BD%9E%20Part%201%20%E5%8F%96%E5%BE%97%E7%B7%A8%20%EF%BD%9E/" class="article-date-single">    
+    
+    <time datetime="2016-02-22T15:00:00.000Z" itemprop="dateUpdated">2016-02-23</time>
+    
+</a>              
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        みなさんこんにちは、Exchange Server サポートの 杉山 卓弥 です。Exchange Online で送受信されているメッセージを調査する場合、管理者にてメッセージ追跡を実行する機会は非常に多いかと思います。そこで、メッセージ追跡に役立つ情報を順次 Exchange Server サポートよりご紹介していきます。Part 1 では、Exchange Online のメッセージ追跡の実行方法、取得方法について使用頻度が高い順にご説明していきます。
+Exchange Server サポートからのお願い****弊社サポートにメッセージ配信に関するお問い合わせをいただく際、メッセージ追跡ログをあらかじめ送付いただくことで、すぐに調査を開始することができます。また、事象の早期解決に結びつくことも多くございますので、事前の HistoricalSearch (詳細版) の取得にご協力をい...
+        <p class="article-more-link">
+          <a href="/blog/%E3%82%88%E3%81%8F%E3%82%8F%E3%81%8B%E3%82%8B%20Exchange%20Online%20%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E8%BF%BD%E8%B7%A1%20%EF%BD%9E%20Part%201%20%E5%8F%96%E5%BE%97%E7%B7%A8%20%EF%BD%9E/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/%E3%82%88%E3%81%8F%E3%82%8F%E3%81%8B%E3%82%8B%20Exchange%20Online%20%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E8%BF%BD%E8%B7%A1%20%EF%BD%9E%20Part%201%20%E5%8F%96%E5%BE%97%E7%B7%A8%20%EF%BD%9E/" data-id="ckllnmq1d001xe0st9pkd8ugz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Exchange 2013 を強制的にアンインストールする" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/Exchange%202013%20%E3%82%92%E5%BC%B7%E5%88%B6%E7%9A%84%E3%81%AB%E3%82%A2%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/" class="article-date">
@@ -132,7 +237,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Exchange%202013%20%E3%82%92%E5%BC%B7%E5%88%B6%E7%9A%84%E3%81%AB%E3%82%A2%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/" data-id="ckkq3p9hp000mbgsthtpofv0c" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Exchange%202013%20%E3%82%92%E5%BC%B7%E5%88%B6%E7%9A%84%E3%81%AB%E3%82%A2%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/" data-id="ckllnmq0y000pe0st2bnxhhxq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -186,7 +291,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/" data-id="ckkq3p9hm000dbgst6zu588ro" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/" data-id="ckllnmq0v000fe0std5juge9s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -238,7 +343,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/" data-id="ckkq3p9hd0001bgstah5fdy10" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/" data-id="ckllnmq0l0001e0stgvuz9gvo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -290,7 +395,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/" data-id="ckkq3p9hl000abgst1dwu3fns" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/" data-id="ckllnmq0t0008e0stehg41ve6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -343,7 +448,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E5%A4%A7%E9%87%8F%E3%81%AE%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AB%E6%89%80%E5%B1%9E%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9/" data-id="ckkq3p9ia002ebgsth16gdb26" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E5%A4%A7%E9%87%8F%E3%81%AE%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AB%E6%89%80%E5%B1%9E%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9/" data-id="ckllnmq1j002he0st8859e9v8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -395,7 +500,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Export-CliXml%20%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="ckkq3p9ht000zbgst2cyv4f28" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Export-CliXml%20%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="ckllnmq120012e0st28p110ie" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -445,7 +550,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E7%AA%81%E7%84%B6%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%EF%BC%81%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E7%AD%96/" data-id="ckkq3p9ia002gbgsthfj5emva" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E7%AA%81%E7%84%B6%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%EF%BC%81%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E7%AD%96/" data-id="ckllnmq1k002le0stb4fph82v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li></ul>
@@ -499,113 +604,10 @@ Autodiscover を振り返る エピソード 1Autodiscover を振り返る エ�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AE%20Autodiscover/" data-id="ckkq3p9i70026bgst0l556dyw" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AE%20Autodiscover/" data-id="ckllnmq1g0027e0stbtxlcikl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-&#39;切断されたメールボックス&#39; の表示について" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/'%E5%88%87%E6%96%AD%E3%81%95%E3%82%8C%E3%81%9F%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9'%20%E3%81%AE%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date">
-  <time datetime="2014-04-23T15:00:00.000Z" itemprop="datePublished">2014-04-24</time>
-</a>
-    <!--  -->
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header-single">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/'%E5%88%87%E6%96%AD%E3%81%95%E3%82%8C%E3%81%9F%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9'%20%E3%81%AE%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/">&#39;切断されたメールボックス&#39; の表示について
-</a>
-    </h1>
-  
-
-      </header>
-      <div class="article-share">
-        Last Update: 
-        <a href="/blog/'%E5%88%87%E6%96%AD%E3%81%95%E3%82%8C%E3%81%9F%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9'%20%E3%81%AE%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date-single">    
-    
-    <time datetime="2014-04-23T15:00:00.000Z" itemprop="dateUpdated">2014-04-24</time>
-    
-</a>              
-      </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        &#12371;&#12435;&#12395;&#12385;&#12399;&#12289;Exchange &#12469;&#12509;&#12540;&#12488; &#12481;&#12540;&#12512;&#12398;&#31481;&#26412;&#12391;&#12377;&#12290;&#20170;&#22238;&#12399;&#12289;&#12513;&#12540;&#12523;&#12508;&#12483;&#12463;&#12473;&#12398;&#28961;&#21177;&#21270;&#26178;&#12420;&#20877;&#25509;&#32154;&#26178;&#12395;&#24441;&#12395;&#31435;&#12388;&#12467;&#12510;&#12531;&#1248...
-        <p class="article-more-link">
-          <a href="/blog/'%E5%88%87%E6%96%AD%E3%81%95%E3%82%8C%E3%81%9F%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9'%20%E3%81%AE%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/'%E5%88%87%E6%96%AD%E3%81%95%E3%82%8C%E3%81%9F%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9'%20%E3%81%AE%E8%A1%A8%E7%A4%BA%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="ckkq3p9h70000bgstdem913xv" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Autodiscover を振り返る エピソード 2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/Autodiscover%20%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/" class="article-date">
-  <time datetime="2014-03-17T15:00:00.000Z" itemprop="datePublished">2014-03-18</time>
-</a>
-    <!--  -->
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header-single">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/Autodiscover%20%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/">Autodiscover を振り返る エピソード 2
-</a>
-    </h1>
-  
-
-      </header>
-      <div class="article-share">
-        Last Update: 
-        <a href="/blog/Autodiscover%20%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/" class="article-date-single">    
-    
-    <time datetime="2014-03-17T15:00:00.000Z" itemprop="dateUpdated">2014-03-18</time>
-    
-</a>              
-      </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        こんにちは、Exchange サポート チームの竹本です。今回も引き続き、Autodiscover についてです。
-Exchange 2007 や Exchange 2010 でも Autodiscover は非常に重要な機能でしたが、Exchange 2013 ではさらにその重要性が増しています。Exchange 2013 環境に Outlook から接続する際、Outlook プロファイルにて表示される “サーバー” 部分には、実際に処理を行う CAS サーバー名等ではなく、ログオン対象のメールボックスのメールボックス GUID が設定されます。例えば以下のような形ですね。
-
-この動作変更により、メールボックス移動の際のユーザー影響などを極力減らすことができているのですが、プロファイルの作成といった観点では少し面倒です。メールボックス毎に異なるこの GUID を、一般のユーザーが取得し...
-        <p class="article-more-link">
-          <a href="/blog/Autodiscover%20%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Autodiscover%20%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/" data-id="ckkq3p9hi0005bgstgbko78ff" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
 
     </footer>
   </div>
@@ -655,6 +657,15 @@ Exchange 2007 や Exchange 2010 でも Autodiscover は非常に重要な機能�
       <ul>
         
           <li>
+            <a href="/blog/Outlook%20%E3%81%AE%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%86%8D%E4%BD%9C%E6%88%90%E3%81%AB%E5%86%8D%E8%A8%AD%E5%AE%9A%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%AA%E6%83%85%E5%A0%B1/">Outlook のプロファイル再作成に再設定が必要な情報</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Office%20365%20%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%B8%B0%E5%B1%9E/">Office 365 におけるメッセージの帰属
+</a>
+          </li>
+        
+          <li>
             <a href="/blog/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E6%8E%A5%E7%B6%9A%E6%80%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B%E7%92%B0%E5%A2%83%E3%81%A7%20Outlook%20%E3%81%AB%E3%82%88%E3%82%8B%E5%85%88%E9%80%B2%E8%AA%8D%E8%A8%BC%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B/">インターネット接続性チェックが失敗する環境で Outlook による先進認証が失敗する</a>
           </li>
         
@@ -665,15 +676,6 @@ Exchange 2007 や Exchange 2010 でも Autodiscover は非常に重要な機能�
         
           <li>
             <a href="/blog/Exchange%202016%20%E4%BB%A5%E9%99%8D%E3%81%A7%E3%81%AE%20UnifiedContent%20%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/">Exchange 2016 以降での UnifiedContent フォルダについて
-</a>
-          </li>
-        
-          <li>
-            <a href="/blog/about/">このブログについて</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Exchange%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/">Exchange サーバーのプロキシ設定について
 </a>
           </li>
         
