@@ -30,7 +30,7 @@ ga('send', 'pageview');
 <meta property="og:description" content="Office 365 をご利用いただいているお客様からよく寄せられるご質問のひとつとして、アカウントが乗っ取られた（ハッキングされた）際にどう対処すればよいかという質問があります。最も一般的なシナリオは、組織のメンバーがフィッシング詐欺の被害者になり、攻撃者にアカウントのパスワードを取得されてしまったというものです。このブログではアカウント乗っ取りの発覚から、乗っ取りが確定した場合の対応、そして再">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-07-18T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-06-12T02:12:42.649Z">
+<meta property="article:modified_time" content="2018-07-18T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="O365Identity">
 <meta name="twitter:card" content="summary">
@@ -38,14 +38,14 @@ ga('send', 'pageview');
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
-    <link rel="manifest" href="/blog/icons/site.webmanifest">
-    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="msapplication-config" content="icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
   
   
@@ -54,7 +54,7 @@ ga('send', 'pageview');
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -67,10 +67,6 @@ ga('send', 'pageview');
       <h1 id="logo-wrap">
         <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
-        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -141,9 +137,9 @@ ga('send', 'pageview');
 <h3 id="Azure-ポータル"><a href="#Azure-ポータル" class="headerlink" title="Azure ポータル"></a>Azure ポータル</h3><p>対象のアカウントにログインしているアクセス元 IP/サインインの場所<br>サインインに成功/失敗した回数</p>
 <h3 id="O365-管理センター"><a href="#O365-管理センター" class="headerlink" title="O365 管理センター"></a>O365 管理センター</h3><p>ユーザー &gt; アクティブなユーザー で対象のアカウントを選択し、[メールの設定] に見覚えのない転送設定が作成されていないか確認<br>ユーザー &gt; アクティブなユーザー より、管理者アカウントが増えていないか確認</p>
 <h3 id="Security-Compliance-センター"><a href="#Security-Compliance-センター" class="headerlink" title="Security/Compliance センター"></a>Security/Compliance センター</h3><p>統合監査ログ（UnifiedAuditLog) で対象アカウントのアクションを確認<br>※統合監査ログはあらかじめ有効化されている必要があり、事象が発生してから有効化しても遡ってログを確認することはできません。弊社では、来年の夏までにすべてのテナントで既定で統合監査ログが有効化されるように準備を進めています。</p>
-<p>参考情報:<br>Title: Office 365 の監査ログの検索を有効または無効にする<br>Url: <a href="https://support.office.com/ja-jp/article/office-365-の監査ログの検索を有効または無効にする-e893b19a-660c-41f2-9074-d3631c95a014?ui=ja-JP&amp;rs=ja-JP&amp;ad=JP" target="_blank" rel="noopener">https://support.office.com/ja-jp/article/office-365-の監査ログの検索を有効または無効にする-e893b19a-660c-41f2-9074-d3631c95a014?ui=ja-JP&amp;rs=ja-JP&amp;ad=JP</a></p>
+<p>参考情報:<br>Title: Office 365 の監査ログの検索を有効または無効にする<br>Url: <a target="_blank" rel="noopener" href="https://support.office.com/ja-jp/article/office-365-の監査ログの検索を有効または無効にする-e893b19a-660c-41f2-9074-d3631c95a014?ui=ja-JP&amp;rs=ja-JP&amp;ad=JP">https://support.office.com/ja-jp/article/office-365-の監査ログの検索を有効または無効にする-e893b19a-660c-41f2-9074-d3631c95a014?ui=ja-JP&amp;rs=ja-JP&amp;ad=JP</a></p>
 <p>※統合監査ログからメールボックス監査ログ（MailboxLogin/アイテムの Create/Delete 等のアクティビティ）を確認するためには、あらかじめ Exchange Online 側で対象のメールボックスの監査ログが有効化されており、かつ、監査対象に適切なアクティビティが定義されている必要があります。</p>
-<p>参考情報:<br>Title: Office 365 でメールボックスの監査を有効にする<br>Url: <a href="https://support.office.com/ja-jp/article/office-365-でメールボックスの監査を有効にする-aaca8987-5b62-458b-9882-c28476a66918?ui=ja-JP&amp;rs=ja-JP&amp;ad=JP" target="_blank" rel="noopener">https://support.office.com/ja-jp/article/office-365-でメールボックスの監査を有効にする-aaca8987-5b62-458b-9882-c28476a66918?ui=ja-JP&amp;rs=ja-JP&amp;ad=JP</a></p>
+<p>参考情報:<br>Title: Office 365 でメールボックスの監査を有効にする<br>Url: <a target="_blank" rel="noopener" href="https://support.office.com/ja-jp/article/office-365-でメールボックスの監査を有効にする-aaca8987-5b62-458b-9882-c28476a66918?ui=ja-JP&amp;rs=ja-JP&amp;ad=JP">https://support.office.com/ja-jp/article/office-365-でメールボックスの監査を有効にする-aaca8987-5b62-458b-9882-c28476a66918?ui=ja-JP&amp;rs=ja-JP&amp;ad=JP</a></p>
 <h2 id="3-対処および再発防止のためのアクション"><a href="#3-対処および再発防止のためのアクション" class="headerlink" title="3. 対処および再発防止のためのアクション"></a>3. 対処および再発防止のためのアクション</h2><p>再発防止策としては一般的に以下のアクションを実施いただくようご案内しております。</p>
 <ul>
 <li>対象のアカウントに設定されている不要な代理アクセスを削除する</li>
@@ -153,22 +149,22 @@ ga('send', 'pageview');
 <li>メールボックス監査ログ/統合監査ログを有効化する</li>
 </ul>
 <p>各アクションの詳細については、以下のブログをご参照ください。</p>
-<p>Title: How to fix a compromised (hacked) Microsoft Office 365 account<br>Section: Remediate affected account and improve your security posture<br>Url: <a href="https://blogs.technet.microsoft.com/office365security/how-to-fix-a-compromised-hacked-microsoft-office-365-account/" target="_blank" rel="noopener">https://blogs.technet.microsoft.com/office365security/how-to-fix-a-compromised-hacked-microsoft-office-365-account/</a></p>
+<p>Title: How to fix a compromised (hacked) Microsoft Office 365 account<br>Section: Remediate affected account and improve your security posture<br>Url: <a target="_blank" rel="noopener" href="https://blogs.technet.microsoft.com/office365security/how-to-fix-a-compromised-hacked-microsoft-office-365-account/">https://blogs.technet.microsoft.com/office365security/how-to-fix-a-compromised-hacked-microsoft-office-365-account/</a></p>
 <p>なお、管理者アカウントについては被害にあった場合の影響が大きいため、あらかじめ多要素認証の有効化を強く推奨させていただきます。<br>またIDのセキュリティ保護については以下の公開情報についても併せてご参照下さい。</p>
-<p>Title: Azure AD でのハイブリッドおよびクラウド デプロイ用の特権アクセスをセキュリティで保護する<br>Url: <a href="https://docs.microsoft.com/ja-jp/azure/active-directory/users-groups-roles/directory-admin-roles-secure?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/active-directory/users-groups-roles/directory-admin-roles-secure?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json</a></p>
-<p>Title: Azure Active Directory Identity Protection<br>Url: <a href="https://docs.microsoft.com/ja-jp/azure/active-directory/active-directory-identityprotection" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/active-directory/active-directory-identityprotection</a></p>
-<p>Title: Azure AD Privileged Identity Management とは<br>Url: <a href="https://docs.microsoft.com/ja-jp/azure/active-directory/privileged-identity-management/pim-configure" target="_blank" rel="noopener">https://docs.microsoft.com/ja-jp/azure/active-directory/privileged-identity-management/pim-configure</a></p>
+<p>Title: Azure AD でのハイブリッドおよびクラウド デプロイ用の特権アクセスをセキュリティで保護する<br>Url: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/users-groups-roles/directory-admin-roles-secure?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json">https://docs.microsoft.com/ja-jp/azure/active-directory/users-groups-roles/directory-admin-roles-secure?toc=%2fazure%2factive-directory%2fprivileged-identity-management%2ftoc.json</a></p>
+<p>Title: Azure Active Directory Identity Protection<br>Url: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/active-directory-identityprotection">https://docs.microsoft.com/ja-jp/azure/active-directory/active-directory-identityprotection</a></p>
+<p>Title: Azure AD Privileged Identity Management とは<br>Url: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/azure/active-directory/privileged-identity-management/pim-configure">https://docs.microsoft.com/ja-jp/azure/active-directory/privileged-identity-management/pim-configure</a></p>
 <h2 id="リンク集"><a href="#リンク集" class="headerlink" title="リンク集"></a>リンク集</h2><p>いずれも英語の記事となりますが、ご紹介したリンク以外にも、アカウント乗っ取りに対処する上で有用な記事を記載いたします。</p>
-<p>Title: Finding Illicit Activity The Old Fashioned Way<br>Url: <a href="https://blogs.technet.microsoft.com/office365security/finding-illicit-activity-the-old-fashioned-way/" target="_blank" rel="noopener">https://blogs.technet.microsoft.com/office365security/finding-illicit-activity-the-old-fashioned-way/</a></p>
-<p>Title: Responding to a Compromised Email Account in Office 365<br>Url: <a href="https://docs.microsoft.com/en-us/office365/enterprise/responding-to-a-compromised-email-account" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/office365/enterprise/responding-to-a-compromised-email-account</a></p>
+<p>Title: Finding Illicit Activity The Old Fashioned Way<br>Url: <a target="_blank" rel="noopener" href="https://blogs.technet.microsoft.com/office365security/finding-illicit-activity-the-old-fashioned-way/">https://blogs.technet.microsoft.com/office365security/finding-illicit-activity-the-old-fashioned-way/</a></p>
+<p>Title: Responding to a Compromised Email Account in Office 365<br>Url: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/office365/enterprise/responding-to-a-compromised-email-account">https://docs.microsoft.com/en-us/office365/enterprise/responding-to-a-compromised-email-account</a></p>
 <p>以下のブログは O365 セキュリティ チームの公式ブログとなりますので、ご購読いただければ幸いです。</p>
-<p>Title: Securing Office 365<br>Url: <a href="https://blogs.technet.microsoft.com/office365security/" target="_blank" rel="noopener">https://blogs.technet.microsoft.com/office365security/</a></p>
+<p>Title: Securing Office 365<br>Url: <a target="_blank" rel="noopener" href="https://blogs.technet.microsoft.com/office365security/">https://blogs.technet.microsoft.com/office365security/</a></p>
 <p>今後とも Office 365 をよろしくお願いいたします。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%B9%97%E3%81%A3%E5%8F%96%E3%82%89%E3%82%8C%E3%81%9F%E9%9A%9B%E3%81%AE%E5%AF%BE%E5%BF%9C%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cklvdk6od0021scst1z97fy6y" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%82%92%E4%B9%97%E3%81%A3%E5%8F%96%E3%82%89%E3%82%8C%E3%81%9F%E9%9A%9B%E3%81%AE%E5%AF%BE%E5%BF%9C%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cklvm51ht001mb4st9w2m7v8n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>

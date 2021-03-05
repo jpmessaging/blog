@@ -35,7 +35,7 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://jpmessaging.github.io/blog/Autodiscover%20%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/004.jpg">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/Autodiscover%20%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/005.jpg">
 <meta property="article:published_time" content="2014-03-17T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-06-12T02:12:42.613Z">
+<meta property="article:modified_time" content="2014-03-17T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="Exchange">
 <meta name="twitter:card" content="summary">
@@ -44,14 +44,14 @@ ga('send', 'pageview');
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
-    <link rel="manifest" href="/blog/icons/site.webmanifest">
-    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="msapplication-config" content="icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
   
   
@@ -60,7 +60,7 @@ ga('send', 'pageview');
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -73,10 +73,6 @@ ga('send', 'pageview');
       <h1 id="logo-wrap">
         <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
-        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -161,7 +157,7 @@ ga('send', 'pageview');
 <p>— 手順ここまで —</p>
 <p>以上で空のプロファイルが作成され Outlook が起動します。続けて Ctrl を押下しながら、タスク トレイの Outlook のアイコンをクリックし、[電子メールの自動構成のテスト] よりテストを実施します。</p>
 <p>- ExRCA を使ったテスト<br>外部 (インターネット) からの Autodiscover 接続や Outlook Anywhere 接続がうまくいかない！ というときに便利なツールが、ExRCA (Remote Connectivity Analyzer) です。<br>これはその名の通り、リモートでの接続性を診断してくれるシミュレーション ツールのようなもので、以下の URL から誰でも簡単に、接続性の確認を行う事ができます。</p>
-<p><a href="https://testconnectivity.microsoft.com/" target="_blank" rel="noopener">https://testconnectivity.microsoft.com/</a></p>
+<p><a target="_blank" rel="noopener" href="https://testconnectivity.microsoft.com/">https://testconnectivity.microsoft.com/</a></p>
 <p>例えば Autodiscoverの接続性を確認するには、上記画面から “Outlook 自動検出” を選択します。</p>
 <p><img src="004.jpg" alt=""></p>
 <p>続けて表示される画面でメールアドレスと資格情報を入力して、”テストの実行” をクリックします。<br>うまくいけば “正常に完了しました” と表示され、どこかで問題が発生していれば、項目を展開していくことで、以下のようにどのテストになぜ失敗したのかを視覚的に確認することができます。</p>
@@ -172,11 +168,11 @@ ga('send', 'pageview');
 <p>・ 相互認証の問題<br>Windows XP および Vista RTMでは、Exchange の証明書に設定された共通名 (Common Name、CN) が、Outlook Anywhere 接続時に指定する相互認証文字列 (msstd: の後に指定するもの) と一致していない場合、資格情報の入力を繰り返し求められプロファイルが作成できなかったり、Outlook Anywhere を使用して Exchange サーバーに接続できない、といった事象が発生します。</p>
 <p>これは Windows XP/Vista RTM の端末においては、New-ExchangeCertificate で Exchange サーバー用の証明書を作成する際に指定する SubjectName パラメータの値のみを参照し、DomainName として指定された別名を参照しない (検証しない) 動作に起因します。<br>そのためこのようなクライアントが存在する場合には、相互認証文字列が証明書の CN と一致するように証明書を構成する必要があります。</p>
 <p>この点については実はこれまでも発生する事象でしたが、Exchange 2013 が Outlook Anywhere (HTTP) 接続のみ対応するようになってから、より顕著化するようになりました。<br>以下のように TechNet でもご案内をさせていただいておりますため、ご参照ください。</p>
-<p>Title : サブジェクトの別名によって確立される相互認証<br>URL : <a href="http://technet.microsoft.com/ja-jp/library/hh849187(v=exchg.80).aspx" target="_blank" rel="noopener">http://technet.microsoft.com/ja-jp/library/hh849187(v=exchg.80).aspx</a></p>
-<p>Title: 相互認証を確立できない<br>URL : <a href="http://technet.microsoft.com/ja-jp/library/dd439371(v=EXCHG.80).aspx" target="_blank" rel="noopener">http://technet.microsoft.com/ja-jp/library/dd439371(v=EXCHG.80).aspx</a></p>
+<p>Title : サブジェクトの別名によって確立される相互認証<br>URL : <a target="_blank" rel="noopener" href="http://technet.microsoft.com/ja-jp/library/hh849187(v=exchg.80).aspx">http://technet.microsoft.com/ja-jp/library/hh849187(v=exchg.80).aspx</a></p>
+<p>Title: 相互認証を確立できない<br>URL : <a target="_blank" rel="noopener" href="http://technet.microsoft.com/ja-jp/library/dd439371(v=EXCHG.80).aspx">http://technet.microsoft.com/ja-jp/library/dd439371(v=EXCHG.80).aspx</a></p>
 <p>!注!<br>一度作成した証明書の CN を途中で変更することはできません。このような場合は証明書の再発行が必要となりますので、ご注意ください。</p>
 <p>・ LM 認証レベルの問題<br>こちらもこれまでも発生しうるものでしたが、Windows XP 端末では認証方式として LM 認証 (NTLM 認証ではない) が使用される事があり、これがサーバー側で対応していない結果、資格情報が繰り返し要求されプロファイルが作成できない、といった事象が発生することがあります。<br>以下は Outlook 2003 について記載されていますが、Windows XP の場合は Outlook 2007 以降でも該当します。</p>
-<p>　Title : Outlook 2003 の RPC over HTTP 機能を利用して Exchange Server 2003 に接続するときに、Windows アカウントの資格情報の入力が求められる<br>　URL : <a href="http://support.microsoft.com/kb/820281" target="_blank" rel="noopener">http://support.microsoft.com/kb/820281</a></p>
+<p>　Title : Outlook 2003 の RPC over HTTP 機能を利用して Exchange Server 2003 に接続するときに、Windows アカウントの資格情報の入力が求められる<br>　URL : <a target="_blank" rel="noopener" href="http://support.microsoft.com/kb/820281">http://support.microsoft.com/kb/820281</a></p>
 <p>そのためこのような場合は対象の端末にて、上記 KB に記載のある以下のレジストリ設定を追加後、クライアント端末を再起動いただくことで現象が回避するか、ご確認ください。</p>
 <p>　キー名 : HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa<br>　名前 : lmcompatibilitylevel<br>　値 : 2 または 3</p>
 <p>番外編を含め今回も以上となりますが、Exchange サーバーを構築、運用いただいている皆様において、少しでも参考になりましたら幸いです。<br>今後も当ブログおよびサポート チームをよろしくお願いいたします。</p>
@@ -184,7 +180,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Autodiscover%20%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/" data-id="cklvdk6no0004scst35p4dyd1" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Autodiscover%20%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/" data-id="cklvm51h10003b4stgb54cspw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>

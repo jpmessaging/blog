@@ -33,7 +33,7 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://jpmessaging.github.io/blog/Office%20365%20%E3%81%AE%E8%A8%80%E8%AA%9E%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/071402.png">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/Office%20365%20%E3%81%AE%E8%A8%80%E8%AA%9E%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/071403.png">
 <meta property="article:published_time" content="2017-07-13T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-06-12T02:12:42.644Z">
+<meta property="article:modified_time" content="2017-07-13T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="O365Identity">
 <meta name="twitter:card" content="summary">
@@ -42,14 +42,14 @@ ga('send', 'pageview');
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
-    <link rel="manifest" href="/blog/icons/site.webmanifest">
-    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="msapplication-config" content="icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
   
   
@@ -58,7 +58,7 @@ ga('send', 'pageview');
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -71,10 +71,6 @@ ga('send', 'pageview');
       <h1 id="logo-wrap">
         <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
-        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -155,12 +151,12 @@ ga('send', 'pageview');
 <p>Office 365 側の確認方法は、下記の通りです。</p>
 <p>&gt; Get-MsolUser -UserPrincipalName <a href="mailto:testuser@contoso.onmicrosoft.com">testuser@contoso.onmicrosoft.com</a> | fl</p>
 <p>LastDirSyncTime                               : 2017/06/29 6:54:24<br>ImmutableId                                      : ZmfNKSV/gUu9PMAmXH3Stg==<br><span style="color: #0000ff">PreferredLanguage                           : ja-JP　＜＜＜こちらを確認します。</span><br>UserPrincipalName                          : <a href="mailto:testuser@contoso.onmicrosoft.com">testuser@contoso.onmicrosoft.com</a><br>UserType                                             : Member<br>ValidationStatus                                : Healthy<br>WhenCreated                                     : 2017/06/21 1:51:41<br>&nbsp;<br>2018 年4 月追記：<br>セキュリティ/コンプライアンスセンター（SCC）につきましては、PreferredLanguage  属性値が空白の場合、<br>ブラウザの言語設定に依存せず既定値である「英語」で表示されます。<br>SCC を日本語で表示させるには、PreferredLanguage  属性値を ja-JP に設定していただく方法が有効となりますので、<br>クラウドユーザー / ディレクトリ同期ユーザーそれぞれの手順にて設定を実施ください。</p>
-<p>- 参考情報<br>Office 365 で言語および地域を設定する方法<br>URL：<a href="https://support.microsoft.com/ja-jp/help/4018959/how-to-set-language-and-region-settings-for-office-365" target="_blank" rel="noopener">https://support.microsoft.com/ja-jp/help/4018959/how-to-set-language-and-region-settings-for-office-365</a><br>&nbsp;<br>ロケール ID (LCID) の一覧<br>URL：<a href="https://msdn.microsoft.com/ja-jp/library/cc392381.aspx" target="_blank" rel="noopener">https://msdn.microsoft.com/ja-jp/library/cc392381.aspx</a></p>
+<p>- 参考情報<br>Office 365 で言語および地域を設定する方法<br>URL：<a target="_blank" rel="noopener" href="https://support.microsoft.com/ja-jp/help/4018959/how-to-set-language-and-region-settings-for-office-365">https://support.microsoft.com/ja-jp/help/4018959/how-to-set-language-and-region-settings-for-office-365</a><br>&nbsp;<br>ロケール ID (LCID) の一覧<br>URL：<a target="_blank" rel="noopener" href="https://msdn.microsoft.com/ja-jp/library/cc392381.aspx">https://msdn.microsoft.com/ja-jp/library/cc392381.aspx</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Office%20365%20%E3%81%AE%E8%A8%80%E8%AA%9E%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cklvdk6o7001lscstdcyl8nn1" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Office%20365%20%E3%81%AE%E8%A8%80%E8%AA%9E%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cklvm51ho0015b4st4f9s3h75" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>

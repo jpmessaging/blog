@@ -36,7 +36,7 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/image05.png">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/image06.jpg">
 <meta property="article:published_time" content="2021-01-19T15:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-20T21:33:01.257Z">
+<meta property="article:modified_time" content="2021-01-19T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="EXO">
 <meta name="twitter:card" content="summary">
@@ -45,14 +45,14 @@ ga('send', 'pageview');
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
-    <link rel="manifest" href="/blog/icons/site.webmanifest">
-    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="msapplication-config" content="icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
   
   
@@ -61,7 +61,7 @@ ga('send', 'pageview');
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -74,10 +74,6 @@ ga('send', 'pageview');
       <h1 id="logo-wrap">
         <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
-        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -135,9 +131,9 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>※ この記事は、<a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/all-you-need-to-know-about-automatic-email-forwarding-in/ba-p/2074888" target="_blank" rel="noopener">All you need to know about automatic email forwarding in Exchange Online</a> の抄訳です。</p>
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/all-you-need-to-know-about-automatic-email-forwarding-in/ba-p/2074888">All you need to know about automatic email forwarding in Exchange Online</a> の抄訳です。</p>
 <p>多くのお客様において、ビジネス要件としてメールの自動転送を構成する必要があることを弊社でも認識しています。一方、メールの転送はデータ漏洩につながる可能性があります。例えば、アカウントが乗っ取られた場合に攻撃者はメールの転送を設定し、ユーザーは自分のメールが転送されていることに気づかない可能性があります。これはアカウントが乗っ取られた際に使用される非常に一般的な攻撃手法です。</p>
-<p>したがって、転送が有効なメールボックスとメールの転送先を管理者が把握しておくことが重要です。メールの転送を検知する様々な<a href="https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/mfi-auto-forwarded-messages-report?view=o365-worldwide" target="_blank" rel="noopener">洞察</a>と<a href="https://docs.microsoft.com/en-us/microsoft-365/compliance/alert-policies?view=o365-worldwide" target="_blank" rel="noopener">アラート</a>が提供されていますが、対処療法を行うよりも予防を行うべきです。このブログ投稿では、様々な自動転送の制御について再検討し、それらがどのように連携して、自動転送を本当に許可する必要のあるユーザーの要件をどのように実現することができるのか、考えていきます。</p>
+<p>したがって、転送が有効なメールボックスとメールの転送先を管理者が把握しておくことが重要です。メールの転送を検知する様々な<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/mfi-auto-forwarded-messages-report?view=o365-worldwide">洞察</a>と<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/microsoft-365/compliance/alert-policies?view=o365-worldwide">アラート</a>が提供されていますが、対処療法を行うよりも予防を行うべきです。このブログ投稿では、様々な自動転送の制御について再検討し、それらがどのように連携して、自動転送を本当に許可する必要のあるユーザーの要件をどのように実現することができるのか、考えていきます。</p>
 <h2 id="転送を設定する様々な方法"><a href="#転送を設定する様々な方法" class="headerlink" title="転送を設定する様々な方法"></a>転送を設定する様々な方法</h2><p>自動転送を制御する方法について説明する前に、自動転送を設定する方法を確認しておきます。</p>
 <ul>
 <li>デスクトップ版 Outlook で仕分けルールとして転送のルールを設定できます。ユーザーは Outlook で [ファイル] - [仕分けルールと通知の管理] にて自動転送を設定できます。Outlook on the web (OWA / Ootw) を使用する場合もルールを設定することが可能です。</li>
@@ -147,7 +143,7 @@ ga('send', 'pageview');
 <li>管理者は Microsoft 365 管理センターでも転送を構成できます。Microsoft 365 管理センターで転送を構成すると、メールボックスの ForwardingSmtpAddress パラメーターに設定されます (ただし ForwardingAddress が設定されている場合はすでに転送が設定されている旨が Microsoft 365 管理センターに表示されます)。</li>
 </ul>
 <p>管理者には、組織外へのメールの自動転送を防止および規制するためのいくつかの方法があります。</p>
-<h2 id="送信迷惑メール-フィルター-ポリシーを使用した外部転送の制御"><a href="#送信迷惑メール-フィルター-ポリシーを使用した外部転送の制御" class="headerlink" title="送信迷惑メール フィルター ポリシーを使用した外部転送の制御"></a>送信迷惑メール フィルター ポリシーを使用した外部転送の制御</h2><p>最近リリースされたこの機能は、セキュリティ/コンプライアンス センターの送信迷惑メール フィルター ポリシー (<a href="https://protection.office.com/antispam" target="_blank" rel="noopener">こちら</a>) で利用できます。以下の画面ショットにあるように、3 つのオプションがあります。</p>
+<h2 id="送信迷惑メール-フィルター-ポリシーを使用した外部転送の制御"><a href="#送信迷惑メール-フィルター-ポリシーを使用した外部転送の制御" class="headerlink" title="送信迷惑メール フィルター ポリシーを使用した外部転送の制御"></a>送信迷惑メール フィルター ポリシーを使用した外部転送の制御</h2><p>最近リリースされたこの機能は、セキュリティ/コンプライアンス センターの送信迷惑メール フィルター ポリシー (<a target="_blank" rel="noopener" href="https://protection.office.com/antispam">こちら</a>) で利用できます。以下の画面ショットにあるように、3 つのオプションがあります。</p>
 <p><img src="image01.png" alt=""></p>
 <blockquote>
 <p>注意<br>オプションが [自動 - システム制御] として設定されている場合、おそらくこれまでまったく構成が行われていません。設定が [自動 - システム制御] のままになっているテナントは、既定でより安全なサービスが提供されるように、強制的に [オフ - 転送が無効になっています] が設定されているものとして動作します。この強制は段階的に開始されており、間もなくすべてのテナントに提供されます。したがって、[自動 - システム制御] は  [オフ - 転送が無効になっています] として動作するので自動転送は機能しません。すべてのお客様において、組織に適したポリシーを構成し、本当に必要なユーザーに対してのみ外部への自動転送を有効にすることをおすすめします (既定のポリシーでは無効にして、外部転送を有効にしたポリシーを作成して特定のメールボックスに割り当てることをおすすめします)。もし [自動 - システム制御] が設定されておりまだ転送がブロックされていない場合は、できるだけ早く設定を行う必要があります。</p>
@@ -168,7 +164,7 @@ ga('send', 'pageview');
 </ul>
 <p>この方法では以下のデメリットがあります。</p>
 <ul>
-<li>Power Automate (Flow) を使用した転送は現時点ではカバーされていません。Power Automate を使用して設定された外部への転送をブロックするには、<a href="https://docs.microsoft.com/en-us/power-platform/admin/block-forwarded-email-from-power-automate" target="_blank" rel="noopener">Email exfiltration controls for connectors</a> のページに記載されている手順に従ってください。</li>
+<li>Power Automate (Flow) を使用した転送は現時点ではカバーされていません。Power Automate を使用して設定された外部への転送をブロックするには、<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/power-platform/admin/block-forwarded-email-from-power-automate">Email exfiltration controls for connectors</a> のページに記載されている手順に従ってください。</li>
 </ul>
 <h2 id="リモート-ドメインを使用した自動転送のブロック"><a href="#リモート-ドメインを使用した自動転送のブロック" class="headerlink" title="リモート ドメインを使用した自動転送のブロック"></a>リモート ドメインを使用した自動転送のブロック</h2><p>このオプションは、プレビュー版の新しい Exchange 管理センターの [メール フロー] タブで使用できます。</p>
 <p><img src="image02.png" alt=""></p>
@@ -195,7 +191,7 @@ ga('send', 'pageview');
 <li>メッセージ クラス (IPM.note.forward) に基づいて自動転送メールの照合を行います。OWA の転送 (ForwardingSmtpAddress) または管理者がメールボックスのプロパティに設定した転送 (ForwardingAddress) は通常のメッセージ クラス (IPM.Note) を持つため、トランスポート ルールによってブロックされません。</li>
 <li>構成済みのトランスポート ルールが多すぎる場合、管理が困難になります。</li>
 </ul>
-<h2 id="役割ベースのアクセス制御-RBAC-を使用して自動転送オプションを隠す"><a href="#役割ベースのアクセス制御-RBAC-を使用して自動転送オプションを隠す" class="headerlink" title="役割ベースのアクセス制御 (RBAC) を使用して自動転送オプションを隠す"></a><a href="https://docs.microsoft.com/en-us/exchange/permissions-exo/permissions-exo" target="_blank" rel="noopener">役割ベースのアクセス制御 (RBAC)</a> を使用して自動転送オプションを隠す</h2><p>これは実際には転送をブロックする方法ではありませんが、ユーザーが OWA での転送の設定をできないように設定項目を削除するという点で関連した内容となります。</p>
+<h2 id="役割ベースのアクセス制御-RBAC-を使用して自動転送オプションを隠す"><a href="#役割ベースのアクセス制御-RBAC-を使用して自動転送オプションを隠す" class="headerlink" title="役割ベースのアクセス制御 (RBAC) を使用して自動転送オプションを隠す"></a><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/permissions-exo/permissions-exo">役割ベースのアクセス制御 (RBAC)</a> を使用して自動転送オプションを隠す</h2><p>これは実際には転送をブロックする方法ではありませんが、ユーザーが OWA での転送の設定をできないように設定項目を削除するという点で関連した内容となります。</p>
 <p>この方法では以下のメリットがあります。</p>
 <ul>
 <li>OWA を使用するユーザーに、転送を設定する項目が表示されません。</li>
@@ -272,7 +268,7 @@ ga('send', 'pageview');
 <li>既定の * のリモート ドメインの設定で自動転送を無効にする</li>
 <li>contoso.com と northwindtraders.com の新しいリモート ドメインを作成し、これらのリモート ドメインの自動転送を許可する</li>
 <li>全ユーザーから northwindtraders.com への自動転送をブロックするトランスポート ルールを作成し、ジャックとジルを例外に指定する</li>
-<li>トランスポート ルールは OWA で設定した転送 (ForwardingSmtpAddress パラメーター) をブロックしないため、<a href="https://petri.com/stop-owa-users-autoforwarding-email" target="_blank" rel="noopener">RBAC を使用してユーザーが OWA で自動転送を設定できないようにする</a></li>
+<li>トランスポート ルールは OWA で設定した転送 (ForwardingSmtpAddress パラメーター) をブロックしないため、<a target="_blank" rel="noopener" href="https://petri.com/stop-owa-users-autoforwarding-email">RBAC を使用してユーザーが OWA で自動転送を設定できないようにする</a></li>
 </ul>
 <h2 id="でも待ってください、他にもあります！"><a href="#でも待ってください、他にもあります！" class="headerlink" title="でも待ってください、他にもあります！"></a>でも待ってください、他にもあります！</h2><p>もしユーザーのメールボックスが乗っ取られて知らないうちに外部への自動転送を設定された場合にも、ユーザーを攻撃者から保護するため、メールの転送に関する新しいアラート ポリシーがセキュリティ/コンプライアンス センターの [アラート ポリシー] にリリースされました。”Suspicious Email Forwarding Activity” という名前のアラート ポリシーです。この新しいアラートは、すべての転送シナリオを追跡し、ユーザーが組織外への自動転送を設定していることを検出します。疑わしいアクティビティが見つかった場合、ユーザーが外部受信者に転送し続ける限り、テナント管理者に 1 日 1 回警告を行います。このポリシーの重要度は中に設定されています。稀なことではありますが、このポリシーでアラートが生成されるということは異常な何かが発生している可能性があります。管理者は、ユーザー アカウントが乗っ取られていないかどうかを常に確認する必要があります。以下にこのポリシーの画面ショットを掲載します。</p>
 <p><img src="image05.png" alt=""></p>
@@ -283,7 +279,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/" data-id="cklvdk6nz000yscst9e9m9ciu" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/" data-id="cklvm51hg000mb4stbprxaf39" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li></ul>

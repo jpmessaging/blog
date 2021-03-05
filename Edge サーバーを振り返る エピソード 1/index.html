@@ -34,7 +34,7 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/Pic3.png">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/Pic4.png">
 <meta property="article:published_time" content="2015-11-23T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-06-12T02:12:42.625Z">
+<meta property="article:modified_time" content="2015-11-23T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="Exchange">
 <meta name="twitter:card" content="summary">
@@ -43,14 +43,14 @@ ga('send', 'pageview');
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
-    <link rel="manifest" href="/blog/icons/site.webmanifest">
-    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="msapplication-config" content="icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
   
   
@@ -59,7 +59,7 @@ ga('send', 'pageview');
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -72,10 +72,6 @@ ga('send', 'pageview');
       <h1 id="logo-wrap">
         <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
-        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -137,12 +133,12 @@ ga('send', 'pageview');
 <p>今回は意外と知っているようで見落としがちな Edge サーバーについてのおさらいです。<br>Exchange 2013 で HUB の役割がなくなり、2016 では CAS の役割もなくなりました。しかし！エッジ トランスポート サーバーは未だ顕在している、重要な役割です。</p>
 <h2 id="そもそも-エッジ-トランスポート-サーバーとは"><a href="#そもそも-エッジ-トランスポート-サーバーとは" class="headerlink" title="そもそも エッジ トランスポート サーバーとは"></a>そもそも エッジ トランスポート サーバーとは</h2><p>これは皆さまご存知かと思いますが、エッジ トランスポート サーバーは Exchange 役割の中で唯一、<span style="color: red">境界ネットワーク (DMZ) に置くことができるサーバー</span>であり、Exchange 組織とインターネット間で発生するすべての受信および送信メッセージ (メールフロー) を処理します。<br>また、メッセージ保護やセキュリティ向上を目的としたトランスポート エージェントも組み込まれているため、内部 Exchange 組織がインターネット上の脅威 (ウィルスやスパムなど) にさらされるリスクを最小限に抑えることが可能です。<br>主な機能概要は以下でも紹介しておりますので、ご参照ください。</p>
 <p>* エッジ トランスポート サーバーには、リバース プロキシ サーバーや CAS サーバーのように、クライアントからの HTTP リクエストを処理する機能はありません。あくまでもトランスポート サーバーとして機能します。</p>
-<p>　Title : エッジ トランスポート サーバー<br>　URL : <a href="https://technet.microsoft.com/ja-jp/library/bb124701.aspx" target="_blank" rel="noopener">https://technet.microsoft.com/ja-jp/library/bb124701.aspx</a></p>
+<p>　Title : エッジ トランスポート サーバー<br>　URL : <a target="_blank" rel="noopener" href="https://technet.microsoft.com/ja-jp/library/bb124701.aspx">https://technet.microsoft.com/ja-jp/library/bb124701.aspx</a></p>
 <p>なおエッジ トランスポート サーバーは、組織の Exchange サーバーと一切特別な関係を持たないスタンドアロン サーバーとして使用することもできれば、エッジ サブスクリプションを作成することで組織内のトランスポート サーバーとして扱う (Get-TransportServer 等でも表示されるようになります) 事も可能です。</p>
 <h2 id="エッジ-サブスクリプションを作成すると"><a href="#エッジ-サブスクリプションを作成すると" class="headerlink" title="エッジ サブスクリプションを作成すると"></a>エッジ サブスクリプションを作成すると</h2><p>上述の通り、エッジ サブスクリプションを作成することで<span style="color: red">組織内のトランスポート サーバーとして</span>扱う事ができるようになり、管理面、機能面共に様々なメリットがあります。</p>
-<p>　Title : エッジ サブスクリプション<br>　URL : <a href="https://technet.microsoft.com/ja-jp/library/aa997438(v=exchg.150).aspx" target="_blank" rel="noopener">https://technet.microsoft.com/ja-jp/library/aa997438(v=exchg.150).aspx</a></p>
+<p>　Title : エッジ サブスクリプション<br>　URL : <a target="_blank" rel="noopener" href="https://technet.microsoft.com/ja-jp/library/aa997438(v=exchg.150).aspx">https://technet.microsoft.com/ja-jp/library/aa997438(v=exchg.150).aspx</a></p>
 <p>サブスクリプションにより組織のディレクトリに保存された Active Directory データがエッジ トランスポート サーバー上 Active Directory Lightweight Directory Services (AD LDS) に同期されますが、これはあくまでもメールボックス サーバー (Exchange Server 2010 の場合は ハブ トランスポートサーバー) – エッジ トランスポート サーバー間で行われる同期処理の一環であり、エッジ トランスポート サーバーが直接組織内のドメイン コントローラーと通信を行うことはありません。<br>以下にはエッジ トランスポート サーバーで必要な通信ポートの情報や、ちょっと特殊な (エッジならではの) DNS の設定について紹介しておりますので、是非ご参照ください。</p>
-<p>　Title : エッジ トランスポート サーバーの計画<br>　URL : <a href="https://technet.microsoft.com/JA-JP/library/dn641596(v=exchg.150).aspx" target="_blank" rel="noopener">https://technet.microsoft.com/JA-JP/library/dn641596(v=exchg.150).aspx</a></p>
+<p>　Title : エッジ トランスポート サーバーの計画<br>　URL : <a target="_blank" rel="noopener" href="https://technet.microsoft.com/JA-JP/library/dn641596(v=exchg.150).aspx">https://technet.microsoft.com/JA-JP/library/dn641596(v=exchg.150).aspx</a></p>
 <p>では、いくつか細かな点を見ていきたいと思います。</p>
 <h2 id="エッジ-サブスクリプションの作成単位"><a href="#エッジ-サブスクリプションの作成単位" class="headerlink" title="エッジ サブスクリプションの作成単位"></a>エッジ サブスクリプションの作成単位</h2><p>エッジ サブスクリプションは、個々のエッジ トランスポート サーバーと、組織内の任意の AD サイトの間で作成されるものとなり、1 つの AD サイトに複数のエッジ トランスポート サーバーを購読させることは可能ですが、1 つのエッジ トランスポート サーバーが複数の Active Directory サイトを購読することはできません。<br>またエッジ トランスポート サーバー間での設定同期は行われないので、複数のエッジ トランスポート サーバーが展開されている環境では、各サーバーにおいて AD サイトを購読するための設定 (サブスクリプションの作成) が必要となります。<br>以下のようなイメージですね。</p>
 <p><img src="Pic1.jpg" alt=""></p>
@@ -170,7 +166,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/" data-id="cklvdk6nq0008scst2k2t7gti" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/" data-id="cklvm51h80005b4st2fmnhbag" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>

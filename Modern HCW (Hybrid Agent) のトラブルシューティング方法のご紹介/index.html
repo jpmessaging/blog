@@ -49,7 +49,7 @@ ga('send', 'pageview');
 <meta property="og:image" content="https://jpmessaging.github.io/blog/Modern%20HCW%20(Hybrid%20Agent)%20%E3%81%AE%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E6%96%B9%E6%B3%95%E3%81%AE%E3%81%94%E7%B4%B9%E4%BB%8B/hybagnt18_2.jpg">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/Modern%20HCW%20(Hybrid%20Agent)%20%E3%81%AE%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E6%96%B9%E6%B3%95%E3%81%AE%E3%81%94%E7%B4%B9%E4%BB%8B/hybagnt19.jpg">
 <meta property="article:published_time" content="2020-08-17T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-08-27T02:30:22.493Z">
+<meta property="article:modified_time" content="2020-08-17T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="Hybrid">
 <meta name="twitter:card" content="summary">
@@ -58,14 +58,14 @@ ga('send', 'pageview');
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
   
-    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
-    <link rel="manifest" href="/blog/icons/site.webmanifest">
-    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#2b5797">
-    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="msapplication-config" content="icons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
   
   
@@ -74,7 +74,7 @@ ga('send', 'pageview');
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
   <div id="container">
@@ -87,10 +87,6 @@ ga('send', 'pageview');
       <h1 id="logo-wrap">
         <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
-        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -148,20 +144,20 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>※ この記事は、<a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/modern-hcw-hybrid-agent-troubleshooting-like-a-pro/ba-p/1558725" target="_blank" rel="noopener">Modern HCW (Hybrid Agent): troubleshooting like a pro</a> の抄訳です。</p>
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/modern-hcw-hybrid-agent-troubleshooting-like-a-pro/ba-p/1558725">Modern HCW (Hybrid Agent): troubleshooting like a pro</a> の抄訳です。</p>
 <p>多くの読者の方は、ハイブリッド構成ウィザード (HCW) のクラシック オプションを使用して自動的に構成されるクラシック ハイブリッド展開については詳しいのではないでしょうか。今回の記事では、モダン ハイブリッド構成 (モダン ハイブリッド エージェント) にフォーカスし、特にエージェントのトラブルシューティング方法をご紹介します。</p>
 <p>クラシックとモダンというのは、HCW の以下の選択肢のことを意味します。</p>
 <p><img src="hybagnt01.jpg" alt=""></p>
-<p>この 2 つの選択肢によって構成されるハイブリッド機能の比較については、こちらの <a href="https://docs.microsoft.com/en-us/exchange/hybrid-configuration-wizard-options" target="_blank" rel="noopener">技術情報</a> をご参照ください。</p>
+<p>この 2 つの選択肢によって構成されるハイブリッド機能の比較については、こちらの <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/hybrid-configuration-wizard-options">技術情報</a> をご参照ください。</p>
 <p>モダン ハイブリッド構成について詳しく見ていく前に、HCW 全般に関する情報とトラブルシューティングのヒントをご紹介します。</p>
-<h2 id="最新バージョンの-HCW-を実行する"><a href="#最新バージョンの-HCW-を実行する" class="headerlink" title="最新バージョンの HCW を実行する"></a>最新バージョンの HCW を実行する</h2><p>HCW は <a href="https://aka.ms/hybridwizard" target="_blank" rel="noopener">https://aka.ms/hybridwizard</a> から実行するかもしくは Exchange 管理センターから実行して、常に最新のバージョンを実行してください。新しいバージョンではたくさんの問題が修正されています。</p>
-<p>HCW のバージョンは様々な場所から確認できます。具体的には、HCW の画面右上、コントロール パネルの [プログラムと機能] の画面、HCW のログより確認できます。現在、HCW のビルド番号は 17.x で、もし 16.x を実行している場合は 17.x に自動更新されません。HCW を実行する必要があるときは、まずは最新の 17.x のバージョンにアップデートしてください。両方のバージョンは同じマシンに共存できますが、分かりにくくなるので共存させておくことは推奨しません。詳しくはこちらの <a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/march-2020-significant-update-to-hybrid-configuration-wizard/ba-p/1238753" target="_blank" rel="noopener">ブログ記事</a> もご参照ください。</p>
+<h2 id="最新バージョンの-HCW-を実行する"><a href="#最新バージョンの-HCW-を実行する" class="headerlink" title="最新バージョンの HCW を実行する"></a>最新バージョンの HCW を実行する</h2><p>HCW は <a target="_blank" rel="noopener" href="https://aka.ms/hybridwizard">https://aka.ms/hybridwizard</a> から実行するかもしくは Exchange 管理センターから実行して、常に最新のバージョンを実行してください。新しいバージョンではたくさんの問題が修正されています。</p>
+<p>HCW のバージョンは様々な場所から確認できます。具体的には、HCW の画面右上、コントロール パネルの [プログラムと機能] の画面、HCW のログより確認できます。現在、HCW のビルド番号は 17.x で、もし 16.x を実行している場合は 17.x に自動更新されません。HCW を実行する必要があるときは、まずは最新の 17.x のバージョンにアップデートしてください。両方のバージョンは同じマシンに共存できますが、分かりにくくなるので共存させておくことは推奨しません。詳しくはこちらの <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/march-2020-significant-update-to-hybrid-configuration-wizard/ba-p/1238753">ブログ記事</a> もご参照ください。</p>
 <p><img src="hybagnt02.jpg" alt=""></p>
 <h2 id="ハイブリッドの前提条件と-HCW-のよくある質問"><a href="#ハイブリッドの前提条件と-HCW-のよくある質問" class="headerlink" title="ハイブリッドの前提条件と HCW のよくある質問"></a>ハイブリッドの前提条件と HCW のよくある質問</h2><p>ハイブリッドの前提条件と HCW のよくある質問を確認しておくことで、多くの問題の発生を防ぐことができます。</p>
 <ul>
-<li><a href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment-prerequisites#prerequisites-for-hybrid-deployment" target="_blank" rel="noopener">クラシック HCW の前提条件</a></li>
-<li><a href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent" target="_blank" rel="noopener">モダン HCW の前提条件</a></li>
-<li><a href="https://docs.microsoft.com/en-us/exchange/hybrid-configuration-wizard-faqs" target="_blank" rel="noopener">HCW のよくある質問</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment-prerequisites#prerequisites-for-hybrid-deployment">クラシック HCW の前提条件</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent">モダン HCW の前提条件</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/hybrid-configuration-wizard-faqs">HCW のよくある質問</a></li>
 </ul>
 <h2 id="HCW-に必要な管理者権限"><a href="#HCW-に必要な管理者権限" class="headerlink" title="HCW に必要な管理者権限"></a>HCW に必要な管理者権限</h2><p>HCW を実行するには 2 種類の管理者アカウントが必要です。</p>
 <p><img src="hybagnt03.jpg" alt=""></p>
@@ -169,10 +165,10 @@ ga('send', 'pageview');
 <p>このアカウントは Organization Management のメンバーである必要があります。もしアカウントを手動で変更して資格情報を入力した場合、入力した資格情報は HCW が移行エンドポイントを作る際に Test-MigrationServerAvailability コマンドで使用されます。</p>
 <p>モダン HCW では、以下のように移行で使用するアカウントを指定することになります。</p>
 <p><img src="hybagnt04.jpg" alt=""></p>
-<p>もし HCW のこのステップで “invalid username or password” エラーが発生した場合は、こちらの <a href="https://docs.microsoft.com/en-us/Exchange/permissions/feature-permissions/recipient-permissions?view=exchserver-2019#mailbox-move-and-migration-permissions" target="_blank" rel="noopener">技術情報</a> を参考にメールボックスの移行に必要な権限が付与されているかどうかの確認と、正しく「ドメイン名\ユーザー名」形式で資格情報が指定されているかご確認ください。</p>
+<p>もし HCW のこのステップで “invalid username or password” エラーが発生した場合は、こちらの <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/Exchange/permissions/feature-permissions/recipient-permissions?view=exchserver-2019#mailbox-move-and-migration-permissions">技術情報</a> を参考にメールボックスの移行に必要な権限が付与されているかどうかの確認と、正しく「ドメイン名\ユーザー名」形式で資格情報が指定されているかご確認ください。</p>
 <p><strong>Office 365 Exchange Online Account</strong></p>
 <p>このアカウントは、Office 365 の全体管理者か Exchange 管理者である必要があります。</p>
-<p>先進認証と基本認証 (Legacy Login) の 2 種類のログインを選択することが可能です。<a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-april-2020-update/ba-p/1275508" target="_blank" rel="noopener">基本認証は廃止される予定</a> ですが、ログインに問題がある場合は基本認証を試してみることも有効です。基本認証は “Legacy Login” と記載されています。</p>
+<p>先進認証と基本認証 (Legacy Login) の 2 種類のログインを選択することが可能です。<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-and-exchange-online-april-2020-update/ba-p/1275508">基本認証は廃止される予定</a> ですが、ログインに問題がある場合は基本認証を試してみることも有効です。基本認証は “Legacy Login” と記載されています。</p>
 <p><img src="hybagnt05.jpg" alt=""></p>
 <h2 id="HCW-F12-診断ツール"><a href="#HCW-F12-診断ツール" class="headerlink" title="HCW F12 診断ツール"></a>HCW F12 診断ツール</h2><p>HCW で F12 Diagnostic Tools セクションが表示されます。</p>
 <p><img src="hybagnt06.jpg" alt=""></p>
@@ -224,11 +220,11 @@ ga('send', 'pageview');
 <p><strong>&lt;日時&gt;.hybridconnector.log</strong></p>
 <p>ハイブリッド エージェントをインストールする場合の、ハイブリッド コネクターのセットアップに関するログです。そのため、クラシック ハイブリッドでは出力されません。</p>
 <p><img src="hybagnt13.jpg" alt=""></p>
-<h3 id="Open-Process-Folder"><a href="#Open-Process-Folder" class="headerlink" title="Open Process Folder"></a>Open Process Folder</h3><p>HCW の実行ファイルのあるパスがセットされた状態でコマンド プロンプトが起動します。HCW がクラッシュする場合や、”Object reference not set to an instance of an object” のような汎用的なエラーが発生したときに、ProcDump と組み合わせて使用することで役に立ちます。ProcDump のダウンロードや構文については <a href="https://docs.microsoft.com/en-us/sysinternals/downloads/procdump" target="_blank" rel="noopener">こちら</a> をご参照ください。通常は以下のようなコマンドで例外の情報を取得しますが、このようなトラブルシューティングが必要な時はサポートにお問い合わせください。</p>
+<h3 id="Open-Process-Folder"><a href="#Open-Process-Folder" class="headerlink" title="Open Process Folder"></a>Open Process Folder</h3><p>HCW の実行ファイルのあるパスがセットされた状態でコマンド プロンプトが起動します。HCW がクラッシュする場合や、”Object reference not set to an instance of an object” のような汎用的なエラーが発生したときに、ProcDump と組み合わせて使用することで役に立ちます。ProcDump のダウンロードや構文については <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/sysinternals/downloads/procdump">こちら</a> をご参照ください。通常は以下のようなコマンドで例外の情報を取得しますが、このようなトラブルシューティングが必要な時はサポートにお問い合わせください。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">procdump.exe -e 1 -f &quot;&quot; Microsoft.Online.CSE.Hybrid.App.exe</span><br></pre></td></tr></table></figure>
 
-<h2 id="モダン-HCW-におけるハイブリッド-エージェント"><a href="#モダン-HCW-におけるハイブリッド-エージェント" class="headerlink" title="モダン HCW におけるハイブリッド エージェント"></a>モダン HCW におけるハイブリッド エージェント</h2><p>ハイブリッド エージェントのアーキテクチャについて詳しくは <a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/the-microsoft-hybrid-agent-public-preview/ba-p/608939" target="_blank" rel="noopener">こちら</a> のブログ記事をご参照ください。</p>
-<p>この機能では、<a href="https://docs.microsoft.com/en-gb/azure/active-directory/manage-apps/application-proxy-add-on-premises-application" target="_blank" rel="noopener">Azure Application Proxy</a> と同じ技術を使ったエージェントをインストールして Exchange サーバーを Exchange Online に対して公開します。これにより、外部 DNS や EWS の公開に伴うポートの開放などの問題点を気にせずに、空き時間情報の共有やメールボックスの移行を行えるようにします。ハイブリッド エージェントは各テナント専用に以下のフォーマットの URL を登録します。</p>
+<h2 id="モダン-HCW-におけるハイブリッド-エージェント"><a href="#モダン-HCW-におけるハイブリッド-エージェント" class="headerlink" title="モダン HCW におけるハイブリッド エージェント"></a>モダン HCW におけるハイブリッド エージェント</h2><p>ハイブリッド エージェントのアーキテクチャについて詳しくは <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/the-microsoft-hybrid-agent-public-preview/ba-p/608939">こちら</a> のブログ記事をご参照ください。</p>
+<p>この機能では、<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-gb/azure/active-directory/manage-apps/application-proxy-add-on-premises-application">Azure Application Proxy</a> と同じ技術を使ったエージェントをインストールして Exchange サーバーを Exchange Online に対して公開します。これにより、外部 DNS や EWS の公開に伴うポートの開放などの問題点を気にせずに、空き時間情報の共有やメールボックスの移行を行えるようにします。ハイブリッド エージェントは各テナント専用に以下のフォーマットの URL を登録します。</p>
 <p><code>&lt;guid&gt;.resource.mailboxmigration.his.msappproxy.net</code></p>
 <p>この URL が Organization Relationship (組織の関係) や Intra Organization Connector、Mailbox Replication Service によって使用され、Exchange Online からオンプレミスへのリクエストが到達するようになります。この URL は Exchange Online からのみアクセスが可能です。Exchange Online ユーザーの空き時間情報のリクエストと、メールボックスの双方向の移動が、現在ハイブリッド エージェントによってサポートされています。</p>
 <p>この URL が使用されている設定は、以下のコマンドで確認できます。</p>
@@ -264,8 +260,8 @@ ga('send', 'pageview');
 <h3 id="ハイブリッド-エージェントがインストールされて動作しているか確認する"><a href="#ハイブリッド-エージェントがインストールされて動作しているか確認する" class="headerlink" title="ハイブリッド エージェントがインストールされて動作しているか確認する"></a>ハイブリッド エージェントがインストールされて動作しているか確認する</h3><p>ハイブリッド エージェントはクライアント アクセス サーバーで動作しているかもしれませんし、DMZ 上で動作しているかもしれません。最初のステップは、そのマシン上でサービス (Microsoft Hybrid Service) とハイブリッド コネクターが起動しているかどうかを確認します。</p>
 <p>ハイブリッドエージェントがアクティブ (登録されていて起動している) なのか非アクティブ (登録されていないか起動していない) なのかを確認する方法は複数あります。</p>
 <ul>
-<li>HCW を起動してモダン ハイブリッド構成を選択する (詳しくは <a href="https://docs.microsoft.com/exchange/hybrid-deployment/hybrid-agent#checking-the-status-of-your-hybrid-agents" target="_blank" rel="noopener">こちら</a>)</li>
-<li>Hybrid Management PowerShell モジュールの Get-HybridAgent コマンドを使用する (詳しくは <a href="https://docs.microsoft.com/exchange/hybrid-deployment/hybrid-agent#option-2-get-status-via-the-hybrid-management-powershell-module" target="_blank" rel="noopener">こちら</a>)</li>
+<li>HCW を起動してモダン ハイブリッド構成を選択する (詳しくは <a target="_blank" rel="noopener" href="https://docs.microsoft.com/exchange/hybrid-deployment/hybrid-agent#checking-the-status-of-your-hybrid-agents">こちら</a>)</li>
+<li>Hybrid Management PowerShell モジュールの Get-HybridAgent コマンドを使用する (詳しくは <a target="_blank" rel="noopener" href="https://docs.microsoft.com/exchange/hybrid-deployment/hybrid-agent#option-2-get-status-via-the-hybrid-management-powershell-module">こちら</a>)</li>
 </ul>
 <p><img src="hybagnt18_2.jpg" alt=""></p>
 <p>なおこのコマンドは、HCW の GUI が示す Exchange ハイブリッド エージェントのみではなく、パススルー認証の Azure Active Directory (Azure AD) Application Proxy connector の情報も返します。</p>
@@ -273,19 +269,19 @@ ga('send', 'pageview');
 <li>HCW のログから <code>https://graph.microsoft.com/edu/$metadata#connectorGroups</code> が含まれている Microsoft Graph の情報を探し、”Default group for Exchange Online” のコネクタを確認する</li>
 </ul>
 <p>もし Exchange Online 用のコネクターが全く表示されなかったり、ステータスが inactive の場合、登録されていないか起動していないことを意味しています。</p>
-<p>登録に関する問題の詳細を確認するには、<a href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#agent-install-location--requirements" target="_blank" rel="noopener">前提条件</a> を確認して <a href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#installation-prerequisites" target="_blank" rel="noopener">Test-HybridConnectibity</a> コマンドを実行してください。</p>
-<p>また <a href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#additional-information" target="_blank" rel="noopener">こちら</a> を参考に Microsoft Hybrid Service がインストールされており起動しているか確認してください。モダン ハイブリッド構成を選択することで <a href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#installation-steps" target="_blank" rel="noopener">HCW が自動でエージェントをインストール</a> しますが、一般的ではないものの追加のエージェントをインストールする場合などに <a href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#option-2-manually-download--install-additional-agents" target="_blank" rel="noopener">手動</a> でインストールすることもできます。</p>
+<p>登録に関する問題の詳細を確認するには、<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#agent-install-location--requirements">前提条件</a> を確認して <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#installation-prerequisites">Test-HybridConnectibity</a> コマンドを実行してください。</p>
+<p>また <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#additional-information">こちら</a> を参考に Microsoft Hybrid Service がインストールされており起動しているか確認してください。モダン ハイブリッド構成を選択することで <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#installation-steps">HCW が自動でエージェントをインストール</a> しますが、一般的ではないものの追加のエージェントをインストールする場合などに <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#option-2-manually-download--install-additional-agents">手動</a> でインストールすることもできます。</p>
 <p>モダン ハイブリッド構成からクラシック ハイブリッド構成に切り替えたり、プログラムと機能から Microsoft Hybrid Service を手動で削除すると、エージェントはアンインストールされます。</p>
 <p>Microsoft Hybrid Service がインストールされており起動している場合、次に Hybrid Service ログを確認します。</p>
 <p>サービスが起動しない場合も起動時のログを確認します。ログを有効にするには <code>C:\Program Files\Microsoft Hybrid Service</code> などサービスのインストール パスに移動します。フォルダー内に <code>Microsoft.Online.EME.Hybrid.Agent.Service.exe.config</code> というサービスの構成ファイルがあります。管理者権限で起動したメモ帳で構成ファイルを開き、<code>&lt;!—</code> と <code>--&gt;</code> を削除 (XML のコメントを解除) して保存します。</p>
 <p>コメントを解除してログが有効になった構成ファイルは以下のようになります。</p>
 <p><img src="hybagnt19.jpg" alt=""></p>
-<p>編集後、services.msc で Microsoft Hybrid Services を再起動してください。<a href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#testing-and-validation-of-the-hybrid-agent" target="_blank" rel="noopener">こちら</a> の情報を参考にして接続テストを行ったら、以下の 2 つのフォルダーのログを確認します。</p>
+<p>編集後、services.msc で Microsoft Hybrid Services を再起動してください。<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#testing-and-validation-of-the-hybrid-agent">こちら</a> の情報を参考にして接続テストを行ったら、以下の 2 つのフォルダーのログを確認します。</p>
 <ul>
 <li><code>C:\programdata\Microsoft Hybrid Service\Logging</code> には、コネクターの登録と起動に関するログが出力されます</li>
 <li><code>C:\programdata\Microsoft\Microsoft Hybrid Service\Trace</code> には、リクエストに関するログが出力されます</li>
 </ul>
-<p>ハイブリッド エージェントがインストール、登録、起動されていることが確認できたら、機能の検証を行います。<a href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#testing-and-validation-of-the-hybrid-agent" target="_blank" rel="noopener">こちら</a> の情報を参考に、空き時間情報とメールボックスの移行を検証することができます。Test-MigrationServerAvailability コマンドを実行してリクエストのカウンターが増加すれば、コネクターは動作しています。</p>
+<p>ハイブリッド エージェントがインストール、登録、起動されていることが確認できたら、機能の検証を行います。<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/hybrid-deployment/hybrid-agent#testing-and-validation-of-the-hybrid-agent">こちら</a> の情報を参考に、空き時間情報とメールボックスの移行を検証することができます。Test-MigrationServerAvailability コマンドを実行してリクエストのカウンターが増加すれば、コネクターは動作しています。</p>
 <p>次に確認するのは、ハイブリッド エージェントのマシンから Exchange サーバーにリクエストが到達しているかどうかです。EWS (MRSproxy.svc) リクエストに関して、主に 3 つのログがあります。</p>
 <ul>
 <li>HTTPerr ログ: <code>%SystemRoot%\System32\LogFiles\HTTPERR</code></li>
@@ -297,18 +293,18 @@ ga('send', 'pageview');
 <li>通信が失敗した時刻のログを横断的に見る。 (各ログの時刻は UTC で表記されています)</li>
 <li>失敗した通信のステータス コードは 200 ではない。 (もし 200 のログがあれば、それは失敗した通信のログではない)</li>
 <li>失敗した通信の情報が HTTPerr ログに記録されている場合、おそらく IIS ログと HTTPProxy ログに関連するログはありません。HTTPerr ログに記録された原因や IIS の構成ミスがないか確認する必要があります。</li>
-<li>失敗した通信の情報が IIS ログに記録されている場合、そのステータス コードで <a href="https://docs.microsoft.com/en-us/iis/troubleshoot/using-failed-request-tracing/troubleshooting-failed-requests-using-tracing-in-iis#enable-failed-request-tracing" target="_blank" rel="noopener">IIS の失敗した要求トレース</a> を実行したり、さらに詳細が HTTPProxy ログに記録されていないか確認したりします。</li>
+<li>失敗した通信の情報が IIS ログに記録されている場合、そのステータス コードで <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/iis/troubleshoot/using-failed-request-tracing/troubleshooting-failed-requests-using-tracing-in-iis#enable-failed-request-tracing">IIS の失敗した要求トレース</a> を実行したり、さらに詳細が HTTPProxy ログに記録されていないか確認したりします。</li>
 </ul>
 <p>Test-MigrationServerAvailability コマンドを実行すると、mrsproxy.svc へのログが 5 つくらい IIS ログに記録されます。2 つは 401 のステータスで、他に 200 のステータスのログが記録されます。仮に Test-MigrationServerAvailability のエラーが 503 Service Unavailable だったとしたら、IIS ログから 503 のログを探すことになります。IIS ログの 503 のログの例は以下の通りです。</p>
 <p><code>2020-02-20 06:57:42 192.168.2.50 POST /EWS/mrsproxy.svc - 443 miry\administrator 4.43.0.1 - 503 0 0 125</code></p>
 <p>上記のようなエラーがあったら、HTTPProxy ログや IIS の失敗した要求トレースを使用してより詳細なエラーの情報を調査する必要があります。</p>
-<p>Test-MigrationServerAvailability コマンドのよくあるエラーについては <a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/troubleshooting-hybrid-migration-endpoints-in-classic-and-modern/ba-p/953006" target="_blank" rel="noopener">こちら</a> のブログ記事を参照してください。</p>
+<p>Test-MigrationServerAvailability コマンドのよくあるエラーについては <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/troubleshooting-hybrid-migration-endpoints-in-classic-and-modern/ba-p/953006">こちら</a> のブログ記事を参照してください。</p>
 <p>今回紹介した情報がトラブルシューティングの際にお役に立てば幸いです。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Modern%20HCW%20(Hybrid%20Agent)%20%E3%81%AE%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E6%96%B9%E6%B3%95%E3%81%AE%E3%81%94%E7%B4%B9%E4%BB%8B/" data-id="cklvdk6o30017scsthynfcksr" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Modern%20HCW%20(Hybrid%20Agent)%20%E3%81%AE%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E6%96%B9%E6%B3%95%E3%81%AE%E3%81%94%E7%B4%B9%E4%BB%8B/" data-id="cklvm51i6002ib4st8j6p8bg6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li></ul>
