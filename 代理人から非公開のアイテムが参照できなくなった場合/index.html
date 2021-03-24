@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-177637248-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+  <title>代理人から非公開のアイテムが参照できなくなった場合や代理人設定時に「[代理人] タブの設定は正しく保存されませんでした」エラーが発生する場合の対処方法について
+ | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="現象代理人アクセスの設定時に 「代理人に非公開に設定したアイテムへのアクセスを許可する」 をオンにしておくことで、代理人は非公開のアイテムであっても参照を行うことが可能です。この設定を行っているにもかかわらず非公開のアイテムの参照ができない場合や代理人設定時以下のようなエラーがする場合があります。※ エラーメッセージは異なる場合もあります。    「[代理人] タブの設定は正しく保存されませんでし">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代理人から非公開のアイテムが参照できなくなった場合や代理人設定時に「[代理人] タブの設定は正しく保存されませんでした」エラーが発生する場合の対処方法について
+">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/%E4%BB%A3%E7%90%86%E4%BA%BA%E3%81%8B%E3%82%89%E9%9D%9E%E5%85%AC%E9%96%8B%E3%81%AE%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%9F%E5%A0%B4%E5%90%88/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="現象代理人アクセスの設定時に 「代理人に非公開に設定したアイテムへのアクセスを許可する」 をオンにしておくことで、代理人は非公開のアイテムであっても参照を行うことが可能です。この設定を行っているにもかかわらず非公開のアイテムの参照ができない場合や代理人設定時以下のようなエラーがする場合があります。※ エラーメッセージは異なる場合もあります。    「[代理人] タブの設定は正しく保存されませんでし">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-02-14T15:00:00.000Z">
+<meta property="article:modified_time" content="2017-02-14T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="EXO">
+<meta property="article:tag" content="Outlook">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-代理人から非公開のアイテムが参照できなくなった場合" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/%E4%BB%A3%E7%90%86%E4%BA%BA%E3%81%8B%E3%82%89%E9%9D%9E%E5%85%AC%E9%96%8B%E3%81%AE%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%9F%E5%A0%B4%E5%90%88/" class="article-date">
+  <time datetime="2017-02-14T15:00:00.000Z" itemprop="datePublished">2017-02-15</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      代理人から非公開のアイテムが参照できなくなった場合や代理人設定時に「[代理人] タブの設定は正しく保存されませんでした」エラーが発生する場合の対処方法について
+
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update: 
+        <a href="/blog/%E4%BB%A3%E7%90%86%E4%BA%BA%E3%81%8B%E3%82%89%E9%9D%9E%E5%85%AC%E9%96%8B%E3%81%AE%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%9F%E5%A0%B4%E5%90%88/" class="article-date-single">    
+    
+    <time datetime="2017-02-14T15:00:00.000Z" itemprop="dateUpdated">2017-02-15</time>
+    
+</a>              
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="現象"><a href="#現象" class="headerlink" title="現象"></a>現象</h2><p>代理人アクセスの設定時に 「代理人に非公開に設定したアイテムへのアクセスを許可する」 をオンにしておくことで、代理人は非公開のアイテムであっても参照を行うことが可能です。<br>この設定を行っているにもかかわらず非公開のアイテムの参照ができない場合や代理人設定時以下のようなエラーがする場合があります。<br>※ エラーメッセージは異なる場合もあります。  </p>
+<blockquote>
+<p>「[代理人] タブの設定は正しく保存されませんでした。空き時間と予定の入っている時間の情報をアクティブできません」  </p>
+</blockquote>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>非公開アイテムの設定が格納されている Freebusy フォルダーやルールに不整合が生じている場合に発生いたします。  </p>
+<h2 id="対処方法"><a href="#対処方法" class="headerlink" title="対処方法"></a>対処方法</h2><h3 id="1-無効にされたユーザーの代理人権限の削除"><a href="#1-無効にされたユーザーの代理人権限の削除" class="headerlink" title="(1) 無効にされたユーザーの代理人権限の削除"></a>(1) 無効にされたユーザーの代理人権限の削除</h3><p>このエラーメッセージが表示される場合の多くの原因が、複数の代理人がいるシナリオで、代理人設定を付与したまま一部のユーザーが無効化されてしまったときであることを確認しています。<br>過去に代理人設定をし、権限を削除せずに無効化したユーザーがいる場合は、無効化したユーザーをいったん再度有効化し、代理人権限を削除してください。  </p>
+<p>予定表フォルダーなどフォルダーに対して付与した権限は以下のコマンドで削除します。  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Remove-MailboxFolderPermission</span> <span class="literal">-Identity</span> &lt;ユーザー&gt;:\calendar <span class="literal">-User</span> &lt;無効にしたユーザー&gt;</span><br></pre></td></tr></table></figure>
+<p>※フォルダー名が日本語の場合は、<code>&lt;ユーザー&gt;:\予定表</code> と指定します。  </p>
+<p>代理送信権限は、以下のコマンドで削除し、必要なユーザーにあらためて代理送信権を付与します。  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-Mailbox</span> &lt;ユーザー&gt; <span class="literal">-GrantSendOnBehalfTo</span> <span class="variable">$null</span></span><br></pre></td></tr></table></figure>
+
+<p>こちらで回避できない場合は、(2) の手順をお試しください。  </p>
+<h3 id="2-ResetDelegateUserCollection-スイッチで代理人設定と隠しルールを削除"><a href="#2-ResetDelegateUserCollection-スイッチで代理人設定と隠しルールを削除" class="headerlink" title="(2) ResetDelegateUserCollection スイッチで代理人設定と隠しルールを削除"></a>(2) ResetDelegateUserCollection スイッチで代理人設定と隠しルールを削除</h3><p>管理者から以下のコマンドレット スイッチを実行し、隠しルールをリセットします。  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Remove-MailboxFolderPermission</span> <span class="literal">-Identity</span> &lt;ユーザー&gt;:\calendar <span class="literal">-ResetDelegateUserCollection</span></span><br></pre></td></tr></table></figure>
+
+<p>このコマンドは、予定表の参照や書き込みの権限は削除されません。<br>こちらで回避できない場合は、(3) の手順をお試しください。  </p>
+<h3 id="3-MFCMAPI-による-Freebusy-フォルダーの初期化とルールの削除"><a href="#3-MFCMAPI-による-Freebusy-フォルダーの初期化とルールの削除" class="headerlink" title="(3) MFCMAPI による Freebusy フォルダーの初期化とルールの削除"></a>(3) MFCMAPI による Freebusy フォルダーの初期化とルールの削除</h3><p>Freebusy フォルダーの初期化とルールの削除を行ってから、代理人の再設定を行うことで事象を解消することができます。  </p>
+<h3 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h3><p>代理人設定については、[ファイル]タブ -[アカウント設定]-[代理人アクセス] をクリックし、スクリーンショットを採取しバックアップとしてください。  </p>
+<h3 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h3><ol>
+<li><p>代理人を設定する側の端末にて Outlook を終了の上、以下の URL から MFCMAPI.exe をダウンロードします。<br><a target="_blank" rel="noopener" href="https://github.com/stephenegriffin/mfcmapi/releases">Releases stephenegriffin-mfcmapi GitHub</a></p>
+<p>※ インストールされている Office クライアントの bit にあわせてダウンロードをお願いします。<br>例<br>   32 bit : MFCMAPI.exe.20.0.20307.01.zip<br>   64 bit : MFCMAPI.exe.x64.20.0.20307.01.zip<br>   ※ 最新バージョンで何らかの問題が発生する場合は過去にリリースされているバージョンをお試しください。  </p>
+</li>
+<li><p>zip ファイルを実行して、C:\MFCMAPI などとフォルダーを指定して解凍します。  </p>
+</li>
+<li><p>解凍されたファイルの MFCMAPI.exe を起動します。  </p>
+</li>
+<li><p>[About MFCMAPI] というダイアログが表示されたら [OK] をクリックします。  </p>
+</li>
+<li><p>[Tools] - [Options] をクリックします。  </p>
+</li>
+<li><p>“Use the MDB_ONLINE flag when calling OpenMsgStore” をチェックをオンにし、[OK] をクリックします。  </p>
+</li>
+<li><p>[Session] - [Logon] をクリックします。  </p>
+</li>
+<li><p>プロファイル選択が表示されたら、対象のプロファイルを選択して、[OK] をクリックします。  </p>
+</li>
+<li><p>[&lt;本人のメールアドレス&gt;] をダブル クリックします。  </p>
+</li>
+<li><p>[Root Container] - [Freebusy Data] をダブル クリックします。  </p>
+</li>
+<li><p>新しく開いた [Freebusy Data] ウィンドウにて、[Subject] 列が [LocalFreebusy] のアイテムを右クリックし、[Delete message] をクリックします。  </p>
+</li>
+<li><p>“Deletion style” を [Permanent delete passing DELETE_HARD_DELETE (unrecoverable)] に変更の上、[OK] をクリックし、ウィンドウは [X] で閉じます。  </p>
+</li>
+<li><p>次に [Root Container] をクリックします。  </p>
+</li>
+<li><p>右ペインに表示されている一覧から、[Name] 列が “PR_FREEBUSY_ENTRYIDS” で始まるエントリを右クリックして [Delete Property] を選択し、確認ダイアログが表示されたら [OK] をクリックします。  </p>
+</li>
+<li><p>さらに [Root Container] - [インフォメーション ストアの先頭 (または、Top of information Store 表記)] - [受信トレイ] をクリックします。  </p>
+</li>
+<li><p>右ペインに表示されている一覧から、[Name] 列が “PR_FREEBUSY_ENTRYIDS” で始まるエントリを右クリックして [Delete Property] を選択し、確認ダイアログが表示されたら [OK] をクリックします。  </p>
+</li>
+<li><p>引き続き、代理人についてのルールを削除します。  </p>
+</li>
+<li><p>[Root Container] - [インフォメーション ストアの先頭 (または、Top of information Store 表記)] - [受信トレイ] を右クリックして [Other tables] - [Rules table] をクリックします。  </p>
+</li>
+<li><p>上半分の 1 行目を選択し、下半分の [PR_RULE_PROVIDER] で始まるエントリーの [Value] 列が [Schedule+ EMS Interface] になっているかを確認します。  </p>
+</li>
+<li><p>[Schedule+ EMS Interface] になっている場合は、上半分側で選択している行を右クリックして [Delete] をクリックして削除します。  </p>
+</li>
+<li><p>他の行に対しても同様に作業を行います。  </p>
+</li>
+<li><p>MFCMAPI を終了します。  </p>
+</li>
+<li><p>Outlook を起動します。  </p>
+</li>
+<li><p>[ファイル]タブ - [アカウント設定] - [代理人アクセス] をクリックします。  </p>
+</li>
+<li><p>現在設定されている代理人をすべて削除します。  </p>
+</li>
+<li><p>Outlook を再起動します。  </p>
+</li>
+<li><p>[ファイル]タブ - [アカウント設定] - [代理人アクセス] をクリックします。  </p>
+</li>
+<li><p>代理人の再設定を行います。<br>代理人の設定をエラーなく完了できるか、代理人側より非公開のアイテムの参照が可能かご確認ください。<br>代理人側からの参照ができない場合には、代理人の Outlook プロファイルの再作成もお試しください。  </p>
+</li>
+</ol>
+<p><strong>本情報の内容 (添付文書、リンク先などを含む) は作成日時点でのものであり、予告なく変更される場合があります。</strong>  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/%E4%BB%A3%E7%90%86%E4%BA%BA%E3%81%8B%E3%82%89%E9%9D%9E%E5%85%AC%E9%96%8B%E3%81%AE%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%8C%E5%8F%82%E7%85%A7%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%8F%E3%81%AA%E3%81%A3%E3%81%9F%E5%A0%B4%E5%90%88/" data-id="ckmmut2vr0028wcsthimk24dd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/%E3%83%8F%E3%82%A4%E3%83%96%E3%83%AA%E3%83%83%E3%83%89%E7%92%B0%E5%A2%83%E3%81%A7%E3%82%AA%E3%83%B3%E3%83%97%E3%83%AC%E3%83%9F%E3%82%B9%E3%81%A8%20Exchange%20Online%20%E3%81%AE%E4%B8%A1%E6%96%B9%E3%81%AB%E3%83%A1%E3%83%BC%E3%83%AB%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9%E3%81%8C%E4%BD%9C%E6%88%90%E3%81%95%E3%82%8C%E3%82%8B%E4%BA%8B%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ハイブリッド環境でオンプレミスと Exchange Online の両方にメールボックスが作成される事象について
+
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/Exchange%202013-2016%20%E3%81%AE%E3%82%BB%E3%83%BC%E3%83%95%E3%83%86%E3%82%A3%E3%83%8D%E3%83%83%E3%83%88%E3%81%AE%E4%BF%9D%E5%AD%98%E6%9C%9F%E9%96%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange 2013/2016 のセーフティネットの保存期間
+</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/Exchange%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E6%9B%B4%E6%96%B0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/">Exchange サーバーのセキュリティ更新プログラムについて
+</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook%20%E3%81%AE%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%86%8D%E4%BD%9C%E6%88%90%E3%81%AB%E5%86%8D%E8%A8%AD%E5%AE%9A%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%AA%E6%83%85%E5%A0%B1/">Outlook のプロファイル再作成に再設定が必要な情報</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Office%20365%20%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%81%AE%E5%B8%B0%E5%B1%9E/">Office 365 におけるメッセージの帰属
+</a>
+          </li>
+        
+          <li>
+            <a href="/blog/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8D%E3%83%83%E3%83%88%E6%8E%A5%E7%B6%9A%E6%80%A7%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B%E7%92%B0%E5%A2%83%E3%81%A7%20Outlook%20%E3%81%AB%E3%82%88%E3%82%8B%E5%85%88%E9%80%B2%E8%AA%8D%E8%A8%BC%E3%81%8C%E5%A4%B1%E6%95%97%E3%81%99%E3%82%8B/">インターネット接続性チェックが失敗する環境で Outlook による先進認証が失敗する</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/">Exchange Online でのメールの自動転送について知っておくべきこと
+</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
