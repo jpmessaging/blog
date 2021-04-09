@@ -2,7 +2,9 @@
 menu:
   Home: /
   Archives: /archives
+  サポート情報: https://cssjpn.github.io/
   About: /about
+
 rss: /atom.xml
 
 # Content
