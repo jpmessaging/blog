@@ -11,7 +11,7 @@ a. アドインの動作に時間がかかった<br>
 b. アドインがクラッシュした
 <br><br>
 この記事では、a の場合の対処方法について説明します。
-b については[こちら](https://jpmessaging.github.io/blog/%E3%82%A2%E3%83%89%E3%82%A4%E3%83%B3%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95%20%E7%AC%AC%202%20%E5%9B%9E/)の記事を参照してください。
+b については[こちら](https://jpmessaging.github.io/blog/enabled-addin-crash/)の記事を参照してください。
 <br><br>
 
 ## 概要
