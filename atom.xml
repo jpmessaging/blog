@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2021-03-07T15:00:00.000Z</updated>
+  <updated>2021-04-21T15:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>アドインを有効にする方法 &lt;第 2 回&gt; アドインがクラッシュした場合</title>
+    <link href="https://jpmessaging.github.io/blog/enabled-addin-crash/"/>
+    <id>https://jpmessaging.github.io/blog/enabled-addin-crash/</id>
+    <published>2021-04-21T15:00:00.000Z</published>
+    <updated>2021-04-21T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Outlook のアドインが意図せず無効化される場合、主に以下の 2 つが原因として挙げられます。  </p><p>a. アドインの動作に時間がかかった<br>b. アドインがクラッシュした  </p><p>a については、<a href="https://jpmessaging.github.io/blog/enabled-addin-delay/">こちら</a>の記事を参照してください。<br>この記事では、b の場合の対処方法について説明します。  </p><h2 id="手動で有効化する方法"><a href="#手動で有効化する方法" class="headerlink" title="手動で有効化する方法"></a>手動で有効化する方法</h2><p>無効になったアドインは、以下の 2 つに分類されます。  </p><p>・アクティブでないアプリケーション アドイン<br>・無効なアプリケーション アドイン  </p><p>それぞれ、以下の手順にて有効にすることができます。  </p><p><ins>アクティブでないアプリケーション アドインを有効にする</ins>  </p><ol><li>Outlook を起動し、[ファイル] タブをクリックします。  </li><li>左ペインのメニューから [オプション] をクリックします。  </li><li>カテゴリ ペインで [アドイン] をクリックします。  </li><li>詳細ペインの [アクティブでないアプリケーション アドイン] ボックスの一覧にアドインが表示されていることを確認します。  </li><li>[管理] ボックスの [COM アドイン] をクリックし、[設定] をクリックします。  </li><li>[COM アドイン] ダイアログ ボックスで、無効にされたアドインの横のチェック ボックスをオンにします。  </li><li>[OK] をクリックします。  </li></ol><p><ins>無効なアプリケーション アドインを有効にする</ins>  </p><ol><li>Outlook を起動し、[ファイル] タブをクリックします。  </li><li>左ペインのメニューから [オプション] をクリックします。  </li><li>カテゴリ ペインで [アドイン] をクリックします。  </li><li>詳細ペインの [無効なアプリケーション アドイン] ボックスの一覧にアドインが表示されていることを確認します。  </li><li>[管理] ボックスの [使用できないアイテム] をクリックし、[設定] をクリックします。  </li><li>アドインを選択し、[有効にする] をクリックします。  </li><li>[閉じる] をクリックします。  </li></ol><h2 id="レジストリを変更して有効化する方法"><a href="#レジストリを変更して有効化する方法" class="headerlink" title="レジストリを変更して有効化する方法"></a>レジストリを変更して有効化する方法</h2><p>レジストリの値を変更してアドインを有効にすることができます。<br>対象のレジストリの場所は複数あります。(1) と (2) をそれぞれ確認してください。  </p><p><strong>(1) LoadBehavior レジストリの値を 3 にする</strong><br>アドインの有効/無効は、以下の LoadBehavior レジストリに紐づいています。<br>LoadBehavior の値を 3 にすることで、アドインを Outlook のオプションからチェック オンにした際と同じ状態にすることができます。  </p><p>値の場所: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\Outlook\Addins&lt;アドインの ProgID&gt; (※1)<br>値の名前: LoadBehavior<br>値の種類: REG_DWORD<br>値のデータ: 3 (有効)  </p><p>※1 LoadBehavior のレジストリの値の場所<br>LoadBehavior のレジストリの値の場所は、アドインのインストール範囲と OS・Office の構成によって異なります。  </p><p><ins>HKCU 配下に登録したアドイン (アドインのインストール時に「このユーザーのみ」を選択した場合)</ins><br>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\Outlook\Addins&lt;アドインの ProgID&gt;  </p><p><ins>HKLM 配下に登録したアドイン (アドインのインストール時に「すべてのユーザー」を選択した場合)</ins><br><strong>Windows 32 bit + Office 32 bit / Windows 64 bit + Office 64 bit (MSI インストール):</strong><br>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\Outlook\Addins&lt;アドインの ProgID&gt;  </p><p><strong>Windows 64 bit + Office 32 bit (MSI インストール):</strong><br>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Office\Outlook&lt;アドインの ProgID&gt;  </p><p><strong>Windows 32 bit + Office 32 bit / Windows 64 bit + Office 64 bit (クイック実行):</strong><br>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Registry\Machine\Software\Microsoft\Office\Outlook\Addins&lt;アドインの ProgID&gt;  </p><p><strong>Windows 64 bit + Office 32 bit (クイック実行):</strong><br>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Wow6432Node\Microsoft\Office\Outlook\Addins&lt;アドインの ProgID&gt;  </p><p>HKLM 配下に登録したアドインの場合、HKLM 配下に加えて HKCU 配下にも LoadBehavior レジストリが作成される場合があります。<br>HKCU と HKLM の両方に LoadBehavior が存在する場合、HKCU の情報で HKLM が上書きされる動作となります。<br>そのため HKLM に LoadBehavior レジストリがある場合には、HKCU にも存在するかを確認してください。  </p><p><strong>(2) CrashingAddinList と DisabledItems レジストリを削除する</strong><br>「無効なアプリケーション アドイン」となっている場合、以下の CrashingAddinList や DisabledItems レジストリが作成されている可能性があります。  </p><p>値の場所: HKEY_CURRENT_USER\Software\Microsoft\Office\&lt;バージョン&gt;\Outlook\Resiliency\CrashingAddinList<br>値の名前 : &lt;ランダムな英数字&gt;<br>値の種類 : REG_BINARY<br>値のデータ : &lt;アドインの DLLのパスを表すバイナリ値&gt;  </p><p>値の場所: HKEY_CURRENT_USER\Software\Microsoft\Office\&lt;バージョン&gt;\Outlook\Resiliency\DisabledItems<br>値の名前 : &lt;ランダムな英数字&gt;<br>値の種類 : REG_BINARY<br>値のデータ : &lt;アドインの DLLのパスを表すバイナリ値&gt;  </p><p>※ &lt;バージョン&gt; には以下の数字が入ります<br>Outlook 2013 : 15.0<br>Microsoft 365 Apps / Outlook 2019 / Outlook 2016 : 16.0  </p><p>CrashingAddinList や DisabledItems キー配下に値が作成されている場合には、CrashingAddinList や DisabledItems キーごと削除します。<br>これらのレジストリの値の名前はランダムで、値のデータはバイナリ値であるため削除対象の絞り込みをユーザーが行うことが難しいため、すべて削除することをおすすめしています。  </p><p>上述の (1)(2) をグループ ポリシーでのレジストリ変更・スクリプト実行で行うことにより、できる限りアドインが無効化されることを防ぐことができます。<br>しかしながらアドイン内部や Office の構成に問題がある場合には、このようなレジストリ操作を行ってもアドインは無効化されます。  </p><h2 id="繰り返しアドインが無効になる場合"><a href="#繰り返しアドインが無効になる場合" class="headerlink" title="繰り返しアドインが無効になる場合"></a>繰り返しアドインが無効になる場合</h2><p>Outlook 起動直後に LoadBehavior レジストリが 3 以外になり、3 に変更してもそれが繰り返される場合には、Office の構成に原因がある可能性があります。<br>Office を修復して解消するか確認してください。  </p><p><a href="https://support.microsoft.com/ja-jp/office/office-%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BF%AE%E5%BE%A9%E3%81%99%E3%82%8B-7821d4b6-7c1d-4205-aa0e-a6b40c5bb88b">https://support.microsoft.com/ja-jp/office/office-%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BF%AE%E5%BE%A9%E3%81%99%E3%82%8B-7821d4b6-7c1d-4205-aa0e-a6b40c5bb88b</a>  </p><p>修復実施後も解消しない場合には、アドイン開発元への確認をお願いします。  </p><p><strong>本情報の内容 (添付文書、リンク先などを含む) は作成日時点でのものであり、予告なく変更される場合があります。</strong>  </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Outlook のアドインが意図せず無効化される場合、主に以下の 2 つが原因として挙げられます。  &lt;/p&gt;
+&lt;p&gt;a. アドインの動作に時間がかかった&lt;br&gt;b. アドインがクラッシュした  &lt;/p&gt;
+&lt;p&gt;a については、&lt;a href=&quot;https://jpmess
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Outlook" scheme="https://jpmessaging.github.io/blog/tags/Outlook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>アドインを有効にする方法 &lt;第 1 回&gt; アドインの動作に時間がかかる場合</title>
+    <link href="https://jpmessaging.github.io/blog/enabled-addin-delay/"/>
+    <id>https://jpmessaging.github.io/blog/enabled-addin-delay/</id>
+    <published>2021-04-20T15:00:00.000Z</published>
+    <updated>2021-04-20T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Outlook のアドインが意図せず無効化される場合、主に以下の 2 つが原因として挙げられます。  </p><p>a. アドインの動作に時間がかかった<br>b. アドインがクラッシュした  </p><p>この記事では、a の場合の対処方法について説明します。<br>b については<a href="https://jpmessaging.github.io/blog/enabled-addin-crash/">こちら</a>の記事を参照してください。  </p><h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>Outlook には、アドインのパフォーマンスを監視し、起動や終了、その他動作で時間のかかるアドインを自動的に無効化する機能があります。<br>アドインのパフォーマンス低下によって、Outlook の他の機能の利用において遅延が生じるのを防ぐことがこの機能の目的です。  </p><p>アドインを無効にするかどうかはいくつかの基準があり、それぞれの基準で読み込みの時間を記録し、連続した 5 回の読み込み時間の中央値が算出されます。(起動の頻度は除く)<br>その中央値より 1000 ミリ秒 (1 秒) を超えると、Outlook はそのアドインを無効にします。<br>基準やしきい値については、以下の公開情報を参照してください。  </p><p><a href="https://docs.microsoft.com/ja-jp/previous-versions/office/jj228679(v=office.15)#%E3%82%A2%E3%83%89%E3%82%A4%E3%83%B3%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E4%BF%9D%E3%81%A4%E3%81%9F%E3%82%81%E3%81%AE%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E5%9F%BA%E6%BA%96">https://docs.microsoft.com/ja-jp/previous-versions/office/jj228679(v=office.15)#%E3%82%A2%E3%83%89%E3%82%A4%E3%83%B3%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E4%BF%9D%E3%81%A4%E3%81%9F%E3%82%81%E3%81%AE%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E5%9F%BA%E6%BA%96</a>  </p><h2 id="アドイン無効化機能の対象から除外する方法-1-手動設定"><a href="#アドイン無効化機能の対象から除外する方法-1-手動設定" class="headerlink" title="アドイン無効化機能の対象から除外する方法 (1) 手動設定"></a>アドイン無効化機能の対象から除外する方法 (1) 手動設定</h2><p>アドインが無効にされた場合には、通知バーに「アドインが自動的に無効化された」という通知が表示されます。  </p><p><img src="Alert_Dialog.png" alt="">  </p><p>通知バーにある [無効になったアドインの表示] をクリックすると、[無効になったアドイン] ダイアログが表示されます。<br>このダイアログは、[ファイル] タブの [COM アドインの管理] からも確認することができます。(無効になったアドインがない場合には表示されません。)  </p><p><img src="Addin_Dialog.png" alt="">  </p><p>このダイアログで、以下のいずれかを選択することで、一時的にアドイン無効化機能の対象から除外することができます。  </p><p>・次の 7 日間このアドインの監視を行わない<br>・次の 30 日間このアドインの監視を行わない  </p><h2 id="アドイン無効化機能の対象から除外する方法-2-レジストリ-グループ-ポリシー"><a href="#アドイン無効化機能の対象から除外する方法-2-レジストリ-グループ-ポリシー" class="headerlink" title="アドイン無効化機能の対象から除外する方法 (2) レジストリ/グループ ポリシー"></a>アドイン無効化機能の対象から除外する方法 (2) レジストリ/グループ ポリシー</h2><p>上記手動での設定は最大 30 日間と限定されますが、以下のレジストリを作成することで、特定のアドインを常に監視対象から除外とすることができます。  </p><p>値の場所: HKEY_CURRENT_USER\Software\Policies\Microsoft\Office&lt;バージョン&gt;\Outlook\Resiliency\AddinList<br>値の名前: &lt;アドインのProgID&gt;<br>値の種類: REG_SZ<br>値のデータ: 1 (常に有効)  </p><p>※1 &lt;バージョン&gt; には以下の数字が入ります。<br>Outlook 2013 : 15.0<br>Microsoft 365 Apps / Outlook 2019 / Outlook 2016 : 16.0  </p><p>※2 アドインの ProgID とは、アドインの識別名称です。以下のレジストリに登録されているものと同一です。  </p><p><ins>HKCU 配下に登録したアドイン (アドインのインストール時に「このユーザーのみ」を選択した場合)</ins><br>HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\Outlook\Addins  </p><p><ins>HKLM 配下に登録したアドイン (アドインのインストール時に「すべてのユーザー」を選択した場合)</ins><br><strong>Windows 32 bit + Office 32 bit / Windows 64 bit + Office 64 bit (MSI インストール):</strong><br>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\Outlook\Addins  </p><p><strong>Windows 64 bit + Office 32 bit (MSI インストール):</strong><br>HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Office\Outlook  </p><p><strong>Windows 32 bit + Office 32 bit / Windows 64 bit + Office 64 bit (クイック実行):</strong><br>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Registry\Machine\Software\Microsoft\Office\Outlook\Addins  </p><p><strong>Windows 64 bit + Office 32 bit (クイック実行):</strong><br>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Wow6432Node\Microsoft\Office\Outlook\Addins  </p><p>この AddinList レジストリはグループ ポリシーでも設定することが可能です。<br>Office 管理用テンプレートの [Microsoft Outlook 2016 (または Microsoft Outlook 2013)]-[その他]-[管理対象アドインの一覧] を有効にし、以下の値を設定します。  </p><p>値の名前: &lt;アドインの ProgID&gt;<br>値: 1  </p><p>Office の管理用テンプレートについては、以下の記事もご参照ください。  </p><p><a href="https://social.msdn.microsoft.com/Forums/ja-JP/9cfe7f7a-ca37-4a9b-98d6-e0b3d4362598/office-gpo-outlook-?forum=exchangeteamjp">https://social.msdn.microsoft.com/Forums/ja-JP/9cfe7f7a-ca37-4a9b-98d6-e0b3d4362598/office-gpo-outlook-?forum=exchangeteamjp</a>  </p><p><strong>本情報の内容 (添付文書、リンク先などを含む) は作成日時点でのものであり、予告なく変更される場合があります。</strong>  </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Outlook のアドインが意図せず無効化される場合、主に以下の 2 つが原因として挙げられます。  &lt;/p&gt;
+&lt;p&gt;a. アドインの動作に時間がかかった&lt;br&gt;b. アドインがクラッシュした  &lt;/p&gt;
+&lt;p&gt;この記事では、a の場合の対処方法について説明します。&lt;br&gt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Outlook" scheme="https://jpmessaging.github.io/blog/tags/Outlook/"/>
+    
+  </entry>
   
   <entry>
     <title>Exchange サーバーのセキュリティ更新プログラムについて
@@ -470,58 +522,6 @@
     
     
       <category term="O365Identity" scheme="https://jpmessaging.github.io/blog/tags/O365Identity/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>コネクタ設定における 3 つのポイント (送信元  組織のメール サーバー)
-</title>
-    <link href="https://jpmessaging.github.io/blog/%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%203%20%E3%81%A4%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%20(%E9%80%81%E4%BF%A1%E5%85%83%20%20%E7%B5%84%E7%B9%94%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC)/"/>
-    <id>https://jpmessaging.github.io/blog/%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%203%20%E3%81%A4%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%20(%E9%80%81%E4%BF%A1%E5%85%83%20%20%E7%B5%84%E7%B9%94%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC)/</id>
-    <published>2017-12-06T15:00:00.000Z</published>
-    <updated>2017-12-06T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>今回は Exchange Online のメール フローにおいて、お客様からしばしばお問い合わせをいただいておりますオンプレミスのサーバー向けにコネクタ設定を行う際の注意点をお伝えします。</p><p>Exchange Online は特定の送信元 IP から急激なメール受信量の増加を検知すると、サービスを保護するために当該 IP からのメール受信を自動的に制限し、遅延受信させます。<br>これは以下の blog でご案内の IP スロットリングの機能ですが、この特定の IP がお客様にて運用されている問題のないサーバーである場合には本機能の動作は不要であり、回避するためには送信元を組織のメール サーバー、送信先を Office 365 とするコネクタの設定が有効です。<br>&nbsp;<br>Title: IP スロットリングについて<br>URL: <a href="https://blogs.technet.microsoft.com/exchangeteamjp/2015/03/23/ip/">https://blogs.technet.microsoft.com/exchangeteamjp/2015/03/23/ip/</a><br>&nbsp;<br>送信元を組織のメール サーバーとするコネクタを設定すると、特定の送信元サーバーからのメールをコネクタが作成されている Office 365 テナントへメールをルーティングする動作となります。<br>このようなコネクタを作成するときには以下の点について予めご留意いただきますようお願い申し上げます。</p><p>&nbsp;<br><u><strong>&lt;&lt; Point 1 &gt;&gt; 他テナント宛てのメールも自テナントで受信する</strong></u><br>前述のようにコネクタを作成することで対象となるメール サーバーから送信されたメールを Office 365 が受信すると、コネクタのあるテナントへまずメールをルーティングします (後述の Point 2 および 3 でご案内の、コネクタが使用される条件を満たしていることが前提となります)。<br>そのため、宛先が別の Office 365 テナントのメール (別のお客様にご登録いただいているドメインを含むメール) である場合にも、コネクタのあるテナントでまず受信します。<br>その後、実際に宛先ドメインが登録されているテナントへメールが中継されます。<br>これは特別なことではなく、組織のメール サーバーからのメールを受信するように設定されたコネクタが適切に動作した結果です。</p><p>そこで注意が必要となるのは、Exchange Online には各テナントごとにメール フローのルール設定 (トランスポート ルール) を行うことができるため、例えば自テナントに登録されていないドメイン宛てのメールはブロックするような設定を行っていると、組織のメール サーバーから他テナント宛てのメールも最終的にブロックされ届かない問題が起きます。<br>コネクタを設定する際は組織のメール サーバーからのメールは一度、自テナントにて受信し他テナントへ中継される動作となることにご注意ください。</p><p>&nbsp;<br><u><strong>&lt;&lt; Point 2 &gt;&gt; 証明書ベースのコネクタが効かない場合がある</strong></u><br>組織のメール サーバーを送信元とするコネクタには、送信元を識別する方法として送信元メール サーバーが提示する証明書のサブジェクト名 (別名) または送信元 IP アドレスを選ぶことができます。<br>弊社としては前者の証明書ベースのコネクタを推奨しております。これは以下の Web サイトでご案内のように後者の IP アドレス ベースのコネクタの場合には Office 365 がメールの中継を拒否する場合があるためです。<br>&nbsp;<br> Title: Office 365 の電子メールでコネクタを構成しているお客様への重要なお知らせ<br>  URL: <a href="https://support.microsoft.com/ja-jp/help/3169958/important-notice-for-office-365-email-customers-who-have-configured-co">https://support.microsoft.com/ja-jp/help/3169958/important-notice-for-office-365-email-customers-who-have-configured-co</a><br>&nbsp;<br>Office 365 は外部からメールを受信すると、全テナントのコネクタに設定されている証明書のサブジェクト名と、送信元メール サーバーが提示した証明書のサブジェクト名 (別名) を照らし合わせ、合致するコネクタを抽出します。<br>合致するコネクタがあると、そのコネクタに設定されているサブジェクト名がそもそもコネクタのあるテナントに登録されているドメインであるかチェックします (※ 1)。<br>証明書のサブジェクト名がテナントに登録されていないドメインである場合は、代わりに送信者 (差出人) もしくは受信者のメール ドメインがテナントに登録されているドメインかをチェックします。<br>チェックを通過したメールはコネクタ設定のあるテナントへルーティングされます。</p><p>(※ 1) ワイルドカードも考慮されるため、例えばコネクタの設定が *.contoso.com であり、テナントに登録されているドメインが contoso.com や jpn.contoso.com といった場合も有効です。</p><p>コネクタのサブジェクト名と証明書のサブジェクト名だけを合わせテナントに登録されているドメインとは合致しない場合には、送信者 (差出人) または受信者のメール ドメインも登録されていないドメインであると、コネクタが使用されないことをご注意ください。</p><p>この点につきましては、下記 TechNet でもご案内しております。<br>&nbsp;<br>Title: Office 365 と独自の電子メール サーバーの間のメールをルーティングするようにコネクタを設定する<br>URL: <a href="https://technet.microsoft.com/ja-jp/library/dn751020(v=exchg.150).aspx">https://technet.microsoft.com/ja-jp/library/dn751020(v=exchg.150).aspx</a></p><ul><li>パート 1:Office 365 から電子メール サーバーにメールが流れるように構成する (該当箇所を以下に抜粋)<br>Office 365 の承認済みドメインと一致するサブジェクト名で構成されている証明書を使用する。証明書の共通名、またはサブジェクトの別名を組織のプライマリ SMTP ドメインと一致させることをお勧めします。</li></ul><p>&nbsp;<br><u><strong>&lt;&lt; Point 3 &gt;&gt; コネクタがあってもメールが届かない場合がある</strong></u><br>送信元を組織のメール サーバーとするコネクタを設定すると、これまで述べてきたようにコネクタのあるテナントでまずメールを受信します。<br>証明書ベースのコネクタの場合には、Point 2 でご案内の動作により証明書のサブジェクト名 (別名)、コネクタのサブジェクト名、テナントのドメインの 3 つの条件にすべて合致することで、送受信者のメール ドメインがテナントのドメインに登録されていない場合にも有効にコネクタが動作することを説明しました。</p><p>一方、IP アドレス ベースのコネクタの場合には証明書のサブジェクト名による情報がないため、全テナントから送信元 IP の設定と合致するコネクタが抽出された後、送信者 (差出人) または受信者のメール ドメインがコネクタのあるテナントに登録されているドメインかどうかのみチェックされます。</p><p>ここで注意が必要となるのが、送信者 (差出人) のドメインがテナントに登録されていないケースです。<br>その場合は受信者のメール ドメインがコネクタのあるテナントに登録されているドメインかどうかがチェックされますが、送信元メール サーバーが単一の SMTP セッションの中で複数のメール ドメインを受信者として送信 (※ 2) すると、Office 365 はどのドメインをコネクタの検証用に使用すればよいか判断できず中継が拒否されます。</p><p>本記事執筆時点 (2017 年 12 月 6 日) では、複数の宛先メール ドメインが、同じコネクタのあるテナントにいずれも登録されており複数テナントにまたがっていなかったとしても中継が拒否されることをご注意ください。</p><p>(※ 2) 例えば以下のように RCPT TO コマンドで複数のメール ドメインが受信者として指定される場合です。<br>MAIL FROM: <a href="mailto:user01@contoso.com">user01@contoso.com</a><br>RCPT TO: <a href="mailto:user01@adatum.com">user01@adatum.com</a><br>RCPT TO: <a href="mailto:user01@fabrikam.com">user01@fabrikam.com</a></p><p>&nbsp;<br>今回のご案内は以上となります。<br>Office 365 とお客様のメール サーバーとを円滑にご連携いただく際の注意点としてお役に立てていただけますと幸いです。<br>&nbsp;<br>※本情報の内容は作成日時点でのものであり、予告なく変更される場合があります。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;今回は Exchange Online のメール フローにおいて、お客様からしばしばお問い合わせをいただいておりますオンプレミスのサーバー向けにコネクタ設定を行う際の注意点をお伝えします。&lt;/p&gt;
-&lt;p&gt;Exchange Online は特定の送信元 IP から急激なメール
-      
-    
-    </summary>
-    
-    
-    
-      <category term="EXO" scheme="https://jpmessaging.github.io/blog/tags/EXO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>オンプレミスの Exchange Server 環境に新規サーバーを追加する際の留意事項について
-</title>
-    <link href="https://jpmessaging.github.io/blog/%E3%82%AA%E3%83%B3%E3%83%97%E3%83%AC%E3%83%9F%E3%82%B9%E3%81%AE%20Exchange%20Server%20%E7%92%B0%E5%A2%83%E3%81%AB%E6%96%B0%E8%A6%8F%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%AE%E7%95%99%E6%84%8F%E4%BA%8B%E9%A0%85%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/"/>
-    <id>https://jpmessaging.github.io/blog/%E3%82%AA%E3%83%B3%E3%83%97%E3%83%AC%E3%83%9F%E3%82%B9%E3%81%AE%20Exchange%20Server%20%E7%92%B0%E5%A2%83%E3%81%AB%E6%96%B0%E8%A6%8F%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%E9%9A%9B%E3%81%AE%E7%95%99%E6%84%8F%E4%BA%8B%E9%A0%85%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</id>
-    <published>2017-10-31T15:00:00.000Z</published>
-    <updated>2017-10-31T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>こんにちは。Exchange サポートの益森です。</p><p>以前、以下のブログにて、Outlook クライアントが追加構築中のサーバーに接続してしまう動作およびその回避方法を案内しておりますが、最近、ハイブリッド環境の構築など、オンプレミス Exchange Server 環境に新規サーバーを追加するケースが増えているため、改めて、簡単にオンプレミスの Exchange Server 環境に新規サーバーを追加する際の留意事項についてご案内をさせていただきます。</p><p>Title : Active Directory サイトを活用した Exchange 導入<br>URL : <a href="https://jpmessaging.github.io/blog/Active%20Directory%20サイトを活用した%20Exchange%20導入/">https://jpmessaging.github.io/blog/Active%20Directory%20サイトを活用した%20Exchange%20導入/</a></p><p>まず、上記ブログに記載の通り、Outlook クライアントが追加構築中のサーバーに接続してしまった場合、証明書に関するポップアップが表示される可能性がございます。</p><p>また、環境構成等にもよりますが、Outlook クライアントが意図せず追加構築中のサーバーに接続してしまうことで、Outlook のプロファイルの情報が書き換わってしまい、通常とは異なる設定、ネットワーク経路で Exchange Server に接続することに起因して、最悪の場合、Outlook クライアントが Exchange Server に接続できなくなるという障害が発生してしまう可能性もございます。(※)</p><p>※追加サーバーの構築中に Outlook を起動しているだけで追加構築中のサーバーに接続してしまう可能性があるため、後述の回避策を実施することをお勧めしております</p><p>Outlook クライアントが意図せず追加構築中のサーバーに接続してしまう動作の詳細は上記ブログをご確認いただければと思いますが、簡潔に申し上げますと、Outlook クライアントと追加構築中の Exchange Server が同じ AD サイトに所属しているためです。</p><p>そのため、上記ブログに記載の通り、追加構築をする Exchange Server については、一旦、Exchange Server をインストールする前に Outlook クライアントが存在しない AD サイトに所属させ、Exchange Server のインストール、仮想ディレクトリ等の設定変更、テストを行った後で Outlook クライアントと同じ ADサイトに所属させることで、Outlook クライアントが意図せず追加構築中のサーバーに接続してしまうことを回避できます。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;こんにちは。Exchange サポートの益森です。&lt;/p&gt;
-&lt;p&gt;以前、以下のブログにて、Outlook クライアントが追加構築中のサーバーに接続してしまう動作およびその回避方法を案内しておりますが、最近、ハイブリッド環境の構築など、オンプレミス Exchange Serv
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
     
   </entry>
   
