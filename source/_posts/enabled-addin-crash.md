@@ -105,7 +105,7 @@ CrashingAddinList や DisabledItems キー配下に値が作成されている�
 Outlook 起動直後に LoadBehavior レジストリが 3 以外になり、3 に変更してもそれが繰り返される場合には、Office の構成に原因がある可能性があります。  
 Office を修復して解消するか確認してください。  
 
-https://support.microsoft.com/ja-jp/office/office-%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BF%AE%E5%BE%A9%E3%81%99%E3%82%8B-7821d4b6-7c1d-4205-aa0e-a6b40c5bb88b  
+- [Office アプリケーションを修復する](https://support.microsoft.com/ja-jp/office/office-%E3%82%A2%E3%83%97%E3%83%AA%E3%82%B1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%92%E4%BF%AE%E5%BE%A9%E3%81%99%E3%82%8B-7821d4b6-7c1d-4205-aa0e-a6b40c5bb88b)  
 
 修復実施後も解消しない場合には、アドイン開発元への確認をお願いします。  
 

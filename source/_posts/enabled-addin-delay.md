@@ -22,7 +22,7 @@ Outlook には、アドインのパフォーマンスを監視し、起動や終
 その中央値より 1000 ミリ秒 (1 秒) を超えると、Outlook はそのアドインを無効にします。  
 基準やしきい値については、以下の公開情報を参照してください。  
 
-https://docs.microsoft.com/ja-jp/previous-versions/office/jj228679(v=office.15)#%E3%82%A2%E3%83%89%E3%82%A4%E3%83%B3%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E4%BF%9D%E3%81%A4%E3%81%9F%E3%82%81%E3%81%AE%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E5%9F%BA%E6%BA%96  
+- [アドインを有効に保つためのパフォーマンス基準](https://docs.microsoft.com/ja-jp/previous-versions/office/jj228679(v=office.15)#%E3%82%A2%E3%83%89%E3%82%A4%E3%83%B3%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E4%BF%9D%E3%81%A4%E3%81%9F%E3%82%81%E3%81%AE%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E5%9F%BA%E6%BA%96)
 
 
 ## アドイン無効化機能の対象から除外する方法 (1) 手動設定  
@@ -81,7 +81,7 @@ Office 管理用テンプレートの [Microsoft Outlook 2016 (または Microso
 
 Office の管理用テンプレートについては、以下の記事もご参照ください。  
 
-https://social.msdn.microsoft.com/Forums/ja-JP/9cfe7f7a-ca37-4a9b-98d6-e0b3d4362598/office-gpo-outlook-?forum=exchangeteamjp  
+- [Office の管理用テンプレートを利用してグループ ポリシー (GPO) で Outlook の設定を制御する方法](https://social.msdn.microsoft.com/Forums/ja-JP/9cfe7f7a-ca37-4a9b-98d6-e0b3d4362598/office-gpo-outlook-?forum=exchangeteamjp)  
 
 
 **本情報の内容 (添付文書、リンク先などを含む) は作成日時点でのものであり、予告なく変更される場合があります。**  
