@@ -10,11 +10,11 @@
         <%- partial('post/title', {class_name: 'article-title'}) %>
       </header>
       <div class="article-share">
-        Last Update: 
-        <%- partial('post/lastupdate', {class_name: 'article-date-single', date_format: null}) %>              
+        Last Update:
+        <%- partial('post/lastupdate', {class_name: 'article-date-single', date_format: null}) %>
       </div>
     <% } %>
-    <div class="article-entry" itemprop="articleBody">
+    <div class="article-entry" itemprop="articleBody" style="word-break: break-all">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
         <% if (theme.excerpt_link){ %>
