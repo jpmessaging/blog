@@ -49,7 +49,7 @@ a については、[こちら](https://jpmessaging.github.io/blog/enabled-addin
 アドインの有効/無効は、以下の LoadBehavior レジストリに紐づいています。  
 LoadBehavior の値を 3 にすることで、アドインを Outlook のオプションからチェック オンにした際と同じ状態にすることができます。  
 
-値の場所: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\Outlook\Addins\<アドインの ProgID> (※1)  
+値の場所: HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\Outlook\Addins\\<アドインの ProgID> (※1)  
 値の名前: LoadBehavior  
 値の種類: REG_DWORD  
 値のデータ: 3 (有効)  
@@ -58,20 +58,20 @@ LoadBehavior の値を 3 にすることで、アドインを Outlook のオプ�
 LoadBehavior のレジストリの値の場所は、アドインのインストール範囲と OS・Office の構成によって異なります。  
 
 <ins>HKCU 配下に登録したアドイン (アドインのインストール時に「このユーザーのみ」を選択した場合)</ins>  
-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\Outlook\Addins\<アドインの ProgID>  
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\Outlook\Addins\\<アドインの ProgID>  
 
 <ins>HKLM 配下に登録したアドイン (アドインのインストール時に「すべてのユーザー」を選択した場合)</ins>  
 **Windows 32 bit + Office 32 bit / Windows 64 bit + Office 64 bit (MSI インストール):**  
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\Outlook\Addins\<アドインの ProgID>  
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\Outlook\Addins\\<アドインの ProgID>  
 
 **Windows 64 bit + Office 32 bit (MSI インストール):**  
-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Office\Outlook\<アドインの ProgID>  
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Office\Outlook\\<アドインの ProgID>  
 
 **Windows 32 bit + Office 32 bit / Windows 64 bit + Office 64 bit (クイック実行):**  
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Registry\Machine\Software\Microsoft\Office\Outlook\Addins\<アドインの ProgID>  
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Registry\Machine\Software\Microsoft\Office\Outlook\Addins\\<アドインの ProgID>  
 
 **Windows 64 bit + Office 32 bit (クイック実行):**  
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Wow6432Node\Microsoft\Office\Outlook\Addins\<アドインの ProgID>  
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\REGISTRY\MACHINE\Software\Wow6432Node\Microsoft\Office\Outlook\Addins\\<アドインの ProgID>  
 
 HKLM 配下に登録したアドインの場合、HKLM 配下に加えて HKCU 配下にも LoadBehavior レジストリが作成される場合があります。  
 HKCU と HKLM の両方に LoadBehavior が存在する場合、HKCU の情報で HKLM が上書きされる動作となります。  
