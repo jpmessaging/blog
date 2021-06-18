@@ -45,7 +45,7 @@ Outlook には、アドインのパフォーマンスを監視し、起動や終
 上記手動での設定は最大 30 日間と限定されますが、以下のレジストリを作成することで、特定のアドインを常に監視対象から除外とすることができます。  
 
 
-値の場所: HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\<バージョン>\Outlook\Resiliency\AddinList  
+値の場所: HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\\<バージョン>\Outlook\Resiliency\AddinList  
 値の名前: <アドインのProgID>  
 値の種類: REG_SZ  
 値のデータ: 1 (常に有効)  
