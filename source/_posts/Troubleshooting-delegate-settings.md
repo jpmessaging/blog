@@ -30,8 +30,8 @@ tags:
   
 予定表フォルダーに対して付与した権限を以下のコマンドで削除します。  
 ```PowerShell  
-# フォルダー名が日本語の場合は、`<非代理人>:\予定表` と指定します。  
-Remove-MailboxFolderPermission -Identity <非代理人>:\calendar -User <削除済みの代理人>
+# フォルダー名が日本語の場合は、`<被代理人>:\予定表` と指定します。  
+Remove-MailboxFolderPermission -Identity <被代理人>:\calendar -User <削除済みの代理人>
 ```
   
 この手順は特定のユーザーの権限のみを削除するものであるため、削除されたユーザー以外の代理人動作などには影響はありません。このコマンドでエラーが回避できない場合は、Exchange Online をご利用であれば (2) の手順をお試しください。Exchange オンプレミスをご利用であれば (3) の手順をお試しください。
@@ -41,10 +41,10 @@ Remove-MailboxFolderPermission -Identity <非代理人>:\calendar -User <削除�
 管理者から以下のコマンドレット スイッチを実行し、隠しルールと代理人設定をリセットします。  
 
 ```powershell
-Remove-MailboxFolderPermission -Identity <非代理人>:\calendar -ResetDelegateUserCollection
+Remove-MailboxFolderPermission -Identity <被代理人>:\calendar -ResetDelegateUserCollection
 ```
   
-このコマンドは、予定表の参照や書き込みの権限は削除しませんが、対象の非代理人 (役職者) が設定している全ての代理人権限が削除されます。代理人特有の以下のような動作は利用できなくなります。
+このコマンドは、予定表の参照や書き込みの権限は削除しませんが、対象の被代理人 (役職者) が設定している全ての代理人権限が削除されます。代理人特有の以下のような動作は利用できなくなります。
 - 会議出席依頼を代理人に転送する
 - 非公開のアイテムを参照する
 
@@ -53,7 +53,7 @@ Remove-MailboxFolderPermission -Identity <非代理人>:\calendar -ResetDelegate
 Set-Mailbox <ユーザー> -GrantSendOnBehalfTo $null
 ```
   
-これらのコマンド実行後は代理人の設定がクリアされます。非代理人による代理人の再設定が必要となるため、実行される際にはタイミングに十分ご注意ください。こちらで回避できない場合は、(3) の手順をお試しください。  
+これらのコマンド実行後は代理人の設定がクリアされます。被代理人による代理人の再設定が必要となるため、実行される際にはタイミングに十分ご注意ください。こちらで回避できない場合は、(3) の手順をお試しください。  
 
 ### (3) MFCMAPI による Freebusy フォルダーの初期化とルールの削除  
 
