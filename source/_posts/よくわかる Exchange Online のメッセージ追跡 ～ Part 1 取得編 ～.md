@@ -2,14 +2,19 @@
 title: >
   よくわかる Exchange Online のメッセージ追跡 ～ Part 1 取得編 ～
 date: 2016-02-23
+lastupdate: 2021-8-13
 tags: EXO
 ---
+
+<font color="Crimson">注意: 本ブログの内容は、[こちら](../Exchange%20Online%20のメッセージ追跡ログ/)に移行しました。今後は新しい記事をご参照ください。</font>
+
+<font color="LightGray">
 みなさんこんにちは、Exchange Server サポートの 杉山 卓弥 です。Exchange Online で送受信されているメッセージを調査する場合、管理者にてメッセージ追跡を実行する機会は非常に多いかと思います。そこで、メッセージ追跡に役立つ情報を順次 Exchange Server サポートよりご紹介していきます。Part 1 では、Exchange Online のメッセージ追跡の実行方法、取得方法について使用頻度が高い順にご説明していきます。
 
-<span style="color: #3366ff">Exchange Server サポートからのお願い</span>
-<span style="color: #3366ff">********************************************************</span>
-<span style="color: #3366ff">弊社サポートにメッセージ配信に関するお問い合わせをいただく際、メッセージ追跡ログをあらかじめ送付いただくことで、すぐに調査を開始することができます。また、事象の早期解決に結びつくことも多くございますので、事前の HistoricalSearch (詳細版) の取得にご協力をいただけますようお願いいたします。</span>
-<span style="color: #3366ff">********************************************************</span>
+<span style="color: LightGray">Exchange Server サポートからのお願い</span>
+<span style="color: LightGray">********************************************************</span>
+<span style="color: LightGray">弊社サポートにメッセージ配信に関するお問い合わせをいただく際、メッセージ追跡ログをあらかじめ送付いただくことで、すぐに調査を開始することができます。また、事象の早期解決に結びつくことも多くございますので、事前の HistoricalSearch (詳細版) の取得にご協力をいただけますようお願いいたします。</span>
+<span style="color: LightGray">********************************************************</span>
 
 &lt;取得方法&gt;
 A. HistoricalSearch (詳細版)
@@ -43,7 +48,7 @@ Start-HistoricalSearch -ReportTitle &lt;任意の実行名&gt; -StartDate yyyy/m
 &lt;メッセージ ID を指定して実行する場合&gt;
 Start-HistoricalSearch -ReportTitle &lt;任意の実行名&gt; -StartDate yyyy/mm/dd -EndDate yyyy/mm/dd -MessageID "&lt;メッセージ ID&gt;" -ReportType MessageTraceDetail -NotifyAddress &lt;通知メールアドレス&gt;
 
-<span style="color: #ff0000"># パラメーターの StartDate および EndDate は協定世界時 (UTC) を基準としています。日本標準時 (JST) での受信時刻とは異なりますので、例えば、2016/02/22 (JST) に受信した場合は、StartDate を 2016/02/21、EndDate を 2016/02/23 と指定することをお勧めします。</span>
+<span style="color: LightGray"># パラメーターの StartDate および EndDate は協定世界時 (UTC) を基準としています。日本標準時 (JST) での受信時刻とは異なりますので、例えば、2016/02/22 (JST) に受信した場合は、StartDate を 2016/02/21、EndDate を 2016/02/23 と指定することをお勧めします。</span>
 
 2. 実行後に表示された JobId を控えておき、以下のコマンドを実行して Status が Done となっていることを確認します。
 Status が Done となるまでには数時間かかる場合があるので、以下のコマンドは Start-HistoricalSearch でのメッセージ追跡開始後、しばらく時間が経ってから実行することをお勧めします。
@@ -128,7 +133,7 @@ Start-HistoricalSearch -ReportTitle &lt;任意の実行名&gt; -StartDate yyyy/m
 &lt;メッセージ ID を指定して実行する場合&gt;
 Start-HistoricalSearch -ReportTitle &lt;任意の実行名&gt; -StartDate yyyy/mm/dd -EndDate yyyy/mm/dd -MessageID "&lt;メッセージ ID&gt;" -ReportType MessageTrace -NotifyAddress &lt;通知メールアドレス&gt;
 
-<span style="color: #ff0000"># パラメーターの StartDate および EndDate は協定世界時 (UTC) を基準としています。日本標準時 (JST) での受信時刻とは異なりますので、例えば、2016/02/22 (JST) に受信した場合は、StartDate を 2016/02/21、EndDate を 2016/02/23 と指定することをお勧めします。</span>
+<span style="color: LightGray"># パラメーターの StartDate および EndDate は協定世界時 (UTC) を基準としています。日本標準時 (JST) での受信時刻とは異なりますので、例えば、2016/02/22 (JST) に受信した場合は、StartDate を 2016/02/21、EndDate を 2016/02/23 と指定することをお勧めします。</span>
 
 2. 実行後に表示された JobId を控えておき、以下のコマンドを実行して Status が Done となっていることを確認します。
 Status が Done となるまでには数時間かかる場合があるので、以下のコマンドは Start-HistoricalSearch でのメッセージ追跡開始後、しばらく時間が経ってから実行することをお勧めします。
@@ -166,3 +171,4 @@ URL: <a target="_blank" href="https://technet.microsoft.com/ja-jp/library/jj2006
 *************************************************************************************
 本記事は 2016 年 2 月 22 日時点で執筆されたものであり、ご紹介したコマンドの動作、機能は今後変更される場合がございます。
 *************************************************************************************
+</font>
