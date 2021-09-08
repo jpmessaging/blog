@@ -14,7 +14,7 @@
         <%- partial('post/lastupdate', {class_name: 'article-date-single', date_format: null}) %>
       </div>
     <% } %>
-    <div class="article-entry" itemprop="articleBody" style="word-break: break-all">
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       <% if (post.excerpt && index){ %>
         <%- post.excerpt %>
         <% if (theme.excerpt_link){ %>
