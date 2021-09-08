@@ -132,7 +132,7 @@ ga('send', 'pageview');
 </a>
       </div>
     
-    <div class="article-entry" itemprop="articleBody" style="word-break: break-all">
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
         <p>今回は Exchange Online のメール フローにおいて、お客様からしばしばお問い合わせをいただいておりますオンプレミスのサーバー向けにコネクタ設定を行う際の注意点をお伝えします。</p>
 <p>Exchange Online は特定の送信元 IP から急激なメール受信量の増加を検知すると、サービスを保護するために当該 IP からのメール受信を自動的に制限し、遅延受信させます。<br>これは以下の blog でご案内の IP スロットリングの機能ですが、この特定の IP がお客様にて運用されている問題のないサーバーである場合には本機能の動作は不要であり、回避するためには送信元を組織のメール サーバー、送信先を Office 365 とするコネクタの設定が有効です。<br>&nbsp;<br>Title: IP スロットリングについて<br>URL: <a target="_blank" rel="noopener" href="https://blogs.technet.microsoft.com/exchangeteamjp/2015/03/23/ip/">https://blogs.technet.microsoft.com/exchangeteamjp/2015/03/23/ip/</a><br>&nbsp;<br>送信元を組織のメール サーバーとするコネクタを設定すると、特定の送信元サーバーからのメールをコネクタが作成されている Office 365 テナントへメールをルーティングする動作となります。<br>このようなコネクタを作成するときには以下の点について予めご留意いただきますようお願い申し上げます。</p>
@@ -155,7 +155,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%203%20%E3%81%A4%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%20(%E9%80%81%E4%BF%A1%E5%85%83%20%20%E7%B5%84%E7%B9%94%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC)/" data-id="ckssbs0z10026y4stfglfbrdl" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%203%20%E3%81%A4%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%20(%E9%80%81%E4%BF%A1%E5%85%83%20%20%E7%B5%84%E7%B9%94%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC)/" data-id="cktas7cm00029x0st17qodkz2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li></ul>
@@ -222,6 +222,11 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/blog/we-are-hiring/">サポート エンジニアとして働く仲間を募集しています！
+</a>
+          </li>
+        
+          <li>
             <a href="/blog/Exchange%20Online%20%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E8%BF%BD%E8%B7%A1%E3%83%AD%E3%82%B0/">Exchange Online のメッセージ追跡ログ
 </a>
           </li>
@@ -237,10 +242,6 @@ ga('send', 'pageview');
           <li>
             <a href="/blog/Exchange%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E6%9B%B4%E6%96%B0%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/">Exchange サーバーのセキュリティ更新プログラムについて
 </a>
-          </li>
-        
-          <li>
-            <a href="/blog/Outlook%20%E3%81%AE%E3%83%97%E3%83%AD%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%86%8D%E4%BD%9C%E6%88%90%E3%81%AB%E5%86%8D%E8%A8%AD%E5%AE%9A%E3%81%8C%E5%BF%85%E8%A6%81%E3%81%AA%E6%83%85%E5%A0%B1/">Outlook のプロファイル再作成に再設定が必要な情報</a>
           </li>
         
       </ul>
