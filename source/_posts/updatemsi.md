@@ -37,7 +37,7 @@ Office versions and connectivity to Office 365 services
 https://docs.microsoft.com/en-us/deployoffice/endofsupport/office-365-services-connectivity
 
 MSI 版 Office 2016 は、Office を 16.0.4600.1000 以降 (2017 年 11 月の [KB4051890](https://support.microsoft.com/en-us/kb/4051890) の Office 製品の更新一覧を含む) に更新しておく必要があります。
-KB4051890 の更新一覧は約 3 年前で非常に古く、Outlook が使用する重要な Office 共有コンポーネントの更新も含まれないため、[KB4051890](https://support.microsoft.com/en-us/kb/4051890) に記載されている KB がすべて適用されていたとしても、それ以降にリリースされた更新プログラムを適用して最新に更新していない場合はパフォーマンスが悪く別の理由によって接続の問題が発生する可能性もあります。今回の記事で紹介している [List of the most current .msp files for Office 2016 products](https://docs.microsoft.com/en-us/officeupdates/msp-files-office-2016) の最新の更新プログラムをすべて適用ください。  
+KB4051890 の更新一覧は約 3 年前で非常に古く、Outlook が使用する重要な Office 共有コンポーネントの更新も含まれないため、KB4051890 に記載されている KB がすべて適用されていたとしても、それ以降にリリースされた更新プログラムを適用して最新に更新していない場合はパフォーマンスが悪く別の理由によって接続の問題が発生する可能性もあります。今回の記事で紹介している [List of the most current .msp files for Office 2016 products](https://docs.microsoft.com/en-us/officeupdates/msp-files-office-2016) の最新の更新プログラムをすべて適用ください。  
 なお、Outlook は Office の共有コンポーネントを使用しており、Outlook の更新だけを適用しても最低要件を満たせません。すべての Office 製品の更新プログラムの適用をお願いいたします。
 
 ### [Outlook のバージョン情報] の画面だけでは、2021 年 11 月 1 日以降の要件を満たしているかを確認することができない
