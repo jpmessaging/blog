@@ -2,22 +2,28 @@
 title: >
   Export-Office365LicenseStatus のご紹介
 date: 2018-05-29
+lastupdate: 2021-11-04
 tags: O365Identity
 ---
+> ❗ 2021/11/04 Update  
+> 本記事で紹介している Export-Office365LicenseStatus は MSOnline (Azure AD v1) モジュールを内部で使用しますが、Microsoft Graph PowerShell SDK を内部で使用するように変更した Export-Microsoft365LicenseStatus がリリースされました。これにともない GitHub リポジトリ名も Export-Microsoft365LicenseStatus に変更されましたが、引き続き Export-Office365LicenseStatus はダウンロード可能であるため、本記事内のリンクを修正しています。
+> Export-Office365LicenseStatus と Export-Microsoft365LicenseStatus は機能は同じですが利用方法が異なります。本記事では引き続き Export-Office365LicenseStatus の利用方法を紹介しています。Export-Microsoft365LicenseStatus の利用方法は最新の [README](https://github.com/microsoft/Export-Microsoft365LicenseStatus) ([日本語版](https://github.com/microsoft/Export-Microsoft365LicenseStatus/tree/master/ja-jp)) をご参照ください。
+> Microsoft Graph PowerShell SDK を使用したライセンス管理については、[こちら](https://jpazureid.github.io/blog/azure-active-directory/operating-license-with-microsoft-graph/)の記事をご参照ください。
+
 今回は Office 365 の管理者の皆様に、ライセンス付与状況を出力する PowerShell スクリプトをご紹介します。
 
 Office 365 のライセンスを確認する場合、GUI ツールとしては Office 365 管理センターが利用できます。また、CUI ツールとしては MSOnline (Azure AD v1) モジュールの Get-MsolUser コマンドも利用できます。しかしながらどちらを利用しても、ライセンスに含まれる各サービス プランのステータスまで含めて一覧表示する機能が標準では用意されていません。
 
 Get-MsolUser コマンドの出力内容を整形する PowerShell スクリプトを書くことで実現が可能ですが、Get-MsolUser コマンドの出力は複雑な構造となっているため、スクリプティングに慣れていないと実装が難しい状況です。例えば Get-MsolUser コマンドの Licenses 属性は、ユーザーに複数のライセンスが割り当てられていれば値が配列になっています。さらに Licenses 属性の子属性として ServiceStatus 属性があり、当該ライセンスに含まれている各サービス プランのステータスに関する情報が入れ子になっています。
 
-このようなスクリプティングに関するお問い合わせを頻繁にお客様より頂くため、これまでのお問い合わせでのお客様のご要望を基に、私たちは <a target="_blank" href="https://github.com/Microsoft/Export-Office365LicenseStatus" rel="noopener">Export-Office365LicenseStatus</a> を GitHub に公開しました。この PowerShell スクリプトを使用すると、Office 365 の各ユーザーに割り当てられているライセンスや、ライセンスに含まれている各サービス プランのステータスを一覧表示することができます。CSV 出力機能も備えており、出力された CSV ファイルを Excel で開いてさらなる集計を行うことも可能です。
+このようなスクリプティングに関するお問い合わせを頻繁にお客様より頂くため、これまでのお問い合わせでのお客様のご要望を基に、私たちは <a target="_blank" href="https://github.com/microsoft/Export-Microsoft365LicenseStatus" rel="noopener">Export-Office365LicenseStatus</a> を GitHub に公開しました。この PowerShell スクリプトを使用すると、Office 365 の各ユーザーに割り当てられているライセンスや、ライセンスに含まれている各サービス プランのステータスを一覧表示することができます。CSV 出力機能も備えており、出力された CSV ファイルを Excel で開いてさらなる集計を行うことも可能です。
 
 実行例を交えながら使い方をご紹介します。
 <h2 style="margin-top: 40px;margin-bottom: 20px">ダウンロード方法</h2>
-スクリプトは GitHub の <a target="_blank" href="https://github.com/Microsoft/Export-Office365LicenseStatus/releases" rel="noopener">releases</a> ページからダウンロードできます。最新の Export-Office365LicenseStatus.zip をダウンロードしてください。
+スクリプトは GitHub の <a target="_blank" href="https://github.com/microsoft/Export-Microsoft365LicenseStatus/releases/tag/v1.0" rel="noopener">releases</a> ページからダウンロードできます。v1.0 の Export-Office365LicenseStatus.zip をダウンロードしてください。
 <h2 style="margin-top: 40px;margin-bottom: 20px">準備</h2>
 <ol>
- 	<li>スクリプトの実行には MSOnline (Azure AD v1) モジュールが必要です。インストールされていない場合は<a target="_blank" href="https://blogs.technet.microsoft.com/jpazureid/2017/12/04/aad-powershell/" rel="noopener">こちらのページ</a>を参考にしてインストールしてください。</li>
+ 	<li>スクリプトの実行には MSOnline (Azure AD v1) モジュールが必要です。インストールされていない場合は<a target="_blank" href="https://docs.microsoft.com/en-us/archive/blogs/jpazureid/aad-powershell" rel="noopener">こちらのページ</a>を参考にしてインストールしてください。</li>
  	<li>ダウンロードした Export-Office365LicenseStatus.zip を展開します。</li>
  	<li>Export-Office365LicenseStatus.ps1 のプロパティをクリックします。</li>
  	<li>(Windows 10) [全般] タブの [セキュリティ] の [許可する] のチェックをオンにします。[許可する] が表示されていない場合は特に操作は必要ありません。
@@ -81,9 +87,9 @@ CSV 出力の場合は、Excel で表示すると以下のようになります�
 
 このほかにもパラメーターの組み合わせで異なる使い方が可能ですので、必要に応じてお試しください。
 
-ライセンスの割り当てなどの管理を行う方法については<a target="_blank" href="https://blogs.technet.microsoft.com/exchangeteamjp/2018/04/02/office365-license-management/" rel="noopener">こちら</a>の記事をご参照ください。
+ライセンスの割り当てなどの管理を行う方法については<a target="_blank" href="https://jpmessaging.github.io/blog/Office%20365%20%E3%81%AE%E3%83%A9%E3%82%A4%E3%82%BB%E3%83%B3%E3%82%B9%E7%AE%A1%E7%90%86/" rel="noopener">こちら</a>の記事をご参照ください。
 
-なお Export-Office365LicenseStatus は弊社の製品・サービスではないため、スクリプト自体に関するサポートは弊社からは提供されません。スクリプト自体に対するフィードバックは GitHub の <a target="_blank" href="https://github.com/Microsoft/Export-Office365LicenseStatus/issues" rel="noopener">issues</a> に投稿していただくようお願いいたします。ベスト エフォートとはなりますが弊社のエンジニアや有志の GitHub ユーザーが対応します。Export-Office365LicenseStatus はオープン ソースのため、読者の皆様からのプル リクエストも歓迎します。
+なお Export-Office365LicenseStatus は弊社の製品・サービスではないため、スクリプト自体に関するサポートは弊社からは提供されません。スクリプト自体に対するフィードバックは GitHub の <a target="_blank" href="https://github.com/microsoft/Export-Microsoft365LicenseStatus/issues" rel="noopener">issues</a> に投稿していただくようお願いいたします。ベスト エフォートとはなりますが弊社のエンジニアや有志の GitHub ユーザーが対応します。Export-Office365LicenseStatus はオープン ソースのため、読者の皆様からのプル リクエストも歓迎します。
 
 今後も当ブログおよびサポート チームをよろしくお願いいたします。
 ※ 本情報の内容 (添付文書、リンク先などを含む) は、作成日時点でのものであり、予告なく変更される場合があります。
