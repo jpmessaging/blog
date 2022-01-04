@@ -123,8 +123,8 @@ ga('send', 'pageview');
       <div class="article-share">
         Last Update:
         <a href="/blog/Exchange%2020162019%20%E3%81%A7%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%88%20%E3%82%AD%E3%83%A5%E3%83%BC%E3%81%AB%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%8C%E6%BB%9E%E7%95%99%E3%81%99%E3%82%8B%E4%BA%8B%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date-single">    
-    
-    <time datetime="2022-01-03T15:00:00.000Z" itemprop="dateUpdated">2022-01-04</time>
+        
+    <time datetime="2022-01-04T15:00:00.000Z" itemprop="lastupdate">2022-01-05</time>    
     
 </a>
       </div>
@@ -255,7 +255,8 @@ ga('send', 'pageview');
 </li>
 </ol>
 <h2 id="補足情報-上記手順の実行時のユーザー影響について"><a href="#補足情報-上記手順の実行時のユーザー影響について" class="headerlink" title="補足情報: 上記手順の実行時のユーザー影響について"></a>補足情報: 上記手順の実行時のユーザー影響について</h2><p>「既存のエンジンとメタデータの削除」 において、Microsoft Filtering Management サービスと Microsoft Exchange Transport サービスの停止が必要となりますが、当該サーバー上でこの間メールの配送処理が行われなくなりますためご注意ください。<br>その後、「最新エンジンへの更新」 でサービスを再開するタイミングでサービスが再開され、該当サーバー上でメールの配送処理が再開します。</p>
-<h2 id="FAQ-よくお寄せいただくご質問"><a href="#FAQ-よくお寄せいただくご質問" class="headerlink" title="FAQ: よくお寄せいただくご質問"></a>FAQ: よくお寄せいただくご質問</h2><p><strong>Q. 対処手順は自動的に行われますか？</strong><br>A. 今回の対処手順はお客様側にて実施いただく必要があり、更新された定義ファイルのダウンロードや、キュー内に滞留したメッセージがはけることが確認できるまでに、お時間を要する作業となります。<a target="_blank" rel="noopener" href="https://aka.ms/ResetScanEngineVersion">https://aka.ms/ResetScanEngineVersion</a> よりスクリプトを取得し、実行をすることで自動的に対処を実施することもできますが、手動での対処も実行いただけます。どちらを手段を利用する場合でも、各 Exchange 2016 または Exchange 2019 サーバー上で実行いただく必要がございます。</p>
+<h2 id="FAQ-よくお寄せいただくご質問"><a href="#FAQ-よくお寄せいただくご質問" class="headerlink" title="FAQ: よくお寄せいただくご質問"></a>FAQ: よくお寄せいただくご質問</h2><p><strong>Q. この問題が私の組織に影響するかどのように確認できますか?</strong><br>A. 最新の <a target="_blank" rel="noopener" href="https://aka.ms/ExchangeHealthChecker">HealthChecker スクリプト</a> を組織のすべての Exchange サーバーで実行し、FIP-FS に関する警告の有無で確認できます。</p>
+<p><strong>Q. 対処手順は自動的に行われますか？</strong><br>A. 今回の対処手順はお客様側にて実施いただく必要があり、更新された定義ファイルのダウンロードや、キュー内に滞留したメッセージがはけることが確認できるまでに、お時間を要する作業となります。<a target="_blank" rel="noopener" href="https://aka.ms/ResetScanEngineVersion">https://aka.ms/ResetScanEngineVersion</a> よりスクリプトを取得し、実行をすることで自動的に対処を実施することもできますが、手動での対処も実行いただけます。どちらを手段を利用する場合でも、各 Exchange 2016 または Exchange 2019 サーバー上で実行いただく必要がございます。</p>
 <p><strong>Q. 対処のためのスクリプト実行の作業時間はどの程度かかるのか。</strong><br>A. 組織内の Exchange サーバー台数にも依存しますが、1 台あたり対処の手順が完了するまで 30 分 ~ 60 分ほど時間を要することが予想されます。</p>
 <p><strong>Q. キュー内に滞留したメッセージが配信されるまでどの程度時間がかかりますか。</strong><br>A. キュー内に滞留したメッセージの数、滞留が解消するまでに新たに受信するメッセージの数、および、サーバー・ネットワーク等のパフォーマンスに依存するため、具体的な時間はご案内出来かねます。Get-Queue -Server &lt;サーバー名&gt; コマンドを利用してキュー内のメール滞留数を適宜確認いただき、キュー内のメッセージ数の減少していく推移をご確認いただけますようお願いいたします。</p>
 <p><strong>Q. Exchange Hybrid 構成を組んでいる環境ですが、何をすればよいですか。</strong><br>A. オンプレミス Exchange サーバーをメール送付のためにご利用の場合は、Blog に記載の対処を実施ください。<br>メール送受信には使用されず、オンプレミス Exchange サーバーは受信者の管理の用途のみでご利用の場合は、対処は不要です。</p>
@@ -305,7 +306,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Exchange%2020162019%20%E3%81%A7%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%88%20%E3%82%AD%E3%83%A5%E3%83%BC%E3%81%AB%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%8C%E6%BB%9E%E7%95%99%E3%81%99%E3%82%8B%E4%BA%8B%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="ckxzknzpl0031lkstgwqrdp5d" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Exchange%2020162019%20%E3%81%A7%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%88%20%E3%82%AD%E3%83%A5%E3%83%BC%E3%81%AB%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%8C%E6%BB%9E%E7%95%99%E3%81%99%E3%82%8B%E4%BA%8B%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cky0p0pkd002z1ostchzxef1a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
