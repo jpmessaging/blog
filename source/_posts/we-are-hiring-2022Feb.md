@@ -49,7 +49,7 @@ tags:
 今回は Exchange/Outlook チームの魅力にフォーカスした内容となりましたが、CSS やサポート エンジニアそのものの魅力については、以下でもご紹介しております。よろしければ是非こちらもご参照ください！
 
 - [日本マイクロソフト キャリア採用情報　サポートエンジニアページ](https://www.microsoft.com/ja-jp/mscorp/mid-career/se-top.aspx)
-- [We are CSS Modern Work team!](https://sway.office.com/NEkNd4VFaQEVu8Lb)
+- [ハイブリッド ワークを支える! MW サポート エンジニアをご紹介](https://sway.office.com/j7kLofkNe1dHCv5Y)
 
 募集要項や応募はこちらから！
 
