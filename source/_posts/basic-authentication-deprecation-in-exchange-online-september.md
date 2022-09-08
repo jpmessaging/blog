@@ -48,7 +48,9 @@ SMTP AUTH について、無効化や変更は<span style="text-decoration: unde
 
 セルフサービス診断を実行するには、以下のリンクをクリックするだけで、基本認証のセルフヘルプ診断に直接アクセスできます (テナントの全体管理者であれば、Microsoft 365 管理センターで診断が表示されます)。
 
-[Diag: Enable Basic Auth in EXO](https://aka.ms/PillarEXOBasicAuth)
+<a class="fancybox" href="https://aka.ms/PillarEXOBasicAuth" target="_blank">
+{% asset_img image1.png "Diag" %}
+</a>
 
 または、[Microsoft 365 管理センター](https://admin.microsoft.com/)を開き、画面右下にある緑色の [ヘルプとサポート] ボタンをクリックします。
 
