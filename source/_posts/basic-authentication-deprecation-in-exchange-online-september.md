@@ -2,6 +2,7 @@
 title: >
   Exchange Online における基本認証の廃止 – 2022 年 9 月の更新
 date: 2022-09-08
+lastupdate: 2022-09-13
 tags: EXO
 ---
 ※ この記事は、[Basic Authentication Deprecation in Exchange Online – September 2022 Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-deprecation-in-exchange-online-september/ba-p/3609437) の抄訳です。最新の情報はリンク先をご確認ください。
@@ -72,6 +73,8 @@ SMTP AUTH について、無効化や変更は<span style="text-decoration: unde
 
 ### プロトコルに対する基本認証の再有効化
 
+9 月中、診断では基本認証の再有効化を行うことが出来ません (Opt-out のみモードになっているためです)。9 月中にいずれかのプロトコルでの基本認証の再有効化が必要な場合、サポートにお問い合わせください。注意 -  SMTP Auth の基本認証についてはご自身で再有効化が可能です。[こちらの記事](https://docs.microsoft.com/ja-jp/exchange/clients-and-mobile-in-exchange-online/authenticated-client-smtp-submission) をご参照ください。
+
 10 月 1 日以降、診断により、基本認証を再有効化できるのは、無効化されていたプロトコルのみです。
 
 9 月中にオプトアウトを行わずに、後で必要であると分かったプロトコルの基本認証が無効化された場合は、この方法を使用することで再有効化できます。
@@ -88,7 +91,7 @@ SMTP AUTH について、無効化や変更は<span style="text-decoration: unde
 
 以下のフロー チャートを参照して、変更点および必要なアクションの確認にお役立てください。
 
-![](image6.png)
+![](image6b.png)
 
 ## 自分で基本認証をブロックする方法
 
