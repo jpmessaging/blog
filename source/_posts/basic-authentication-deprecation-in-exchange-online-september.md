@@ -2,7 +2,7 @@
 title: >
   Exchange Online における基本認証の廃止 – 2022 年 9 月の更新
 date: 2022-09-08
-lastupdate: 2022-09-13
+lastupdate: 2022-09-20
 tags: EXO
 ---
 ※ この記事は、[Basic Authentication Deprecation in Exchange Online – September 2022 Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-deprecation-in-exchange-online-september/ba-p/3609437) の抄訳です。最新の情報はリンク先をご確認ください。
@@ -108,6 +108,10 @@ SMTP AUTH について、無効化や変更は<span style="text-decoration: unde
 ## Exchange Online Protection (EOP) およびセキュリティ/コンプライアンス センター (SCC) の PowerShell について
 
 基本認証は 2022 年 12 月 31 日まで有効です。お客様は、証明書ベースの認証に移行する必要があります。詳細については、次の資料を参照してください: [アプリ専用の認証](https://docs.microsoft.com/ja-jp/powershell/exchange/app-only-auth-powershell-v2?view=exchange-ps)
+
+## Exchange Online の PowerShell について
+
+Exchange Online の PowerShell における基本認証については、上記のオプトアウトと再有効化のガイダンスやタイムラインに従います。多要素認証を使用しない Exchange v1 モジュールは 2023 年 1 月以降完全に利用できなくなりますのでご注意ください。詳細については [Understanding the Different Versions of Exchange Online PowerShell Modules and Basic Auth](https://techcommunity.microsoft.com/t5/exchange-team-blog/understanding-the-different-versions-of-exchange-online/ba-p/3394487) を参照してください。
 
 ## その他の基本認証に関連する最新情報
 
