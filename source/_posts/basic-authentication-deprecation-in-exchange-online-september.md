@@ -2,7 +2,7 @@
 title: >
   Exchange Online における基本認証の廃止 – 2022 年 9 月の更新
 date: 2022-09-08
-lastupdate: 2022-09-20
+lastupdate: 2022-09-27
 tags: EXO
 ---
 ※ この記事は、[Basic Authentication Deprecation in Exchange Online – September 2022 Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-deprecation-in-exchange-online-september/ba-p/3609437) の抄訳です。最新の情報はリンク先をご確認ください。
@@ -70,6 +70,8 @@ SMTP AUTH について、無効化や変更は<span style="text-decoration: unde
 診断では、以下のようなダイアログが表示され、複数のプロトコルに対して再実行することができます。一部のプロトコルが既に無効化されている場合、表示内容は多少異なる場合があります。また、オプトアウトしてもプロトコルがリストから削除されることはありませんが、(エラーが表示されない限り) リクエストは受領されますのでご安心ください。
 
 ![](image4.png)
+
+> **2022/9/23 更新**: これまでにオプトアウトしたすべてのお客様は、オプトアウトが受領されていればメッセージ センターの投稿で確認できるようになりました (MC437540)。9 月末までにオプトアウトしたお客様へ、さらに 2 つのメッセージ センターの投稿をオプトアウト期間が終了する 9 月 28 日水曜日と 9 月 30 日金曜日に送信する予定です。
 
 ### プロトコルに対する基本認証の再有効化
 
