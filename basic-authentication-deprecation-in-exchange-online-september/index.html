@@ -21,13 +21,13 @@ ga('send', 'pageview');
   <title>Exchange Online における基本認証の廃止 – 2022 年 9 月の更新
  | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※ この記事は、Basic Authentication Deprecation in Exchange Online – September 2022 Update の抄訳です。最新の情報はリンク先をご確認ください。 約 1 か月後、Exchange Online で特定のプロトコルを使用しているお客様を対象に基本認証の無効化を開始します。 本件について約 3 年前に最初にお知らせして (英語)">
+  <meta name="description" content="※ Exchange Online 基本認証廃止についての最新情報はこちらをご覧ください。※ この記事は、Basic Authentication Deprecation in Exchange Online – September 2022 Update の抄訳です。最新の情報はリンク先をご確認ください。 約 1 か月後、Exchange Online で特定のプロトコルを使用しているお客様を対">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Exchange Online における基本認証の廃止 – 2022 年 9 月の更新
 ">
 <meta property="og:url" content="https://jpmessaging.github.io/blog/basic-authentication-deprecation-in-exchange-online-september/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="※ この記事は、Basic Authentication Deprecation in Exchange Online – September 2022 Update の抄訳です。最新の情報はリンク先をご確認ください。 約 1 か月後、Exchange Online で特定のプロトコルを使用しているお客様を対象に基本認証の無効化を開始します。 本件について約 3 年前に最初にお知らせして (英語)">
+<meta property="og:description" content="※ Exchange Online 基本認証廃止についての最新情報はこちらをご覧ください。※ この記事は、Basic Authentication Deprecation in Exchange Online – September 2022 Update の抄訳です。最新の情報はリンク先をご確認ください。 約 1 か月後、Exchange Online で特定のプロトコルを使用しているお客様を対">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/basic-authentication-deprecation-in-exchange-online-september/image1.png">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/basic-authentication-deprecation-in-exchange-online-september/image2.png">
@@ -135,14 +135,14 @@ ga('send', 'pageview');
         Last Update:
         <a href="/blog/basic-authentication-deprecation-in-exchange-online-september/" class="article-date-single">    
         
-    <time datetime="2022-09-12T15:00:00.000Z" itemprop="lastupdate">2022-09-13</time>    
+    <time datetime="2022-10-10T15:00:00.000Z" itemprop="lastupdate">2022-10-11</time>    
     
 </a>
       </div>
     
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
-        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-deprecation-in-exchange-online-september/ba-p/3609437">Basic Authentication Deprecation in Exchange Online – September 2022 Update</a> の抄訳です。最新の情報はリンク先をご確認ください。</p>
+        <p>※ Exchange Online 基本認証廃止についての最新情報はこちらをご覧ください。<br>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-deprecation-in-exchange-online-september/ba-p/3609437">Basic Authentication Deprecation in Exchange Online – September 2022 Update</a> の抄訳です。最新の情報はリンク先をご確認ください。</p>
 <p>約 1 か月後、Exchange Online で特定のプロトコルを使用しているお客様を対象に基本認証の無効化を開始します。</p>
 <p>本件について約 3 年前に<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/improving-security-together/ba-p/805892">最初にお知らせして</a> (英語) から、何百万人ものユーザーが基本認証から移行し、何百万ものテナントで基本認証を無効化して積極的にユーザーを保護してきました。</p>
 <p>しかし、このプロセスはまだ完了したわけではなく、残念ながら基本認証の利用量はまだゼロではありません。この事態を受けて、これまで無効化していなかったテナントについて、いくつかのプロトコルで基本認証の無効化を開始します。</p>
@@ -176,6 +176,9 @@ ga('send', 'pageview');
 <h3 id="オプトアウトについて"><a href="#オプトアウトについて" class="headerlink" title="オプトアウトについて"></a>オプトアウトについて</h3><p>2022 年 9 月の 1 か月間、この診断では<strong>オプトアウト</strong>のオプションのみが提供されます。9 月中にオプトアウトのリクエストを送信すると、10 月中にプロトコルの基本認証を無効化することを希望しない旨を弊社に伝えたことになります。ただし、2023 年 1 月には、オプトアウトの状態を問わず、すべてのテナントの基本認証を完全に<strong>無効化する予定</strong>であることをご理解ください。</p>
 <p>診断では、以下のようなダイアログが表示され、複数のプロトコルに対して再実行することができます。一部のプロトコルが既に無効化されている場合、表示内容は多少異なる場合があります。また、オプトアウトしてもプロトコルがリストから削除されることはありませんが、(エラーが表示されない限り) リクエストは受領されますのでご安心ください。</p>
 <p><img src="image4.png" alt=""></p>
+<blockquote>
+<p><strong>2022/9/23 更新</strong>: これまでにオプトアウトしたすべてのお客様は、オプトアウトが受領されていればメッセージ センターの投稿で確認できるようになりました (MC437540)。9 月末までにオプトアウトしたお客様へ、さらに 2 つのメッセージ センターの投稿をオプトアウト期間が終了する 9 月 28 日水曜日と 9 月 30 日金曜日に送信する予定です。</p>
+</blockquote>
 <h3 id="プロトコルに対する基本認証の再有効化"><a href="#プロトコルに対する基本認証の再有効化" class="headerlink" title="プロトコルに対する基本認証の再有効化"></a>プロトコルに対する基本認証の再有効化</h3><p>9 月中、診断では基本認証の再有効化を行うことが出来ません (Opt-out のみモードになっているためです)。9 月中にいずれかのプロトコルでの基本認証の再有効化が必要な場合、サポートにお問い合わせください。注意 -  SMTP Auth の基本認証についてはご自身で再有効化が可能です。<a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/exchange/clients-and-mobile-in-exchange-online/authenticated-client-smtp-submission">こちらの記事</a> をご参照ください。</p>
 <p>10 月 1 日以降、診断により、基本認証を再有効化できるのは、無効化されていたプロトコルのみです。</p>
 <p>9 月中にオプトアウトを行わずに、後で必要であると分かったプロトコルの基本認証が無効化された場合は、この方法を使用することで再有効化できます。</p>
@@ -190,6 +193,7 @@ ga('send', 'pageview');
 <p><img src="image7.png" alt=""></p>
 <h2 id="レポート-Web-サービス-エンドポイントについて"><a href="#レポート-Web-サービス-エンドポイントについて" class="headerlink" title="レポート Web サービス エンドポイントについて"></a>レポート Web サービス エンドポイントについて</h2><p>レポート Web サービス REST エンドポイントを使用してメッセージ追跡ログなどにアクセスされているお客様につきましても、本日、このサービスについては 12 月 31 日まですべてのお客様の基本認証が引き続き有効化され、オプトアウトや再有効化の必要がないことを発表いたします。また、このガイダンスを<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984325(v=office.15)">こちら</a>で提供させていただくことになったことをお伝えさせていただきます。</p>
 <h2 id="Exchange-Online-Protection-EOP-およびセキュリティ-コンプライアンス-センター-SCC-の-PowerShell-について"><a href="#Exchange-Online-Protection-EOP-およびセキュリティ-コンプライアンス-センター-SCC-の-PowerShell-について" class="headerlink" title="Exchange Online Protection (EOP) およびセキュリティ/コンプライアンス センター (SCC) の PowerShell について"></a>Exchange Online Protection (EOP) およびセキュリティ/コンプライアンス センター (SCC) の PowerShell について</h2><p>基本認証は 2022 年 12 月 31 日まで有効です。お客様は、証明書ベースの認証に移行する必要があります。詳細については、次の資料を参照してください: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/powershell/exchange/app-only-auth-powershell-v2?view=exchange-ps">アプリ専用の認証</a></p>
+<h2 id="Exchange-Online-の-PowerShell-について"><a href="#Exchange-Online-の-PowerShell-について" class="headerlink" title="Exchange Online の PowerShell について"></a>Exchange Online の PowerShell について</h2><p>Exchange Online の PowerShell における基本認証については、上記のオプトアウトと再有効化のガイダンスやタイムラインに従います。多要素認証を使用しない Exchange v1 モジュールは 2023 年 1 月以降完全に利用できなくなりますのでご注意ください。詳細については <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/understanding-the-different-versions-of-exchange-online/ba-p/3394487">Understanding the Different Versions of Exchange Online PowerShell Modules and Basic Auth</a> を参照してください。</p>
 <h2 id="その他の基本認証に関連する最新情報"><a href="#その他の基本認証に関連する最新情報" class="headerlink" title="その他の基本認証に関連する最新情報"></a>その他の基本認証に関連する最新情報</h2><p>Microsoft 365 に新しい機能を追加し、お客様が基本認証によって引き起こされるリスクを回避できるようにします。この新機能により、Office アプリケーションの既定の動作が変更され、基本認証を使用したサインイン プロンプトがブロックされます。この変更により、ユーザーが基本認証のみを使用するサーバー上で Office ファイルを開こうとした場合、基本認証のサインイン プロンプトが表示されなくなります。代わりに、安全でない可能性のあるサインイン方法を使用しているため、ファイルがブロックされた旨のメッセージが表示されます。</p>
 <p>この新機能に関する詳細については、次の資料を参照してください: <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/DeployOffice/security/basic-authentication-prompts-blocked">Microsoft 365 Appsでは、基本認証サインイン プロンプトが既定でブロックされます</a></p>
 <p><strong>Office チームでは、この機能のプライベート プレビュー プログラムにオプトインしていただけるお客様を募集しています。サインアップに関心がある場合は、<a href="mailto:basicauthdeprmailer@microsoft.com">basicauthdeprmailer@microsoft.com</a> 宛に電子メールを送信してください。</strong></p>
@@ -201,7 +205,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/basic-authentication-deprecation-in-exchange-online-september/" data-id="cl805xj9d0026n0t52tsl1p74" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/basic-authentication-deprecation-in-exchange-online-september/" data-id="cl947ej2q0028ost5ch1jdcbe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li></ul>
@@ -211,6 +215,16 @@ ga('send', 'pageview');
   
     
 <nav id="article-nav">
+  
+    <a href="/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Exchange Online のメール アプリケーションにサインインできない、またはパスワードを繰り返し要求されますか? ここから対策を始めましょう。
+
+        
+      </div>
+    </a>
   
   
     <a href="/blog/we-are-hiring-2022Feb/" id="article-nav-older" class="article-nav-link-wrap">
@@ -245,7 +259,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a></li></ul>
     </div>
   </div>
 
@@ -256,6 +270,11 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/">Exchange Online のメール アプリケーションにサインインできない、またはパスワードを繰り返し要求されますか? ここから対策を始めましょう。
+</a>
+          </li>
         
           <li>
             <a href="/blog/basic-authentication-deprecation-in-exchange-online-september/">Exchange Online における基本認証の廃止 – 2022 年 9 月の更新
@@ -273,10 +292,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/blog/%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E4%B8%8A%E3%81%AE%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%92%E3%82%AA%E3%83%B3%E3%83%97%E3%83%AC%E3%83%9F%E3%82%B9%E3%81%A7%E7%AE%A1%E7%90%86%E3%81%99%E3%82%8B/">クラウド上のオブジェクトをオンプレミスで管理する</a>
-          </li>
-        
-          <li>
-            <a href="/blog/updatemsi/">MSI 版の Outlook 2016 を最新に更新する方法</a>
           </li>
         
       </ul>
