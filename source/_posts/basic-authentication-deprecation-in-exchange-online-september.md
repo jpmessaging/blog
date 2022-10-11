@@ -2,9 +2,10 @@
 title: >
   Exchange Online における基本認証の廃止 – 2022 年 9 月の更新
 date: 2022-09-08
-lastupdate: 2022-09-27
+lastupdate: 2022-10-11
 tags: EXO
 ---
+※ Exchange Online 基本認証廃止についての最新情報は[こちら](https://jpmessaging.github.io/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/)をご覧ください。
 ※ この記事は、[Basic Authentication Deprecation in Exchange Online – September 2022 Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/basic-authentication-deprecation-in-exchange-online-september/ba-p/3609437) の抄訳です。最新の情報はリンク先をご確認ください。
 
 約 1 か月後、Exchange Online で特定のプロトコルを使用しているお客様を対象に基本認証の無効化を開始します。
