@@ -163,38 +163,66 @@ ga('send', 'pageview');
 <h3 id="3-MFCMAPI-による-Freebusy-フォルダーの初期化とルールの削除"><a href="#3-MFCMAPI-による-Freebusy-フォルダーの初期化とルールの削除" class="headerlink" title="(3) MFCMAPI による Freebusy フォルダーの初期化とルールの削除"></a>(3) MFCMAPI による Freebusy フォルダーの初期化とルールの削除</h3><p>Freebusy フォルダーの初期化と代理人のルールの削除を行ってから、代理人の再設定を行うことで事象を解消することができます。  </p>
 <h3 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h3><p>代理人設定については、[ファイル]タブ -[アカウント設定]-[代理人アクセス] をクリックし、スクリーンショットを採取しバックアップとしてください。  </p>
 <h3 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h3><ol>
-<li>代理人を設定する側の端末にて Outlook を終了の上、以下の URL から MFCMAPI.exe をダウンロードします。  </li>
-</ol>
+<li><p>代理人を設定する側の端末にて Outlook を終了の上、以下の URL から MFCMAPI.exe をダウンロードします。  </p>
 <p><a target="_blank" rel="noopener" href="https://github.com/stephenegriffin/mfcmapi/releases">https://github.com/stephenegriffin/mfcmapi/releases</a></p>
-<p>   ※ インストールされている Office クライアントの bit にあわせてダウンロードをお願いします。<br>   例<br>      32 bit : MFCMAPI.exe.20.0.20307.01.zip<br>      64 bit : MFCMAPI.exe.x64.20.0.20307.01.zip<br>      ※ 最新バージョンで何らかの問題が発生する場合は過去にリリースされているバージョンをお試しください。  </p>
-<ol start="2">
-<li>zip ファイルを実行して、C:\MFCMAPI などとフォルダーを指定して解凍します。  </li>
-<li>解凍されたファイルの MFCMAPI.exe を起動します。  </li>
-<li>[About MFCMAPI] というダイアログが表示されたら [OK] をクリックします。  </li>
-<li>[Tools] - [Options] をクリックします。  </li>
-<li>“Use the MDB_ONLINE flag when calling OpenMsgStore” をチェックをオンにし、[OK] をクリックします。  </li>
-<li>[Session] - [Logon] をクリックします。  </li>
-<li>プロファイル選択が表示されたら、対象のプロファイルを選択して、[OK] をクリックします。  </li>
-<li>[&lt;本人のメールアドレス&gt;] をダブル クリックします。  </li>
-<li>[Root Container] - [Freebusy Data] をダブル クリックします。  </li>
-<li>新しく開いた [Freebusy Data] ウィンドウにて、[Subject] 列が [LocalFreebusy] のアイテムを右クリックし、[Delete message] をクリックします。  </li>
-<li>“Deletion style” を [Permanent delete passing DELETE_HARD_DELETE (unrecoverable)] に変更の上、[OK] をクリックし、ウィンドウは [X] で閉じます。  </li>
-<li>次に [Root Container] をクリックします。  </li>
-<li>右ペインに表示されている一覧から、[Name] 列が “PR_FREEBUSY_ENTRYIDS” で始まるエントリを右クリックして [Delete Property] を選択し、確認ダイアログが表示されたら [OK] をクリックします。  </li>
-<li>さらに [Root Container] - [インフォメーション ストアの先頭 (または、Top of information Store 表記)] - [受信トレイ] をクリックします。  </li>
-<li>右ペインに表示されている一覧から、[Name] 列が “PR_FREEBUSY_ENTRYIDS” で始まるエントリを右クリックして [Delete Property] を選択し、確認ダイアログが表示されたら [OK] をクリックします。  </li>
-<li>引き続き、代理人についてのルールを削除します。  </li>
-<li>[Root Container] - [インフォメーション ストアの先頭 (または、Top of information Store 表記)] - [受信トレイ] を右クリックして [Other tables] - [Rules table] をクリックします。  </li>
-<li>上半分の 1 行目を選択し、下半分の [PR_RULE_PROVIDER] で始まるエントリーの [Value] 列が [Schedule+ EMS Interface] になっているかを確認します。  </li>
-<li>[Schedule+ EMS Interface] になっている場合は、上半分側で選択している行を右クリックして [Delete] をクリックして削除します。  </li>
-<li>[Schedule+ EMS Interface] になっている他の行に対しても同様に作業を行います。  </li>
-<li>MFCMAPI を終了します。  </li>
-<li>Outlook を起動します。  </li>
-<li>[ファイル]タブ - [アカウント設定] - [代理人アクセス] をクリックします。  </li>
-<li>現在設定されている代理人をすべて削除します。  </li>
-<li>Outlook を再起動します。  </li>
-<li>[ファイル]タブ - [アカウント設定] - [代理人アクセス] をクリックします。  </li>
-<li>代理人の再設定を行います。<br>代理人の設定をエラーなく完了できるか、代理人側より非公開のアイテムの参照が可能かご確認ください。<br>代理人側からの参照ができない場合には、代理人の Outlook プロファイルの再作成もお試しください。  </li>
+<p>※ インストールされている Office クライアントの bit にあわせてダウンロードをお願いします。  </p>
+<p>例:<br>32 bit : MFCMAPI.exe.23.0.23089.01.zip<br>64 bit : MFCMAPI.x64.exe.23.0.23089.01.zip  </p>
+<p>※ 最新バージョンで何らかの問題が発生する場合は過去にリリースされているバージョンをお試しください。  </p>
+</li>
+<li><p>zip ファイルを実行して、C:\MFCMAPI などとフォルダーを指定して解凍します。  </p>
+</li>
+<li><p>解凍されたファイルの MFCMAPI.exe を起動します。  </p>
+</li>
+<li><p>[About MFCMAPI] というダイアログが表示されたら [OK] をクリックします。  </p>
+</li>
+<li><p>[Tools] - [Options] をクリックします。  </p>
+</li>
+<li><p>“Use the MDB_ONLINE flag when calling OpenMsgStore” をチェックをオンにし、[OK] をクリックします。  </p>
+</li>
+<li><p>[Session] - [Logon] をクリックします。  </p>
+</li>
+<li><p>プロファイル選択が表示されたら、対象のプロファイルを選択して、[OK] をクリックします。  </p>
+</li>
+<li><p>[&lt;本人のメールアドレス&gt;] をダブル クリックします。  </p>
+</li>
+<li><p>[Root Container] - [Freebusy Data] をダブル クリックします。  </p>
+</li>
+<li><p>新しく開いた [Freebusy Data] ウィンドウにて、[Subject] 列が [LocalFreebusy] のアイテムを右クリックし、[Delete message] をクリックします。  </p>
+</li>
+<li><p>“Deletion style” を [Permanent delete passing DELETE_HARD_DELETE (unrecoverable)] に変更の上、[OK] をクリックし、ウィンドウは [X] で閉じます。  </p>
+</li>
+<li><p>次に [Root Container] をクリックします。  </p>
+</li>
+<li><p>右ペインに表示されている一覧から、[Name] 列が “PR_FREEBUSY_ENTRYIDS” で始まるエントリを右クリックして [Delete Property] を選択し、確認ダイアログが表示されたら [OK] をクリックします。  </p>
+</li>
+<li><p>さらに [Root Container] - [インフォメーション ストアの先頭 (または、Top of information Store 表記)] - [受信トレイ] をクリックします。  </p>
+</li>
+<li><p>右ペインに表示されている一覧から、[Name] 列が “PR_FREEBUSY_ENTRYIDS” で始まるエントリを右クリックして [Delete Property] を選択し、確認ダイアログが表示されたら [OK] をクリックします。  </p>
+</li>
+<li><p>引き続き、代理人についてのルールを削除します。  </p>
+</li>
+<li><p>[Root Container] - [インフォメーション ストアの先頭 (または、Top of information Store 表記)] - [受信トレイ] を右クリックして [Other tables] - [Rules table] をクリックします。  </p>
+</li>
+<li><p>上半分の 1 行目を選択し、下半分の [PR_RULE_PROVIDER] で始まるエントリーの [Value] 列が [Schedule+ EMS Interface] になっているかを確認します。  </p>
+</li>
+<li><p>[Schedule+ EMS Interface] になっている場合は、上半分側で選択している行を右クリックして [Delete] をクリックして削除します。  </p>
+</li>
+<li><p>[Schedule+ EMS Interface] になっている他の行に対しても同様に作業を行います。  </p>
+</li>
+<li><p>MFCMAPI を終了します。  </p>
+</li>
+<li><p>Outlook を起動します。  </p>
+</li>
+<li><p>[ファイル]タブ - [アカウント設定] - [代理人アクセス] をクリックします。  </p>
+</li>
+<li><p>現在設定されている代理人をすべて削除します。  </p>
+</li>
+<li><p>Outlook を再起動します。  </p>
+</li>
+<li><p>[ファイル]タブ - [アカウント設定] - [代理人アクセス] をクリックします。  </p>
+</li>
+<li><p>代理人の再設定を行います。<br>代理人の設定をエラーなく完了できるか、代理人側より非公開のアイテムの参照が可能かご確認ください。<br>代理人側からの参照ができない場合には、代理人の Outlook プロファイルの再作成もお試しください。  </p>
+</li>
 </ol>
 <h3 id="4-仕分けルールのリセット"><a href="#4-仕分けルールのリセット" class="headerlink" title="(4) 仕分けルールのリセット"></a>(4) 仕分けルールのリセット</h3><p>(3) の作業を行っても解消しない場合や MFCMAPI を利用して作業することができない場合は、仕分けルールをリセットすることで解消するかを確認します。<br>注意: 仕分けルールがリセットされるため、仕分けルールを再設定する必要があります。</p>
 <ol>
@@ -215,7 +243,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Troubleshooting-delegate-settings/" data-id="cll7axa0p001rsost3ct6fp0j" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Troubleshooting-delegate-settings/" data-id="cll7bnlxq001p8kst3az6evnm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
