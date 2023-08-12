@@ -67,13 +67,15 @@ Freebusy フォルダーの初期化と代理人のルールの削除を行っ�
 
 1. 代理人を設定する側の端末にて Outlook を終了の上、以下の URL から MFCMAPI.exe をダウンロードします。  
 
-[https://github.com/stephenegriffin/mfcmapi/releases](https://github.com/stephenegriffin/mfcmapi/releases)
+   [https://github.com/stephenegriffin/mfcmapi/releases](https://github.com/stephenegriffin/mfcmapi/releases)
 
    ※ インストールされている Office クライアントの bit にあわせてダウンロードをお願いします。  
-   例  
-      32 bit : MFCMAPI.exe.20.0.20307.01.zip  
-      64 bit : MFCMAPI.exe.x64.20.0.20307.01.zip  
-      ※ 最新バージョンで何らかの問題が発生する場合は過去にリリースされているバージョンをお試しください。  
+
+   例:  
+   32 bit : MFCMAPI.exe.23.0.23089.01.zip  
+   64 bit : MFCMAPI.x64.exe.23.0.23089.01.zip  
+
+   ※ 最新バージョンで何らかの問題が発生する場合は過去にリリースされているバージョンをお試しください。  
 
 2. zip ファイルを実行して、C:\MFCMAPI などとフォルダーを指定して解凍します。  
 3. 解凍されたファイルの MFCMAPI.exe を起動します。  
