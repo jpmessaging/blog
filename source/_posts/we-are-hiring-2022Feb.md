@@ -1,13 +1,13 @@
 ---
 title: >
   サポート エンジニアとして働く仲間を募集しています！
-date: 2022-08-22
+date: 2023-10-04
 tags:
 ---
 
 こんにちは、Exchange/Outlook サポート チームの竹本です。
 
-前回クローズとなってから 2 ヵ月あまりしか経過していませんが、さらなる体制強化のため、Exchange/Outlook サポート チームでのエンジニア募集を再開いたします！少しでも業務に興味をお持ちいただいた方、是非カジュアルにお話しましょう！また同じ内容のご案内とはなりますが、改めて私達のチームを紹介させてください！
+<!-- 前回クローズとなってから 2 ヵ月あまりしか経過していませんが、さらなる体制強化のため、--> Exchange/Outlook サポート チームでのエンジニア募集を再開いたします！少しでも業務に興味をお持ちいただいた方、是非カジュアルにお話しましょう！また同じ内容のご案内とはなりますが、改めて私達のチームを紹介させてください！
 
 ## 動いて当たり前! メッセージングに秘められた技術
 
@@ -49,15 +49,15 @@ tags:
 今回は Exchange/Outlook チームの魅力にフォーカスした内容となりましたが、CSS やサポート エンジニアそのものの魅力については、以下でもご紹介しております。よろしければ是非こちらもご参照ください！
 
 - [日本マイクロソフト キャリア採用情報　サポートエンジニアページ](https://www.microsoft.com/ja-jp/mscorp/mid-career/se-top.aspx)
-
 <!-- - [ハイブリッド ワークを支える! MW サポート エンジニアをご紹介](https://sway.office.com/j7kLofkNe1dHCv5Y) -->
 
 
 募集要項や応募はこちらから！
 
-- [Support Engineer (Exchange & Outlook) in Tokyo, Tokyo-to, Japan | Technical Support at Microsoft](https://careers.microsoft.com/us/en/job/1063036/Support-Engineer-Exchange-Outlook)
+- [Technical Support Engineering (Exchange＆Outlook)](https://jobs.careers.microsoft.com/global/ja/job/1590616/Technical-Support-Engineering-(Exchange%EF%BC%86Outlook))
+<!-- - [Support Engineer (Exchange & Outlook) in Tokyo, Tokyo-to, Japan | Technical Support at Microsoft](https://careers.microsoft.com/us/en/job/1063036/Support-Engineer-Exchange-Outlook) -->
 
-また、興味はあるけどいきなり応募はちょっと…という方、[オンライン説明会](https://aka.ms/CSS_MW_EVENT) も定期的に開催しておりますので、是非こちらでカジュアルにお話いたしましょう！お気軽にお申し込みください。
+<!-- また、興味はあるけどいきなり応募はちょっと…という方、[オンライン説明会](https://aka.ms/CSS_MW_EVENT) も定期的に開催しておりますので、是非こちらでカジュアルにお話いたしましょう！お気軽にお申し込みください。 -->
 
 今回も最後までお読みいただきありがとうございました。
 今後も当ブログおよびサポート チームを、よろしくお願いします。
