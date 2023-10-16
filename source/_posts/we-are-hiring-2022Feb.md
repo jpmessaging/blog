@@ -2,6 +2,7 @@
 title: >
   サポート エンジニアとして働く仲間を募集しています！
 date: 2023-10-04
+lastupdate: 2023-10-16
 tags:
 ---
 
@@ -57,7 +58,8 @@ tags:
 - [Technical Support Engineering (Exchange＆Outlook)](https://jobs.careers.microsoft.com/global/ja/job/1590616/Technical-Support-Engineering-(Exchange%EF%BC%86Outlook))
 <!-- - [Support Engineer (Exchange & Outlook) in Tokyo, Tokyo-to, Japan | Technical Support at Microsoft](https://careers.microsoft.com/us/en/job/1063036/Support-Engineer-Exchange-Outlook) -->
 
-<!-- また、興味はあるけどいきなり応募はちょっと…という方、[オンライン説明会](https://aka.ms/CSS_MW_EVENT) も定期的に開催しておりますので、是非こちらでカジュアルにお話いたしましょう！お気軽にお申し込みください。 -->
+<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">2023 年 10 月 16 日追記</span>
+興味はあるけどいきなり応募はちょっと…という方、2023 年 11 月 1 日に [オンライン説明会](https://forms.office.com/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR4234QyyJCpPk5-ZSi995hZUM0hKVUhBSFNRUzNGMEhNUEJFMVlIUFREWi4u) の開催を予定しておりますので、是非こちらでカジュアルにお話いたしましょう！お気軽にお申し込みください。
 
 今回も最後までお読みいただきありがとうございました。
 今後も当ブログおよびサポート チームを、よろしくお願いします。
