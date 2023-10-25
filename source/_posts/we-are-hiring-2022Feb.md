@@ -27,12 +27,11 @@ tags:
 
 では次にクラウドはどうでしょうか。もうお分かりですね。答えはオンプレミスと同様です。
 
-例えば Exchange Online の認証は全て <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">Azure Active Directory</span> で行われており、その認証や ID 管理に関するナレッジを活かすことが可能です。
-またもう一つ代表的な要素として、リモートワークの普及により働き方の多様化が進む一方で重要視される、<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">セキュリティとコンプライアンス</span>という領域が挙げられます。
-意図しないデータ流出を防止するための <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">Data Loss Prevention (DLP)</span>、保存された<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">データの検索</span>や、それに対して行われた<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">オペレーションの監査</span>、そして発生した<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">コミュニケーションの追跡</span>等、M365 には様々なセキュリティ機能、コンプライアンス機能が備わっています。そしてこれら情報を柔軟に扱うための <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">Microsoft Graph</span> を利用したアプリケーション開発も、盛んに行われています。
+例えば Exchange Online の認証は全て <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">Microsoft Entra ID</span> で行われており、その認証や ID 管理に関するナレッジを活かすことが可能です。
+Exchange Online は Microsoft が提供する様々なサービスとの連携も強く、例えば"<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">Teams</span> 上のカレンダーが正しく表示されない" といった問題や、"<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">PowerAutomate</span> で定義したメール送信アクションが実行されない" といった問題においては、各専門エリアのエンジニアと協業をしながら、同時に自身のスキルの幅を広げることも可能です。アプリケーション開発の経験が豊富な方にとっては、お客様が <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">Microsoft Graph</span> 等の API を利用して実現したいことをご支援するといったシナリオで、大いにご活躍頂くことができるでしょう。
+他にも <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">Copilot for Outlook</span> といった最新の AI 技術に触れることができるといった点も、エンジニアにとっては大きなメリットかもしれません。(2023/10/25 時点でまだ私達の部門でのサポートは開始されておりません。)
 
-クラウド環境のメッセージング システムをサポートするということは、これら機能も同様にサポートするということになります。
-"Exchange" や "Outlook" という単語からは想像できないほどの可能性が秘められた領域であることが、少しでもイメージいただけたのではないでしょうか！
+いかがでしょう。クラウド環境のメッセージング システムにも、"Exchange" や "Outlook" という単語からは想像できないほどの可能性が秘められた領域であることが、少しでもイメージいただけたのではないでしょうか！
 
 ## 技術だけではない、サポートエンジニアの "力"
 
