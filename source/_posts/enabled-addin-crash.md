@@ -1,6 +1,7 @@
 ---
 title: アドインを有効にする方法 <第 2 回> アドインがクラッシュした場合
 date: 2021-4-22
+lastupdate: 2024-7-10
 tags:
 - Outlook
 ---
@@ -65,7 +66,7 @@ HKEY_CURRENT_USER\SOFTWARE\Microsoft\Office\Outlook\Addins\\<アドインの Pro
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\Outlook\Addins\\<アドインの ProgID>  
 
 **Windows 64 bit + Office 32 bit (MSI インストール):**  
-HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Office\Outlook\\<アドインの ProgID>  
+HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Office\Outlook\Addins\\<アドインの ProgID>  
 
 **Windows 32 bit + Office 32 bit / Windows 64 bit + Office 64 bit (クイック実行):**  
 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\ClickToRun\Registry\Machine\Software\Microsoft\Office\Outlook\Addins\\<アドインの ProgID>  
