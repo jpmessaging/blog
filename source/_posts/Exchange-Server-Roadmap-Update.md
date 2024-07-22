@@ -21,7 +21,7 @@ categories: Exchange
 
 今後も Exchange Server をご利用になる場合には、現時点で最新である Exchange Server 2019 CU14 に移行していただき、Exchange Server SE のリリースに備えていただくことを強く推奨いたします。
 
-多くのお客様は [Exchange Server 2016](https://learn.microsoft.com/ja-jp/lifecycle/products/exchange-server-2016) や [Exchange Server 2019](https://learn.microsoft.com/ja-jp/lifecycle/products/exchange-server-2019) をご利用いただいておりますが、どちらのバージョンも 2025 年 10 月 14 日にサポート終了となります。
+多くのお客様に [Exchange Server 2016](https://learn.microsoft.com/ja-jp/lifecycle/products/exchange-server-2016) および [Exchange Server 2019](https://learn.microsoft.com/ja-jp/lifecycle/products/exchange-server-2019) をご利用いただいておりますが、どちらのバージョンも 2025 年 10 月 14 日にサポート終了となります。
 
 サポート終了時期間近に上記の次期バージョンである Exchange Server SE RTM がリリースされることとなります。Exchange Server SE のインプレース アップグレードは通常の CU 適用と同じ流れで実施できることや、Exchange Server 2019 CU15 からの主たる機能更新が存在しないことから、インプレース アップグレード自体で影響が生じるシナリオは稀かと思います。
 一方、その後にリリース予定である Exchange Server SE CU1 以降では下位バージョンとの共存環境をサポートしておりません。言い換えれば、その時点ですべてのサーバーが Exchange Server SE RTM 以上である必要があり、Exchange Server SE CU1 への移行までを視野に入れると、出来る限りはやく Exchange Server SE への移行を完了し、加えて Exchange Server 2016 / Exchange Server 2019 の撤去を行う必要があります。
@@ -111,7 +111,7 @@ Exchange Server 2016 から Exchange Server SE へのタイムリーな移行を
 
 以前のすべてのバージョンと同様に、Exchange Server SE を使用して新しい Exchange オンプレミス組織を最初から作成したり、サポートされているバージョン (Exchange Server 2016 CU23 や Exchange Server 2019 CU14 以降など) のみを含む Exchange 組織に共存したりできます。サポートされていないバージョンの Exchange 組織には導入できません。
 
-Exchange Server 2019 CU15 や Exchange Server SE RTM との共存できるのは以下のバージョンとなります。  
+今後リリース予定の Exchange Server のバージョンと、共存がサポートされる Exchange Server のバージョンは、以下の表のとおりです。
 なお、今後 Exchange Server SE CU1 以降がリリースされる際に、下位バージョンとの共存がサポートされなくなりますので、できる限り早めに Exchange Server SE へのアップグレードを実施いただくことをご検討ください。  
 
 | 今後リリース予定の Exchange Server のバージョン | 共存がサポートされる Exchange Server のバージョン |
@@ -124,12 +124,12 @@ Exchange Server 2019 CU15 や Exchange Server SE RTM との共存できるのは
 
 | 既存の Exchange Server          | Exchange Server 2019 CU15                                                                                                                                 | Exchange Server SE RTM                                                                                                                                                                                                 |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Exchange Server 2013 | 組織ではサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 に対して 従来のアップグレードを行ったうえで Exchange Server 2013 を撤去します。また、Exchange Server 2019 CU15 の公開されたら適用します。 | 組織ではサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 に対して 従来のアップグレードを行ったうえで Exchange Server 2013 を撤去します。また、Exchange Server 2019 CU15 の公開されたら適用します。その後 Exchange Server SE がリリースされたら、Exchange Server SE にインプレース アップグレードを行います。 |
-| Exchange Server 2016 CU23 | Exchange Server 2019 CU14 に対して 従来のアップグレードを行ったうえで、Exchange Server 2019 CU15 の公開されたら適用します。 | Exchange Server 2019 CU14 に対して 従来のアップグレードを行ったうえで、Exchange Server 2019 CU15 の公開されたら適用します。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
-| Exchange Server 2016 CU22 以前 | 組織ではサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 に対して 従来のアップグレードを行ったうえで Exchange Server 2016 を撤去し、Exchange Server 2019 CU15 が公開されたら適用します。<br> または、今すぐ Exchange Server 2016 CU23 を適用し、Exchange Server 2019 CU14 または Exchange Server 2019 CU15 へ従来のアップグレードを行います。 | 組織ではサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 に対して 従来のアップグレードを行ったうえで Exchange Server 2016 を撤去し、Exchange Server 2019 CU15 の公開されたら適用します。 <br> または、今すぐ Exchange Server 2016 CU23 を適用し、Exchange Server 2019 CU14 または Exchange Server 2019 CU15 へ従来のアップグレードを行います。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
+| Exchange Server 2013 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで Exchange Server 2013 を撤去します。また、Exchange Server 2019 CU15 が公開されたら適用します。 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで Exchange Server 2013 を撤去します。また、Exchange Server 2019 CU15 が公開されたら適用します。その後 Exchange Server SE がリリースされたら、Exchange Server SE にインプレース アップグレードを行います。 |
+| Exchange Server 2016 CU23 | Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで、Exchange Server 2019 CU15 が公開されたら適用します。 | Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで、Exchange Server 2019 CU15 が公開されたら適用します。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
+| Exchange Server 2016 CU22 以前 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで Exchange Server 2016 を撤去し、Exchange Server 2019 CU15 が公開されたら適用します。<br> または、今すぐ Exchange Server 2016 CU23 を適用し、Exchange Server 2019 CU14 または Exchange Server 2019 CU15 へ従来のアップグレードを行います。 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで Exchange Server 2016 を撤去し、Exchange Server 2019 CU15 が公開されたら適用します。 <br> または、今すぐ Exchange Server 2016 CU23 を適用し、Exchange Server 2019 CU14 または Exchange Server 2019 CU15 へ従来のアップグレードを行います。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
 | Exchange Server 2019 CU14 以降 | Exchange Server 2019 の CU15 が公開されたら適用します。 | Exchange Server SE にインプレース アップグレードします。 |
-| Exchange Server 2019 CU13 | 今すぐ Exchange Server 2019 CU14 を適用します。<br>また、Exchange Server 2019 CU15 が公開されたら適用します。| 組織ではサポートされません。<br><br>今すぐ Exhcnage Server 2019 CU14 または CU15 を適用します。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
-| Exchange Server 2019 CU12 以前 | 組織ではサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 を適用します。<br>また、Exchange Server 2019 CU15 が公開されたら適用します。 | 組織ではサポートされません。<br><br>今すぐ Exhcnage Server 2019 CU14 を適用、または Exchange Server 2019 CU15 が公開されたら適用します。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
+| Exchange Server 2019 CU13 | 今すぐ Exchange Server 2019 CU14 を適用します。<br>また、Exchange Server 2019 CU15 が公開されたら適用します。| 組織内に共存することはサポートされません。<br><br>今すぐ Exhcnage Server 2019 CU14 または CU15 を適用します。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
+| Exchange Server 2019 CU12 以前 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 を適用します。<br>また、Exchange Server 2019 CU15 が公開されたら適用します。 | 組織内に共存することはサポートされません。<br><br>今すぐ Exhcnage Server 2019 CU14 を適用、または Exchange Server 2019 CU15 が公開されたら適用します。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
 
 
 # Exchange Server SE CU1 について
