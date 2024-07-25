@@ -1,6 +1,6 @@
 ---
 title: Exchange Server ロードマップの更新
-date: 2024-07-10
+date: 2024-07-25
 lastupdate: 
 tags: Exchagne
 categories: Exchange
@@ -19,7 +19,7 @@ categories: Exchange
 
 # サポート チームからの推奨事項
 
-今後も Exchange Server をご利用になる場合には、現時点で最新である Exchange Server 2019 CU14 に移行していただき、Exchange Server SE のリリースに備えていただくことを強く推奨いたします。
+今後も Exchange Server をご利用になる場合には、現在運用中のすべての Exchange Server を現時点で最新である Exchange Server 2019 CU14 に移行していただき、Exchange Server SE のリリースに備えていただくことを強く推奨いたします。
 
 多くのお客様に [Exchange Server 2016](https://learn.microsoft.com/ja-jp/lifecycle/products/exchange-server-2016) および [Exchange Server 2019](https://learn.microsoft.com/ja-jp/lifecycle/products/exchange-server-2019) をご利用いただいておりますが、どちらのバージョンも 2025 年 10 月 14 日にサポート終了となります。
 
@@ -102,7 +102,7 @@ Exchange Server 2019 から簡単に Exchange Server SE へ移行可能なイン
 
 - **インプレース アップグレード:** 最速で簡単に Exchange Server 2019 を Exchange Server SE にアップグレードする方法です。CU 適用作業と同様の操作でアップグレードが可能です。
 
-- **従来のアップグレード :** 従来の方法と同じように、新規 Windows Server OS をインストールしたサーバーを用意して Exchange Server SE をインストールし、名前空間とメールボックスをその新しいインフラストラクチャに移動する従来のアップグレードもサポートしています。この方法は Exchange Server のハードウェアをリプレースする場合や、新しい Windows Server OS に更新したい場合などのシナリオで利用されます。
+- **従来のアップグレード :** これまでと同様に、新規 Windows Server OS をインストールしたサーバーを用意して Exchange Server SE をインストールし、名前空間とメールボックスをその新しいインフラストラクチャに移動する従来のアップグレードもサポートしています。この方法は Exchange Server のハードウェアをリプレースする場合や、新しい Windows Server OS に更新したい場合などのシナリオで利用されます。
 
 既存環境で Exchange Server 2016 のみをご利用いただいている場合で今後もオンプレミス Exchange Server をご利用予定の場合、Exchange Server 2016 からはインプレース アップグレードを行うことができないため、少なくとも 1 回は従来のアップグレードをする必要があります。  
 Exchange Server 2016 から Exchange Server SE へのタイムリーな移行を確実に遂行するためにも、速やかに Exchange Server 2016 から Exchange Server 2019 へ従来のアップグレードにて移行していただくことを推奨します。  
