@@ -3,7 +3,7 @@ name: PR Preview
 on:
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '14'
 
     - name: Install Hexo and dependencies
       run: |
@@ -29,9 +29,17 @@ jobs:
       run: hexo generate
 
     - name: Deploy to GitHub Pages
-      if: github.event.pull_request.head.repo.full_name == github.repository
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
         destination_dir: previews/${{ github.event.number }}
+
+    - name: Post PR comment with preview URL
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR_NUMBER: ${{ github.event.number }}
+      run: |
+        PREVIEW_URL="https://jpmessaging.github.io/blog/previews/${PR_NUMBER}"
+        COMMENT="🚀 Preview URL: ${PREVIEW_URL}"
+        curl -s -H "Authorization: token $GITHUB_TOKEN" -X POST -d "{\"body\":\"${COMMENT}\"}" "https://api.github.com/repos/${{ github.repository }}/issues/${PR_NUMBER}/comments"
