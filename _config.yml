@@ -106,6 +106,3 @@ deploy:
 github:
   url: https://github.com/jpmessaging/blog/
   posts_dir: articles
-
-  #Google Analytics
-  google_analytics: UA-177637248-1
