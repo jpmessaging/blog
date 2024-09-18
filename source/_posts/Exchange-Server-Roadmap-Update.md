@@ -1,9 +1,8 @@
 ---
 title: Exchange Server ロードマップの更新
 date: 2024-07-25
-lastupdate: 
-tags: Exchagne
-categories: Exchange
+lastupdate:
+tags: Exchange
 ---
 
 
