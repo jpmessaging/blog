@@ -20,9 +20,9 @@ SharePoint Online、Teams などの他のワークロードにも同様の設計
 
 次に、新しい要素として Microsoft Exchange ハイブリッド環境を紹介します。Microsoft Exchange ハイブリッド環境を簡潔に言い表すと、オンプレミスの Active Directory と Microsoft Entra ID という 2 つの Microsoft Exchange 組織が同期されている環境と言えます。ハイブリッド構成ウィザード (HCW) のおかげで、これは 1 つの組織として動作します。
 
-HCW はハイブリッド環境を機能させる唯一の要素ではありません。実際には、HCW は双方の Exchange 組織が多くの面で互いを信頼して様々な機能が動作するよう構成変更を行うだけですが、受信者オブジェクトを 2 つのディレクトリ間で同期させる必要もあります。
+HCW はハイブリッド環境を機能させる唯一の要素ではありません。実際には、HCW は双方の Exchange 組織が多くの面で互いを信頼して様々な機能が動作するよう構成変更を行うだけであり、受信者オブジェクトを 2 つのディレクトリ間で同期させる必要もあります。
 
-そして、上記の同期を行うためにトポロジ内に必要なもう 1 つの要素が Microsoft Entra Connect です (このコンポーネントは何度か名前が変更されており、DirSync、AAD Sync、AAD Connect として知られているかもしれません)。Microsoft Entra Connect は、オンプレミスの Active Directory と Microsoft Entra ID 間でオブジェクトが同期されることを保証します。[「Exchange Hybrid オプション機能」](https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-install-custom#optional-features)が有効になっている (Microsoft Entra Connect の構成時にチェックされている場合) と、オブジェクトが持つ可能性のあるすべての Exchange プロパティも同期に含まれます。そこから、それらは自動的に Exchange Online Directory Service に同期されるのは、すでに述べた ForwardSync および二重書き込みプロセスのおかげです。
+そして、上記の同期を行うためにトポロジ内に必要なもう 1 つの要素が Microsoft Entra Connect です (このコンポーネントは何度か名前が変更されており、DirSync、AAD Sync、AAD Connect として知られているかもしれません)。Microsoft Entra Connect は、オンプレミスの Active Directory と Microsoft Entra ID 間でオブジェクトが同期されることを保証します。[「Exchange Hybrid オプション機能」](https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-install-custom#optional-features)が有効になっている (Microsoft Entra Connect の構成時にチェックされている場合) と、オブジェクトが持つ可能性のあるすべての Exchange プロパティも同期に含まれます。そこから、それらは自動的に Exchange Online Directory Service に同期されるのは、すでに述べた ForwardSync および Dual Write 処理のおかげです。
 
 したがって、ForwardSync と Dual Write は、Microsoft Entra Connect と同様に、Microsoft Entra ID と Exchange Online Directory Services オブジェクトの同期を維持するために、サービスにある同期エンジンを形成します。ただし、異なるところは: Microsoft Entra Connect は変更があると Microsoft Entra ID にプッシュしますが、ForwardSync は技術的には Microsoft Entra ID から Exchange Online Directory Services に変更をプッシュしません。代わりに、Exchange Online Directory Services は定期的に Microsoft Entra ID にクエリを実行し、同期が必要な変更があるかどうかを確認し、ある場合はそれらを同期します。
 
@@ -40,7 +40,7 @@ Microsoft Exchange はメールボックスだけでなく、メールが有効�
 
 両方の環境でプレーン ユーザーというオブジェクトの種類を持つことはできますが、Exchange Online ではリモート メールボックスのオブジェクトの種類がなく (少なくともテナント管理者には公開されません)、オンプレミスの Exchange にはあります。同じことが、Exchange Online で Microsoft 365 グループ (Unified Group) にも当てはまりますが、オンプレミスの Exchange では Microsoft 365 グループがありません。
 
-もう一つ考慮すべき点は、動的配布グループが両方の環境で扱われているにもかかわらず、Microsoft Entra Connect によって同期されないことです。Exchange Online の動的配布グループは純粋なクラウドオブジェクトです。その理由は非常に簡単です。動的配布グループのメンバーシップは特定のフィルターに基づいており、同じフィルターで同期する場合、両方の環境でメンバーシップが異なります。
+もう一つ考慮すべき点は、動的配布グループが両方の環境で扱われているにもかかわらず、Microsoft Entra Connect によって同期されないことです。Exchange Online の動的配布グループは純粋なクラウド オブジェクトです。その理由は非常に簡単です。動的配布グループのメンバーシップは特定のフィルターに基づいており、同じフィルターで同期する場合、両方の環境でメンバーシップが異なります。
 
 いずれの Exchange 組織においても、オブジェクトの種類を定義するものは何でしょうか? 答えは属性です。オンプレミスの Exchange サーバーのバージョンによっては、あるオブジェクトが他のオブジェクトよりも多くの属性を持つ場合があります。
 
@@ -48,15 +48,15 @@ Microsoft Exchange はメールボックスだけでなく、メールが有効�
 
 ![](Prov01_05.jpg)
 
->さて、属性について話しているところですが、Exchange オブジェクトを作成または変更するためにサポートされている唯一の方法は、Exchange Management Shell (EMS) と Exchange Admin Center (EAC) を使用することであることをご存知ですか? Set-ADUser が EMS から実行されている場合でも、サポートしていません (明示的に Microsoft サポートの監督下にある場合を除きます)。その理由は、Set-ADUser、属性エディター、ADSIEdit、またはサード パーティのツールは、検証なしで特定の属性に必要な値をスタンプするだけですが、EMS と EAC は、プロパティにスタンプしようとしている値が有効であるか、別のオブジェクトによって使用されているかどうかを確認します(電子メールアドレスは完璧な例です)。また、他の必要な属性も変更されていることを確認します（例えば、ArchiveGuid をスタンプするだけでアーカイブを有効にすることは、アーカイブが機能させるために十分ではありません）。
+>さて、属性について話しているところですが、Exchange オブジェクトを作成または変更するためにサポートされている唯一の方法は、Exchange Management Shell (EMS) と Exchange Admin Center (EAC) を使用することであることをご存知ですか? Set-ADUser が EMS から実行されている場合でも、サポートしていません (明示的に Microsoft サポートの監督下にある場合を除きます)。その理由は、Set-ADUser、属性エディター、ADSIEdit、またはサード パーティのツールは、検証なしで特定の属性に必要な値をスタンプするだけですが、EMS と EAC は、プロパティにスタンプしようとしている値が有効であるか、別のオブジェクトによって使用されているかどうかを確認します(電子メールアドレスは完璧な例です)。また、他の必要な属性も変更されていることを確認します (例えば、ArchiveGuid をスタンプするだけでアーカイブを有効にすることは、アーカイブが機能させるために十分ではありません) 。
 
 ここですべてのマッピングを説明することはしませんが、以下に最も関連性の高いものを示します：
 
 ![](Prov01_06.jpg)
 
-- オンプレミスの Exchange の MailUser は、Exchange Online では MailUser または UserMailbox のいずれかになります（Exchange Online のライセンスが割り当てられているかどうかによります）。
+- オンプレミスの Exchange の MailUser は、Exchange Online では MailUser または UserMailbox のいずれかになります (Exchange Online のライセンスが割り当てられているかどうかによります)。
 
-- オンプレミスの Exchange の RemoteMailbox オブジェクトは MailUser のサブタイプですが、Get-MailUser を実行して一覧表示することはできません。代わりに Get-RemoteMailbox を使用してください。理想的には、Exchange Online のメールボックスとして表示されることになります。ちなみに、すべてのメールボックスがライセンスを必要とするわけではありません（共有またはリソース メールボックス）が、通常のメールボックスはライセンスが必要であり、ライセンスが割り当てられていない場合、それらをメールボックスとしてではなく、MailUser として表示することになるかもしれません。これについては後で説明します。
+- オンプレミスの Exchange の RemoteMailbox オブジェクトは MailUser のサブタイプですが、Get-MailUser を実行して一覧表示することはできません。代わりに Get-RemoteMailbox を使用してください。理想的には、Exchange Online のメールボックスとして表示されることになります。ちなみに、すべてのメールボックスがライセンスを必要とするわけではありません (共有またはリソース メールボックス) が、通常のメールボックスはライセンスが必要であり、ライセンスが割り当てられていない場合、それらをメールボックスとしてではなく、MailUser として表示することになるかもしれません。これについては後で説明します。
 
 - 動的配布グループは、オンプレミスの Exchange から Exchange Online に同期されないため、どちらかの環境に動的配布グループが表示されている場合は、そのオブジェクトは同期されず、その環境でのみ作成されているため、対象オブジェクトに適用された変更が他方に同期されることを期待しないでください。
 
@@ -65,9 +65,9 @@ Microsoft Exchange はメールボックスだけでなく、メールが有効�
 ## プロビジョニング
 次に、Exchange Online のさまざまなオブジェクトの種類に対するプロビジョニングのしくみについて説明します。
  
-これを説明する最も簡単な方法は、配布グループまたはセキュリティグループで例をあげることです。例えば、オンプレミスで 3 人のメンバーを持つグループを作成し、Microsoft Entra Connect が同期すると、Microsoft Entra ID にプッシュされ、そこから Forwardsync/DualWrite を介して Exchange Online Directory Services に送信されます。簡単に聞こえますでしょうか。3 人のメンバーを持つグループを同期するには、Microsoft Entra ID でいくつかのサブステップを経る必要があります。そのうちの 1 つは「正規化」と呼ばれ、このステップでは 1 つのタスクをより簡単なタスクに分割します。
+これを説明する最も簡単な方法は、配布グループまたはセキュリティ グループで例をあげることです。例えば、オンプレミスで 3 人のメンバーを持つグループを作成し、Microsoft Entra Connect が同期すると、Microsoft Entra ID にプッシュされ、そこから Forwardsync/DualWrite を介して Exchange Online Directory Services に送信されます。簡単に聞こえますでしょうか。3 人のメンバーを持つグループを同期するには、Microsoft Entra ID でいくつかのサブステップを経る必要があります。そのうちの 1 つは「正規化」と呼ばれ、このステップでは 1 つのタスクをより簡単なタスクに分割します。
 
-先ほど述べたグループを例にとると、1 つの操作はグループの作成とメンバーの追加という 2 つの異なるタスクに分かれます。メンバーの追加も 3 つのアクションに分かれており、1 つは追加されるユーザーごとにグループのメンバーとして追加されます。
+先ほど述べたグループを例にとると、一連の処理はグループの作成とメンバーの追加という 2 つの異なるタスクに分かれます。さらに、メンバーの追加も 3 つのアクションに分けられます。各ユーザーついてグループのメンバーとして追加する処理です。
 
 ![](Prov01_07.jpg)
 
@@ -75,37 +75,39 @@ Microsoft Exchange はメールボックスだけでなく、メールが有効�
 
 ## *メールボックスのプロビジョニング – 注意点*
 ### 権限のソース
-Microsoft Exchange のハイブリッド環境でのメールボックスのプロビジョニングについて説明する前に、この環境の主な利点は、すべてのアイデンティティをオンプレミスで作成および管理できることを理解する必要があります。同じオブジェクトが異なるディレクトリで更新される状況を避けるために、常に一方が他方に優先される側に存在する必要があります。これはを権限のソース（**Source of Authority**、SOA）と呼ばれ、この環境タイプ（ハイブリッドで、Microsoft Entra Connect が Exchange 属性を同期している）では、オンプレミスのディレクトリが SOA となります（ごく少数の例外を除く）。これを念頭に置いておくことが、特定の動作を理解するための鍵となります。
+Microsoft Exchange のハイブリッド環境でのメールボックスのプロビジョニングについて説明する前に、すべてのユーザー ID をオンプレミスで作成および管理できることがこの環境の大きな利点であることを理解する必要があります。同じオブジェクトが異なるディレクトリで更新される状況を避けるために、常に一方が他方に優先される側に存在する必要があります。これはを権限のソース (**Source of Authority**、SOA) と呼ばれ、この環境 (ハイブリッドで、Microsoft Entra Connect が Exchange 属性を同期している) では、オンプレミスのディレクトリが SOA となります (ごく少数の例外を除く) 。これを念頭に置いておくことが、特定の動作を理解するための鍵となります。
 
 
 ### 30日間の猶予期間
-オンプレミスで新しいリモート メールボックスをプロビジョニングする場合でも、Exchange Online ライセンスを持ていないメールボックスを Exchange Online に移行する場合でも、サービスは管理者がユーザーに Exchange Online ライセンスを割り当てるために 30 日間の猶予期間を許可します。これは 30 日間の無料サービスを提供するためのものではなく、お客様が独自のプロビジョニング プロセスを定義し、通常のメールボックスに Exchange Online ライセンスを割り当てるための時間を与えるためのものです。
-Exchange Online でメールボックスがプロビジョニングされたことを確認した後、または移行シナリオでは移行が完了する前にライセンスを割り当てることをお勧めします。
+オンプレミスで新しいリモート メールボックスをプロビジョニングする場合でも、Exchange Online ライセンスを付与されていないメールボックスを Exchange Online に移行する場合でも、ユーザーに Exchange Online ライセンスを割り当てるまで 30 日間の猶予期間がサービスによって管理者に与えられます。これは 30 日間の無料サービスを提供するためのものではなく、お客様それぞれのプロビジョニング プロセスを尊重し、通常のメールボックスに Exchange Online ライセンスを割り当てが終わるまでの間に一定の時間を与えるためのものです。Exchange Online でメールボックスがプロビジョニングされたことを確認した後、または移行シナリオでは移行が完了する前にライセンスを割り当てることをお勧めします。
 
 ### リモート ルーティング アドレスとその他のプロパティ
-次に知っておくべきことは、オンプレミスの Exchange 受信者の**リモート ルーティング アドレス**を誰がスタンプするかです（これが @YourDomain.mail.onmicrosoft.com です）。オンプレミスの Exchange は、次のシナリオに応じてスタンプします：
+次に知っておくべきことは、オンプレミスの Exchange 受信者の**リモート ルーティング アドレス**を誰がスタンプするかです (これが @YourDomain.mail.onmicrosoft.com です)。オンプレミスの Exchange は、次のシナリオに応じてスタンプします：  
 
-- オンプレミスの Exchange を使用しているすべてのユーザー向け:
-既定の電子メール アドレス ポリシーは、ハイブリッド構成ウィザード（HCW）によって変更され、すべてのオンプレミスの受信者のセカンダリアドレスに YourDomain.mail.onmicrosoft.com アドレスが追加されます。このメール アドレス ポリシーが有効になっている場合、オブジェクトに一致する優先度の高い他のポリシーがなく、受信者の EmailAddressPolicyEnabled プロパティが「True」に設定されている場合、このアドレスはユーザーの「EmailAddresses」プロパティに表示されます。（「proxyaddresses」AD 属性にマッピングされます）
+- オンプレミスの Exchange を使用しているすべてのユーザー向け:  
+  
+  既定の電子メール アドレス ポリシーは、ハイブリッド構成ウィザード (HCW) によって変更され、すべてのオンプレミスの受信者のセカンダリ アドレスに YourDomain.mail.onmicrosoft.com アドレスが追加されます。このメール アドレス ポリシーが有効になっている場合、オブジェクトに一致する優先度の高い他のポリシーがなく、受信者の "EmailAddressPolicyEnabled" プロパティが "True" に設定されている場合、このアドレスはユーザーの "EmailAddresses" プロパティに表示されます。("proxyaddresses" AD 属性にマッピングされます)
+  
+- メールボックスが Exchange Online に移行される場合:  
+   
+   オンプレミスのユーザーの "ExternalEmailAddress" プロパティ ("TargetAddress" AD 属性にマッピングされます) は、オンプレミスのメールボックスのハイブリッド移行が完了すると、メールボックス レプリケーション サービス (MRS) によってリモート ルーティング アドレス値 (該当ユーザーの "EmailAddresses" に既に存在する必要があります) にスタンプされます。
+   
+- リモート メールボックスがオンプレミスからプロビジョニングされる場合:  
+  
+  リモート メールボックスをプロビジョニングする方法に関係なく (Enable-RemoteMailbox、New-RemoteMailbox、または EAC を使用)、YourDomain.mail.onmicrosoft.com アドレスを持つ "RemoteRoutingAddress" が必須パラメータとして指定する必要があります。これは、Exchange オンプレミスから Get-RemoteMailbox コマンドレットを実行すると、"RemoteRoutingAddress" プロパティと "EmailAddresses" のセカンダリ アドレスとして表示されます。
+  
+リモート ルーティング アドレスは、Autodiscover、ハイブリッドメールフロー (トランスポート)、または空き時間情報のリクエストなどの他の Exchange 関連サービスを Exchange Online にリダイレクトするために重要です。
 
-- メールボックスが Exchange Online に移行される場合:
-オンプレミスのユーザーの「ExternalEmailAddress」プロパティ（「TargetAddress」AD 属性にマッピングされます）は、オンプレミスのメールボックスのハイブリッド移行が完了すると、メールボックス レプリケーション サービス（MRS）によってリモート ルーティング アドレス値（該当ユーザーの EmailAddresses に既に存在する必要があります）でスタンプされます。
+リモート ルーティング アドレス (YourDomain.mail.onmicrosoft.com) と **Microsoft Online Email Routing Address** (MOERA)(YourDomain.onmicrosoft.com) を混同しないでください。リモート ルーティング アドレスはオンプレミスの Exchange によってスタンプされますが、MOERA は Microsoft Entra ID によってスタンプされます (ただし、ユーザーを Microsoft Entra ID で直接作成し、その時点で Exchange Online ライセンスが割り当てられていない場合を除きます。その場合、オブジェクトには MOERA がスタンプされません)。
 
-- リモート メールボックスがオンプレミスからプロビジョニングされる場合:
-リモート メールボックスをプロビジョニングする方法に関係なく（Enable-RemoteMailbox、New-RemoteMailbox、または EAC を使用）、YourDomain.mail.onmicrosoft.com アドレスを持つ「RemoteRoutingAddress」が必須パラメータとして指定する必要があります。これは、Exchange オンプレミスから Get-RemoteMailbox コマンドレットを実行すると、ExternalEmailAddress プロパティと EmailAddresses のセカンダリ アドレスとして表示されます。
-
-リモート ルーティング アドレスは、Autodiscover、ハイブリッドメールフロー（トランスポート）、または空き時間情報のリクエストなどの他の Exchange 関連サービスを Exchange Online にリダイレクトするために重要です。
-
-リモート ルーティング アドレス（YourDomain.mail.onmicrosoft.com）と **Microsoft Online Email Routing Address** (MOERA)(YourDomain.onmicrosoft.com）を混同しないでください。リモート ルーティング アドレスはオンプレミスの Exchange によってスタンプされますが、MOERA は Microsoft Entra ID によってスタンプされます（ただし、ユーザーを Microsoft Entra ID で直接作成し、その時点で Exchange Online ラセンスが割り当てられていない場合を除きます。その場合、オブジェクトには MOERA がスタンプされません）。
-
-もう 1 つ重要なプロパティは **LegacyExchangeDN** です。これは、オンプレミスから同期された Exchange Online のメールボックスがある場合、X500 アドレスとしてオンプレミスのリモートメールボックスオブジェクトに書き戻されます。
+もう 1 つ重要なプロパティは **LegacyExchangeDN** です。これは、オンプレミスから同期された Exchange Online のメールボックスがある場合、X500 アドレスとしてオンプレミスのリモート メールボックス オブジェクトに書き戻されます。
 
 **ExchangeGuid** は、最初にメールボックスを作成した Microsoft Exchange 組織によって生成されます：
 
 - Exchange Online :オンプレミスの Exchange Management Shell から New-RemoteMailbox、Enable-RemoteMailbox を実行するか、Exchange Admin Center から Exchange Online メールボックスを作成することにより、メールボックスがオンプレミスからプロビジョニングされた場合
 - オンプレミスの Exchange:ローカルでメールボックスを作成し、その後 Exchange Online に移行することを決定した場合
 
-**ArchiveGuid プロパティ**は、ホストする Exchange 組織（オンプレミスまたはオンライン）に関係なく、常に Exchange オンプレミスによって生成され、これが Exchange Online に同期されます。
+**ArchiveGuid プロパティ**は、ホストする Exchange 組織 (オンプレミスまたはオンライン) に関係なく、常に Exchange オンプレミスによって生成され、これが Exchange Online に同期されます。
 
 >Exchange Online でのプロビジョニングまたは変更は、最大 24 時間かかる場合があります。ほとんどの場合、ほぼ即時に処理されますが、リソースが通常よりも多く消費されると、遅延が発生する場合があります。詳細については、[この記事](https://learn.microsoft.com/exchange/troubleshoot/user-and-shared-mailboxes/delays-provision-mailbox-sync-changes)と自己診断ツールへのリンクをご覧ください。
 
