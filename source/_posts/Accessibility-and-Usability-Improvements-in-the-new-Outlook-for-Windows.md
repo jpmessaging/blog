@@ -1,8 +1,7 @@
 ---
 title: >
   新しい Outlook for Windows のアクセシビリティと操作性の向上
-date: 2024-09-10
-lastupdate: 2024-09-10
+date: 2024-09-24
 tags: New Outlook
 ---
 
