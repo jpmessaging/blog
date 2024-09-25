@@ -1,6 +1,6 @@
 ---
-title: 新しい Outlook for Windows 役員秘書や代理人のためのガイド part 2
-date: 2024-08-30
+title: '新しい Outlook for Windows: 役員秘書や代理人のためのガイド - part 2'
+date: 2024-09-25
 tags: 
 - New Outlook
 ---
