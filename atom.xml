@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2024-09-23T15:00:00.000Z</updated>
+  <updated>2024-09-24T15:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新しい Outlook for Windows: 役員秘書や代理人のためのガイド - part 1</title>
+    <link href="https://jpmessaging.github.io/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-1/"/>
+    <id>https://jpmessaging.github.io/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-1/</id>
+    <published>2024-09-24T15:00:00.000Z</published>
+    <updated>2024-09-24T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/t5/outlook-blog/new-outlook-for-windows-a-guide-for-executive-assistants-and/ba-p/4208700">New Outlook for Windows: A guide for Executive Assistants and Delegates – part 1</a> の抄訳です。最新の情報はリンク先をご確認ください。</p><p>新しい Outlook for Windows (以下、新しい Outlook) は、役員や代理人が日常業務でより生産的になるための強力なメール体験を提供します。このブログでは、代理人が新しい Outlook を使い始めるのに役立つ Tips をいくつか紹介します。</p><h2 id="1-新しい-Outlook-に切り替える"><a href="#1-新しい-Outlook-に切り替える" class="headerlink" title="1. 新しい Outlook に切り替える"></a>1. 新しい Outlook に切り替える</h2><p>組織で新しい Outlook へのアクセスを有効にしている場合は、従来の Outlook for Windows (以下、従来の Outlook) アプリの右上に [新しいOutlookを試す] というトグルが表示されます。このトグルをオンにして、新しい Outlook のエクスペリエンスをお試しいただけます。従来の Outlook にはいつでも切り替えることができます。新しい Outlook の使用を開始する詳細な方法は <a href="https://support.microsoft.com/office/656bb8d9-5a60-49b2-a98b-ba7822bc7627">こちら</a> を参照してください。</p><p><img src="screenshot001.jpg" alt=""></p><p>[設定のインポート] オプションを選択することで、従来の Outlook の一部の設定を新しい Outlook でそのまま使えるようにし、より使い慣れたものにすることをお勧めします。インポートされる設定の詳細については、<a href="https://support.microsoft.com/office/b85ce5ff-bef3-45ae-9e95-9d63c514abdc">こちら</a> をご覧ください。</p><p><img src="screenshot002.jpg" alt=""></p><p>注: 従来の Outlook と新しい Outlook を並行して使用するためには、トグルをオフにして両方のアプリを独立して起動します。</p><h2 id="2-Outlook-リボンをカスタマイズする"><a href="#2-Outlook-リボンをカスタマイズする" class="headerlink" title="2. Outlook リボンをカスタマイズする"></a>2. Outlook リボンをカスタマイズする</h2><p>新しい Outlook では、シンプル リボンが既定で有効になっており、シンプルなユーザー体験を提供します。しかし、従来の Outlook のリボン レイアウトを利用したい場合、リボンのドロップダウンからレイアウトを変更して [クラシックリボン] を選択できます。</p><p><img src="screenshot003.jpg" alt=""></p><h2 id="3-設定を管理する"><a href="#3-設定を管理する" class="headerlink" title="3. 設定を管理する"></a>3. 設定を管理する</h2><p>右上隅にある歯車のアイコンから新しい Outlook の設定に移動できます。新しい Outlook で設定に加えた変更は、Outlook on the web にも反映されます。</p><p><img src="screenshot004.jpg" alt=""></p><p><img src="screenshot005.jpg" alt=""></p><h2 id="4-共有の予定表を表示する"><a href="#4-共有の予定表を表示する" class="headerlink" title="4. 共有の予定表を表示する"></a>4. 共有の予定表を表示する</h2><p>共有/代理人の予定表が新しい Outlook にないのは、既定で表示されないためであるというフィードバックをいただくことがあります。<br>共有の予定表を表示するためには、予定表リストの [すべて表示] をクリックし、「個人用の予定表」 の下に共有の予定表を表示します。次に、興味のある予定表を選択し、リボンの [分割ビュー] を選択して複数の予定表を並べて表示します。</p><p><img src="screenshot006.jpg" alt=""></p><p><img src="screenshot007.jpg" alt=""></p><p>ユーザーが新しい Outlook に切り替えると、共有の予定表を含め、同じ予定表が自動的に選択され、表示されるようにすることを計画しています。</p><h2 id="5-新しい共有-代理人の予定表を追加する"><a href="#5-新しい共有-代理人の予定表を追加する" class="headerlink" title="5. 新しい共有/代理人の予定表を追加する"></a>5. 新しい共有/代理人の予定表を追加する</h2><p>新しい共有/代理人の予定表は、招待状を管理するために受信したメール、または予定表から直接追加できます。<br>予定表から直接追加するには、[予定表を追加] をクリックします。次に、[ディレクトリから追加] を選択し、予定表を追加する役員またはチーム メンバーを選択します。<br>ヒント - チーム メンバーの予定表を追加することで、既定で共有されている権限に従って予定を見ることができます。(ほとんどの組織では、これは通常、空き時間情報の共有です)</p><p><img src="screenshot008.jpg" alt=""></p><p><img src="screenshot009.jpg" alt=""></p><h2 id="6-共有-代理人メールボックスとフォルダーを追加して表示する"><a href="#6-共有-代理人メールボックスとフォルダーを追加して表示する" class="headerlink" title="6. 共有/代理人メールボックスとフォルダーを追加して表示する"></a>6. 共有/代理人メールボックスとフォルダーを追加して表示する</h2><p>共有または代理人のメールボックスとフォルダーを追加するには、アカウントの下にある [共有アイテム] フォルダーの横にある 3 つのドットをクリックし、「共有フォルダーまたはメールボックスを追加」 を選択します。次に、追加する共有/代理人アカウントを選択します。その後、「共有アイテム」 の下に共有メールボックスまたはフォルダーを表示できます。</p><p><img src="screenshot010.jpg" alt=""></p><p><img src="screenshot011.jpg" alt=""></p><p><img src="screenshot012.jpg" alt=""></p><h2 id="フィードバックを共有する"><a href="#フィードバックを共有する" class="headerlink" title="フィードバックを共有する"></a>フィードバックを共有する</h2><p>新しい Outlook を試してフィードバックを共有することをお勧めします。[ヘルプ]-[フィードバック] から新しい Outlook のエクスペリエンスに関するフィードバックを送信できます。コメントを追加する際は、”I am an EA (Executive Assistant)” または “I am a delegate” と記載してください。</p><p><img src="screenshot013.jpg" alt=""></p><p>新しい Outlook の最新機能について情報を入手するには、<a href="https://www.microsoft.com/microsoft-365/roadmap?filters=Outlook%2CDesktop%2CWeb&searchterms=%23newoutlookforwindows">ロードマップ</a> をフォローしてください。<br>本ブログの内容は今後サポート記事としても公開される予定であり、公開されたらここにリンクされます。</p><p>ありがとうございました。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/t5/outlook-blog/new-outlook-for-windows-a-guide-for-executive-assistants-and/ba-p/42
+      
+    
+    </summary>
+    
+    
+    
+      <category term="New Outlook" scheme="https://jpmessaging.github.io/blog/tags/New-Outlook/"/>
+    
+  </entry>
   
   <entry>
     <title>新しい Outlook for Windows のアクセシビリティと操作性の向上
@@ -490,31 +514,6 @@
     
     
       <category term="EXO" scheme="https://jpmessaging.github.io/blog/tags/EXO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Exchange 2016 以降での UnifiedContent フォルダについて
-</title>
-    <link href="https://jpmessaging.github.io/blog/Exchange%202016%20%E4%BB%A5%E9%99%8D%E3%81%A7%E3%81%AE%20UnifiedContent%20%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/"/>
-    <id>https://jpmessaging.github.io/blog/Exchange%202016%20%E4%BB%A5%E9%99%8D%E3%81%A7%E3%81%AE%20UnifiedContent%20%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/</id>
-    <published>2020-12-11T15:00:00.000Z</published>
-    <updated>2020-12-11T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>Exchange 2016 以降において、EdgeTransport.exe.config の <code>TemporaryStoragePath</code> を変更する場合には、Antimalware.xml も同時に変更する必要があります。これを実施しない場合、UnifiedContent フォルダにデータが残留してストレージを逼迫する要因になり得るのでご注意ください。</p><h2 id="詳細"><a href="#詳細" class="headerlink" title="詳細"></a>詳細</h2><p>Exchange 2016 以降では既定で <code>C:\Program Files\Microsoft\Exchange Server\V15\TransportRoles\data\Temp\UnifiedContent</code> に、約 1 MB を超えるサイズのメッセージについてアンチ マルウェアに関する処理するための一時ファイルが作成されます (ファイル名は特に意味のない GUID 名となります)。<br>このデータは、CleanupFolderResponder という Active Monitoring のレスポンダーによって、1 日経過後に定期的に削除されるため基本的に対処は不要です。</p><p>しかし、EdgeTransport.exe.config の <code>TemporaryStoragePath</code> を変更した場合、新しいパスに作成されるデータについては自動的にこのレスポンダーで処理されません。<br>既定のインストールにおいては <code>TemporaryStoragePath</code> では以下のようになっています。</p><p>  EdgeTransport.exe.config の既定値:<br>  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">&quot;TemporaryStoragePath&quot;</span> <span class="attr">value</span>=<span class="string">&quot;C:\Program Files\Microsoft\Exchange Server\V15\TransportRoles\data\Temp&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></p><h2 id="対処策"><a href="#対処策" class="headerlink" title="対処策"></a>対処策</h2><p>以下の手順で CleanupFolderResponder が処理する対象に、変更した TemporaryStoragePath の値を設定します。</p><ol><li><p>EdgeTransport.exe.config の <code>TemporaryStoragePath</code> のパスを確認します。</p></li><li><p>下記のファイルをテキスト エディターで開きます。</p><p> %ExchangeInstallPath%Bin\Monitoring\Config\Antimalware.xml</p></li><li><p>ファイルの先頭付近にある以下のエントリを確認します。</p><p> ※ “&lt;!– To override the default value …” から始まるコメント内の ExtensionAttributes 要素ではないのでご注意ください。</p> <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ExtensionAttributes</span><br><span class="line">  CleanupFolderResponderFolderPaths = &quot;D:\ExchangeTemp\TransportCts\UnifiedContent;C:\Windows\Temp\UnifiedContent;C:\Program Files\Microsoft\Exchange Server\V15\TransportRoles\data\Temp\UnifiedContent&quot;</span><br><span class="line">  CleanupFolderResponderFileRetentionPeriod = &quot;1.00:00:00&quot;</span><br><span class="line">  CleanupFolderResponderRecurrenceIntervalSeconds = &quot;04:00:00&quot;</span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure></li><li><p>上記エントリの <code>CleanupFolderResponderFolderPaths</code> に手順 1 で確認した TemporaryStoragePath のパス + “UnifiedContent” の値を設定します。</p><p> 例: TemporaryStoragePath が <code>D:\TransportRoles\data\Temp</code> の場合、<code>D:\TransportRoles\data\Temp\UnifiedContent</code> を設定します。</p> <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CleanupFolderResponderFolderPaths = &quot;D:\ExchangeTemp\TransportCts\UnifiedContent;C:\Windows\Temp\UnifiedContent;D:\TransportRoles\data\Temp\UnifiedContent&quot;</span><br></pre></td></tr></table></figure><p> ※ 既定で設定されている <code>D:\ExchangeTemp\TransportCts\UnifiedContent;C:\Windows\Temp\UnifiedContent</code> についても削除しても支障ありませんが、上記例では最後の <code>C:\Windows\Temp\UnifiedContent;C:\Program Files\Microsoft\Exchange Server\V15\TransportRoles\data\Temp\UnifiedContent</code> のみ置き換えています。</p></li><li><p>MSExchangeHM サービスを再起動します。</p></li></ol><h2 id="補足"><a href="#補足" class="headerlink" title="補足"></a>補足</h2><p>もし、既に残留しているファイルがあり直ぐに削除する必要がある場合には、ファイルの作成日を確認いただき、1 日経過しているようなものは手動で削除いただいて問題ありません。  </p><p>なお、UnifiedContent フォルダは Exchange 2013 にも存在しますが、実装の違いのため今回の注意点は Exchange 2013 には該当しません。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;概要&quot;&gt;&lt;a href=&quot;#概要&quot; class=&quot;headerlink&quot; title=&quot;概要&quot;&gt;&lt;/a&gt;概要&lt;/h2&gt;&lt;p&gt;Exchange 2016 以降において、EdgeTransport.exe.config の &lt;code&gt;TemporaryStorage
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
     
   </entry>
   
