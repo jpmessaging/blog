@@ -20,7 +20,7 @@ tags: New Outlook
 ![](NewOutlookPart3_03.png)
 
 ## 3.すばやくアクセスできるようにメールをピン留めします
-受信トレイの上部にメールをピン留めして表示できるようになったため、そのメールを遡って検索する手間を省くことができます。メールにカーソルを合わせるか、または右クリックして [ピン留め] を選択してピン留めします。
+受信トレイの上部にメールをピン留めして表示できるようになったため、そのメールを遡って検索する手間を省くことができます。メールのピン アイコンにカーソルを合わせるか、または右クリックして [ピン留め] を選択します。
 ![](NewOutlookPart3_04.png)
 
 ## 4. メールの送信時間を設定する
@@ -36,5 +36,5 @@ tags: New Outlook
 ![](NewOutlookPart3_07.png)
 
 
-新しい Outlook の最新機能と共に常に最新の状態に保つには、[ロードマップ](https://www.microsoft.com/microsoft-365/roadmap?filters=Outlook%2CDesktop%2CWeb&searchterms=%23newoutlookforwindows)に従ってください。
-このガイドは、利用可能になり次第、ここにリンクされるサポート記事としても公開されます。
+新しい Outlook の最新機能について情報を入手するには、[ロードマップ](https://www.microsoft.com/microsoft-365/roadmap?filters=Outlook%2CDesktop%2CWeb&searchterms=%23newoutlookforwindows) をフォローしてください。
+本ブログの内容は今後サポート記事としても公開される予定であり、公開されたらここにリンクされます。
