@@ -1,6 +1,6 @@
 ---
 title: Exchange Online プロビジョニングの解明：アーキテクチャ、Exchange オブジェクトの種類、および属性
-date: 2024-09-17
+date: 2024-10-03
 tags: Exchange
 ---
 ※ この記事は、[Demystifying Exchange Online Provisioning: Architecture, Exchange Object Types, and Attributes](https://techcommunity.microsoft.com/t5/exchange-team-blog/demystifying-exchange-online-provisioning-architecture-exchange/ba-p/4204206) の抄訳です。最新の情報はリンク先をご確認ください。
