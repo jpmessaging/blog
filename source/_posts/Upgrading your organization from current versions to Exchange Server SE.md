@@ -79,8 +79,8 @@ Exchange Server SE CU1 がリリースされると、他のすべてのバージ
 
 Exchange Server 2016 および Exchange Server 2019から Exchange Server SE への移行には、2 つのアップグレード方法があります。
 
-- レガシー アップグレード：Exchange Server の新しいメジャーバージョンに移行する従来の方法です。これには、新しいサーバーを組織に導入し、古いサーバーから新しいサーバーにすべてのメールボックスとリソースを移動し、古いサーバーをアンインストールする必要があります。レガシー アップグレードは、Exchange Server 2016 から Exchange Server 2019 への移行、Exchange Server 2016 から Exchange Server SE への移行に必要です。また、新しいハードウェアや Windows Server の新しいバージョンに移行する際にも使用されます。
-- インプレースアップグレード：Exchange Serverの新しいバージョンにアップグレードする新しい方法です。これはCUのインストールと同じであり、Exchange 2019 CU14/CU15 から Exchange Server SE へのアップグレードにのみ利用可能です
+- レガシー アップグレード：Exchange Server の新しいメジャー バージョンに移行する従来の方法です。これには、新しいサーバーを組織に導入し、古いサーバーから新しいサーバーにすべてのメールボックスとリソースを移動し、古いサーバーをアンインストールする必要があります。レガシー アップグレードは、Exchange Server 2016 から Exchange Server 2019 への移行、Exchange Server 2016 から Exchange Server SE への移行に必要です。また、新しいハードウェアや Windows Server の新しいバージョンに移行する際にも使用されます。
+- インプレースアップグレード：Exchange Server の新しいバージョンにアップグレードする新しい方法です。これはCUのインストールと同じであり、Exchange 2019 CU14/CU15 から Exchange Server SE へのアップグレードにのみ利用可能です
 
 [Exchange Server Roadmap Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742) では、現在使用しているバージョンから Exchange Server SE に移行するために必要な手順を示した表を公開しました。以下はその表の若干更新されたバージョンです。
 
@@ -106,7 +106,7 @@ Exchange Server 2016 および Exchange Server 2019から Exchange Server SE へ
 
 **Exchange Server SE RTM ではサーバーロールやエディション、前提条件に変更は発生しますか。**
 
-いいえ。Exchange Server SE RTM では、Exchange Server 2019 と同じサーバーロール、エディション、前提条件となります。
+いいえ。Exchange Server SE RTM では、Exchange Server 2019 と同じサーバー ロール、エディション、前提条件となります。
 
 **Exchange Server SE に関して、パフォーマンスやサイジングといったアーキテクチャに関するガイダンスに変更はありますか。**
 
