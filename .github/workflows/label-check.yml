@@ -1,0 +1,24 @@
+name: Block Merge on Specific Label
+
+on:
+  pull_request:
+    types: [labeled, unlabeled, opened, synchronize]
+
+jobs:
+  check-label:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Check for specific label
+      id: check_label
+      run: |
+        PR_LABELS=$(jq -r '.pull_request.labels | map(.name) | join(",")' $GITHUB_EVENT_PATH)
+        if [[ "$PR_LABELS" == *"pending other articles"* ]]; then
+          echo "Label found, failing the check."
+          exit 1
+        else
+          echo "Label not found, passing the check."
+        fi
