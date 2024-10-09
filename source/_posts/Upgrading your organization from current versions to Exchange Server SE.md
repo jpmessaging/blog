@@ -77,7 +77,7 @@ Exchange Server SE CU1 がリリースされると、他のすべてのバージ
 
 現在の状態から Exchange Server SE のみに移行するには、いくつかのオプションがあります。現時点では、Exchange Server 2016 CU23 および/または Exchange Server 2019 CU13/CU14 を実行している必要があります。Exchange Server 2016 を CU23 より前のバージョンで実行している場合は、直ちに CU23 に更新する必要があります。Exchange Server 2019 をご利用のお客様は CU14 を実行することをお勧めしますが、CU13 もサポートしています。Exchange Server の古いバージョン (例：Exchange Server 2013 以前) を実行している場合は、Exchange Online に移行するか、最新の CU を使用して Exchange Server 2019 にアップグレードすることで、そのインフラストラクチャを廃止する必要があります。
 
-Exchange Server 2016 および Exchange Server 2019から Exchange Server SE への移行には、2 つのアップグレード方法があります。
+Exchange Server 2016 および Exchange Server 2019 から Exchange Server SE への移行には、2 つのアップグレード方法があります。
 
 - レガシー アップグレード：Exchange Server の新しいメジャー バージョンに移行する従来の方法です。これには、新しいサーバーを組織に導入し、古いサーバーから新しいサーバーにすべてのメールボックスとリソースを移動し、古いサーバーをアンインストールする必要があります。レガシー アップグレードは、Exchange Server 2016 から Exchange Server 2019 への移行、Exchange Server 2016 から Exchange Server SE への移行に必要です。また、新しいハードウェアや Windows Server の新しいバージョンに移行する際にも使用されます。
 - インプレースアップグレード：Exchange Server の新しいバージョンにアップグレードする新しい方法です。これはCUのインストールと同じであり、Exchange 2019 CU14/CU15 から Exchange Server SE へのアップグレードにのみ利用可能です
