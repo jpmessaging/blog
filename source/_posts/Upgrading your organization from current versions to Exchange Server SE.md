@@ -1,6 +1,6 @@
 ---
 title: 現行バージョンからExchange Server SEへのアップグレード
-date: 2024-10-04
+date: 2024-10-15 10:00:00
 lastupdate: 
 tags: Exchagne
 categories: Exchange
@@ -12,7 +12,7 @@ categories: Exchange
 こんにちは。日本マイクロソフト Exchange & Outlook サポート チームです。
 
 2024 年 5 月に、私たちは [Exchange Server Roadmap Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742) と今後の計画を共有しました。この重要な発表以来、お寄せ頂いた質問の中で今後の移行計画に役立ちそうな質問とその回答を本記事にまとめました。
-*抄訳版:「[Exchange Server のロードマップの更新](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742) 」
+*抄訳版:「[Exchange Server のロードマップの更新](https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/) 」
 
 この投稿で使用される用語をいくつか紹介します。
 
@@ -30,7 +30,7 @@ Exchange Server 2016 および Exchange Server 2019 から Exchange Server Subsc
 
 ## リリース内容と時期
 
-[Exchange Server Roadmap Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742) では、Exchange Server の次の 3 つのリリースについて詳述しました。
+[Exchange Server Roadmap Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742) ([抄訳版](https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/)) では、Exchange Server の次の 3 つのリリースについて詳述しました。
 
 - Exchange Server 2019 CU15
 - Exchange Server SE RTM
@@ -41,7 +41,7 @@ Exchange Server 2016 および Exchange Server 2019 から Exchange Server Subsc
 | 名称                      | 提供日 | 詳細 | 共存 |
 | -------------------------- | ---- | ------ | ----- | 
 | Exchange Server 2019 CU15 | 2024 年下半期 | Exchange Server 2019 の 最終 CU：Exchange Server SE RTM と同等のコード (Exchange Server SE RTM 前にリリースされた SU を除く) です。| Exchange Server 2013 との共存はできません (CU15 のセットアップによってにブロックされます)。|
-| Exchange Server SE RTM | 2025 年下半期の前半 | Exchange Server 2019 CU14 または CU15 からのインプレースアップグレードを可能にします。 Exchange Server 2019 CU15 + CU15 以降にリリースされた SU と同等のコード (新機能やその他のコード変更はありません) です。| Exchange Server 2013 との共存はできません (RTM のセットアップによってブロックされます)。|
+| Exchange Server SE RTM | 2025 年下半期の前半 | Exchange Server 2019 CU14 または CU15 からのインプレース アップグレードを可能にします。 Exchange Server 2019 CU15 + CU15 以降にリリースされた SU と同等のコード (新機能やその他のコード変更はありません) です。| Exchange Server 2013 との共存はできません (RTM のセットアップによってブロックされます)。|
 | Exchange Server SE CU1 | 2025 年下半期の後半 | Exchange Server SE の最初の機能更新です。| Exchange Server 2013、Exchange Server 2016 または Exchange Server 2019 との共存はできません (CU1 のセットアップによってブロックされます)。|
 
 ## Exchange Server のバージョンごとのサポート状況
@@ -54,7 +54,7 @@ Exchange Server の 最後の 3 つのバージョンとそのライフサイク
 | Exchange Server 2016 CU23 | 2025 年 10 月 14 日 | 延長サポート | 延長サポート | サポートされません |
 Exchange Server 2019 CU14/CU15 | 2025 年 10 月 14 日 | 延長サポート | 延長サポート | サポートされません |
 
-他のすべてのバージョンとビルドの Exchange Server はサポートされていません。ただし、Exchange Server 2019 CU13 は、Exchange Server 2019 CU15 がリリースされるとサポートが終了します
+他のすべてのバージョンとビルドの Exchange Server はサポートされていません。ただし、Exchange Server 2019 CU13 は、Exchange Server 2019 CU15 がリリースされるとサポートが終了します。
 
 
 ## 同じ組織内での異なるバージョンの共存
@@ -80,9 +80,9 @@ Exchange Server SE CU1 がリリースされると、他のすべてのバージ
 Exchange Server 2016 および Exchange Server 2019 から Exchange Server SE への移行には、2 つのアップグレード方法があります。
 
 - レガシー アップグレード：Exchange Server の新しいメジャー バージョンに移行する従来の方法です。これには、新しいサーバーを組織に導入し、古いサーバーから新しいサーバーにすべてのメールボックスとリソースを移動し、古いサーバーをアンインストールする必要があります。レガシー アップグレードは、Exchange Server 2016 から Exchange Server 2019 への移行、Exchange Server 2016 から Exchange Server SE への移行に必要です。また、新しいハードウェアや Windows Server の新しいバージョンに移行する際にも使用されます。
-- インプレースアップグレード：Exchange Server の新しいバージョンにアップグレードする新しい方法です。これはCUのインストールと同じであり、Exchange 2019 CU14/CU15 から Exchange Server SE へのアップグレードにのみ利用可能です
+- インプレース アップグレード：Exchange Server の新しいバージョンにアップグレードする新しい方法です。これはCUのインストールと同じであり、Exchange 2019 CU14/CU15 から Exchange Server SE へのアップグレードにのみ利用可能です
 
-[Exchange Server Roadmap Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742) では、現在使用しているバージョンから Exchange Server SE に移行するために必要な手順を示した表を公開しました。以下はその表の若干更新されたバージョンです。
+[Exchange Server Roadmap Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742) ([抄訳版](https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/)) では、現在使用しているバージョンから Exchange Server SE に移行するために必要な手順を示した表を公開しました。以下はその表の若干更新されたバージョンです。
 
 
 
@@ -104,7 +104,7 @@ Exchange Server 2016 および Exchange Server 2019 から Exchange Server SE �
 
 2024 年 5 月にロードマップを発表して以来、お寄せいただいた質問の一部を以下に紹介します。
 
-**Exchange Server SE RTM ではサーバーロールやエディション、前提条件に変更は発生しますか。**
+**Exchange Server SE RTM ではサーバー ロールやエディション、前提条件に変更は発生しますか。**
 
 いいえ。Exchange Server SE RTM では、Exchange Server 2019 と同じサーバー ロール、エディション、前提条件となります。
 
@@ -125,7 +125,7 @@ Exchange Server 2016 および Exchange Server 2019 は、2025 年 10 月 14 日
 
 **Exchange Server SE のライセンス要件についてもっと明確にしていただけますか。**
 
-Exchange Server SE のライセンスは、1 つの例外を除いて Exchange Server 2019 と同じです。Microsoft は、ライセンスのみの購入は提供しなくなりました (Exchange Server 2019 で使用されるライセンスモデルの詳細については、[Microsoft Exchange Server licensing and FAQ](https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview) を参照してください)。
+Exchange Server SE のライセンスは、1 つの例外を除いて Exchange Server 2019 と同じです。Microsoft は、ライセンスのみの購入は提供しなくなりました (Exchange Server 2019 で使用されるライセンス モデルの詳細については、[Microsoft Exchange Server licensing and FAQ](https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview) を参照してください)。
 
 Exchange Server SE の場合、必要なサーバー ライセンスと CAL を購入するだけでなく、お客様はアクティブなサブスクリプションも維持する必要があります。つまり、以下のいずれかを購入する必要があります。
 
@@ -138,33 +138,33 @@ Microsoft 365 E3/E5 以外のクラウド サブスクリプション ライセ�
 
 ライセンス オプションをまとめると以下のようになります (いずれかを満たす必要があります):
 
-- **ユーザー向けの対象クラウド サブスクリプション ライセンス (例:Microsoft 365 E3/E5)** この方法を選択する場合は、Exchange Server SE にアクセスするすべてのユーザーが E3 または E5 ライセンスを保有している必要があります。
-- **ライセンス (サーバーおよび CAL) + Exchange Server 2016/2019 の SA** 使用権を維持し、Exchange Server SE および更新プログラムにアクセスします。
-- **ライセンス (サーバーおよび CAL) + Exchange Server SE 用の SA (リリース後)** Exchange Server SE の使用権とアップデートへのアクセスを維持するための SA。
+- **ユーザー向けの対象クラウド サブスクリプション ライセンス (例:Microsoft 365 E3/E5):** この方法を選択する場合は、Exchange Server SE にアクセスするすべてのユーザーが E3 または E5 ライセンスを保有している必要があります。
+- **ライセンス (サーバーおよび CAL) + Exchange Server 2016/2019 の SA:** Exchange Server SE および更新プログラムへアクセスして使用するには SA を持つ必要があります。
+- **ライセンス (サーバーおよび CAL) + Exchange Server SE 用の SA (リリース後)** リリース後は Exchange Server SE 用の SA を持つことでも、Exchange Server SE および更新プログラムへアクセスして使用することができます。
 
 **Exchange Server SE をダウンロードし、プロダクト キー (入手可能な場合) を入手するにはどうすればよいですか。**
 
 ボリューム ライセンス (VL) 契約でライセンスされたソフトウェア製品 (Exchange Server 2019 など) は、以前はボリューム ライセンス サービス センター (VLSC) からダウンロードすることができました。しかし、レガシーの VLSC は終了しており、これらの配布は Microsoft 365 管理センターに移りました。Exchange Server SE (およびその他の VL ソフトウェア) を購入するお客様は、Microsoft 365 管理センターから製品をダウンロードし、プロダクト キーを取得します。詳細については、[Administering Volume Licensing Frequently Asked Questions](https://learn.microsoft.com/licensing/vlsc-faqs-home-page) を参照してください。
 
-**Exchange Server Subscription Edition という名称をふまえると、定期的なオンラインライセンス確認が必要となりますか。**
+**Exchange Server Subscription Edition という名称をふまえると、定期的なオンライン ライセンス確認が必要となりますか。**
 
-いいえ、有効な Exchange Server SE プロダクトキーが入力されると、追加のライセンス チェックは行われません。上記で案内した通りサブスクリプションを継続してご契約いただければ、ライセンス コンプライアンスが維持され、Microsoft 365 管理センターのボリューム ライセンス ページから将来の Exchange Server SE アップデートを入手することが可能です。
+いいえ、有効な Exchange Server SE プロダクト キーが入力されると、追加のライセンス チェックは行われません。上記で案内した通りサブスクリプションを継続してご契約いただければ、ライセンス コンプライアンスが維持され、Microsoft 365 管理センターのボリューム ライセンス ページから将来の Exchange Server SE アップデートを入手することが可能です。
 
-**弊社では、ソフトウェア保証 (SA) なしの Exchange Server 2016 のサーバーライセンスと CAL を保有しています。Exchange Server 2019 のサポートが 2025 年に終了する予定であるにもかかわらず、なぜ Exchange Server 2019 の SA を購入して今すぐアップグレードする必要があるのでしょうか。**
+**弊社では、ソフトウェア アシュアランス (SA) なしの Exchange Server 2016 のサーバー ライセンスと CAL を保有しています。Exchange Server 2019 のサポートが 2025 年に終了する予定であるにもかかわらず、なぜ Exchange Server 2019 の SA を購入して今すぐアップグレードする必要があるのでしょうか。**
 
 Exchange Server 2016 から Exchange Server 2019 への移行は、新しいサーバーの導入とメールボックスの新しいバージョンへの移行を必要とするレガシー アップグレードと呼ばれるプロセスが必要なります。現在 Exchange Server 2016 を利用しているお客様にとって、Exchange Server 2019 へのアップグレードは、Exchange Server SE が利用可能になる前の最後のレガシー アップグレードを開始 (および完了) できることを意味します。そして Exchange Server 2016 から Exchange Server SE へのレガシー アップグレードを用いた直接の移行を待たずに、今すぐそのアップグレードを開始することができる方法となります (くわえて、Exchange Server 2019 へのアップグレード進めることを強く推奨します)。Exchange Server 2019 にアップグレードすれば、Exchange Server SE がリリースされたらすぐに Exchange Server SE へのインプレース アップグレードを行うことができます。Exchange Server 2019 に今すぐ移行すれば、Exchange Server SE へのアップグレードの準備に多くの時間を確保することができます。
 
 **Exchange Server SE にはハイブリッド構成をとるための無料ライセンスが含まれるのでしょうか。**
 
-はい。以前のバージョンと同様に、Exchange Server SE では、ハイブリッド構成ウィザード (HCW) を介して、ハイブリッド用途向けの無料ライセンスが引き続き提供されます。ただし、以前のバージョンとは異なり、Exchange Server のアップデートを取得するには、このライセンスに対して SA を購入するか、要件を満たすクラウド サブスクリプション ライセンスを取得する必要があります。ハイブリッド ライセンスは受信者管理のみを目的としたものであることにご注意ください。メールボックスをホストする場合やオンプレミスでエッジ トランスポート サーバーを利用される場合は、Exchange Server ライセンスが必要です。[この FAQ](https://www.microsoft.com/en-us/microsoft-365/exchange/microsoft-exchange-licensing-faq-email-for-business)  をご覧ください。また、Exchange Server 2019 と同様に、PowerShell と Exchange 管理ツールを使用することで、Exchange Server を実行する必要なく受信者を管理できるため、ハイブリッド ライセンスは不要になります。
+はい。以前のバージョンと同様に、Exchange Server SE では、ハイブリッド構成ウィザード (HCW) を介して、ハイブリッド用途向けの無料ライセンスが引き続き提供されます。ただし、以前のバージョンとは異なり、Exchange Server のアップデートを取得するには、このライセンスに対して SA を購入するか、要件を満たすクラウド サブスクリプション ライセンスを取得する必要があります。ハイブリッド ライセンスは受信者管理のみを目的としたものであることにご注意ください。メールボックスをホストする場合やオンプレミスでエッジ トランスポート サーバーを利用される場合は、Exchange Server ライセンスが必要です。[この FAQ](https://www.microsoft.com/en-us/microsoft-365/exchange/microsoft-exchange-licensing-faq-email-for-business)  をご覧ください。また、Exchange Server 2019 と同様に、PowerShell と [Exchange 管理ツールを使用することで、Exchange Server を実行する必要なく受信者を管理できる](https://learn.microsoft.com/exchange/manage-hybrid-exchange-recipients-with-management-tools)ため、その場合にはハイブリッド ライセンスは不要になります。
 
 **Exchange Server 2016 および Exchange Server 2019 のサポート期限の延長や延長サポートの提供、拡張セキュリティ更新プログラム (ESU) の提供は予定されていますか。**
 
-Exchange Server 2016 または Exchange Server 2019 のサポート終了日を延長することはありません。また、どちらのバージョンに対しても現在予定されている以上の延長サポートや ESU を提供することはありません。私たちは、既存の Exchange 2019 を利用されているお客様がシームレスにアップグレードできるよう、Exchange Server SE のリリースを準備することに集中しています。引き続きオンプレミスの Exchange Server をご利用されるお客様においては、できるだけ早く Exchange 2019 にアップグレードされることを強くお勧めします。
+Exchange Server 2016 または Exchange Server 2019 のサポート終了日を延長することはありません。また、どちらのバージョンに対しても現在予定されている以上の延長サポートや ESU を提供することはありません。私たちは、既存の Exchange 2019 を利用されているお客様がシームレスにアップグレードできるよう、Exchange Server SE のリリースを準備することに集中しています。引き続きオンプレミスの Exchange Server をご利用されるお客様においては、できるだけ早く Exchange Server 2019 にアップグレードされることを強くお勧めします。
 
-**Exchange Server SE のパブリックベータ版は提供されますか。**
+**Exchange Server SE のパブリック ベータ版は提供されますか。**
 
-いいえ。Exchange Server SE のパブリックベータ版は提供されません。[TAP プログラム](https://techcommunity.microsoft.com/t5/exchange-team-blog/open-enrollment-for-exchange-server-2019-tap/ba-p/3421627)のメンバーのお客様は、Exchange Server SE のリリースに早期アクセスできます。ただし、[以前にお知らせ](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742)したとおり、Exchange Server SE RTM は Exchange 2019 CU15 (およびその間にリリースされたすべての SU) と同等のコードが使われています。言い換えますと、TAP プログラムに参加していないお客様においても、組織内で Exchange 2019 CU15 を展開することで Exchange Server SE RTM の動作を早期に確認することができます。
+いいえ。Exchange Server SE のパブリック ベータ版は提供されません。[TAP プログラム](https://techcommunity.microsoft.com/t5/exchange-team-blog/open-enrollment-for-exchange-server-2019-tap/ba-p/3421627)のメンバーのお客様は、Exchange Server SE のリリースに早期アクセスできます。ただし、[以前にお知らせ](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742) ([抄訳版](https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/)) したとおり、Exchange Server SE RTM は Exchange 2019 CU15 (およびその間にリリースされたすべての SU) と同等のコードが使われます。言い換えますと、TAP プログラムに参加していないお客様においても、組織内で Exchange 2019 CU15 を展開することで Exchange Server SE RTM の動作を早期に確認することができます。
 
 **Exchange Server SE では、Exchange がすでにインストールされている場合でも Windows Server OS のインプレース アップグレードが可能となりますでしょうか。**
 
