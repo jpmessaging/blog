@@ -62,7 +62,7 @@ AutoDiscoverServiceInternalUri を $null に設定して、この値を削除す
 
 ## 送信コネクタを確認する
 
-送信コネクタを確認し、送信コネクタの SourceTransportServers から Exchange サーバー 2016 から削除され、新しい Exchange サーバーが追加されていることを確認します。ほとんどの組織では、ポート 25 でのアウトバウンドの通信は少数の IP アドレスに対してのみ許可されているため、アウトバウンド通信の構成を確認して更新する必要がある場合もあります。
+送信コネクタを確認し、送信コネクタの SourceTransportServers から Exchange サーバー 2016 が削除され、新しい Exchange サーバーが追加されていることを確認します。ほとんどの組織では、ポート 25 でのアウトバウンドの通信は少数の IP アドレスに対してのみ許可されているため、アウトバウンド通信の構成を確認して更新する必要がある場合もあります。
 
 ``` PowerShell
 Get-SendConnector | Format-Table Name, SourceTransportServers -AutoSize
@@ -91,7 +91,7 @@ Exchange サーバー 2016 の廃止を進めることは、メール フロー�
 
 ## すべての Exchange サーバー 2016 上のメールボックスを新しいバージョンの Exchange サーバーに移動する
 
-Exchange サーバー 2016 は、すべてのメールボックスが新しい Exchange サーバーに移行されるまで廃止することはできません。移行は、最新バージョンの Exchange から開始してください。Exchange サーバー 2019 に移行するので、Exchange サーバー 2019 からすべての移行バッチと移動要求を作成します。最初にすべての調停メールボックスを最初に最新の Exchange サーバーに移動する必要があります。
+Exchange サーバー 2016 は、すべてのメールボックスが新しい Exchange サーバーに移行されるまで廃止することはできません。移行は、最新バージョンの Exchange から開始してください。Exchange サーバー 2019 に移行するので、Exchange サーバー 2019 からすべての移行バッチと移動要求を作成します。最初にすべての調停メールボックスを最新の Exchange サーバーに移動する必要があります。
 
 すべてのメールボックス移動が完了したら、すべての移行バッチと移動要求を削除します。移動要求やメールボックスが残っていると、Exchange サーバー 2016 のアンインストールがブロックされます。
 
@@ -116,7 +116,7 @@ Exchange サーバー 2016 上にメールボックスが見つかった場合�
 Get-Mailbox -Server <Ex2016 ServerName> -PublicFolder -ResultSize Unlimited
 ```
 
-パブリック フォルダーの移動の詳細については、「[パブリック フォルダーを Exchange 2013 から Exchange 2016 または Exchange 2019 に移行する](https://learn.microsoft.com/exchange/collaboration/public-folders/migrate-from-exchange-2013?view=exchserver-2019)」を参照してください。
+パブリック フォルダーの移動要求の詳細については、「[パブリック フォルダーを Exchange 2013 から Exchange 2016 または Exchange 2019 に移行する](https://learn.microsoft.com/exchange/collaboration/public-folders/migrate-from-exchange-2013?view=exchserver-2019)」を参照してください。
 
 すべてのメールボックスが新しい Exchange サーバーに移動されたら、移動要求と移行バッチを確認した後、移動要求と移行バッチを削除できます。最初に **-WhatIf** パラメーターを指定してコマンドを実行し、リストされたすべての移動要求と移行バッチを削除できることを確認した後、**-WhatIf** パラメーターを指定せずに再度実行します。
 
@@ -190,11 +190,11 @@ Get-AdObject -Filter '(homemdb -eq $DN -or msExchArchiveDatabaseLink -eq $DN) -a
 
 ## データベース可用性グループからすべてのメンバーを削除する
 
-DAG を削除する前に、各 DAG メンバーを DAG から削除する必要があります。これは、EAC または EMS を使用して行うことができます。いずれかのツールの使用の詳細については、「[データベース可用性グループのメンバーシップの管理](https://learn.microsoft.com/exchange/manage-database-availability-group-membership-exchange-2013-help)」を参照してください。
+DAG を削除する前に、各 DAG メンバーを DAG から削除する必要があります。これは、EAC または EMS を使用して行うことができます。これらのツールの使用の詳細については、[データベース可用性グループのメンバーシップの管理](https://learn.microsoft.com/exchange/manage-database-availability-group-membership-exchange-2013-help) を参照してください。
 
 ## DAG の削除
 
-すべてのデータベース コピーが削除され、すべてのメンバーが DAG から削除されたら、EAC または EMS を使用して DAG を削除できます。これらのツールの使用の詳細については、「[データベース可用性グループの削除](https://learn.microsoft.com/exchange/remove-a-database-availability-group-exchange-2013-help)」を参照してください。
+すべてのデータベース コピーが削除され、すべてのメンバーが DAG から削除されたら、EAC または EMS を使用して DAG を削除できます。これらのツールの使用の詳細については、[データベース可用性グループの削除](https://learn.microsoft.com/exchange/remove-a-database-availability-group-exchange-2013-help) を参照してください。
 
 >**ヒント:** ファイル共有監視を持つ DAG がある場合は、Exchange サーバー 2016 DAG に使用されているファイル共有監視の使用を停止することを忘れないでください。
 
@@ -204,11 +204,11 @@ DAG を削除する前に、各 DAG メンバーを DAG から削除する必要
 
 # Exchange サーバー 2016 をメンテナンス モードにする
 
-ここまでの説明で記載のすべての項目が Exchange サーバー 2016 から新しいバージョンの Exchange サーバーに移行されたら、Exchange サーバー 2016 を 1 週間メンテナンス モードにして、予期しない問題が発生しないことを確認します。問題が発生した場合は、Exchange サーバー 2016 を削除する前に解決する必要があります。問題が発生しない場合は、Exchange サーバー 2016 をアンインストールできます。**Exchange サーバー 2016 をシャットダウンすると、リソースが完全に移行されていない場合に問題が発生する可能性があるため、変更制御ウィンドウ内でシャットダウンする予定がない限り、お勧めしません。**
+ここまでの説明で記載のすべての項目が Exchange サーバー 2016 から新しいバージョンの Exchange サーバーに移行されたら、Exchange サーバー 2016 を 1 週間メンテナンス モードにして、予期しない問題が発生しないことを確認します。問題が発生した場合は、Exchange サーバー 2016 を削除する前に解決する必要があります。問題が発生しない場合は、Exchange サーバー 2016 をアンインストールできます。**Exchange サーバー 2016 をシャットダウンすると、リソースが完全に移行されていない場合に問題が発生する可能性があるためお勧めしません。**
 
-目的は、これらの Exchange 2016 サーバーに接続しようとしているものがないことを確認することです。何かが見つかった場合は、新しい Exchange サーバーを使用するように更新するか、更新が行われるまで Exchange 2016 サーバーが利用できるように戻します。
+目的は、これらの Exchange サーバー 2016 に接続しようとしているものがないことを確認することです。何かが見つかった場合は、新しい Exchange サーバーを使用するように更新するか、更新が行われるまで Exchange 2016 サーバーが利用できるように戻します。
 
-メッセージングと接続ログを確認した後でも、組織が従来の Exchange サーバーを (メンテナンス モードで) 長期間オンラインにしておくことは珍しくなく、不明なプロセスの問題や予期しない復旧作業などを見つけることができます。
+メッセージ追跡ログと各種の接続ログから Exchange サーバー 2016 に接続しているクライアントが存在しなくなったことを確認した後でも、組織が従来の Exchange サーバーを (メンテナンス モードで) 長期間オンラインにしておくことは珍しことではありません。これにより把握していなかった業務プロセスを見つけたり、不要な復旧作業を防いだりすることができます。
 
 Exchange サーバーを保守モードにするには、[Exchange Serverでデータベース可用性グループを管理する](https://learn.microsoft.com/exchange/high-availability/manage-ha/manage-dags?view=exchserver-2019)の [DAG メンバーに対するメンテナンスの実行](https://learn.microsoft.com/exchange/high-availability/manage-ha/manage-dags?view=exchserver-2019#performing-maintenance-on-dag-members)セクションを参照してください。
 
