@@ -12,9 +12,9 @@ categories: Exchange
 
 Exchange サーバー 2016 は延長サポートの終了が近づいており、2025 年 10 月 14 日に[サポートが終了](https://learn.microsoft.com/lifecycle/products/exchange-server-2016)します。Exchange サーバー 2019 を使用している場合は、次のバージョンである Exchange サーバー サブスクリプション エディション (SE) に[インプレース アップグレード](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742)することができるため、それまでに Exchange サーバー 2016 を廃止にする必要があります。
 
-この記事では、Exchange サーバー 2019 が既にインストールされている環境から Exchange サーバー 2016 を削除する方法に焦点を当てます。Exchange サーバー 2019 へのアップグレードについて既に文書化されている手順については、本文書では説明しません。これらの詳細については、[Exchange 展開アシスタント](https://learn.microsoft.com/exchange/exchange-deployment-assistant?view=exchserver-2019)を参照し、環境に合わせたステップバイステップの展開チェックリストを作成してください。また、新しいバージョンの Exchange サーバーへのアップグレードの詳細については、[Exchange サーバーのドキュメント](https://learn.microsoft.com/exchange/exchange-server?view=exchserver-2019)も参照してください。
+この記事では、Exchange サーバー 2019 が既にインストールされている環境から Exchange サーバー 2016 を削除する方法に焦点を当てます。Exchange サーバー 2019 へのアップグレードについて既に文書化されている手順については、この記事では説明しません。これらの詳細については、[Exchange 展開アシスタント](https://learn.microsoft.com/exchange/exchange-deployment-assistant?view=exchserver-2019)を参照し、環境に合わせたステップバイステップの展開チェックリストを作成してください。また、新しいバージョンの Exchange サーバーへのアップグレードの詳細については、[Exchange サーバーのドキュメント](https://learn.microsoft.com/exchange/exchange-server?view=exchserver-2019)も参照してください。
 
-オンプレミスの Exchange サーバーを引き続きご利用になる予定の場合は、できる限り早く Exchange サーバー 2019 に移行することを推奨します。Exchange リリースでインプレース アップグレードを実行できるのは久しぶりですが、Exchange サーバー SE へのインプレース アップグレードをサポートするのは Exchange サーバー 2019 のみです。今すぐ Exchange サーバー 2019 に移行して、Exchange サーバー SE が利用可能になったときに簡単にインプレース アップグレードできるようにすることが推奨されます。
+オンプレミスの Exchange サーバーを引き続きご利用になる予定の場合は、できる限り早く Exchange サーバー 2019 に移行することを推奨します。Exchange サーバーではじめてインプレース アップグレードを実行できるようになりますが、Exchange サーバー SE へのインプレース アップグレードをサポートするのは Exchange サーバー 2019 のみです。今すぐ Exchange サーバー 2019 に移行して、Exchange サーバー SE が利用可能になったときに簡単にインプレース アップグレードできるようにすることが推奨されます。
 
 # シャットダウンの準備
 
@@ -22,13 +22,13 @@ Exchange サーバー 2016 から Exchange サーバー 2019 への移行が完�
 
 ## サード パーティ アプリケーションの棚卸しとアップグレード
 
-Exchange サーバー 2016 を使用するすべてのアプリケーションの一覧を作成し、新しい Exchange サーバー インフラストラクチャを使用するように各アプリケーションを構成します。これらのアプリケーションで共有の名前空間を使用している場合は、最小限の構成が必要になります。これらのアプリケーションのプロバイダーに問い合わせて、最新バージョンの Exchange サーバーでサポートされていることを確認してください。
+Exchange サーバー 2016 を使用するすべてのアプリケーションの一覧を作成し、新しい Exchange サーバー  2019 を使用するように各アプリケーションを構成します。これらのアプリケーションで共有の名前空間を使用している場合は、最小限の構成変更にとどめることができます。これらのアプリケーションの提供元に問い合わせて、最新バージョンの Exchange サーバーでサポートされていることを確認してください。
 
 # クライアント アクセス サービス
 
 ## Exchange 仮想ディレクトリの名前空間を確認する
 
-Autodiscover SCP がすべてのクライアント接続の名前空間を確認し、それらが Exchange 組織内の最新の Exchange サーバーにルーティングされていることを確認します。これには、Exchange 仮想ディレクトリに対して公開されているすべての名前が含まれます。新しい Exchange 環境で同じ名前空間を使用している場合は、既存の SSL 証明書を再利用できます。新しい Exchange 環境で、現在の SSL 証明書のサブジェクト別名 (SAN) として存在しない新しい名前空間を使用している場合は、必要な名前すべてを含むように新しい証明書を取得する必要があります。
+すべてのクライアント接続の名前空間を確認し、それらが Exchange 組織内の最新の Exchange サーバーにルーティングされていることを確認します。これには、Exchange 仮想ディレクトリに対して公開されているすべての名前が含まれます。新しい Exchange 環境で同じ名前空間を使用している場合は、既存の SSL 証明書を再利用できます。新しい Exchange 環境で、現在の SSL 証明書のサブジェクト別名 (SAN) として存在しない新しい名前空間を使用している場合は、必要な名前すべてを含むように新しい証明書を取得する必要があります。
 
 >**ヒント:** ActiveSync、Outlook (MAPI/HTTP または RPC/HTTP)、EWS、OWA、OAB、POP3/IMAP、Autodiscover を含むすべてのクライアントが従来の Exchange サーバーに接続しなくなったことを確認します。Log Parser Studio (LPS) を使用して、各クライアント アクセス サーバーの IIS ログを確認します。LPS は Log Parser 2.2 用の GUI で、ログの解析の複雑さを大幅に軽減し、大量のログを同時に解析できます (合計ログ サイズ >60GB でテスト済み)。詳細については、この[ブログ記事](https://techcommunity.microsoft.com/t5/exchange-team-blog/introducing-log-parser-studio/ba-p/601131)を参照してください。
 
@@ -40,7 +40,7 @@ Autodiscover SCP がすべてのクライアント接続の名前空間を確認
 Get-ExchangeServer | Where-Object {$_.AdminDisplayVersion -like “Version 15.1*”} | Get-ClientAccessService | Format-Table Name, FQDN, AutoDiscoverServiceInternalUri -AutoSize
 ```
 
-存在する場合は、AutoDiscoverServiceInternalURI が新しい Exchange サーバーまたは負荷分散された VIP にルーティングされていることを確認します。
+Autodiscover SCP が存在する場合は、AutoDiscoverServiceInternalURI が新しい Exchange サーバーまたは負荷分散された VIP にルーティングされていることを確認します。
 
 Exchange サーバー 2016 から既存の AutoDiscoverServiceInternalURI を取得して、安全に保管します。
 
@@ -71,19 +71,19 @@ Get-ForeignConnector | Format-Table Name, SourceTransportServers -Autosize
 
 ## 受信コネクタを確認する
 
-Exchange サーバー 2016 上の受信コネクタを確認し、新しい Exchange サーバーで再作成されていることを確認します (例: SMTP リレー、匿名リレー、パートナーなど) 。受信メールのルーティングに使用されているすべての名前空間を確認し、新しい Exchange サーバーに配信されることを確認します。Exchange 2016 サーバーにカスタム コネクタまたはサード パーティ製コネクタがある場合は、新しい Exchange サーバーで再作成できることを確認します。これには Export-Clixml コマンドを使用して行うことができます。
+Exchange サーバー 2016 上の受信コネクタを確認し、新しい Exchange サーバーで再作成されていることを確認します (例: SMTP リレー、匿名リレー、パートナーなど) 。受信メールのルーティングに使用されているすべての名前空間を確認し、新しい Exchange サーバーに接続するようにネットワークが構成されていることを確認します。Exchange 2016 サーバーにカスタム コネクタまたはサード パーティ製コネクタがある場合は、新しい Exchange サーバーで再作成できることを確認します。受信コネクタの構成は以下のコマンドで確認することができます。
 
 ``` PowerShell
-Get-ReceiveConnector -Server <ServerToDecommission> | Export-Clixml C:\temp\OldReceive.xml
+Get-ReceiveConnector -Server <ServerToDecommission> | fl
 ```
 
 >**ヒント:** SMTP ログをチェックして、ハードコードされた名前または IP アドレスを使用してサーバーに SMTP トラフィックを送信しているサービスがあるかどうかを確認します。ログを有効にするには、[プロトコル ログの構成](https://learn.microsoft.com/exchange/configure-protocol-logging-exchange-2013-help)を確認してください。給与計算処理や月末レポートなど、週次または月次のイベントを中継するアプリやプロセスを考慮するのに十分な期間のメッセージ ログをキャプチャしてください。これらは、SMTP プロトコル ログの小さなサンプル サイズではキャプチャされない可能性があるためです。
 
-廃止プロセスは、メール フローの構成を監査し、必要なすべてのコネクタが適切に構成され、セキュリティで保護されていることを確認する絶好の機会です。あなたの環境で使用されていない可能性のある[匿名リレー](https://learn.microsoft.com/exchange/mail-flow/connectors/allow-anonymous-relay?view=exchserver-2019) コネクタを取り除くのに最適な時期です。または、Exchange がハイブリッドで展開されている場合は、[Office 365 に対してリレー](https://learn.microsoft.com/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)されている場合があります。
+Exchange サーバー 2016 の廃止を進めることは、メール フローの構成を監査し、必要なすべてのコネクタが適切に構成され、セキュリティで保護されていることを確認する絶好の機会です。あなたの環境で使用されていない可能性のある[匿名リレー](https://learn.microsoft.com/exchange/mail-flow/connectors/allow-anonymous-relay?view=exchserver-2019) コネクタを取り除くのに最適な時期です。または、Exchange がハイブリッドで展開されている場合は、[Office 365 に対してリレー](https://learn.microsoft.com/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365)が構成されている場合があります。
 
 # エッジ サーバー
 
-1 つ以上のエッジ トランスポート サーバーがある場合は、新しいバージョンのエッジ トランスポート ロール (Exchange 2019) をインストールする必要があります。エッジ サーバーが Active Directory サイトを購読している場合は、[こちらの公開情報](https://learn.microsoft.com/exchange/architecture/edge-transport-servers/edge-subscription-procedures?view=exchserver-2019)に記載されているように [エッジ サブスクリプション](https://learn.microsoft.com/exchange/architecture/edge-transport-servers/edge-subscriptions?view=exchserver-2019)を再作成する必要があります。
+エッジ トランスポート サーバーを利用している場合は、エッジ トランスポート サーバーも Exchange サーバー 2019 に移行する必要があります。エッジ トランスポート サーバーが Active Directory サイトを購読している場合は、[こちらの公開情報](https://learn.microsoft.com/exchange/architecture/edge-transport-servers/edge-subscription-procedures?view=exchserver-2019)に記載されているように [エッジ サブスクリプション](https://learn.microsoft.com/exchange/architecture/edge-transport-servers/edge-subscriptions?view=exchserver-2019)を再作成する必要があります。
 
 エッジ サーバーを交換せずに廃止にする予定の場合は、受信トラフィックをメールボックス サーバーにルーティングするようにファイアウォール ルールが更新されていることを確認します。また、メールボックス サーバーは、TCP ポート 25 番経由でアウトバウンド通信できる必要もあります。
 
@@ -91,7 +91,7 @@ Get-ReceiveConnector -Server <ServerToDecommission> | Export-Clixml C:\temp\OldR
 
 ## すべての Exchange サーバー 2016 上のメールボックスを新しいバージョンの Exchange サーバーに移動する
 
-Exchange サーバー 2016 は、すべてのメールボックスが新しい Exchange サーバーに移行されるまで廃止することはできません。移行は、最新バージョンの Exchange から開始してください。例えば、Exchange サーバー 2019 に移行する場合は、Exchange 2019 からすべての移行バッチと移動要求を作成します。最初にすべての調停メールボックスを最初に最新の Exchange サーバーに移動する必要があります。
+Exchange サーバー 2016 は、すべてのメールボックスが新しい Exchange サーバーに移行されるまで廃止することはできません。移行は、最新バージョンの Exchange から開始してください。Exchange サーバー 2019 に移行するので、Exchange サーバー 2019 からすべての移行バッチと移動要求を作成します。最初にすべての調停メールボックスを最初に最新の Exchange サーバーに移動する必要があります。
 
 すべてのメールボックス移動が完了したら、すべての移行バッチと移動要求を削除します。移動要求やメールボックスが残っていると、Exchange サーバー 2016 のアンインストールがブロックされます。
 
@@ -146,17 +146,17 @@ Get-Mailbox –ResultSize unlimited | Where-Object {$_.AdminDisplayVersion -like
 
 ## メールボックス データベースのコピーを削除する
 
-Exchange サーバー 2016 上のすべてのメールボックス データベース コピーを削除する必要があります。これは、Exchange 管理センター (EAC) または EMS を使用して行うことができます。いずれかのツールの使用方法の詳細については、「[メールボックス データベース コピーを削除する](https://learn.microsoft.com/exchange/remove-a-mailbox-database-copy-exchange-2013-help)」を参照してください。
+Exchange サーバー 2016 上のすべてのメールボックス データベース コピーを削除する必要があります。これは、Exchange 管理センター (EAC) または EMS を使用して行うことができます。これらのツールの使用方法の詳細については、「[メールボックス データベース コピーを削除する](https://learn.microsoft.com/exchange/remove-a-mailbox-database-copy-exchange-2013-help)」を参照してください。
 
 なお、データベース コピーを削除しても、実際のデータベース ファイルやトランザクション ログはサーバから削除されません。
 
-サーバーごとにパッシブ コピーを検索するには、次のコマンドを実行します。
+サーバーごとにパッシブ コピーを検索して削除するには、次のコマンドを実行します。
 
 ``` PowerShell
 Get-MailboxDatabaseCopyStatus –Server <Ex2016 ServerName> | Where-Object {$_.Status -notlike "*mounted"} | Remove-MailboxDatabaseCopy
 ```
 
-データベースごとにパッシブ コピーを検索するには、次のコマンドを実行します。
+データベースごとにパッシブ コピーを検索して削除するには、次のコマンドを実行します。
 
 ``` PowerShell
 Get-MailboxDatabaseCopyStatus <DatabaseName> | Where-Object {$_.Status -notlike "*mounted"} | Remove-MailboxDatabaseCopy
@@ -164,7 +164,7 @@ Get-MailboxDatabaseCopyStatus <DatabaseName> | Where-Object {$_.Status -notlike 
 
 ## メールボックス データベースを削除する
 
-廃止する Exchange サーバー 2016 環境がベスト プラクティスに従っていたと仮定すると、HA/DR 機能のために DAG が設定されている可能性あります。ここまでの手順ですべてのメールボックスが Exchange サーバー 2016 上から削除され、DAG を破棄して Exchange サーバー 2016 の廃止を進める準備が整いました。すべてのメールボックスが Exchange サーバー 2016 から移行され、すべてのパッシブ データベース コピーが削除されたら、Exchange サーバー 2016 環境から残りのデータベースを削除できます。
+廃止する Exchange サーバー 2016 環境がベスト プラクティスに従っていれば、高可用性や災害対策のために DAG が設定されているはずです。ここまでの手順ですべてのメールボックスが Exchange サーバー 2016 上から削除され、DAG を破棄して Exchange サーバー 2016 の廃止を進める準備が整いました。すべてのメールボックスが Exchange サーバー 2016 から移行され、すべてのパッシブ データベース コピーが削除されたら、Exchange サーバー 2016 環境から残りのデータベースを削除できます。
 
 次のコマンドを **-WhatIf** パラメーターと共に実行して、リストされているすべてのデータベースを削除できることを確認してから、**-WhatIf** パラメーターを指定せずにコマンドを実行して削除します。
 
@@ -210,15 +210,15 @@ DAG を削除する前に、各 DAG メンバーを DAG から削除する必要
 
 メッセージングと接続ログを確認した後でも、組織が従来の Exchange サーバーを (メンテナンス モードで) 長期間オンラインにしておくことは珍しくなく、不明なプロセスの問題や予期しない復旧作業などを見つけることができます。
 
-Exchange サーバーを保守モードにするには、「[Exchange Serverでデータベース可用性グループを管理する](https://learn.microsoft.com/exchange/high-availability/manage-ha/manage-dags?view=exchserver-2019)」の「[DAG メンバーに対するメンテナンスの実行](https://learn.microsoft.com/exchange/high-availability/manage-ha/manage-dags?view=exchserver-2019#performing-maintenance-on-dag-members)」セクションを参照してください。
+Exchange サーバーを保守モードにするには、[Exchange Serverでデータベース可用性グループを管理する](https://learn.microsoft.com/exchange/high-availability/manage-ha/manage-dags?view=exchserver-2019)の [DAG メンバーに対するメンテナンスの実行](https://learn.microsoft.com/exchange/high-availability/manage-ha/manage-dags?view=exchserver-2019#performing-maintenance-on-dag-members)セクションを参照してください。
 
 Exchange サーバーのコンポーネントの状態の詳細については、[このブログ記事](https://techcommunity.microsoft.com/t5/exchange-team-blog/server-component-states-in-exchange-2013/ba-p/591342)を参照してください。
 
 # Exchange サーバー 2016 をアンインストールする
 
-## ベストプラクティスを確認する
+## ベスト プラクティスを確認する
 
-まず、「[Exchange を最新の累積的な更新プログラムにアップグレードする](https://learn.microsoft.com/exchange/plan-and-deploy/install-cumulative-updates?view=exchserver-2019)」の「[ベスト プラクティス](https://learn.microsoft.com/exchange/plan-and-deploy/install-cumulative-updates?view=exchserver-2019#best-practices)」セクションを確認します。これらのセクションは、Exchange サーバーのアンインストール時にも適用されます (たとえば、セットアップの実行前後にサーバーを再起動する、ウイルス対策を無効にするなど)。
+まず、[Exchange を最新の累積的な更新プログラムにアップグレードする](https://learn.microsoft.com/exchange/plan-and-deploy/install-cumulative-updates?view=exchserver-2019)の[ベスト プラクティス](https://learn.microsoft.com/exchange/plan-and-deploy/install-cumulative-updates?view=exchserver-2019#best-practices)セクションを確認します。これらのセクションは、Exchange サーバーのアンインストール時にも適用されます (たとえば、セットアップの実行前後にサーバーを再起動する、ウイルス対策を無効にするなど)。
 
 ## 監視メールボックスを削除する
 
@@ -230,14 +230,14 @@ Get-Mailbox -Monitoring | Where-Object {$_.AdminDisplayVersion -like "Version 15
 
 ## Exchange サーバー 2016 をアンインストールする
 
-アンインストール プロセスを開始する前に、EMS と、アンインストール プロセスを遅らせる可能性のあるその他のプログラム (.NET アセンブリやウイルス対策、バックアップ エージェントを使用するプログラムなど) をすべて終了します。次に、以下のいずれかの推奨される方法を使用して Exchange サーバー 2016 をアンインストールします (コントロール パネルの使用は推奨しません)。
+アンインストール プロセスを開始する前に、EMS と、アンインストール プロセスを遅らせる可能性のあるその他のプログラム (.NET Framework を使用するプログラム、ウイルス対策製品、バックアップ製品など) をすべて終了します。次に、以下のいずれかの推奨される方法を使用して Exchange サーバー 2016 をアンインストールします (コントロール パネルの使用は推奨しません)。
 
 - 無人セットアップ モードの使用: Setup.exe /mode:Uninstall
 - セットアップ ファイルの場所から Setup.exe を実行
 
 ## アンインストール後のタスクの実行
 
-Exchange サーバーをアンインストールした後、いくつかの一般的なタスクが残ります。これらは、アップグレード プロセス中に実行される手順や、組織の運用要件によって異なる場合があります。
+Exchange サーバーをアンインストールした後も、いくつかのタスクがあります。これらは組織の運用要件によって異なる場合があります。
 
 たとえば、次のような場合です。
 
