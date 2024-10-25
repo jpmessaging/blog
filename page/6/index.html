@@ -98,6 +98,166 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-PowerShell の文字列について" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/PowerShell%20%E3%81%AE%E6%96%87%E5%AD%97%E5%88%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date">
+  <time datetime="2016-10-11T15:00:00.000Z" itemprop="datePublished">2016-10-12</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/PowerShell%20%E3%81%AE%E6%96%87%E5%AD%97%E5%88%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/">PowerShell の文字列について
+</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/PowerShell%20%E3%81%AE%E6%96%87%E5%AD%97%E5%88%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date-single">    
+    
+    <time datetime="2016-10-11T15:00:00.000Z" itemprop="dateUpdated">2016-10-12</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        日頃から PowerShell をご利用いただいている場合にはご存じかと思いますが、PowerShell では “ と ‘ はどちらも文字列を表現する際に利用されますが、これらは異なる動作をします。具体的には “ (ダブル クォーテーション) はその中で $ 記号を見つけた場合にはそれを変数として評価しその値で置き換えますが、’ (シングル クォーテーション) はそういった動作はせずそのまま文字通り文字列として扱います。
+例えば、以下のような場合 “hello $name” の値は、まず $name の値である ‘world’ に置きかえられるため、”hello world” となります。一方、’hello $name’ は文字通りの “hello $name” という文字列となります。
+123　$name = &#x27;world&#x27;　&quot;hello $name&quo...
+        <p class="article-more-link">
+          <a href="/blog/PowerShell%20%E3%81%AE%E6%96%87%E5%AD%97%E5%88%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/PowerShell%20%E3%81%AE%E6%96%87%E5%AD%97%E5%88%97%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cm2o22d8b002kes9ob2ir5cr4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Exchange 2013 のメール フローについて" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Exchange%202013%20%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%20%E3%83%95%E3%83%AD%E3%83%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date">
+  <time datetime="2016-08-07T15:00:00.000Z" itemprop="datePublished">2016-08-08</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/Exchange%202013%20%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%20%E3%83%95%E3%83%AD%E3%83%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/">Exchange 2013 のメール フローについて
+</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Exchange%202013%20%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%20%E3%83%95%E3%83%AD%E3%83%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date-single">    
+    
+    <time datetime="2016-08-07T15:00:00.000Z" itemprop="dateUpdated">2016-08-08</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        Exchange 2013 サーバー内でトランスポートに関わるサービス プロセスは MSExchangeSubmission、EdgeTransport、MSExchangeDelivery、MSExchangeFrontEndTransport となります。
+
+MSExchangeSubmission (Microsoft Exchange メールボックス トランスポート発信 サービス)
+EdgeTransport (Microsoft Exchange Transport サービスのワーカー プロセス)
+MSExchangeDelivery (Microsoft Exchange メールボックス トランスポート配信 サービス)
+MSExchangeFrontEndTransport (Microsoft Exchange フロントエンド トランスポート サービス)
+
+この中で、メッセー...
+        <p class="article-more-link">
+          <a href="/blog/Exchange%202013%20%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%20%E3%83%95%E3%83%AD%E3%83%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Exchange%202013%20%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%20%E3%83%95%E3%83%AD%E3%83%BC%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cm2o22d7v000jes9o9wnn4z0r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Exchange Online と Outlook の認証キャッシュについて" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Exchange%20Online%20%E3%81%A8%20Outlook%20%E3%81%AE%E8%AA%8D%E8%A8%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date">
+  <time datetime="2016-07-13T15:00:00.000Z" itemprop="datePublished">2016-07-14</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/Exchange%20Online%20%E3%81%A8%20Outlook%20%E3%81%AE%E8%AA%8D%E8%A8%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/">Exchange Online と Outlook の認証キャッシュについて
+</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Exchange%20Online%20%E3%81%A8%20Outlook%20%E3%81%AE%E8%AA%8D%E8%A8%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date-single">    
+    
+    <time datetime="2016-07-13T15:00:00.000Z" itemprop="dateUpdated">2016-07-14</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ADFS (Active Directory Federation Services) やサード パーティーの ID プロバイダーを使用するシングル サインインの構成においては、Outlook クライアントから Exchange Online に接続をする際に、認証処理のためにこれらの認証サーバーに対して問い合わせが発生します。(シングル サインオンを利用しない場合は Office 365 の Azure AD にて認証処理が完結しています。)しかしながら、クラウド サービス側やクライアント側で認証処理に成功したキャッシュが残っている場合は、認証サーバーへの問い合わせを省き、過去の認証キャッシュを利用して接続を完了させる動作がございます。
+今回はこの認証キャッシュの動作について説明します。「従来の認証の場合」 そして 「先進認証 (Modern Authentication) の場合」 の...
+        <p class="article-more-link">
+          <a href="/blog/Exchange%20Online%20%E3%81%A8%20Outlook%20%E3%81%AE%E8%AA%8D%E8%A8%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A8%20Outlook%20%E3%81%AE%E8%AA%8D%E8%A8%BC%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cm2o22d800012es9o4bdj3wyo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-トランザクション ログが削除されずにディスク領域が圧迫されたときの対処方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%20%E3%83%AD%E3%82%B0%E3%81%8C%E5%89%8A%E9%99%A4%E3%81%95%E3%82%8C%E3%81%9A%E3%81%AB%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E9%A0%98%E5%9F%9F%E3%81%8C%E5%9C%A7%E8%BF%AB%E3%81%95%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/" class="article-date">
@@ -140,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%20%E3%83%AD%E3%82%B0%E3%81%8C%E5%89%8A%E9%99%A4%E3%81%95%E3%82%8C%E3%81%9A%E3%81%AB%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E9%A0%98%E5%9F%9F%E3%81%8C%E5%9C%A7%E8%BF%AB%E3%81%95%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/" data-id="cm2072ygt003hw49o7bbl9ji7" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B6%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3%20%E3%83%AD%E3%82%B0%E3%81%8C%E5%89%8A%E9%99%A4%E3%81%95%E3%82%8C%E3%81%9A%E3%81%AB%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E9%A0%98%E5%9F%9F%E3%81%8C%E5%9C%A7%E8%BF%AB%E3%81%95%E3%82%8C%E3%81%9F%E3%81%A8%E3%81%8D%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95/" data-id="cm2o22d8k003ses9o8df4976b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -194,7 +354,7 @@ Exchange Server サポートからのお願い****弊社サポートにメッセ
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E3%82%88%E3%81%8F%E3%82%8F%E3%81%8B%E3%82%8B%20Exchange%20Online%20%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E8%BF%BD%E8%B7%A1%20%EF%BD%9E%20Part%201%20%E5%8F%96%E5%BE%97%E7%B7%A8%20%EF%BD%9E/" data-id="cm2072ygp0033w49o9x0sh4o0" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E3%82%88%E3%81%8F%E3%82%8F%E3%81%8B%E3%82%8B%20Exchange%20Online%20%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E8%BF%BD%E8%B7%A1%20%EF%BD%9E%20Part%201%20%E5%8F%96%E5%BE%97%E7%B7%A8%20%EF%BD%9E/" data-id="cm2o22d8i003ies9oexrt5uuy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li></ul>
@@ -244,7 +404,7 @@ Exchange Server サポートからのお願い****弊社サポートにメッセ
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Exchange%202013%20%E3%82%92%E5%BC%B7%E5%88%B6%E7%9A%84%E3%81%AB%E3%82%A2%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/" data-id="cm2072yg9000ow49o0sie0ihx" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Exchange%202013%20%E3%82%92%E5%BC%B7%E5%88%B6%E7%9A%84%E3%81%AB%E3%82%A2%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B/" data-id="cm2o22d7w000oes9o7umd2h3k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -298,7 +458,7 @@ Exchange Server サポートからのお願い****弊社サポートにメッセ
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/" data-id="cm2072yg7000hw49o1x1sahd8" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/" data-id="cm2o22d7u000hes9oeasm6mpq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -350,7 +510,7 @@ Exchange Server サポートからのお願い****弊社サポートにメッセ
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/" data-id="cm2072yg30006w49o4nipgvph" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/" data-id="cm2o22d7o0005es9of9wnarf4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -402,7 +562,7 @@ Exchange Server サポートからのお願い****弊社サポートにメッセ
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/" data-id="cm2072yg6000ew49o4hcqf19n" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/" data-id="cm2o22d7s000ces9oew92g13d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -455,165 +615,10 @@ Exchange Server サポートからのお願い****弊社サポートにメッセ
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E5%A4%A7%E9%87%8F%E3%81%AE%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AB%E6%89%80%E5%B1%9E%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9/" data-id="cm2072ygy003xw49ob77qgrxe" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/%E5%A4%A7%E9%87%8F%E3%81%AE%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AB%E6%89%80%E5%B1%9E%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9/" data-id="cm2o22d8s004ces9obt235n0c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Export-CliXml について" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/Export-CliXml%20%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date">
-  <time datetime="2015-08-22T15:00:00.000Z" itemprop="datePublished">2015-08-23</time>
-</a>
-    <!--  -->
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header-single">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/Export-CliXml%20%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/">Export-CliXml について
-</a>
-    </h1>
-  
-
-      </header>
-      <div class="article-share">
-        Last Update:
-        <a href="/blog/Export-CliXml%20%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date-single">    
-    
-    <time datetime="2015-08-22T15:00:00.000Z" itemprop="dateUpdated">2015-08-23</time>
-    
-</a>
-      </div>
-    
-    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
-      
-        Exchange 2007 以降では PowerShell を利用して設定情報を出力することができますが、Format-List などで出力するよりも Export-CliXml を使うほうが便利な場合があります。
-ご存じの方も多いかと思いますが、PowerShell では豊富なコマンドレットが用意されておりフィルタやソートはもちろん、カスタム オブジェクトを作成してデータを処理することなどが容易になっています。このような機能を利用する場合には Format-List 等ではなく Export-CliXml を活用いただければと思います。Export-CliXml で出力したデータは、Import-Clixml を使って PowerShell のオブジェクトとして復元でき、利用者は自由にデータの操作ができるようになります。
-例えば、マシン上の全プロセスの状態を出力するために Get-Pro...
-        <p class="article-more-link">
-          <a href="/blog/Export-CliXml%20%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Export-CliXml%20%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cm2072ygf001hw49o3f0m1wmp" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-cachedmode-onlinemode-merit-demerit" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/cachedmode-onlinemode-merit-demerit/" class="article-date">
-  <time datetime="2015-07-06T15:00:00.000Z" itemprop="datePublished">2015-07-07</time>
-</a>
-    <!--  -->
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header-single">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/cachedmode-onlinemode-merit-demerit/">Exchange キャッシュモードとオンラインモードのメリット・デメリット/[共有フォルダーをダウンロード] のメリット・デメリット
-</a>
-    </h1>
-  
-
-      </header>
-      <div class="article-share">
-        Last Update:
-        <a href="/blog/cachedmode-onlinemode-merit-demerit/" class="article-date-single">    
-    
-    <time datetime="2015-07-06T15:00:00.000Z" itemprop="dateUpdated">2015-07-07</time>
-    
-</a>
-      </div>
-    
-    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
-      
-        こんにちは。日本マイクロソフト Outlook サポート チームです。
-キャッシュモードは既定では有効であり弊社では基本的にはキャッシュモードを推奨していますが、お客様の希望や利用状況によってはオンライン モードで利用した方がよい場合もあります。この記事ではキャッシュモードとオンラインモードでの動作の違いやメリット・デメリットを紹介します。また、キャッシュモードにある [共有フォルダーをダウンロード] の設定がオンの場合とオフの場合のメリット・デメリットも紹介いたします。どの設定で利用した方がよいかを検討する際に参考にしていただければ幸いです。なお、Outlook のパフォーマンスの観点で、インターネットによる遅延の影響を受けやすい Exchange Online 環境ではキャッシュ モード有効でのご利用を推奨しています。
-キャッシュモードメリット
-メール一覧を表示・メールを開く・メールを...
-        <p class="article-more-link">
-          <a href="/blog/cachedmode-onlinemode-merit-demerit/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/cachedmode-onlinemode-merit-demerit/" data-id="cm2072ygn002nw49o5whrfxju" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-突然アイテムが消えた！場合の対策" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/%E7%AA%81%E7%84%B6%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%EF%BC%81%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E7%AD%96/" class="article-date">
-  <time datetime="2015-04-14T15:00:00.000Z" itemprop="datePublished">2015-04-15</time>
-</a>
-    <!--  -->
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header-single">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/%E7%AA%81%E7%84%B6%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%EF%BC%81%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E7%AD%96/">突然アイテムが消えた！場合の対策
-</a>
-    </h1>
-  
-
-      </header>
-      <div class="article-share">
-        Last Update:
-        <a href="/blog/%E7%AA%81%E7%84%B6%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%EF%BC%81%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E7%AD%96/" class="article-date-single">    
-    
-    <time datetime="2015-04-14T15:00:00.000Z" itemprop="dateUpdated">2015-04-15</time>
-    
-</a>
-      </div>
-    
-    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
-      
-        &#20170;&#22238;&#12399;&#12458;&#12531;&#12503;&#12524;&#12511;&#12473; Exchange Server 2013 &#12420; Exchange Online &#12434;&#21033;&#29992;&#12375;&#12390;&#12356;&#12427;&#12362;&#23458;&#27096;&#12391;&#31361;&#28982;&#12450;&#12452;&#12486;&#12512;&#12364;&#28040;&#12360;&#12383;&#65281;&#12392;&#12356;&#12358;&#21839;&#38988;&#12395;&#30452;&#38754;&#12375;&#12383;&#22580;&#21512;&#12395;&...
-        <p class="article-more-link">
-          <a href="/blog/%E7%AA%81%E7%84%B6%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%EF%BC%81%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E7%AD%96/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/%E7%AA%81%E7%84%B6%E3%82%A2%E3%82%A4%E3%83%86%E3%83%A0%E3%81%8C%E6%B6%88%E3%81%88%E3%81%9F%EF%BC%81%E5%A0%B4%E5%90%88%E3%81%AE%E5%AF%BE%E7%AD%96/" data-id="cm2072ygy003zw49of4xq1q89" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li></ul>
 
     </footer>
   </div>
@@ -634,13 +639,20 @@ Exchange Server サポートからのお願い****弊社サポートにメッセ
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Exchange/">Exchange</a></li></ul>
+    </div>
+  </div>
+
 
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchagne/" rel="tag">Exchagne</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
     </div>
   </div>
 
@@ -663,24 +675,23 @@ Exchange Server サポートからのお願い****弊社サポートにメッセ
       <ul>
         
           <li>
+            <a href="/blog/MC854648/">新しい Outlook for Windows への移行を促すポリシー制御</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Upgrading%20your%20organization%20from%20current%20versions%20to%20Exchange%20Server%20SE/">現行バージョンからExchange Server SEへのアップグレード</a>
+          </li>
+        
+          <li>
+            <a href="/blog/end-of-support-for-exchange-server-2016-and-exchange-server-2019/">Exchange Server 2016 および Exchange Server 2019 のサポート終了: 残り 12 か月</a>
+          </li>
+        
+          <li>
             <a href="/blog/NewOutlookforWindows-aguideforExecutiveAssistantsandDelegates-part3/">新しい Outlook for Windows: 役員秘書や代理人のためのガイド - Part 3</a>
           </li>
         
           <li>
             <a href="/blog/Demystifying-Exchange-Online-Provisioning/">Exchange Online プロビジョニングの解明：アーキテクチャ、Exchange オブジェクトの種類、および属性</a>
-          </li>
-        
-          <li>
-            <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-1/">新しい Outlook for Windows: 役員秘書や代理人のためのガイド - part 1</a>
-          </li>
-        
-          <li>
-            <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-2/">新しい Outlook for Windows: 役員秘書や代理人のためのガイド - part 2</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Accessibility-and-Usability-Improvements-in-the-new-Outlook-for-Windows/">新しい Outlook for Windows のアクセシビリティと操作性の向上
-</a>
           </li>
         
       </ul>
