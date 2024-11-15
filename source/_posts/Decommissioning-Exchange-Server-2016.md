@@ -37,7 +37,7 @@ Exchange サーバー 2016 を使用するすべてのアプリケーション�
 1.以下のコマンドですべての Exchange サーバーの AutoDiscoverServiceInternalURI の値を確認します。
 
 ``` PowerShell
-Get-ExchangeServer　| Get-ClientAccessService | Format-Table Name, FQDN, AutoDiscoverServiceInternalUri -AutoSize
+Get-ClientAccessService | Format-Table Name, FQDN, AutoDiscoverServiceInternalUri -AutoSize
 ```
 
 2.Exchange サーバー 2019 の AutoDiscoverServiceInternalURI の値が Exchange 2019 もしくはそれ用のロード バランサー (LB) に向いていない場合は設定を変更します。必要であれば Exchange サーバー 2019 の AutoDiscoverServiceInternalURI の値を Exchange サーバー 2016 の AutoDiscoverServiceInternalURI の値を参考に設定しなおします。
