@@ -34,27 +34,30 @@ Exchange サーバー 2016 を使用するすべてのアプリケーション�
 
 # Active Directory 内のサービス接続ポイント オブジェクトを確認する
 
-次のコマンドを実行して、Autodiscover サービス接続ポイント (SCP) の値を取得します。Autodiscover SCP は、内部のクライアントが Active Directory から接続情報を検索するために使用されます。
+1.以下のコマンドですべての Exchange サーバーの AutoDiscoverServiceInternalURI の値を確認します。
 
 ``` PowerShell
-Get-ExchangeServer | Where-Object {$_.AdminDisplayVersion -like “Version 15.1*”} | Get-ClientAccessService | Format-Table Name, FQDN, AutoDiscoverServiceInternalUri -AutoSize
+Get-ExchangeServer　| Get-ClientAccessService | Format-Table Name, FQDN, AutoDiscoverServiceInternalUri -AutoSize
 ```
 
-Autodiscover SCP が存在する場合は、AutoDiscoverServiceInternalURI が新しい Exchange サーバーまたは負荷分散された VIP にルーティングされていることを確認します。
-
-Exchange サーバー 2016 から既存の AutoDiscoverServiceInternalURI を取得して、安全に保管します。
+2.Exchange サーバー 2019 の AutoDiscoverServiceInternalURI の値が Exchange 2019 もしくはそれ用のロード バランサー (LB) に向いていない場合は設定を変更します。必要であれば Exchange サーバー 2019 の AutoDiscoverServiceInternalURI の値を Exchange サーバー 2016 の AutoDiscoverServiceInternalURI の値を参考に設定しなおします。
 
 ``` PowerShell
-$CurrentAutoDURI = (Get-ExchangeServer <Ex2016 ServerName> | Get-ClientAccessService).AutoDiscoverServiceInternalURI.AbsoluteURI
+Set-ClientAccessService -Identity <Ex2019 ServerName> -AutoDiscoverServiceInternalUri <Exchange サーバー 2019 もしくはそれ用の LB の SCP の URI>
 ```
 
-次に、Exchange サーバー 2016 の仮想ディレクトリで AutoDiscoverServiceInternalURI を $Null に設定します。
+以下は mbx01 という名前の Exchange サーバー 2019 の AutoDiscoverServiceInternalURI に "https://mbx01.contoso.com/autodiscover/autodiscover.xml" を設定する場合のコマンドになります。
+
+``` PowerShell
+Set-ClientAccessService -Identity mbx01 -AutoDiscoverServiceInternalUri "https://mbx01.contoso.com/autodiscover/autodiscover.xml"
+```
+
+3.Exchange サーバー 2016 の AutoDiscoverServiceInternalURI を $null にします。
 
 ``` PowerShell
 Set-ClientAccessService -Identity <Ex2016 ServerName> -AutoDiscoverServiceInternalUri $Null
 ```
 
-AutoDiscoverServiceInternalUri を $null に設定して、この値を削除することもできます。
 
 # メールフロー
 
