@@ -22,7 +22,7 @@ Exchange サーバー 2016 から Exchange サーバー 2019 への移行が完�
 
 ## サード パーティ アプリケーションの棚卸しとアップグレード
 
-Exchange サーバー 2016 を使用するすべてのアプリケーションの一覧を作成し、新しい Exchange サーバー  2019 を使用するように各アプリケーションを構成します。これらのアプリケーションで共有の名前空間を使用している場合は、最小限の構成変更にとどめることができます。これらのアプリケーションの提供元に問い合わせて、最新バージョンの Exchange サーバーでサポートされていることを確認してください。
+Exchange サーバー 2016 を使用するすべてのアプリケーションの一覧を作成し、新しい Exchange サーバー 2019 を使用するように各アプリケーションを構成します。これらのアプリケーションで共有の名前空間を使用している場合は、最小限の構成変更にとどめることができます。これらのアプリケーションの提供元に問い合わせて、最新バージョンの Exchange サーバーでサポートされていることを確認してください。
 
 # クライアント アクセス サービス
 
@@ -43,7 +43,7 @@ Get-ClientAccessService | Format-Table Name, FQDN, AutoDiscoverServiceInternalUr
 2.Exchange サーバー 2019 の AutoDiscoverServiceInternalURI の値が Exchange 2019 もしくはそれ用のロード バランサー (LB) に向いていない場合は設定を変更します。必要であれば Exchange サーバー 2019 の AutoDiscoverServiceInternalURI の値を Exchange サーバー 2016 の AutoDiscoverServiceInternalURI の値を参考に設定しなおします。
 
 ``` PowerShell
-Set-ClientAccessService -Identity <Ex2019 ServerName> -AutoDiscoverServiceInternalUri <Exchange サーバー 2019 もしくはそれ用の LB の SCP の URI>
+Set-ClientAccessService -Identity <Exchange サーバー 2019 のサーバー名> -AutoDiscoverServiceInternalUri <Exchange サーバー 2019 もしくはそれ用の LB の SCP の URI>
 ```
 
 以下は mbx01 という名前の Exchange サーバー 2019 の AutoDiscoverServiceInternalURI に "https://mbx01.contoso.com/autodiscover/autodiscover.xml" を設定する場合のコマンドになります。
@@ -55,11 +55,11 @@ Set-ClientAccessService -Identity mbx01 -AutoDiscoverServiceInternalUri "https:/
 3.Exchange サーバー 2016 の AutoDiscoverServiceInternalURI を $null にします。
 
 ``` PowerShell
-Set-ClientAccessService -Identity <Ex2016 ServerName> -AutoDiscoverServiceInternalUri $Null
+Set-ClientAccessService -Identity <Exchange サーバー 2016 のサーバー名> -AutoDiscoverServiceInternalUri $Null
 ```
 
 
-# メールフロー
+# メール フロー
 
 次に、すべてのメール フローに利用されるすべてのコネクタを確認して、サーバーを廃止にする準備ができていることを確認します。
 
@@ -74,10 +74,10 @@ Get-ForeignConnector | Format-Table Name, SourceTransportServers -Autosize
 
 ## 受信コネクタを確認する
 
-Exchange サーバー 2016 上の受信コネクタを確認し、新しい Exchange サーバーで再作成されていることを確認します (例: SMTP リレー、匿名リレー、パートナーなど) 。受信メールのルーティングに使用されているすべての名前空間を確認し、新しい Exchange サーバーに接続するようにネットワークが構成されていることを確認します。Exchange 2016 サーバーにカスタム コネクタまたはサード パーティ製コネクタがある場合は、新しい Exchange サーバーで再作成できることを確認します。受信コネクタの構成は以下のコマンドで確認することができます。
+Exchange サーバー 2016 上の受信コネクタを確認し、新しい Exchange サーバーで再作成されていることを確認します (例: SMTP リレー、匿名リレー、パートナーなど) 。受信メールのルーティングに使用されているすべての名前空間を確認し、新しい Exchange サーバーに接続するようにネットワークが構成されていることを確認します。Exchange サーバー 2016 にカスタム コネクタまたはサード パーティ製コネクタがある場合は、新しい Exchange サーバーで再作成できることを確認します。受信コネクタの構成は以下のコマンドで確認することができます。
 
 ``` PowerShell
-Get-ReceiveConnector -Server <ServerToDecommission> | fl
+Get-ReceiveConnector -Server <サーバー名> | fl
 ```
 
 >**ヒント:** SMTP ログをチェックして、ハードコードされた名前または IP アドレスを使用してサーバーに SMTP トラフィックを送信しているサービスがあるかどうかを確認します。ログを有効にするには、[プロトコル ログの構成](https://learn.microsoft.com/exchange/configure-protocol-logging-exchange-2013-help)を確認してください。給与計算処理や月末レポートなど、週次または月次のイベントを中継するアプリやプロセスを考慮するのに十分な期間のメッセージ ログをキャプチャしてください。これらは、SMTP プロトコル ログの小さなサンプル サイズではキャプチャされない可能性があるためです。
@@ -102,9 +102,9 @@ Exchange 管理シェル (EMS) で次のコマンドを実行して、新しい 
 
 ``` PowerShell
 Set-ADServerSettings -ViewEntireForest $True
-Get-Mailbox -Server <Ex2016 ServerName> -Arbitration
-Get-Mailbox -Server <Ex2016 ServerName> -ResultSize Unlimited
-Get-Mailbox -Server <Ex2016 ServerName> -Archive -ResultSize Unlimited
+Get-Mailbox -Server <Exchange サーバー 2016 のサーバー名> -Arbitration
+Get-Mailbox -Server <Exchange サーバー 2016 のサーバー名> -ResultSize Unlimited
+Get-Mailbox -Server <Exchange サーバー 2016 のサーバー名> -Archive -ResultSize Unlimited
 Get-SiteMailbox
 Get-Mailbox –AuditLog
 ```
@@ -116,7 +116,7 @@ Exchange サーバー 2016 上にメールボックスが見つかった場合�
 すべての調停メールボックスとユーザー メールボックスが移動されたことを確認したら、すべてのパブリック フォルダー メールボックスが移動されたことを確認します。
 
 ``` PowerShell
-Get-Mailbox -Server <Ex2016 ServerName> -PublicFolder -ResultSize Unlimited
+Get-Mailbox -Server <Exchange サーバー 2016 のサーバー名> -PublicFolder -ResultSize Unlimited
 ```
 
 パブリック フォルダーの移動要求の詳細については、「[パブリック フォルダーを Exchange 2013 から Exchange 2016 または Exchange 2019 に移行する](https://learn.microsoft.com/exchange/collaboration/public-folders/migrate-from-exchange-2013?view=exchserver-2019)」を参照してください。
@@ -156,13 +156,13 @@ Exchange サーバー 2016 上のすべてのメールボックス データベ�
 サーバーごとにパッシブ コピーを検索して削除するには、次のコマンドを実行します。
 
 ``` PowerShell
-Get-MailboxDatabaseCopyStatus –Server <Ex2016 ServerName> | Where-Object {$_.Status -notlike "*mounted"} | Remove-MailboxDatabaseCopy
+Get-MailboxDatabaseCopyStatus –Server <Exchange サーバー 2016 のサーバー名> | Where-Object {$_.Status -notlike "*mounted"} | Remove-MailboxDatabaseCopy
 ```
 
 データベースごとにパッシブ コピーを検索して削除するには、次のコマンドを実行します。
 
 ``` PowerShell
-Get-MailboxDatabaseCopyStatus <DatabaseName> | Where-Object {$_.Status -notlike "*mounted"} | Remove-MailboxDatabaseCopy
+Get-MailboxDatabaseCopyStatus <データベース名> | Where-Object {$_.Status -notlike "*mounted"} | Remove-MailboxDatabaseCopy
 ```
 
 ## メールボックス データベースを削除する
@@ -172,7 +172,7 @@ Get-MailboxDatabaseCopyStatus <DatabaseName> | Where-Object {$_.Status -notlike 
 次のコマンドを **-WhatIf** パラメーターと共に実行して、リストされているすべてのデータベースを削除できることを確認してから、**-WhatIf** パラメーターを指定せずにコマンドを実行して削除します。
 
 ``` PowerShell
-Get-MailboxDatabase –Server <ServerToDecommission> | Remove-MailboxDatabase –Confirm:$false -WhatIf
+Get-MailboxDatabase –Server <Exchange サーバー 2016 のサーバー名> | Remove-MailboxDatabase –Confirm:$false -WhatIf
 ```
 
 データベースにメールボックスがまだ存在する場合は、データベースを削除することはできません。上記のコマンドは、次のエラーで失敗します。
@@ -209,7 +209,7 @@ DAG を削除する前に、各 DAG メンバーを DAG から削除する必要
 
 ここまでの説明で記載のすべての項目が Exchange サーバー 2016 から新しいバージョンの Exchange サーバーに移行されたら、Exchange サーバー 2016 を 1 週間メンテナンス モードにして、予期しない問題が発生しないことを確認します。問題が発生した場合は、Exchange サーバー 2016 を削除する前に解決する必要があります。問題が発生しない場合は、Exchange サーバー 2016 をアンインストールできます。**Exchange サーバー 2016 をシャットダウンすると、リソースが完全に移行されていない場合に問題が発生する可能性があるためお勧めしません。**
 
-目的は、これらの Exchange サーバー 2016 に接続しようとしているものがないことを確認することです。何かが見つかった場合は、新しい Exchange サーバーを使用するように更新するか、更新が行われるまで Exchange 2016 サーバーが利用できるように戻します。
+目的は、これらの Exchange サーバー 2016 に接続しようとしているものがないことを確認することです。何かが見つかった場合は、新しい Exchange サーバーを使用するように更新するか、更新が行われるまで Exchange サーバー 2016 が利用できるように戻します。
 
 メッセージ追跡ログと各種の接続ログから Exchange サーバー 2016 に接続しているクライアントが存在しなくなったことを確認した後でも、組織が従来の Exchange サーバーを (メンテナンス モードで) 長期間オンラインにしておくことは珍しことではありません。これにより把握していなかった業務プロセスを見つけたり、不要な復旧作業を防いだりすることができます。
 
