@@ -1,6 +1,6 @@
 ---
 title: Exchange サーバー 2016 を廃止する
-date: 2024-09-11
+date: 2024-11-19
 lastupdate: 
 tags: Exchange
 categories: Exchange
@@ -10,7 +10,7 @@ categories: Exchange
 
 こんにちは。日本マイクロソフト Exchange & Outlook サポート チームです。
 
-Exchange サーバー 2016 は延長サポートの終了が近づいており、2025 年 10 月 14 日に[サポートが終了](https://learn.microsoft.com/lifecycle/products/exchange-server-2016)します。Exchange サーバー 2019 を使用している場合は、次のバージョンである Exchange サーバー サブスクリプション エディション (SE) に[インプレース アップグレード](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742)することができるため、それまでに Exchange サーバー 2016 を廃止にする必要があります。
+Exchange サーバー 2016 は延長サポートの終了が近づいており、2025 年 10 月 14 日に[サポートが終了](https://learn.microsoft.com/lifecycle/products/exchange-server-2016)します。Exchange サーバー 2019 を使用している場合は、次のバージョンである Exchange サーバー サブスクリプション エディション (SE) に[インプレース アップグレード](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742) ([抄訳版](https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/)) することができるため、それまでに Exchange サーバー 2016 を廃止にする必要があります。
 
 この記事では、Exchange サーバー 2019 が既にインストールされている環境から Exchange サーバー 2016 を削除する方法に焦点を当てます。Exchange サーバー 2019 へのアップグレードについて既に文書化されている手順については、この記事では説明しません。これらの詳細については、[Exchange 展開アシスタント](https://learn.microsoft.com/exchange/exchange-deployment-assistant?view=exchserver-2019)を参照し、環境に合わせたステップバイステップの展開チェックリストを作成してください。また、新しいバージョンの Exchange サーバーへのアップグレードの詳細については、[Exchange サーバーのドキュメント](https://learn.microsoft.com/exchange/exchange-server?view=exchserver-2019)も参照してください。
 
@@ -34,29 +34,31 @@ Exchange サーバー 2016 を使用するすべてのアプリケーション�
 
 # Active Directory 内のサービス接続ポイント オブジェクトを確認する
 
-1.以下のコマンドですべての Exchange サーバーの AutoDiscoverServiceInternalURI の値を確認します。
+クライアントが Autodiscover で使用するサービス接続ポイント (SCP) を、Exchange サーバー 2019 に向けます。また、Exchange サーバー 2016 の SCP を削除します。
 
-``` PowerShell
-Get-ClientAccessService | Format-Table Name, FQDN, AutoDiscoverServiceInternalUri -AutoSize
-```
+1. 以下のコマンドですべての Exchange サーバーの AutoDiscoverServiceInternalURI の値を確認します。
+   
+   ``` PowerShell
+   Get-ClientAccessService | Format-Table Name, FQDN, AutoDiscoverServiceInternalUri -AutoSize
+   ```
 
-2.Exchange サーバー 2019 の AutoDiscoverServiceInternalURI の値が Exchange 2019 もしくはそれ用のロード バランサー (LB) に向いていない場合は設定を変更します。必要であれば Exchange サーバー 2019 の AutoDiscoverServiceInternalURI の値を Exchange サーバー 2016 の AutoDiscoverServiceInternalURI の値を参考に設定しなおします。
+2. Exchange サーバー 2019 の AutoDiscoverServiceInternalURI の値が Exchange サーバー 2019 もしくはそれ用のロード バランサー (LB) に向いていない場合は設定を変更します。必要であれば Exchange サーバー 2019 の AutoDiscoverServiceInternalURI の値を Exchange サーバー 2016 の AutoDiscoverServiceInternalURI の値を参考に設定しなおします。
+   
+   ``` PowerShell
+   Set-ClientAccessService -Identity <Exchange サーバー 2019 のサーバー名> -AutoDiscoverServiceInternalUri <Exchange サーバー 2019 もしくはそれ用の LB の SCP の URI>
+   ```
+   
+   以下は mbx01 という名前の Exchange サーバー 2019 の AutoDiscoverServiceInternalURI に "https://mbx01.contoso.com/autodiscover/autodiscover.xml" を設定する場合のコマンドになります。
+   
+   ``` PowerShell
+   Set-ClientAccessService -Identity mbx01 -AutoDiscoverServiceInternalUri "https://mbx01.contoso.com/autodiscover/autodiscover.xml"
+   ```
 
-``` PowerShell
-Set-ClientAccessService -Identity <Exchange サーバー 2019 のサーバー名> -AutoDiscoverServiceInternalUri <Exchange サーバー 2019 もしくはそれ用の LB の SCP の URI>
-```
-
-以下は mbx01 という名前の Exchange サーバー 2019 の AutoDiscoverServiceInternalURI に "https://mbx01.contoso.com/autodiscover/autodiscover.xml" を設定する場合のコマンドになります。
-
-``` PowerShell
-Set-ClientAccessService -Identity mbx01 -AutoDiscoverServiceInternalUri "https://mbx01.contoso.com/autodiscover/autodiscover.xml"
-```
-
-3.Exchange サーバー 2016 の AutoDiscoverServiceInternalURI を $null にします。
-
-``` PowerShell
-Set-ClientAccessService -Identity <Exchange サーバー 2016 のサーバー名> -AutoDiscoverServiceInternalUri $Null
-```
+3. Exchange サーバー 2016 の AutoDiscoverServiceInternalURI を $null にします。
+   
+   ``` PowerShell
+   Set-ClientAccessService -Identity <Exchange サーバー 2016 のサーバー名> -AutoDiscoverServiceInternalUri $Null
+   ```
 
 
 # メール フロー
