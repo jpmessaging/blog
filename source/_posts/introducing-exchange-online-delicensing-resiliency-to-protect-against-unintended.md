@@ -49,6 +49,4 @@ Microsoft 365 管理センターを使用して、猶予期間がいつ終了す
 
 ## 詳細情報
 
-現在、この機能は WW クラウドでのみ利用可能です。この機能を government および sovereign クラウドに展開することについてのフィードバックをお聞かせください（[元のブログ](https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/4082759)のコメント欄に英語でコメントしてください）。
-
-この新機能の詳細については、[Exchange Online ライセンス解除レジリエンシーの開始](https://learn.microsoft.com/Exchange/recipients-in-exchange-online/manage-user-mailboxes/exchange-online-delicensing-resiliency)をご覧ください。この機能についてのご意見も[元のブログ](https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/4082759)のコメント欄にてコメントしてください。
+この新機能の詳細については、[Exchange Online ライセンス解除レジリエンシーの開始](https://learn.microsoft.com/Exchange/recipients-in-exchange-online/manage-user-mailboxes/exchange-online-delicensing-resiliency)をご覧ください。
