@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2024-11-20T00:00:00.000Z</updated>
+  <updated>2024-11-21T15:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入</title>
+    <link href="https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/"/>
+    <id>https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/</id>
+    <published>2024-11-21T15:00:00.000Z</published>
+    <updated>2024-11-21T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/4082759">Introducing Exchange Online Delicensing Resiliency to protect against unintended delicensing actions</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>最近、Exchange Online に新機能が導入され、ライセンス解除の際に 30 日間の猶予期間を提供することで、Exchange Online メールボックスの誤ったまたは意図しないライセンス解除から保護できるようになりました。この機能は、管理者およびユーザーへの通知オプションも提供し、意図しないライセンス解除の影響を事前に回避することができます。この機能は、10,000 以上の評価版ではない Exchange Online ライセンスを持つテナントでオプト インすることで利用ができます。</p><h2 id="ライセンス解除レジリエンシーの仕組み"><a href="#ライセンス解除レジリエンシーの仕組み" class="headerlink" title="ライセンス解除レジリエンシーの仕組み"></a>ライセンス解除レジリエンシーの仕組み</h2><p>Exchange Online ユーザーのメールボックス アクセスはライセンスの有無に依存しています。ライセンスが削除されると、ユーザーはメールボックスを利用できなくなり、メール フローに影響を与え、配信不能レポート (NDR) やメールの誤送信が発生します。</p><p>過去には、<a href="https://learn.microsoft.com/entra/fundamentals/concept-group-based-licensing">グループ ベースのライセンス</a>を使用している顧客が誤って多数のユーザーのライセンスを解除し、広範なサービスの中断やメール フローの中断を引き起こした事例がありました。</p><p>この新機能は、ライセンス解除のエラーによる即時の影響を防ぐために、ライセンス解除から 30 日間の猶予期間を提供し、管理者が誤りを修正するための時間を確保します。この猶予期間中、メールボックスはライセンス解除前の機能を維持し、管理者がライセンス解除の誤りに対処するための必要な時間を提供します。この猶予期間中に、管理者はユーザーのライセンス解除を迅速化したり、ユーザーに再度ライセンスを付与したり、猶予期間が終了するまでライセンスを付与しないままにすることができます。</p><p>Exchange Online ライセンス解除レジリエンシー機能の 30 日間の猶予期間が終了し、ライセンスが削除されると、ユーザー メールボックスは<a href="https://learn.microsoft.com/exchange/recipients-in-exchange-online/delete-or-restore-mailboxes?source=recommendations#license-removal">デフォルトの 30 日間の猶予期間</a>に従います。この期間中、ユーザーはメールボックスにアクセスできませんが、ライセンスが再度付与されるとアクセスが復元され、メールボックスが再びアクティブになります。30 日間の猶予期間が終了すると、データは削除され、復元できなくなります。</p><p>以下の図は、動作の変更をまとめたものです。</p><p><strong>Exchange Online ライセンス解除レジリエンシー機能が有効でない場合 (デフォルトの動作)</strong><br><img src="Delic01.jpg" alt=""></p><p><strong>Exchange Online ライセンス解除レジリエンシー機能が有効になった場合 (新しい動作)</strong><br><img src="Delic02.jpg" alt=""></p><p>この機能が有効になると、Get-PendingDelicenseUser を実行することで、30 日間の猶予期間がいつ終了するかを確認できます。<br><img src="Delic03.jpg" alt=""></p><p>Microsoft 365 管理センターを使用して、猶予期間がいつ終了するかを確認し、ライセンス解除の迅速化などの他のアクションを実行することもできます。<br><img src="Delic04.jpg" alt=""></p><p>さらに、管理者向けの<a href="https://learn.microsoft.com/microsoft-365/enterprise/view-service-health?view=o365-worldwide&amp;WT.mc_id=365AdminCSH_inproduct">サービス正常性ダッシュボード</a>のアドバイザリ通知とユーザー向けのメール通知を追加しました。これにより、管理者は 30 日間の猶予期間が終了する前に、Exchange Online ユーザーの意図しないライセンス解除を事前に対処することができます。この機能が有効になると、管理者向けのサービス正常性ダッシュボードのアドバイザリ通知とユーザー向けのメール通知も有効になります。</p><p>サービス正常性ダッシュボードのアドバイザリ通知は、テナント内でライセンス解除が発生した場合に、管理者がアドバイザリのダイジェスト通知を受け取るように設計されています。サービス正常性ダッシュボードの投稿には、過去 8 日間にわたり、ライセンスが解除された状態にありまだ 30 日間の猶予期間内にあるユーザーの数が日毎に記載されます。</p><p>以下は、サービス正常性ダッシュボードのアドバイザリ通知のサンプルです。<br><img src="Delic05.jpg" alt=""></p><p>管理者は、ユーザーのライセンス解除を迅速化したり、ユーザーに再度ライセンスを付与したりするなど、適切なアクションを実行できます。</p><p>サービス正常性ダッシュボードのアドバイザリ通知に気付かない、または対応しない管理者がいる可能性があるため、ユーザー通知はデフォルトで有効になっています。ライセンスが解除されたユーザーには、ライセンス解除の約 18 日後から数回のメールが送信されます。これらのメール リマインダーは、ライセンス解除後 24 時間以内にメールを送信したり、メールボックスにアクセスしたりするなどのアクティビティがあるユーザーにのみ送信されます。</p><p>以下は、ユーザーへのメール通知の例です。<br><img src="Delic06.jpg" alt=""></p><h2 id="詳細情報"><a href="#詳細情報" class="headerlink" title="詳細情報"></a>詳細情報</h2><p>この新機能の詳細については、<a href="https://learn.microsoft.com/Exchange/recipients-in-exchange-online/manage-user-mailboxes/exchange-online-delicensing-resiliency">Exchange Online ライセンス解除レジリエンシーの開始</a>をご覧ください。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-delicensing-resiliency-to-protect-against-
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
+    
+  </entry>
   
   <entry>
     <title>Microsoft Outlook の新機能と今後の展望 – Ignite 2024</title>
@@ -482,32 +506,6 @@
       
         &lt;p&gt;こんにちは。Exchange &amp;amp; Outlook サポートの紺野です。&lt;/p&gt;
 &lt;p&gt;MSI 版の Outlook を最新に更新するには、Office 製品のすべての更新プログラムの適用を行います。&lt;br&gt;Office 製品の更新プログラムは多数あるため、弊社では 
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Outlook" scheme="https://jpmessaging.github.io/blog/tags/Outlook/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Outlook のバージョンを確認する方法</title>
-    <link href="https://jpmessaging.github.io/blog/outlookversion/"/>
-    <id>https://jpmessaging.github.io/blog/outlookversion/</id>
-    <published>2021-10-05T15:00:00.000Z</published>
-    <updated>2021-10-05T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>こんにちは。Exchange &amp; Outlook サポートの紺野です。<br>Outlook には以下の 2 種類の製品があり、種類によってバージョンの確認方法が異なります。</p><ul><li><strong>クイック実行版</strong> (Click-to-Run/C2R)： 新しいインストール方式の製品。Microsoft 365 Apps for enterprise (旧称 Office 365 ProPlus)、Office Professional Plus 2019 など。</li><li><strong>MSI 版</strong> : Office 2016 以前のボリュームライセンス版などで提供される従来のインストール方式の製品。Office Professional Plus 2016 など。</li></ul><p>Outlook の [ファイル] タブ-[Office アカウント] で [Outlook のバージョン情報] の上に [更新オプション] ボタンが表示されている場合はクイック実行版、表示されていない場合は MSI 版です。</p><p><img src="updateoption.jpg" alt=""></p><p>Outlook のバージョンを確認するには、クイック実行版か MSI 版かによって以下の方法で確認してください。 </p><h2 id="クイック実行版の場合"><a href="#クイック実行版の場合" class="headerlink" title="クイック実行版の場合"></a>クイック実行版の場合</h2><p>上記の [Outlook のバージョン情報] の右側に表示される <strong>「バージョン XXXX (ビルド YYYYY.YYYY)」</strong> から確認します。</p><h2 id="MSI-版の場合や、MSI-版かクイック実行版かわからない場合"><a href="#MSI-版の場合や、MSI-版かクイック実行版かわからない場合" class="headerlink" title="MSI 版の場合や、MSI 版かクイック実行版かわからない場合"></a>MSI 版の場合や、MSI 版かクイック実行版かわからない場合</h2><ol><li>Outlook が起動していない場合は起動します。</li><li>タスク バーを右クリックして [タスク マネージャー] をクリックします。</li><li>[Microsoft Outlook] のプロセスを右クリックして [プロパティ] をクリックします (OUTLOOK.EXE のプロパティが表示されます)。</li><li>[詳細] タブの [製品バージョン] を確認します。</li><li>必要に応じて、以下の一覧から対象のバージョンがクイック実行版か MSI 版かなどを確認します。<ul><li>MSI 版のバージョン一覧: <a href="https://social.technet.microsoft.com/wiki/contents/articles/31133.outlook-and-outlook-for-mac-update-file-versions.aspx">Outlook and Outlook for Mac: Update File Versions</a>  </li><li>クイック実行版のバージョン一覧: <a href="https://docs.microsoft.com/en-us/officeupdates/update-history-microsoft365-apps-by-date">Update history for Microsoft 365 Apps (listed by date)</a> 日本語版は<a href="https://docs.microsoft.com/ja-jp/officeupdates/update-history-microsoft365-apps-by-date">こちら</a></li></ul></li></ol><p>注意： [Outlook のバージョン情報] をクリックして表示される画面には以下のように Office の共有コンポーネントのバージョンしか表示されない場合があるため、必ず上記の方法で確認してください。</p><p><img src="version.jpg" alt=""></p><p>本情報の内容 (添付文書、リンク先などを含む) は、作成日時点でのものであり、予告なく変更される場合があります。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;こんにちは。Exchange &amp;amp; Outlook サポートの紺野です。&lt;br&gt;Outlook には以下の 2 種類の製品があり、種類によってバージョンの確認方法が異なります。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;クイック実行版&lt;/strong&gt; (Click-
       
     
     </summary>
