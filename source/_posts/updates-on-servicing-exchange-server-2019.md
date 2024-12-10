@@ -7,7 +7,7 @@ tags:
 
 ※ この記事は、[Updates on Servicing Exchange Server 2019](https://techcommunity.microsoft.com/blog/exchange/updates-on-servicing-exchange-server-2019/4355545) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-2022 年初頭に、Exchange Server のサービス モデルの変更を[発表](https://techcommunity.microsoft.com/t5/exchange-team-blog/released-2022-h1-cumulative-updates-for-exchange-server/ba-p/3285026)し、各暦年の上半期 (H1) と下半期 (H2) に合計 2 回の累積更新 (CU) をリリースするサービス サイクルに移行しました。一般的なリリース目標日は 3 月と 9 月です。リリース日はペイロードと品質、およびセキュリティ更新 (SU) のリリースなど、優先される他の作業によって決まります。
+2022 年初頭に、Exchange Server のサービス モデルの変更を[発表](https://techcommunity.microsoft.com/t5/exchange-team-blog/released-2022-h1-cumulative-updates-for-exchange-server/ba-p/3285026)し、各暦年の上半期 (H1) と下半期 (H2) に合計 2 回の累積更新 (CU) をリリースするサービス サイクルに移行しました。一般的なリリース目標日は 3 月と 9 月です。リリース日は内容と品質、およびセキュリティ更新 (SU) のリリースなど、優先される他の作業によって決まります。
 
 前回の[ロードマップ更新](https://techcommunity.microsoft.com/blog/exchange/exchange-server-roadmap-update/4132742)では、Exchange Server 2019 の最終 CU（H2 2024 CU、別名 CU15）が今年後半にリリースされると述べました。
 
