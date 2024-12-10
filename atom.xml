@@ -6,7 +6,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2024-11-21T15:00:00.000Z</updated>
+  <updated>2024-12-10T00:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Exchange Server 2019 に関する更新</title>
+    <link href="https://jpmessaging.github.io/blog/updates-on-servicing-exchange-server-2019/"/>
+    <id>https://jpmessaging.github.io/blog/updates-on-servicing-exchange-server-2019/</id>
+    <published>2024-12-10T00:00:00.000Z</published>
+    <updated>2024-12-10T00:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/updates-on-servicing-exchange-server-2019/4355545">Updates on Servicing Exchange Server 2019</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>2022 年初頭に、Exchange Server のサービス モデルの変更を<a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/released-2022-h1-cumulative-updates-for-exchange-server/ba-p/3285026">発表</a>し、各暦年の上半期 (H1) と下半期 (H2) に合計 2 回の累積更新 (CU) をリリースするサービス サイクルに移行しました。一般的なリリース目標日は 3 月と 9 月です。リリース日は内容と品質、およびセキュリティ更新 (SU) のリリースなど、優先される他の作業によって決まります。</p><p>前回の<a href="https://techcommunity.microsoft.com/blog/exchange/exchange-server-roadmap-update/4132742">ロードマップ更新</a>では、Exchange Server 2019 の最終 CU（H2 2024 CU、別名 CU15）が今年後半にリリースされると述べました。</p><p>本日、Exchange Server 2019 の最後の CU が H1 2025 CU（ただし、CU15 のまま）であり、2025 年 1 月上旬にリリースされることを発表します。<a href="https://techcommunity.microsoft.com/blog/exchange/servicing-exchange-server-2019/3989195">昨年</a>と同様のアプローチを取り、<a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/servicing-exchange-server/ba-p/3676996">一昨年</a>も同様でした。</p><p>その間、すべての顧客に対して、<a href="https://techcommunity.microsoft.com/blog/exchange/re-release-of-november-2024-exchange-server-security-update-packages/4341892">2024 年 11 月 SU の v2 バージョン</a>に更新し、<a href="https://support.microsoft.com/topic/time-zone-exception-occurs-after-installing-exchange-server-november-2024-su-version-1-or-version-2-851b3005-6d39-49a9-a6b5-5b4bb42a606f">既知のタイムゾーン問題</a>の手動回避策を実行することをお勧めします。その後、最新リリースの<a href="https://aka.ms/HealthChecker">Exchange Server HealthChecker</a>をダウンロードして実行し、問題がないことを確認してください。</p><p>最後に、いくつかの注意点があります：</p><ul><li>ライフサイクルの日付は変更されません。</li><li>Exchange Server SE の RTM リリースのタイミングには影響しません。これは引き続き暦年 2025 年の H2 初頭に予定されています。</li><li>すべての顧客に対するガイダンスは変わりません：Exchange Server 2019 に移行し、最新の更新プログラムをインストールし、利用可能になったら Exchange Server SE にインプレースアップグレードしてください。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/updates-on-servicing-exchange-server-2019/4355545&quot;&gt;Updates on Servicin
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Outlook のデスクトップ通知が表示されない時の確認ポイント</title>
+    <link href="https://jpmessaging.github.io/blog/Outlook-does-not-display-toast/"/>
+    <id>https://jpmessaging.github.io/blog/Outlook-does-not-display-toast/</id>
+    <published>2024-12-02T15:00:00.000Z</published>
+    <updated>2024-12-02T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの御正 (ミショウ) です。 </p><p>本記事では Outlook にてメールを受信した際に表示される Windows のデスクトップ通知が、表示されない事象が発生したときのチェック ポイントについて説明します。<br>なお、本件では従来の Outlook for Windows (以下、従来の Outlook) に焦点を当てて記載しています。</p><h2 id="デスクトップ通知について"><a href="#デスクトップ通知について" class="headerlink" title="デスクトップ通知について"></a>デスクトップ通知について</h2><p>デスクトップ通知 (トースト通知) は、新規メールや会議出席依頼などを受信したときにデスクトップに表示される通知です。 </p><p>Windows 10 のデスクトップ通知 </p><p><img src="windows10toast.png" alt=""></p><p>Windows 11 のデスクトップ通知</p><p><img src="windows11toast.png" alt=""></p><p>もし従来の Outlook でデスクトップ通知がされない場合、後段の設定を確認してみましょう。</p><h2 id="1-受信トレイに配信されたメールかどうか"><a href="#1-受信トレイに配信されたメールかどうか" class="headerlink" title="1. 受信トレイに配信されたメールかどうか"></a>1. 受信トレイに配信されたメールかどうか</h2><p>デスクトップ通知が表示されないメールは自分の受信トレイにて受信したメールであるか確認しましょう。たとえば対象のメールが仕分けルールで他のフォルダーに振り分けられている場合、仕分けルールでデスクトップ通知を表示する設定もしておかないと、デスクトップ通知は表示されません。<br>また、デスクトップ通知が表示されないメールは共有メールボックスで受信したメールではないか、併せてチェックしましょう。</p><h2 id="2-デスクトップ通知の設定項目"><a href="#2-デスクトップ通知の設定項目" class="headerlink" title="2. デスクトップ通知の設定項目"></a>2. デスクトップ通知の設定項目</h2><h4 id="Outlook-の通知設定"><a href="#Outlook-の通知設定" class="headerlink" title="- Outlook の通知設定"></a>- Outlook の通知設定</h4><p>続いて、デスクトップ通知に関する以下の設定がされているか確認してみてください。</p><ol><li>Outlook クライアントを起動します。</li><li>[ファイル] タブ - [オプション] - [メール] をクリックします。</li><li>[メッセージ受信] にて [デスクトップ通知を表示する] にチェックが入っているか。</li></ol><h4 id="Windows-での通知設定"><a href="#Windows-での通知設定" class="headerlink" title="- Windows での通知設定"></a>- Windows での通知設定</h4><p>従来の Outlook の設定に加え、Windows でもいくつかデスクトップ通知に関する設定項目があります。<br>まだ通知が表示がされない場合、以下の設定を確認してみましょう。</p><p>Windows 10</p><ul><li>[設定]-[システム]-[通知とアクション] の [通知]-[アプリやその他の送信者からの通知を取得する] が有効となっているか</li><li>[設定]-[システム]-[通知とアクション] の [送信元ごとの通知の受信設定]-[Outlook (classic)] が有効となっているか</li><li>[設定]-[システム]-[通知とアクション] の [送信元ごとの通知の受信設定]-[Outlook (classic)]-[アクション センターに通知を表示する] が有効となっているか</li><li>[設定]-[プライバシー]-[バックグラウンドアプリ] の [アプリのバックグラウンド実行を許可する] が有効となっているか</li><li>[設定]-[システム]-[集中モード] が無効 (オフ) となっているか</li></ul><p>Windows 11</p><ul><li>[設定]-[システム]-[通知] の [通知] が有効となっているか</li><li>[設定]-[システム]-[通知] の [応答不可] が無効となっているか</li><li>[設定]-[システム]-[通知] の [Outlook (classic)] が有効となっているか</li><li>[設定]-[システム]-[通知] の [アプリやその他の送信者からの通知]-[Outlook (classic)]-[通知バナーを表示] が有効となっているか</li><li>[設定]-[システム]-[フォーカス] の [フォーカス] が停止されているか</li></ul><h2 id="3-キャッシュ-モードへの変更"><a href="#3-キャッシュ-モードへの変更" class="headerlink" title="3. キャッシュ モードへの変更"></a>3. キャッシュ モードへの変更</h2><p>従来の Outlook はオンライン モードで利用していますか？<br>キャッシュ モードに変更すると通知が表示されるようになるかもしれません。以下の設定を確認しましょう。</p><ol><li>[ファイル]-[アカウント設定]-[アカウント設定] に移動します。</li><li>設定を見るアカウントを選択し [変更] を選択します。</li><li>[Exchange キャッシュ モードを使用して、Outlook データ ファイルにメールをダウンロードする] にチェックが入っていればキャッシュ モードです。</li></ol><p>なお、オンライン モードからキャッシュ モードへの切り替えができない場合、メールの未読件数を減らしてみてください。</p><h2 id="4-スタート-メニューのショートカットの有無"><a href="#4-スタート-メニューのショートカットの有無" class="headerlink" title="4. スタート メニューのショートカットの有無"></a>4. スタート メニューのショートカットの有無</h2><p>従来の Outlook ではスタート メニューに Outlook のショートカットが作成されます。通知が出ない場合は以下のパスに Outlook のショートカットがあるか確認してみてください。</p><pre><code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs\</code></pre><p>ショートカットがない場合、 Office の修復を試してみましょう。<br>なお、[スタート メニューから共通プログラム グループを削除する] というグループ ポリシーを配布しているとショートカットが作成されませんので、展開している場合はグループ ポリシーを無効化することも検討してくださいね。</p><h4 id="Office-の修復手順"><a href="#Office-の修復手順" class="headerlink" title="- Office の修復手順"></a>- Office の修復手順</h4><p>Windows 10 </p><ol><li>タスク バーの左端にある [スタート] アイコンを右クリックし、ポップアップ メニューの [アプリと機能] を選択します。</li><li>修復する Microsoft Office 製品を選択して、[変更] を選択します。</li><li>[クイック修復] を選択し、[修復]-[修復] をクリックします。<br>※解決しない場合 [オンライン修復] もお試しください。</li><li>画面に表示される手順に従って操作を行い、修復を完了します。</li></ol><p>Windows 11</p><ol><li>タスク バーの中央または左端の [スタート] アイコンを右クリックし、ポップアップ メニューの [インストールされているアプリ] を選択します。</li><li>修復する Microsoft Office 製品を選択し、省略記号をクリックして、[変更] を選択します。</li><li>[クイック修復] を選択し、[修復]-[修復] をクリックします。<br>※解決しない場合 [オンライン修復] もお試しください。</li><li>画面に表示される手順に従って操作を行い、修復を完了します。</li></ol><p>こちらの項目で記載した内容について、詳細は<a href="https://learn.microsoft.com/outlook/troubleshoot/user-interface/no-desktop-alerts-(toast-notifications)-if-missing-start-menu-shortcut">公開情報</a>にも記載されています。</p><p><strong>本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;こんにちは。日本マイクロソフト Exchange &amp;amp; Outlook サポート チームの御正 (ミショウ) です。 &lt;/p&gt;
+&lt;p&gt;本記事では Outlook にてメールを受信した際に表示される Windows のデスクトップ通知が、表示されない事象が発生したときの
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Outlook" scheme="https://jpmessaging.github.io/blog/tags/Outlook/"/>
+    
+  </entry>
   
   <entry>
     <title>意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入</title>
@@ -147,7 +196,7 @@
       <category term="Exchange" scheme="https://jpmessaging.github.io/blog/categories/Exchange/"/>
     
     
-      <category term="Exchagne" scheme="https://jpmessaging.github.io/blog/tags/Exchagne/"/>
+      <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
     
   </entry>
   
@@ -463,56 +512,6 @@
     
     
       <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>クラウド上のオブジェクトをオンプレミスで管理する</title>
-    <link href="https://jpmessaging.github.io/blog/%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E4%B8%8A%E3%81%AE%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%92%E3%82%AA%E3%83%B3%E3%83%97%E3%83%AC%E3%83%9F%E3%82%B9%E3%81%A7%E7%AE%A1%E7%90%86%E3%81%99%E3%82%8B/"/>
-    <id>https://jpmessaging.github.io/blog/%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E4%B8%8A%E3%81%AE%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%92%E3%82%AA%E3%83%B3%E3%83%97%E3%83%AC%E3%83%9F%E3%82%B9%E3%81%A7%E7%AE%A1%E7%90%86%E3%81%99%E3%82%8B/</id>
-    <published>2021-11-04T15:00:00.000Z</published>
-    <updated>2021-11-04T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームです。昨今、大変ありがたいことに Microsoft 365 をご利用頂くお客様も大変多くなってまいりました！</p><p>本日は少々今更に思われるかもしれませんが、AADC で同期している環境において、Microsoft 365 上、つまり Exchange Online (ExO) 上のオブジェクトを、オンプレミス Exchange サーバーの管理ツールを使用して管理できるようにするための手順について、ご案内致します。</p><h2 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h2><p>まず Exchange Server インストール対象のサーバーにおいて下記のシステム要件の確認、および前提条件となる準備を実施します。</p><ul><li><a href="https://docs.microsoft.com/ja-jp/exchange/plan-and-deploy/system-requirements?view=exchserver-2019">Exchange Server 2019 システム要件</a></li><li><a href="https://docs.microsoft.com/ja-jp/exchange/plan-and-deploy/prerequisites?view=exchserver-2019">Exchange Server の前提条件</a></li></ul><p>続いて、下記手順で Exchange 管理ツールを導入するために Exchange Server のインストールの準備を行い、メール ユーザーまたはリモート メールボックスの有効化を実施します。</p><h2 id="1-スキーマ拡張の実施"><a href="#1-スキーマ拡張の実施" class="headerlink" title="1. スキーマ拡張の実施"></a>1. スキーマ拡張の実施</h2><p>Exchange Server のインストールの前に、Exchange 属性の追加のためスキーマ拡張を実施します。詳細な手順については下記公開情報をご参照ください。</p><ul><li><a href="https://docs.microsoft.com/ja-jp/exchange/plan-and-deploy/prepare-ad-and-domains?view=exchserver-2019">Exchange Server に対応したドメインと Active Directory の準備</a></li></ul><h2 id="2-Exchange-Server-のインストール"><a href="#2-Exchange-Server-のインストール" class="headerlink" title="2. Exchange Server のインストール"></a>2. Exchange Server のインストール</h2><p>下記公開情報内の手順に沿って、セットアップウィザードを用いて Exchange Server のメールボックス サーバーのインストールを実施します。ここでポイントとなるのは、管理ツールのみインストールするといったことはできない、という点ですね。</p><ul><li><a href="https://docs.microsoft.com/ja-jp/exchange/plan-and-deploy/deploy-new-installations/install-mailbox-role?view=exchserver-2019">セットアップ ウィザードを使用した Exchange メールボックス サーバーのインストール</a></li></ul><h2 id="3-リモート-メールボックスまたはメール-ユーザーの有効化"><a href="#3-リモート-メールボックスまたはメール-ユーザーの有効化" class="headerlink" title="3. リモート メールボックスまたはメール ユーザーの有効化"></a>3. リモート メールボックスまたはメール ユーザーの有効化</h2><p>下記の通り、<code>Enable-RemoteMailbox</code> コマンドまたは <code>Enable-MailUser</code> コマンドを実施します。これにより、そのユーザー アカウントはリモート (ExO) にメールボックスを保持していながら、オンプレミス Exchange サーバー上でメールが有効なオブジェクトとして管理できるようになります。</p><h3 id="Exchange-Online-側にメールボックスを作成する場合"><a href="#Exchange-Online-側にメールボックスを作成する場合" class="headerlink" title="Exchange Online 側にメールボックスを作成する場合"></a>Exchange Online 側にメールボックスを作成する場合</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Enable-RemoteMailbox</span> <span class="literal">-Identity</span> &lt;対象ユーザー名&gt; <span class="literal">-RemoteRoutingAddress</span> &lt;ExO でプライマリ アドレスとして使用する SMTP アドレス&gt;</span><br></pre></td></tr></table></figure><p>実行例:</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Enable-RemoteMailbox</span> <span class="literal">-Identity</span> User001 <span class="literal">-RemoteRoutingAddress</span> User001@contoso.com</span><br></pre></td></tr></table></figure><h3 id="Exchange-Online-側にメールボックスを作成しない場合"><a href="#Exchange-Online-側にメールボックスを作成しない場合" class="headerlink" title="Exchange Online 側にメールボックスを作成しない場合"></a>Exchange Online 側にメールボックスを作成しない場合</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Enable-MailUser</span> <span class="literal">-Identity</span> &lt;対象ユーザー名&gt; <span class="literal">-ExternalEmailAddress</span> &lt;ExO でプライマリ アドレスとして使用する SMTP アドレス&gt;</span><br></pre></td></tr></table></figure><p>実行例:</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Enable-MailUser</span> <span class="literal">-Identity</span> User001 <span class="literal">-ExternalEmailAddress</span> User001@contoso.com</span><br></pre></td></tr></table></figure><h2 id="4-リモート-メールボックスまたはメール-ユーザーの編集"><a href="#4-リモート-メールボックスまたはメール-ユーザーの編集" class="headerlink" title="4. リモート メールボックスまたはメール ユーザーの編集"></a>4. リモート メールボックスまたはメール ユーザーの編集</h2><p>念のため、上記コマンドを実行した後は、不足しているパラメータがないかを以下のコマンドで確認し、不足分があれば手動で (Set-RemoteMailbox / Set-MailUser コマンドにて) 追加するようにしましょう。</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-RemoteMailbox</span> <span class="literal">-Identity</span> &lt;対象ユーザー名&gt;</span><br><span class="line"><span class="built_in">Get-MailUser</span> <span class="literal">-Identity</span> &lt;対象ユーザー&gt;</span><br></pre></td></tr></table></figure><p>例えばセカンダリ アドレスを追加したい場合は、以下のような形です。</p><h3 id="リモート-メールボックスにセカンダリ-SMTP-アドレスを追加する場合"><a href="#リモート-メールボックスにセカンダリ-SMTP-アドレスを追加する場合" class="headerlink" title="リモート メールボックスにセカンダリ SMTP アドレスを追加する場合"></a>リモート メールボックスにセカンダリ SMTP アドレスを追加する場合</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-RemoteMailbox</span> <span class="literal">-Identity</span> &lt;対象ユーザー名&gt; <span class="literal">-EmailAddresses</span> <span class="selector-tag">@</span>&#123;add=<span class="string">&quot;追加する SMTP アドレス&quot;</span>&#125;</span><br></pre></td></tr></table></figure><p>実行例:</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-RemoteMailbox</span> <span class="literal">-Identity</span> user001 <span class="literal">-EmailAddresses</span> <span class="selector-tag">@</span>&#123;add=<span class="string">&quot;User001_Modified@contoso.com&quot;</span>&#125;</span><br></pre></td></tr></table></figure><h3 id="メール-ユーザーにセカンダリ-SMTP-アドレスを追加する場合"><a href="#メール-ユーザーにセカンダリ-SMTP-アドレスを追加する場合" class="headerlink" title="メール ユーザーにセカンダリ SMTP アドレスを追加する場合"></a>メール ユーザーにセカンダリ SMTP アドレスを追加する場合</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-MailUser</span> <span class="literal">-Identity</span> &lt;対象ユーザー名&gt; <span class="literal">-EmailAddresses</span> <span class="selector-tag">@</span>&#123;add=<span class="string">&quot;追加する SMTP アドレス&quot;</span>&#125;</span><br></pre></td></tr></table></figure><p>実行例:</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-MailUser</span> <span class="literal">-Identity</span> User001 <span class="literal">-EmailAddresses</span> <span class="selector-tag">@</span>&#123;add=<span class="string">&quot;User001_Modified@contoso.com&quot;</span>&#125;</span><br></pre></td></tr></table></figure><h3 id="参考リンク"><a href="#参考リンク" class="headerlink" title="参考リンク"></a>参考リンク</h3><ul><li><a href="https://docs.microsoft.com/en-us/powershell/module/exchange/enable-mailuser?view=exchange-ps">Enable-MailUser (ExchangePowerShell) | Microsoft Docs</a></li><li><a href="https://docs.microsoft.com/en-us/powershell/module/exchange/enable-remotemailbox?view=exchange-ps">Enable-RemoteMailbox (ExchangePowerShell) | Microsoft Docs</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;こんにちは。日本マイクロソフト Exchange &amp;amp; Outlook サポート チームです。昨今、大変ありがたいことに Microsoft 365 をご利用頂くお客様も大変多くなってまいりました！&lt;/p&gt;
-&lt;p&gt;本日は少々今更に思われるかもしれませんが、AADC で
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MSI 版の Outlook 2016 を最新に更新する方法</title>
-    <link href="https://jpmessaging.github.io/blog/updatemsi/"/>
-    <id>https://jpmessaging.github.io/blog/updatemsi/</id>
-    <published>2021-10-06T15:00:00.000Z</published>
-    <updated>2021-10-06T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>こんにちは。Exchange &amp; Outlook サポートの紺野です。</p><p>MSI 版の Outlook を最新に更新するには、Office 製品のすべての更新プログラムの適用を行います。<br>Office 製品の更新プログラムは多数あるため、弊社では <strong>Microsoft Update</strong>、<strong>WSUS</strong> (Windows Server Update Services)、<strong>MECM</strong> (Endpoint Configuration Manager、旧称 System Center Configuration Manager (SCCM)) などを使用して最新のすべての Office 更新プログラムを配信し、各クライアントで自動適用されるように構成することを推奨しています。<br>特に Exchange Online を含む Microsoft 365 サービスに接続して利用する場合は最新に更新して利用することを強く推奨しています。  </p><p>更新プログラムを個別にダウンロードして適用する必要がある場合は、以下の弊社マイクロソフト Web ページに一覧で公開しているすべての Office 更新プログラムを適用します。「 <strong>Non-security release date</strong> (セキュリティ以外のリリース日)」 と 「 <strong>Security release date</strong> (セキュリティのリリース日）」を比較して、新しい方の KB を適用ください。<br>Office 2016 の更新プログラムは 60 個以上あるため、個別のインストールではなく、前述の Microsoft Update などを使用して必要な更新プログラムを自動検出して適用することをご検討ください。</p><p>List of the most current .msp files for Office 2016 products<br><a href="https://docs.microsoft.com/en-us/officeupdates/msp-files-office-2016">https://docs.microsoft.com/en-us/officeupdates/msp-files-office-2016</a> (英語)<br><a href="https://docs.microsoft.com/ja-jp/officeupdates/msp-files-office-2016">https://docs.microsoft.com/ja-jp/officeupdates/msp-files-office-2016</a> (日本語機械翻訳)</p><p><img src="msplist.jpg" alt=""></p><ul><li>既にすべての Office 製品の Security を適用済みである場合は、Security よりも Non-security のリリース日が新しい KB だけを追加で適用してください。</li><li>Office の更新プログラムは累積更新であるため、新しい方の KB には古い方の KB のすべての更新が含まれます。</li><li>既に適用済みの更新プログラムや、インストールされていないコンポーネントの更新プログラムは適用する必要がなく、手動で適用するとエラーが発生して失敗します。</li></ul><hr><p>補足</p><h3 id="2021-年-11-月-1-日以降-Exchange-Online-へ接続する-Outlook-の最低要件が変更-最新のすべての-Office-更新プログラムの適用をお願いします"><a href="#2021-年-11-月-1-日以降-Exchange-Online-へ接続する-Outlook-の最低要件が変更-最新のすべての-Office-更新プログラムの適用をお願いします" class="headerlink" title="2021 年 11 月 1 日以降 Exchange Online へ接続する Outlook の最低要件が変更 (最新のすべての Office 更新プログラムの適用をお願いします)"></a>2021 年 11 月 1 日以降 Exchange Online へ接続する Outlook の最低要件が変更 (最新のすべての Office 更新プログラムの適用をお願いします)</h3><p>以下の弊社マイクロソフトの Web ページや MC229143 で説明しているように、2021 年 11 月 1 日以降は Exchange Online に接続する Outlook の最低要件が変更されます。</p><p>Office versions and connectivity to Office 365 services<br><a href="https://docs.microsoft.com/en-us/deployoffice/endofsupport/office-365-services-connectivity">https://docs.microsoft.com/en-us/deployoffice/endofsupport/office-365-services-connectivity</a></p><p>MSI 版 Office 2016 は、Office を 16.0.4600.1000 以降 (2017 年 11 月の <a href="https://support.microsoft.com/en-us/kb/4051890">KB4051890</a> の Office 製品の更新一覧を含む) に更新しておく必要があります。<br>KB4051890 の更新一覧は約 3 年前で非常に古く、Outlook が使用する重要な Office 共有コンポーネントの更新も含まれないため、KB4051890 に記載されている KB がすべて適用されていたとしても、それ以降にリリースされた更新プログラムを適用して最新に更新していない場合はパフォーマンスが悪く別の理由によって接続の問題が発生する可能性もあります。今回の記事で紹介している <a href="https://docs.microsoft.com/en-us/officeupdates/msp-files-office-2016">List of the most current .msp files for Office 2016 products</a> の最新の更新プログラムをすべて適用ください。<br>なお、Outlook は Office の共有コンポーネントを使用しており、Outlook の更新だけを適用しても最低要件を満たせません。すべての Office 製品の更新プログラムの適用をお願いいたします。</p><h3 id="Outlook-のバージョン情報-の画面だけでは、2021-年-11-月-1-日以降の要件を満たしているかを確認することができない"><a href="#Outlook-のバージョン情報-の画面だけでは、2021-年-11-月-1-日以降の要件を満たしているかを確認することができない" class="headerlink" title="[Outlook のバージョン情報] の画面だけでは、2021 年 11 月 1 日以降の要件を満たしているかを確認することができない"></a>[Outlook のバージョン情報] の画面だけでは、2021 年 11 月 1 日以降の要件を満たしているかを確認することができない</h3><p>Outlook の [ファイル] タブ-[Office アカウント] で [Outlook のバージョン情報] をクリックした画面では、Office 共有コンポーネントが古いと以下のように表示されます。表示されている番号は Mso20win32client.dll のバージョンです。OUTLOOK.EXEのバージョンは表示されません。</p><p><img src="version1.jpg" alt=""></p><p>Office 共有コンポーネントが新しい場合は、以下のように表示されます。Microsoft Outlook の後の番号は OUTLOOK.EXE のバージョン、MSO の後の番号は MSO.DLL のバージョンです。他の Office の更新プログラムの適用状況は確認できません。</p><p><img src="version2.jpg" alt=""></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;こんにちは。Exchange &amp;amp; Outlook サポートの紺野です。&lt;/p&gt;
-&lt;p&gt;MSI 版の Outlook を最新に更新するには、Office 製品のすべての更新プログラムの適用を行います。&lt;br&gt;Office 製品の更新プログラムは多数あるため、弊社では 
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Outlook" scheme="https://jpmessaging.github.io/blog/tags/Outlook/"/>
     
   </entry>
   
