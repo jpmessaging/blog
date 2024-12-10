@@ -2,7 +2,7 @@
 title: 現行バージョンからExchange Server SEへのアップグレード
 date: 2024-10-15 10:00:00
 lastupdate: 
-tags: Exchagne
+tags: Exchange
 categories: Exchange
 ---
 
