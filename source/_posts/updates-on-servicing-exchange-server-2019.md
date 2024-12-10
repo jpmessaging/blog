@@ -1,6 +1,6 @@
 ---
 title: 'Exchange Server 2019 に関する更新'
-date: 2024-12-10
+date: 2024-12-10 9:00:00
 tags: 
 - Exchange
 ---
