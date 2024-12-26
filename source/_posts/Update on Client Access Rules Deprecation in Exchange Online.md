@@ -1,43 +1,41 @@
 ---
 title: 'Exchange Online のクライアント アクセス ルール廃止に関する最新情報'
-date: 2024-12-23
+date: 2024-12-27
 lastupdate:
 tags: 'Exchange Online'
 ---
 ※ この記事は、[Update on Client Access Rules Deprecation in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/update-on-client-access-rules-deprecation-in-exchange-online/4354809) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-2022 年 9 月に、Exchange Online でのクライアント アクセス ルール（CARs）の廃止を開始することを[発表](https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecation-of-client-access-rules-in-exchange-online/ba-p/3638563)しました。それ以来、アクティブルールのないテナントではすでに CARs が廃止されています。CARs は 2025 年 9 月 1 日にすべてのテナントで廃止されます。さらに、テナントが期限前に CARs をオフにすることを選択した場合、私たちはそのテナントの CARs を無効にします。スムーズな移行を確保し、継続的アクセス評価（CAE）を備えた条件付きアクセス（CA）が提供する強化されたセキュリティ機能を活用するために、できるだけ早く CARs から移行することをお勧めします。
+2022 年 9 月に、Exchange Online でのクライアント アクセス ルール（CARs）の廃止を開始することを[発表](https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecation-of-client-access-rules-in-exchange-online/ba-p/3638563)しました。それ以来、アクティブなルールのないテナントではすでに CARs が廃止されています。CARs は 2025 年 9 月 1 日にすべてのテナントで廃止されます。さらに、テナントが期限前に CARs をオフにすることを選択した場合、私たちはそのテナントの CARs を無効にします。スムーズな移行を確保し、継続的アクセス評価（CAE）を備えた条件付きアクセス（CA）が提供する強化されたセキュリティ機能を活用できるように、できるだけ早く CARs から移行することをお勧めします。
 
 ### 背景
 
 CARs は、クライアントのプロパティやクライアント アクセス要求に基づいて Exchange Online 組織へのアクセスを制御するのに役立ちます。ただし、CARs は現在レガシー技術と見なされています。さらに、サービスで定義された CARs は Exchange Online でのみ機能します。
-CARs の代わりに [条件付きアクセス](https://learn.microsoft.com/ja-jp/entra/identity/conditional-access/overview) (CA) と [継続的アクセス評価](https://learn.microsoft.com/ja-jp/entra/identity/conditional-access/concept-continuous-access-evaluation) (CAE) を使用することをお勧めします。CAE は、IP ロケーションベースの CA ポリシーを構成するときにロケーション ポリシーが適用されることを保証します。複数の Microsoft 365 サービスが CAE をサポートしており、Exchange Online、SharePoint Online、Teams などが含まれます。
-
+CARs の代わりに [条件付きアクセス](https://learn.microsoft.com/entra/identity/conditional-access/overview) (CA) と [継続的アクセス評価](https://learn.microsoft.com/entra/identity/conditional-access/concept-continuous-access-evaluation) (CAE) を使用することをお勧めします。IP 範囲を条件として指定した CA ポリシーを構成しているとき、CAE によってユーザーの場所に応じたポリシーが確実に適用されるようになります。複数の Microsoft 365 サービスが CAE をサポートしており、Exchange Online、SharePoint Online、Teams などが含まれます。
 Exchange Online のみを考慮しても、Exchange Online にはこれまでに多くの新しいプロトコルやサービスが導入されており、CARs を強制するプロトコルはごく一部に過ぎません。それに対して、CA と CAE はこれらのサービスへのアクセスを真に許可またはブロックすることができます。さらに、CARs は IP アドレス、プロトコル、ユーザーによるフィルタリングなどの基本的な強制しか提供しません。デバイスの物理的な場所、多要素認証 (MFA)、デバイスのコンプライアンスなど、より高いセキュリティ基準に必要な最新の強制コントロールが欠けています。
 
-これにより、CARs は時代遅れとなり、高いセキュリティ要件を満たすには不十分です。CARs が提供する限られた機能は、CA および CAE と重複しています。Exchange Online は CAE を実装しており、IP ロケーション CA ポリシーが Exchange Online へのアクセスごとに評価されるため、CARs と同等の機能を提供します。
-
-条件付きアクセスは、ポリシーの適用方法に関する可視性をIT管理者に提供する豊富な監視およびレポート機能も提供します。Microsoftは、Entra ID サービスの一環として CA および CAE の両方を強化し続けており、この分野での継続的な改善と投資を確保しています。
-
-なお、Exchange Server オンプレミスの CAR は、この廃止およびガイダンスとは完全に別物であり、引き続きオンプレミスで個別に管理されます。
+これにより、CARs は時代遅れとなり、高いセキュリティ要件を満たすには不十分です。CARs が提供する限られた機能は、CA および CAE と重複しています。Exchange Online は CAE を実装しており、IP 範囲を条件とした CA ポリシーが Exchange Online へのアクセスごとに評価されるため、CARs と同等の機能を提供します。
+条件付きアクセスは、豊富な監視およびレポート機能を提供し、IT管理者がポリシーの適用状況を把握できるようにします。Microsoftは、Entra ID サービスの一環として CA および CAE の両方を強化し続けており、この分野での継続的な改善と投資を確保しています。
+なお、オンプレミスの Exchange Server の CAR は、この廃止およびガイダンスとは完全に別物であり、引き続きオンプレミスで個別に管理されます。
 
 ### CARs から CAE への移行
 
 CARs を使用している場合、2025 年 9 月 1 日以降は使用できなくなります。CARs から移行するには、次の点を考慮してください:
 
-- [必要な IP ロケーション条件付きアクセス ポリシーを構成する](https://learn.microsoft.com/entra/identity/conditional-access/policy-block-by-location) ことで、Exchange Online にアクセスする際に [継続的アクセス評価](https://learn.microsoft.com/entra/identity/conditional-access/concept-continuous-access-evaluation#example-flow-diagrams) を使用した IP ロケーションの強制を有効にします。
+- [必要な IP 範囲の条件付きアクセス ポリシーを構成する](https://learn.microsoft.com/entra/identity/conditional-access/policy-block-by-location) ことで、Exchange Online にアクセスする際に [継続的アクセス評価](https://learn.microsoft.com/entra/identity/conditional-access/concept-continuous-access-evaluation#example-flow-diagrams) を使用したポリシーの強制を有効にします。
 - [Set-CASMailbox](https://learn.microsoft.com/powershell/module/exchange/set-casmailbox?view=exchange-ps) および [Set-CASMailboxPlan](https://learn.microsoft.com/powershell/module/exchange/set-casmailboxplan?view=exchange-ps) コマンドレットを使用して、特定のプロトコルに対するメールボックスのクライアント アクセス設定を構成します。たとえば、Exchange ActiveSync、Outlook、Outlook on the web、POP3、および IMAP4 の設定を構成できます。
 
-<strong><em>2025 年 9 月までに</em> 対応する必要があります。&nbsp; この日以降、既存の CAR は機能しなくなります。</strong>
-
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
+現在 CARs をご利用の場合、2025 年 9 月までに対応する必要があります。&nbsp; この日以降、機能が廃止されるため既存の CARs は機能しなくなります。
+</div>
 
 ### 移行オプション
 
-単一ルールの移行は、以下の表に示すように、IP アドレス条件とプロトコル条件のバリエーションを使用して 3 つのカテゴリに分類されます。
+単一ルールの移行は、以下の表に示すように、IP アドレス条件とプロトコル条件のバリエーションにより 3 つのカテゴリに分類されます。
 この表を使用して、ルールがどのカテゴリに該当するかを分析してください。
-新しい CA ルールを設定する前にテストすることをお勧めします。
+既存の CAR を削除する前に新しい CA ルールをテストすることをお勧めします。
 また、CA を設定した後、ポリシーが Exchange Online と同期するのを待つために、CAR を削除する前に 24 時間待つことをお勧めします。
-これにより、テナントがルールによって保護されていない期間がないことを確認できます。
+これにより、テナントがルールによって保護されていない期間をなくすことができます。
 
 <table border="1" width="646px">
 <tbody>
@@ -102,7 +100,7 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 
 ### カテゴリ 1: ユーザーのみを対象としたルールの移行
 
-これらのルールには、IPアドレスやプロトコルに基づく条件はありません。基本的に、Exchange Online全体へのアクセスを許可または拒否します。
+これらのルールには、IP アドレスやプロトコルに基づく条件はありません。基本的に、Exchange Online 全体へのアクセスを許可または拒否します。
 
 <div class="styles_lia-table-wrapper__h6Xo9 styles_table-responsive__MW0lN">
 <table border="1" width="623px">
@@ -129,7 +127,7 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 <pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : contoso.com\admin*<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
 </td>
 <td width="231">
-<p>ユーザー プリンシパル名プロパティの正規表現を基準として使用する動的メンバーシップを持つセキュリティ グループを作成します（domain\user 形式はサポートされていません）。詳細はこちらをご覧ください: <a href="https://learn.microsoft.com/entra/identity/users/groups-dynamic-membership" target="_blank" rel="noopener noreferrer">Microsoft Entra ID での動的メンバーシップ グループのルール管理</a>。</p>
+<p>ユーザー プリンシパル名プロパティの正規表現を条件として使用する動的メンバーシップを持つセキュリティ グループを作成します（domain\user 形式はサポートされていません）。詳細はこちらをご覧ください: <a href="https://learn.microsoft.com/entra/identity/users/groups-dynamic-membership" target="_blank" rel="noopener noreferrer">Microsoft Entra ID での動的メンバーシップ グループのルール管理</a>。</p>
 <p>次に、Exchange Online アプリケーションへのアクセスを許可または拒否する条件付きアクセス ポリシーを作成し、上記のセキュリティ グループを参照する条件を設定します。</p>
 </td>
 </tr>
@@ -139,7 +137,7 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 </td>
 <td width="231">
 <p>同じフィルターを使用する動的メンバーシップを持つセキュリティ グループを作成します。詳細はこちらをご覧ください: <a href="https://learn.microsoft.com/entra/identity/users/groups-dynamic-membership" target="_blank" rel="noopener noreferrer">Microsoft Entra ID での動的メンバーシップ グループのルール管理</a>。</p>
-<p>CAR で使用されている同じセキュリティ グループを参照して、Exchange Online アプリケーションへのアクセスを許可または拒否する条件付きアクセス ポリシーを作成します。</p>
+<p>Exchange Online アプリケーションへのアクセスを許可または拒否する条件付きアクセス ポリシーを作成し、上記のセキュリティ グループを参照する条件を設定します。</p>
 </td>
 </tr>
 </thead>
@@ -151,7 +149,7 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 これは、プロトコル条件（AnyOfProtocols または ExceptAnyOfProtocols のいずれか）を指定せずに、IP アドレス条件（AnyOfClientIPAddressesOrRanges または ExceptAnyOfClientIPAddressesOrRanges のいずれか）を指定するルールに適用されます。
 
 これらのルールには、ユーザーに基づく条件（UsernameMatchesAnyOfPatterns、ExceptUsernameMatchesAnyOfPatterns、UserIsMemberOf、ExceptUserIsMemberOf のいずれか）が含まれている場合と含まれていない場合があります。
-上記のセクションで説明した手順は、ユーザーを指定する方法のバリエーションに対しても適用されます。
+上記のセクションで説明した対象ユーザーを特定する手順は、このセクションで説明する内容にも適用することができます。
 <div class="styles_lia-table-wrapper__h6Xo9 styles_table-responsive__MW0lN">
 <table border="1" width="623px">
 <thead>
@@ -246,10 +244,8 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 <p>&nbsp;</p>
 </td>
 <td width="230.453px">
-<p>このルールが適用される既存のユーザー（メールボックスとライセンスを持つ）に対して、次のコマンドを実行します（例として、OWA と EWS を使用）：</p>
-<p>Set-CASMailbox -EwsEnabled  -OWAEnabled </p>
-<p>これらの制限を特定のライセンスを持つすべての将来のユーザーに適用したい場合、次の CAS メールボックス プランを作成することもできます（上記の Set-CASMailbox と同じ例を使用）：</p>
-<p>Set-CASMailboxPlan -EwsEnabled  -OWAEnabled </p>
+<p>このルールが適用される既存の（メールボックスとライセンスを持つ）ユーザーに対して、Set-CASMailbox コマンドを使用して対象のプロトコルを有効もしくは無効にします。</p>
+<p>これらの制限を特定のライセンスを持つすべての将来のユーザーに適用したい場合、CAS メールボックス プランを作成しておくこともできます。</p>
 <p>ただし、特定の新しいユーザーにのみ適用したい場合は、将来そのユーザーに対して Set-CASMailbox を実行する必要があります。</p>
 <p>（注：以下の表で、CARs パラメーター名に対応する Set-CASMailboxPlan パラメーター名を参照してください。）</p>
 </td>
@@ -270,9 +266,8 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 <p>&nbsp;</p>
 </td>
 <td width="231">
-<p>このルールが適用される既存のユーザーに対して、次のコマンドを実行します:</p>
-<p>Set-User –RemotePowerShellEnabled </p>
-<p>このルールが適用される新しいユーザーに対しても、同じ方法で Set-User を再度実行する必要があります。Set-CASMailboxPlan は、特定のライセンスが適用されたメールボックスを持つユーザーにのみ適用されるため、この場合カバレッジにギャップが生じます。しかし、RPS はメールボックスやライセンスを持たないユーザーでも使用できるため、将来のユーザーに対してもギャップを防ぐために Set-User を適用する必要があります。</p>
+<p>このルールが適用される既存のユーザーに対して、Set-Userコマンドの RemotePowerShellEnabled パラメーターを使用して PowerShell 接続を有効もしくは無効にします。</p>
+<p>このルールが適用されるはずだった新しいユーザーに対しても、同じ方法で Set-User を再度実行する必要があります。新しいユーザーも含め特定のライセンスが適用されたメールボックスを持つユーザーに適用される Set-CASMailboxPlan とは異なります。RPS はメールボックスやライセンスを持たないユーザーでも使用できるため、将来のユーザーに対しても Set-User を適用する必要があります。</p>
 </td>
 </tr>
 </tbody>
@@ -289,12 +284,13 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 <tbody>
 <tr>
 <td width="392">
-<pre>ルールは特定のプロトコルおよび特定のユーザー名/ユーザー名パターン/ユーザーグループ<br>に適用されますが、IP 範囲には適用されません。プロトコルが次のいずれかの場合: <br>OfflineAddressBook、PowerShellWebServices、REST。<br><br>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : REST<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+<p>特定のプロトコルおよび特定のユーザー名 / ユーザー名パターン / ユーザーグループを条件としているが、IP 範囲は条件としておらず、プロトコルが次のいずれかの場合: <br>OfflineAddressBook、PowerShellWebServices、REST</p>
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : REST<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
 <p>&nbsp;</p>
 </td>
 <td width="231">
 <p>OfflineAddressBook、PowerShellWebServices、REST のプロトコルに対して他のコマンドレットを使用する同等の方法はありません。</p>
-<p>OfflineAddressBook は Outlook Win32 および Outlook for Mac のみが使用するサービスであり、OutlookAnywhere を使用して Outlook Win32 へのユーザーアクセスをブロックする場合、Outlook クライアントが OfflineAddressBook にアクセスすることはないため、OfflineAddressBook をブロックする必要はありません。</p>
+<p>OfflineAddressBook は Outlook Win32 および Outlook for Mac のみが使用するサービスであり、OutlookAnywhere を使用して Outlook Win32 へのユーザー アクセスをブロックする場合、Outlook クライアントが OfflineAddressBook にアクセスすることはないため、OfflineAddressBook をブロックする必要はありません。</p>
 </td>
 </tr>
 </tbody>
@@ -303,9 +299,9 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 
 #### IP アドレスおよびプロトコル条件を持つルールについて
 
-これは、プロトコル条件（AnyOfProtocols または ExceptAnyOfProtocols のいずれか）と IP アドレス条件（AnyOfClientIPAddressesOrRanges または ExceptAnyOfClientIPAddressesOrRanges のいずれか）を指定するルールに適用されます。
+プロトコル条件 (AnyOfProtocols または ExceptAnyOfProtocols のいずれか) と IP アドレス条件 (AnyOfClientIPAddressesOrRanges または ExceptAnyOfClientIPAddressesOrRanges のいずれか) の両方を指定するルールのシナリオです。
 
-複数のルールがあり、それらのルールが異なる IP アドレスまたはアドレス範囲を使用しているが、すべてのユーザーに対して同じプロトコルリストを持っている場合、これらの IP アドレスを持つ IP ロケーション CA ポリシーを構成し、プロトコルの条件を CASMailbox および CASMailboxPlan に移行できます。
+複数のルールがあり、それらのルールが異なる IP アドレスまたはアドレス範囲を使用しているが、すべてのユーザーに対して同じプロトコルを対象としている場合、IP アドレスの条件は CA ポリシーに移行でき、プロトコルの条件は CASMailbox および CASMailboxPlan に移行できます。
 <div class="styles_lia-table-wrapper__h6Xo9 styles_table-responsive__MW0lN">
 <table border="1" width="623px">
 <tbody>
@@ -324,7 +320,7 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 <pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 203.0.201.10<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : OutlookAnywhere<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
 </td>
 <td width="231">
-<p>これらの異なる IP アドレスセットに対して、Exchange Online アプリケーションへのアクセスを許可または拒否する条件付きアクセス ポリシーを作成します。</p>
+<p>各 IP 範囲に対して、Exchange Online アプリケーションへのアクセスを許可または拒否する条件付きアクセス ポリシーを作成します。</p>
 <p>&nbsp;</p>
 <p>Set-CASMailbox を使用して、既存のすべてのユーザーに対して MapiEnabled を除くすべてのプロトコルへのアクセスを無効にします。Set-CASMailboxPlan を使用して、将来作成されるすべてのユーザーに同じポリシーを設定します。</p>
 </td>
@@ -333,7 +329,7 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 </table>
 </div>
 
-複数のルールがあり、それらのルールが異なるプロトコルセットを持っているが、同じ IP アドレスまたはアドレス範囲を持っている場合、IP ロケーション CA ポリシーと CASMailbox および CASMailboxPlan を構成できます。
+複数のルールがあり、それらのルールが異なるプロトコルを条件としているが、同じ IP アドレスまたはアドレス範囲を条件としている場合、IP 範囲を条件とした CA ポリシーと CASMailbox および CASMailboxPlan に移行できます。
 <div class="styles_lia-table-wrapper__h6Xo9 styles_table-responsive__MW0lN">
 <table border="1" width="623px">
 <thead>
@@ -365,7 +361,7 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 </div>
 
 
-ただし、複数のルールがあり、それらのルールが異なるプロトコルセットと異なる IP アドレスセットまたはアドレス範囲を持っている場合、それらのルールに対する移行オプションはありません。私たちの推奨は、すべてのアドレスのスーパーセットである単一の IP アドレスセットまたはアドレス範囲を持つようにルールを調整し、それを条件付きアクセス ポリシーで Exchange Online アプリケーションに適用することです。
+ただし、複数のルールがあり、それらのルールが異なるプロトコルと異なる IP アドレスセットまたはアドレス範囲を条件としている場合、それらのルールに対する移行オプションはありません。私たちの推奨は、すべてのアドレスのスーパー セットである単一の IP アドレス セットまたはアドレス範囲を持つようにルールを調整し、それを条件付きアクセス ポリシーで Exchange Online アプリケーションに適用することです。
 
 ### Set-CASMailboxPlan に対応するパラメーター
 
@@ -383,18 +379,17 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 
 ### よくある質問
 
-*1. IP ベースのポリシー CARs を条件付きアクセスに移行しました。Exchange Online へのアクセス ポリシーは以前と同じように強制されますか？*
+*1. IP ベースの CARs ポリシーを条件付きアクセスに移行しました。Exchange Online へのアクセスは以前と同じように強制されますか？*
 
-移行後もアクセス ポリシーは有効ですが、その強制のメカニズムが変わります。CARs では、ユーザーが Exchange Online リソースに接続する際に IP ベースのアクセス ポリシーが評価されましたが、条件付きアクセスではログイン時に評価され、その後 CAE によってリソース アクセス時に評価されます。
+移行後もポリシーにより制御されますが、その強制のメカニズムが変わります。CARs では、ユーザーが Exchange Online リソースに接続する際に IP ベースのアクセス ポリシーが評価されましたが、条件付きアクセスではログイン時に評価され、その後 CAE によってリソース アクセス時に評価されます。
 
 *2. 厳格な強制を伴う CAE とは何ですか？また、組織を保護するために必要ですか？*
 
-[名前付き IP ロケーション CA ポリシーが正しく構成されている場合](https://learn.microsoft.com/entra/identity/conditional-access/policy-block-by-location?source=recommendations)、CAE は CA ポリシーで構成された信頼できるロケーションにない IP アドレスからの Exchange Online へのアクセスを直ちに拒否します。CAE の IP ポリシーが機能するために厳格なロケーション強制は必要ありません。
-
+[IP 範囲を条件とした CA ポリシーが正しく構成されている場合](https://learn.microsoft.com/entra/identity/conditional-access/policy-block-by-location?source=recommendations)、CAE は CA ポリシーで構成された信頼できる場所にない IP アドレスからの Exchange Online へのアクセスを直ちに拒否します。CAE の IP ポリシーが機能するために厳格な場所の強制は必要ありません。
 一部の[複雑なネットワーク トポロジ](https://learn.microsoft.com/entra/identity/conditional-access/concept-continuous-access-evaluation#ip-address-variation-and-networks-with-ip-address-shared-or-unknown-egress-ips)では、アクセス要求が許可されていない IP アドレスから発信されても、認証要求が許可された IP アドレスから来ることがあります。このような場合、Microsoft Entra は Exchange Online の IP アドレス チェックを 1 時間停止し、ロケーション チェックはトークン発行時に毎時間定期的に行われます。この例外は、重要なリソースへのアクセスを確保することでユーザーの生産性を維持します。これらのトポロジでは、厳格なロケーション強制を有効にしないでください。ユーザーは直ちに Exchange Online へのアクセスを失うことになります。
 
-安定したネットワークでは、ログイントラフィックとデータ接続の両方が一貫してIPロケーションCAポリシーに一致する場合、[厳格なロケーション強制モード（プレビュー）](https://learn.microsoft.com/entra/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement)を選択できますが、ドキュメントに従って慎重に有効にしてください。ユーザーに悪影響を及ぼす可能性があります。
+認証要求元とリソースへのアクセス元と CA ポリシーの IP 範囲の条件が一致する安定したネットワークの場合、[厳格なロケーション強制モード（プレビュー）](https://learn.microsoft.com/entra/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement)を選択できますが、ドキュメントに従って慎重に有効にしてください。ユーザーに悪影響を及ぼす可能性があります。
 
-この投稿がCARの廃止についての明確さを提供することを願っています。
+この投稿が CAR の廃止についての理解を深める助けになれば幸いです。
 
 The Exchange Online Team
