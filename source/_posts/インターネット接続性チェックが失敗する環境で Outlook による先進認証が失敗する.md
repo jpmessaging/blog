@@ -4,7 +4,7 @@ date: 2021-2-3
 lastupdate: 2021-09-30
 tags:
   - Outlook
-  - EXO
+  - Exchange Online
 ---
 
 # 現象

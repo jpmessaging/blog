@@ -2,7 +2,7 @@
 title: >
   Office 365 におけるメッセージの帰属
 date: 2021-02-12
-tags: EXO
+tags: Exchange Online
 ---
 ※ この記事は、[Office 365 Message Attribution
 ](https://techcommunity.microsoft.com/t5/exchange-team-blog/office-365-message-attribution/ba-p/749143) の抄訳です。

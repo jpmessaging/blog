@@ -2,7 +2,7 @@
 title: >
   Exchange Online のメール アプリケーションにサインインできない、またはパスワードを繰り返し要求されますか? ここから対策を始めましょう。
 date: 2022-10-11
-tags: EXO
+tags: Exchange Online
 ---
 ※ この記事は、[Exchange Online email applications stopped signing in, or keep asking for passwords? Start here.](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-online-email-applications-stopped-signing-in-or-keep/ba-p/3641943) の抄訳です。最新の情報はリンク先をご確認ください。
 

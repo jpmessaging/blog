@@ -3,7 +3,7 @@ title: >
   よくわかる Exchange Online のメッセージ追跡 ～ Part 1 取得編 ～
 date: 2016-02-23
 lastupdate: 2021-8-13
-tags: EXO
+tags: Exchange Online
 ---
 
 <font color="Crimson">注意: 本ブログの内容は、[こちら](../Exchange%20Online%20のメッセージ追跡ログ/)に移行しました。今後は新しい記事をご参照ください。</font>

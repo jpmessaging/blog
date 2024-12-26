@@ -1,7 +1,7 @@
 ---
 title: Outlook REST v2 API または Exchange Web Services (EWS) API を使用しているアプリケーションを見つける
 date: 2023-11-15
-tags: EXO
+tags: Exchange Online
 ---
 ※ この記事は、[Identify applications using Exchange Online OutlookRESTv2 or Exchange Web Services (EWS) APIs](https://techcommunity.microsoft.com/t5/exchange-team-blog/identify-applications-using-exchange-online-outlookrestv2-or/ba-p/3957435) の抄訳です。最新の情報はリンク先をご確認ください。
 

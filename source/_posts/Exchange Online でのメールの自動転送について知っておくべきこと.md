@@ -2,7 +2,7 @@
 title: >
   Exchange Online でのメールの自動転送について知っておくべきこと
 date: 2021-01-20
-tags: EXO
+tags: Exchange Online
 ---
 ※ この記事は、[All you need to know about automatic email forwarding in Exchange Online](https://techcommunity.microsoft.com/t5/exchange-team-blog/all-you-need-to-know-about-automatic-email-forwarding-in/ba-p/2074888) の抄訳です。
 
