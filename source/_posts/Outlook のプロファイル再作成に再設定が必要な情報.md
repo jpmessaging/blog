@@ -4,7 +4,7 @@ date: 2021-2-26
 lastupdate: 2024-9-12
 tags: 
 - Outlook
-- EXO
+- Exchange Online
 ---
 
 こんにちは。日本マイクロソフト Outlook サポート チームです。

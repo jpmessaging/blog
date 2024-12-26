@@ -5,7 +5,7 @@ date: 2017-2-15
 lastupdate: 2024-06-06
 tags: 
 - Outlook
-- EXO
+- Exchange Online
 ---
 
 ## 現象  

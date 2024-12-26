@@ -2,7 +2,7 @@
 title: >
   Exchange Online と Outlook の認証キャッシュについて
 date: 2016-07-14
-tags: EXO
+tags: Exchange Online
 ---
 ADFS (Active Directory Federation Services) やサード パーティーの ID プロバイダーを使用するシングル サインインの構成においては、Outlook クライアントから Exchange Online に接続をする際に、認証処理のためにこれらの認証サーバーに対して問い合わせが発生します。(シングル サインオンを利用しない場合は Office 365 の Azure AD にて認証処理が完結しています。)
 しかしながら、クラウド サービス側やクライアント側で認証処理に成功したキャッシュが残っている場合は、認証サーバーへの問い合わせを省き、過去の認証キャッシュを利用して接続を完了させる動作がございます。
