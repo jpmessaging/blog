@@ -25,15 +25,15 @@
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
 <meta property="og:description" content="こんにちは。Exchange &amp; Outlook サポートの紺野です。 MSI 版の Outlook を最新に更新するには、Office 製品のすべての更新プログラムの適用を行います。Office 製品の更新プログラムは多数あるため、弊社では Microsoft Update、WSUS (Windows Server Update Services)、MECM (Endpoint Conf">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/updatemsi/msplist.jpg">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/updatemsi/version1.jpg">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/updatemsi/version2.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/msplist.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/version1.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/version2.jpg">
 <meta property="article:published_time" content="2021-10-06T15:00:00.000Z">
 <meta property="article:modified_time" content="2021-10-06T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="Outlook">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmessaging.github.io/blog/updatemsi/msplist.jpg">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/msplist.jpg">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
@@ -54,7 +54,7 @@
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container">
@@ -137,7 +137,7 @@
 <p>MSI 版の Outlook を最新に更新するには、Office 製品のすべての更新プログラムの適用を行います。<br>Office 製品の更新プログラムは多数あるため、弊社では <strong>Microsoft Update</strong>、<strong>WSUS</strong> (Windows Server Update Services)、<strong>MECM</strong> (Endpoint Configuration Manager、旧称 System Center Configuration Manager (SCCM)) などを使用して最新のすべての Office 更新プログラムを配信し、各クライアントで自動適用されるように構成することを推奨しています。<br>特に Exchange Online を含む Microsoft 365 サービスに接続して利用する場合は最新に更新して利用することを強く推奨しています。  </p>
 <p>更新プログラムを個別にダウンロードして適用する必要がある場合は、以下の弊社マイクロソフト Web ページに一覧で公開しているすべての Office 更新プログラムを適用します。「 <strong>Non-security release date</strong> (セキュリティ以外のリリース日)」 と 「 <strong>Security release date</strong> (セキュリティのリリース日）」を比較して、新しい方の KB を適用ください。<br>Office 2016 の更新プログラムは 60 個以上あるため、個別のインストールではなく、前述の Microsoft Update などを使用して必要な更新プログラムを自動検出して適用することをご検討ください。</p>
 <p>List of the most current .msp files for Office 2016 products<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/officeupdates/msp-files-office-2016">https://docs.microsoft.com/en-us/officeupdates/msp-files-office-2016</a> (英語)<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/officeupdates/msp-files-office-2016">https://docs.microsoft.com/ja-jp/officeupdates/msp-files-office-2016</a> (日本語機械翻訳)</p>
-<p><img src="msplist.jpg" alt=""></p>
+<p><img src="/blog/msplist.jpg"></p>
 <ul>
 <li>既にすべての Office 製品の Security を適用済みである場合は、Security よりも Non-security のリリース日が新しい KB だけを追加で適用してください。</li>
 <li>Office の更新プログラムは累積更新であるため、新しい方の KB には古い方の KB のすべての更新が含まれます。</li>
@@ -149,14 +149,14 @@
 <p>Office versions and connectivity to Office 365 services<br><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/deployoffice/endofsupport/office-365-services-connectivity">https://docs.microsoft.com/en-us/deployoffice/endofsupport/office-365-services-connectivity</a></p>
 <p>MSI 版 Office 2016 は、Office を 16.0.4600.1000 以降 (2017 年 11 月の <a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/kb/4051890">KB4051890</a> の Office 製品の更新一覧を含む) に更新しておく必要があります。<br>KB4051890 の更新一覧は約 3 年前で非常に古く、Outlook が使用する重要な Office 共有コンポーネントの更新も含まれないため、KB4051890 に記載されている KB がすべて適用されていたとしても、それ以降にリリースされた更新プログラムを適用して最新に更新していない場合はパフォーマンスが悪く別の理由によって接続の問題が発生する可能性もあります。今回の記事で紹介している <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/officeupdates/msp-files-office-2016">List of the most current .msp files for Office 2016 products</a> の最新の更新プログラムをすべて適用ください。<br>なお、Outlook は Office の共有コンポーネントを使用しており、Outlook の更新だけを適用しても最低要件を満たせません。すべての Office 製品の更新プログラムの適用をお願いいたします。</p>
 <h3 id="Outlook-のバージョン情報-の画面だけでは、2021-年-11-月-1-日以降の要件を満たしているかを確認することができない"><a href="#Outlook-のバージョン情報-の画面だけでは、2021-年-11-月-1-日以降の要件を満たしているかを確認することができない" class="headerlink" title="[Outlook のバージョン情報] の画面だけでは、2021 年 11 月 1 日以降の要件を満たしているかを確認することができない"></a>[Outlook のバージョン情報] の画面だけでは、2021 年 11 月 1 日以降の要件を満たしているかを確認することができない</h3><p>Outlook の [ファイル] タブ-[Office アカウント] で [Outlook のバージョン情報] をクリックした画面では、Office 共有コンポーネントが古いと以下のように表示されます。表示されている番号は Mso20win32client.dll のバージョンです。OUTLOOK.EXEのバージョンは表示されません。</p>
-<p><img src="version1.jpg" alt=""></p>
+<p><img src="/blog/version1.jpg"></p>
 <p>Office 共有コンポーネントが新しい場合は、以下のように表示されます。Microsoft Outlook の後の番号は OUTLOOK.EXE のバージョン、MSO の後の番号は MSO.DLL のバージョンです。他の Office の更新プログラムの適用状況は確認できません。</p>
-<p><img src="version2.jpg" alt=""></p>
+<p><img src="/blog/version2.jpg"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/updatemsi/" data-id="cm4i5c0d5003jx4nm13vv279v" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/updatemsi/" data-id="cm56a4teu003kosnma7a3ali2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
@@ -205,7 +205,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
     </div>
   </div>
 
@@ -228,6 +228,14 @@
       <ul>
         
           <li>
+            <a href="/blog/Update%20on%20Client%20Access%20Rules%20Deprecation%20in%20Exchange%20Online/">Exchange Online のクライアント アクセス ルール廃止に関する最新情報</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-online-to-introduce-external-recipient-rate-limit/">Exchange Online への外部受信者数の制限の導入</a>
+          </li>
+        
+          <li>
             <a href="/blog/updates-on-servicing-exchange-server-2019/">Exchange Server 2019 に関する更新</a>
           </li>
         
@@ -237,14 +245,6 @@
         
           <li>
             <a href="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/">意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入</a>
-          </li>
-        
-          <li>
-            <a href="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/">Microsoft Outlook の新機能と今後の展望 – Ignite 2024</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Decommissioning-Exchange-Server-2016/">Exchange サーバー 2016 を廃止する</a>
           </li>
         
       </ul>

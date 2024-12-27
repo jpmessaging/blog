@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
 <meta property="og:description" content="※ この記事は、Accessibility and Usability Improvements in the new Outlook for Windows の抄訳です。最新の情報はリンク先をご確認ください。 新しい Outlook for Windows (以下、新しい Outlook) は、最新の機能、インテリジェントな支援機能、そして新しくモダンでシンプルなデザインを Outlook アプ">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Accessibility-and-Usability-Improvements-in-the-new-Outlook-for-Windows/figure1.png">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Accessibility-and-Usability-Improvements-in-the-new-Outlook-for-Windows/figure2.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/figure1.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/figure2.png">
 <meta property="article:published_time" content="2024-09-23T15:00:00.000Z">
 <meta property="article:modified_time" content="2024-09-23T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="New Outlook">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Accessibility-and-Usability-Improvements-in-the-new-Outlook-for-Windows/figure1.png">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/figure1.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
@@ -55,7 +55,7 @@
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container">
@@ -149,16 +149,14 @@
 <h3 id="Ctrl-Y-ショートカットを追加"><a href="#Ctrl-Y-ショートカットを追加" class="headerlink" title="Ctrl + Y ショートカットを追加"></a>Ctrl + Y ショートカットを追加</h3><p>ユーザーは、おなじみの <a target="_blank" rel="noopener" href="https://www.microsoft.com/microsoft-365/roadmap?rtc=1&filters=Outlook&searchterms=403108">“Ctrl + Y” ショートカットを使用してフォルダー ペインに移動</a> できるようになりました。このキーボードの組み合わせにより、ユーザーは 1 つまたは複数の英数字のキー ストロークを入力して、押されたキーの順序と一致するフォルダーの名前にフォーカスを合わせることで、フォルダーを簡単に切り替えることができます。 </p>
 <h3 id="タブの効率性を追加"><a href="#タブの効率性を追加" class="headerlink" title="タブの効率性を追加"></a>タブの効率性を追加</h3><p>リーディング・ペインでのメッセージの移動がより速くなりました。以前は、ユーザーが “Tab” キーを押すたびに、リーディング ペイン内のすべてのボタンやリンクにフォーカスが移動していました。現在は、矢印キーを押してグループ化された要素を移動し、”Tab” キーを押すだけで、メッセージのさまざまな部分にフォーカスを移すことができます。</p>
 <h3 id="Alt-ショートカットを追加"><a href="#Alt-ショートカットを追加" class="headerlink" title="Alt ショートカットを追加"></a>Alt ショートカットを追加</h3><p>ユーザーは、<a target="_blank" rel="noopener" href="https://www.microsoft.com/microsoft-365/roadmap?rtc=1&filters=Outlook&searchterms=403109">“Alt” ショートカットを使用してリボンキーのヒントを呼び出す</a>ことができるようになりました。この機能はもともと “Alt + Windows” キーの組み合わせで提供されていましたが、キーボードの組み合わせが簡単に見つけられないというフィードバックを受け、単一キーの “Alt” ショートカットを追加しました。 </p>
-<p><img src="figure1.png" alt="参考図. リボンに表示されるキーのヒント"></p>
+<p><img src="/blog/figure1.png" alt="参考図. リボンに表示されるキーのヒント"></p>
 <!-- *参考図) リボンに表示されるキーのヒント。* -->
 
 <h2 id="スクリーン-リーダーのエクスペリエンス向上"><a href="#スクリーン-リーダーのエクスペリエンス向上" class="headerlink" title="スクリーン リーダーのエクスペリエンス向上"></a>スクリーン リーダーのエクスペリエンス向上</h2><p>スクリーン リーダーを使用するユーザーが新しい Outlook を効率的に操作できるようにキーボード ショートカットを実装しただけでなく、ナレーター、JAWS、NVDAなどの支援技術プロバイダーと連携し、よりシームレスなユーザー体験を提供するための取り組みも進めています。  </p>
 <p>メールを開いて読む際、JAWS と NVDA は自動的にメッセージの本文全体を読み上げるようになりました。メールを開いた後にメッセージ本文にフォーカスを当てるだけでなく、他のコマンドに続くフォーカス状態も強化しました。例えば、新しい Outlook を起動したり検索を完了したりすると、デフォルトのフォーカスはメッセージリスト全体の領域ではなく、メッセージリストの最初の項目に直接当たります。さらに、キーボード ナビゲーション使用時にウィンドウの先頭にある「メッセージに移動」リンクを呼び出した後、フォーカスはメッセージまたはメッセージリスト項目に直接移動します。これらの改善により、キーボード ナビゲーションを最小限に抑え、スクリーン リーダー を使用するユーザーが最も価値のある情報にフォーカスできるようになりました。  </p>
 <p>新しい Outlook でスクリーン リーダー エクスペリエンスを最適化するには、閲覧ウィンドウをオフにし、会話ビューを “メッセージを個別に表示する” に設定することをお勧めします。より詳細なヒントについては、Microsoft サポートの <a target="_blank" rel="noopener" href="https://support.microsoft.com/office/3fe74ea4-b512-490f-bb42-95fdeb722b9e#PickTab=WindowsNew">Outlook のメールでスクリーン リーダーを利用する基本的な作業</a> を確認ください。  </p>
-<p><img src="figure2.png" alt="参考図. 最初のメッセージ リスト項目にキーボード フォーカスが表示される">  </p>
+<p><img src="/blog/figure2.png" alt="参考図. 最初のメッセージ リスト項目にキーボード フォーカスが表示される">  </p>
 <!-- *参考図 ) 最初のメッセージ リスト項目にキーボード フォーカスが表示されている画像。* -->
-
-
 <h2 id="今後のキーボード操作およびスクリーン-リーダーの機能強化"><a href="#今後のキーボード操作およびスクリーン-リーダーの機能強化" class="headerlink" title="今後のキーボード操作およびスクリーン リーダーの機能強化"></a>今後のキーボード操作およびスクリーン リーダーの機能強化</h2><p>新しい Outlook では、Windows のメールとカレンダー アプリの習慣的なワーク フローのニーズを満たす、多数のキーボードとスクリーン リーダーの機能をすでに追加していますが、より多くの機能の開発を続けて今後数ヶ月の間に展開される予定です。</p>
 <p>カレンダー モジュールでは、<a target="_blank" rel="noopener" href="https://www.microsoft.com/microsoft-365/roadmap?rtc=1&filters=Outlook&searchterms=406947">矢印キーを使ってカレンダー グリッド内のタイム スロットを移動する機能</a> が 2024 年 10 月にロール アウトされる予定です。リボン タブとそのコンテンツ間でキーボードによる矢印操作を可能にしたり、JAWS や NVDA のように <a target="_blank" rel="noopener" href="https://www.microsoft.com/microsoft-365/roadmap?rtc=1&filters=Outlook&searchterms=413429">Windows ナレーター スクリーン リーダー ツールでメッセージ本文を自動的に読み上げる</a>機能のサポートを追加する作業が進行中です。私たちは、スクリーン リーダー パートナー間で公平性を保ち、ユーザーが好みのプラットフォームに関係なく同様のユーザー体験を得られるように努めています。 </p>
 <p>新しい Outlook の使いやすさについては、キーボード操作、スクリーン リーダー、拡大、その他の支援技術を使用して、これからも改善を続けていきます。 引き続き、Outlook リボンの「ヘルプ」タブで「フィードバック」を選択し、コメントとともに説明欄に “accessibility in the new Outlook” と記入して、フィードバックをお寄せください。</p>
@@ -167,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Accessibility-and-Usability-Improvements-in-the-new-Outlook-for-Windows/" data-id="cm4i5c0bj0001x4nme1na4afg" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Accessibility-and-Usability-Improvements-in-the-new-Outlook-for-Windows/" data-id="cm56a4tdx0004osnm8iaw2niq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li></ul>
@@ -216,7 +214,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
     </div>
   </div>
 
@@ -239,6 +237,14 @@
       <ul>
         
           <li>
+            <a href="/blog/Update%20on%20Client%20Access%20Rules%20Deprecation%20in%20Exchange%20Online/">Exchange Online のクライアント アクセス ルール廃止に関する最新情報</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-online-to-introduce-external-recipient-rate-limit/">Exchange Online への外部受信者数の制限の導入</a>
+          </li>
+        
+          <li>
             <a href="/blog/updates-on-servicing-exchange-server-2019/">Exchange Server 2019 に関する更新</a>
           </li>
         
@@ -248,14 +254,6 @@
         
           <li>
             <a href="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/">意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入</a>
-          </li>
-        
-          <li>
-            <a href="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/">Microsoft Outlook の新機能と今後の展望 – Ignite 2024</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Decommissioning-Exchange-Server-2016/">Exchange サーバー 2016 を廃止する</a>
           </li>
         
       </ul>

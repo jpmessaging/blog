@@ -19,18 +19,18 @@
   <title>Exchange Online のメッセージ追跡ログ
  | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="こんにちは。Exchange &#x2F; Outlook サポートの柳本です。以前までこちらのブログで Exchange Online で採取可能なメッセージ追跡ログに関する記事を公開しておりました。数年前に公開された記事であり内容が古くなってきたため、改めて Exchange Online のメッセージ追跡ログの取得方法についてご案内します。Exchange Online にはいくつかの種類のメッセージ">
+  <meta name="description" content="こんにちは。Exchange &#x2F; Outlook サポートの柳本です。以前までこちらのブログで Exchange Online で採取可能なメッセージ追跡ログに関する記事を公開しておりました。数年前に公開された記事であり内容が古くなってきたため、改めて Exchange Online のメッセージ追跡ログの取得方法についてご案内します。Exchange Online にはいくつかの種類の">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Exchange Online のメッセージ追跡ログ
 ">
 <meta property="og:url" content="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E8%BF%BD%E8%B7%A1%E3%83%AD%E3%82%B0/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="こんにちは。Exchange &#x2F; Outlook サポートの柳本です。以前までこちらのブログで Exchange Online で採取可能なメッセージ追跡ログに関する記事を公開しておりました。数年前に公開された記事であり内容が古くなってきたため、改めて Exchange Online のメッセージ追跡ログの取得方法についてご案内します。Exchange Online にはいくつかの種類のメッセージ">
+<meta property="og:description" content="こんにちは。Exchange &#x2F; Outlook サポートの柳本です。以前までこちらのブログで Exchange Online で採取可能なメッセージ追跡ログに関する記事を公開しておりました。数年前に公開された記事であり内容が古くなってきたため、改めて Exchange Online のメッセージ追跡ログの取得方法についてご案内します。Exchange Online にはいくつかの種類の">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-08-12T15:00:00.000Z">
 <meta property="article:modified_time" content="2021-08-12T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
-<meta property="article:tag" content="EXO">
+<meta property="article:tag" content="Exchange Online">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
@@ -52,7 +52,7 @@
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container">
@@ -132,7 +132,7 @@
     
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
-        <p>こんにちは。Exchange / Outlook サポートの柳本です。以前までこちらのブログで Exchange Online で採取可能なメッセージ追跡ログに関する記事を公開しておりました。数年前に公開された記事であり内容が古くなってきたため、改めて Exchange Online のメッセージ追跡ログの取得方法についてご案内します。Exchange Online にはいくつかの種類のメッセージ追跡ログがあるのですが、今回は弊社サポートから最もご案内する頻度が高い HistoricalSearch と呼ばれるタイプのメッセージ追跡ログを Windows PowerShell のコマンド ベースで取得する方法をご案内します。</p>
+        <p>こんにちは。Exchange &#x2F; Outlook サポートの柳本です。以前までこちらのブログで Exchange Online で採取可能なメッセージ追跡ログに関する記事を公開しておりました。数年前に公開された記事であり内容が古くなってきたため、改めて Exchange Online のメッセージ追跡ログの取得方法についてご案内します。Exchange Online にはいくつかの種類のメッセージ追跡ログがあるのですが、今回は弊社サポートから最もご案内する頻度が高い HistoricalSearch と呼ばれるタイプのメッセージ追跡ログを Windows PowerShell のコマンド ベースで取得する方法をご案内します。</p>
 <h2 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h2><p>Windows Powershell から Exchange Online に接続します。</p>
 <p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps">Exchange Online PowerShell に接続する</a></p>
 <h2 id="HistoricalSearch-取得手順"><a href="#HistoricalSearch-取得手順" class="headerlink" title="HistoricalSearch 取得手順"></a>HistoricalSearch 取得手順</h2><p>※ 取得対象のメッセージの送信 or 受信後すぐにメッセージ追跡ログを取得しようとすると結果が得られない可能性があります。<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">取得可能になるまでメッセージの送受信後から数時間要する</span>場合がございますので、結果が得られない場合は数時間置いて再度本手順を実行してください。</p>
@@ -151,7 +151,7 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Start-HistoricalSearch</span> <span class="literal">-ReportTitle</span> HistoricalSearch01 <span class="literal">-StartDate</span> <span class="number">2021</span>/<span class="number">8</span>/<span class="number">12</span> <span class="literal">-EndDate</span> <span class="number">2021</span>/<span class="number">8</span>/<span class="number">14</span> <span class="literal">-SenderAddress</span> sender@contoso.com <span class="literal">-RecipientAddress</span> recipient@contoso.com <span class="literal">-ReportType</span> MessageTraceDetail <span class="literal">-NotifyAddress</span> admin@contoso.com</span><br></pre></td></tr></table></figure>
 
 <p>上記は送受信者ともに指定していますが、送信者 (-SenderAddress) または受信者 (-RecipientAddress) のどちらか一方のパラメーターのみを指定して実行することも可能です。(利用シナリオ例: ある送信者が送信したメールを受信者を問わず取得したい時)</p>
-<p>※ パラメーターの<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)"> StartDate および EndDate は協定世界時 (UTC) を基準としています</span>。日本標準時 (JST) での受信時刻とは異なりますので、例えば、2021/08/13 (JST) に受信した場合は、StartDate を 2021/08/12、EndDate を 2021/08/14 と指定することをお勧めします。</p>
+<p>※ パラメーターの<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)"> StartDate および EndDate は協定世界時 (UTC) を基準としています</span>。日本標準時 (JST) での受信時刻とは異なりますので、例えば、2021&#x2F;08&#x2F;13 (JST) に受信した場合は、StartDate を 2021&#x2F;08&#x2F;12、EndDate を 2021&#x2F;08&#x2F;14 と指定することをお勧めします。</p>
 <h3 id="2-HistoricalSearch-のステータス確認"><a href="#2-HistoricalSearch-のステータス確認" class="headerlink" title="2. HistoricalSearch のステータス確認"></a>2. HistoricalSearch のステータス確認</h3><p>手順 1. 実行後に表示された JobId を控えておき、以下のコマンドを実行して Status が Done となっていることを確認します。<br>Status が Done となるまでには数時間かかる場合があるので、以下のコマンドは Start-HistoricalSearch でのメッセージ追跡開始後、しばらく時間が経ってから実行することをお勧めします。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-HistoricalSearch</span> <span class="literal">-JobId</span> <span class="string">&#x27;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#x27;</span> | <span class="built_in">FL</span></span><br></pre></td></tr></table></figure>
 
@@ -180,10 +180,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E8%BF%BD%E8%B7%A1%E3%83%AD%E3%82%B0/" data-id="cm4i5c0cg0019x4nmci2j2wak" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%AE%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E8%BF%BD%E8%B7%A1%E3%83%AD%E3%82%B0/" data-id="cm56a4tea001dosnm068e0tyh" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
 
     </footer>
   </div>
@@ -229,7 +229,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
     </div>
   </div>
 
@@ -252,6 +252,14 @@
       <ul>
         
           <li>
+            <a href="/blog/Update%20on%20Client%20Access%20Rules%20Deprecation%20in%20Exchange%20Online/">Exchange Online のクライアント アクセス ルール廃止に関する最新情報</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-online-to-introduce-external-recipient-rate-limit/">Exchange Online への外部受信者数の制限の導入</a>
+          </li>
+        
+          <li>
             <a href="/blog/updates-on-servicing-exchange-server-2019/">Exchange Server 2019 に関する更新</a>
           </li>
         
@@ -261,14 +269,6 @@
         
           <li>
             <a href="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/">意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入</a>
-          </li>
-        
-          <li>
-            <a href="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/">Microsoft Outlook の新機能と今後の展望 – Ignite 2024</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Decommissioning-Exchange-Server-2016/">Exchange サーバー 2016 を廃止する</a>
           </li>
         
       </ul>

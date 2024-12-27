@@ -50,7 +50,7 @@
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container">
@@ -135,11 +135,11 @@
 <ul>
 <li>Exchange Server 2019 に対して最後の CU となる CU15 をリリースします。公開時期は 2024 年後期を予定しています。  </li>
 <li>Exchange Server Subscription Edition (Exchange Server SE) の最初のリリース (RTM バージョン) を 2025 年 7 月 ～ 9 月頃に公開を予定しています。</li>
-<li>Exchange Server SE の RTM に続く、最初の更新プログラムである CU1 を 2025 年の終わり頃に公開予定です。   </li>
+<li>Exchange Server SE の RTM に続く、最初の更新プログラムである CU1 を 2025 年の終わり頃に公開予定です。</li>
 </ul>
 <h1 id="サポート-チームからの推奨事項"><a href="#サポート-チームからの推奨事項" class="headerlink" title="サポート チームからの推奨事項"></a>サポート チームからの推奨事項</h1><p>今後も Exchange Server をご利用になる場合には、現在運用中のすべての Exchange Server を現時点で最新である Exchange Server 2019 CU14 に移行していただき、Exchange Server SE のリリースに備えていただくことを強く推奨いたします。</p>
 <p>多くのお客様に <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/lifecycle/products/exchange-server-2016">Exchange Server 2016</a> および <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/lifecycle/products/exchange-server-2019">Exchange Server 2019</a> をご利用いただいておりますが、どちらのバージョンも 2025 年 10 月 14 日にサポート終了となります。</p>
-<p>サポート終了時期間近に上記の次期バージョンである Exchange Server SE RTM がリリースされることとなります。Exchange Server SE のインプレース アップグレードは通常の CU 適用と同じ流れで実施できることや、Exchange Server 2019 CU15 からの主たる機能更新が存在しないことから、インプレース アップグレード自体で影響が生じるシナリオは稀かと思います。<br>一方、その後にリリース予定である Exchange Server SE CU1 以降では下位バージョンとの共存環境をサポートしておりません。言い換えれば、その時点ですべてのサーバーが Exchange Server SE RTM 以上である必要があり、Exchange Server SE CU1 への移行までを視野に入れると、出来る限りはやく Exchange Server SE への移行を完了し、加えて Exchange Server 2016 / Exchange Server 2019 の撤去を行う必要があります。</p>
+<p>サポート終了時期間近に上記の次期バージョンである Exchange Server SE RTM がリリースされることとなります。Exchange Server SE のインプレース アップグレードは通常の CU 適用と同じ流れで実施できることや、Exchange Server 2019 CU15 からの主たる機能更新が存在しないことから、インプレース アップグレード自体で影響が生じるシナリオは稀かと思います。<br>一方、その後にリリース予定である Exchange Server SE CU1 以降では下位バージョンとの共存環境をサポートしておりません。言い換えれば、その時点ですべてのサーバーが Exchange Server SE RTM 以上である必要があり、Exchange Server SE CU1 への移行までを視野に入れると、出来る限りはやく Exchange Server SE への移行を完了し、加えて Exchange Server 2016 &#x2F; Exchange Server 2019 の撤去を行う必要があります。</p>
 <p>スムーズに Exchange Server SE RTM へアップグレード、および Exchange Server SE CU1 への移行を行うために、まずはすべてのサーバーを Exchange Server 2019 CU14 (現時点で最新) へ移行し、準備いただくことをご検討ください。 </p>
 <ul>
 <li><p><strong>Exchange Server 2016 をご利用の場合:</strong> すぐに Exchange Server 2019 CU14 へ移行し、CU15 のリリース後に CU15 を適用し、Exchange Server SE へのインプレース アップグレードをします。</p>
@@ -152,7 +152,7 @@
 <ul>
 <li><p><strong>TLS1.3 のサポート:</strong> 従来の暗号化アルゴリズム方式よりもセキュリティの観点で強く、改善されたバージョンがサポートされるようになります。</p>
 </li>
-<li><p><strong>Exchange 管理センター (EAC) の証明書の管理機能:</strong> Exchange Server 2019 CU12 / Exchange Server 2016 CU23 以降では、<a target="_blank" rel="noopener" href="https://support.microsoft.com/ja-jp/topic/exchange-server-powershell-%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%AC%E3%83%83%E3%83%88%E3%81%A8-unc-%E3%83%91%E3%82%B9%E5%85%A5%E5%8A%9B%E3%81%AEexchange%E7%AE%A1%E7%90%86%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E5%A4%89%E6%9B%B4-kb5014278-36af1640-4389-4ff1-b805-d1d63715a0dd">こちら</a> の情報のとおり Exchange 管理センター上で証明書の管理ができないように変更となっておりました。一方、Exchange Server 2019 CU15 では、改めて GUI 上で管理することができるようになります。例えば証明書要求の作成、証明書要求の完了、 PFX ファイルへのエクスポート、および PFX ファイルからのインポートが行えるようになります。</p>
+<li><p><strong>Exchange 管理センター (EAC) の証明書の管理機能:</strong> Exchange Server 2019 CU12 &#x2F; Exchange Server 2016 CU23 以降では、<a target="_blank" rel="noopener" href="https://support.microsoft.com/ja-jp/topic/exchange-server-powershell-%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%AC%E3%83%83%E3%83%88%E3%81%A8-unc-%E3%83%91%E3%82%B9%E5%85%A5%E5%8A%9B%E3%81%AEexchange%E7%AE%A1%E7%90%86%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%81%AE%E5%A4%89%E6%9B%B4-kb5014278-36af1640-4389-4ff1-b805-d1d63715a0dd">こちら</a> の情報のとおり Exchange 管理センター上で証明書の管理ができないように変更となっておりました。一方、Exchange Server 2019 CU15 では、改めて GUI 上で管理することができるようになります。例えば証明書要求の作成、証明書要求の完了、 PFX ファイルへのエクスポート、および PFX ファイルからのインポートが行えるようになります。</p>
 </li>
 </ul>
 <h2 id="Exchange-Server-SE-への対応に向けた更新"><a href="#Exchange-Server-SE-への対応に向けた更新" class="headerlink" title="Exchange Server SE への対応に向けた更新"></a>Exchange Server SE への対応に向けた更新</h2><p>上記の他にも Exchange Server 2019 CU15 では、今後リリースされる Exchange Server SE に対応するためいくつかの更新がされます。  </p>
@@ -161,7 +161,7 @@
 </li>
 <li><p><strong>新しいプロダクト キーがサポートされます:</strong> ハイブリッド構成ウィザードを介して無料のプロダクト キーを利用可能なハイブリッド展開用のサーバーを除き、Exchange Server SE を利用する上では新しいプロダクトキーが必要となります。Exchange Server 2019 CU15 では、これらの新しいプロダクト キーがサポートできるよう更新され、Exchange Server SE がリリースされたタイミングで新しいプロダクトキーが公開されます。  </p>
 </li>
-<li><p><strong>Windows Server 2025 がサポートされます:</strong> 現在、Exchange Server 2019 は Windows Server 2019/2022 にインストールすることが可能ですが、Exchange Server 2019 CU15 では Windows Server 2025 がサポートされるようになります。Windows Server 2025 は 2024 後半ごろに GA 予定です。  </p>
+<li><p><strong>Windows Server 2025 がサポートされます:</strong> 現在、Exchange Server 2019 は Windows Server 2019&#x2F;2022 にインストールすることが可能ですが、Exchange Server 2019 CU15 では Windows Server 2025 がサポートされるようになります。Windows Server 2025 は 2024 後半ごろに GA 予定です。</p>
 </li>
 </ul>
 <p>その他、CU15 で予定されている変更は次の通りです。</p>
@@ -187,7 +187,7 @@
 </li>
 <li><p><strong>Active Directory に対する変更について:</strong> Exchange Server 2019 から Exchange Server SE の RTM へアップグレードする場合は、特に Active Directory へ変更はなく、Active Directory スキーマへの更新もありません。Windows Server 2012 R2 のフォレスト機能レベルもサポートします。  </p>
 </li>
-<li><p><strong>Exchange Server SE のサポータビリティについて:</strong> Exchange Server SE は <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/lifecycle/policies/modern">モダン ライフサイクル ポリシー</a>に従いサポートされます。  </p>
+<li><p><strong>Exchange Server SE のサポータビリティについて:</strong> Exchange Server SE は <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/lifecycle/policies/modern">モダン ライフサイクル ポリシー</a>に従いサポートされます。</p>
 </li>
 </ul>
 <h2 id="Exchange-Server-SE-リリースの詳細情報"><a href="#Exchange-Server-SE-リリースの詳細情報" class="headerlink" title="Exchange Server SE リリースの詳細情報:"></a>Exchange Server SE リリースの詳細情報:</h2><p>Exchange Server SE をより早く採用いただくため、Exchange Server SE では次の変更を除き Exchange Server 2019 CU15 と同等のコードになっています。</p>
@@ -203,7 +203,7 @@
 <ul>
 <li><p>Exchange Server 2019 CU15 がリリースされる前に Security Update (SU) がリリースされた場合は、CU15 にはそれらの SU も含まれた状態でリリースされます。</p>
 </li>
-<li><p>Exchange Server 2019 CU15 以降に SU がリリースされた場合、Exchange Server SE には Exhange Server 2019 CU15 に加え、最新の SU が含まれた状態でリリースされます。  </p>
+<li><p>Exchange Server 2019 CU15 以降に SU がリリースされた場合、Exchange Server SE には Exhange Server 2019 CU15 に加え、最新の SU が含まれた状態でリリースされます。</p>
 </li>
 </ul>
 <h2 id="下位バージョンから-Exchange-Server-SE-へのアップグレード方法について"><a href="#下位バージョンから-Exchange-Server-SE-へのアップグレード方法について" class="headerlink" title="下位バージョンから Exchange Server SE へのアップグレード方法について"></a>下位バージョンから Exchange Server SE へのアップグレード方法について</h2><p>Exchange Server 2019 から簡単に Exchange Server SE へ移行可能なインプレース アップグレード、またインプレース アップグレードがサポートされない Exchange Server 2016 からでも Exchagne Server SE へ移行可能な従来のアップグレードの 2 つの方法がサポートされます。  </p>
@@ -225,11 +225,11 @@
 </thead>
 <tbody><tr>
 <td>Exchange Server 2019 CU15</td>
-<td>Exchange Server 2016 CU23 と Exchange Server 2019 CU13/CU14 のみ</td>
+<td>Exchange Server 2016 CU23 と Exchange Server 2019 CU13&#x2F;CU14 のみ</td>
 </tr>
 <tr>
 <td>Exchange Server SE</td>
-<td>Exchange Server 2016 CU23 と Exchange Server 2019 CU14/CU15 のみ</td>
+<td>Exchange Server 2016 CU23 と Exchange Server 2019 CU14&#x2F;CU15 のみ</td>
 </tr>
 <tr>
 <td>Exchange Server SE CU1</td>
@@ -284,7 +284,7 @@
 </li>
 <li><p><strong>Outlook Anywhere の削除:</strong> Exchange Online や Microsoft 365 では数年前に Outlook Anywhere (RPC over HTTP) を用いた接続のサポートを終了しました。Exchange Server SE CU1 以降で、Outlook Anywhere は削除されます。Outlook Anywhere を使うサードパーティ アドインなどに影響がございます。 </p>
 </li>
-<li><p><strong>下位バージョンとの共存の削除:</strong> CU1 がリリースされた後は、Exchange Server SE が唯一サポートされるバージョンとなります。そのため、すべての下位バージョン (Exchange Server 2016 / Exchange Server 2019 を含みます) はサポート対象外となります。また、Exchange Server SE CU1 の Setup 実行時には下位バージョンが共存しているかどうかをチェックし、もし Exchange Server SE RTM 以外のバージョンを検知した場合は Setup によるインストールが失敗します。</p>
+<li><p><strong>下位バージョンとの共存の削除:</strong> CU1 がリリースされた後は、Exchange Server SE が唯一サポートされるバージョンとなります。そのため、すべての下位バージョン (Exchange Server 2016 &#x2F; Exchange Server 2019 を含みます) はサポート対象外となります。また、Exchange Server SE CU1 の Setup 実行時には下位バージョンが共存しているかどうかをチェックし、もし Exchange Server SE RTM 以外のバージョンを検知した場合は Setup によるインストールが失敗します。</p>
 </li>
 </ul>
 <h2 id="今行っていただく準備について"><a href="#今行っていただく準備について" class="headerlink" title="今行っていただく準備について"></a>今行っていただく準備について</h2><p>直ちに Exchange Server 2019 CU14 に移行することをご検討ください。<br>特に以下の 3 つのポイントをご確認ください。</p>
@@ -293,31 +293,31 @@
 </li>
 <li><p>Windows Server 2025 のリリースを待つ場合、Windows Server 2025 が利用可能になり次第、Exchange Server 2019 CU15 に移行します。</p>
 </li>
-<li><p>もし Exchange Server 2019 を運用されている場合、必ず <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019">最新の CU や SU</a> 、最新の Windows Server OS の更新プログラムを適用し、常に最新の状態に保つよう管理・運用をしてください。  </p>
+<li><p>もし Exchange Server 2019 を運用されている場合、必ず <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019">最新の CU や SU</a> 、最新の Windows Server OS の更新プログラムを適用し、常に最新の状態に保つよう管理・運用をしてください。</p>
 </li>
 </ul>
 <p>Windows Server 2019 は 2029 年 1 月にサポート終了が予定されているため、Exchange Server 2019 CU15 と Exchange Server SE RTM を新規に導入する場合には、Windows Server 2022 もしくは 将来リリースされる Windows Server 2025 にインストールすることを推奨します。</p>
-<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><p><strong>Q1: Exchange Server SE がリリースされた少し後、間もなく Exchange Server 2016/2019 のサポート終了となります。どのようにアップグレードすれば良いでしょうか。</strong></p>
+<h1 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h1><p><strong>Q1: Exchange Server SE がリリースされた少し後、間もなく Exchange Server 2016&#x2F;2019 のサポート終了となります。どのようにアップグレードすれば良いでしょうか。</strong></p>
 <p>A1: Exchange Server 2019 に対してインプレース アップグレードで Exchange Server SE RTM に簡単にアップグレードすることが可能です。インプレース アップデートであれば新たなサーバーを用意する必要はありません。インプレース アップグレードはマイクロソフトが推奨する移行方法であり、最も簡単かつ最速のアップグレード方法となります。  </p>
-<p><strong>Q2: マイクロソフトが Exchange Server 2016/2019 のサポート期間を延期する予定はありますか。もしくは、ESU (延長サポート) に対応する予定はありますか。</strong></p>
+<p><strong>Q2: マイクロソフトが Exchange Server 2016&#x2F;2019 のサポート期間を延期する予定はありますか。もしくは、ESU (延長サポート) に対応する予定はありますか。</strong></p>
 <p>A2: いいえ、サポート期間の延期はありません。また、ESU も提供いたしません。マイクロソフトとしてはスムーズな移行のため、Exchange Server SE のリリースやインプレース アップグレードの準備に注力しております。Exchange Server 2016 をご利用のお客様は直ちに Exchange Server 2019 へ移行することを強く推奨します。  </p>
 <p><strong>Q3: マイクロソフトの推奨通り、Exchange Server 2016 から Exchange Server 2019 へ移行し、そこから Exchange Server SE へインプレース アップグレードをする予定です。Exchange Server 2019 CU15 がリリースされる前に CU14 を Windows Server 2022 にインストールしたほうが良いでしょうか。もしくは、CU15 を待って Windows Server 2025 RTM にインストールしたほうが良いでしょうか。</strong></p>
 <p>A3: Windows Server 2022 と今後リリース予定の Windows Server 2025 はどちらも Exchange Server 2019 CU15 や Exchange Server SE でサポートされる OS です。Exchange Server 観点で必要とする OS の機能の差異はありません。サポート ライフサイクルに違いがあり、Windows Server 2025 の方が数年サポート ライフサイクルが長いため、その点はご留意ください。Windows Server 2022 のサポートライフサイクルは<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/lifecycle/products/windows-server-2022">こちら</a>で公開しています。</p>
 <p><strong>Q4: Exchange Server SE でサポートされる Outlook バージョンはどれですか。</strong></p>
-<p>A4: <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/exchange/plan-and-deploy/system-requirements?view=exchserver-2019#supported-clients-with-latest-updates-in-exchange-2019">Exchange Server 2019 と同じクライアント</a>をサポートします。<br>Outlook 2016/2019 も Exchange Server SE がリリースされた後すぐにサポート対象外となる予定です。なお、”新しい Outlook for Windows” は Exchange Server SE CU1 以降からサポートされる予定です。  </p>
+<p>A4: <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/exchange/plan-and-deploy/system-requirements?view=exchserver-2019#supported-clients-with-latest-updates-in-exchange-2019">Exchange Server 2019 と同じクライアント</a>をサポートします。<br>Outlook 2016&#x2F;2019 も Exchange Server SE がリリースされた後すぐにサポート対象外となる予定です。なお、”新しい Outlook for Windows” は Exchange Server SE CU1 以降からサポートされる予定です。  </p>
 <p><strong>Q5: DAG メンバー サーバーに対してインプレース アップグレードはどのようにできますか。</strong></p>
 <p>A5: インプレース アップグレードは通常の CU 適用作業と同様に実施いただけます。このため、DAG メンバー サーバーは 1 台ずつインプレース アップグレードを試みてください。  </p>
 <p><strong>Q6: 現行は Windows Server 2019 上に Exchange Server 2019 CU14 をインストールしています。Exchange Server SE では Windows Server 2019 はサポートされますか。</strong></p>
-<p>A6: Exchange Server SE は Windows Server 2019 と Windows Server 2022 のどちらもサポートします。ただし、Exchange Server 2019 CU15 からサポートされる TLS1.3 は Windows Server 2022 以降でサポートされるため、Windows Server 2019 では利用できません。また、サポート ライフサイクルの観点としても Windows Server 2022/2025 を利用する方がより長くサーバーを利用できます。  </p>
+<p>A6: Exchange Server SE は Windows Server 2019 と Windows Server 2022 のどちらもサポートします。ただし、Exchange Server 2019 CU15 からサポートされる TLS1.3 は Windows Server 2022 以降でサポートされるため、Windows Server 2019 では利用できません。また、サポート ライフサイクルの観点としても Windows Server 2022&#x2F;2025 を利用する方がより長くサーバーを利用できます。  </p>
 <p><strong>Q7. Exchange Server 2016 の組織に Exchange Server 2019 と Exchange Server SE RTM の両方を共存させ、Exchange Server 2016 から Exchange SE にメールボックスを移行する方法はサポートされますか。</strong></p>
-<p>A7. 構成としてはサポートさますが、推奨しておりません。上記のとおり、Exchange Server 2016/2019 のサポート終了時期間近に Exchange Server SE RTM がリリースされるため、Exchange Server 2016/2019 から Exchange Server SE への移行期間が非常に短く、従来の移行をやりきるのは困難となる場合も想定されるためです。まずは Exchange Server 2019 への移行を行っていただいたうえで、Exchange Server SE RTM がリリースされましたら、インプレース アップグレードにより移行いただくことを推奨いたします。</p>
+<p>A7. 構成としてはサポートさますが、推奨しておりません。上記のとおり、Exchange Server 2016&#x2F;2019 のサポート終了時期間近に Exchange Server SE RTM がリリースされるため、Exchange Server 2016&#x2F;2019 から Exchange Server SE への移行期間が非常に短く、従来の移行をやりきるのは困難となる場合も想定されるためです。まずは Exchange Server 2019 への移行を行っていただいたうえで、Exchange Server SE RTM がリリースされましたら、インプレース アップグレードにより移行いただくことを推奨いたします。</p>
 <p><strong>Q8. Exchange Server SE でもハイブリッド環境で受信者オブジェクトを管理するための管理ツールは提供されますか。</strong></p>
-<p>A8. はい、提供される見込みです。なお、ハイブリッド環境での受信者管理を目的とした管理ツールは Exchange Server 2019 CU12 から提供を開始しておりますが、通常のアップグレードと同様に CU14 / CU15 からのインプレース アップグレードも可能となる見込みです。</p>
+<p>A8. はい、提供される見込みです。なお、ハイブリッド環境での受信者管理を目的とした管理ツールは Exchange Server 2019 CU12 から提供を開始しておりますが、通常のアップグレードと同様に CU14 &#x2F; CU15 からのインプレース アップグレードも可能となる見込みです。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/" data-id="cm4i5c0ck001mx4nm2wqq5zwn" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/" data-id="cm56a4teb001gosnm2usz9hig" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -366,7 +366,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
     </div>
   </div>
 
@@ -389,6 +389,14 @@
       <ul>
         
           <li>
+            <a href="/blog/Update%20on%20Client%20Access%20Rules%20Deprecation%20in%20Exchange%20Online/">Exchange Online のクライアント アクセス ルール廃止に関する最新情報</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-online-to-introduce-external-recipient-rate-limit/">Exchange Online への外部受信者数の制限の導入</a>
+          </li>
+        
+          <li>
             <a href="/blog/updates-on-servicing-exchange-server-2019/">Exchange Server 2019 に関する更新</a>
           </li>
         
@@ -398,14 +406,6 @@
         
           <li>
             <a href="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/">意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入</a>
-          </li>
-        
-          <li>
-            <a href="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/">Microsoft Outlook の新機能と今後の展望 – Ignite 2024</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Decommissioning-Exchange-Server-2016/">Exchange サーバー 2016 を廃止する</a>
           </li>
         
       </ul>

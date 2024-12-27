@@ -27,13 +27,13 @@
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
 <meta property="og:description" content="こんにちは。Exchange サポートの竹本です。 今回も引き続きエッジ トランスポート サーバーについてです。前回の記事にて、次回は機能紹介を、、、とコメントをしていましたが、書き出してみると注意事項や Tips のご紹介がメインとなりました。 エッジ トランスポート サーバーを管理されている方々、是非ご一読ください。 エッジ サブスクリプションにより複製されたデータについて前回もご紹介しました">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/betweenservers.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/betweenservers.jpg">
 <meta property="article:published_time" content="2015-12-23T15:00:00.000Z">
 <meta property="article:modified_time" content="2015-12-23T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="Exchange">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/betweenservers.jpg">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/betweenservers.jpg">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
@@ -54,7 +54,7 @@
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container">
@@ -135,7 +135,7 @@
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
         <p>こんにちは。Exchange サポートの竹本です。</p>
-<p>今回も引き続きエッジ トランスポート サーバーについてです。<br><a href="/blog/Edge%20サーバーを振り返る%20エピソード%201">前回の記事</a>にて、次回は機能紹介を、、、とコメントをしていましたが、書き出してみると注意事項や Tips のご紹介がメインとなりました。</p>
+<p>今回も引き続きエッジ トランスポート サーバーについてです。<br><a href="/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201">前回の記事</a>にて、次回は機能紹介を、、、とコメントをしていましたが、書き出してみると注意事項や Tips のご紹介がメインとなりました。</p>
 <p>エッジ トランスポート サーバーを管理されている方々、是非ご一読ください。</p>
 <h2 id="エッジ-サブスクリプションにより複製されたデータについて"><a href="#エッジ-サブスクリプションにより複製されたデータについて" class="headerlink" title="エッジ サブスクリプションにより複製されたデータについて"></a>エッジ サブスクリプションにより複製されたデータについて</h2><p>前回もご紹介しました通り、エッジ サブスクリプションを作成することにより、組織のディレクトリに保存された Active Directory データがエッジ トランスポート サーバーへ複製されますが、この複製されたデータは AD LDS データベース (adamntds.dit ファイル) に保存されます。既定のパス情報は、以下にある通りです。</p>
 <p>　Title : AD LDS の構成を変更する<br>　URL : <a target="_blank" rel="noopener" href="https://technet.microsoft.com/ja-jp/library/aa997269(v=exchg.150).aspx">https://technet.microsoft.com/ja-jp/library/aa997269(v=exchg.150).aspx</a></p>
@@ -145,7 +145,7 @@
 <h2 id="エッジ-サブスクリプションを作成しない場合の注意点"><a href="#エッジ-サブスクリプションを作成しない場合の注意点" class="headerlink" title="エッジ サブスクリプションを作成しない場合の注意点"></a>エッジ サブスクリプションを作成しない場合の注意点</h2><p>エッジ トランスポート サーバーは、サブスクリプションの購読を行わずに、単純な SMTP リレーサーバーとしてご利用いただくことも可能です。<br>ただしこの場合に注意していただきたいのが、MaxAcknowledgementDelay に基づく応答遅延の動作です。</p>
 <p>Exchange 2010 以降ではメッセージのロストを可能な限り防ぐための機能 (シャドウ冗長) が実装されており、これはエッジ トランスポート サーバーと組織内のメールボックス サーバーの間でも同様に機能します。しかしエッジ サブスクリプションが作成されていない場合、お互いが全く別組織の SMTP サーバーとして認識されるため、シャドウ冗長が機能しません。結果として、エッジ トランスポート サーバーでは、メールボックス サーバーから SMTP を使用してメッセージの送信要求を受信した際、そのメッセージが正しく次のホップ先に配信されるまで ACK 応答を遅延させる (返さない) といった動作が機能し、これによりメッセージの冗長性を担保しようとします。<br>そして、この遅延させる時間の上限が MaxAcknowledgementDelay (受信コネクタの設定) であり、既定で 30 秒となっています。</p>
 <p>イメージとしては以下のような流れです。(構成や値はあくまでも例としてお考えください。)<br>この例では単体の処理自体はそれぞれ 5 秒程度ですが、組織内のメールボックス サーバーからすると 1 メッセージを送信するために倍の 10 秒を要していることになります。そしてこのようなメッセージの数が多くなればなるほど (後のメッセージになればなるほど)、配信完了までに要する時間も次第に大きくなります。</p>
-<p><img src="betweenservers.jpg" alt=""></p>
+<p><img src="/blog/betweenservers.jpg"></p>
 <p>このような場合には、MaxAcknowledgementDelay の値を 0 (つまり無効化) にしたり、少し小さめの値に設定するなどのチューニングが有効です。</p>
 <h2 id="バージョン混在環境下の注意事項"><a href="#バージョン混在環境下の注意事項" class="headerlink" title="バージョン混在環境下の注意事項"></a>バージョン混在環境下の注意事項</h2><p>エッジ トランスポート サーバーを Exchange 2010 のまま、組織内のサーバーだけを Exchange 2013 に更新した場合、エッジ トランスポート サーバーでエッジ サブスクリプションが削除できない (Remove-EdgeSubscription が失敗する) といった事象が発生することがあります。<br>具体的な発生条件としては、エッジ トランスポート サーバー上に複製された情報 (オブジェクト) の中に、Exchange 2013 サーバーが生成したものがある場合で、例えば新規に承認済みドメインの追加登録を行った場合などが一般的です。</p>
 <p>このような状態で、Exchange 2010 で構成されたエッジ トランスポート サーバーにて Remove-EdgeSubscription を実行すると、以下のようなエラーが表示されます。</p>
@@ -158,7 +158,7 @@
 <p>Name                                                     ExchangeVersion<br>—-                                                       —————<br>aaaaa.com                                                0.1 (8.0.535.0)<br>bbbbb.com                                                0.20 (15.0.0.0)</p>
 </blockquote>
 <p>このような場合の対処としては、以前ご案内した ADSI で AD LDS に接続し、手動でオブジェクトを削除することとなります。</p>
-<h2 id="外部-DNS-と内部-DNS-の判断"><a href="#外部-DNS-と内部-DNS-の判断" class="headerlink" title="外部 DNS と内部 DNS の判断"></a>外部 DNS と内部 DNS の判断</h2><p>これも以前少しご紹介しましたが、境界ネットワークに配置されるエッジ トランスポート サーバーには、外部DNS 用 NIC (ExternalDNSAdapterGuid) /内部 DNS 用 NIC (InternalDNSAdapterGuid) の概念があります。メッセージをインターネットに中継する場合と組織内に中継する場合とで、MX レコードの名前解決に使用する DNS サーバーを明確に分けるための設定です。</p>
+<h2 id="外部-DNS-と内部-DNS-の判断"><a href="#外部-DNS-と内部-DNS-の判断" class="headerlink" title="外部 DNS と内部 DNS の判断"></a>外部 DNS と内部 DNS の判断</h2><p>これも以前少しご紹介しましたが、境界ネットワークに配置されるエッジ トランスポート サーバーには、外部DNS 用 NIC (ExternalDNSAdapterGuid) &#x2F;内部 DNS 用 NIC (InternalDNSAdapterGuid) の概念があります。メッセージをインターネットに中継する場合と組織内に中継する場合とで、MX レコードの名前解決に使用する DNS サーバーを明確に分けるための設定です。</p>
 <p>ここで重要なのが、エッジ トランスポート サーバーがどのようにして “外部” や “内部” を区別するのかといった点ですが、既定では、エッジ トランスポート サーバーはどのような宛先に対するメッセージであっても “内部” 宛として扱い、MX レコードの解決には、内部 DNS 用 NIC (InternalDNSAdapterGuid) に設定された DNS サーバーを使用します。そして内部 DNS 用 NIC (InternalDNSAdapterGuid) には 00000000-0000-0000-0000-000000000000 という値が既定で設定されているため、結果として、いずれかの NIC に設定された DNS サーバーを使用する、という動作になります。</p>
 <p>そして、インターネット向けのメッセージを “外部” 宛として扱い、外部用の DNS サーバーを参照させたい (内部用と明確に区別したい) 場合には、専用の送信コネクタを設け、外部 DNS 参照の設定を使用するよう構成する必要があります。</p>
 <p>　Title : エッジ トランスポート サーバーのプロパティの構成<br>　URL : <a target="_blank" rel="noopener" href="https://technet.microsoft.com/ja-jp/library/bb123492(v=exchg.141).aspx">https://technet.microsoft.com/ja-jp/library/bb123492(v=exchg.141).aspx</a></p>
@@ -177,7 +177,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/" data-id="cm4i5c0c8000ox4nm1b2p77tx" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%202/" data-id="cm56a4te4000mosnmbo8wew52" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -228,7 +228,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
     </div>
   </div>
 
@@ -251,6 +251,14 @@
       <ul>
         
           <li>
+            <a href="/blog/Update%20on%20Client%20Access%20Rules%20Deprecation%20in%20Exchange%20Online/">Exchange Online のクライアント アクセス ルール廃止に関する最新情報</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-online-to-introduce-external-recipient-rate-limit/">Exchange Online への外部受信者数の制限の導入</a>
+          </li>
+        
+          <li>
             <a href="/blog/updates-on-servicing-exchange-server-2019/">Exchange Server 2019 に関する更新</a>
           </li>
         
@@ -260,14 +268,6 @@
         
           <li>
             <a href="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/">意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入</a>
-          </li>
-        
-          <li>
-            <a href="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/">Microsoft Outlook の新機能と今後の展望 – Ignite 2024</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Decommissioning-Exchange-Server-2016/">Exchange サーバー 2016 を廃止する</a>
           </li>
         
       </ul>
