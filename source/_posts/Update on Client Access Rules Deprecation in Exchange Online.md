@@ -6,16 +6,16 @@ tags: 'Exchange Online'
 ---
 ※ この記事は、[Update on Client Access Rules Deprecation in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/update-on-client-access-rules-deprecation-in-exchange-online/4354809) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-2022 年 9 月に、Exchange Online でのクライアント アクセス ルール（CARs）の廃止を開始することを[発表](https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecation-of-client-access-rules-in-exchange-online/ba-p/3638563)しました。それ以来、アクティブなルールのないテナントではすでに CARs が廃止されています。CARs は 2025 年 9 月 1 日にすべてのテナントで廃止されます。さらに、テナントが期限前に CARs をオフにすることを選択した場合、私たちはそのテナントの CARs を無効にします。スムーズな移行を確保し、継続的アクセス評価（CAE）を備えた条件付きアクセス（CA）が提供する強化されたセキュリティ機能を活用できるように、できるだけ早く CARs から移行することをお勧めします。
+2022 年 9 月に、Exchange Online でのクライアント アクセス ルール（CARs）の廃止を開始することを[発表](https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecation-of-client-access-rules-in-exchange-online/ba-p/3638563)しました。それ以来、アクティブなルールのないテナントではすでに CARs が廃止されています。CARs は 2025 年 9 月 1 日にすべてのテナントで廃止されます。さらに、お客様が期限前に CARs をオフにすることを選択した場合、私たちはそのテナントの CARs を無効にします。スムーズな移行を確保し、継続的アクセス評価（CAE）を備えた条件付きアクセス（CA）が提供する強化されたセキュリティ機能を活用できるように、できるだけ早く CARs から移行することをお勧めします。
 
 ### 背景
 
-CARs は、クライアントのプロパティやクライアント アクセス要求に基づいて Exchange Online 組織へのアクセスを制御するのに役立ちます。ただし、CARs は現在レガシー技術と見なされています。さらに、サービスで定義された CARs は Exchange Online でのみ機能します。
+CARs は、クライアントのプロパティやクライアント アクセス要求に基づいて Exchange Online 組織へのアクセスを制御するのに役立ちます。ただし、CARs は現在レガシー技術と見なされています。さらに、CARs は Exchange Online の機能として実装されているので、Exchange Online でしか機能しません。
 CARs の代わりに [条件付きアクセス](https://learn.microsoft.com/entra/identity/conditional-access/overview) (CA) と [継続的アクセス評価](https://learn.microsoft.com/entra/identity/conditional-access/concept-continuous-access-evaluation) (CAE) を使用することをお勧めします。IP 範囲を条件として指定した CA ポリシーを構成しているとき、CAE によってユーザーの場所に応じたポリシーが確実に適用されるようになります。複数の Microsoft 365 サービスが CAE をサポートしており、Exchange Online、SharePoint Online、Teams などが含まれます。
 Exchange Online のみを考慮しても、Exchange Online にはこれまでに多くの新しいプロトコルやサービスが導入されており、CARs を強制するプロトコルはごく一部に過ぎません。それに対して、CA と CAE はこれらのサービスへのアクセスを真に許可またはブロックすることができます。さらに、CARs は IP アドレス、プロトコル、ユーザーによるフィルタリングなどの基本的な強制しか提供しません。デバイスの物理的な場所、多要素認証 (MFA)、デバイスのコンプライアンスなど、より高いセキュリティ基準に必要な最新の強制コントロールが欠けています。
 
 これにより、CARs は時代遅れとなり、高いセキュリティ要件を満たすには不十分です。CARs が提供する限られた機能は、CA および CAE と重複しています。Exchange Online は CAE を実装しており、IP 範囲を条件とした CA ポリシーが Exchange Online へのアクセスごとに評価されるため、CARs と同等の機能を提供します。
-条件付きアクセスは、豊富な監視およびレポート機能を提供し、IT管理者がポリシーの適用状況を把握できるようにします。Microsoftは、Entra ID サービスの一環として CA および CAE の両方を強化し続けており、この分野での継続的な改善と投資を確保しています。
+条件付きアクセスは、豊富な監視およびレポート機能を提供し、IT 管理者がポリシーの適用状況を把握できるようにします。Microsoftは、Entra ID サービスの一環として CA および CAE の両方を強化し続けており、この分野での継続的な改善と投資を確保しています。
 なお、オンプレミスの Exchange Server の CAR は、この廃止およびガイダンスとは完全に別物であり、引き続きオンプレミスで個別に管理されます。
 
 ### CARs から CAE への移行
@@ -361,7 +361,7 @@ CARs を使用している場合、2025 年 9 月 1 日以降は使用できな�
 </div>
 
 
-ただし、複数のルールがあり、それらのルールが異なるプロトコルと異なる IP アドレスセットまたはアドレス範囲を条件としている場合、それらのルールに対する移行オプションはありません。私たちの推奨は、すべてのアドレスのスーパー セットである単一の IP アドレス セットまたはアドレス範囲を持つようにルールを調整し、それを条件付きアクセス ポリシーで Exchange Online アプリケーションに適用することです。
+ただし、複数のルールがあり、それらのルールが異なるプロトコルと異なる IP アドレスまたはアドレス範囲を条件としている場合、それらのルールに対する移行オプションはありません。私たちの推奨は、すべてのアドレスのスーパー セットである単一の IP アドレスまたはアドレス範囲を持つようにルールを調整し、それを条件付きアクセス ポリシーで Exchange Online アプリケーションに適用することです。
 
 ### Set-CASMailboxPlan に対応するパラメーター
 
