@@ -190,6 +190,7 @@ body {
 .article-date,
 .article-category-link,
 .archive-year,
+.tag-index-title,
 .widget-title {
   text-decoration: none;
   text-transform: uppercase;
@@ -202,7 +203,8 @@ body {
   font-weight: bold;
 }
 .article-inner,
-.archive-article-inner {
+.archive-article-inner,
+.tag-index {
   background: #fff;
   -webkit-box-shadow: 1px 2px 3px #ddd;
   box-shadow: 1px 2px 3px #ddd;
@@ -1326,6 +1328,20 @@ pre .javascript .function {
     color: #fff;
   }
 }
+.tag-index-wrap {
+  margin: 50px 0;
+}
+.tag-index {
+  overflow: hidden;
+  padding: 1rem;
+}
+.tag-index a {
+  color: #0065b3;
+  text-decoration: none;
+}
+.tag-index a:hover {
+  text-decoration: underline;
+}
 @media screen and (min-width: 768px) {
   #sidebar {
     display: inline;
@@ -1336,6 +1352,13 @@ pre .javascript .function {
 }
 .widget-wrap {
   margin: 50px 0;
+}
+.widget-title a {
+  color: #0065b3;
+  text-decoration: none;
+}
+.widget-title a:hover {
+  text-decoration: underline;
 }
 .widget {
   color: #737373;
