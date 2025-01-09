@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="utf-8">
   
@@ -50,7 +50,7 @@
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container">
@@ -137,32 +137,32 @@
 <p>今回は上記公開情報を抄訳し、手順に注意点など一部補足を追加してご案内いたします。<br>今後、Update 等により内容に差異が生じた場合はオリジナル (英文) の内容を正とさせて頂きますことを予めご了承ください。</p>
 <p>本抄訳は、以下の項目を順にご案内いたします。</p>
 <ul>
-<li><a href="#事象概要">事象概要</a></li>
-<li><a href="#影響を受ける対象のサーバー">影響を受ける対象のサーバー</a></li>
-<li><a href="#対処方法-1-自動化された対処方法">対処方法 1 (自動化された対処方法)</a><ul>
-<li><a href="#事前準備">事前準備</a></li>
-<li><a href="#スクリプトの実行">スクリプトの実行</a></li>
+<li><a href="#%E4%BA%8B%E8%B1%A1%E6%A6%82%E8%A6%81">事象概要</a></li>
+<li><a href="#%E5%BD%B1%E9%9F%BF%E3%82%92%E5%8F%97%E3%81%91%E3%82%8B%E5%AF%BE%E8%B1%A1%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC">影響を受ける対象のサーバー</a></li>
+<li><a href="#%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95-1-%E8%87%AA%E5%8B%95%E5%8C%96%E3%81%95%E3%82%8C%E3%81%9F%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95">対処方法 1 (自動化された対処方法)</a><ul>
+<li><a href="#%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99">事前準備</a></li>
+<li><a href="#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%AE%E5%AE%9F%E8%A1%8C">スクリプトの実行</a></li>
 </ul>
 </li>
-<li><a href="#対処方法-2-手動の対処方法">対処方法 2 (手動の対処方法)</a><ul>
-<li><a href="#既存のエンジンとメタデータの削除">既存のエンジンとメタデータの削除</a></li>
-<li><a href="#最新エンジンへの更新">最新エンジンへの更新</a></li>
-<li><a href="#エンジン更新情報の確認">エンジン更新情報の確認</a></li>
+<li><a href="#%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95-2-%E6%89%8B%E5%8B%95%E3%81%AE%E5%AF%BE%E5%87%A6%E6%96%B9%E6%B3%95">対処方法 2 (手動の対処方法)</a><ul>
+<li><a href="#%E6%97%A2%E5%AD%98%E3%81%AE%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%81%A8%E3%83%A1%E3%82%BF%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%89%8A%E9%99%A4">既存のエンジンとメタデータの削除</a></li>
+<li><a href="#%E6%9C%80%E6%96%B0%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E3%81%B8%E3%81%AE%E6%9B%B4%E6%96%B0">最新エンジンへの更新</a></li>
+<li><a href="#%E3%82%A8%E3%83%B3%E3%82%B8%E3%83%B3%E6%9B%B4%E6%96%B0%E6%83%85%E5%A0%B1%E3%81%AE%E7%A2%BA%E8%AA%8D">エンジン更新情報の確認</a></li>
 </ul>
 </li>
-<li><a href="#補足情報-上記手順の実行時のユーザー影響について">補足情報: 上記手順の実行時のユーザー影響について</a></li>
-<li><a href="#FAQ-よくお寄せいただくご質問">FAQ: よくお寄せいただくご質問</a></li>
+<li><a href="#%E8%A3%9C%E8%B6%B3%E6%83%85%E5%A0%B1-%E4%B8%8A%E8%A8%98%E6%89%8B%E9%A0%86%E3%81%AE%E5%AE%9F%E8%A1%8C%E6%99%82%E3%81%AE%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E5%BD%B1%E9%9F%BF%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">補足情報: 上記手順の実行時のユーザー影響について</a></li>
+<li><a href="#FAQ-%E3%82%88%E3%81%8F%E3%81%8A%E5%AF%84%E3%81%9B%E3%81%84%E3%81%9F%E3%81%A0%E3%81%8F%E3%81%94%E8%B3%AA%E5%95%8F">FAQ: よくお寄せいただくご質問</a></li>
 </ul>
 <hr>
 <h2 id="事象概要"><a href="#事象概要" class="headerlink" title="事象概要"></a>事象概要</h2><p>問題の定義ファイルのバージョン確認処理においてマルウェア エンジンがクラッシュすることで、メール配送処理ができず、Exchange サーバー上のキュー内にメールが滞留します。<br>本事象はあくまでも定義ファイルのバージョン確認処理に依存した問題であり、マルウェア エンジン自体や、セキュリティ関連の問題ではございません。</p>
 <p>Exchange 2016 または Exchange 2019 を経由したメールが送受信できない可能性がございますのでご利用のサーバーにて影響を受けているかどうかを、ご確認いただきますようお願いいたします。</p>
 <p>なお、事象の報告を受け、弊社開発部門側では 1 月 2 日に定義ファイルを置き換えての配布を開始しておりますが、すでに問題となった定義ファイルがダウンロードされ事象が発生しているサーバーにおいては、一度定義ファイルを削除し、改めて最新の定義ファイル取得を実施頂く必要がございます。<br>影響を受けているサーバーでは最新の定義ファイルに更新されると解消する問題ではなく、解消するためにはお客様側の操作が必須となります。</p>
-<p>本事象の影響受けている場合、以下のようにソースが “FIPFS” のエラー イベント 5300/1106 がイベント ログ (Application) に記録されます。</p>
+<p>本事象の影響受けている場合、以下のようにソースが “FIPFS” のエラー イベント 5300&#x2F;1106 がイベント ログ (Application) に記録されます。</p>
 <blockquote>
-<p>Log Name: Application<br>Source: FIPFS<br>Logged: 1/1/2022 1:03:42 AM<br>Event ID: 5300<br>Level: Error<br>Computer: server1.contoso.com<br>Description: The FIP-FS “Microsoft” Scan Engine failed to load. PID: 23092, Error Code: 0x80004005. Error Description: Can’t convert “2201010001” to long.</p>
+<p>Log Name: Application<br>Source: FIPFS<br>Logged: 1&#x2F;1&#x2F;2022 1:03:42 AM<br>Event ID: 5300<br>Level: Error<br>Computer: server1.contoso.com<br>Description: The FIP-FS “Microsoft” Scan Engine failed to load. PID: 23092, Error Code: 0x80004005. Error Description: Can’t convert “2201010001” to long.</p>
 </blockquote>
 <blockquote>
-<p>Log Name: Application<br>Source: FIPFS<br>Logged: 1/1/2022 11:47:16 AM<br>Event ID: 1106<br>Level: Error<br>Computer: server1.contoso.com<br>Description: The FIP-FS Scan Process failed initialization. Error: 0x80004005. Error Details: Unspecified error.</p>
+<p>Log Name: Application<br>Source: FIPFS<br>Logged: 1&#x2F;1&#x2F;2022 11:47:16 AM<br>Event ID: 1106<br>Level: Error<br>Computer: server1.contoso.com<br>Description: The FIP-FS Scan Process failed initialization. Error: 0x80004005. Error Details: Unspecified error.</p>
 </blockquote>
 <p>対処方法としては、上記公開情報に記載の通り 「対処方法 1 (自動化された対処方法)」 と 「対処方法 2 (手動の対処方法)」 の 2 つの方法がございます。それぞれ後述します。</p>
 <h2 id="影響を受ける対象のサーバー"><a href="#影響を受ける対象のサーバー" class="headerlink" title="影響を受ける対象のサーバー"></a>影響を受ける対象のサーバー</h2><p>本事象によりキュー内にメールが滞留する問題は以下種類のサーバーにて影響を受けます。</p>
@@ -184,9 +184,7 @@
 <li><p>Exchange 管理シェルを起動します。</p>
 </li>
 <li><p>Execution Policy が RemoteSigned ではない場合は、以下のように変更します。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> <span class="literal">-ExecutionPolicy</span> RemoteSigned</span><br></pre></td></tr></table></figure>
-
-</li>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExecutionPolicy</span> <span class="literal">-ExecutionPolicy</span> RemoteSigned</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="スクリプトの実行"><a href="#スクリプトの実行" class="headerlink" title="スクリプトの実行"></a>スクリプトの実行</h3><ol>
 <li><p>Exchange 管理シェルにて cd でカレント ディレクトリをスクリプトの配置場所に移動します。</p>
@@ -196,7 +194,7 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\<span class="built_in">Reset-ScanEngineVersion</span>.ps1</span><br></pre></td></tr></table></figure>
 
 <p>実行結果例:</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">PS</span>] C:\Scripts&gt;.\<span class="built_in">Reset-ScanEngineVersion</span>.ps1</span><br><span class="line"></span><br><span class="line">EXCH1 Stopping services...</span><br><span class="line">EXCH1 Removing Microsoft engine folder...</span><br><span class="line">EXCH1 Emptying metadata folder...</span><br><span class="line">EXCH1 Starting services...</span><br><span class="line">WARNING: Waiting <span class="keyword">for</span> service <span class="string">&#x27;Microsoft Filtering Management Service (FMS)&#x27;</span> to <span class="built_in">start</span>...</span><br><span class="line">WARNING: Waiting <span class="keyword">for</span> service <span class="string">&#x27;Microsoft Filtering Management Service (FMS)&#x27;</span> to <span class="built_in">start</span>...</span><br><span class="line">WARNING: Waiting <span class="keyword">for</span> service <span class="string">&#x27;Microsoft Filtering Management Service (FMS)&#x27;</span> to <span class="built_in">start</span>...</span><br><span class="line">WARNING: Waiting <span class="keyword">for</span> service <span class="string">&#x27;Microsoft Filtering Management Service (FMS)&#x27;</span> to <span class="built_in">start</span>...</span><br><span class="line">WARNING: Waiting <span class="keyword">for</span> service <span class="string">&#x27;Microsoft Exchange Transport (MSExchangeTransport)&#x27;</span> to <span class="built_in">start</span>...</span><br><span class="line">EXCH1 Starting engine update...</span><br><span class="line">Running as EXCH1<span class="literal">-DOM</span>\Administrator.</span><br><span class="line">--------</span><br><span class="line">Connecting to EXCH1.CONTOSO.com.</span><br><span class="line">Dispatched remote command. <span class="built_in">Start-EngineUpdate</span> <span class="literal">-UpdatePath</span> http://amupdatedl.microsoft.com/server/amupdate</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">PS</span>] C:\Scripts&gt;.\<span class="built_in">Reset-ScanEngineVersion</span>.ps1</span><br><span class="line"></span><br><span class="line">EXCH1 Stopping services...</span><br><span class="line">EXCH1 Removing Microsoft engine folder...</span><br><span class="line">EXCH1 Emptying metadata folder...</span><br><span class="line">EXCH1 Starting services...</span><br><span class="line">WARNING: Waiting <span class="keyword">for</span> service <span class="string">&#x27;Microsoft Filtering Management Service (FMS)&#x27;</span> to <span class="built_in">start</span>...</span><br><span class="line">WARNING: Waiting <span class="keyword">for</span> service <span class="string">&#x27;Microsoft Filtering Management Service (FMS)&#x27;</span> to <span class="built_in">start</span>...</span><br><span class="line">WARNING: Waiting <span class="keyword">for</span> service <span class="string">&#x27;Microsoft Filtering Management Service (FMS)&#x27;</span> to <span class="built_in">start</span>...</span><br><span class="line">WARNING: Waiting <span class="keyword">for</span> service <span class="string">&#x27;Microsoft Filtering Management Service (FMS)&#x27;</span> to <span class="built_in">start</span>...</span><br><span class="line">WARNING: Waiting <span class="keyword">for</span> service <span class="string">&#x27;Microsoft Exchange Transport (MSExchangeTransport)&#x27;</span> to <span class="built_in">start</span>...</span><br><span class="line">EXCH1 Starting engine update...</span><br><span class="line">Running as EXCH1<span class="literal">-DOM</span>\Administrator.</span><br><span class="line"><span class="literal">--------</span></span><br><span class="line">Connecting to EXCH1.CONTOSO.com.</span><br><span class="line">Dispatched remote command. <span class="built_in">Start-EngineUpdate</span> <span class="literal">-UpdatePath</span> http://amupdatedl.microsoft.com/server/amupdate</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>上記 2 のスクリプト実行完了後、最新の定義ファイルのダウンロードが成功し、変更が適用されたかどうかを確認するため、Exchange 管理シェルにて以下 2 つのコマンドを順に実行します。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Add-PSSnapin</span> Microsoft.Forefront.Filtering.Management.Powershell</span><br><span class="line"><span class="built_in">Get-EngineUpdateInformation</span></span><br></pre></td></tr></table></figure>
@@ -236,9 +234,7 @@
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\<span class="built_in">Update-MalwareFilteringServer</span>.ps1 &lt;対象サーバーの FQDN&gt;</span><br></pre></td></tr></table></figure>
 
 <p>実行例:</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\<span class="built_in">Update-MalwareFilteringServer</span>.ps1 server01.contoso.local</span><br></pre></td></tr></table></figure>
-
-</li>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\<span class="built_in">Update-MalwareFilteringServer</span>.ps1 server01.contoso.local</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="エンジン更新情報の確認"><a href="#エンジン更新情報の確認" class="headerlink" title="エンジン更新情報の確認"></a>エンジン更新情報の確認</h3><ol>
 <li><p>Exchange 管理シェルを起動し、以下の 2 つのコマンドを順に実行します。</p>
@@ -263,7 +259,7 @@
 <p><strong>Q. 更新された定義ファイルは 2112330001 という名前になっています。これで良いのですか? 存在しない日付を指しているようですが、これで良いのですか?</strong><br>A. はい、問題ありません。開発部門での対処の結果として、このような存在しない日付の命名規則で定義ファイルがダウンロードされます。存在しない日付を含む定義ファイルであっても Microsoft でサポートしております。<br>今後リリースされる定義ファイルも同様の形式で各サーバーにて取得されていきます。</p>
 <p><strong>Q. Exchange サーバーがインターネットへのアクセスがない場合、どうすれば良いですか。</strong><br>A. Exchange サーバーがマルウェア対策の更新情報をインターネットより取得しない場合、対処いただく必要はございません。このような構成の場合、マルウェア対策機能による問題となった定義ファイルの更新が行われておりませんので、影響を受けることはございません。</p>
 <p><strong>Q. Exchange 2013 サーバーにて今回の事象は発生していないものの、問題の定義ファイルが取得されていました。どのように対応すれば良いですか?</strong><br>A. Exchange 2013 は今回の事象によりサービスがクラッシュしてメールが滞留することはございません。しかし、もし Exchange 2013 側で問題のマルウェア定義ファイル バージョン “2201010001” を取得していた場合は、Exchange 2013 メールボックス サーバー上にて「対処方法 1 (自動化された対処方法)」または「対処方法 2 (手動の対処方法)」の手順を実施ください。対処を実施しない場合、今後最新のマルウェア定義ファイルの取得が行われません。<br>ご利用の Exchange 2013 メールボックス サーバーにて “%ExchangeInstallPath%FIP-FS\Data\Engines\amd64\Microsoft” 配下に “2201010001” のフォルダーが存在する場合は、問題のマルウェア定義ファイルに更新されたことを指します。</p>
-<p>2022/01/11 更新: Exchange 2013 をご利用の場合、スクリプトを実行する前にバージョンが “21…” に更新されているかご確認ください。異なる自動更新の仕組みにより、既に問題のない最新バージョンへ更新されている可能性があります。</p>
+<p>2022&#x2F;01&#x2F;11 更新: Exchange 2013 をご利用の場合、スクリプトを実行する前にバージョンが “21…” に更新されているかご確認ください。異なる自動更新の仕組みにより、既に問題のない最新バージョンへ更新されている可能性があります。</p>
 <p><strong>Q. 「対処方法 1 (自動化された対処方法)」よりスクリプトを実行した際、警告「WARNING: WARNING: Unable to process update request because engine metadata is not available. Attempting to synchronize」が表示されます。</strong><br>A. Exchange サーバーがプロキシ経由で Internet に接続している場合、以下の手順でプロキシを設定します。</p>
 <ul>
 <li><p>Exchange 管理シェルを起動します。</p>
@@ -305,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Exchange%2020162019%20%E3%81%A7%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%88%20%E3%82%AD%E3%83%A5%E3%83%BC%E3%81%AB%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%8C%E6%BB%9E%E7%95%99%E3%81%99%E3%82%8B%E4%BA%8B%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cm47xyy2c00100s9oh3d03q76" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Exchange%2020162019%20%E3%81%A7%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%9D%E3%83%BC%E3%83%88%20%E3%82%AD%E3%83%A5%E3%83%BC%E3%81%AB%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%8C%E6%BB%9E%E7%95%99%E3%81%99%E3%82%8B%E4%BA%8B%E8%B1%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cm5onta77000yyk9od6100e3f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -342,10 +338,13 @@
           <aside id="sidebar">
   
     
+
+  
+    
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Exchange/">Exchange</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Outlook/">Outlook</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -353,19 +352,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchagne/" rel="tag">Exchagne</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -378,23 +367,23 @@
       <ul>
         
           <li>
+            <a href="/blog/Update%20on%20Client%20Access%20Rules%20Deprecation%20in%20Exchange%20Online/">Exchange Online のクライアント アクセス ルール廃止に関する最新情報</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-online-to-introduce-external-recipient-rate-limit/">Exchange Online への外部受信者数の制限の導入</a>
+          </li>
+        
+          <li>
+            <a href="/blog/updates-on-servicing-exchange-server-2019/">Exchange Server 2019 に関する更新</a>
+          </li>
+        
+          <li>
             <a href="/blog/Outlook-does-not-display-toast/">Outlook のデスクトップ通知が表示されない時の確認ポイント</a>
           </li>
         
           <li>
             <a href="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/">意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入</a>
-          </li>
-        
-          <li>
-            <a href="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/">Microsoft Outlook の新機能と今後の展望 – Ignite 2024</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Decommissioning-Exchange-Server-2016/">Exchange サーバー 2016 を廃止する</a>
-          </li>
-        
-          <li>
-            <a href="/blog/MC854648/">新しい Outlook for Windows への移行を促すポリシー制御</a>
           </li>
         
       </ul>
@@ -409,7 +398,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2024 jpmessaging<br>      
+      &copy; 2025 jpmessaging<br>      
     </div>
   </div>
 </footer>

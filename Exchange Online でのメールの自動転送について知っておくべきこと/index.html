@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="utf-8">
   
@@ -27,18 +27,18 @@
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
 <meta property="og:description" content="※ この記事は、All you need to know about automatic email forwarding in Exchange Online の抄訳です。 多くのお客様において、ビジネス要件としてメールの自動転送を構成する必要があることを弊社でも認識しています。一方、メールの転送はデータ漏洩につながる可能性があります。例えば、アカウントが乗っ取られた場合に攻撃者はメールの転送を">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/image01.png">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/image02.png">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/image03.png">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/image04.png">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/image05.png">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/image06.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/image01.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/image02.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/image03.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/image04.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/image05.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/image06.jpg">
 <meta property="article:published_time" content="2021-01-19T15:00:00.000Z">
 <meta property="article:modified_time" content="2021-01-19T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
-<meta property="article:tag" content="EXO">
+<meta property="article:tag" content="Exchange Online">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/image01.png">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/image01.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
@@ -59,7 +59,7 @@
   
 <link rel="stylesheet" href="/blog/css/style.css">
 
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 7.3.0"></head>
 
 <body>
   <div id="container">
@@ -144,15 +144,15 @@
 <p>したがって、転送が有効なメールボックスとメールの転送先を管理者が把握しておくことが重要です。メールの転送を検知する様々な<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/mfi-auto-forwarded-messages-report?view=o365-worldwide">洞察</a>と<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/microsoft-365/compliance/alert-policies?view=o365-worldwide">アラート</a>が提供されていますが、対処療法を行うよりも予防を行うべきです。このブログ投稿では、様々な自動転送の制御について再検討し、それらがどのように連携して、自動転送を本当に許可する必要のあるユーザーの要件をどのように実現することができるのか、考えていきます。</p>
 <h2 id="転送を設定する様々な方法"><a href="#転送を設定する様々な方法" class="headerlink" title="転送を設定する様々な方法"></a>転送を設定する様々な方法</h2><p>自動転送を制御する方法について説明する前に、自動転送を設定する方法を確認しておきます。</p>
 <ul>
-<li>デスクトップ版 Outlook で仕分けルールとして転送のルールを設定できます。ユーザーは Outlook で [ファイル] - [仕分けルールと通知の管理] にて自動転送を設定できます。Outlook on the web (OWA / Ootw) を使用する場合もルールを設定することが可能です。</li>
+<li>デスクトップ版 Outlook で仕分けルールとして転送のルールを設定できます。ユーザーは Outlook で [ファイル] - [仕分けルールと通知の管理] にて自動転送を設定できます。Outlook on the web (OWA &#x2F; Ootw) を使用する場合もルールを設定することが可能です。</li>
 <li>OWA を使用することでユーザーはメールボックスの ForwardingSmtpAddress パラメーターを設定することもできます。この設定は OWA の設定の [メール] - [転送] から利用できます。</li>
 <li>ユーザーは Power Automate (旧 Microsoft Flow) を使用して自動転送を設定することも可能です。</li>
 <li>管理者は Exchange 管理センター (EAC) でメールボックスのプロパティから転送を構成することが可能です。この設定は、クラシック EAC では [メールボックスの機能] - [メール フロー] - [配信オプション] - [詳細の表示] で設定できます。プレビュー版の EAC では [メール フローの設定の管理] で設定できます。この方法でメールボックスのプロパティから自動転送を構成すると、メールボックスの ForwardingAddress パラメーターに設定がおこわなれます。</li>
 <li>管理者は Microsoft 365 管理センターでも転送を構成できます。Microsoft 365 管理センターで転送を構成すると、メールボックスの ForwardingSmtpAddress パラメーターに設定されます (ただし ForwardingAddress が設定されている場合はすでに転送が設定されている旨が Microsoft 365 管理センターに表示されます)。</li>
 </ul>
 <p>管理者には、組織外へのメールの自動転送を防止および規制するためのいくつかの方法があります。</p>
-<h2 id="送信迷惑メール-フィルター-ポリシーを使用した外部転送の制御"><a href="#送信迷惑メール-フィルター-ポリシーを使用した外部転送の制御" class="headerlink" title="送信迷惑メール フィルター ポリシーを使用した外部転送の制御"></a>送信迷惑メール フィルター ポリシーを使用した外部転送の制御</h2><p>最近リリースされたこの機能は、セキュリティ/コンプライアンス センターの送信迷惑メール フィルター ポリシー (<a target="_blank" rel="noopener" href="https://protection.office.com/antispam">こちら</a>) で利用できます。以下の画面ショットにあるように、3 つのオプションがあります。</p>
-<p><img src="image01.png" alt=""></p>
+<h2 id="送信迷惑メール-フィルター-ポリシーを使用した外部転送の制御"><a href="#送信迷惑メール-フィルター-ポリシーを使用した外部転送の制御" class="headerlink" title="送信迷惑メール フィルター ポリシーを使用した外部転送の制御"></a>送信迷惑メール フィルター ポリシーを使用した外部転送の制御</h2><p>最近リリースされたこの機能は、セキュリティ&#x2F;コンプライアンス センターの送信迷惑メール フィルター ポリシー (<a target="_blank" rel="noopener" href="https://protection.office.com/antispam">こちら</a>) で利用できます。以下の画面ショットにあるように、3 つのオプションがあります。</p>
+<p><img src="/blog/image01.png"></p>
 <blockquote>
 <p>注意<br>オプションが [自動 - システム制御] として設定されている場合、おそらくこれまでまったく構成が行われていません。設定が [自動 - システム制御] のままになっているテナントは、既定でより安全なサービスが提供されるように、強制的に [オフ - 転送が無効になっています] が設定されているものとして動作します。この強制は段階的に開始されており、間もなくすべてのテナントに提供されます。したがって、[自動 - システム制御] は  [オフ - 転送が無効になっています] として動作するので自動転送は機能しません。すべてのお客様において、組織に適したポリシーを構成し、本当に必要なユーザーに対してのみ外部への自動転送を有効にすることをおすすめします (既定のポリシーでは無効にして、外部転送を有効にしたポリシーを作成して特定のメールボックスに割り当てることをおすすめします)。もし [自動 - システム制御] が設定されておりまだ転送がブロックされていない場合は、できるだけ早く設定を行う必要があります。</p>
 </blockquote>
@@ -167,7 +167,7 @@
 <p>Remote Server returned ‘550 5.7.520 Access denied, Your organization does not allow external forwarding. Please contact your administrator for further assistance. AS(7550)’</p>
 </blockquote>
 </li>
-<li><p>構成が簡単で、管理者は少数またはすべてのメールボックスの外部への自動転送を選択的に許可/ブロックできます。</p>
+<li><p>構成が簡単で、管理者は少数またはすべてのメールボックスの外部への自動転送を選択的に許可&#x2F;ブロックできます。</p>
 </li>
 </ul>
 <p>この方法では以下のデメリットがあります。</p>
@@ -175,8 +175,8 @@
 <li>Power Automate (Flow) を使用した転送は現時点ではカバーされていません。Power Automate を使用して設定された外部への転送をブロックするには、<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/power-platform/admin/block-forwarded-email-from-power-automate">Email exfiltration controls for connectors</a> のページに記載されている手順に従ってください。</li>
 </ul>
 <h2 id="リモート-ドメインを使用した自動転送のブロック"><a href="#リモート-ドメインを使用した自動転送のブロック" class="headerlink" title="リモート ドメインを使用した自動転送のブロック"></a>リモート ドメインを使用した自動転送のブロック</h2><p>このオプションは、プレビュー版の新しい Exchange 管理センターの [メール フロー] タブで使用できます。</p>
-<p><img src="image02.png" alt=""></p>
-<p><img src="image03.png" alt=""></p>
+<p><img src="/blog/image02.png"></p>
+<p><img src="/blog/image03.png"></p>
 <p>この方法では以下のメリットがあります。</p>
 <ul>
 <li>この設定は、Outlook のルールと OWA のオプション (ForwardingSmtpAddress パラメーター) を使用して構成された自動転送をブロックできます。</li>
@@ -188,7 +188,7 @@
 <li>自動転送されたメールが破棄されたことはユーザーに通知されず、NDR は送信されません。</li>
 </ul>
 <h2 id="トランスポート-ルールを使用した自動転送のブロック"><a href="#トランスポート-ルールを使用した自動転送のブロック" class="headerlink" title="トランスポート ルールを使用した自動転送のブロック"></a>トランスポート ルールを使用した自動転送のブロック</h2><p>Exchange 管理センターの [メール フロー] - [ルール] から、自動転送をブロックするトランスポート ルールを作成できます。</p>
-<p><img src="image04.png" alt=""></p>
+<p><img src="/blog/image04.png"></p>
 <p>この方法では以下のメリットがあります。</p>
 <ul>
 <li>条件とアクションをきめ細かく制御できます。</li>
@@ -238,7 +238,7 @@
 <td align="left">Yes</td>
 </tr>
 <tr>
-<td align="left">Power Automate / Flow を使用した転送をブロックする</td>
+<td align="left">Power Automate &#x2F; Flow を使用した転送をブロックする</td>
 <td align="left">No</td>
 <td align="left">No</td>
 <td align="left">No</td>
@@ -278,19 +278,19 @@
 <li>全ユーザーから northwindtraders.com への自動転送をブロックするトランスポート ルールを作成し、ジャックとジルを例外に指定する</li>
 <li>トランスポート ルールは OWA で設定した転送 (ForwardingSmtpAddress パラメーター) をブロックしないため、<a target="_blank" rel="noopener" href="https://petri.com/stop-owa-users-autoforwarding-email">RBAC を使用してユーザーが OWA で自動転送を設定できないようにする</a></li>
 </ul>
-<h2 id="でも待ってください、他にもあります！"><a href="#でも待ってください、他にもあります！" class="headerlink" title="でも待ってください、他にもあります！"></a>でも待ってください、他にもあります！</h2><p>もしユーザーのメールボックスが乗っ取られて知らないうちに外部への自動転送を設定された場合にも、ユーザーを攻撃者から保護するため、メールの転送に関する新しいアラート ポリシーがセキュリティ/コンプライアンス センターの [アラート ポリシー] にリリースされました。”Suspicious Email Forwarding Activity” という名前のアラート ポリシーです。この新しいアラートは、すべての転送シナリオを追跡し、ユーザーが組織外への自動転送を設定していることを検出します。疑わしいアクティビティが見つかった場合、ユーザーが外部受信者に転送し続ける限り、テナント管理者に 1 日 1 回警告を行います。このポリシーの重要度は中に設定されています。稀なことではありますが、このポリシーでアラートが生成されるということは異常な何かが発生している可能性があります。管理者は、ユーザー アカウントが乗っ取られていないかどうかを常に確認する必要があります。以下にこのポリシーの画面ショットを掲載します。</p>
-<p><img src="image05.png" alt=""></p>
+<h2 id="でも待ってください、他にもあります！"><a href="#でも待ってください、他にもあります！" class="headerlink" title="でも待ってください、他にもあります！"></a>でも待ってください、他にもあります！</h2><p>もしユーザーのメールボックスが乗っ取られて知らないうちに外部への自動転送を設定された場合にも、ユーザーを攻撃者から保護するため、メールの転送に関する新しいアラート ポリシーがセキュリティ&#x2F;コンプライアンス センターの [アラート ポリシー] にリリースされました。”Suspicious Email Forwarding Activity” という名前のアラート ポリシーです。この新しいアラートは、すべての転送シナリオを追跡し、ユーザーが組織外への自動転送を設定していることを検出します。疑わしいアクティビティが見つかった場合、ユーザーが外部受信者に転送し続ける限り、テナント管理者に 1 日 1 回警告を行います。このポリシーの重要度は中に設定されています。稀なことではありますが、このポリシーでアラートが生成されるということは異常な何かが発生している可能性があります。管理者は、ユーザー アカウントが乗っ取られていないかどうかを常に確認する必要があります。以下にこのポリシーの画面ショットを掲載します。</p>
+<p><img src="/blog/image05.png"></p>
 <p>管理者へ送信されるアラートのサンプルは以下のようになります。</p>
-<p><img src="image06.jpg" alt=""></p>
+<p><img src="/blog/image06.jpg"></p>
 <p>今回のブログは以上です。Exchange Online の運用にお役に立てば幸いです。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/" data-id="cm47xyy2d00120s9oewmjayob" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Exchange%20Online%20%E3%81%A7%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E3%81%AE%E8%87%AA%E5%8B%95%E8%BB%A2%E9%80%81%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E7%9F%A5%E3%81%A3%E3%81%A6%E3%81%8A%E3%81%8F%E3%81%B9%E3%81%8D%E3%81%93%E3%81%A8/" data-id="cm5onta780012yk9o6rne7gr4" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
 
     </footer>
   </div>
@@ -324,10 +324,13 @@
           <aside id="sidebar">
   
     
+
+  
+    
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Exchange/">Exchange</a></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/Outlook/">Outlook</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">31</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">10</span></li></ul>
     </div>
   </div>
 
@@ -335,19 +338,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Classic-Outlook/" rel="tag">Classic Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/EXO/" rel="tag">EXO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchagne/" rel="tag">Exchagne</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Migration/" rel="tag">Migration</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/10/">October 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -360,23 +353,23 @@
       <ul>
         
           <li>
+            <a href="/blog/Update%20on%20Client%20Access%20Rules%20Deprecation%20in%20Exchange%20Online/">Exchange Online のクライアント アクセス ルール廃止に関する最新情報</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-online-to-introduce-external-recipient-rate-limit/">Exchange Online への外部受信者数の制限の導入</a>
+          </li>
+        
+          <li>
+            <a href="/blog/updates-on-servicing-exchange-server-2019/">Exchange Server 2019 に関する更新</a>
+          </li>
+        
+          <li>
             <a href="/blog/Outlook-does-not-display-toast/">Outlook のデスクトップ通知が表示されない時の確認ポイント</a>
           </li>
         
           <li>
             <a href="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/">意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入</a>
-          </li>
-        
-          <li>
-            <a href="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/">Microsoft Outlook の新機能と今後の展望 – Ignite 2024</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Decommissioning-Exchange-Server-2016/">Exchange サーバー 2016 を廃止する</a>
-          </li>
-        
-          <li>
-            <a href="/blog/MC854648/">新しい Outlook for Windows への移行を促すポリシー制御</a>
           </li>
         
       </ul>
@@ -391,7 +384,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2024 jpmessaging<br>      
+      &copy; 2025 jpmessaging<br>      
     </div>
   </div>
 </footer>
