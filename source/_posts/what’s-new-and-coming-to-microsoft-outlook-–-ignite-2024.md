@@ -6,7 +6,6 @@ tags:
 - Outlook
 - New Outlook
 - Copilot
-categories: Outlook
 ---
 
 ※ この記事は、[What’s new and coming to Microsoft Outlook – Ignite 2024](https://techcommunity.microsoft.com/blog/outlook/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/4297199) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。

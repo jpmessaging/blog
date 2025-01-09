@@ -3,7 +3,6 @@ title: Exchange サーバー 2016 を廃止する
 date: 2024-11-19
 lastupdate: 
 tags: Exchange
-categories: Exchange
 ---
 
 ※ この記事は、[Decommissioning Exchange Server 2016](https://techcommunity.microsoft.com/t5/exchange-team-blog/decommissioning-exchange-server-2016/ba-p/4214475) をもとに日本のお客様向けに抄訳、再編集したものです。最新の情報は元の Blog を参照してください。
