@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Server 2016 および Exchange Server 2019 のサポート終了: 残り 12 か月'
 date: 2024-10-15
-lastupdate:
+lastupdate: 2025-01-17
 tags: Exchange
 --- 
 
@@ -18,7 +18,7 @@ tags: Exchange
 
 もちろん、お客様がインストールした Exchange Server 2016 および Exchange Server 2019 は 2025 年10 月 14 日以降も引き続き動作しますが、サポート終了日が近づいていることや将来のセキュリティ リスクの可能性があるため、今すぐ行動することを強くお勧めします。
 
-お客様には、[Exchange Online への移行](https://learn.microsoft.com/exchange/mailbox-migration/decide-on-a-migration-path)を行うか、2025 年の第 2 四半期初頭に利用可能になる [Exchange Server Subscription Edition (SE) へのアップグレード](https://jpmessaging.github.io/blog/Upgrading%20your%20organization%20from%20current%20versions%20to%20Exchange%20Server%20SE/)の準備をすることをお勧めします。
+お客様には、[Exchange Online への移行](https://learn.microsoft.com/exchange/mailbox-migration/decide-on-a-migration-path)を行うか、2025 年下半期の前半に利用可能になる [Exchange Server Subscription Edition (SE) へのアップグレード](https://jpmessaging.github.io/blog/Upgrading%20your%20organization%20from%20current%20versions%20to%20Exchange%20Server%20SE/)の準備をすることをお勧めします。
 
 ## Exchange Online や Microsoft 365 への移行
 
