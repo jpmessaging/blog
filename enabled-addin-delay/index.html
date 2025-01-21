@@ -25,14 +25,14 @@
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
 <meta property="og:description" content="Outlook のアドインが意図せず無効化される場合、主に以下の 2 つが原因として挙げられます。   a. アドインの動作に時間がかかったb. アドインがクラッシュした   この記事では、a の場合の対処方法について説明します。b についてはこちらの記事を参照してください。   概要Outlook には、アドインのパフォーマンスを監視し、起動や終了、その他動作で時間のかかるアドインを自動的に無効">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Alert_Dialog.png">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Addin_Dialog.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/enabled-addin-delay/Alert_Dialog.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/enabled-addin-delay/Addin_Dialog.png">
 <meta property="article:published_time" content="2021-04-20T15:00:00.000Z">
 <meta property="article:modified_time" content="2021-04-20T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="Outlook">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Alert_Dialog.png">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/enabled-addin-delay/Alert_Dialog.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
@@ -141,9 +141,9 @@
 <li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/previous-versions/office/jj228679(v=office.15)#%E3%82%A2%E3%83%89%E3%82%A4%E3%83%B3%E3%82%92%E6%9C%89%E5%8A%B9%E3%81%AB%E4%BF%9D%E3%81%A4%E3%81%9F%E3%82%81%E3%81%AE%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E5%9F%BA%E6%BA%96">アドインを有効に保つためのパフォーマンス基準</a></li>
 </ul>
 <h2 id="アドイン無効化機能の対象から除外する方法-1-手動設定"><a href="#アドイン無効化機能の対象から除外する方法-1-手動設定" class="headerlink" title="アドイン無効化機能の対象から除外する方法 (1) 手動設定"></a>アドイン無効化機能の対象から除外する方法 (1) 手動設定</h2><p>アドインが無効にされた場合には、通知バーに「アドインが自動的に無効化された」という通知が表示されます。  </p>
-<p><img src="/blog/Alert_Dialog.png">  </p>
+<p><img src="/blog/enabled-addin-delay/Alert_Dialog.png">  </p>
 <p>通知バーにある [無効になったアドインの表示] をクリックすると、[無効になったアドイン] ダイアログが表示されます。<br>このダイアログは、[ファイル] タブの [COM アドインの管理] からも確認することができます。(無効になったアドインがない場合には表示されません。)  </p>
-<p><img src="/blog/Addin_Dialog.png">  </p>
+<p><img src="/blog/enabled-addin-delay/Addin_Dialog.png">  </p>
 <p>このダイアログで、以下のいずれかを選択することで、一時的にアドイン無効化機能の対象から除外することができます。  </p>
 <p>・次の 7 日間このアドインの監視を行わない<br>・次の 30 日間このアドインの監視を行わない  </p>
 <h2 id="アドイン無効化機能の対象から除外する方法-2-レジストリ-グループ-ポリシー"><a href="#アドイン無効化機能の対象から除外する方法-2-レジストリ-グループ-ポリシー" class="headerlink" title="アドイン無効化機能の対象から除外する方法 (2) レジストリ&#x2F;グループ ポリシー"></a>アドイン無効化機能の対象から除外する方法 (2) レジストリ&#x2F;グループ ポリシー</h2><p>上記手動での設定は最大 30 日間と限定されますが、以下のレジストリを作成することで、特定のアドインを常に監視対象から除外とすることができます。  </p>
@@ -166,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/enabled-addin-delay/" data-id="cm605te5y003278nmherf5zc9" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/enabled-addin-delay/" data-id="cm66151v00031jcnm3ca6ggwq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>

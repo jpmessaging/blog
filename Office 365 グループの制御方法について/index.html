@@ -27,14 +27,14 @@
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
 <meta property="og:description" content="こんにちは。いつも Office 365 を利用いただきまして、ありがとうございます。今回は、Office 365 グループの制御方法について、ご紹介いたします。 &nbsp; Offce365 グループとはOffice 365 グループは、社内外のメンバーと予定を共有したり、SharePoint Online 上のドキュメントを共有したり、共同作業を行うのに大変便利な機能です。 Office 3">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/2017100301.jpg">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/2017100302.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Office%20365%20%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AE%E5%88%B6%E5%BE%A1%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/2017100301.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Office%20365%20%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AE%E5%88%B6%E5%BE%A1%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/2017100302.jpg">
 <meta property="article:published_time" content="2017-10-02T15:00:00.000Z">
 <meta property="article:modified_time" content="2017-10-02T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="O365Identity">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmessaging.github.io/blog/2017100301.jpg">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Office%20365%20%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AE%E5%88%B6%E5%BE%A1%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/2017100301.jpg">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
@@ -164,7 +164,7 @@
 <p><strong>b. Offce365 グループへのゲストユーザー追加を制御する</strong><br>Offce365 グループの所有者がゲストユーザー追加できないようにするには、[Office 365 管理センター] – [サービスとアドイン] – [Office 365 グループ] にて下記のオプションを「オフ」に設定します。</p>
 <a href="media/2017/10/2017100301.jpg">
 
-<p><img src="/blog/2017100301.jpg"><br></a></p>
+<p><img src="/blog/Office%20365%20%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AE%E5%88%B6%E5%BE%A1%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/2017100301.jpg"><br></a></p>
 <p>この設定を行いますと、(Get-AzureADDirectorySetting).values コマンド結果で AllowToAddGuests：False となります。</p>
 <p>コマンド実行例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(Get-AzureADDirectorySetting).Values</span><br><span class="line"></span><br><span class="line">Name Value</span><br><span class="line">---- -----</span><br><span class="line">CustomBlockedWordsList</span><br><span class="line">EnableMSStandardBlockedWords False</span><br><span class="line">ClassificationDescriptions</span><br><span class="line">DefaultClassification</span><br><span class="line">PrefixSuffixNamingRequirement</span><br><span class="line">AllowGuestsToBeGroupOwner False</span><br><span class="line">AllowGuestsToAccessGroups True</span><br><span class="line">GuestUsageGuidelinesUrl</span><br><span class="line">GroupCreationAllowedGroupId</span><br><span class="line">AllowToAddGuests False　&lt;&lt;&lt; ゲストユーザーの追加を禁止。</span><br><span class="line">UsageGuidelinesUrl</span><br><span class="line">ClassificationList</span><br><span class="line">EnableGroupCreation True</span><br></pre></td></tr></table></figure>
@@ -177,7 +177,7 @@
 <p><strong>c. ゲストユーザーによるリソースのアクセスを制御する</strong><br>ゲストユーザーが Office 365 グループのリソースにアクセスできないようにするには、[Office 365 管理センター] – [サービスとアドイン] – [Office 365 グループ] にて下記のオプションを「オフ」に設定します。</p>
 <a href="media/2017/10/2017100302.jpg">
 
-<p><img src="/blog/2017100302.jpg"><br></a></p>
+<p><img src="/blog/Office%20365%20%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AE%E5%88%B6%E5%BE%A1%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/2017100302.jpg"><br></a></p>
 <p>この設定を行いますと、(Get-AzureADDirectorySetting).values コマンド結果で AllowGuestsToAccessGroups：False となります。</p>
 <p>コマンド実行例：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">(Get-AzureADDirectorySetting).Values</span><br><span class="line"></span><br><span class="line">Name Value</span><br><span class="line">---- -----</span><br><span class="line">CustomBlockedWordsList</span><br><span class="line">EnableMSStandardBlockedWords False</span><br><span class="line">ClassificationDescriptions</span><br><span class="line">DefaultClassification</span><br><span class="line">PrefixSuffixNamingRequirement</span><br><span class="line">AllowGuestsToBeGroupOwner False</span><br><span class="line">AllowGuestsToAccessGroups False　&lt;&lt;&lt; ゲストユーザーからのアクセスを禁止。</span><br><span class="line">GuestUsageGuidelinesUrl</span><br><span class="line">GroupCreationAllowedGroupId</span><br><span class="line">AllowToAddGuests True</span><br><span class="line">UsageGuidelinesUrl</span><br><span class="line">ClassificationList</span><br><span class="line">EnableGroupCreation True</span><br></pre></td></tr></table></figure>
@@ -188,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Office%20365%20%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AE%E5%88%B6%E5%BE%A1%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cm605te5q002678nmf5s072ix" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Office%20365%20%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97%E3%81%AE%E5%88%B6%E5%BE%A1%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cm66151ut0029jcnmgr6z8ama" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>

@@ -27,15 +27,15 @@
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
 <meta property="og:description" content="(この記事は 2015 年 11 月 18 日に Office Blogs に投稿された記事 Exchange Active Directory Deployment Site の翻訳です。最新情報については、翻訳元の記事をご参照ください。) 新しい Exchange サーバーを導入するときは、考慮すべきことがいくつかあります。そのうちの 1 つが、現在サポートされている新しいバージョンの Exc">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/image1.png">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/image2.png">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/image3.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/image1.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/image2.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/image3.png">
 <meta property="article:published_time" content="2015-12-08T15:00:00.000Z">
 <meta property="article:modified_time" content="2015-12-08T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="Exchange">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmessaging.github.io/blog/image1.png">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/image1.png">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
@@ -149,15 +149,15 @@
 <p>いくつかの IP が利用できる小規模のサブネット (6 つの IP アドレスが利用できる &#x2F;29 のサブネットなど。例: 192.168.0.128&#x2F;29、アドレス範囲: 192.168.0.129 ～ 192.168.0.134) を使用して、6 台まで (&#x2F;29 の場合) の新しい Exchange サーバーをセットアップします。その後、サーバーの構成が完了したら、AD サイトとサービスから &#x2F;29 のサブネットを削除し、Exchange サーバーを再起動して、AutoDiscoverSiteScope の値を再設定すると、サーバーがクライアントに適切な値で応答するようになります。</p>
 <h2 id="サーバーが属している-AD-サイトの確認"><a href="#サーバーが属している-AD-サイトの確認" class="headerlink" title="サーバーが属している AD サイトの確認"></a>サーバーが属している AD サイトの確認</h2><p>Exchange をインストールする前に、サーバーが属している AD サイトを確認してください。ローカル Exchange サーバーの PowerShell で、次のコマンドを実行します。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nltest /dsgetsite</span><br></pre></td></tr></table></figure>
-<p><img src="/blog/image1.png"></p>
+<p><img src="/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/image1.png"></p>
 <p>Exchange をインストールした後、IP を変更するか、AD サイトのサブネットの定義を変更し、サーバーを再起動して、AutoDiscoverSiteScope の値を更新できます。サーバーが適切な AD サイトに属していることを再度確認すると共に、次のコマンドレットを実行して、その他の Exchange サーバーからもそのように認識されているかどうかを確認します。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ExchangeServer</span> | <span class="built_in">FT</span> Name,Site –Autosize</span><br></pre></td></tr></table></figure>
 
-<p><img src="/blog/image2.png"></p>
+<p><img src="/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/image2.png"></p>
 <p>サーバーの IP の変更または AD サイトの削除を行った後、最後の手順として、AutoDiscoverSiteScope を更新する必要があります。PowerShell で、次のコマンドレットを実行します。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ClientAccessService</span> &lt;サーバー名&gt; –AutoDiscoverSiteScope &lt;AD サイトの名前&gt;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/blog/image3.png"></p>
+<p><img src="/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/image3.png"></p>
 <p>その後、Get コマンドレットを再度実行して、実際の環境に適した値になっているか確認します。これにより、先ほどのコマンドレットで正しい AD サイトの情報を入力したかどうかが確認できます。</p>
 <h2 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h2><p>この手順を実行することで、追加の Exchange サーバーを運用環境に導入している間に、クライアントにわずらわしいポップアップを表示しないようにすることができます。それでもなお、お客様の企業で定める変更プロセスに従うと共に、通知が表示される可能性についてエンド ユーザーに知らせておくことをお勧めしますが、この手順によって Outlook での予想外の中断がなくなるはずです。</p>
 <p>Mike O’Neill</p>
@@ -165,7 +165,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/" data-id="cm605te54000578nm1lrzhfp2" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Active%20Directory%20%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%81%9F%20Exchange%20%E5%B0%8E%E5%85%A5/" data-id="cm66151u50001jcnm71ioayzp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>

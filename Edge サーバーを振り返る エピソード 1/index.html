@@ -27,16 +27,16 @@
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
 <meta property="og:description" content="こんにちは。Exchange サポートの竹本です。 今回は意外と知っているようで見落としがちな Edge サーバーについてのおさらいです。Exchange 2013 で HUB の役割がなくなり、2016 では CAS の役割もなくなりました。しかし！エッジ トランスポート サーバーは未だ顕在している、重要な役割です。 そもそも エッジ トランスポート サーバーとはこれは皆さまご存知かと思いますが">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Pic1.jpg">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Pic2.png">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Pic3.png">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/Pic4.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/Pic1.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/Pic2.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/Pic3.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/Pic4.png">
 <meta property="article:published_time" content="2015-11-23T15:00:00.000Z">
 <meta property="article:modified_time" content="2015-11-23T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="Exchange">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Pic1.jpg">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/Pic1.jpg">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
@@ -149,12 +149,12 @@
 <p>　Title : エッジ トランスポート サーバーの計画<br>　URL : <a target="_blank" rel="noopener" href="https://technet.microsoft.com/JA-JP/library/dn641596(v=exchg.150).aspx">https://technet.microsoft.com/JA-JP/library/dn641596(v=exchg.150).aspx</a></p>
 <p>では、いくつか細かな点を見ていきたいと思います。</p>
 <h2 id="エッジ-サブスクリプションの作成単位"><a href="#エッジ-サブスクリプションの作成単位" class="headerlink" title="エッジ サブスクリプションの作成単位"></a>エッジ サブスクリプションの作成単位</h2><p>エッジ サブスクリプションは、個々のエッジ トランスポート サーバーと、組織内の任意の AD サイトの間で作成されるものとなり、1 つの AD サイトに複数のエッジ トランスポート サーバーを購読させることは可能ですが、1 つのエッジ トランスポート サーバーが複数の Active Directory サイトを購読することはできません。<br>またエッジ トランスポート サーバー間での設定同期は行われないので、複数のエッジ トランスポート サーバーが展開されている環境では、各サーバーにおいて AD サイトを購読するための設定 (サブスクリプションの作成) が必要となります。<br>以下のようなイメージですね。</p>
-<p><img src="/blog/Pic1.jpg"></p>
+<p><img src="/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/Pic1.jpg"></p>
 <h2 id="ドメインに参加できるのか"><a href="#ドメインに参加できるのか" class="headerlink" title="ドメインに参加できるのか"></a>ドメインに参加できるのか</h2><p>エッジ トランスポート サーバーの役割は、基本的に DMZ に配置することを想定された役割となり、組織の Active Directory ドメインに参加する必要がありません。<br>技術的には、ドメインに参加させることは可能であり、それ自体がサポートされない構成といったことはありませんが、実績も多くそして推奨される構成はワークグループ構成です。</p>
 <h2 id="同期されたデータの格納場所"><a href="#同期されたデータの格納場所" class="headerlink" title="同期されたデータの格納場所"></a>同期されたデータの格納場所</h2><p>先ほど、組織の AD 上のデータはエッジ トランスポート サーバー上の AD LDS に格納されるといいましたが、結局は同じ Active Directory をベースとしていますので、ADSI エディターを使ってその中のデータを見ることができます。<br>具体的には、ADSI エディターを起動して接続時の情報として、以下のように50389 ポートに接続するように入力します。</p>
-<p><img src="/blog/Pic2.png"></p>
+<p><img src="/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/Pic2.png"></p>
 <p>接続後の画面を展開すると、組織内で見慣れた構成パーティションと同じように、Microsoft Exchange 配下の情報を確認することができます。<br>* もちろん、すべてのデータが同期されるわけではありませんので、確認できる情報にも限りがあります。</p>
-<p><img src="/blog/Pic3.png"></p>
+<p><img src="/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/Pic3.png"></p>
 <h2 id="エッジ-トランスポート-サーバーを用いたメール-ルーティング"><a href="#エッジ-トランスポート-サーバーを用いたメール-ルーティング" class="headerlink" title="エッジ トランスポート サーバーを用いたメール ルーティング"></a>エッジ トランスポート サーバーを用いたメール ルーティング</h2><p>エッジ サブスクリプションを作成した後、その組織にはエッジ トランスポート サーバーを SourceTransportServer とした送信コネクターが 2 つ、作成されます。<br>まず、それぞれの用途について簡単に説明します。<br>* それぞれのコネクターの詳細については、上述の TechNet でも紹介されていますので、是非！</p>
 <ol>
 <li><p>EdgeSync - &lt;サイト名&gt; to Internet<br>  その名の通り、Exchange 組織 (購読したサイト) からエッジ トランスポート サーバーを経由して、外部へ送信するための送信コネクターです。</p>
@@ -165,7 +165,7 @@
 <p>エッジ トランスポート サーバーが動作する上で必要となる送信コネクターは最低限上記 2 つとなりますが、皆さま、お気づきでしょうか。<br>Exchange 組織のメールボックス サーバー (Exchange Server 2010 の場合はハブトランスポート サーバー) から、エッジ トランスポート サーバーへのコネクターがありません。</p>
 <p>既に説明の通り、エッジ サブスクリプションを購読済みの環境では、エッジ トランスポート サーバーは Exchange 組織の 1 サーバーとして扱われます。そして、組織内のトランスポート サーバー同士の SMTP 通信に<span style="color: red">送信コネクターは必要ありません</span>。これは異なる AD サイト間におけるメールフローと同様で、暗黙的に用意された 組織内の<span style="color: red">SMTP 送信コネクター</span>が使用されるためです。</p>
 <p>少しわかりにくいですが、これも絵にしてみると、こんな感じです。(Exchange Server 2013 の場合です。)</p>
-<p><img src="/blog/Pic4.png"></p>
+<p><img src="/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/Pic4.png"></p>
 <p>つまり、エッジ サブスクリプションの設定が完了すれば、最低限既定で作成されるコネクターだけで外部との送受信が可能となります。</p>
 <p>と、気づいたら長文となってしまいました。<br>エッジ トランスポート サーバーにはまだまだ便利な機能がありますので、次の機会にご紹介したいと思います。</p>
 <p>今後とも、当ブログ並びにサポート チームをよろしくお願いいたします。</p>
@@ -174,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/" data-id="cm605te5a000j78nmev53680w" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Edge%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%82%92%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8B%20%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89%201/" data-id="cm66151uf000jjcnm5dt4aixo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
