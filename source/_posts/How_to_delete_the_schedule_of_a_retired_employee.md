@@ -1,6 +1,6 @@
 ---
 title: 退職者が開催者となっている予定のキャンセル方法の紹介
-date: 2025-1-31
+date: 2025-1-22
 lastupdate:
 tags: Exchange Online
 ---
