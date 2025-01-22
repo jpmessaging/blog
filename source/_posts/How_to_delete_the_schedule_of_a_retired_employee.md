@@ -53,6 +53,12 @@ Exchange Online の予定表上の会議アイテムは開催者のメールボ�
 Remove-CalendarEvents -Identity <定期的な会議を開催した退職ユーザーの UPN> -CancelOrganizedMeetings -QueryStartDate YYYY-MM-DD+09:00 -QueryWindowInDays 1825
 ```
 
+実行例 : user01 が開催する 2025/1/1 から 5 年間の会議を一括でキャンセルする場合
+
+``` PowerShell
+Remove-CalendarEvents -Identity user01@contoso.com -CancelOrganizedMeetings -QueryStartDate 2025-01-01+09:00 -QueryWindowInDays 1825
+```
+
 <div style="margin:1.25em;border-left:.25em solid #8957e5;padding:.5em;">
 <div style="margin-bottom:16px;display:flex;align-items:center;line-height:1;color:#8957e5">
 <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px">
@@ -68,9 +74,9 @@ Note
 </div>
 </div>
 
-3. 予定表から会議を削除する前に警告が表示されますので、[Yes] を選択して続行します。
+1. 予定表から会議を削除する前に警告が表示されますので、[Yes] を選択して続行します。
 
-4. 会議のキャンセル後、該当のユーザーを改めて削除します。
+2. 会議のキャンセル後、該当のユーザーを改めて削除します。
 
 &nbsp;
 
@@ -84,12 +90,30 @@ Note
 2. Exchange Online に PowerShell で接続し、Add-MailboxFolderPermission コマンドを利用し、復元した開催者メールボックスへの編集権限を別ユーザーに付与します。
 
 ``` PowerShell
-Add-MailboxFolderPermission -Identity "<退職者 (開催者) ユーザー>:\予定表" -User <削除を実施する別ユーザー> -AccessRights Editor
+Add-MailboxFolderPermission -Identity "<退職者 (開催者) ユーザー>:\<退職者 (開催者) ユーザーの予定表フォルダーの名前>" -User <削除を実施する別ユーザー> -AccessRights Editor
 ```
 
-3. 削除を実施する別ユーザーの Outlook / Outlook on the web の予定表より、[予定表を開く] にて退職者 (開催者) ユーザーの予定表を追加し、該当の会議アイテムをキャンセルします。
+実行例 : user01 の予定表フォルダーに対して admin01 のアカウントへ編集権限を与える場合
 
-4. 会議のキャンセル後、該当のユーザーを改めて削除します。
+``` PowerShell
+Add-MailboxFolderPermission -Identity "user01@contoso.com:\予定表" -User admin01@contoso.com -AccessRights Editor
+```
+
+<div style="margin:1.25em;border-left:.25em solid #8957e5;padding:.5em;">
+<div style="margin-bottom:16px;display:flex;align-items:center;line-height:1;color:#8957e5">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px">
+<path fill=#8957e5 d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg>
+Note
+</div>
+<div>
+予定表フォルダーの名前は、日本語であれば "予定表"、英語は "Calendar" 等、言語設定を既定のフォルダーに反映させる事でフォルダー名が異なる文字列になるのでご注意ください。
+</div>
+</div>
+
+1. 削除を実施する別ユーザーの Outlook / Outlook on the web の予定表より、[予定表を開く] にて退職者 (開催者) ユーザーの予定表を追加し、該当の会議アイテムをキャンセルします。
+
+2. 会議のキャンセル後、該当のユーザーを改めて削除します。
 
 &nbsp;
 
