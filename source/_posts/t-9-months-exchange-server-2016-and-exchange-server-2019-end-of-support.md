@@ -1,7 +1,7 @@
 ---
 title: '残り 9 か月 : Exchange Server 2016 および Exchange Server 2019 のサポート終了'
 date: 2025-01-16
-lastupdate: 2025-01-17
+lastupdate: 2025-01-24
 tags: Exchange
 --- 
 
@@ -26,7 +26,7 @@ tags: Exchange
 
 ## Exchange Server SE へのアップグレード準備
 
-今年の初めに、[Exchange Server ロードマップの更新](https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/)と、オンプレミスで Exchange Server を引き続き運用する場合の [Exchange Server SE へのアップグレード](https://jpmessaging.github.io/blog/Upgrading%20your%20organization%20from%20current%20versions%20to%20Exchange%20Server%20SE/)方法に関する詳細を提供しました。
+2024 年 5 月に [Exchange Server ロードマップ](https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/)の更新を発表し、オンプレミスで Exchange Server を引き続き運用する場合の [Exchange Server SE へのアップグレード](https://jpmessaging.github.io/blog/Upgrading%20your%20organization%20from%20current%20versions%20to%20Exchange%20Server%20SE/)方法に関する詳細を提供しました。
 
 Exchange Server 2019 を使用している場合は、Exchange Server を最新の状態に保ち、利用可能になったときに Exchange Server SE へのインプレース アップグレードを行うことをお勧めします。
 
