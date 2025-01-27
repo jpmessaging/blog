@@ -7,7 +7,7 @@ tags: 'Exchange'
 
 ※ この記事は、[Exchange Emergency Mitigation Service might not work for servers significantly out of date](https://techcommunity.microsoft.com/blog/exchange/exchange-emergency-mitigation-service-might-not-work-for-servers-significantly-o/4370312) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-2021 年 9 月に、[Exchange Emergency Mitigation サービス (EEMS)](https://learn.microsoft.com/exchange/plan-and-deploy/post-installation-tasks/security-best-practices/exchange-emergency-mitigation-service?view=exchserver-2019) を含む Exchange Server の更新プログラムをリリースしました。この EEMS サービスは、Exchange サーバー上で動作し、Office Configuration Service (OCS) に接続して現在の緩和状態を読み取ります。詳細は [2021 年 9 月のリリース](https://techcommunity.microsoft.com/blog/exchange/released-september-2021-quarterly-exchange-updates/2779883) をご覧ください。
+2021 年 9 月に、[Exchange Emergency Mitigation サービス (EEMS)](https://learn.microsoft.com/exchange/plan-and-deploy/post-installation-tasks/security-best-practices/exchange-emergency-mitigation-service?view=exchserver-2019) を含む Exchange Server の更新プログラムをリリースしました。この EEMS サービスは、Exchange Server 上で動作し、Office Configuration Service (OCS) に接続して現在の緩和状態を読み取ります。詳細は [2021 年 9 月のリリース](https://techcommunity.microsoft.com/blog/exchange/released-september-2021-quarterly-exchange-updates/2779883)をご覧ください。
 
 最近は新たな緩和策をリリースする必要はありませんでしたが、今後の変更についてお知らせしたいと思います。
 
