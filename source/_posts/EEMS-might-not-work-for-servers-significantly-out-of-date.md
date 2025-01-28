@@ -1,6 +1,6 @@
 ---
-title: 'Exchange 緊急緩和サービスは大幅に更新が遅れているサーバーでは機能しない可能性があります'
-date: 2025-1-27
+title: 'Exchange Emergency Mitigation サービスは大幅に更新が遅れているサーバーでは機能しない可能性があります'
+date: 2025-1-28
 lastupdate:
 tags: 'Exchange'
 ---
