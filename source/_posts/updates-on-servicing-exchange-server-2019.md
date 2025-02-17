@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Server 2019 に関する更新'
 date: 2024-12-10 9:00:00
-lastupdate: 2025-2-4 9:00:00
+lastupdate: 2025-2-17 9:00:00
 tags: 
 - Exchange
 ---
@@ -12,7 +12,7 @@ tags:
 
 前回の[ロードマップ更新](https://techcommunity.microsoft.com/blog/exchange/exchange-server-roadmap-update/4132742)では、Exchange Server 2019 の最終 CU（H2 2024 CU、別名 CU15）が今年後半にリリースされると述べました。
 
-本日、Exchange Server 2019 の最後の CU が H1 2025 CU（ただし、CU15 のまま）であり、2025 年 1 月上旬 (**2025/1/31 更新** : 詳細は[最新のブログ投稿](https://jpmessaging.github.io/blog/when-is-exchange-2019-cu15-coming-and-more-news/)をご覧ください) にリリースされることを発表します。[昨年](https://techcommunity.microsoft.com/blog/exchange/servicing-exchange-server-2019/3989195)と同様のアプローチを取り、[一昨年](https://techcommunity.microsoft.com/t5/exchange-team-blog/servicing-exchange-server/ba-p/3676996)も同様でした。
+本日、Exchange Server 2019 の最後の CU が H1 2025 CU（ただし、CU15 のまま）であり、2025 年 1 月上旬にリリースされることを発表します (**2025/2/10 更新** : CU15 は[リリースされました](https://jpmessaging.github.io/blog/released-2025-h1-cumulative-update-for-exchange-server/))。[昨年](https://techcommunity.microsoft.com/blog/exchange/servicing-exchange-server-2019/3989195)と同様のアプローチを取り、[一昨年](https://techcommunity.microsoft.com/t5/exchange-team-blog/servicing-exchange-server/ba-p/3676996)も同様でした。
 
 その間、すべての顧客に対して、[2024 年 11 月 SU の v2 バージョン](https://techcommunity.microsoft.com/blog/exchange/re-release-of-november-2024-exchange-server-security-update-packages/4341892)に更新し、[既知のタイムゾーン問題](https://support.microsoft.com/topic/time-zone-exception-occurs-after-installing-exchange-server-november-2024-su-version-1-or-version-2-851b3005-6d39-49a9-a6b5-5b4bb42a606f)の手動回避策を実行することをお勧めします。その後、最新リリースの[Exchange Server HealthChecker](https://aka.ms/HealthChecker)をダウンロードして実行し、問題がないことを確認してください。
 

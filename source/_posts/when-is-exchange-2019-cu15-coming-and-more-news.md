@@ -1,11 +1,13 @@
 ---
 title: 'Exchange 2019 CU15 のリリース時期と最新情報'
 date: 2025-02-03
-lastupdate:
+lastupdate: 2025-02-17
 tags: Exchange
 --- 
 
 ※ この記事は、[When is Exchange 2019 CU15 coming (and more news)](https://techcommunity.microsoft.com/blog/exchange/when-is-exchange-2019-cu15-coming-and-more-news/4372765) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
+2025/2/10 更新: Exchange Server 2019 CU15 をリリースしました。詳しくは[こちらの投稿](https://jpmessaging.github.io/blog/released-2025-h1-cumulative-update-for-exchange-server/)をご覧ください。
 
 昨年 12 月、Exchange Server 2019 CU15 のリリースを 2025 年 1 月に延期することを[発表](https://techcommunity.microsoft.com/blog/exchange/updates-on-servicing-exchange-server-2019/4355545)しました（併せて、CU は H1 2025 CU にリネームされました）。
 

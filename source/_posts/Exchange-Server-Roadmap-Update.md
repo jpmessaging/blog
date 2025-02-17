@@ -1,7 +1,7 @@
 ---
 title: Exchange Server ロードマップの更新
 date: 2024-07-25
-lastupdate:
+lastupdate: 2025-02-17
 tags: Exchange
 ---
 
@@ -12,7 +12,7 @@ tags: Exchange
 
 2024 年 5 月 7 日に公開された [Blog](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742) 記事では今後のオンプレミス Exchange Server を運用する上での重要な情報が公開されており、主に以下の点についてアナウンスがありました。  
 
-- Exchange Server 2019 に対して最後の CU となる CU15 をリリースします。公開時期は 2024 年後期を予定しています。  
+- Exchange Server 2019 に対して最後の CU となる CU15 をリリースします。公開時期は 2024 年後期を予定しています。(更新 : CU15 が[リリースされました](https://jpmessaging.github.io/blog/released-2025-h1-cumulative-update-for-exchange-server/))  
 - Exchange Server Subscription Edition (Exchange Server SE) の最初のリリース (RTM バージョン) を 2025 年 7 月 ～ 9 月頃に公開を予定しています。
 - Exchange Server SE の RTM に続く、最初の更新プログラムである CU1 を 2025 年の終わり頃に公開予定です。   
 
@@ -121,14 +121,14 @@ Exchange Server 2016 から Exchange Server SE へのタイムリーな移行を
 
 既存環境から Exchange Server 2019 CU15 や Exchange Server SE へアップグレードする際のアップデート パスは以下の通りです。
 
-| 既存の Exchange Server          | Exchange Server 2019 CU15                                                                                                                                 | Exchange Server SE RTM                                                                                                                                                                                                 |
+| 既存の Exchange Server          | Exchange Server 2019 CU15 ([リリースされました](https://jpmessaging.github.io/blog/released-2025-h1-cumulative-update-for-exchange-server/))                                                                                                                                | Exchange Server SE RTM                                                                                                                                                                                                 |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Exchange Server 2013 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで Exchange Server 2013 を撤去します。また、Exchange Server 2019 CU15 が公開されたら適用します。 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで Exchange Server 2013 を撤去します。また、Exchange Server 2019 CU15 が公開されたら適用します。その後 Exchange Server SE がリリースされたら、Exchange Server SE にインプレース アップグレードを行います。 |
-| Exchange Server 2016 CU23 | Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで、Exchange Server 2019 CU15 が公開されたら適用します。 | Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで、Exchange Server 2019 CU15 が公開されたら適用します。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
-| Exchange Server 2016 CU22 以前 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで Exchange Server 2016 を撤去し、Exchange Server 2019 CU15 が公開されたら適用します。<br> または、今すぐ Exchange Server 2016 CU23 を適用し、Exchange Server 2019 CU14 または Exchange Server 2019 CU15 へ従来のアップグレードを行います。 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで Exchange Server 2016 を撤去し、Exchange Server 2019 CU15 が公開されたら適用します。 <br> または、今すぐ Exchange Server 2016 CU23 を適用し、Exchange Server 2019 CU14 または Exchange Server 2019 CU15 へ従来のアップグレードを行います。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
-| Exchange Server 2019 CU14 以降 | Exchange Server 2019 の CU15 が公開されたら適用します。 | Exchange Server SE にインプレース アップグレードします。 |
-| Exchange Server 2019 CU13 | 今すぐ Exchange Server 2019 CU14 を適用します。<br>また、Exchange Server 2019 CU15 が公開されたら適用します。| 組織内に共存することはサポートされません。<br><br>今すぐ Exhcnage Server 2019 CU14 または CU15 を適用します。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
-| Exchange Server 2019 CU12 以前 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 を適用します。<br>また、Exchange Server 2019 CU15 が公開されたら適用します。 | 組織内に共存することはサポートされません。<br><br>今すぐ Exhcnage Server 2019 CU14 を適用、または Exchange Server 2019 CU15 が公開されたら適用します。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
+| Exchange Server 2013 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで Exchange Server 2013 を撤去します。また、Exchange Server 2019 CU15 を適用します。 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU14 へ従来のアップグレードを行ったうえで Exchange Server 2013 を撤去します。また、Exchange Server 2019 CU15 を適用します。その後 Exchange Server SE がリリースされたら、Exchange Server SE にインプレース アップグレードを行います。 |
+| Exchange Server 2016 CU23 | 今すぐ Exchange Server 2019 CU15 へ従来のアップグレードを行います。 | 今すぐ Exchange Server 2019 CU15 へ従来のアップグレードを行います。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
+| Exchange Server 2016 CU22 以前 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2019 CU15 へ従来のアップグレードを行います。<br> または、今すぐ Exchange Server 2016 CU23 を適用し、Exchange Server 2019 CU15 へ従来のアップグレードを行います。 | 組織内に共存することはサポートされません。<br><br>今すぐ Exchange Server 2016 CU23 を適用し、Exchange Server 2019 CU15 へ従来のアップグレードを行います。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
+| Exchange Server 2019 CU14 以降 | Exchange Server 2019 の CU15 を適用します。 | Exchange Server SE にインプレース アップグレードします。 |
+| Exchange Server 2019 CU13 | このバージョンは Exchange Server 2019 CU15 ではサポートされません。Exchange Server 2019 CU15 へアップデートしてください。 | このバージョンは Exchange Server SE がリリースされたらサポートされません。<br><br>今すぐ Exhcnage Server 2019 CU15 を適用します。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
+| Exchange Server 2019 CU12 以前 | このバージョンはサポートされません。<br><br>今すぐ Exchange Server 2019 CU15 を適用します。 |このバージョンはサポートされません。<br><br>今すぐ Exhcnage Server 2019 CU15 を適用します。<br>その後 Exchange Server SE がリリースされたら、インプレース アップグレードを行います。 |
 
 
 # Exchange Server SE CU1 について
