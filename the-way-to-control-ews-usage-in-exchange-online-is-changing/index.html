@@ -16,21 +16,19 @@
 
 
   
-  <title>Exchange サーバーのプロキシ設定について
- | Japan Exchange &amp; Outlook Support Blog</title>
+  <title>Exchange Online で EWS の利用を制限する方法が変わります | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概要Exchange サーバーもハイブリッド環境や外部組織と連携する際などにはウェブ プロキシを設定する必要があります。具体的に必要となる設定についてご案内します。 詳細設定箇所は以下となります。  Exchange サーバーの InternetWebProxy  これは Get-ExchangeServer の InternetWebPorxy となります。 1Set-ExchangeServe">
+  <meta name="description" content="※ この記事は、The way to control EWS usage in Exchange Online is changing の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange Web Services (EWS) のセキュリティと制御メ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Exchange サーバーのプロキシ設定について
-">
-<meta property="og:url" content="https://jpmessaging.github.io/blog/Exchange%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/index.html">
+<meta property="og:title" content="Exchange Online で EWS の利用を制限する方法が変わります">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/the-way-to-control-ews-usage-in-exchange-online-is-changing/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="概要Exchange サーバーもハイブリッド環境や外部組織と連携する際などにはウェブ プロキシを設定する必要があります。具体的に必要となる設定についてご案内します。 詳細設定箇所は以下となります。  Exchange サーバーの InternetWebProxy  これは Get-ExchangeServer の InternetWebPorxy となります。 1Set-ExchangeServe">
+<meta property="og:description" content="※ この記事は、The way to control EWS usage in Exchange Online is changing の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange Web Services (EWS) のセキュリティと制御メ">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-09-08T15:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-08T15:00:00.000Z">
+<meta property="article:published_time" content="2025-02-24T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-24T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
-<meta property="article:tag" content="Exchange">
+<meta property="article:tag" content="Exchange Online">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
@@ -101,10 +99,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Exchange サーバーのプロキシ設定について" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-the-way-to-control-ews-usage-in-exchange-online-is-changing" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/Exchange%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date">
-  <time datetime="2020-09-08T15:00:00.000Z" itemprop="datePublished">2020-09-09</time>
+    <a href="/blog/the-way-to-control-ews-usage-in-exchange-online-is-changing/" class="article-date">
+  <time datetime="2025-02-24T15:00:00.000Z" itemprop="datePublished">2025-02-25</time>
 </a>
     <!--  -->
   </div>
@@ -115,54 +113,113 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Exchange サーバーのプロキシ設定について
-
+      Exchange Online で EWS の利用を制限する方法が変わります
     </h1>
   
 
       </header>
       <div class="article-share">
         Last Update:
-        <a href="/blog/Exchange%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" class="article-date-single">    
+        <a href="/blog/the-way-to-control-ews-usage-in-exchange-online-is-changing/" class="article-date-single">    
     
-    <time datetime="2020-09-08T15:00:00.000Z" itemprop="dateUpdated">2020-09-09</time>
+    <time datetime="2025-02-24T15:00:00.000Z" itemprop="dateUpdated">2025-02-25</time>
     
 </a>
       </div>
     
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
-        <h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>Exchange サーバーもハイブリッド環境や外部組織と連携する際などにはウェブ プロキシを設定する必要があります。具体的に必要となる設定についてご案内します。</p>
-<h2 id="詳細"><a href="#詳細" class="headerlink" title="詳細"></a>詳細</h2><p>設定箇所は以下となります。</p>
-<ul>
-<li><p>Exchange サーバーの InternetWebProxy </p>
-<p>これは Get-ExchangeServer の InternetWebPorxy となります。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExchangeServer</span> &lt;対象サーバー&gt; <span class="literal">-InternetWebProxy</span> &lt;プロキシ URI&gt;</span><br></pre></td></tr></table></figure>
-
-<p>例:</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ExchangeServer</span> ExSvr1 <span class="literal">-InternetWebProxy</span> http://myproxy:<span class="number">8080</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>WinHttp の既定のプロキシ</p>
-<p>Exchange サーバーの制御下にない、OS 側コンポーネントの動作としてインターネット接続が必要になる場合もあります。例えば、公的証明機関から発行された証明書の失効リストを確認するような場合です。この時には、WinHttp の既定のプロキシ設定が利用されるため適切に設定しておく必要があります。</p>
-<p>以下のように設定を確認できます。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh winhttp show proxy</span><br></pre></td></tr></table></figure>
-
-<p>設定を変更する場合には管理者権限で起動した cmd で以下のように実行します。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh winhttp set proxy proxy-server=&quot;&lt;プロキシ URI&gt;&quot; bypass-list=&quot;&lt;プロキシ除外リスト&gt;&quot;</span><br></pre></td></tr></table></figure>
-
-<p>例:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netsh winhttp set proxy proxy-server=&quot;http://myproxy:8080&quot; bypass-list=&quot;*.example.com;&lt;local&gt;&quot;</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>注1. プロキシ サーバー側では Exchange サーバーからの接続リクエストに対して認証要求をしないよう設定する必要があります。</p>
-<p>注2. InternetWebProxy については <code>http://&lt;プロキシ&gt;</code> の形式で指定する必要があります。netsh のほうはホスト名のみの指定でも問題はありませんが、異なっていると混乱しやすいため上記例では統一しています。</p>
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/the-way-to-control-ews-usage-in-exchange-online-is-changing/4383083">The way to control EWS usage in Exchange Online is changing</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>Exchange Web Services (EWS) のセキュリティと制御メカニズムを強化するため、Exchange Online のテナント全体の EWSEnabled スイッチの動作に重要な変更を発表します。この変更により、組織内での EWS アクセス管理のためのより堅牢なフレームワークが提供され、柔軟性とセキュリティの両方が確保されます。この変更は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/retirement-of-exchange-web-services-in-exchange-online/3924440">2026 年 10 月から EWS を無効にする計画</a>の一環として必要なものです。</p>
+<h2 id="現在の動作"><a href="#現在の動作" class="headerlink" title="現在の動作"></a>現在の動作</h2><p>EWSEnabled フラグは、テナント (組織) レベルとユーザー (メールボックス) レベルの両方で設定できます。現在、このフラグがユーザー レベルで true に設定されている場合、<strong>組織レベルの設定よりも優先されます</strong>。設定が Null の場合、そのレベルでは設定が適用されていないことを意味します。組織レベルとユーザーレベルの両方が Null の場合、デフォルトの動作は許可されることです。この階層構造により、組織レベルのフラグが false に設定されていても、ユーザー レベルのフラグが true に設定されている場合、そのユーザーからの EWS リクエストは依然として許可されます。以下の表の様になります。</p>
+<table>
+<thead>
+<tr>
+<th><strong>組織レベル</strong></th>
+<th><strong>ユーザー レベル</strong></th>
+<th><strong>EWS 要求</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>True または &lt;null&gt;</td>
+<td>True または &lt;null&gt;</td>
+<td>許可</td>
+</tr>
+<tr>
+<td>True または &lt;null&gt;</td>
+<td>False</td>
+<td>禁止</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True</td>
+<td><mark><strong>許可</strong></mark></td>
+</tr>
+<tr>
+<td>False</td>
+<td>False または &lt;null&gt;</td>
+<td>禁止</td>
+</tr>
+</tbody></table>
+<p>このアプローチは一貫性の欠如やセキュリティ上の懸念を引き起こしてきました。特に大規模で複雑な環境では、管理者が組織全体で統一されたポリシーを確実に適用することが困難となっていました。</p>
+<h2 id="新しい動作"><a href="#新しい動作" class="headerlink" title="新しい動作"></a>新しい動作</h2><p>これらの問題に対処するために、組織レベルとユーザー レベルの両方の EWSEnabled フラグが true である場合にのみ EWS が許可されるように動作を変更します。以下の表のようになります。</p>
+<table>
+<thead>
+<tr>
+<th><strong>組織レベル</strong></th>
+<th><strong>ユーザー レベル</strong></th>
+<th><strong>EWS 要求</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>True または &lt;null&gt;</td>
+<td>True または &lt;null&gt;</td>
+<td>許可</td>
+</tr>
+<tr>
+<td>True または &lt;null&gt;</td>
+<td>False</td>
+<td>禁止</td>
+</tr>
+<tr>
+<td>False</td>
+<td>True または &lt;null&gt;</td>
+<td><mark><strong>禁止</strong></mark></td>
+</tr>
+<tr>
+<td>False</td>
+<td>False</td>
+<td>禁止</td>
+</tr>
+</tbody></table>
+<p>要約すると、EWS は<em>組織レベルとユーザー レベルの両方で許可されている場合にのみ許可されます</em>。この変更により、管理者は EWS アクセスをより適切に制御し、組織全体でポリシーを一貫して適用できるようになります。</p>
+<p>この変更は、2025 年 4 月からワールドワイドに展開される予定です。</p>
+<h3 id="テナント-レベルの設定"><a href="#テナント-レベルの設定" class="headerlink" title="テナント レベルの設定"></a>テナント レベルの設定</h3><p>まず最初に確認するのはテナント設定です。これを行うには、Exchange Online PowerShell で次のコマンドを実行します。</p>
+<pre><code>Get-OrganizationConfig | fl EWSEnabled
+EwsEnabled :
+</code></pre>
+<p>EWSEnabled フラグが<strong>空</strong> (デフォルト) または <strong>True</strong> に設定されている場合、この変更は影響しませんが、下記のユーザー レベルの設定情報を確認し、期待する設定と一致していることを確認することをお勧めします。</p>
+<p>EWSEnabled フラグが <strong>False</strong> に設定されている場合、新しいロジック変更がテナントに適用されると影響を受ける可能性があります。今すぐ対策を講じることをお勧めします。以下のセクションを確認し、ユーザーごとの設定が EWS を使用できるユーザーと使用できないユーザーの希望する状態を反映していることを確認し、その後、テナント全体のスイッチを True に変更して、ユーザーやアプリケーションのアクセスが中断されないようにしてください。</p>
+<h3 id="ユーザー-レベルの設定"><a href="#ユーザー-レベルの設定" class="headerlink" title="ユーザー レベルの設定"></a>ユーザー レベルの設定</h3><p>前述のとおり、テナント全体の EWSEnabled スイッチが False に設定されている場合でも、ユーザーごとの設定が True に設定されている場合 (各メールボックスのデフォルト設定)、EWS を使用することが現在は可能です。</p>
+<p>特定のメールボックスに対して EWS が有効か無効かを確認するには、次のコマンドを実行します：</p>
+<pre><code>Get-CASMailbox User1| fl EWSEnabled
+EwsEnabled : True
+</code></pre>
+<h2 id="この変更はあなたに影響しますか？"><a href="#この変更はあなたに影響しますか？" class="headerlink" title="この変更はあなたに影響しますか？"></a>この変更はあなたに影響しますか？</h2><p>この変更は、以前の動作に依存していたテナントに影響を与える可能性があることを認識しています。具体的には、組織レベルのフラグが False に設定されているが、ユーザー レベルのフラグが True に設定されている場合、この変更が展開されると EWS リクエストがブロックされ始めます。したがって、サービスの継続性を確保するために、設定を見直すことをお勧めします。</p>
+<p>今後、特定のメールボックスに対して EWS を制限したい場合 (一般的にこれは良いアイデアだと思います)、特定のメールボックスのみが True に設定されていることを確認し、他のすべてのメールボックスが False に設定されていることを確認する必要があります。メールボックスの設定を確認した後、組織全体の設定を True にしてください。</p>
+<h2 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h2><p>このテナント全体の EWSEnabled の動作変更は、Exchange Web Services を利用する上での管理制御の向上とセキュリティの強化に対する私たちの取り組みを示しています。この変更により、ポリシーの一貫した適用が促進され、すべてのユーザーにとってより安全な環境が実現されると信じています。</p>
+<p>管理者の皆様には、現在の設定を確認し、この更新に備えることをお勧めします。</p>
+<p>この情報はすべてのテナントにメッセージ センターを通じて送信しましたが、テナント全体のスイッチが False に設定されているにもかかわらず、EWS の使用が成功しているテナントには追加の通知も送信しました (追加の通知を受けたテナントでは、何らかの形でこのスイッチを使用している可能性があります)。</p>
+<p>ご質問がある場合は、元のブログのコメントに投稿してください。できる限りお手伝いさせていただきます。</p>
+<p>サービスのセキュリティと機能向上にご協力いただき、誠にありがとうございます。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Exchange%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%83%97%E3%83%AD%E3%82%AD%E3%82%B7%E8%A8%AD%E5%AE%9A%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/" data-id="cm7k84ucy001bgwnm3d6i9qej" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/the-way-to-control-ews-usage-in-exchange-online-is-changing/" data-id="cm7k84udj003lgwnm878d9xn9" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
 
     </footer>
   </div>
@@ -170,20 +227,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/about/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          このブログについて
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/Modern%20HCW%20(Hybrid%20Agent)%20%E3%81%AE%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E6%96%B9%E6%B3%95%E3%81%AE%E3%81%94%E7%B4%B9%E4%BB%8B/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/released-2025-h1-cumulative-update-for-exchange-server/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Modern HCW (Hybrid Agent) のトラブルシューティング方法のご紹介
-</div>
+      <div class="article-nav-title">リリース: Exchange Server 2019 向け 2025 H1 累積更新プログラム</div>
     </a>
   
 </nav>
