@@ -1,6 +1,6 @@
 ---
 title: 新しい Outlook for Windows のインストール方法まとめ
-date: 2025-02-19
+date: 2025-02-25
 lastupdate:
 tags: New Outlook
 ---
