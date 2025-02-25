@@ -1,6 +1,6 @@
 ---
 title: 'Exchange Online テナントの外部送信メール制限の導入'
-date: 2025-02-25
+date: 2025-02-26
 lastupdate: 
 tags: Exchange Online
 ---
