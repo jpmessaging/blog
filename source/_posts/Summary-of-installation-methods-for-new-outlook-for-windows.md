@@ -164,7 +164,7 @@ Add-AppxProvisionedPackage -PackagePath '.\Microsoft.OutlookForWindows_x64.msix'
 Add-AppxPackage -Path '.\Microsoft.OutlookForWindows_x64.msix'
 ```
 
-オフライン インストーラーを使用したインストールについては[こちら](ttps://learn.microsoft.com/microsoft-365-apps/outlook/get-started/deployment-new-outlook#download-and-install-new-outlook-using-an-offline-installer)の公開情報も参照ください。
+オフライン インストーラーを使用したインストールについては[こちら](https://learn.microsoft.com/microsoft-365-apps/outlook/get-started/deployment-new-outlook#download-and-install-new-outlook-using-an-offline-installer)の公開情報も参照ください。
 
 #### h. Windows パッケージ マネージャー (winget) を使用したインストール
 管理者権限を持たないユーザーによるインストール方法として、上記 Setup.exe のほかに Windows パッケージ マネージャー (winget) を使用した方法があります。
