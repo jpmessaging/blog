@@ -1,6 +1,6 @@
 ---
 title: 新しい Outlook for Windows のインストール方法まとめ
-date: 2025-02-25
+date: 2025-02-27
 lastupdate:
 tags: New Outlook
 ---
@@ -15,21 +15,21 @@ tags: New Outlook
 
 ### 1) 自動的なインストール
 
-a. Windows 11 23H2 以降の新規インストールまたはアップグレード\
-b. Windows 10 の更新プログラムによるインストール\
-c. Microsoft 365 Apps に含まれる新しい Outlook のインストール
+[a. Windows 11 23H2 以降の新規インストールまたはアップグレード](#a-Windows-11-23H2-以降の新規インストールまたはアップグレード)\
+[b. Windows 10 の更新プログラムによるインストール](#b-Windows-10-の更新プログラムによるインストール)\
+[c. Microsoft 365 Apps に含まれる新しい Outlook のインストール](#c-Microsoft-365-Apps-に含まれる新しい-Outlook-のインストール)
     
 ### 2) ユーザー操作による一般的なインストール
 
-d. Microsoft 365 Apps 版の Outlook の右上に表示される [新しい Outlook を試す] のトグルをオンにする\
-e. ユーザーが Microsoft Store からインストールする
+[d. Microsoft 365 Apps 版の Outlook の右上に表示される [新しい Outlook を試す] のトグルをオンにする](#d-Microsoft-365-Apps-版の-Outlook-の右上に表示される-新しい-Outlook-を試す-のトグルをオンにする)\
+[e. ユーザーが Microsoft Store からインストールする](#e-ユーザーが-Microsoft-Store-からインストールする)
     
 ### 3) その他の展開オプション
 
-f. Setup.exe を使用したインストール\
-g. オフライン インストーラーを使用したインストール\
-h. Windows パッケージ マネージャー (winget) を使用したインストール\
-i. Microsoft Intune を使用したインストール
+[f. Setup.exe を使用したインストール](#f-Setup-exe-を使用したインストール)\
+[g. オフライン インストーラーを使用したインストール](#g-オフライン-インストーラーを使用したインストール)\
+[h. Windows パッケージ マネージャー (winget) を使用したインストール](#h-Windows-パッケージ-マネージャー-winget-を使用したインストール)\
+[i. Microsoft Intune を使用したインストール](#i-Microsoft-Intune-を使用したインストール)
 
 ---
 
@@ -37,7 +37,7 @@ i. Microsoft Intune を使用したインストール
 
 #### a. Windows 11 23H2 以降の新規インストールまたはアップグレード
     
-新しい Outlook は Windows 11 23H2 以降のバージョンを実行している Windows 端末に[プレインストール](https://support.microsoft.com/office/%E6%96%B0%E3%81%97%E3%81%84-outlook-for-windows-%E3%81%AE%E4%BD%BF%E7%94%A8%E3%82%92%E9%96%8B%E5%A7%8B%E3%81%99%E3%82%8B-4395454d-cb2f-4c16-bb24-fa4bb36650ae#bkmk_option3_updatewin)されます。\
+新しい Outlook は Windows 11 23H2 以降のバージョンを実行している Windows 端末に[プレインストール](https://support.microsoft.com/office/4395454d-cb2f-4c16-bb24-fa4bb36650ae#bkmk_option3_updatewin)されます。\
 現時点では Windows 11 23H2 以降のバージョンで新しい Outlook のインストールを防ぐことはできません。\
 しかしながら、インストールされた新しい Outlook を削除することは可能です。\
 新しい Outlook を表示したくない場合には[こちら](https://learn.microsoft.com/microsoft-365-apps/outlook/get-started/control-install#block-new-outlook-preinstall-on-windows)を参照ください。
@@ -206,10 +206,9 @@ Tips
 </div>
 <div>
 新しい Outlook の展開に関するトラブルシューティングについては下記の公開情報に記載されておりますので参照ください。
-</div>
-</div>
 
 [新しい Outlook での展開に関する問題のトラブルシューティング](https://learn.microsoft.com/microsoft-365-apps/outlook/troubleshoot/troubleshoot-deployment-new-outlook?tabs=windows11)
-
+</div>
+</div>
 
 **本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。**
