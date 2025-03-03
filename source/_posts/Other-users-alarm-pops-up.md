@@ -1,6 +1,6 @@
 ---
 title: 他人の予定のアラームが表示された際の確認ポイント
-date: 2025-02-27
+date: 2025-03-03
 lastupdate:
 tags: Outlook
 ---
