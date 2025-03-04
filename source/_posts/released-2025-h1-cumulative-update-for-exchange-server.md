@@ -111,7 +111,7 @@ Exchange Server SE RTM が利用可能になった際には、インプレース
 
 このリリースの修正内容と製品のダウンロードについては、以下の KB 記事をご覧ください：
 
-- Exchange Server 2019 Cumulative Update 15 (KB5042461), [VLSC](https://www.microsoft.com/Licensing/servicecenter/default.aspx), [Download](https://www.microsoft.com/download/details.aspx?familyID=8c3c7713-b480-4a5a-872f-e6c2987dd490)
+- Exchange Server 2019 Cumulative Update 15 (KB5042461), [VLSC](https://www.microsoft.com/Licensing/servicecenter/default.aspx), [Download](https://www.microsoft.com/download/details.aspx?id=106402)
 
 <mark>Exchange Server 2019 CU15 のインストールを開始する前に、Exchange Server を再起動して、すべての Windows Server 更新プログラムが完全にインストールされていることを確認してください。</mark>
 
