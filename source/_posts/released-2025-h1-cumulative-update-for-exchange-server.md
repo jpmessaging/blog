@@ -63,7 +63,7 @@ CU15 には、[2024 年 11 月の SU](https://techcommunity.microsoft.com/blog/e
 
 ### リマインダー: 拡張保護が既定で有効化されています
 
-お客様が古い CU からアップグレードする際のリマインダーとして、Exchange 2019 CU14 以降、CU をインストールした後に拡張保護が既定で有効になります。詳細および拡張保護をオプト アウトする方法については、[このブログ記事](https://techcommunity.microsoft.com/blog/exchange/released-2024-h1-cumulative-update-for-exchange-server/4047506)をご覧ください。
+お客様が古い CU からアップグレードする際のリマインダーとして、Exchange 2019 CU14 以降、CU をインストールした後に拡張保護が既定で有効になります。SSL オフロードを使用する場合など、拡張保護がサポートされないシナリオもあります。詳細および拡張保護をオプト アウトする方法については、[このブログ記事](https://techcommunity.microsoft.com/blog/exchange/released-2024-h1-cumulative-update-for-exchange-server/4047506)をご覧ください。拡張保護の設定が正しくないと、Outlook の接続に問題が発生する可能性があります。
 
 ### Exchange Server SE CU1 に延期された機能
 
@@ -116,6 +116,32 @@ Exchange Server SE RTM が利用可能になった際には、インプレース
 <mark>Exchange Server 2019 CU15 のインストールを開始する前に、Exchange Server を再起動して、すべての Windows Server 更新プログラムが完全にインストールされていることを確認してください。</mark>
 
 CU をインストールした後は、常に利用可能な [SU](https://learn.microsoft.com/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019) を確認してインストールしてください。[Exchange Server Health Checker](https://aka.ms/ExchangeHealthChecker) も、追加の手順が必要かどうかを教えてくれます。
+
+### このリリースの既知の問題
+
+一部のお客様は、[ハイブリッド モダン認証 (HMA)](https://learn.microsoft.com/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide) を有効にしている場合、CU15 のインストール後に OWA/ECP のログインが **HTTP 401** エラーで機能しない状況が発生することがあります。
+
+影響を受ける場合は、次の回避策を使用できます。
+
+次のコマンドを使用して、OAuth を無効にします。
+
+``` PowerShell
+Get-EcpVirtualDirectory -Server server1 | Set-EcpVirtualDirectory -OAuthAuthentication $false
+Get-OwaVirtualDirectory -Server server1 | Set-OwaVirtualDirectory -OAuthAuthentication $false
+Restart-WebAppPool MSExchangeOWAAppPool
+Restart-WebAppPool MSExchangeECPAppPool
+```
+
+次に、以下のコマンドを使用して OAuth を再度有効化します。
+
+``` PowerShell
+Get-EcpVirtualDirectory -Server server1 | Set-EcpVirtualDirectory -OAuthAuthentication $true
+Get-OwaVirtualDirectory -Server server1 | Set-OwaVirtualDirectory -OAuthAuthentication $true
+Restart-WebAppPool MSExchangeOWAAppPool
+Restart-WebAppPool MSExchangeECPAppPool
+```
+
+*HMA を使用しているすべてのお客様がこの問題に直面するわけではありません*のでご注意ください。
 
 ## 追加情報
 
