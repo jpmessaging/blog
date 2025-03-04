@@ -1,7 +1,7 @@
 ---
 title: 'リリース: Exchange Server 2019 向け 2025 H1 累積更新プログラム'
 date: 2025-02-13
-lastupdate: 
+lastupdate: 2025-03-04
 tags: Exchange
 --- 
 
@@ -119,9 +119,9 @@ CU をインストールした後は、常に利用可能な [SU](https://learn.
 
 ### このリリースの既知の問題
 
-一部のお客様は、[ハイブリッド モダン認証 (HMA)](https://learn.microsoft.com/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide) を有効にしている場合、CU15 のインストール後に OWA/ECP のログインが **HTTP 401** エラーで機能しない状況が発生することがあります。
+一部のお客様は、[ハイブリッド モダン認証 (HMA)](https://learn.microsoft.com/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide) を有効にしている場合、CU15 のインストール後に OWA/ECP のログインが **HTTP 401** エラーで正常に動作しない場合があります。
 
-影響を受ける場合は、次の回避策を使用できます。
+この既知の問題の回避策は以下の通りです。
 
 次のコマンドを使用して、OAuth を無効にします。
 
@@ -141,7 +141,7 @@ Restart-WebAppPool MSExchangeOWAAppPool
 Restart-WebAppPool MSExchangeECPAppPool
 ```
 
-*HMA を使用しているすべてのお客様がこの問題に直面するわけではありません*のでご注意ください。
+※ *HMA を使用しているすべてのお客様がこの問題に直面するわけではありません*のでご注意ください。
 
 ## 追加情報
 
