@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Online テナントの外部送信メール制限の導入'
 date: 2025-02-26
-lastupdate: 2025-03-04
+lastupdate: 2025-03-05
 tags: Exchange Online
 ---
 ※ この記事は、[Introducing Exchange Online Tenant Outbound Email Limits](https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-tenant-outbound-email-limits/4372797) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
@@ -21,7 +21,7 @@ tags: Exchange Online
 | 1 | 25 メール ライセンス以下のテナント | 2025/4/3 |
 | 2 | 200 メール ライセンス以下のテナント | 2025/4/10 |
 | 3 | 500 メール ライセンス以下のテナント | 2025/4/17 |
-| 4 | すべてのテナント | 2025/4/31 |
+| 4 | すべてのテナント | 2025/4/30 |
 
 サービスのテレメトリ情報に基づくと、ほとんどの Exchange Online ユーザーには影響がありません。新しいレポート (**テナント外部受信者レポート**) が 2 月下旬までに Exchange 管理センター (EAC) に提供され、テナントの制限が表示されます。組織が制限を超えて外部受信者にメールを送信する必要がある場合は、外部受信者へのバルク メールまたは高ボリュームのメール送信のために [Azure Communication Services email](https://learn.microsoft.com/azure/communication-services/concepts/email/email-overview) の使用をお勧めします。
 
