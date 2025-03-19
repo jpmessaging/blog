@@ -8,7 +8,7 @@ tags: 'Exchange Online'
 ※ この記事は、[Exchange Online to introduce External Recipient Rate Limit](https://techcommunity.microsoft.com/blog/exchange/exchange-online-to-introduce-external-recipient-rate-limit/4114733) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 <div style="margin:1.25em; border-left:4px solid rgb(160, 160, 160); padding:.5em">
-<strong>2024 年 12 月 16 日 更新:</strong> 皆様からのフィードバックを慎重に検討し、対応のための追加時間が必要であることを考慮した結果、Microsoft は Exchange Online のメールボックスの外部受信者数の制限の導入を約 6 ヶ月遅らせることを決定しました。新しい日程については以下をご確認ください。
+<strong>2024 年 12 月 16 日 更新:</strong> 皆様からのフィードバックを慎重に検討し、対応のための追加時間が必要であることを考慮した結果、Microsoft は Exchange Online のメールボックスの外部受信者数の制限 (MERRL) の導入を約 6 ヶ月遅らせることを決定しました。新しい日程については以下をご確認ください。
 </div>
 
 Exchange Online は **24 時間で 2,000 人の外部受信者**というレート制限を 2025 年 10 月より適用し始めます。

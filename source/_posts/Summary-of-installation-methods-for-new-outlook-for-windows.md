@@ -1,7 +1,7 @@
 ---
 title: 新しい Outlook for Windows のインストール方法まとめ
 date: 2025-02-27
-lastupdate:
+lastupdate: 2025-03-11
 tags: New Outlook
 ---
 
@@ -22,8 +22,9 @@ tags: New Outlook
 ### 2) ユーザー操作による一般的なインストール
 
 [d. Microsoft 365 Apps 版の Outlook の右上に表示される [新しい Outlook を試す] のトグルをオンにする](#d-Microsoft-365-Apps-版の-Outlook-の右上に表示される-新しい-Outlook-を試す-のトグルをオンにする)\
-[e. ユーザーが Microsoft Store からインストールする](#e-ユーザーが-Microsoft-Store-からインストールする)
-    
+[e. ユーザーが Microsoft Store からインストールする](#e-ユーザーが-Microsoft-Store-からインストールする)\
+[参考: メール/カレンダー アプリの右上に表示される [新しい Outlook を試す] のトグルをオンにする](#参考-メール-カレンダー-アプリの右上に表示される-新しい-Outlook-を試す-のトグルをオンにする)
+
 ### 3) その他の展開オプション
 
 [f. Setup.exe を使用したインストール](#f-Setup-exe-を使用したインストール)\
@@ -80,6 +81,23 @@ Microsoft 365 Apps バージョン 2502 以降、クライアント アプリの
 新しい Outlook は Microsoft Store アプリとしても提供されているため、[Microsoft Store](ms-windows-store://pdp/?ProductId=9NRX63209R7B) よりインストールいただけます。
 
 ![](image3.jpg)
+
+#### 参考: メール/カレンダー アプリの右上に表示される [新しい Outlook を試す] のトグルをオンにする
+
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px"><path fill="#ff7518" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>
+注意
+</div>
+メール/カレンダー アプリは既に 2024 年 12 月 31 日にサポートが終了しています。
+</div>
+
+Windows 10/11 に既定でインストールされているメール/カレンダー アプリを使用しており、アカウントが新しい Outlook でサポートされている場合には、メール/カレンダー アプリの右上に  [新しい Outlook を試す] トグルが表示されておりました。
+
+![](image5.jpg)
+
+また、メール/カレンダー アプリをご利用いただいていたお客様はサポート終了に伴い、新しい Outlook に自動的に置き換えられております。  
+メール/カレンダー アプリのサポート終了については[こちら](https://support.microsoft.com/office/715fc27c-e0f4-4652-9174-47faa751b199)を参照してください。
 
 ---
 
