@@ -6,7 +6,7 @@
   <link href="https://jpmessaging.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2025-03-23T15:00:00.000Z</updated>
+  <updated>2025-03-24T15:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>&quot;あなたのプライバシーは重要です&quot; の通知について</title>
+    <link href="https://jpmessaging.github.io/blog/optional-connected-experiences-notice/"/>
+    <id>https://jpmessaging.github.io/blog/optional-connected-experiences-notice/</id>
+    <published>2025-03-24T15:00:00.000Z</published>
+    <updated>2025-03-24T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームです。</p><p>本記事では、Outlook on the web や新しい Outlook for Windows (以下、新しい Outlook) で表示される <strong>“あなたのプライバシーは重要です”</strong> の通知について説明します。</p><p>2025 年 3 月以降、Outlook on the web や新しい Outlook で以下のような通知が表示される場合があります。この通知は、Outlook on the web や新しい Outlook でも<a href="https://learn.microsoft.com/microsoft-365-apps/privacy/office-web-privacy-controls#overview-of-optional-connected-experiences">オプションの接続エクスペリエンス</a>が利用できるようになったことをお知らせするためのものです。既に従来の Outlook for Windows や他の Microsoft 365 apps ではオプションの接続エクスペリエンスを利用できていましたが、MC1022526 で通知されたように、Outlook on the web でも 2025 年 3 月より徐々に利用できるようになっています。</p><p><img src="/blog/optional-connected-experiences-notice/OptionalConnectedExperiencesNotice.png"></p><p>オプションの接続エクスペリエンスは、ユーザーが Office を使用しているときに利用できるクラウド サービスを活用した機能です。この通知により、ユーザーはこれらのオプションの接続エクスペリエンスを使用する選択肢を与えられたことを知ることができます。また、オプションの接続エクスペリエンスが <a href="https://www.microsoft.com/servicesagreement">Microsoft サービス規約</a>に基づいて提供されることもユーザーに知らせます。この通知はユーザーにとって重要な情報であるため、ユーザーに代わってオフ、非表示、または承認することはできません。</p><p>この通知は [続行] をクリックすることで閉じることができ、基本的にその後は表示されません。通知を閉じた後でも、ユーザーは Outlook on the web や新しい Outlook の [設定] &gt; [全般] &gt; [プライバシーとデータ] &gt; [プライバシー設定] から、オプションの接続エクスペリエンスをオン&#x2F;オフすることができます。</p><p><img src="/blog/optional-connected-experiences-notice/PrivacySettings.png"></p><p>なお、管理者は<a href="https://learn.microsoft.com/microsoft-365-apps/admin-center/overview-cloud-policy">クラウド ポリシー</a>の [Allow the use of additional optional connected experiences in Office] のポリシー設定より、オプションの接続エクスペリエンスをユーザーが利用できるかどうかを制御することができます。このポリシー設定を構成しない場合、ユーザーはオプションの接続エクスペリエンスを使用する選択肢を持つことができます。このポリシー設定を無効にすると、ユーザーはオプションの接続エクスペリエンスを使用できなくなります。</p><p><strong>本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;こんにちは。日本マイクロソフト Exchange &amp;amp; Outlook サポート チームです。&lt;/p&gt;
+&lt;p&gt;本記事では、Outlook on the web や新しい Outlook for Windows (以下、新しい Outlook) で表示される &lt;stro</summary>
+      
+    
+    
+    
+    
+    <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
+    
+    <category term="New Outlook" scheme="https://jpmessaging.github.io/blog/tags/New-Outlook/"/>
+    
+    <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
+    
+  </entry>
   
   <entry>
     <title>他人の予定のアラームが表示された際の確認ポイント</title>
@@ -441,28 +468,6 @@
     
     
     <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>新しい Outlook for Windows: 役員秘書や代理人のためのガイド - Part 3</title>
-    <link href="https://jpmessaging.github.io/blog/NewOutlookforWindows-aguideforExecutiveAssistantsandDelegates-part3/"/>
-    <id>https://jpmessaging.github.io/blog/NewOutlookforWindows-aguideforExecutiveAssistantsandDelegates-part3/</id>
-    <published>2024-10-07T15:00:00.000Z</published>
-    <updated>2024-10-07T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/t5/outlook-blog/new-outlook-for-windows-a-guide-for-executive-assistants-and/ba-p/4208796">New Outlook for Windows: a guide for Executive Assistants and Delegates – part 3</a> の抄訳です。最新の情報はリンク先をご確認ください。</p><p>このブログでは、役員秘書や代理人が新しい Outlook for Windows (以下、新しい Outlook) でメールボックスの管理をより適切に実施するために役立つメールの Tips をいくつか紹介します。</p><h2 id="1-役員秘書や代理人向けのメール-フィルターとルール"><a href="#1-役員秘書や代理人向けのメール-フィルターとルール" class="headerlink" title="1. 役員秘書や代理人向けのメール フィルターとルール"></a>1. 役員秘書や代理人向けのメール フィルターとルール</h2><p>新しい Outlook では、「カレンダーの招待がある」のメール フィルターを使用して、会議招集のメールを簡単に見つけることができます。<br><img src="/blog/NewOutlookforWindows-aguideforExecutiveAssistantsandDelegates-part3/NewOutlookPart3_01.png"></p><p>また、役員のアカウントに向けて「他のユーザーのために受信したメール」ルールを設定し、自動的に別のフォルダーに移動して好きなように分類することもできます。<br><img src="/blog/NewOutlookforWindows-aguideforExecutiveAssistantsandDelegates-part3/NewOutlookPart3_02.png"></p><h2 id="2-メールをドラッグ-アンド-ドロップしてタスクを作成します"><a href="#2-メールをドラッグ-アンド-ドロップしてタスクを作成します" class="headerlink" title="2. メールをドラッグ アンド ドロップしてタスクを作成します"></a>2. メールをドラッグ アンド ドロップしてタスクを作成します</h2><p>メールを [タスクとして追加] にドラッグしてタスクに変換することで、簡単にタスクを把握できます。<br><img src="/blog/NewOutlookforWindows-aguideforExecutiveAssistantsandDelegates-part3/NewOutlookPart3_03.png"></p><h2 id="3-すばやくアクセスできるようにメールをピン留めします"><a href="#3-すばやくアクセスできるようにメールをピン留めします" class="headerlink" title="3.すばやくアクセスできるようにメールをピン留めします"></a>3.すばやくアクセスできるようにメールをピン留めします</h2><p>受信トレイの上部にメールをピン留めして表示できるようになったため、そのメールを遡って検索する手間を省くことができます。メールのピン アイコンにカーソルを合わせるか、または右クリックして [ピン留め] を選択します。<br><img src="/blog/NewOutlookforWindows-aguideforExecutiveAssistantsandDelegates-part3/NewOutlookPart3_04.png"></p><h2 id="4-メールの送信時間を設定する"><a href="#4-メールの送信時間を設定する" class="headerlink" title="4. メールの送信時間を設定する"></a>4. メールの送信時間を設定する</h2><p>昨今のハイブリッド ワークの世界では、自分の昼が他人の夜になる可能性があり、他人の真夜中の時間にメールを送りたくない場合もあります。新しい Outlook では、自分の思い通りのタイミングで簡単にメールを送信できます。[送信] の横にあるドロップダウンの矢印を選択し、[スケジュール送信] を選択するだけです。<br><img src="/blog/NewOutlookforWindows-aguideforExecutiveAssistantsandDelegates-part3/NewOutlookPart3_05.png"></p><h2 id="5-メールをスヌーズする"><a href="#5-メールをスヌーズする" class="headerlink" title="5.メールをスヌーズする"></a>5.メールをスヌーズする</h2><p>非常に重要なメールであっても、いまはまだ対応が必要ではないことがあります。スヌーズ機能を使用すると、必要な時間にメールが再表示されるように設定することができるため、適切なタイミングでメールに対応できます。任意のメッセージを右クリックして [スヌーズ] を選択するか、リボンから [スヌーズ] を選択します。次に、再表示する時間を選択します。<br><img src="/blog/NewOutlookforWindows-aguideforExecutiveAssistantsandDelegates-part3/NewOutlookPart3_06.png"></p><h2 id="フィードバックを共有する"><a href="#フィードバックを共有する" class="headerlink" title="フィードバックを共有する"></a>フィードバックを共有する</h2><p>新しい Outlook を試してフィードバックを共有することをお勧めします。[ヘルプ]-[フィードバック] から新しい Outlook のエクスペリエンスに関するフィードバックを送信できます。コメントを追加する際は、”I am an EA (Executive Assistant)” または “I am a delegate” と記載してください。<br><img src="/blog/NewOutlookforWindows-aguideforExecutiveAssistantsandDelegates-part3/NewOutlookPart3_07.png"></p><p>新しい Outlook の最新機能について情報を入手するには、<a href="https://www.microsoft.com/microsoft-365/roadmap?filters=Outlook,Desktop,Web&searchterms=%23newoutlookforwindows">ロードマップ</a> をフォローしてください。<br>本ブログの内容は今後サポート記事としても公開される予定であり、公開されたらここにリンクされます。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/t5/outlook-blog/new-outlook-for-windows-a-guide-for-executive-assistants-and/ba-p/42</summary>
-      
-    
-    
-    
-    
-    <category term="New Outlook" scheme="https://jpmessaging.github.io/blog/tags/New-Outlook/"/>
     
   </entry>
   
