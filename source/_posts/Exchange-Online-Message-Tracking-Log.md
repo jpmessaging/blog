@@ -3,6 +3,7 @@ title: >
   Exchange Online のメッセージ追跡ログ
 date: 2021-08-13
 tags: Exchange Online
+alias: Exchange Online のメッセージ追跡ログ/index.html
 ---
 
 こんにちは。Exchange / Outlook サポートの柳本です。以前までこちらのブログで Exchange Online で採取可能なメッセージ追跡ログに関する記事を公開しておりました。数年前に公開された記事であり内容が古くなってきたため、改めて Exchange Online のメッセージ追跡ログの取得方法についてご案内します。Exchange Online にはいくつかの種類のメッセージ追跡ログがあるのですが、今回は弊社サポートから最もご案内する頻度が高い HistoricalSearch と呼ばれるタイプのメッセージ追跡ログを Windows PowerShell のコマンド ベースで取得する方法をご案内します。
