@@ -1,6 +1,6 @@
 ---
 title: Outlook のコマンド ライン スイッチと初期化される情報について
-date: 2025-04-03
+date: 2025-04-04 10:00:00
 lastupdate:
 tags: Outlook
 ---
