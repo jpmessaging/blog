@@ -1,6 +1,6 @@
 ---
 title: Exchange SE のライセンスおよび価格情報が公開されました
-date: 2025-04-04
+date: 2025-04-04 9:00:00
 lastupdate: 
 tags: Exchange
 ---
