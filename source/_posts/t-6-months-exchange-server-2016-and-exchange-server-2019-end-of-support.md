@@ -33,7 +33,9 @@ Exchange Server 2019 をご利用の場合は、Exchange Server を最新の状�
 
 Exchange Server 2016 をご利用の場合、現在の環境を Exchange Server 2019 にレガシー (サイド バイ サイド) アップグレードし、その後 Exchange Server SE がリリースされた際にインプレース アップグレードを実施することをお勧めします。Exchange Server 2016 から Exchange Server SE RTM へのレガシー アップグレードを直接行い、Exchange Server 2019 をスキップするオプションもあります。しかし、Exchange Server SE のリリースと Exchange Server 2016 のサポート終了までの期間が数か月しかないため、展開規模やその他の要因によっては十分な時間が確保できない可能性があります (Exchange Server 2016 から Exchange Server SE へのインプレース アップグレードは利用できません)。そのため、[Exchange Server 2019 へのアップグレード](https://setup.cloud.microsoft/exchange/deployment-assistant)を今すぐ実施し、[Exchange Server 2016 を廃止](https://jpmessaging.github.io/blog/Decommissioning-Exchange-Server-2016/)し、Exchange Server SE が利用可能になった際にインプレース アップグレードを行うことを強くお勧めします。
 
-**注:** 組織内に Exchange Server 2013 またはそれ以前のバージョンが残っている場合、[Exchange Server 2019 CU15](https://www.microsoft.com/download/details.aspx?id=106402) をインストールするか、Exchange Server SE にアップグレードする前に、Exchange Server 2013 およびそれ以前のバージョンの Exchange Server をすべて削除する必要があります。
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
+組織内にまだ Exchange Server 2013 以前のバージョンがある場合は、<a href="https://www.microsoft.com/download/details.aspx?id=106402">Exchange Server 2019 CU15</a> をインストールするか Exchange Server SE にアップグレードする前に、まずそれを削除する必要があります。
+</div>
 
 ## Exchange Server Technology Adoption Program
 
