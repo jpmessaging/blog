@@ -18,12 +18,12 @@
   
   <title>Exchange Online テナントの外部送信メール制限の導入 | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※ この記事は、Introducing Exchange Online Tenant Outbound Email Limits の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。  2025 年 3 月 13 日更新: 下記の日付とロールアウトの詳細を更新しました">
+  <meta name="description" content="※ この記事は、Introducing Exchange Online Tenant Outbound Email Limits の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。  2025 年 4 月 15 日更新: ロールアウトのスケジュールを更新しました。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Exchange Online テナントの外部送信メール制限の導入">
 <meta property="og:url" content="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="※ この記事は、Introducing Exchange Online Tenant Outbound Email Limits の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。  2025 年 3 月 13 日更新: 下記の日付とロールアウトの詳細を更新しました">
+<meta property="og:description" content="※ この記事は、Introducing Exchange Online Tenant Outbound Email Limits の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。  2025 年 4 月 15 日更新: ロールアウトのスケジュールを更新しました。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/TERRL01.jpg">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/TERRL02.jpg">
@@ -125,7 +125,7 @@
         Last Update:
         <a href="/blog/introducing-exchange-online-tenant-outbound-email-limits/" class="article-date-single">    
         
-    <time datetime="2025-03-17T15:00:00.000Z" itemprop="lastupdate">2025-03-18</time>    
+    <time datetime="2025-04-16T15:00:00.000Z" itemprop="lastupdate">2025-04-17</time>    
     
 </a>
       </div>
@@ -134,7 +134,7 @@
       
         <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-tenant-outbound-email-limits/4372797">Introducing Exchange Online Tenant Outbound Email Limits</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
 <div style="margin:1.25em;border-left:.25em solid #4493f8;padding:.5em;">
-2025 年 3 月 13 日更新: 下記の日付とロールアウトの詳細を更新しました。
+2025 年 4 月 15 日更新: ロールアウトのスケジュールを更新しました。
 </div>
 
 <p>クラウド サービス全般に言えることですが、Exchange Online では Exchange Online リソースの不正使用を防ぎ、すべてのユーザーに対して可用性を確保するためにサービスの制限を設けています。例えば、High-Volume Email の機能を除いて、Exchange Online は大量のメール送信をサポートしておらず、これまでは主にメールボックスごとの 1 日あたりの送信制限 (Recipient Rate Limit または RRL として知られています) を使用してこれを制限していました。</p>
@@ -158,17 +158,17 @@
 <tr>
 <td>2</td>
 <td>200 メール ライセンス以下のテナント</td>
-<td>2025&#x2F;4&#x2F;10</td>
+<td>2025&#x2F;4&#x2F;18</td>
 </tr>
 <tr>
 <td>3</td>
 <td>500 メール ライセンス以下のテナント</td>
-<td>2025&#x2F;4&#x2F;17</td>
+<td>2025&#x2F;4&#x2F;28</td>
 </tr>
 <tr>
 <td>4</td>
 <td>すべてのテナント</td>
-<td>2025&#x2F;5&#x2F;1</td>
+<td>2025&#x2F;5&#x2F;9</td>
 </tr>
 </tbody></table>
 <p><strong>GCC 環境</strong>のテナント:</p>
@@ -267,9 +267,9 @@
 <li>サブドメインが明示的に承認済みドメインとして追加されている。</li>
 <li>ルートの承認済みドメインの「すべてのサブドメインのメールを受信する」オプションが有効になっている。このオプションは、ルートの承認済みドメインのタイプが内部の中継の場合にのみ可能です。</div></li>
 </ol>
-<p><strong>ジャーナルや自動応答メッセージは TERRL クォータにカウントされますか？</strong><br>いいえ。テナントから外部受信者に送信されるいくつかの種類のメッセージは、TERRL クォータにカウントされません。これには以下が含まれます。</p>
+<p><strong>ジャーナルや自動応答メッセージは TERRL クォータにカウントされますか？</strong><br>いいえ、Exchange Online のジャーナル ルールを使用して送信されるジャーナル メッセージは、クォータにはカウントされません。テナントから外部受信者に送信されるいくつかの種類のメッセージは、TERRL クォータにカウントされません。これには以下が含まれます。</p>
 <ul>
-<li>ジャーナル メッセージ</li>
+<li>Exchange Online のジャーナル ルールを使用して送信されるジャーナル メッセージ (詳細は <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/exchange/security-and-compliance/journaling/manage-journaling">Exchange Online でのジャーナルの管理</a>を参照してください)</li>
 <li>自動応答 (不在通知を含む)</li>
 <li>DSN (配信不能通知、配信確認、開封確認)</li>
 <li>Azure Communication Services のメールおよび Exchange Online High-Volume Email を使用して送信されたメッセージ</li>
@@ -281,7 +281,7 @@
 <p><strong>ハイブリッド構成でユーザーのオンプレミス メールボックスに送信されたメッセージは TERRL クォータにカウントされますか？</strong><br>メールボックスにテナント内の承認済みドメインが含まれている限り、これらのメッセージは TERRL クォータにカウントされません。</p>
 <p><strong>テナントの設定ですべての Exchange Online 内部のメールは、Exchange Online メールボックスに送信される前に、処理のためにサード パーティのサービスに送信され、その後 Exchange Online に戻ってくる場合、これらのメッセージは TERRL クォータにカウントされますか？</strong><br>いいえ。受信者のドメインがテナント内の承認済みドメインである場合、これらのメッセージは TERRL クォータにカウントされません。たとえそれらが Exchange Online の外にルーティングされてから戻ってきたとしてもです。</p>
 <p><strong>外部受信者にメッセージを送信する際に、署名サービスやオンプレミスで処理されるために一度外部にルーティングされ、その後 Exchange Online に戻ってきて外部受信者に送信される場合、それは二重にカウントされますか？</strong><br>悪意のあるユーザーがオンプレミス システムを利用してスパムを送信するリスクを減らすために、現在これらのメッセージは複数回カウントされています。テレメトリ情報によると、TERRL クォータを超えているテナントはごく少数であるため、この動作がお客様のテナントに問題を引き起こす可能性は低いです。しかし、メッセージを複数回カウントせずにこのようなスプーフィングを防ぐための代替方法を調査中です。</p>
-<p><strong>マルチテナント組織内でのテナント間メッセージは外部メッセージとして扱われますか？</strong><br>いいえ。Exchange Online にホストされている他のテナントに送信されたメッセージは外部メッセージとして扱われますが、正式に指定された同じマルチテナント組織内のテナント間で送信されたメッセージは内部メッセージとして扱われます。Microsoft 365 のマルチテナント組織についての詳細は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/enterprise/plan-multi-tenant-org-overview?view=o365-worldwide">Microsoft 365 でのマルチテナント組織の計画</a>をご覧ください。</p>
+<p><strong>マルチテナント組織内でのテナント間メッセージは外部メッセージとして扱われますか？</strong><br>現時点では、はい。</p>
 <p><strong>1 日に同じ外部受信者に 1,000 通のメッセージを送信した場合、それは 1 人の外部受信者としてカウントされますか、それとも 1,000 人の外部受信者としてカウントされますか？</strong><br>1,000 人としてカウントされます。TERRL は、外部受信者を一意には数えません。</p>
 <p><strong>テナント内の配布グループにメッセージを送信し、その配布グループに 1,000 人の外部受信者が含まれている場合、それは 1 人の外部受信者としてカウントされますか、それとも 1,000 人の外部受信者としてカウントされますか？</strong><br>1,000 人としてカウントされます。外部受信者のカウントは、配布グループ (およびそのネストされたグループ) が個々の受信者に完全に展開された後に行われます。</p>
 <p><strong>Exchange Online High-Volume email (HVE) を使用して送信された外部受信者へのメッセージは TERRL クォータにカウントされますか？</strong><br>いいえ。HVE は主に内部受信者への大量メール送信を目的としていますが、1 日あたり最大 2,000 人の外部受信者への送信もサポートしています。HVE を使用して外部受信者に送信されたメッセージは TERRL クォータにはカウントされません。</p>
@@ -319,11 +319,16 @@
 </tr>
 </tbody></table>
 <p>※ 将来のアップデートで EAC レポートに表示されるデータを取得するための Graph API の提供が検討されています。</p>
+<p><strong>最近の変更点</strong></p>
+<ul>
+<li>2025&#x2F;3&#x2F;31: FAQ「マルチ テナント組織内でのテナント間メッセージ」に関する説明を修正しました。</li>
+<li>2025&#x2F;3&#x2F;19: FAQ「Exchange Online ジャーナリング メッセージのステータス」に関する説明を明確化しました。</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/" data-id="cm8zel5c8003jfs9od3tpecga" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/" data-id="cm9mi3ppv003lf49odtx50mmt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
@@ -365,7 +370,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">36</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">12</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">38</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">23</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li></ul>
     </div>
   </div>
 
@@ -375,7 +380,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/10/">October 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -388,23 +393,23 @@
       <ul>
         
           <li>
+            <a href="/blog/retirement-of-cloud-archive-mailbox-access-by-using-exchange-server-on-premises/">オンプレミス Exchange Server の OWA によるクラウド アーカイブ メールボックス アクセスの廃止</a>
+          </li>
+        
+          <li>
+            <a href="/blog/t-6-months-exchange-server-2016-and-exchange-server-2019-end-of-support/">残り 6 か月 : Exchange Server 2016 および Exchange Server 2019 のサポート終了</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-command-line/">Outlook のコマンド ライン スイッチと初期化される情報について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/more-licensing-and-pricing-information-for-exchange-se-is-now-available/">Exchange SE のライセンスおよび価格情報が公開されました</a>
+          </li>
+        
+          <li>
             <a href="/blog/graph-api---permanent-delete-for-mailbox-items/">Graph API - メールボックス アイテムの完全削除</a>
-          </li>
-        
-          <li>
-            <a href="/blog/optional-connected-experiences-notice/">&#34;あなたのプライバシーは重要です&#34; の通知について</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Other-users-alarm-pops-up/">他人の予定のアラームが表示された際の確認ポイント</a>
-          </li>
-        
-          <li>
-            <a href="/blog/Summary-of-installation-methods-for-new-outlook-for-windows/">新しい Outlook for Windows のインストール方法まとめ</a>
-          </li>
-        
-          <li>
-            <a href="/blog/introducing-exchange-online-tenant-outbound-email-limits/">Exchange Online テナントの外部送信メール制限の導入</a>
           </li>
         
       </ul>
