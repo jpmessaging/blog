@@ -1,5 +1,5 @@
 ---
-title: 'リリース: 2025 年 4 月の Exchange Server HotFix 更新'
+title: 'リリース: 2025 年 4 月の Exchange Server Hotfix 更新'
 date: 2025-04-21
 lastupdate: 
 tags: Exchange
@@ -25,13 +25,13 @@ Microsoft の [Secure Future Initiative (SFI)](https://www.microsoft.com/trust-c
 
 2025 年 4 月の HU のリリースにより、この移行の最初のステップを開始する準備が整いました。
 
-<mark>*Exchange ハイブリッド構成を利用して Exchange Online とリッチな共存機能を必要とするお客様*は、2025 年 4 月の HU リリースから 2025 年 10 月までの間に対応を行う必要があります。2025 年 10 月までに専用の Exchange ハイブリッド アプリケーションに更新し、その後 2026 年 10 月までに Graph 権限モデルに移行する手順を実施しない場合、いくつかの Exchange ハイブリッド機能が動作しなくなる可能性があります（オンプレミスと Exchange Online ユーザー間の空き時間情報の共有、MailTips、プロフィール写真の共有）。</mark>
+<mark>*Exchange ハイブリッド構成を利用して Exchange Online とリッチな共存機能を必要とするお客様*は、2025 年 4 月の HU リリースから 2025 年 10 月までの間に対応を行う必要があります。2025 年 10 月までに専用の Exchange ハイブリッド アプリケーションに更新し、その後 2026 年 10 月までに Graph 権限モデルに移行する手順を実施しない場合、いくつかの Exchange ハイブリッド機能が動作しなくなる可能性があります（オンプレミスと Exchange Online ユーザー間の空き時間情報の共有、メール ヒント、プロフィール写真の共有）。</mark>
 
 専用の Exchange ハイブリッド アプリケーションおよびその他の関連変更については、専用のブログ記事 [Exchange Server Security Changes for Hybrid Deployments](https://techcommunity.microsoft.com/blog/exchange/exchange-server-security-changes-for-hybrid-deployments/4396833)、[ドキュメント](https://aka.ms/ConfigureExchangeHybridApplication-Docs)、および [FAQ](https://techcommunity.microsoft.com/blog/exchange/exchange-server-security-changes-for-hybrid-deployments/4396833) をご参照ください。
 
 ### この更新の既知の問題
 
-- [Edge Transport サービス (EdgeTransport.exe) が応答を停止し、その後再起動する](https://support.microsoft.com/topic/edge-transport-service-stops-responding-after-installing-november-2024-su-fb157463-5daf-4717-ad1b-25a8a0170cb2) 問題が発生する場合があります。この問題は、Azure Rights Management (Azure RMS) によって保護された外部ソースから送信されたメッセージを Exchange Server が復号化しようとする際に発生します。
+- [Edge Transport サービス (EdgeTransport.exe) が応答を停止し、その後再起動する](https://support.microsoft.com/topic/edge-transport-service-stops-responding-after-installing-november-2024-su-fb157463-5daf-4717-ad1b-25a8a0170cb2)問題が発生する場合があります。この問題は、Azure Rights Management (Azure RMS) によって保護された外部ソースから送信されたメッセージを Exchange Server が復号化しようとする際に発生します。
 
 ## 更新のインストール
 
@@ -39,7 +39,7 @@ Microsoft の [Secure Future Initiative (SFI)](https://www.microsoft.com/trust-c
 
 ![](Apri2025HUs.jpg)
 
-- Exchange サーバーのインベントリを作成し、[Exchange Server Health Checker スクリプト](https://aka.ms/ExchangeHealthChecker) を使用して必要な更新プログラムを確認してください。このスクリプトを実行することで、Exchange サーバーが更新プログラム (CU、SU、または手動操作) に遅れているかどうかを確認できます。
+- Exchange サーバーのインベントリを作成し、[Exchange Server Health Checker スクリプト](https://aka.ms/ExchangeHealthChecker)を使用して必要な更新プログラムを確認してください。このスクリプトを実行することで、Exchange サーバーが更新プログラム (CU、SU、または手動操作) に遅れているかどうかを確認できます。
 - 最新の CU をインストールしてください。[Exchange Update Wizard](https://aka.ms/ExchangeUpdateWizard) を使用して、現在の CU と目標とする CU を選択し、手順を確認してください。
 - 更新プログラムをインストールした後、Health Checker を再実行して、さらに必要な操作があるかどうかを確認してください。
 - Exchange Server のインストール中またはインストール後にエラーが発生した場合は、[SetupAssist スクリプト](https://aka.ms/ExSetupAssist)を実行してください。更新後に何かが正しく動作しない場合は、[Exchange Cumulative および Security 更新プログラムの失敗したインストールを修復する](https://aka.ms/ExchangeFAQ) を参照してください。また、[Exchange Server 更新プログラムのインストール時に発生するファイルバージョンエラー](https://support.microsoft.com/topic/file-version-error-when-you-try-to-install-exchange-server-november-2024-su-a650da30-f8fb-469d-a449-47396cab0a15) もご確認ください。
