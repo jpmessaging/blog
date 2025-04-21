@@ -1,7 +1,7 @@
 ---
 title: 'リリース: 2025 年 4 月の Exchange Server Hotfix 更新'
 date: 2025-04-21
-lastupdate: 
+lastupdate: 2025-04-22
 tags: Exchange
 --- 
 
@@ -15,7 +15,7 @@ Microsoft は、以前の更新プログラムで発生していた問題を解�
 HU は以下の特定のバージョンの Exchange Server に対して提供されています。
 
 - Exchange Server [2019 CU14](https://www.microsoft.com/download/details.aspx?id=108146) および [2019 CU15](https://www.microsoft.com/download/details.aspx?id=108144)
-- Exchange Server 2016 CU23（ダウンロードセンターの問題により、このバージョンは一時的に利用できません）
+- Exchange Server [2016 CU23](https://www.microsoft.com/download/details.aspx?id=108147)
 
 2025 年 4 月の HU には、新しい Exchange Server のセキュリティ更新プログラムは含まれていません。この更新プログラムに含まれる以下の機能について特にご紹介します。
 
