@@ -6,7 +6,7 @@
   <link href="https://jpmessaging.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2025-04-14T15:00:00.000Z</updated>
+  <updated>2025-04-20T15:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>リリース: 2025 年 4 月の Exchange Server Hotfix 更新</title>
+    <link href="https://jpmessaging.github.io/blog/released-april-2025-exchange-server-hotfix-updates/"/>
+    <id>https://jpmessaging.github.io/blog/released-april-2025-exchange-server-hotfix-updates/</id>
+    <published>2025-04-20T15:00:00.000Z</published>
+    <updated>2025-04-20T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/released-april-2025-exchange-server-hotfix-updates/4402471">Released: April 2025 Exchange Server Hotfix Updates</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>Microsoft は、以前の更新プログラムで発生していた問題を解決し、新しい機能をサポートする Hotfix Updates (HU) をリリースしました。</p><ul><li>Exchange Server 2019</li><li>Exchange Server 2016</li></ul><p>HU は以下の特定のバージョンの Exchange Server に対して提供されています。</p><ul><li>Exchange Server <a href="https://www.microsoft.com/download/details.aspx?id=108146">2019 CU14</a> および <a href="https://www.microsoft.com/download/details.aspx?id=108144">2019 CU15</a></li><li>Exchange Server 2016 CU23（ダウンロードセンターの問題により、このバージョンは一時的に利用できません）</li></ul><p>2025 年 4 月の HU には、新しい Exchange Server のセキュリティ更新プログラムは含まれていません。この更新プログラムに含まれる以下の機能について特にご紹介します。</p><h2 id="専用の-Exchange-ハイブリッド-アプリケーションの発表"><a href="#専用の-Exchange-ハイブリッド-アプリケーションの発表" class="headerlink" title="専用の Exchange ハイブリッド アプリケーションの発表"></a>専用の Exchange ハイブリッド アプリケーションの発表</h2><p>Microsoft の <a href="https://www.microsoft.com/trust-center/security/secure-future-initiative">Secure Future Initiative (SFI)</a> の一環として、Exchange ハイブリッド構成のセキュリティを向上させるための変更を行っています。この取り組みの一環として、Microsoft Entra ID に専用の Exchange ハイブリッド アプリケーションを作成し、Exchange Server と Exchange Online のアイデンティティを分離します。これは、Exchange Online からレガシーな Exchange Web Services (EWS) API を廃止し、より細かい Graph API 権限を使用した Graph API 呼び出しに移行するための全体的な取り組みの一部です。</p><p>2025 年 4 月の HU のリリースにより、この移行の最初のステップを開始する準備が整いました。</p><p><mark><em>Exchange ハイブリッド構成を利用して Exchange Online とリッチな共存機能を必要とするお客様</em>は、2025 年 4 月の HU リリースから 2025 年 10 月までの間に対応を行う必要があります。2025 年 10 月までに専用の Exchange ハイブリッド アプリケーションに更新し、その後 2026 年 10 月までに Graph 権限モデルに移行する手順を実施しない場合、いくつかの Exchange ハイブリッド機能が動作しなくなる可能性があります（オンプレミスと Exchange Online ユーザー間の空き時間情報の共有、メール ヒント、プロフィール写真の共有）。</mark></p><p>専用の Exchange ハイブリッド アプリケーションおよびその他の関連変更については、専用のブログ記事 <a href="https://techcommunity.microsoft.com/blog/exchange/exchange-server-security-changes-for-hybrid-deployments/4396833">Exchange Server Security Changes for Hybrid Deployments</a>、<a href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">ドキュメント</a>、および <a href="https://techcommunity.microsoft.com/blog/exchange/exchange-server-security-changes-for-hybrid-deployments/4396833">FAQ</a> をご参照ください。</p><h3 id="この更新の既知の問題"><a href="#この更新の既知の問題" class="headerlink" title="この更新の既知の問題"></a>この更新の既知の問題</h3><ul><li><a href="https://support.microsoft.com/topic/edge-transport-service-stops-responding-after-installing-november-2024-su-fb157463-5daf-4717-ad1b-25a8a0170cb2">Edge Transport サービス (EdgeTransport.exe) が応答を停止し、その後再起動する</a>問題が発生する場合があります。この問題は、Azure Rights Management (Azure RMS) によって保護された外部ソースから送信されたメッセージを Exchange Server が復号化しようとする際に発生します。</li></ul><h2 id="更新のインストール"><a href="#更新のインストール" class="headerlink" title="更新のインストール"></a>更新のインストール</h2><p>以下の更新パスが利用可能です。</p><p><img src="/blog/released-april-2025-exchange-server-hotfix-updates/Apri2025HUs.jpg"></p><ul><li>Exchange サーバーのインベントリを作成し、<a href="https://aka.ms/ExchangeHealthChecker">Exchange Server Health Checker スクリプト</a>を使用して必要な更新プログラムを確認してください。このスクリプトを実行することで、Exchange サーバーが更新プログラム (CU、SU、または手動操作) に遅れているかどうかを確認できます。</li><li>最新の CU をインストールしてください。<a href="https://aka.ms/ExchangeUpdateWizard">Exchange Update Wizard</a> を使用して、現在の CU と目標とする CU を選択し、手順を確認してください。</li><li>更新プログラムをインストールした後、Health Checker を再実行して、さらに必要な操作があるかどうかを確認してください。</li><li>Exchange Server のインストール中またはインストール後にエラーが発生した場合は、<a href="https://aka.ms/ExSetupAssist">SetupAssist スクリプト</a>を実行してください。更新後に何かが正しく動作しない場合は、<a href="https://aka.ms/ExchangeFAQ">Exchange Cumulative および Security 更新プログラムの失敗したインストールを修復する</a> を参照してください。また、<a href="https://support.microsoft.com/topic/file-version-error-when-you-try-to-install-exchange-server-november-2024-su-a650da30-f8fb-469d-a449-47396cab0a15">Exchange Server 更新プログラムのインストール時に発生するファイルバージョンエラー</a> もご確認ください。</li></ul><h2 id="Hotfix-更新の-FAQ"><a href="#Hotfix-更新の-FAQ" class="headerlink" title="Hotfix 更新の FAQ"></a>Hotfix 更新の FAQ</h2><p><strong>最後のセキュリティ更新プログラムをインストールしました。後の Hotfix 更新プログラムもインストールすべきですか？</strong><br>Exchange Server の HU は <em>オプションの更新プログラム</em> ですが、組織にとって有益な機能や修正が含まれている場合があります。詳細については、リリース KB 記事をご確認ください。</p><p><strong>以前のセキュリティ更新プログラムをまだインストールしていません。後からリリースされた HU をインストールする前に、最後に利用可能な SU をインストールする必要がありますか？</strong><br>Exchange の更新プログラム (HU または SU) はすべて累積的です。そのため、新しい HU には、以前の古い SU に含まれていたすべての変更が含まれています。古い SU をまだインストールしていない場合でも、新しい HU を直接インストールし、古い SU をスキップすることができます。</p><p><strong>私たちの Exchange サーバーは Windows&#x2F;Microsoft Update を通じて自動的に更新されます。この場合、HU 更新プログラムも自動的にインストールされますか？</strong><br>HU はサーバーに対して <em>オプションの更新プログラム</em> として表示されます。この更新プログラムは、数日遅れて Microsoft Update Catalog でも利用可能になります。</p><p><strong>HU でリリースされた新機能や修正は今後の更新プログラムにも含まれますか、それともこの特定の HU をインストールする必要がありますか？</strong><br>この HU に含まれる内容は、今後リリースされる Exchange Server の更新プログラムにも含まれます。</p><p><strong>HU を (必要に応じて) アンインストールすることは可能ですか？</strong><br>はい。HU は SU と同様にアンインストールすることが可能です。</p><p><span style="background-color:#d3d3d3">この記事の公開時点では、関連するドキュメントが完全に利用可能でない場合があります。</span></p><p>この記事は将来的に更新される可能性があります。更新が行われた場合は、こちらに追記されます。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/released-april-2025-exchange-server-hotfix-updates/4402471&quot;&gt;Released: </summary>
+      
+    
+    
+    
+    
+    <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>オンプレミス Exchange Server の OWA によるクラウド アーカイブ メールボックス アクセスの廃止</title>
+    <link href="https://jpmessaging.github.io/blog/retirement-of-cloud-archive-mailbox-access-by-using-exchange-server-on-premises/"/>
+    <id>https://jpmessaging.github.io/blog/retirement-of-cloud-archive-mailbox-access-by-using-exchange-server-on-premises/</id>
+    <published>2025-04-17T15:00:00.000Z</published>
+    <updated>2025-04-17T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/retirement-of-cloud-archive-mailbox-access-by-using-exchange-server-on-premises-/4405432">Retirement of cloud archive mailbox access by using Exchange Server on-premises OWA</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>Exchange Online では、これまでオンプレミスの Exchange Server にホストされているプライマリ メールボックスを持つユーザーが、Outlook on the Web (OWA) を使用して Exchange Online にホストされているアーカイブ メールボックスにアクセスできる機能を提供していましたが、この Exchange Online の機能を廃止します。この変更は、OWA の使用にのみ影響し、他のサポートされている Outlook クライアントを使用したアーカイブ メールボックスへのアクセスには影響しません。</p><p>以下の状況を想像してください。Exchange Server ハイブリッド環境が構築されており、一部のメールボックスが Exchange Server 上にホストされています。その中には、クラウド アーカイブが有効化されているメールボックスもあり、これらのアーカイブ メールボックスは Exchange Online 上にホストされています。これまでは、ユーザーは Outlook on the Web (OWA) を使用してこれらのアーカイブ メールボックスにアクセスすることが可能でした。しかし、<strong>2025 年 5 月 12 日</strong>以降、このアクセスは利用できなくなります。なお、ユーザーは引き続き Outlook デスクトップ クライアントを使用してアーカイブ メールボックスにアクセスすることが可能です。</p><p>このワークフローを過去 30 日間に使用したすべてのお客様を特定済みです。この変更の影響を受ける組織には、Microsoft 365 管理センターのメッセージ センターに <strong>MC1053644</strong> という投稿が表示されるはずです。このワークフローを使用しているにもかかわらず、メッセージ センターの投稿が表示されない場合は、<strong>exchonpremfeedback[AT]microsoft.com</strong> 宛てにご連絡ください。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/retirement-of-cloud-archive-mailbox-access-by-using-exchange-server-on</summary>
+      
+    
+    
+    
+    
+    <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
+    
+  </entry>
   
   <entry>
     <title>残り 6 か月 : Exchange Server 2016 および Exchange Server 2019 のサポート終了</title>
@@ -124,9 +168,9 @@
     
     
     
-    <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
-    
     <category term="New Outlook" scheme="https://jpmessaging.github.io/blog/tags/New-Outlook/"/>
+    
+    <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
     
     <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
     
@@ -418,54 +462,6 @@
     
     
     <category term="Outlook" scheme="https://jpmessaging.github.io/blog/tags/Outlook/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入</title>
-    <link href="https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/"/>
-    <id>https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/</id>
-    <published>2024-11-21T15:00:00.000Z</published>
-    <updated>2024-11-21T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/4082759">Introducing Exchange Online Delicensing Resiliency to protect against unintended delicensing actions</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>最近、Exchange Online に新機能が導入され、ライセンス解除の際に 30 日間の猶予期間を提供することで、Exchange Online メールボックスの誤ったまたは意図しないライセンス解除から保護できるようになりました。この機能は、管理者およびユーザーへの通知オプションも提供し、意図しないライセンス解除の影響を事前に回避することができます。この機能は、10,000 以上の評価版ではない Exchange Online ライセンスを持つテナントでオプト インすることで利用ができます。</p><h2 id="ライセンス解除レジリエンシーの仕組み"><a href="#ライセンス解除レジリエンシーの仕組み" class="headerlink" title="ライセンス解除レジリエンシーの仕組み"></a>ライセンス解除レジリエンシーの仕組み</h2><p>Exchange Online ユーザーのメールボックス アクセスはライセンスの有無に依存しています。ライセンスが削除されると、ユーザーはメールボックスを利用できなくなり、メール フローに影響を与え、配信不能レポート (NDR) やメールの誤送信が発生します。</p><p>過去には、<a href="https://learn.microsoft.com/entra/fundamentals/concept-group-based-licensing">グループ ベースのライセンス</a>を使用している顧客が誤って多数のユーザーのライセンスを解除し、広範なサービスの中断やメール フローの中断を引き起こした事例がありました。</p><p>この新機能は、ライセンス解除のエラーによる即時の影響を防ぐために、ライセンス解除から 30 日間の猶予期間を提供し、管理者が誤りを修正するための時間を確保します。この猶予期間中、メールボックスはライセンス解除前の機能を維持し、管理者がライセンス解除の誤りに対処するための必要な時間を提供します。この猶予期間中に、管理者はユーザーのライセンス解除を迅速化したり、ユーザーに再度ライセンスを付与したり、猶予期間が終了するまでライセンスを付与しないままにすることができます。</p><p>Exchange Online ライセンス解除レジリエンシー機能の 30 日間の猶予期間が終了し、ライセンスが削除されると、ユーザー メールボックスは<a href="https://learn.microsoft.com/exchange/recipients-in-exchange-online/delete-or-restore-mailboxes?source=recommendations#license-removal">デフォルトの 30 日間の猶予期間</a>に従います。この期間中、ユーザーはメールボックスにアクセスできませんが、ライセンスが再度付与されるとアクセスが復元され、メールボックスが再びアクティブになります。30 日間の猶予期間が終了すると、データは削除され、復元できなくなります。</p><p>以下の図は、動作の変更をまとめたものです。</p><p><strong>Exchange Online ライセンス解除レジリエンシー機能が有効でない場合 (デフォルトの動作)</strong><br><img src="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic01.jpg"></p><p><strong>Exchange Online ライセンス解除レジリエンシー機能が有効になった場合 (新しい動作)</strong><br><img src="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic02.jpg"></p><p>この機能が有効になると、Get-PendingDelicenseUser を実行することで、30 日間の猶予期間がいつ終了するかを確認できます。<br><img src="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic03.jpg"></p><p>Microsoft 365 管理センターを使用して、猶予期間がいつ終了するかを確認し、ライセンス解除の迅速化などの他のアクションを実行することもできます。<br><img src="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic04.jpg"></p><p>さらに、管理者向けの<a href="https://learn.microsoft.com/microsoft-365/enterprise/view-service-health?view=o365-worldwide&amp;WT.mc_id=365AdminCSH_inproduct">サービス正常性ダッシュボード</a>のアドバイザリ通知とユーザー向けのメール通知を追加しました。これにより、管理者は 30 日間の猶予期間が終了する前に、Exchange Online ユーザーの意図しないライセンス解除を事前に対処することができます。この機能が有効になると、管理者向けのサービス正常性ダッシュボードのアドバイザリ通知とユーザー向けのメール通知も有効になります。</p><p>サービス正常性ダッシュボードのアドバイザリ通知は、テナント内でライセンス解除が発生した場合に、管理者がアドバイザリのダイジェスト通知を受け取るように設計されています。サービス正常性ダッシュボードの投稿には、過去 8 日間にわたり、ライセンスが解除された状態にありまだ 30 日間の猶予期間内にあるユーザーの数が日毎に記載されます。</p><p>以下は、サービス正常性ダッシュボードのアドバイザリ通知のサンプルです。<br><img src="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic05.jpg"></p><p>管理者は、ユーザーのライセンス解除を迅速化したり、ユーザーに再度ライセンスを付与したりするなど、適切なアクションを実行できます。</p><p>サービス正常性ダッシュボードのアドバイザリ通知に気付かない、または対応しない管理者がいる可能性があるため、ユーザー通知はデフォルトで有効になっています。ライセンスが解除されたユーザーには、ライセンス解除の約 18 日後から数回のメールが送信されます。これらのメール リマインダーは、ライセンス解除後 24 時間以内にメールを送信したり、メールボックスにアクセスしたりするなどのアクティビティがあるユーザーにのみ送信されます。</p><p>以下は、ユーザーへのメール通知の例です。<br><img src="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic06.jpg"></p><h2 id="詳細情報"><a href="#詳細情報" class="headerlink" title="詳細情報"></a>詳細情報</h2><p>この新機能の詳細については、<a href="https://learn.microsoft.com/Exchange/recipients-in-exchange-online/manage-user-mailboxes/exchange-online-delicensing-resiliency">Exchange Online ライセンス解除レジリエンシーの開始</a>をご覧ください。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-delicensing-resiliency-to-protect-against-</summary>
-      
-    
-    
-    
-    
-    <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Microsoft Outlook の新機能と今後の展望 – Ignite 2024</title>
-    <link href="https://jpmessaging.github.io/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/"/>
-    <id>https://jpmessaging.github.io/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/</id>
-    <published>2024-11-20T00:00:00.000Z</published>
-    <updated>2024-11-20T00:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/outlook/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/4297199">What’s new and coming to Microsoft Outlook – Ignite 2024</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><h2 id="Ignite-2024-の-Outlook-に関する発表内容"><a href="#Ignite-2024-の-Outlook-に関する発表内容" class="headerlink" title="Ignite 2024 の Outlook に関する発表内容"></a>Ignite 2024 の Outlook に関する発表内容</h2><p>Copilot in Outlook は、メールの管理やトリアージを支援し、ドラフト作成の支援、要約、インサイトを提供して時間を節約するのに役立っています。適切なメール返信の作成、数クリックでの会議のスケジュール設定、メール スレッド内の重要な情報の検索、メッセージのトーンや明確さの確認など、Copilot は目標達成をサポートします。</p><p>Ignite では、受信トレイの管理を支援するための取り組みを強化し、Copilot を使用して会議をより簡単に管理する方法を紹介しました。また、新しい Outlook for Windows の最新アップデートと来年の展望についても詳しく説明しました。 </p><p>今週発表された機能を見てみましょう！</p><h3 id="Copilot-を使用して会議を簡単に管理する"><a href="#Copilot-を使用して会議を簡単に管理する" class="headerlink" title="Copilot を使用して会議を簡単に管理する"></a>Copilot を使用して会議を簡単に管理する</h3><p>私たちは仕事中に多くの時間を会議に費やしています。時には、会議、メール、チャットに費やす時間が全体の 60％ にもなることがあります。会議のスケジュール設定だけでも 15 分かかることがありますが、Copilot を使えばこれを少し簡単にすることができます。</p><p>Copilot は、1 対 1 の会議や集中時間のスケジュール設定も支援します。組織内の誰かと時間を見つけるように Copilot に依頼すると、最適な時間を見つけてくれます。Copilot は組織のデータに基づいているため、あなたの親しい協力者を把握しています。たとえば、「来週、マネージャーとの会議をスケジュールして」や「来週、Caitlin との会議をスケジュールして」といった依頼をすると、Copilot は誰を指しているのかを理解します。プロジェクトを完了するための時間が必要ですか？問題ありません。Copilot に「来週の水曜日までに 3 時間の集中できる時間を見つけて」と依頼すれば完了です！これでプロジェクトに集中できます。</p><p><img src="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/Schedule_1_on_1_from_chat.gif"><br><em>Copilot in Outlook を使用して 1 対 1 の会議をスケジュールする</em></p><p>会議は意思決定を行ったり、詳細を詰めたり、アイデアを議論したりするのに役立ちますが、時には会議を軌道に乗せ、集中させ続けるのが難しいことがあります。議題を設定することで、会議を軌道に乗せ、重要なポイントに取り組むことができます。Copilot はあなたの入力に基づいて議題を作成することができます。会議の招待を開き、「Draft with Copilot」を選択し、「Contoso プロジェクトのレビュー、新しいチームメンバーの紹介、販売計画の議論」などの入力をするだけです。Copilot は議題のドラフトを作成します。準備が整ったら、招待を送信するのを忘れないでください。</p><p><img src="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/Draft_agenda.gif"><br><em>Copilot in Outlook を使用して会議の議題を作成する</em></p><p>時には、複数の人と会議をスケジュールする必要がありますが、長いメールをまとめるための会議をスケジュールする必要があることもあります。長いメール スレッドを読むことや要約することは時間がかかり、複数の人の都合が合う時間を見つけるのは難しいですが、Copilot があれば簡単です。会話を離れることなく、Copilot はその長いメール スレッドをまとめるための会議をスケジュールするのを手伝ってくれます。「Schedule with Copilot」ボタンを選択するだけで、Copilot が会議の準備を整えます。Copilot は i) スレッド全体を要約し、ii) 議題を作成し、iii) みんなの都合が合う時間を見つけます。簡単に数クリックで会議をスケジュールできます。</p><p><img src="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/Schedule_from_email_V3.gif"><br><em>メールの会話に基づいて会議をスケジュールするために Copilot の支援を受ける</em></p><h3 id="新しいメール作成方法"><a href="#新しいメール作成方法" class="headerlink" title="新しいメール作成方法"></a>新しいメール作成方法</h3><p>メールを書くときに、書き始めるのに困ったり、一部を書き直したりする必要がある場合があります。新しい Copilot のドラフト作成機能が役立ちます。</p><p>メール作成機能がネイティブに Outlook の作成ウィンドウに統合され、おすすめのプロンプトが表示されることで、タイピングをせずにドラフトを開始できるようになりました。また、Copilot を使用してメッセージの一部を編集することもできます。どのドラフトが最適か選ぶのが難しいですか？心配ありません。提案されたすべてのドラフトをレビューして選択できる機能を追加しました。少しの助けが必要な場合でも、最適なメッセージを作成するために多くの助けが必要な場合でも、Copilot がサポートします。 </p><p><img src="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/OTL_02_NewDraft&HighlightRewrite_NonLooping_GIF_16x9_082324.gif"><br><em>新しい Outlook for Windows での Copilot を使用したドラフト作成体験</em></p><h3 id="新しい-Outlook-for-Windows-の新機能と今後の展望"><a href="#新しい-Outlook-for-Windows-の新機能と今後の展望" class="headerlink" title="新しい Outlook for Windows の新機能と今後の展望"></a>新しい Outlook for Windows の新機能と今後の展望</h3><p>新しい Outlook for Windows は、より機敏で革新的な体験を提供するように再設計されました。より迅速な機能展開と利用可能性を備え、最新の Microsoft 365 Copilot 機能を提供し、Windows 全体で一貫した体験を実現します。  </p><p>皆様からのフィードバックをもとに、新しい Outlook for Windows の最高の体験を提供するために取り組んでいる中で、いくつかのアップデートを共有したいと思います。</p><h4 id="現在の状況"><a href="#現在の状況" class="headerlink" title="現在の状況"></a>現在の状況</h4><p>今年、商用顧客向けに一般提供が開始され、現在も新しい Outlook for Windows への移行を希望する組織向けにオプトイン フェーズが続いています。すべての導入のためのコンテンツについては <a href="https://aka.ms/newOutlookAdoption">https://aka.ms/newOutlookAdoption</a> をご覧いただき、私たちが何に優先的に取り組むかを決定するためにフィードバックを <a href="https://aka.ms/newOutlookFeedback">https://aka.ms/newOutlookFeedback</a> までお送りください。</p><h4 id="期待されること"><a href="#期待されること" class="headerlink" title="期待されること"></a>期待されること</h4><p>これまで新しい Outlook for Windows はオプトイン フェーズにありました。オプトアウト モデルへの移行を計画している中で、一部の組織はすでに独自に移行を開始しています。2025 年 1 月からは、<a href="https://www.microsoft.com/microsoft-365/business/compare-all-microsoft-365-business-products-d?ef_id=_k_768c2af5baa31eb9fa024dc67a547d9a_k_&amp;OCID=AIDcmmq8c1jdfb_SEM__k_768c2af5baa31eb9fa024dc67a547d9a_k_&amp;msclkid=768c2af5baa31eb9fa024dc67a547d9a">Microsoft 365 for business プラン</a> を利用している中小企業 (SMB) のお客様がこのフェーズに移行し始める予定で、2026 年には <a href="https://www.microsoft.com/microsoft-365/enterprise/microsoft365-plans-and-pricing">Microsoft 365 for enterprises</a> ライセンスを持つお客様が続く予定です。</p><p>重要な点として、必要に応じて以前のバージョンに戻すオプションは引き続き提供されます。来年には、より多くの組織が新しい Outlook for Windows の先行試験と移行計画を拡大することが期待されています。このフェーズでは、アプリ内および担当営業を通じて機能改善を提出し、フィードバックを送信することをお勧めします。</p><p><img src="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/clipboard_image-4-1731633279115.png"><br><em>現在の状況と推定タイムラインを示す図</em></p><h4 id="次にすべきこと"><a href="#次にすべきこと" class="headerlink" title="次にすべきこと"></a>次にすべきこと</h4><p>新しい Outlook for Windows への移行には、主に 3 つのステップがあります。事前移行、移行、そして移行後です。</p><ul><li>移行前: 移行前の段階では、管理者と IT チームが移行についてできるだけ多くの情報を収集します。移行の内容や組織への影響を理解することが重要です。また、早期移行のパイロット テストも行います。</li><li>移行中: 移行中の段階では、実際に移行を実行します。パイロット テストを継続し、移行プロセスを進化させ、より広範囲に展開します。</li><li>移行後: 最後に、移行後の段階では、IT チームが移行中の活動をまとめます。また、以前の環境を廃止し、次回の移行を改善するための学習を行います。</li></ul><p><img src="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/clipboard_image-5-1731633295122.png"><br><em>新しい Outlook for Windows の移行段階を示す図</em></p><h4 id="移行計画を立てる"><a href="#移行計画を立てる" class="headerlink" title="移行計画を立てる"></a>移行計画を立てる</h4><p>移行キットを確認する - <a href="https://aka.ms/newOutlookAdoption">https://aka.ms/newOutlookAdoption</a>  </p><p>管理者コントロール オプションについて - <a href="https://aka.ms/newOutlookControlRelease">https://aka.ms/newOutlookControlRelease</a>  </p><p>ポリシー管理について学ぶ - <a href="https://learn.microsoft.com/microsoft-365-apps/outlook/manage/policy-management">ポリシー管理 - Office の展開</a> </p><p>更新の管理と<a href="https://learn.microsoft.com/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide">ターゲットリリースでの早期導入者の設定</a>の準備をする</p><p>COM から Web アドインへ移行する - <a href="https://learn.microsoft.com/microsoft-365-apps/outlook/get-started/migrate-com-to-web-addins">COM から Web アドインへの移行</a> を計画し、<a href="https://learn.microsoft.com/microsoft-365-apps/outlook/get-started/migrate-com-to-web-addins#transitioning-add-ins-from-classic-outlook-to-the-new-outlook-for-windows">利用可能な Web アドインのリスト</a>を確認する</p><p>これらのアップデートが、皆様の生産性向上、時間の節約、次のフェーズへの移行計画に役立つことを願っています。</p><p>ぜひ、皆様のフィードバックをお寄せください。私たちの作業に大いに役立ちます。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/outlook/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-202</summary>
-      
-    
-    
-    
-    
-    <category term="New Outlook" scheme="https://jpmessaging.github.io/blog/tags/New-Outlook/"/>
-    
-    <category term="Outlook" scheme="https://jpmessaging.github.io/blog/tags/Outlook/"/>
-    
-    <category term="Copilot" scheme="https://jpmessaging.github.io/blog/tags/Copilot/"/>
     
   </entry>
   
