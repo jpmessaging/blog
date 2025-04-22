@@ -25,9 +25,9 @@ Microsoft の [Secure Future Initiative (SFI)](https://www.microsoft.com/trust-c
 
 2025 年 4 月の HU のリリースにより、この移行の最初のステップを開始する準備が整いました。
 
-<mark>*Exchange ハイブリッド構成を利用して Exchange Online とリッチな共存機能を必要とするお客様*は、2025 年 4 月の HU リリースから 2025 年 10 月までの間に対応を行う必要があります。2025 年 10 月までに専用の Exchange ハイブリッド アプリケーションに更新し、その後 2026 年 10 月までに Graph 権限モデルに移行する手順を実施しない場合、いくつかの Exchange ハイブリッド機能が動作しなくなる可能性があります（オンプレミスと Exchange Online ユーザー間の空き時間情報の共有、メール ヒント、プロフィール写真の共有）。</mark>
+<p style="background: #ffff99">*Exchange ハイブリッド構成を利用して Exchange Online とリッチな共存機能を必要とするお客様*は、2025 年 4 月の HU リリースから 2025 年 10 月までの間に対応を行う必要があります。2025 年 10 月までに専用の Exchange ハイブリッド アプリケーションに更新し、その後 2026 年 10 月までに Graph 権限モデルに移行する手順を実施しない場合、いくつかの Exchange ハイブリッド機能が動作しなくなる可能性があります（オンプレミスと Exchange Online ユーザー間の空き時間情報の共有、メール ヒント、プロフィール写真の共有）。</p>
 
-専用の Exchange ハイブリッド アプリケーションおよびその他の関連変更については、専用のブログ記事 [Exchange Server Security Changes for Hybrid Deployments](https://techcommunity.microsoft.com/blog/exchange/exchange-server-security-changes-for-hybrid-deployments/4396833)、[ドキュメント](https://aka.ms/ConfigureExchangeHybridApplication-Docs)、および [FAQ](https://techcommunity.microsoft.com/blog/exchange/exchange-server-security-changes-for-hybrid-deployments/4396833) をご参照ください。
+専用の Exchange ハイブリッド アプリケーションおよびその他の関連変更については、専用のブログ記事 "[ハイブリッド展開における Exchange Server セキュリティの変更](/blog/exchange-server-security-changes-for-hybrid-deployments/)"、[ドキュメント](https://aka.ms/ConfigureExchangeHybridApplication-Docs)、および [FAQ](https://techcommunity.microsoft.com/blog/exchange/exchange-server-security-changes-for-hybrid-deployments/4396833) をご参照ください。
 
 ### この更新の既知の問題
 
