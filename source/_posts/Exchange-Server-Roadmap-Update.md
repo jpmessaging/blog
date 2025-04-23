@@ -1,7 +1,7 @@
 ---
 title: Exchange Server ロードマップの更新
 date: 2024-07-25
-lastupdate: 2025-03-07
+lastupdate: 2025-04-23
 tags: Exchange
 ---
 
@@ -13,7 +13,7 @@ tags: Exchange
 2024 年 5 月 7 日に公開された [Blog](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742) 記事では今後のオンプレミス Exchange Server を運用する上での重要な情報が公開されており、主に以下の点についてアナウンスがありました。  
 
 - Exchange Server 2019 に対して最後の CU となる CU15 をリリースします。公開時期は 2024 年後期を予定しています。(更新 : CU15 が[リリースされました](https://jpmessaging.github.io/blog/released-2025-h1-cumulative-update-for-exchange-server/))  
-- Exchange Server Subscription Edition (Exchange Server SE) の最初のリリース (RTM バージョン) を 2025 年 7 月 ～ 9 月頃に公開を予定しています。
+- Exchange Server Subscription Edition (Exchange Server SE) の最初のリリース (RTM バージョン) を [2025 年 7 月](https://techcommunity.microsoft.com/blog/microsoft_365blog/licensing-and-pricing-updates-for-on-premises-server-products-coming-july-2025/4400174)に公開を予定しています。
 - Exchange Server SE の RTM に続く、最初の更新プログラムである CU1 を 2025 年の終わり頃に公開予定です。   
 
 # サポート チームからの推奨事項
@@ -69,7 +69,7 @@ Exchange Server 2019 CU15 にはいくつかの新しい機能が追加されて
 
 Exchange Server Subscription Edition の概要をご紹介します。
 
-- **ダウンロード方法について:** Exchange Server SE は Microsoft 365 管理センター (以前は [ボリューム ライセンス サービス センター](https://learn.microsoft.com/ja-jp/licensing/vlsc-faqs-home-page)) にて 2025 年 7 月 ～ 9 月頃よりダウンロードすることが可能となる見込みです。
+- **ダウンロード方法について:** Exchange Server SE は Microsoft 365 管理センター (以前は [ボリューム ライセンス サービス センター](https://learn.microsoft.com/ja-jp/licensing/vlsc-faqs-home-page)) にて [2025 年 7 月](https://techcommunity.microsoft.com/blog/microsoft_365blog/licensing-and-pricing-updates-for-on-premises-server-products-coming-july-2025/4400174)にダウンロードすることが可能となる見込みです。
 
 - **ライセンスについて:** ライセンシング モデルは [SharePoint Server Subscription Edition](https://www.microsoft.com/licensing/terms/productoffering/SharePointServer/EAEAS) と同様のモデルとなります。  サーバー ライセンスとユーザー ライセンスにはサブスクリプション ライセンスまたはアクティブなソフトウェア アシュアランス付きのライセンスが必要です。なお、Hybrid 用の Exchange Server では、今後も[ハイブリッド構成ウィザード](https://learn.microsoft.com/ja-jp/exchange/hybrid-configuration-wizard)経由で無償のライセンスが提供されます。
 
@@ -140,7 +140,9 @@ Exchange Server SE CU1 には以下の変更が含まれる予定ですが、詳
 
 - **RPS の廃止と Admin API の追加:** Admin API は REST ベースの API であり、Exchange Server の管理に使用されます。これまで使用されていた Remote PowerShell (RPS) も CU1 でサポートされますが、それ以降の CU で廃止予定となります。これは PowerShell での管理を廃止するのではなく、PowerShell クライアントとサーバー間のプロトコルをモダン化する対応となります。  
 
-- **Outlook Anywhere の削除:** Exchange Online や Microsoft 365 では数年前に Outlook Anywhere (RPC over HTTP) を用いた接続のサポートを終了しました。Exchange Server SE CU1 以降で、Outlook Anywhere は削除されます。Outlook Anywhere を使うサードパーティ アドインなどに影響がございます。 
+- **Outlook Anywhere の削除 (一時的に廃止を遅延することになりました):** Exchange Online や Microsoft 365 では数年前に Outlook Anywhere (RPC over HTTP) を用いた接続のサポートを終了しました。Exchange Server SE CU1 以降で、Outlook Anywhere は削除されます。Outlook Anywhere を使うサードパーティ アドインなどに影響がございます。 
+
+**更新:** この廃止により影響を受けるお客様からフィードバックをいただきました。現在、これらの障害を解決するために取り組んでおり、Exchange SEリリース後にRPC/HTTP（Outlook Anywhere）の廃止に関する新しいタイムラインを発表する予定です。
 
 - **下位バージョンとの共存の削除:** CU1 がリリースされた後は、Exchange Server SE が唯一サポートされるバージョンとなります。そのため、すべての下位バージョン (Exchange Server 2016 / Exchange Server 2019 を含みます) はサポート対象外となります。また、Exchange Server SE CU1 の Setup 実行時には下位バージョンが共存しているかどうかをチェックし、もし Exchange Server SE RTM 以外のバージョンを検知した場合は Setup によるインストールが失敗します。
 
