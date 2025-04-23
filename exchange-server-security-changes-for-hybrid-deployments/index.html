@@ -123,8 +123,8 @@
       <div class="article-share">
         Last Update:
         <a href="/blog/exchange-server-security-changes-for-hybrid-deployments/" class="article-date-single">    
-    
-    <time datetime="2025-04-22T01:00:00.000Z" itemprop="dateUpdated">2025-04-22</time>
+        
+    <time datetime="2025-04-22T15:00:00.000Z" itemprop="lastupdate">2025-04-23</time>    
     
 </a>
       </div>
@@ -218,12 +218,17 @@
 <p><strong>ハイブリッド 先進認証 (HMA) を使用しています。この場合のガイダンスは何ですか？</strong><br>現在、HMA はファーストパーティ (共有) サービス プリンシパルを使用しています。HMA を設定する際に認証証明書を共有サービス プリンシパルにアップロードする必要がないため、このシナリオは今回の変更の影響を受けず、これまで通り機能し続けます。そのため、専用の Exchange ハイブリッド アプリケーションに切り替えた後、共有サービス プリンシパルから認証証明書を削除しても問題ありません。</p>
 <p><strong>Microsoft Entra Connect (旧 Azure AD Connect) を使用してディレクトリ同期を行っています。すべてのメールボックスはオンプレミスにホストされています。この場合、専用の Exchange ハイブリッド アプリケーションを作成する必要がありますか？</strong><br>ハイブリッド構成ウィザード (HCW) を一度も実行していない場合、専用の Exchange ハイブリッド アプリケーションを構成する必要はありません。ただし、HCW を実行し、空き時間情報の参照、メール ヒント、プロフィール写真の共有といったハイブリッド機能を利用する予定がある場合は、専用の Exchange ハイブリッド アプリケーションを作成する必要があります。</p>
 <p><strong>Exchange ハイブリッド構成を使用していますが、オンプレミスのメールボックスはありません。サーバーは SMTP リレーや受信者管理のみに使用しています。この場合、専用の Exchange ハイブリッド アプリケーションを作成する必要がありますか？</strong><br>空き時間情報の参照、メール ヒント、プロフィール写真の共有などのハイブリッド機能を利用していない場合、専用の Exchange ハイブリッド アプリケーションを作成する必要はありません。将来的にこれらのハイブリッド機能を有効化する場合は、専用の Exchange ハイブリッド アプリケーションを構成する必要があります。</p>
+<p><strong>リッチ共存が不要で、共有サービス プリンシパルから証明書を削除したい場合、先に 4 月の更新プログラムをインストールする必要がありますか？</strong><br>リッチ共存が不要で、共有サービス プリンシパルから証明書を削除するだけであれば、スクリプトの実行前に 2025 年 4 月の更新プログラムをインストールしておく必要はありません。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app#service-principal-clean-up-mode">専用の Exchange ハイブリッド アプリを展開する | Microsoft Learn</a> に記載されている手順に従い、サービス プリンシパル クリーンアップ モードでスクリプトを実行するだけで対応可能です。</p>
 <p><strong>Microsoft Teams 統合のためにオンプレミスのメールボックスを使用した Exchange ハイブリッド構成を利用しています。この場合、専用の Exchange ハイブリッド アプリケーションを作成する必要がありますか？</strong><br>すべてのメールボックスがオンプレミスにホストされている場合、専用の Exchange ハイブリッド アプリケーションを作成する必要はありません。ただし、一部のメールボックスがオンプレミスにあり、他のメールボックスが Exchange Online にホストされている環境では、専用の Exchange ハイブリッド アプリケーションを作成することを推奨します。これにより、空き時間情報の参照、メール ヒント、プロフィール写真の共有といったハイブリッド機能が引き続き正常に動作することが保証されます。</p>
+<p><strong>主な変更点:</strong></p>
+<ul>
+<li>2025&#x2F;4&#x2F;22 : スクリプトを使用してセキュリティ プリンシパルのクリーンアップのみを行う場合、4月の更新プログラム (HU) をインストールする必要がないことに関する FAQ を追加しました。</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/" data-id="cm9t9qyis003ingnmgcu66dpv" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/" data-id="cm9taxsq3003i9wnm2wcoandu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
