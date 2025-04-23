@@ -6,7 +6,7 @@
   <link href="https://jpmessaging.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2025-04-22T01:00:00.000Z</updated>
+  <updated>2025-04-22T15:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Copilot in Outlook の機能について</title>
+    <link href="https://jpmessaging.github.io/blog/System-requirements-for-copilot-in-outlook/"/>
+    <id>https://jpmessaging.github.io/blog/System-requirements-for-copilot-in-outlook/</id>
+    <published>2025-04-22T15:00:00.000Z</published>
+    <updated>2025-04-22T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>こんにちは。日本マイクロソフト Exchange ＆ Outlook サポート チームの山本です。</p><p>本記事では、お問い合わせいただくことも増えている Copilot in Outlook (Microsoft 365 Copilot のうち Outlook で利用できる機能) の利用可能なクライアント環境について説明します。</p><h2 id="Copilot-in-Outlook-の機能とご利用いただける環境"><a href="#Copilot-in-Outlook-の機能とご利用いただける環境" class="headerlink" title="Copilot in Outlook の機能とご利用いただける環境"></a>Copilot in Outlook の機能とご利用いただける環境</h2><p>Copilot in Outlook でご利用いただける機能は以下の公開情報にまとめられており、Copilot in Outlook の新機能がリリースされるたびに情報が更新されます。</p><p>Title: Outlook の Copilot についてよく寄せられる質問<br>URL: <a href="http://support.microsoft.com/office/outlook-07420c70-099e-4552-8522-7d426712917b">http://support.microsoft.com/office/outlook-07420c70-099e-4552-8522-7d426712917b</a><br>※上記の公開情報には、Copilot in Outlook の機能一覧の情報だけではなく、Copilot in Outlook はユーザーのプライマリ メールボックスでのみ使用できるなどの制約事項に関する情報もまとめられています。</p><p>本記事執筆時点では、以下の Copilot in Outlook の各機能をご利用いただけます。</p><ol><li>要約</li><li>Copilot による下書き</li><li>Copilot によるコーチング</li><li>Copilot とのチャット</li><li>Copilot のテーマ</li><li>チャットを使用して会議またはイベントをスケジュールする</li><li>会議の準備</li><li>オフィスに入る時間を推奨する</li></ol><p>各機能の動作や利用方法については前述の公開情報内にリンク先の情報が記載されていますので、そちらを参照ください。<br>下の表には、各機能を利用可能なクライアント環境の情報をまとめました。</p><table>  <tbody><tr>    <th>機能/クライアント環境</th>    <th>従来の Outlook for Windows</th>    <th>新しい Outlook for Windows</th>    <th>Outlook on the web</th>    <th>Outlook for Mac <small>※1</small></th>    <th>Outlook for Mobile (iOS/Android)</th>  </tr>  <tr>    <td>要約</td>    <td>〇</td>    <td>〇</td>    <td>〇</td>    <td>〇</td>    <td>〇</td>  </tr>  <tr>    <td>Copilot による下書き</td>    <td>〇</td>    <td>〇</td>    <td>〇</td>    <td>〇</td>    <td>〇</td>  </tr>  <tr>    <td>Copilot によるコーチング</td>    <td>〇</td>    <td>〇</td>    <td>〇</td>    <td>〇</td>    <td>〇</td>  </tr>  <tr>    <td>Copilot とのチャット <small>※2</small></td>    <td>×</td>    <td>〇</td>    <td>〇</td>    <td>×</td>    <td>×</td>  </tr>  <tr>    <td>Copilot のテーマ</td>    <td>×</td>    <td>〇</td>    <td>〇</td>    <td>〇</td>    <td>〇</td>  </tr>  <tr>    <td>チャットを使用して会議またはイベントをスケジュールする</td>    <td>×</td>    <td>〇</td>    <td>〇</td>    <td>×</td>    <td>×</td>  </tr>  <tr>    <td>会議の準備 <small>※3</small></td>    <td>×</td>    <td>〇</td>    <td>〇</td>    <td>△</td>    <td>△</td>  </tr>  <tr>    <td>オフィスに入る時間を推奨する</td>    <td>ー <small>※4</small></td>    <td>ー <small>※4</small></td>    <td>ー <small>※4</small></td>    <td>ー <small>※4</small></td>    <td>ー <small>※4</small></td>  </tr></tbody></table><small>※1 Copilot in Outlook の各機能は、Outlook for Mac の最新バージョンでのみ利用が可能です。レガシーの Outlook for Mac ではサポートされていません。</small><br><small>※2 「Copilot とのチャット」 機能とは、リボンの Copilot ボタンをクリックした際に画面右側に表示されるチャット画面です。画面左の Copilot アイコンから表示される Microsoft 365 Copilot Chat とは異なります。(詳細について、後述します)</small><br><small>※3 「会議の準備」 機能は、最初に新しい Outlook for Windows と Outlook on the web でリリースされました。今後、Outlook for Mac と Outlook for Mobile にもリリースされる予定です。</small><br><small>※4 「オフィスに入る時間を推奨する」 機能については、厳密には Microsoft Places の機能となりますので、当記事では省略します。</small><br><p>なお、従来の Outlook for Windows で要約、Copilot による下書きとコーチングの各機能が利用可能になったバージョンは以下の通りです。</p><div style="border: 1px solid #000; padding: 10px;">- 要約<br>  最新チャネル: バージョン 2311 (Build 17029.20068) 以降<br>  月次エンタープライズ チャネル: バージョン 2311 (Build 17029.20140) 以降<br><br>- Copilot による下書き<br>  最新チャネル: バージョン 2403 (ビルド 17425.20176) 以降<br>  月次エンタープライズ チャネル: バージョン 2403 (ビルド 17425.20236) 以降<br><br>- Copilot によるコーチング<br>  最新チャネル: バージョン 2401 (ビルド 17231.20182) 以降<br>  月次エンタープライズ チャネル: バージョン 2401 (ビルド 17231.20290) 以降</div><p>上記の通り、従来の Outlook for Windows で Copilot 機能を利用するためには、半期エンタープライズ チャネルではなく、最新チャネルまたは月次エンタープライズ チャネルのどちらかでご利用いただく必要があります。<br>従来の Outlook for Windows をご利用されており、もし対象のバージョンにアップデートされていない場合には、更新後に各機能をご利用ください。</p><h2 id="Outlook-で-Copilot-in-Outlook-が利用できない-表示されない-時に最初に確認すること"><a href="#Outlook-で-Copilot-in-Outlook-が利用できない-表示されない-時に最初に確認すること" class="headerlink" title="Outlook で Copilot in Outlook が利用できない (表示されない) 時に最初に確認すること"></a>Outlook で Copilot in Outlook が利用できない (表示されない) 時に最初に確認すること</h2><p>これまでのお問合せより、Outlook で Copilot in Outlook の Copilot ボタンが表示されない事象が発生する場合、以下の公開情報にある 1. ~ 5. の対処策を実施することで解消した事例が多くあります。<br>そのため同様の事象が発生した場合には、まずはこちらの公開情報より、各対処策のいずれかで事象が回避できるかご確認ください。</p><p>Title: Microsoft 365 アプリで欠落している Copilot ボタンを見つけて有効にする方法<br>URL: <a href="https://support.microsoft.com/office/microsoft-365-c8482b93-4b96-4bb8-8ec9-5148f4d42441">https://support.microsoft.com/office/microsoft-365-c8482b93-4b96-4bb8-8ec9-5148f4d42441</a></p><h2 id="「Copilot-とのチャット」-機能について"><a href="#「Copilot-とのチャット」-機能について" class="headerlink" title="「Copilot とのチャット」 機能について"></a>「Copilot とのチャット」 機能について</h2><p>上表の 「Copilot とのチャット」 機能とは、具体的には Copilot in Outlook とのチャット機能を指しています。<br>Copilot in Outlook とのチャット機能は、新しい Outlook for Windows と Outlook on the web の 2 つのクライアントで画面右に表示される Copilot アイコンから利用可能です。<br>画面右に表示される Copilot アイコンからは、表示しているメールに関連した質問や、表示しているメールに関する会議、イベントをスケジュールすることなどができます。</p><p><img src="/blog/System-requirements-for-copilot-in-outlook/Image1.png"></p><p>一方で、Outlook の画面左に表示される Microsoft 365 Copilot Chat の Copilot アプリ (以下、Copilot アプリ) は、ほとんどの Outlook クライアントや Teamなどで利用可能です。<br>Copilot アプリでのチャット機能では、ユーザー自身のメールボックス内のメールなどのアイテムや Teams のチャット、社内の Web サイトなどを参照することはできますが、特定のメールに関する会議やイベントをスケジュールするといった、Outlook 固有の処理はできません。</p><p><img src="/blog/System-requirements-for-copilot-in-outlook/Image2.png"></p><p>Outlook で表示している特定のメールボックスに対する 「Copilot とのチャット」 機能を利用したい場合には画面右の Copilot アイコンを使用し、ユーザー自身のメールボックス内のメール全体を含む社内の様々なリソースに対する 「Copilot とのチャット」 機能を利用したい場合には Copilot アプリを使用するといったように、利用用途によって使い分けてご利用いただくことをお勧めします。</p><h3 id="Copilot-アプリに関する補足"><a href="#Copilot-アプリに関する補足" class="headerlink" title="Copilot アプリに関する補足"></a>Copilot アプリに関する補足</h3><p>従来の Outlook for Windows で Copilot を利用するためには、最新チャネルまたは月次エンタープライズ チャネルのいずれかを使用する必要があります。<br>半期エンタープライズ チャネルの Outlook では Copilot 機能が提供されません。<br>半期エンタープライズ チャネルのバージョン 2402 以前では、ユーザーへの Microsoft 365 Copilot ライセンスの付与状況によらず、Copilot アプリをご利用いただけますが、これは一時的なものです。<br>Microsoft 365 Apps のバージョン 2408 以降では、Copilot アプリをインストールしても Outlook 上には表示されず、ご利用いただけません。</p><p><strong>本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;こんにちは。日本マイクロソフト Exchange ＆ Outlook サポート チームの山本です。&lt;/p&gt;
+&lt;p&gt;本記事では、お問い合わせいただくことも増えている Copilot in Outlook (Microsoft 365 Copilot のうち Outlook で</summary>
+      
+    
+    
+    
+    
+    <category term="Copilot" scheme="https://jpmessaging.github.io/blog/tags/Copilot/"/>
+    
+  </entry>
   
   <entry>
     <title>ハイブリッド展開における Exchange Server のセキュリティ変更</title>
@@ -190,9 +213,9 @@
     
     
     
-    <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
-    
     <category term="New Outlook" scheme="https://jpmessaging.github.io/blog/tags/New-Outlook/"/>
+    
+    <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
     
     <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
     
@@ -439,28 +462,6 @@
     
     
     <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Exchange Server 2019 に関する更新</title>
-    <link href="https://jpmessaging.github.io/blog/updates-on-servicing-exchange-server-2019/"/>
-    <id>https://jpmessaging.github.io/blog/updates-on-servicing-exchange-server-2019/</id>
-    <published>2024-12-10T00:00:00.000Z</published>
-    <updated>2024-12-10T00:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/updates-on-servicing-exchange-server-2019/4355545">Updates on Servicing Exchange Server 2019</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>2022 年初頭に、Exchange Server のサービス モデルの変更を<a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/released-2022-h1-cumulative-updates-for-exchange-server/ba-p/3285026">発表</a>し、各暦年の上半期 (H1) と下半期 (H2) に合計 2 回の累積更新 (CU) をリリースするサービス サイクルに移行しました。一般的なリリース目標日は 3 月と 9 月です。リリース日は内容と品質、およびセキュリティ更新 (SU) のリリースなど、優先される他の作業によって決まります。</p><p>前回の<a href="https://techcommunity.microsoft.com/blog/exchange/exchange-server-roadmap-update/4132742">ロードマップ更新</a>では、Exchange Server 2019 の最終 CU（H2 2024 CU、別名 CU15）が今年後半にリリースされると述べました。</p><p>本日、Exchange Server 2019 の最後の CU が H1 2025 CU（ただし、CU15 のまま）であり、2025 年 1 月上旬にリリースされることを発表します (<strong>2025&#x2F;2&#x2F;10 更新</strong> : CU15 は<a href="https://jpmessaging.github.io/blog/released-2025-h1-cumulative-update-for-exchange-server/">リリースされました</a>)。<a href="https://techcommunity.microsoft.com/blog/exchange/servicing-exchange-server-2019/3989195">昨年</a>と同様のアプローチを取り、<a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/servicing-exchange-server/ba-p/3676996">一昨年</a>も同様でした。</p><p>その間、すべての顧客に対して、<a href="https://techcommunity.microsoft.com/blog/exchange/re-release-of-november-2024-exchange-server-security-update-packages/4341892">2024 年 11 月 SU の v2 バージョン</a>に更新し、<a href="https://support.microsoft.com/topic/time-zone-exception-occurs-after-installing-exchange-server-november-2024-su-version-1-or-version-2-851b3005-6d39-49a9-a6b5-5b4bb42a606f">既知のタイムゾーン問題</a>の手動回避策を実行することをお勧めします。その後、最新リリースの<a href="https://aka.ms/HealthChecker">Exchange Server HealthChecker</a>をダウンロードして実行し、問題がないことを確認してください。</p><p>最後に、いくつかの注意点があります：</p><ul><li>ライフサイクルの日付は変更されません。</li><li>Exchange Server SE の RTM リリースのタイミングには影響しません。これは引き続き暦年 2025 年の H2 初頭に予定されています。</li><li>すべての顧客に対するガイダンスは変わりません：Exchange Server 2019 に移行し、最新の更新プログラムをインストールし、利用可能になったら Exchange Server SE にインプレースアップグレードしてください。</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/updates-on-servicing-exchange-server-2019/4355545&quot;&gt;Updates on Servicin</summary>
-      
-    
-    
-    
-    
-    <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
     
   </entry>
   
