@@ -16,16 +16,19 @@
 
 
   
-  <title>Tag: Exchange Online | Japan Exchange &amp; Outlook Support Blog</title>
+  <title>Exchange Online におけるダイレクト送信の制御機能強化の導入 | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:url" content="https://jpmessaging.github.io/blog/tags/Exchange-Online/index.html">
+  <meta name="description" content="※ この記事は、Introducing more control over Direct Send in Exchange Online の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 ダイレクト送信は、オンプレミスのデバイス、アプリケーション、またはサード パ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange Online におけるダイレクト送信の制御機能強化の導入">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/introducing-more-control-over-direct-send-in-exchange-online/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです">
+<meta property="og:description" content="※ この記事は、Introducing more control over Direct Send in Exchange Online の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 ダイレクト送信は、オンプレミスのデバイス、アプリケーション、またはサード パ">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-04-30T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-30T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
@@ -96,226 +99,81 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2025" class="archive-year">2025</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/introducing-more-control-over-direct-send-in-exchange-online/" class="archive-article-date">
-  <time datetime="2025-04-30T15:00:00.000Z" itemprop="datePublished">May 1</time>
+        <section id="main"><article id="post-introducing-more-control-over-direct-send-in-exchange-online" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/introducing-more-control-over-direct-send-in-exchange-online/" class="article-date">
+  <time datetime="2025-04-30T15:00:00.000Z" itemprop="datePublished">2025-05-01</time>
 </a>
-      
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/introducing-more-control-over-direct-send-in-exchange-online/">Exchange Online におけるダイレクト送信の制御機能強化の導入</a>
+    <h1 class="article-title" itemprop="name">
+      Exchange Online におけるダイレクト送信の制御機能強化の導入
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/introducing-more-control-over-direct-send-in-exchange-online/" class="article-date-single">    
     
+    <time datetime="2025-04-30T15:00:00.000Z" itemprop="dateUpdated">2025-05-01</time>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/retirement-of-cloud-archive-mailbox-access-by-using-exchange-server-on-premises/" class="archive-article-date">
-  <time datetime="2025-04-17T15:00:00.000Z" itemprop="datePublished">Apr 18</time>
 </a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/retirement-of-cloud-archive-mailbox-access-by-using-exchange-server-on-premises/">オンプレミス Exchange Server の OWA によるクラウド アーカイブ メールボックス アクセスの廃止</a>
-    </h1>
-  
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/introducing-more-control-over-direct-send-in-exchange-online/4408790">Introducing more control over Direct Send in Exchange Online</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365#direct-send-send-mail-directly-from-your-device-or-application-to-microsoft-365-or-office-365">ダイレクト送信</a>は、オンプレミスのデバイス、アプリケーション、またはサード パーティのクラウド サービスから、Exchange Online でホストされているお客様のメールボックスに対して、お客様自身の承認済みドメインを使用してメールを直接送信する方法です。この方法では、認証は一切必要ありません。なぜならこの方法は、送信者のドメインがお客様自身の承認済みドメインであることを除いて、インターネットからの匿名のメールを受信することと同様であるためです。</p>
+<p>ダイレクト送信では、お客様がテナントに対して SPF、DKIM、および DMARC を適切に構成していることを前提としています。管理者は、デバイス、アプリケーション、またはサード パーティ サービスが送信に使用する送信元 IP アドレスを SPF レコードに追加することで、メールがスパムとしてフラグ付けされるのを防ぐ必要があります。SPF が適切に構成されていない場合、ダイレクト送信を使用して送信されたメールはスパムとしてフラグ付けされる可能性が高くなります。</p>
+<p>SPF は、ドメインのなりすましを防ぐための保護を提供しますが、有効なルーティング シナリオでも SPF の失敗に該当する可能性があるため、Soft Fail させる SPF の構成を使用することをお勧めしています。また、ダイレクト送信を使用する必要がないお客様も多いですがこれまでダイレクト送信をブロックする機能は存在しませんでした。この度、Exchange Online のダイレクト送信を拒否する設定を開発し、本日この機能のパブリック プレビューを発表します。</p>
+<h2 id="ダイレクト送信の拒否機能"><a href="#ダイレクト送信の拒否機能" class="headerlink" title="ダイレクト送信の拒否機能"></a>ダイレクト送信の拒否機能</h2><p>定義上、ダイレクト送信は、組織のメールボックスに対して自社ドメインから匿名で送信されるメッセージを対象としています。ダイレクト送信の拒否機能を有効にすると、これらの条件に該当するトラフィックがすべてブロックされます。送信ドメインがテナントの承認済みドメインであるかどうかは、簡単かつ明確に評価できる条件です。この場合の送信ドメインとは、P1 エンベロープ From アドレスを指します。この機能では、P2 ヘッダー From アドレスはチェックされません。また、ここでの「匿名」とは、Exchange Online に送信される際に、いずれのメール フロー コネクタにも関連付けられていないメッセージを意味します。</p>
+<p>ダイレクト送信のトラフィックには、組織が許可したサード パーティ サービスや、オンプレミスでホストされている独自のメール アプリケーションが含まれる場合があります。この機能を有効化した際にこれらのメッセージが拒否されないようにするには、認証が必要です。これを実現するには、メッセージ送信に使用される証明書 (推奨) または IP アドレスに一致する<strong>パートナー タイプのインバウンド コネクタ</strong>を作成します。パートナー タイプのインバウンド コネクタの詳細については、こちらをご覧ください: <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow-best-practices/use-connectors-to-configure-mail-flow/use-connectors-to-configure-mail-flow">Exchange Online でコネクタを使用してメール フローを構成する</a>。</p>
+<p>ダイレクト送信を使用しているすべての送信者を現在把握できていない管理者もいるかもしれませんが、まずはドメインの SPF レコードを確認することが良い出発点となります。受信者の受信トレイにメールを正常に配信するためには、ダイレクト送信を使用する送信者が承認済みドメインの SPF レコードに含まれている必要があります。SPF レコードに含まれていない送信者は、すでにメール配信に苦労している可能性があります。</p>
+<h2 id="機能を有効化する方法"><a href="#機能を有効化する方法" class="headerlink" title="機能を有効化する方法"></a>機能を有効化する方法</h2><p>デフォルトでは、新しいオプトイン設定である RejectDirectSend は False に設定されています。ダイレクト送信の拒否機能を有効化するには、Exchange Online に管理者で接続した PowerShell で以下のコマンドレットを実行する必要があります。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-OrganizationConfig</span> <span class="literal">-RejectDirectSend</span> <span class="variable">$true</span></span><br></pre></td></tr></table></figure>
 
-    </header>
+<p>この変更は、サービス全体に 30 分以内に反映されます。この機能を有効化すると、ダイレクト送信で送られたすべてのメールに対して以下のエラー メッセージが返されます。</p>
+<pre><code>550 5.7.68 TenantInboundAttribution; Direct Send not allowed for this organization from unauthorized sources
+</code></pre>
+<p>ダイレクト送信を再度有効化しない限り、このエラーに該当するメッセージは受信者に送られません。受信者に配信するには、送信者を認証するためのパートナー タイプのインバウンド コネクタを作成する必要があります。</p>
+<h2 id="パブリック-プレビューとリリース-ロードマップ"><a href="#パブリック-プレビューとリリース-ロードマップ" class="headerlink" title="パブリック プレビューとリリース ロードマップ"></a>パブリック プレビューとリリース ロードマップ</h2><p>この機能は、管理者がテストを行いフィードバックを提供するためのパブリック プレビューとしてリリースされています。一部のお客様では、組織に送信されるダイレクト送信トラフィックの追跡が難しく、この機能を有効化することに不安を感じる場合があります。機能リクエストやバグ報告を含むフィードバックは、次のアドレスに送信してください。<em>directsend-feedback[AT]microsoft.com</em>。注意 : ここに送信されたフィードバックには返信されません。この機能に関する質問や問題については、元の記事のコメント欄に記載するか、通常のサポート チャネルを通じてお問い合わせください。</p>
+<p>また、<a target="_blank" rel="noopener" href="https://feedbackportal.microsoft.com/feedback/forum/84b411cc-50d1-ec11-a7b5-0022481f35a4">Exchange Online Feedback Portal</a> を使用して、他の顧客が投票できる機能リクエストを送信することも可能です。この方法は、私たちが機能に関する意思決定を行う際の参考になります。</p>
+<p>私たちは、どのようなダイレクト送信のトラフィックが組織に流入しているかを可視化するための機能を提供する作業を進めています。これにより、管理者は正当なトラフィックを特定して対応し、この機能を自信を持って有効化できるようになります。この取り組みに関する進捗は、元の記事で随時更新していきます。この機能の一般提供 (GA) の具体的な日程は、いただいたフィードバックに基づいて決定されるため、現時点では未定です。GA の発表については、別途お知らせいたします。</p>
+<p>将来的には、この機能を新しいテナントに対してデフォルトで有効化する予定です。これは、組織をデフォルトでより安全にするための取り組みの一環です。また、この計画には、新しいテナントがこの機能を無効化できないようにすることも含まれています。これにより、認証されていないダイレクト送信のトラフィックの使用を抑制することを目指しています。</p>
+<h2 id="既知の問題"><a href="#既知の問題" class="headerlink" title="既知の問題"></a>既知の問題</h2><p>この機能により影響を受ける可能性のある転送シナリオがあります。組織内の誰かがサード パーティにメッセージを送信し、そのサード パーティがそのメッセージを組織内の別のメールボックスに転送する場合です。サード パーティのメール プロバイダーが Sender Rewriting Scheme (SRS) をサポートしていない場合、メッセージは元の送信者のアドレスで戻ってきます。この機能が有効化される前は、これらのメッセージは SPF の失敗によってすでに影響を受けていましたが、受信トレイに届く可能性がありました。しかし、パートナー タイプのインバウンド コネクタを設定せずにダイレクト送信の拒否機能を有効化すると、これらのメッセージは即座に拒否されることになります。</p>
+<h2 id="最後に"><a href="#最後に" class="headerlink" title="最後に"></a>最後に</h2><p>Exchange 管理者の皆様には、この機能をぜひお試しいただき、一般提供 (GA) に向けた検証と改善のためのフィードバックをご提供いただければ幸いです。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/introducing-more-control-over-direct-send-in-exchange-online/" data-id="cma5388d5003rxonmh94c47z7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/System-requirements-for-copilot-in-outlook/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Copilot in Outlook の機能について</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/graph-api---permanent-delete-for-mailbox-items/" class="archive-article-date">
-  <time datetime="2025-04-01T15:00:00.000Z" itemprop="datePublished">Apr 2</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/graph-api---permanent-delete-for-mailbox-items/">Graph API - メールボックス アイテムの完全削除</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/optional-connected-experiences-notice/" class="archive-article-date">
-  <time datetime="2025-03-24T15:00:00.000Z" itemprop="datePublished">Mar 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/optional-connected-experiences-notice/">&#34;あなたのプライバシーは重要です&#34; の通知について</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/introducing-exchange-online-tenant-outbound-email-limits/" class="archive-article-date">
-  <time datetime="2025-02-25T15:00:00.000Z" itemprop="datePublished">Feb 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/introducing-exchange-online-tenant-outbound-email-limits/">Exchange Online テナントの外部送信メール制限の導入</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/the-way-to-control-ews-usage-in-exchange-online-is-changing/" class="archive-article-date">
-  <time datetime="2025-02-24T15:00:00.000Z" itemprop="datePublished">Feb 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/the-way-to-control-ews-usage-in-exchange-online-is-changing/">Exchange Online で EWS の利用を制限する方法が変わります</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/How_to_delete_the_schedule_of_a_retired_employee/" class="archive-article-date">
-  <time datetime="2025-01-21T15:00:00.000Z" itemprop="datePublished">Jan 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/How_to_delete_the_schedule_of_a_retired_employee/">退職者が開催者となっている予定のキャンセル方法の紹介</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/Update%20on%20Client%20Access%20Rules%20Deprecation%20in%20Exchange%20Online/" class="archive-article-date">
-  <time datetime="2024-12-26T15:00:00.000Z" itemprop="datePublished">Dec 27</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/Update%20on%20Client%20Access%20Rules%20Deprecation%20in%20Exchange%20Online/">Exchange Online のクライアント アクセス ルール廃止に関する最新情報</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/exchange-online-to-introduce-external-recipient-rate-limit/" class="archive-article-date">
-  <time datetime="2024-12-19T15:00:00.000Z" itemprop="datePublished">Dec 20</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/exchange-online-to-introduce-external-recipient-rate-limit/">Exchange Online への外部受信者数の制限の導入</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/" class="archive-article-date">
-  <time datetime="2024-11-21T15:00:00.000Z" itemprop="datePublished">Nov 22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/">意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <span class="page-number current">1</span><a class="page-number" href="/blog/tags/Exchange-Online/page/2/">2</a><a class="page-number" href="/blog/tags/Exchange-Online/page/3/">3</a><a class="extend next" rel="next" href="/blog/tags/Exchange-Online/page/2/">Next</a>
-  </nav>
 
 </section>
         
