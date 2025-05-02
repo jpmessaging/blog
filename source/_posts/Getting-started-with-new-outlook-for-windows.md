@@ -72,7 +72,7 @@ Web アドインは従来の Outlook でも利用いただけるため、既に 
 新しい Outlook はリリースされたばかりであり、機能開発はまだ進行中です。  
 加えて新しい Outlook の機能開発は活発におこなわれているため、皆様からのフィードバックをお待ちしております。  
 サポートやフィードバックの詳細については、[新しい Outlook for Windows でサポートに問い合わせ、フィードバックを提供する](https://support.microsoft.com/office/4a4bcc80-c71e-4e44-97c1-d0e62452ef4a)の記事を参照ください。  
-また、[フィードバック ポータル](https://feedbackportal.microsoft.com/feedback/forum/14c10fe9-fe8b-ef11-ac20-7c1e520b2631) もご用意がございますので投稿および同じ意見の投稿がある場合には Vote ボタンをクリックください。  
+また、[フィードバック ポータル](https://feedbackportal.microsoft.com/feedback/forum/14c10fe9-fe8b-ef11-ac20-7c1e520b2631)もご用意がございますので投稿および同じ意見の投稿がある場合には Vote ボタンをクリックください。  
 ※ フィードバック ポータルについては英語での投稿にご協力ください。  
 
 ## 5. Appendix: リリース ノート/ロードマップ
