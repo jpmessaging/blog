@@ -124,7 +124,7 @@
         Last Update:
         <a href="/blog/exchange-server-security-changes-for-hybrid-deployments/" class="article-date-single">    
         
-    <time datetime="2025-04-22T15:00:00.000Z" itemprop="lastupdate">2025-04-23</time>    
+    <time datetime="2025-05-01T15:00:00.000Z" itemprop="lastupdate">2025-05-02</time>    
     
 </a>
       </div>
@@ -220,15 +220,17 @@
 <p><strong>Exchange ハイブリッド構成を使用していますが、オンプレミスのメールボックスはありません。サーバーは SMTP リレーや受信者管理のみに使用しています。この場合、専用の Exchange ハイブリッド アプリケーションを作成する必要がありますか？</strong><br>空き時間情報の参照、メール ヒント、プロフィール写真の共有などのハイブリッド機能を利用していない場合、専用の Exchange ハイブリッド アプリケーションを作成する必要はありません。将来的にこれらのハイブリッド機能を有効化する場合は、専用の Exchange ハイブリッド アプリケーションを構成する必要があります。</p>
 <p><strong>リッチ共存が不要で、共有サービス プリンシパルから証明書を削除したい場合、先に 4 月の更新プログラムをインストールする必要がありますか？</strong><br>リッチ共存が不要で、共有サービス プリンシパルから証明書を削除するだけであれば、スクリプトの実行前に 2025 年 4 月の更新プログラムをインストールしておく必要はありません。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app#service-principal-clean-up-mode">専用の Exchange ハイブリッド アプリを展開する | Microsoft Learn</a> に記載されている手順に従い、サービス プリンシパル クリーンアップ モードでスクリプトを実行するだけで対応可能です。</p>
 <p><strong>Microsoft Teams 統合のためにオンプレミスのメールボックスを使用した Exchange ハイブリッド構成を利用しています。この場合、専用の Exchange ハイブリッド アプリケーションを作成する必要がありますか？</strong><br>すべてのメールボックスがオンプレミスにホストされている場合、専用の Exchange ハイブリッド アプリケーションを作成する必要はありません。ただし、一部のメールボックスがオンプレミスにあり、他のメールボックスが Exchange Online にホストされている環境では、専用の Exchange ハイブリッド アプリケーションを作成することを推奨します。これにより、空き時間情報の参照、メール ヒント、プロフィール写真の共有といったハイブリッド機能が引き続き正常に動作することが保証されます。</p>
+<p><strong>専用の Exchange ハイブリッド アプリの名前 (<em>ExchangeServerApp-{組織の Guid}</em>) を別の名前に変更できますか？</strong><br>アプリケーション作成後に名前を変更しないことを推奨します。アプリ名を変更すると、たとえば認証証明書 (Auth Certificate) の更新時などに ConfigureExchangeHybridApplication.ps1 スクリプトを再実行した場合、重複したアプリが新たに作成される可能性があります。今後リリース予定の専用 Exchange ハイブリッド アプリ対応のハイブリッド構成ウィザード (HCW) も、アプリが既に作成されているかどうかを判定する際にこの一意の名前を利用します。そのため、Entra ID 上でアプリケーション名を変更することは推奨しません。</p>
 <p><strong>主な変更点:</strong></p>
 <ul>
+<li>2025&#x2F;4&#x2F;24 : 専用のハイブリッド アプリの名前変更に関する FAQ を追加しました。</li>
 <li>2025&#x2F;4&#x2F;22 : スクリプトを使用してセキュリティ プリンシパルのクリーンアップのみを行う場合、4月の更新プログラム (HU) をインストールする必要がないことに関する FAQ を追加しました。</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/" data-id="cma5388d3003jxonm3q2c8boq" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/" data-id="cma64uj3c003k5wnm1e6s84xl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
