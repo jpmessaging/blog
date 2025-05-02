@@ -1,6 +1,6 @@
 ---
 title: 新しい Outlook for Windows の始め方：従来版との違いを学ぶ
-date: 2025-05-02
+date: 2025-05-02 17:00:00
 lastupdate:
 tags: New Outlook
 ---

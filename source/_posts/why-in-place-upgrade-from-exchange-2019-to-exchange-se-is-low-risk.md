@@ -1,6 +1,6 @@
 ---
 title: Exchange 2019 から Exchange SE への "インプレース アップグレード" が低リスクである理由
-date: 2025-05-02 9:00:00
+date: 2025-05-02 16:00:00
 lastupdate: 
 tags: Exchange
 ---
