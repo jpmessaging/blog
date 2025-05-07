@@ -5,6 +5,7 @@ lastupdate: 2021-09-30
 tags:
   - Outlook
   - Exchange Online
+alias: インターネット接続性チェックが失敗する環境で Outlook による先進認証が失敗する/index.html
 ---
 
 # 現象

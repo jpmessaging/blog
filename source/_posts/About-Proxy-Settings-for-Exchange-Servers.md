@@ -3,6 +3,7 @@ title: >
   Exchange サーバーのプロキシ設定について
 date: 2020-09-09
 tags: Exchange
+alias: Exchange サーバーのプロキシ設定について/index.html
 ---
 
 ## 概要

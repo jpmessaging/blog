@@ -4,6 +4,7 @@ title: >
 date: 2018-04-02
 lastupdate: 2021-11-04
 tags: O365Identity
+alias: Office 365 のライセンス管理/index.html
 ---
 > ❗ 2021/11/04 Update  
 > 本記事では MSOnline モジュールを使用したライセンス管理方法を紹介しています。Microsoft Graph PowerShell SDK を使用したライセンス管理については[こちら](https://jpazureid.github.io/blog/azure-active-directory/operating-license-with-microsoft-graph/)をご参照ください。

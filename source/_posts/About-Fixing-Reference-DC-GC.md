@@ -3,6 +3,7 @@ title: >
   参照 DC-GC の固定について
 date: 2013-01-07
 tags: Exchange
+alias: 参照 DC-GC の固定について/index.html
 ---
 Exchange 2007/2010 では、Exchange サーバーが参照可能なドメイン コントローラとグローバル カタログ サーバー (以下 DC/GC) について、Get/Set-ExchangeServer を用いて確認と設定をすることができます。
 

@@ -3,6 +3,7 @@ title: 'Exchange Online のクライアント アクセス ルール廃止に関
 date: 2024-12-27
 lastupdate:
 tags: 'Exchange Online'
+alias: Update on Client Access Rules Deprecation in Exchange Online/index.html
 ---
 ※ この記事は、[Update on Client Access Rules Deprecation in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/update-on-client-access-rules-deprecation-in-exchange-online/4354809) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 

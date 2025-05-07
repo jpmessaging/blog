@@ -3,6 +3,7 @@ title: >
   Edge サーバーを振り返る エピソード 1
 date: 2015-11-24
 tags: Exchange
+alias: Edge サーバーを振り返る エピソード 1/index.html
 ---
 こんにちは。Exchange サポートの竹本です。
 

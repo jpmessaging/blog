@@ -3,6 +3,7 @@ title: >
   Office 365 の言語設定について
 date: 2017-07-14
 tags: O365Identity
+alias: Office 365 の言語設定について/index.html
 ---
 こんにちは。いつも Office 365 を利用いただきまして、ありがとうございます。
 今回は、Office 365 での言語設定についてご説明します。

@@ -3,6 +3,7 @@ title: >
   Active Directory サイトを活用した Exchange 導入
 date: 2015-12-09
 tags: Exchange
+alias: Active Directory サイトを活用した Exchange 導入/index.html
 ---
 
 (この記事は 2015 年 11 月 18 日に Office Blogs に投稿された記事 Exchange Active Directory Deployment Site の翻訳です。最新情報については、翻訳元の記事をご参照ください。)

@@ -3,7 +3,7 @@ title: >
  ハイブリッド環境での Autodiscover
 date: 2014-11-10
 tags: Hybrid
-
+alias: ハイブリッド環境での Autodiscover/index.html
 ---
 こんにちは。Exchange サポートの高橋です。
 Exchange Online への移行のため、Exchange のハイブリッド環境に関するお問い合わせが増えております。
@@ -11,8 +11,8 @@ Exchange チームとしては、これまでにも Autodiscover についてご
 
 まず、基本的な Autodiscover の動作については、以下を振り返っていただければと思います。
 
-[Autodiscover を振り返る エピソード 1](/blog/Autodiscover%20を振り返る%20エピソード%201)
-[Autodiscover を振り返る エピソード 2](/blog/Autodiscover%20を振り返る%20エピソード%202)
+[Autodiscover を振り返る エピソード 1](/blog/Reflecting-on-Autodiscover-Episode-1)
+[Autodiscover を振り返る エピソード 2](/blog/Reflecting-on-Autodiscover-Episode-2)
 
 上記ブログでもご紹介のとおり、Outlook クライアントが Autodiscover 接続を行う際、以下の順序で接続が試みられます。
 

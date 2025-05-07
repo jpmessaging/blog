@@ -2,6 +2,7 @@
 title: '新しい Outlook for Windows: 役員秘書や代理人のためのガイド - Part 3'
 date: 2024-10-08
 tags: New Outlook
+alias: NewOutlookforWindows-aguideforExecutiveAssistantsandDelegates-part3/index.html
 ---
 
 ※ この記事は、[New Outlook for Windows: a guide for Executive Assistants and Delegates – part 3](https://techcommunity.microsoft.com/t5/outlook-blog/new-outlook-for-windows-a-guide-for-executive-assistants-and/ba-p/4208796) の抄訳です。最新の情報はリンク先をご確認ください。

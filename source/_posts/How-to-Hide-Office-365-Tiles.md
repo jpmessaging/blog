@@ -3,6 +3,7 @@ title: >
   Office 365 タイルの非表示方法
 date: 2018-04-03
 tags: O365Identity
+alias: Office 365 タイルの非表示方法/index.html
 ---
 こんにちは。いつも Office 365 を利用いただきまして、ありがとうございます。
 今回は、Office 365 タイルの非表示方法について、ご紹介いたします。

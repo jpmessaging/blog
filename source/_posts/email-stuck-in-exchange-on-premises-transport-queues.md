@@ -4,9 +4,10 @@ date: 2022-01-04
 lastupdate: 2022-01-11
 tags:
   - Exchange
+alias: Exchange 20162019 でトランスポート キューにメールが滞留する事象について/index.html
 ---
 
-※ この記事は、[Email Stuck in Transport Queues](https://techcommunity.microsoft.com/t5/exchange-team-blog/email-stuck-in-transport-queues/ba-p/3049447) の抄訳です。
+※ この記事は、[Email Stuck in Transport Queues](https://techcommunity.microsoft.com/blog/exchange/email-stuck-in-exchange-on-premises-transport-queues/3049447) の抄訳です。
 
 こんにちは。日本マイクロソフト Exchange & Outlook サポート チームです。
 
@@ -15,7 +16,7 @@ Exchange 2016 および、Exchange 2019 のマルウェア対策機能の定義�
 弊社開発部門より以下の公開情報にて事象概要と対処手順を公開致しました。
 
 Title: Email Stuck in Transport Queues  
-URL: https://techcommunity.microsoft.com/t5/exchange-team-blog/email-stuck-in-transport-queues/ba-p/3049447
+URL: https://techcommunity.microsoft.com/blog/exchange/email-stuck-in-exchange-on-premises-transport-queues/3049447
 
 今回は上記公開情報を抄訳し、手順に注意点など一部補足を追加してご案内いたします。  
 今後、Update 等により内容に差異が生じた場合はオリジナル (英文) の内容を正とさせて頂きますことを予めご了承ください。
@@ -32,7 +33,7 @@ URL: https://techcommunity.microsoft.com/t5/exchange-team-blog/email-stuck-in-tr
   - [最新エンジンへの更新](#最新エンジンへの更新)
   - [エンジン更新情報の確認](#エンジン更新情報の確認)
 - [補足情報: 上記手順の実行時のユーザー影響について](#補足情報-上記手順の実行時のユーザー影響について)
-- [FAQ: よくお寄せいただくご質問](#FAQ-よくお寄せいただくご質問)
+- [FAQ: よくお寄せいただくご質問](#faq-よくお寄せいただくご質問)
 
 ---
 

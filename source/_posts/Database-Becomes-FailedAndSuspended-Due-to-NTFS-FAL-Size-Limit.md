@@ -3,6 +3,7 @@ title: >
   NTFS の FAL サイズ制限に抵触してデータベースが FailedAndSuspended になる
 date: 2016-12-14
 tags: Exchange
+alias: NTFS の FAL サイズ制限に抵触してデータベースが FailedAndSuspended になる/index.html
 ---
 Exchange Serverをご利用のお客様より、最近お問い合わせが増加傾向にある NTFS の FAL サイズ制限について事象と対処策についてご紹介します。
 

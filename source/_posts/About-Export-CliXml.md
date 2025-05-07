@@ -3,6 +3,7 @@ title: >
   Export-CliXml について
 date: 2015-08-23
 tags: Exchange
+alias: Export-CliXml について/index.html
 ---
 Exchange 2007 以降では PowerShell を利用して設定情報を出力することができますが、Format-List などで出力するよりも Export-CliXml を使うほうが便利な場合があります。
 

@@ -3,6 +3,7 @@ title: 退職者が開催者となっている予定のキャンセル方法の�
 date: 2025-1-22
 lastupdate:
 tags: Exchange Online
+alias: How_to_delete_the_schedule_of_a_retired_employee/index.html
 ---
 こんにちは。日本マイクロソフト Exchange & Outlook サポート チームの山内です。\
 本記事では退職したユーザーが在職中に Exchange Online で開催者として作成していた会議の削除方法について説明します。

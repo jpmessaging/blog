@@ -3,6 +3,7 @@ title: >
   大量のグループに所属する場合の注意点
 date: 2015-10-08
 tags: Exchange
+alias: 大量のグループに所属する場合の注意点/index.html
 ---
 こんにちは、Exchange サポート チームの竹本です。
 

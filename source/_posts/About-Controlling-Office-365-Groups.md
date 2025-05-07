@@ -3,6 +3,7 @@ title: >
   Office 365 グループの制御方法について
 date: 2017-10-03
 tags: O365Identity
+alias: Office 365 グループの制御方法について/index.html
 ---
 こんにちは。いつも Office 365 を利用いただきまして、ありがとうございます。
 今回は、Office 365 グループの制御方法について、ご紹介いたします。

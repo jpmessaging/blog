@@ -3,8 +3,9 @@ title: >
   Exchange Online でのメールの自動転送について知っておくべきこと
 date: 2021-01-20
 tags: Exchange Online
+alias: Exchange Online でのメールの自動転送について知っておくべきこと/index.html
 ---
-※ この記事は、[All you need to know about automatic email forwarding in Exchange Online](https://techcommunity.microsoft.com/t5/exchange-team-blog/all-you-need-to-know-about-automatic-email-forwarding-in/ba-p/2074888) の抄訳です。
+※ この記事は、[All you need to know about automatic email forwarding in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/all-you-need-to-know-about-automatic-email-forwarding-in-exchange-online/2074888) の抄訳です。
 
 多くのお客様において、ビジネス要件としてメールの自動転送を構成する必要があることを弊社でも認識しています。一方、メールの転送はデータ漏洩につながる可能性があります。例えば、アカウントが乗っ取られた場合に攻撃者はメールの転送を設定し、ユーザーは自分のメールが転送されていることに気づかない可能性があります。これはアカウントが乗っ取られた際に使用される非常に一般的な攻撃手法です。
 

@@ -4,6 +4,7 @@ title: >
 date: 2018-05-29
 lastupdate: 2021-11-04
 tags: O365Identity
+alias: Export-Office365LicenseStatus のご紹介/index.html
 ---
 > ❗ 2021/11/04 Update  
 > 本記事で紹介している Export-Office365LicenseStatus は MSOnline (Azure AD v1) モジュールを内部で使用しますが、Microsoft Graph PowerShell SDK を内部で使用するように変更した Export-Microsoft365LicenseStatus がリリースされました。これにともない GitHub リポジトリ名も Export-Microsoft365LicenseStatus に変更されましたが、引き続き Export-Office365LicenseStatus はダウンロード可能であるため、本記事内のリンクを修正しています。

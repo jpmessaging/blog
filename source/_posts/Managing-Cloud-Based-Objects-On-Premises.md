@@ -4,6 +4,7 @@ date: 2021-11-05
 lastupdate: 2024-12-10 16:00:00
 tags: 
 - Exchange
+alias: クラウド上のオブジェクトをオンプレミスで管理する/index.html
 ---
 
 こんにちは。日本マイクロソフト Exchange & Outlook サポート チームです。昨今、大変ありがたいことに Microsoft 365 をご利用頂くお客様も大変多くなってまいりました！

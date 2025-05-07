@@ -3,6 +3,7 @@ title: >
   Exchange 2013 のメール フローについて
 date: 2016-08-08
 tags: Exchange
+alias: Exchange 2013 のメール フローについて/index.html
 ---
 Exchange 2013 サーバー内でトランスポートに関わるサービス プロセスは MSExchangeSubmission、EdgeTransport、MSExchangeDelivery、MSExchangeFrontEndTransport となります。
 

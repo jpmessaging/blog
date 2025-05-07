@@ -5,6 +5,7 @@ lastupdate: 2024-9-12
 tags: 
 - Outlook
 - Exchange Online
+alias: Outlook のプロファイル再作成に再設定が必要な情報/index.html
 ---
 
 こんにちは。日本マイクロソフト Outlook サポート チームです。
@@ -14,7 +15,6 @@ tags:
 例えば、Exchange Online の接続先メールボックスは変更ないが、Outlook プロファイルの破損等なんらかの理由で Outlook プロファイルの再作成が必要な場合に、参考にしてください。
 
 ※オンプレミスの Exchange サーバー、もしくは POP または IMAP で接続している場合には、以下にリストした以外にも移行されない情報があります。
-
 
 ## 再設定が必要な項目
 

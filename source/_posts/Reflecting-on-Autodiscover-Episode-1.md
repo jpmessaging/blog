@@ -3,6 +3,7 @@ title: >
   Autodiscover を振り返る エピソード 1
 date: 2014-03-03
 tags: Exchange
+alias: Autodiscover を振り返る エピソード 1/index.html
 ---
 
 こんにちは、Exchange サポート チームの竹本です。

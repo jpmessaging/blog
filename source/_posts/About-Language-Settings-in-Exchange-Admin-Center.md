@@ -3,6 +3,7 @@ title: >
     Exchange Admin Center の言語設定について
 date: 2019-03-01
 tags: Exchange
+alias: Exchange Admin Center の言語設定について/index.html
 ---
 
 Exchange Admin Center の言語については URL にクエリ文字列 "mkt=<言語コード>" を指定することで自由に変更できます。
@@ -15,4 +16,3 @@ Exchange Admin Center の言語については URL にクエリ文字列 "mkt=<�
 | 日本語     | https://outlook.office.com/ecp/?mkt=ja-jp |
 | US 英語    | https://outlook.office.com/ecp/?mkt=en-us |
 | フランス語 | https://outlook.office.com/ecp/?mkt=fr-fr |
-

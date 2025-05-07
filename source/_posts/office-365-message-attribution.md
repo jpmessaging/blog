@@ -3,9 +3,10 @@ title: >
   Office 365 におけるメッセージの帰属
 date: 2021-02-12
 tags: Exchange Online
+alias: Office 365 におけるメッセージの帰属/index.html
 ---
 ※ この記事は、[Office 365 Message Attribution
-](https://techcommunity.microsoft.com/t5/exchange-team-blog/office-365-message-attribution/ba-p/749143) の抄訳です。
+](https://techcommunity.microsoft.com/blog/exchange/office-365-message-attribution/749143) の抄訳です。
 
 Exchange におけるメッセージのトランスポートとルーティングは、理解するのが少し難しい場合があります。もちろん、メールボックスがすべて Office 365 でホストされている場合は、心配する必要はありません。しかし多くのお客様にとって、Exchange ハイブリッド構成や Office 365 以外のメール システムとの共存の場合、依然として懸念事項として挙げられます。もしお客様組織におけるメールのルーティングが Office 365 のみで完結しない場合、Office 365 がメッセージの帰属をどのように考えているのかを少し知っておく必要があります。
 

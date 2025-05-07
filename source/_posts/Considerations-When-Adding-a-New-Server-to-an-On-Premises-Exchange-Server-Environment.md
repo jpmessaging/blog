@@ -3,13 +3,13 @@ title: >
   オンプレミスの Exchange Server 環境に新規サーバーを追加する際の留意事項について
 date: 2017-11-01
 tags: Exchange
+alias: オンプレミスの Exchange Server 環境に新規サーバーを追加する際の留意事項について/index.html
 ---
 こんにちは。Exchange サポートの益森です。
  
 以前、以下のブログにて、Outlook クライアントが追加構築中のサーバーに接続してしまう動作およびその回避方法を案内しておりますが、最近、ハイブリッド環境の構築など、オンプレミス Exchange Server 環境に新規サーバーを追加するケースが増えているため、改めて、簡単にオンプレミスの Exchange Server 環境に新規サーバーを追加する際の留意事項についてご案内をさせていただきます。
  
-Title : Active Directory サイトを活用した Exchange 導入
-URL : <a href="https://jpmessaging.github.io/blog/Active%20Directory%20サイトを活用した%20Exchange%20導入/">https://jpmessaging.github.io/blog/Active%20Directory%20サイトを活用した%20Exchange%20導入/</a>
+[Active Directory サイトを活用した Exchange 導入](/blog/Implementing-Exchange-Using-Active-Directory-Sites)
  
 まず、上記ブログに記載の通り、Outlook クライアントが追加構築中のサーバーに接続してしまった場合、証明書に関するポップアップが表示される可能性がございます。
  

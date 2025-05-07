@@ -3,6 +3,7 @@ title: >
     Exchange 2013/2016 のセーフティネットの保存期間
 date: 2017-01-25
 tags: Exchange
+alias: Exchange 2013-2016 のセーフティネットの保存期間/index.html
 ---
 
 Exchange 2013/2016 を、Exchange 2010 など以前のバージョンとの混在環境で運用する場合の注意点をご案内します。

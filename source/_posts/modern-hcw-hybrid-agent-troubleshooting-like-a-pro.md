@@ -3,8 +3,9 @@ title: >
   Modern HCW (Hybrid Agent) のトラブルシューティング方法のご紹介
 date: 2020-08-18
 tags: Hybrid
+alias: Modern HCW (Hybrid Agent) のトラブルシューティング方法のご紹介/index.html
 ---
-※ この記事は、[Modern HCW (Hybrid Agent): troubleshooting like a pro](https://techcommunity.microsoft.com/t5/exchange-team-blog/modern-hcw-hybrid-agent-troubleshooting-like-a-pro/ba-p/1558725) の抄訳です。
+※ この記事は、[Modern HCW (Hybrid Agent): troubleshooting like a pro](https://techcommunity.microsoft.com/blog/exchange/modern-hcw-hybrid-agent-troubleshooting-like-a-pro/1558725) の抄訳です。
 
 多くの読者の方は、ハイブリッド構成ウィザード (HCW) のクラシック オプションを使用して自動的に構成されるクラシック ハイブリッド展開については詳しいのではないでしょうか。今回の記事では、モダン ハイブリッド構成 (モダン ハイブリッド エージェント) にフォーカスし、特にエージェントのトラブルシューティング方法をご紹介します。
 

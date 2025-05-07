@@ -3,6 +3,7 @@ title: >
   New-EdgeSubscription 実行時にスマート カード認証が求められる
 date: 2016-12-21
 tags: Exchange
+alias: New-EdgeSubscription 実行時にスマート カード認証が求められる/index.html
 ---
 
 今回は、Exchange 2013/2016 のエッジ トランスポート サーバーをご利用でコマンドレット実行時にスマート カード認証を求められる場合の回避策についてご紹介します。
