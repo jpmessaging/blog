@@ -19,7 +19,7 @@ tags: 'Exchange Online'
 - **セクション 1:** メールボックスの **CRUD (作成、読み取り、更新、削除) 操作を簡素化**するために、**各メールボックス タイプに特化したコマンドレットを導入**するアプローチに焦点を当てています。
 - **セクション 2:** Exchange Online コマンドレットの**パフォーマンス向上**を目的とした変更点の提案に焦点を当てています。**5 つの変更**の提案について質問をし、それぞれの変更について、皆様のご希望をより深く理解するための追加質問を用意しています。
 
-### Exchange Online 管理シナリオ向け RESTful API
+## Exchange Online 管理シナリオ向け RESTful API
 
 別のアンケートでは、Exchange Online の管理シナリオのための REST API の導入のご要望について、私たちが深く理解するための調査を行っています。
 このアンケートへのリンク: [https://forms.office.com/r/ZQYTzSZJ72](https://forms.office.com/r/ZQYTzSZJ72)
