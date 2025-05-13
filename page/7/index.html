@@ -98,6 +98,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-About-Proxy-Settings-for-Exchange-Servers" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/About-Proxy-Settings-for-Exchange-Servers/" class="article-date">
+  <time datetime="2020-09-08T15:00:00.000Z" itemprop="datePublished">2020-09-09</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/About-Proxy-Settings-for-Exchange-Servers/">Exchange サーバーのプロキシ設定について
+</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/About-Proxy-Settings-for-Exchange-Servers/" class="article-date-single">    
+    
+    <time datetime="2020-09-08T15:00:00.000Z" itemprop="dateUpdated">2020-09-09</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        概要Exchange サーバーもハイブリッド環境や外部組織と連携する際などにはウェブ プロキシを設定する必要があります。具体的に必要となる設定についてご案内します。
+詳細設定箇所は以下となります。
+
+Exchange サーバーの InternetWebProxy 
+これは Get-ExchangeServer の InternetWebPorxy となります。
+1Set-ExchangeServer &lt;対象サーバー&gt; -InternetWebProxy &lt;プロキシ URI&gt;
+
+例:
+1Set-ExchangeServer ExSvr1 -InternetWebProxy http://myproxy:8080
+
+WinHttp の既定のプロキシ
+Exchange サーバーの制御下にない、OS 側コンポーネントの動作としてインターネット接続が必要になる場合もあります。...
+        <p class="article-more-link">
+          <a href="/blog/About-Proxy-Settings-for-Exchange-Servers/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/About-Proxy-Settings-for-Exchange-Servers/" data-id="cmambfi5d000hdonmfbcw6ymm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-modern-hcw-hybrid-agent-troubleshooting-like-a-pro" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/modern-hcw-hybrid-agent-troubleshooting-like-a-pro/" class="article-date">
@@ -142,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/modern-hcw-hybrid-agent-troubleshooting-like-a-pro/" data-id="cmaf2tjg3004rs4nm7y2j8kqt" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/modern-hcw-hybrid-agent-troubleshooting-like-a-pro/" data-id="cmambfi6r0053donm11ho3kn7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li></ul>
@@ -214,7 +275,7 @@ https://outlook.office.com/ecp/?mkt=fr-fr
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/About-Language-Settings-in-Exchange-Admin-Center/" data-id="cmaf2tjev000cs4nmdqx4466w" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/About-Language-Settings-in-Exchange-Admin-Center/" data-id="cmambfi5b000cdonmcfy6ayp7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -265,7 +326,7 @@ https://outlook.office.com/ecp/?mkt=fr-fr
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Considerations-When-the-Self-Signed-Certificate-on-an-Exchange-2013-Mailbox-Server-Expires/" data-id="cmaf2tjf5001cs4nmdvvn91fy" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Considerations-When-the-Self-Signed-Certificate-on-an-Exchange-2013-Mailbox-Server-Expires/" data-id="cmambfi5l001adonm0hphc5at" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -318,7 +379,7 @@ https://outlook.office.com/ecp/?mkt=fr-fr
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Case-Studies-of-Errors-in-Synchronizing-Azure-AD-and-Exchange-Online/" data-id="cmaf2tjf30014s4nm072raw0t" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Case-Studies-of-Errors-in-Synchronizing-Azure-AD-and-Exchange-Online/" data-id="cmambfi5j0011donm89i27wo0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li></ul>
@@ -377,7 +438,7 @@ Outlook on the Web (Ootw) &#x2F; Exchange 管理センターにアクセスで�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Things-to-Check-Before-Contacting-Office-365-Support/" data-id="cmaf2tjfm003cs4nm1png7tfb" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Things-to-Check-Before-Contacting-Office-365-Support/" data-id="cmambfi6d003hdonmfhhh5x4l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>
@@ -427,7 +488,7 @@ Outlook on the Web (Ootw) &#x2F; Exchange 管理センターにアクセスで�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Basics-of-Synchronizing-and-Troubleshooting-Azure-AD-and-Exchange-Online/" data-id="cmaf2tjf20012s4nmfa2r27va" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Basics-of-Synchronizing-and-Troubleshooting-Azure-AD-and-Exchange-Online/" data-id="cmambfi5m001fdonmfzx7cxhd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li></ul>
@@ -482,7 +543,7 @@ Outlook on the Web (Ootw) &#x2F; Exchange 管理センターにアクセスで�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/About-Actions-to-Take-When-Your-Account-is-Compromised/" data-id="cmaf2tjes0005s4nm916dhgkt" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/About-Actions-to-Take-When-Your-Account-is-Compromised/" data-id="cmambfi560003donmf1qcazhf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>
@@ -533,7 +594,7 @@ Outlook on the Web (Ootw) &#x2F; Exchange 管理センターにアクセスで�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Introduction-to-Export-Office365LicenseStatus/" data-id="cmaf2tjfd002as4nmg29ohsyc" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Introduction-to-Export-Office365LicenseStatus/" data-id="cmambfi5v002cdonm68qwd3vl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>
@@ -587,64 +648,7 @@ Office 365 ポータルにアクセスしますと、トップページやアプ
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/How-to-Hide-Office-365-Tiles/" data-id="cmaf2tjfa0020s4nm0g4c3u37" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Managing-Office-365-Licenses" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/Managing-Office-365-Licenses/" class="article-date">
-  <time datetime="2018-04-01T15:00:00.000Z" itemprop="datePublished">2018-04-02</time>
-</a>
-    <!--  -->
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header-single">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/Managing-Office-365-Licenses/">Office 365 のライセンス管理
-</a>
-    </h1>
-  
-
-      </header>
-      <div class="article-share">
-        Last Update:
-        <a href="/blog/Managing-Office-365-Licenses/" class="article-date-single">    
-        
-    <time datetime="2021-11-03T15:00:00.000Z" itemprop="lastupdate">2021-11-04</time>    
-    
-</a>
-      </div>
-    
-    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
-      
-        
-❗ 2021&#x2F;11&#x2F;04 Update本記事では MSOnline モジュールを使用したライセンス管理方法を紹介しています。Microsoft Graph PowerShell SDK を使用したライセンス管理についてはこちらをご参照ください。
-
-こんにちは。いつも Office 365 を利用いただきまして、ありがとうございます。今回は、Office 365 のライセンス管理について、ご紹介いたします。
-&nbsp;
-Office 365 でユーザーにライセンスを付与するには、GUI（Office 365 管理センター）で操作する方法と、PowerShell で操作する方法があります。少人数の作業であれば前者で問題ありませんが、ユーザーが多い場合や、スクリプトとして実行したいような場合は後者の方法が有効です。
-&nbsp;
-よくあるお問い合わせのシナリオに沿って、ラ...
-        <p class="article-more-link">
-          <a href="/blog/Managing-Office-365-Licenses/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Managing-Office-365-Licenses/" data-id="cmaf2tjfe002gs4nmf7ujdw4k" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/How-to-Hide-Office-365-Tiles/" data-id="cmambfi5s0022donmf9mf9snc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a></li></ul>
@@ -660,7 +664,7 @@ Office 365 でユーザーにライセンスを付与するには、GUI（Office
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/blog/page/6/">Prev</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/5/">5</a><a class="page-number" href="/blog/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/blog/page/8/">8</a><a class="page-number" href="/blog/page/9/">9</a><a class="page-number" href="/blog/page/10/">10</a><a class="extend next" rel="next" href="/blog/page/8/">Next</a>
+    <a class="extend prev" rel="prev" href="/blog/page/6/">Prev</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/5/">5</a><a class="page-number" href="/blog/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/blog/page/8/">8</a><a class="page-number" href="/blog/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/11/">11</a><a class="extend next" rel="next" href="/blog/page/8/">Next</a>
   </nav>
 
 </section>
@@ -674,7 +678,7 @@ Office 365 でユーザーにライセンスを付与するには、GUI（Office
   <div class="widget-wrap">
     <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">41</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">27</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">41</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">28</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li></ul>
     </div>
   </div>
 
@@ -684,7 +688,7 @@ Office 365 でユーザーにライセンスを付与するには、GUI（Office
   <div class="widget-wrap">
     <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -695,6 +699,10 @@ Office 365 でユーザーにライセンスを付与するには、GUI（Office
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/give-us-feedback-on-exchange-online-cmdlet-changes-and-rest-api-availability-for/">Exchange Online コマンドレットの変更と管理シナリオでの REST API の導入に関するフィードバックをお寄せください</a>
+          </li>
         
           <li>
             <a href="/blog/introducing-exchange-web-services-ews-usage-reports-in-microsoft-365-admin-cente/">Microsoft 365 管理センターでの Exchange Web Services (EWS) 利用状況レポートの導入</a>
@@ -710,10 +718,6 @@ Office 365 でユーザーにライセンスを付与するには、GUI（Office
         
           <li>
             <a href="/blog/Getting-started-with-new-outlook-for-windows/">新しい Outlook for Windows の始め方：従来版との違いを学ぶ</a>
-          </li>
-        
-          <li>
-            <a href="/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/">Exchange 2019 から Exchange SE への &#34;インプレース アップグレード&#34; が低リスクである理由</a>
           </li>
         
       </ul>
