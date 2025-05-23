@@ -16,16 +16,19 @@
 
 
   
-  <title>Archives: 2018/8 | Japan Exchange &amp; Outlook Support Blog</title>
+  <title>レガシー Exchange Online トークンおよびそれを利用するアドインのステータス確認について | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:url" content="https://jpmessaging.github.io/blog/archives/2018/08/index.html">
+  <meta name="description" content="※ この記事は、Get the status of legacy Exchange Online tokens and add-ins that use them の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 組織内でのレガシー トークン利用状況の確認方法以前">
+<meta property="og:type" content="article">
+<meta property="og:title" content="レガシー Exchange Online トークンおよびそれを利用するアドインのステータス確認について">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです">
+<meta property="og:description" content="※ この記事は、Get the status of legacy Exchange Online tokens and add-ins that use them の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 組織内でのレガシー トークン利用状況の確認方法以前">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-05-22T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-22T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
@@ -96,61 +99,69 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/Case-Studies-of-Errors-in-Synchronizing-Azure-AD-and-Exchange-Online/" class="archive-article-date">
-  <time datetime="2018-08-09T15:00:00.000Z" itemprop="datePublished">Aug 10</time>
+        <section id="main"><article id="post-get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them/" class="article-date">
+  <time datetime="2025-05-22T15:00:00.000Z" itemprop="datePublished">2025-05-23</time>
 </a>
-      
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/Case-Studies-of-Errors-in-Synchronizing-Azure-AD-and-Exchange-Online/">Azure AD と Exchange Online 間の同期に関するエラーの事例集
-</a>
+    <h1 class="article-title" itemprop="name">
+      レガシー Exchange Online トークンおよびそれを利用するアドインのステータス確認について
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them/" class="article-date-single">    
     
+    <time datetime="2025-05-22T15:00:00.000Z" itemprop="dateUpdated">2025-05-23</time>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/Things-to-Check-Before-Contacting-Office-365-Support/" class="archive-article-date">
-  <time datetime="2018-08-01T15:00:00.000Z" itemprop="datePublished">Aug 2</time>
 </a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/Things-to-Check-Before-Contacting-Office-365-Support/">Office 365 サポートにお問い合わせいただく際に事前に確認いただく内容
-</a>
-    </h1>
-  
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them/4416267">Get the status of legacy Exchange Online tokens and add-ins that use them</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<h2 id="組織内でのレガシー-トークン利用状況の確認方法"><a href="#組織内でのレガシー-トークン利用状況の確認方法" class="headerlink" title="組織内でのレガシー トークン利用状況の確認方法"></a>組織内でのレガシー トークン利用状況の確認方法</h2><p><a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/update-on-nested-app-authentication-and-deprecation-of-exchange-online-legacy-to/4351951">以前のブログ記事</a>でもお伝えした通り、Exchange Online ではまもなく Outlook アドインが私たちのサービスへの認証に利用していた Exchange レガシー トークンを廃止します。今後、Exchange Online で利用する Outlook アドインは Nested App Authentication (NAA) を使用する必要があります。この変更は Exchange Online のみが対象です。詳細は <a target="_blank" rel="noopener" href="https://learn.microsoft.com/office/dev/add-ins/outlook/faq-nested-app-auth-outlook-legacy-tokens">FAQ</a> をご参照ください。</p>
+<p>数日前、ドキュメントを更新し、テナント管理者が Exchange Online PowerShell で以下のコマンドを実行することで、現在も Exchange レガシー トークンを要求 (および取得) しているアドインの ID 一覧を取得できるように出力を追加しました。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-AuthenticationPolicy</span> <span class="literal">-AllowLegacyExchangeTokens</span></span><br></pre></td></tr></table></figure>
 
-    </header>
+<p>結果の解釈方法など詳細については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/office/dev/add-ins/outlook/turn-exchange-tokens-on-off#get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them">レガシー Exchange Online トークンのオンとオフを切り替える</a>をご参照ください。</p>
+<h2 id="レガシー-トークンを-2025-年-10-月まで引き続き利用するための例外申請方法"><a href="#レガシー-トークンを-2025-年-10-月まで引き続き利用するための例外申請方法" class="headerlink" title="レガシー トークンを 2025 年 10 月まで引き続き利用するための例外申請方法"></a>レガシー トークンを 2025 年 10 月まで引き続き利用するための例外申請方法</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/office/dev/add-ins/outlook/faq-nested-app-auth-outlook-legacy-tokens">廃止に関する FAQ</a> でも案内されている通り、Exchange Online のレガシー トークンを 2025 年 10 月まで引き続き利用したい場合は、例外申請を行うことができます。</p>
+<p>例外申請は、以下のリンクから行うことができます (テナントへのサインインが必要です)。<a target="_blank" rel="noopener" href="http://aka.ms/LegacyTokensByOctober">http://aka.ms/LegacyTokensByOctober</a></p>
+<p style="background:yellow"><b>重要:</b> <i><a class="lia-external-url" href="https://learn.microsoft.com/office/dev/add-ins/outlook/turn-exchange-tokens-on-off#get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them" target="_blank" rel="noopener noreferrer">レガシー トークンの利用状況</a>を必ず確認した上で</i>例外申請を行ってください。2025 年 10 月にレガシー トークンが無効化されると、<i>元に戻すことはできません</i>。</p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them/" data-id="cmb07mn32004cr8nmb35u755u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/blog/give-us-feedback-on-exchange-online-cmdlet-changes-and-rest-api-availability-for/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange Online コマンドレットの変更と管理シナリオでの REST API の導入に関するフィードバックをお寄せください</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         
