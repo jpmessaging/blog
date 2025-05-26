@@ -124,7 +124,7 @@
         Last Update:
         <a href="/blog/exchange-server-security-changes-for-hybrid-deployments/" class="article-date-single">    
         
-    <time datetime="2025-05-01T15:00:00.000Z" itemprop="lastupdate">2025-05-02</time>    
+    <time datetime="2025-05-25T15:00:00.000Z" itemprop="lastupdate">2025-05-26</time>    
     
 </a>
       </div>
@@ -209,6 +209,7 @@
 <p><strong>この変更は、Exchange Server と Exchange Online 間のメールボックス移行に影響を与えますか？</strong><br>この変更は、Exchange Online と Exchange Server 間のメールボックスのオンボードまたはオフボード移行には影響を与えません。</p>
 <p><strong>この変更は、EWS プロトコルを使用して Exchange Online メールボックスに接続するサードパーティ アプリケーションに影響を与えますか？</strong><br>この変更は、オンプレミス サーバーから Exchange Online への Exchange ハイブリッド EWS 呼び出しのみに影響します。なお、Exchange Online における <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/retirement-of-exchange-web-services-in-exchange-online/3924440">EWS プロトコルの廃止</a> は 2026 年 10 月に予定されていますのでご注意ください。</p>
 <p><strong>複数テナントのハイブリッド構成 (単一のオンプレミス AD フォレストが複数の Exchange Online テナントに接続されている場合) を使用しています。どのような対応が必要ですか？</strong><br>専用の Exchange ハイブリッド アプリに切り替えるスクリプトは、各テナントごとに 1 回実行する必要があります。このスクリプトは、対応する認証サーバー オブジェクトを更新し、各テナントにアプリケーションを作成する必要があるためです。最適なアプローチは、スクリプトを分割実行モードで実行し、設定オーバーライドの作成を除くすべての構成を完了することです (このオーバーライドを作成すると、Exchange Server が新しいアプリケーションを使用し始めます)。すべてのテナントで専用の Exchange ハイブリッド アプリが作成された後、スクリプトを再度実行してオーバーライドを作成し、オンプレミスの Exchange サーバーがこの機能を使用できるようにしてください。詳細については、ドキュメントをご参照ください。</p>
+<p><strong>複数のオンプレミス フォレストから 1 つの Exchange Online ハイブリッド テナントに接続しています。どのような対応が必要ですか？</strong><br>この場合、各オンプレミス Exchange 組織／フォレストごとにスクリプトを実行してください。これにより、1 つの Microsoft 365 テナント内に複数の専用ハイブリッド アプリ (ExchangeServerApp-{Exchange 組織の GUID}) が作成されます。このシナリオでは、すべてのフォレストで専用ハイブリッド アプリの利用が有効化され、すべてのサーバーが最新の状態になってから、共有セキュリティ プリンシパルから証明書を削除してください。</p>
 <p><strong>専用の Exchange ハイブリッド アプリのスクリプトが新しい専用の Exchange ハイブリッド アプリに過剰な EWS 権限を割り当てることへ懸念があります</strong><br>Exchange Server が Exchange ハイブリッド用の Graph API 呼び出しをサポートするように更新されると (2025 年第 3 四半期を予定)、スクリプトを更新し、より細かい Graph API 権限に置き換えるためにスクリプトを再実行するようお客様に案内する予定です。<u>なお、専用の Exchange ハイブリッド アプリを作成する初期段階 (オンプレミスの Exchange サーバーに Graph のサポートが利用可能になる前に専用の Exchange ハイブリッド アプリを作成した段階) で割り当てられる EWS 権限は、現在共有セキュリティ プリンシパルに割り当てられている権限と同じです。</u></p>
 <p><strong>なぜ Microsoft は、顧客に専用の Exchange ハイブリッド アプリケーションを作成させる方向性を選択し、Microsoft が管理する新しいアプリケーションを公開しないのでしょうか？</strong><br>お客様テナント内で専用の Exchange ハイブリッド アプリケーションを使用するアプローチは、アプリの修正が必要になるような変更が将来発生した場合に、お客様はより柔軟に対応できるようになります。たとえば、EWS から Graph API 呼び出しへの移行が予定されており、アプリケーションの調整 (API 権限の更新など) が必要になります。専用のお客様のアプリケーションを使用することで、お客様は EWS API 権限から Graph API 権限への移行を行うタイミングを選択できます。専用の Exchange ハイブリッド アプリケーションは PowerShell スクリプトまたは (今年後半にリリース予定の) ハイブリッド構成ウィザードによって自動的に作成および構成されるため、Microsoft が管理するアプリケーションを使用することによる追加のメリットはありません。</p>
 <p><strong>新しい専用の Exchange ハイブリッド アプリを構成する機能は、ハイブリッド構成ウィザード (HCW) で利用可能になりますか？</strong><br>HCW にこの機能を追加する更新は、2025 年第 2 四半期にリリースされる予定です。</p>
@@ -223,6 +224,7 @@
 <p><strong>専用の Exchange ハイブリッド アプリの名前 (<em>ExchangeServerApp-{組織の Guid}</em>) を別の名前に変更できますか？</strong><br>アプリケーション作成後に名前を変更しないことを推奨します。アプリ名を変更すると、たとえば認証証明書 (Auth Certificate) の更新時などに ConfigureExchangeHybridApplication.ps1 スクリプトを再実行した場合、重複したアプリが新たに作成される可能性があります。今後リリース予定の専用 Exchange ハイブリッド アプリ対応のハイブリッド構成ウィザード (HCW) も、アプリが既に作成されているかどうかを判定する際にこの一意の名前を利用します。そのため、Entra ID 上でアプリケーション名を変更することは推奨しません。</p>
 <p><strong>主な変更点:</strong></p>
 <ul>
+<li>2025&#x2F;5&#x2F;16 : 複数のオンプレミス フォレスト構成に関する FAQ を追加しました。</li>
 <li>2025&#x2F;4&#x2F;24 : 専用のハイブリッド アプリの名前変更に関する FAQ を追加しました。</li>
 <li>2025&#x2F;4&#x2F;22 : スクリプトを使用してセキュリティ プリンシパルのクリーンアップのみを行う場合、4月の更新プログラム (HU) をインストールする必要がないことに関する FAQ を追加しました。</li>
 </ul>
@@ -230,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/" data-id="cmb07mn33004er8nm0ugb363n" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/" data-id="cmb4m7rlj0048wonm01naf6r7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
