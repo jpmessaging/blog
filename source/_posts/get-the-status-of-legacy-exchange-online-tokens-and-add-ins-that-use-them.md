@@ -1,7 +1,7 @@
 ---
 title: 'レガシー Exchange Online トークンおよびそれを利用するアドインのステータス確認について'
 date: 2025-5-23
-lastupdate:
+lastupdate: 2025-5-29
 tags: 'Exchange Online'
 ---
 
@@ -23,6 +23,6 @@ Get-AuthenticationPolicy -AllowLegacyExchangeTokens
 
 [廃止に関する FAQ](https://learn.microsoft.com/office/dev/add-ins/outlook/faq-nested-app-auth-outlook-legacy-tokens) でも案内されている通り、Exchange Online のレガシー トークンを 2025 年 10 月まで引き続き利用したい場合は、例外申請を行うことができます。
 
-例外申請は、以下のリンクから行うことができます (テナントへのサインインが必要です)。[http://aka.ms/LegacyTokensByOctober](http://aka.ms/LegacyTokensByOctober)
+例外申請は、以下のリンクから行うことができます (テナントへのサインインが必要です)。[https://aka.ms/LegacyTokensByOctober](https://aka.ms/LegacyTokensByOctober)
 
 <p style="background:yellow"><b>重要:</b> <i><a class="lia-external-url" href="https://learn.microsoft.com/office/dev/add-ins/outlook/turn-exchange-tokens-on-off#get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them" target="_blank" rel="noopener noreferrer">レガシー トークンの利用状況</a>を必ず確認した上で</i>例外申請を行ってください。2025 年 10 月にレガシー トークンが無効化されると、<i>元に戻すことはできません</i>。</p>
