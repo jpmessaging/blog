@@ -5,6 +5,8 @@ lastupdate:
 tags: 'Exchange Online'
 ---
 
+※ この記事は、[Announcing General Availability (GA) of the New Message Trace in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/4420243) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
 本日、Exchange Online の Exchange 管理センター (EAC) における新しいメッセージ トレースの一般提供 (GA) を、ワールド ワイド (WW) のお客様向けに発表いたします。ロール アウトは 6 月中旬より開始し、7 月中に完了する予定です。[パブリック プレビュー](https://techcommunity.microsoft.com/blog/exchange/announcing-public-preview-of-the-new-message-trace-in-exchange-online/4356561)と同様に、管理者の皆様は Exchange 管理センターの "メール フロー" > "メッセージ トレース" から新しいメッセージ トレースとその機能に既定でアクセスできるようになります。パブリック プレビュー期間中には、新しいメッセージ トレースの設計、パフォーマンス、機能の充実について多くの貴重なご意見をいただきました。今後は新しいメッセージ トレース体験への移行を進めてまいります。追加のご意見がございましたら、Exchange 管理センターの "フィードバックの送信" よりお寄せください。
 
 ### 従来のメッセージ トレース インターフェイスおよびコマンドレットの廃止スケジュール
