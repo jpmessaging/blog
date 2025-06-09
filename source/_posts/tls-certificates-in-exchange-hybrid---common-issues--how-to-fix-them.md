@@ -127,7 +127,7 @@ HCW でコネクタ構成を更新した場合、HCW 実行前後のコネクタ
     - `Get-InboundConnector | Export-Clixml c:\temp\EXOInConBkp.xml`
     - `Get-OutboundConnector | Export-Clixml c:\temp\EXOOutConBkp.xml`
 
-- メールフローの問題発生時などに以前の設定内容を確認したい場合は、次のコマンドでエクスポートした XML ファイルをインポートして比較できます。
+- メール フローの問題発生時などに以前の設定内容を確認したい場合は、次のコマンドでエクスポートした XML ファイルをインポートして比較できます。
     - `$VariableName = Import-Clixml c:\temp\<filename>.xml`
 
 ### オプション 2 – HCW 実行後に HCW ログを確認する
@@ -171,7 +171,7 @@ HCW (ハイブリッド構成ウィザード) を実行せずに、サード パ
         Set-ReceiveConnector -Identity "<受信コネクタ名>" -TlsCertificateName $TLSCertificateName
         ```
 
-**オンプレミス Exchange から Exchange Online へのメールフロー**
+**オンプレミス Exchange から Exchange Online へのメール フロー**
 
 - **オンプレミス Exchange の送信コネクタ**
     - 通常 "Outbound to Office 365 <GUID>" コネクタが Exchange Online へのメール ルーティングを担当します。(宛先は "<domain>.mail.onmicrosoft.com")
