@@ -1,13 +1,22 @@
 ---
 title: 'Exchange Online の新しいメッセージ追跡の一般提供 (GA) を発表'
-date: 2025-6-4
-lastupdate:
+date: 2025-06-04
+lastupdate: 2025-06-10
 tags: 'Exchange Online'
 ---
 
 ※ この記事は、[Announcing General Availability (GA) of the New Message Trace in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/4420243) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 本日、Exchange Online の Exchange 管理センター (EAC) における新しいメッセージ追跡の一般提供 (GA) を、ワールド ワイド (WW) のお客様向けに発表いたします。機能の展開は 6 月中旬より開始し、7 月中に完了する予定です。[パブリック プレビュー](https://techcommunity.microsoft.com/blog/exchange/announcing-public-preview-of-the-new-message-trace-in-exchange-online/4356561)と同様に、管理者の皆様は Exchange 管理センターの "メール フロー" > "メッセージ追跡" から新しいメッセージ追跡に既定でアクセスできるようになります。パブリック プレビュー期間中には、新しいメッセージ追跡の設計、パフォーマンス、機能の充実について多くの貴重なご意見をいただきました。今後は新しいメッセージ追跡体験への移行を進めてまいります。追加のご意見がございましたら、Exchange 管理センターの "フィードバックの送信" よりお寄せください。
+
+## スロットリング制限
+
+Exchange Online のリソースの不正利用や濫用のリスクを低減し、すべてのユーザーにサービスの可用性と予測可能な利用体験を提供するため、一定期間内のリクエスト数に基づくレート制限 (スロットリング) を導入します。1 テナントあたり 5 分間で最大 100 件のクエリ リクエストが受け付けられます。過去 5 分間のリクエスト数が 100 件を下回る状態ではスロットリングは適用されません。自動化などでスロットリングの閾値を超える頻度でクエリを実行している場合は、制限内に収まるように設定を見直してください。
+
+| コマンドレット | テナント レベルの制限 |
+| --- | --- |
+| Get-MesesageTraceV2 | 5 分あたり最大 100 件のリクエスト |
+| Get-MessageTraceDetailV2 | 5 分あたり最大 100 件のリクエスト |
 
 ## 従来のメッセージ追跡インターフェイスおよびコマンドレットの廃止スケジュール
 
