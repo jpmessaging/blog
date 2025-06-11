@@ -15,8 +15,8 @@ Exchange Online のリソースの不正利用や濫用のリスクを低減し�
 
 | コマンドレット | テナント レベルの制限 |
 | --- | --- |
-| <a class="lia-external-url" href="https://learn.microsoft.com/en-us/powershell/module/exchange/get-messagetracev2?view=exchange-ps" target="_blank" rel="noopener noreferrer">Get-MesesageTraceV2</a> | 5 分あたり最大 100 件のリクエスト |
-| <a class="lia-external-url" href="https://learn.microsoft.com/en-us/powershell/module/exchange/get-messagetracedetailv2?view=exchange-ps" target="_blank" rel="noopener noreferrer">Get-MessageTraceDetailV2</a> | 5 分あたり最大 100 件のリクエスト |
+| <a class="lia-external-url" href="https://learn.microsoft.com/powershell/module/exchange/get-messagetracev2?view=exchange-ps" target="_blank" rel="noopener noreferrer">Get-MesesageTraceV2</a> | 5 分あたり最大 100 件のリクエスト |
+| <a class="lia-external-url" href="https://learn.microsoft.com/powershell/module/exchange/get-messagetracedetailv2?view=exchange-ps" target="_blank" rel="noopener noreferrer">Get-MessageTraceDetailV2</a> | 5 分あたり最大 100 件のリクエスト |
 
 ## 従来のメッセージ追跡インターフェイスおよびコマンドレットの廃止スケジュール
 
