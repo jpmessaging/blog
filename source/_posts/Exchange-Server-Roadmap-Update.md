@@ -5,7 +5,7 @@ lastupdate: 2025-06-17
 tags: Exchange
 ---
 
-<p style="background:#66FF99"><b>2025 年 6 月 13 日更新 : リリース時期の最新情報や、現行バージョンの Exchange Server から Exchange Server SE への移行方法の詳細については、新しいブログ記事 (<a href="https://jpmessaging.github.io/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/">現行バージョンからExchange Server SEへのアップグレード) をご覧ください。</a>。</b></p>
+<p style="background:#66FF99"><b>2025 年 6 月 13 日更新 : リリース時期の最新情報や、現行バージョンの Exchange Server から Exchange Server SE への移行方法の詳細については、新しいブログ記事 (<a href="https://jpmessaging.github.io/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/">現行バージョンからExchange Server SEへのアップグレード</a>) をご覧ください。。</b></p>
 
 ※ この記事は、[Exchange Server Roadmap Update](https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742) をもとに日本のお客様向けに抄訳、再編集したものです。最新の情報は元の Blog を参照してください。
 
