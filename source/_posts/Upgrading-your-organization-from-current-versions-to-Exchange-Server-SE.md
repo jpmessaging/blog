@@ -67,7 +67,7 @@ Exchange Server 2019 CU14/CU15 | 2025 年 10 月 14 日 | 延長サポート | �
 - Exchange Server 2019 CU15 および Exchange Server SE RTM のセットアップでは、Exchange Server 2013 との共存がブロックされます。
 - Exchange Server SE CU2 のセットアップでは、すべてのサポートされていないバージョン (例：Exchange Server 2013、Exchange Server 2016、Exchange Server 2019) との共存がブロックされ、Exchange Server SE とのみ共存が許可されます。
 
-Exchange Server SE CU1 がリリースされると、他のすべてのバージョンの Exchange Server はサポートされなくなります。以下の表に詳述されているように、CU2 (またはそれ以降) をインストールするには、まず組織内のすべての古いバージョンの Exchange Server を廃止して削除する必要があります。
+Exchange Server SE CU2 がリリースされると、他のすべてのバージョンの Exchange Server はサポートされなくなります。以下の表に詳述されているように、CU2 (またはそれ以降) をインストールするには、まず組織内のすべての古いバージョンの Exchange Server を廃止して削除する必要があります。
 
 - <b>共存対応表</b>
 
