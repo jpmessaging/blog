@@ -11,7 +11,7 @@ alias: MessageTraceV2 の紹介/index.html
 
 ## MessageTraceV2 とは
 MessageTraceV2 とは、従来の MessageTrace (以降 MessageTraceV1) に改良を加えたメッセージ追跡ログです。  
-MessageTraceV2 はここしばらくパブリック プレビュー版でご提供しておりましたが、[こちらの記事](https://jpmessaging.github.io/blog/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/)でもアナウンスが合った通り一般提供が開始されました。
+MessageTraceV2 はここしばらくパブリック プレビュー版でご提供しておりましたが、[こちらの記事](https://jpmessaging.github.io/blog/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/)でもアナウンスがあった通り一般提供が開始されました。
 
 MessageTraceV2 は Exchange 管理センターと PowerShell の Get-MessageTraceV2 コマンドの両方で利用可能です。  
 Exchange 管理センターと Get-MessageTraceV2 コマンド両方に共通している <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">MessageTraceV1 からの大きな改善点は以下の 2 点です。</span>
@@ -51,7 +51,7 @@ https://admin.exchange.microsoft.com/#/messagetrace
 事前準備として、Powershell から Exchange Online に接続します。詳細は下記の公開情報をご参照ください。  
 なお、Get-MessageTraceV2 は継続的に改良が加えられておりますので、<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">最新版の ExchangeOnlineManagement モジュールへ更新した上でご利用ください。</span>
 
-[Exchange Online PowerShell に接続する](https://learn.microsoft.com/ja-jp/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps)
+[Exchange Online PowerShell に接続する](https://learn.microsoft.com/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps)
 
 冒頭に記載した MessageTraceV2 の特徴 (取得期間と件名でのフィルター) 以外にも細かな差異はありますが、基本的な使い方は従来の Get-MessageTrace コマンドと同等です。  
 最も大きな差異は Get-MessageTraceV2 コマンドにはページング機能がないことです。  
@@ -104,6 +104,7 @@ Get-MessageTraceV2 -Subject "1 on 1" -SubjectFilterType StartsWith
 - Contains: 部分一致
 - EndsWith: 後方一致
 - StartsWith: 前方一致  
+
 ※パフォーマンスの観点から、可能な限り EndsWith または StartsWith をご利用いただくことを推奨しております。
 
 ### 多数のログをページングする
@@ -166,7 +167,7 @@ Get-MessageTraceV2 コマンドの出力結果は 1 受信者につき 1 ログ 
 つまり、前回の結果に含まれる最後の受信者を指定しておけば間違いありません。
 
 Get-MessageTraceV2 コマンドにはこれまでにご紹介したパラメーター以外にも -Status や -SenderAddress など、従来の Get-MessageTrace コマンドでも利用可能だったパラメーターを組み合わせてお使いいただけます。
-詳細はコマンド リファレンス ([Get-MessageTraceV2](https://learn.microsoft.com/en-us/powershell/module/exchange/get-messagetracev2?view=exchange-ps)) をご参照ください。
+詳細はコマンド リファレンス ([Get-MessageTraceV2](https://learn.microsoft.com/powershell/module/exchange/get-messagetracev2?view=exchange-ps)) をご参照ください。
 
 #### スロットリングに関する補足
 Get-MessageTraceV2 コマンドおよび Get-MessageTraceDetailV2 コマンドにはスロットリングの制限が設けられております。  
@@ -184,7 +185,7 @@ Get-MessageTraceV2 コマンドおよび Get-MessageTraceDetailV2 コマンド�
 Exchange 管理センターおよび Get-MessageTrace/Get-MessageTraceDetail コマンドで取得可能な <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">MessageTraceV1 は 2025 年 9 月 1 日に廃止が開始される予定です。</span>  
 それまでの間は MessageTraceV1 と MessageTraceV2 を並行してご利用いただくことが可能です。  
 
-また、Reporting web service を使用したメッセージ追跡ログ ([MessageTrace report](https://learn.microsoft.com/en-us/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15))) も同日に廃止が開始されます。  
+また、Reporting web service を使用したメッセージ追跡ログ ([MessageTrace report](https://learn.microsoft.com/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15))) も同日に廃止が開始されます。  
 MessageTraceV2 は Reporting web service では提供されません。  
 そのため、Reporting web service をご利用のお客様も PowerShell の Get-MessageTraceV2 コマンドへの以降をご検討ください。
 
@@ -197,7 +198,7 @@ MessageTraceV2 は Reporting web service では提供されません。
 [Announcing Public Preview of the New Message Trace in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/announcing-public-preview-of-the-new-message-trace-in-exchange-online/4356561)
 
 - MessageTraceV2 に関する公開情報  
-[New Message trace in Exchange admin center in Exchange Online](https://learn.microsoft.com/en-us/exchange/monitoring/trace-an-email-message/new-message-trace)
+[New Message trace in Exchange admin center in Exchange Online](https://learn.microsoft.com/exchange/monitoring/trace-an-email-message/new-message-trace)
 
 ---
 **本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。**
