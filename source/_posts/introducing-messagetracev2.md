@@ -13,7 +13,9 @@ alias: MessageTraceV2 の紹介/index.html
 MessageTraceV2 とは、従来の MessageTrace (以降 MessageTraceV1) に改良を加えたメッセージ追跡ログです。  
 MessageTraceV2 はここしばらくパブリック プレビュー版でご提供しておりましたが、[こちらの記事](https://jpmessaging.github.io/blog/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/)でもアナウンスがあった通り一般提供が開始されました。
 
-MessageTraceV2 は Exchange 管理センターと PowerShell の Get-MessageTraceV2 コマンドの両方で利用可能です。  
+MessageTraceV2 は Exchange 管理センターと PowerShell の Get-MessageTraceV2 / Get-MessageTraceDetailV2 コマンドの両方で利用可能です。  
+(本記事では Get-MessageTraceDetailV2 コマンドの利用方法は述べませんが、概ね従来の Get-MessageTraceDetail コマンドと同様にお使いいただけます。)
+
 Exchange 管理センターと Get-MessageTraceV2 コマンド両方に共通している <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">MessageTraceV1 からの大きな改善点は以下の 2 点です。</span>
 
 - **最大で過去 90 日前までのログを取得可能 (ただし、一度の取得で 10 日間以内)**
@@ -48,7 +50,7 @@ https://admin.exchange.microsoft.com/#/messagetrace
 ![](./introducing-messagetracev2/image2.png)
 
 ## Get-MessageTraceV2 コマンドで取得する場合
-事前準備として、Powershell から Exchange Online に接続します。詳細は下記の公開情報をご参照ください。  
+事前準備として、PowerShell から Exchange Online に接続します。詳細は下記の公開情報をご参照ください。  
 なお、Get-MessageTraceV2 は継続的に改良が加えられておりますので、<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">最新版の ExchangeOnlineManagement モジュールへ更新した上でご利用ください。</span>
 
 [Exchange Online PowerShell に接続する](https://learn.microsoft.com/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps)
@@ -76,7 +78,7 @@ Get-MessageTraceV2 -StartDate "2025-06-05Z" -EndDate "2025-06-15Z" -ResultSize 1
 ```
 
 <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">開始/終了日時は最大で過去 90 日前まで指定できますが、一度に指定できるのは最大 10 日間です。  
-出力結果数 (-ResultSize) は 1 から 5,000 の間で指定可能です。</span>
+出力結果数 (-ResultSize) は 1 から 5000 の間で指定可能です。</span>
 
 #### 日時についての補足
 -StartDate や -EndDate パラメーターには日時を指定できますが、様々な表記で指定することができます。  
@@ -114,6 +116,23 @@ Get-MessageTraceV2 -Subject "1 on 1" -SubjectFilterType StartsWith
 Get-MessageTraceV2 コマンドでは、従来の Get-MessageTrace コマンドでは使用できたページングのためのパラメーター (-Page や -PageSize) が使用できなくなりました。
 そこで、Get-MessageTraceV2 コマンドの結果が受信日時で降順に並べらているという特徴と、新たに導入された -StartingRecipientAddress パラメーターを使用してページングを実現します。
 
+ページングは基本的に Get-MessageTraceV2 コマンド実行時に出力される場合がある以下の警告に従うだけです。  
+
+    WARNING: There are more results, use the following command to get more. Get-MessageTraceV2 -StartDate "2025-06-05T00:00:00.0000000Z" -EndDate "2025-06-12T03:01:53.7240000Z" -StartingRecipientAddress "xxxx@contoso.com" -ResultSize 10
+
+上記の警告が表示された場合、条件に合致する結果が更に存在するということを示しています。  
+そして警告には残りのログを取得するためのコマンドが記載されていますので、そのまま実行することで残りのログを取得することが可能です。
+(-StartingRecipientAddress パラメーターなどの仕組みは後述します。)  
+
+```PowerShell
+Get-MessageTraceV2 -StartDate "2025-06-05T00:00:00.0000000Z" -EndDate "2025-06-12T03:01:53.7240000Z" -StartingRecipientAddress "xxxx@contoso.com" -ResultSize 10
+```
+
+更に警告が表示されたらその内容に従って警告が表示されなくなるまで繰り返し実行することで、最後までログを取得可能です。  
+
+上記のページングを機械的に、例えばスクリプトに組み込みたいというご要望もあるかと存じます。  
+その場合には以下の手順を実施いただくことで同様の方法でページングを実現可能です。
+
 まず、以下の通り開始/終了日時を絞った上でページ サイズ (1 回当たりの取得数) を指定してコマンドを実行します。その他のフィルターは適宜追加ください。  
 また、結果は変数に格納されますので、必要に応じてファイルに出力するなどして活用ください。
 
@@ -121,15 +140,8 @@ Get-MessageTraceV2 コマンドでは、従来の Get-MessageTrace コマンド�
 $mt1 = Get-MessageTraceV2 -StartDate "2025-06-05Z" -EndDate "2025-06-15Z" -ResultSize 10
 ```
 
-この時、以下のような警告が表示される場合があります。  
-これは、指定した条件に合致するログが更に存在することを示しております。  
-警告が表示されなくなるまで、残りのログを取得していきましょう。
-
-
-    WARNING: There are more results, use the following command to get more. Get-MessageTraceV2 -StartDate "2025-06-05T00:00:00.0000000Z" -EndDate "2025-06-12T03:01:53.7240000Z" -StartingRecipientAddress "xxxx@contoso.com" -ResultSize 10
-
 次に、以下の通りコマンドを実行することで続きのログを取得することが可能です。  
-Get-MessageTraceV2 コマンドの結果は受信日時で降順に並べらているという特徴がありますので、このように指定することで前回の結果の最後の行 (前回の結果で一番古い日) から続きを取得することが可能となります。  
+Get-MessageTraceV2 コマンドの結果は受信日時で降順に並べられているという特徴がありますので、このように指定することで前回の結果の最後の行 (前回の結果で一番古い日) から続きを取得することが可能となります。  
 
 ```PowerShell
 $mt2 = Get-MessageTraceV2 -StartDate "2025-06-05Z" -EndDate $mt1[-1].Received.ToString("O") -ResultSize 10 -StartingRecipientAddress $mt1[-1].RecipientAddress
@@ -138,7 +150,7 @@ $mt2 = Get-MessageTraceV2 -StartDate "2025-06-05Z" -EndDate $mt1[-1].Received.To
 -StartDate には前回の実行時と同じ値を指定します。  
 -EndDate には前回の実行結果の最後のログに記録されている受信日時を指定しています。  
 
-後は以下の通り繰り返し実行し、上記の警告が表示されなくなったタイミングで全てのログが取得できたことになります。
+後は以下の通り繰り返し実行します。
 
 ```PowerShell
 $mt3 = Get-MessageTraceV2 -StartDate "2025-06-05Z" -EndDate $mt2[-1].Received.ToString("O") -ResultSize 10 -StartingRecipientAddress $mt2[-1].RecipientAddress
@@ -146,7 +158,9 @@ $mt4 = Get-MessageTraceV2 -StartDate "2025-06-05Z" -EndDate $mt3[-1].Received.To
 ...
 ```
 
-上記コマンドをお客様のご要望に合わせてスクリプト化することもご検討ください。
+実行結果を格納する変数に何もログが格納されていなければ、それ以上ログが存在しないことを示します。  
+これを持って終了と判断いただけます。  
+変数名等を適宜変更し、お客様のご要望に合わせてスクリプト化することもご検討ください。
 
 #### -StartingRecipientAddress パラメーターに関する補足
 ページングをする時のコマンドに見慣れないパラメーター -StartingRecipientAddress が登場したことにお気づきかと思います。  
@@ -185,7 +199,7 @@ Get-MessageTraceV2 コマンドおよび Get-MessageTraceDetailV2 コマンド�
 Exchange 管理センターおよび Get-MessageTrace/Get-MessageTraceDetail コマンドで取得可能な <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">MessageTraceV1 は 2025 年 9 月 1 日に廃止が開始される予定です。</span>  
 それまでの間は MessageTraceV1 と MessageTraceV2 を並行してご利用いただくことが可能です。  
 
-また、Reporting web service を使用したメッセージ追跡ログ ([MessageTrace report](https://learn.microsoft.com/previous-versions/office/developer/o365-enterprise-developers/jj984335(v=office.15))) も同日に廃止が開始されます。  
+また、Reporting web service を使用したメッセージ追跡ログも同日に廃止が開始されます。  
 MessageTraceV2 は Reporting web service では提供されません。  
 そのため、Reporting web service をご利用のお客様も PowerShell の Get-MessageTraceV2 コマンドへの以降をご検討ください。
 
