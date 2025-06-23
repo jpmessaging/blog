@@ -1,7 +1,7 @@
 ﻿---
 title: >
   MessageTraceV2 の紹介
-date: 2025-06-13
+date: 2025-06-23
 tags: Exchange Online
 alias: MessageTraceV2 の紹介/index.html
 ---
@@ -11,7 +11,7 @@ alias: MessageTraceV2 の紹介/index.html
 
 ## MessageTraceV2 とは
 MessageTraceV2 とは、従来の MessageTrace (以降 MessageTraceV1) に改良を加えたメッセージ追跡ログです。  
-MessageTraceV2 はここしばらくパブリック プレビュー版でご提供しておりましたが、[こちらの記事](https://jpmessaging.github.io/blog/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/)でもアナウンスがあった通り一般提供が開始されました。
+MessageTraceV2 はここしばらくパブリック プレビュー版でご提供していましたが、[こちらの記事](https://jpmessaging.github.io/blog/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/)でもアナウンスがあった通り一般提供が開始されました。
 
 MessageTraceV2 は Exchange 管理センターと PowerShell の Get-MessageTraceV2 / Get-MessageTraceDetailV2 コマンドの両方で利用可能です。  
 (本記事では Get-MessageTraceDetailV2 コマンドの利用方法は述べませんが、概ね従来の Get-MessageTraceDetail コマンドと同様にお使いいただけます。)
@@ -26,10 +26,10 @@ Exchange 管理センターと Get-MessageTraceV2 コマンド両方に共通し
 これまでは 10 日より前のログを取得したい場合には[こちら](https://jpmessaging.github.io/blog/Exchange-Online-Message-Tracking-Log/)で紹介している HistoricalSearch を使用する必要がありました。  
 しかしながら、HistoricalSearch はメールの送受信からログに反映されるまでに時間を要したり、HistoricalSearch 自体の取得にも時間を要したり、気軽に取得することが難しいという欠点がありました。  
 MessageTraceV2 は HistoricalSearch よりも比較的短時間でログに反映され、かつログの取得も短時間で行うことが可能です。  
-メールのステータスや受信日時などの簡単な情報だけをすぐに確認したい機会は多いと思いますので、お客様にも MessageTraceV2 のメリットを感じていただけるのではないでしょうか。
+メールのステータスや受信日時などの簡単な情報だけをすぐに確認したい機会は多いと思いますので、Exchange Online の管理者の皆様にも MessageTraceV2 のメリットを感じていただけるのではないでしょうか。
 
 ただし、あくまで MessageTraceV2 は MessageTraceV1 の後継であるため、取得できる内容に変更はありません。  
-<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">最も詳細なメッセージ追跡ログは HistoricalSearch であるという点も変わりはありませんので、弊社がトラブルシューティングのご支援を行う場合には引き続き HistoricalSearch の取得を依頼させていただく場合が多いことをご了承ください。</span>
+<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">最も詳細なメッセージ追跡ログは HistoricalSearch であるという点も変わりはありませんので、弊社サポート サービスにてトラブルシューティングのご支援を行う場合には引き続き HistoricalSearch の取得を依頼させていただく場合が多いことをご了承ください。</span>
 
 それでは MessageTraceV2 を Exchange 管理センターと PowerShell の Get-MessageTraceV2 コマンドそれぞれで取得する方法を見ていきましょう。
 
@@ -51,13 +51,13 @@ https://admin.exchange.microsoft.com/#/messagetrace
 
 ## Get-MessageTraceV2 コマンドで取得する場合
 事前準備として、PowerShell から Exchange Online に接続します。詳細は下記の公開情報をご参照ください。  
-なお、Get-MessageTraceV2 は継続的に改良が加えられておりますので、<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">最新版の ExchangeOnlineManagement モジュールへ更新した上でご利用ください。</span>
+なお、Get-MessageTraceV2 は継続的に改良が加えられていますので、<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">最新版の ExchangeOnlineManagement モジュールへ更新した上でご利用ください。</span>
 
 [Exchange Online PowerShell に接続する](https://learn.microsoft.com/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps)
 
 冒頭に記載した MessageTraceV2 の特徴 (取得期間と件名でのフィルター) 以外にも細かな差異はありますが、基本的な使い方は従来の Get-MessageTrace コマンドと同等です。  
 最も大きな差異は Get-MessageTraceV2 コマンドにはページング機能がないことです。  
-そのため、多数のログを取得する方法が従来の Get-MessageTrace コマンドとは異なっておりますが、その方法は後述します。  
+そのため、多数のログを取得する方法が従来の Get-MessageTrace コマンドとは異なっていますが、その方法は後述します。  
 まずは基本的な使い方をご紹介します。
 
 ### パラメーターを指定しないで実行する
@@ -107,7 +107,7 @@ Get-MessageTraceV2 -Subject "1 on 1" -SubjectFilterType StartsWith
 - EndsWith: 後方一致
 - StartsWith: 前方一致  
 
-※パフォーマンスの観点から、可能な限り EndsWith または StartsWith をご利用いただくことを推奨しております。
+※パフォーマンスの観点から、可能な限り EndsWith または StartsWith の利用を推奨しています。
 
 ### 多数のログをページングする
 最後に多数のログを出力する場合の方法をご紹介します。  
@@ -131,7 +131,7 @@ Get-MessageTraceV2 -StartDate "2025-06-05T00:00:00.0000000Z" -EndDate "2025-06-1
 更に警告が表示されたらその内容に従って警告が表示されなくなるまで繰り返し実行することで、最後までログを取得可能です。  
 
 上記のページングを機械的に、例えばスクリプトに組み込みたいというご要望もあるかと存じます。  
-その場合には以下の手順を実施いただくことで同様の方法でページングを実現可能です。
+その場合には以下の手順を実施することで同様の方法でページングを実現可能です。
 
 まず、以下の通り開始/終了日時を絞った上でページ サイズ (1 回当たりの取得数) を指定してコマンドを実行します。その他のフィルターは適宜追加ください。  
 また、結果は変数に格納されますので、必要に応じてファイルに出力するなどして活用ください。
@@ -159,8 +159,8 @@ $mt4 = Get-MessageTraceV2 -StartDate "2025-06-05Z" -EndDate $mt3[-1].Received.To
 ```
 
 実行結果を格納する変数に何もログが格納されていなければ、それ以上ログが存在しないことを示します。  
-これを持って終了と判断いただけます。  
-変数名等を適宜変更し、お客様のご要望に合わせてスクリプト化することもご検討ください。
+これを持って終了と判断できます。  
+変数名等を適宜変更し、ご要望に合わせてスクリプト化することもご検討ください。
 
 #### -StartingRecipientAddress パラメーターに関する補足
 ページングをする時のコマンドに見慣れないパラメーター -StartingRecipientAddress が登場したことにお気づきかと思います。  
@@ -180,15 +180,15 @@ Get-MessageTraceV2 コマンドの出力結果は 1 受信者につき 1 ログ 
 これを防ぐために、-StartingRecipientAddress パラメーターは「指定した受信者の次の受信者からログ取得を開始する」ことを意味します。  
 つまり、前回の結果に含まれる最後の受信者を指定しておけば間違いありません。
 
-Get-MessageTraceV2 コマンドにはこれまでにご紹介したパラメーター以外にも -Status や -SenderAddress など、従来の Get-MessageTrace コマンドでも利用可能だったパラメーターを組み合わせてお使いいただけます。
+Get-MessageTraceV2 コマンドにはこれまでにご紹介したパラメーター以外にも -Status や -SenderAddress などのパラメーターがあります。これらは従来の Get-MessageTrace コマンドでも利用可能だったもので、組み合わせてお使いいただけます。
 詳細はコマンド リファレンス ([Get-MessageTraceV2](https://learn.microsoft.com/powershell/module/exchange/get-messagetracev2?view=exchange-ps)) をご参照ください。
 
 #### スロットリングに関する補足
-Get-MessageTraceV2 コマンドおよび Get-MessageTraceDetailV2 コマンドにはスロットリングの制限が設けられております。  
+Get-MessageTraceV2 コマンドおよび Get-MessageTraceDetailV2 コマンドにはスロットリングの制限が設けられています。  
 これには、コマンドを大量に実行することで Exchange Online のリソースを大きく消費してしまうことを防ぎ、多くのお客様に平等にサービスをご利用いただけるようにする目的があります。
 
-これらのコマンドの制限は以下の通りテナント単位で設定されております。  
-スクリプト等でコマンドを大量に実行される予定のあるお客様はご注意ください。
+これらのコマンドの制限は以下の通りテナント単位で設定されています。  
+スクリプト等でコマンドを大量に実行される予定のある場合はご注意ください。
 
 |コマンド|テナント単位の制限値|
 |-|-|
@@ -201,7 +201,7 @@ Exchange 管理センターおよび Get-MessageTrace/Get-MessageTraceDetail コ
 
 また、Reporting web service を使用したメッセージ追跡ログも同日に廃止が開始されます。  
 MessageTraceV2 は Reporting web service では提供されません。  
-そのため、Reporting web service をご利用のお客様も PowerShell の Get-MessageTraceV2 コマンドへの以降をご検討ください。
+そのため、Reporting web service をご利用の場合も PowerShell の Get-MessageTraceV2 コマンドへの以降をご検討ください。
 
 ## 参考情報
 
