@@ -1,17 +1,17 @@
 ---
 title: 'Exchange Online への外部受信者数の制限の導入'
 date: 2024-12-20
-lastupdate:
+lastupdate: 2025-06-26
 tags: 'Exchange Online'
 --- 
 
 ※ この記事は、[Exchange Online to introduce External Recipient Rate Limit](https://techcommunity.microsoft.com/blog/exchange/exchange-online-to-introduce-external-recipient-rate-limit/4114733) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 <div style="margin:1.25em; border-left:4px solid rgb(160, 160, 160); padding:.5em">
-<strong>2024 年 12 月 16 日 更新:</strong> 皆様からのフィードバックを慎重に検討し、対応のための追加時間が必要であることを考慮した結果、Microsoft は Exchange Online のメールボックスの外部受信者数の制限 (MERRL) の導入を約 6 ヶ月遅らせることを決定しました。新しい日程については以下をご確認ください。
+<strong>2025 年 6 月 25 日 重要なお知らせ: クラウドホスト型メールボックスの外部受信者数制限 (MERRL) の導入時期が再度延期されました。</strong> お客様への影響を最小限に抑えるため、Microsoft はクラウド上のメールボックスの外部受信者数制限 (MERRL) の展開を約 6 ヶ月延期することを決定しました。MERRL は、2026 年 4 月以降にプロビジョニングされた試用テナントおよび新規テナントに対して、2026 年 4 月から適用されます。また、2026 年 4 月には Exchange 管理センターのレポート機能が利用可能となり、テナント管理者は送信者メールボックスごとの外部受信者数を確認できるようになります。2026 年 10 月には、既存テナントを含むワールド ワイドのすべてのクラウド上のメールボックスに対して MERRL の適用が開始されます。
 </div>
 
-Exchange Online は **24 時間で 2,000 人の外部受信者**というレート制限を 2025 年 10 月より適用し始めます。
+Exchange Online は **24 時間で 2,000 人の外部受信者**というレート制限を 2026 年 4 月より適用し始めます。
 
 Exchange Online は、大量のメール送信をサポートしていません。これまで大量のメール送信に対する制限を強制していませんでしたが、Exchange Online リソースの不公平な使用や乱用を減らすために、外部受信者の数に対する制限の導入を計画しています。外部受信者数の制限はユーザー / メールボックスごとに適用されます。
 
@@ -34,8 +34,8 @@ Exchange Online は[受信者数の制限](https://learn.microsoft.com/office365
 
 新しい外部受信者数の制限は 2 段階で導入されます。
 
-- **フェーズ 1** - 2025 年 10 月、試用テナントおよびその日以降に作成されたテナントのすべてに制限が適用されます。このフェーズには、テナント内のメールボックスから送信した外部受信者数を確認するための Exchange 管理センターのメール フロー レポートが導入される予定です。
-- **フェーズ 2** - 2026 年 4 月、既存のテナントに制限を適用し始めます。
+- **フェーズ 1** - 2026 年 4 月、試用テナントおよびその日以降に作成されたテナントのすべてに制限が適用されます。このフェーズには、テナント内のメールボックスから送信した外部受信者数を確認するための Exchange 管理センターのメール フロー レポートが導入される予定です。
+- **フェーズ 2** - 2026 年 10 月、既存のテナントに制限を適用し始めます。
 
 この取り組みに関連して、[Azure Communication Services のメール通信リソースのドキュメント](https://learn.microsoft.com/azure/communication-services/concepts/email/prepare-email-communication-resource)も参照してください。また、Microsoft の担当営業ともご相談ください。
 
