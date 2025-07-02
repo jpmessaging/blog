@@ -55,9 +55,9 @@ Exchange Server の 最後の 3 つのバージョンとそのライフサイク
 
 | Exchange バージョン | サポート終了日 | Exchange 2019 CU15 リリース時点のサポート状況 | Exchange Server SE RTM リリース時点のサポート状況 | Exchange Server SE CU1 リリース以降のサポート状況 |
 | --- | --- | --- | --- | --- |
-| Exchange Server 2013 (すべての CU) | [2023 年 4 月 11 日](https://learn.microsoft.com/en-us/lifecycle/products/exchange-server-2013) | サポートされません | サポートされません | サポートされません |
-| Exchange Server 2016 CU23 | [2025 年 10 月 14 日](https://learn.microsoft.com/en-us/lifecycle/products/exchange-server-2016) | 延長サポート | 延長サポート | サポートされません |
-Exchange Server 2019 CU14/CU15 | [2025 年 10 月 14 日](https://learn.microsoft.com/en-us/lifecycle/products/exchange-server-2019) | 延長サポート | 延長サポート | サポートされません |
+| Exchange Server 2013 (すべての CU) | [2023 年 4 月 11 日](https://learn.microsoft.com/lifecycle/products/exchange-server-2013) | サポートされません | サポートされません | サポートされません |
+| Exchange Server 2016 CU23 | [2025 年 10 月 14 日](https://learn.microsoft.com/lifecycle/products/exchange-server-2016) | 延長サポート | 延長サポート | サポートされません |
+Exchange Server 2019 CU14/CU15 | [2025 年 10 月 14 日](https://learn.microsoft.com/lifecycle/products/exchange-server-2019) | 延長サポート | 延長サポート | サポートされません |
 
 他のすべてのバージョンとビルドの Exchange Server はサポートされていません。
 
