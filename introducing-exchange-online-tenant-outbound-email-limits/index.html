@@ -18,12 +18,12 @@
   
   <title>Exchange Online テナントの外部送信メール制限の導入 | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※ この記事は、Introducing Exchange Online Tenant Outbound Email Limits の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。  2025 年 6 月 9 日更新: ロールアウトのスケジュールを更新しました。">
+  <meta name="description" content="※ この記事は、Introducing Exchange Online Tenant Outbound Email Limits の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。  2025 年 7 月 14 日更新: FAQ を更新しました。   クラウド サー">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Exchange Online テナントの外部送信メール制限の導入">
 <meta property="og:url" content="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="※ この記事は、Introducing Exchange Online Tenant Outbound Email Limits の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。  2025 年 6 月 9 日更新: ロールアウトのスケジュールを更新しました。">
+<meta property="og:description" content="※ この記事は、Introducing Exchange Online Tenant Outbound Email Limits の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。  2025 年 7 月 14 日更新: FAQ を更新しました。   クラウド サー">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/TERRL01.jpg">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/TERRL02.jpg">
@@ -125,7 +125,7 @@
         Last Update:
         <a href="/blog/introducing-exchange-online-tenant-outbound-email-limits/" class="article-date-single">    
         
-    <time datetime="2025-06-17T15:00:00.000Z" itemprop="lastupdate">2025-06-18</time>    
+    <time datetime="2025-07-14T15:00:00.000Z" itemprop="lastupdate">2025-07-15</time>    
     
 </a>
       </div>
@@ -134,7 +134,7 @@
       
         <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-tenant-outbound-email-limits/4372797">Introducing Exchange Online Tenant Outbound Email Limits</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
 <div style="margin:1.25em;border-left:.25em solid #4493f8;padding:.5em;">
-2025 年 6 月 9 日更新: ロールアウトのスケジュールを更新しました。
+2025 年 7 月 14 日更新: FAQ を更新しました。
 </div>
 
 <p>クラウド サービス全般に言えることですが、Exchange Online では Exchange Online リソースの不正使用を防ぎ、すべてのユーザーに対して可用性を確保するためにサービスの制限を設けています。例えば、High-Volume Email の機能を除いて、Exchange Online は大量のメール送信をサポートしておらず、これまでは主にメールボックスごとの 1 日あたりの送信制限 (Recipient Rate Limit または RRL として知られています) を使用してこれを制限していました。</p>
@@ -284,7 +284,7 @@
 <p><strong>マルチテナント組織内でのテナント間メッセージは外部メッセージとして扱われますか？</strong><br>現時点では、はい。</p>
 <p><strong>1 日に同じ外部受信者に 1,000 通のメッセージを送信した場合、それは 1 人の外部受信者としてカウントされますか、それとも 1,000 人の外部受信者としてカウントされますか？</strong><br>1,000 人としてカウントされます。TERRL は、外部受信者を一意には数えません。</p>
 <p><strong>テナント内の配布グループにメッセージを送信し、その配布グループに 1,000 人の外部受信者が含まれている場合、それは 1 人の外部受信者としてカウントされますか、それとも 1,000 人の外部受信者としてカウントされますか？</strong><br>1,000 人としてカウントされます。外部受信者のカウントは、配布グループ (およびそのネストされたグループ) が個々の受信者に完全に展開された後に行われます。</p>
-<p><strong>Exchange Online High-Volume email (HVE) を使用して送信された外部受信者へのメッセージは TERRL クォータにカウントされますか？</strong><br>いいえ。HVE は主に内部受信者への大量メール送信を目的としていますが、1 日あたり最大 2,000 人の外部受信者への送信もサポートしています。HVE を使用して外部受信者に送信されたメッセージは TERRL クォータにはカウントされません。</p>
+<p><strong>Exchange Online High-Volume email (HVE) を使用して送信された外部受信者へのメッセージは TERRL クォータにカウントされますか？</strong><br>いいえ。HVE は主に内部受信者への大量メール送信を目的とした機能です。外部受信者への送信には設計されていません。</p>
 <p><strong>テナント内の上位送信者を特定するにはどうすればよいですか？</strong><br>Microsoft Defender ポータルの「上位送信者と受信者」レポート (Microsoft Defender &gt; レポート &gt; Email &amp; collaboration reports &gt; 上位送信者と受信者) を使用するか、EAC のメッセージ トレースを使用して上位送信者のリストを集計できます。また、今年後半にテナント外部受信者レート レポートに上位送信者リストを追加することも検討しています。</p>
 <p><strong>レポートに「Enforcement is Disabled」と表示されるのはどういう意味ですか？</strong><br>「Enforcement is Disabled」と表示されている場合、たとえレポートに TERRL クォータを超えて外部受信者がブロックされていると表示されていても、実際にはブロックは行われていません。これは、ロールアウト スケジュールの初期段階で、まだ適用が有効になっていないテナントに対して表示されます (上記のロールアウト スケジュールを参照)。5 月までにすべてのテナントに対して機能が完全に展開され有効になると、「Enforcement」の項目は通常「Enabled」と表示され、 TERRL クォータを超えた場合にはブロックが行われるようになります。</p>
 <p><strong>送信メールの量が TERRL クォータを超えた場合、通知やアラートはありますか？</strong><br>現時点ではありません。今年後半に、送信メールの量が TERRL クォータの 80 % を超えた際に管理者に通知するシステム アラートを追加することを計画しています。</p>
@@ -328,7 +328,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/" data-id="cmcomkl4d0050889oa27jdohk" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/" data-id="cmd3wkns6004ymw9o11hj6be7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
