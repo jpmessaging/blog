@@ -8,7 +8,7 @@ tags:
 
 ※ この記事は、[Introducing Exchange Online Delicensing Resiliency to protect against unintended delicensing actions](https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/4082759) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background:#66FF99"><b>2025 年 7 月 16 日更新 : Exchange Online ライセンス解除レジリエンシー機能のテナント ライセンス要件が、10,000 から 5,000 の評価版ではないライセンスに引き下げられました。詳細は<a href="https://techcommunity.microsoft.com/blog/exchange/reduced-license-count-requirement-for-exchange-online-delicensing-resiliency-fea/4433407">こちら</a>をご覧ください。</b></p>
+<p style="background:#66FF99"><b>2025 年 7 月 16 日更新 : Exchange Online ライセンス解除レジリエンシー機能のテナント ライセンス要件が、10,000 から 5,000 の評価版ではないライセンスに引き下げられました。詳細は<a href="/blog/reduced-license-count-requirement-for-exchange-online-delicensing-resiliency-fea/">こちら</a>をご覧ください。</b></p>
 
 最近、Exchange Online に新機能が導入され、ライセンス解除の際に 30 日間の猶予期間を提供することで、Exchange Online メールボックスの誤ったまたは意図しないライセンス解除から保護できるようになりました。この機能は、管理者およびユーザーへの通知オプションも提供し、意図しないライセンス解除の影響を事前に回避することができます。この機能は、5,000 以上の評価版ではない Exchange Online ライセンスを持つテナントでオプト インすることで利用ができます。
 
