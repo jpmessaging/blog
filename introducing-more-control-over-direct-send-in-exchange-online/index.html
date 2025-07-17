@@ -121,8 +121,8 @@
       <div class="article-share">
         Last Update:
         <a href="/blog/introducing-more-control-over-direct-send-in-exchange-online/" class="article-date-single">    
-    
-    <time datetime="2025-04-30T15:00:00.000Z" itemprop="dateUpdated">2025-05-01</time>
+        
+    <time datetime="2025-07-16T15:00:00.000Z" itemprop="lastupdate">2025-07-17</time>    
     
 </a>
       </div>
@@ -145,7 +145,7 @@
 <p>ダイレクト送信を再度有効化しない限り、このエラーに該当するメッセージは受信者に送られません。受信者に配信するには、送信者を認証するためのパートナー タイプのインバウンド コネクタを作成する必要があります。</p>
 <h2 id="パブリック-プレビューとリリース-ロードマップ"><a href="#パブリック-プレビューとリリース-ロードマップ" class="headerlink" title="パブリック プレビューとリリース ロードマップ"></a>パブリック プレビューとリリース ロードマップ</h2><p>この機能は、管理者がテストを行いフィードバックを提供するためのパブリック プレビューとしてリリースされています。一部のお客様では、組織に送信されるダイレクト送信トラフィックの追跡が難しく、この機能を有効化することに不安を感じる場合があります。機能リクエストやバグ報告を含むフィードバックは、次のアドレスに送信してください。<em>directsend-feedback[AT]microsoft.com</em>。注意 : ここに送信されたフィードバックには返信されません。この機能に関する質問や問題については、元の記事のコメント欄に記載するか、通常のサポート チャネルを通じてお問い合わせください。</p>
 <p>また、<a target="_blank" rel="noopener" href="https://feedbackportal.microsoft.com/feedback/forum/84b411cc-50d1-ec11-a7b5-0022481f35a4">Exchange Online Feedback Portal</a> を使用して、他の顧客が投票できる機能リクエストを送信することも可能です。この方法は、私たちが機能に関する意思決定を行う際の参考になります。</p>
-<p>私たちは、どのようなダイレクト送信のトラフィックが組織に流入しているかを可視化するための機能を提供する作業を進めています。これにより、管理者は正当なトラフィックを特定して対応し、この機能を自信を持って有効化できるようになります。この取り組みに関する進捗は、元の記事で随時更新していきます。この機能の一般提供 (GA) の具体的な日程は、いただいたフィードバックに基づいて決定されるため、現時点では未定です。GA の発表については、別途お知らせいたします。</p>
+<p><strong>現在、管理者がダイレクト送信トラフィックの概要を把握し、どのトラフィックが影響を受けるかを確認できるレポート機能の提供に取り組んでいます。</strong>これにより、管理者は正当なトラフィックを特定して対応し、この機能を自信を持って有効化できるようになります。この取り組みに関する進捗は、元の記事で随時更新していきます。この機能の一般提供 (GA) の具体的な日程は、いただいたフィードバックに基づいて決定されるため、現時点では未定です。GA の発表については、別途お知らせいたします。</p>
 <p>将来的には、この機能を新しいテナントに対してデフォルトで有効化する予定です。これは、組織をデフォルトでより安全にするための取り組みの一環です。また、この計画には、新しいテナントがこの機能を無効化できないようにすることも含まれています。これにより、認証されていないダイレクト送信のトラフィックの使用を抑制することを目指しています。</p>
 <h2 id="既知の問題"><a href="#既知の問題" class="headerlink" title="既知の問題"></a>既知の問題</h2><p>この機能により影響を受ける可能性のある転送シナリオがあります。組織内の誰かがサード パーティにメッセージを送信し、そのサード パーティがそのメッセージを組織内の別のメールボックスに転送する場合です。サード パーティのメール プロバイダーが Sender Rewriting Scheme (SRS) をサポートしていない場合、メッセージは元の送信者のアドレスで戻ってきます。この機能が有効化される前は、これらのメッセージは SPF の失敗によってすでに影響を受けていましたが、受信トレイに届く可能性がありました。しかし、パートナー タイプのインバウンド コネクタを設定せずにダイレクト送信の拒否機能を有効化すると、これらのメッセージは即座に拒否されることになります。</p>
 <h2 id="最後に"><a href="#最後に" class="headerlink" title="最後に"></a>最後に</h2><p>Exchange 管理者の皆様には、この機能をぜひお試しいただき、一般提供 (GA) に向けた検証と改善のためのフィードバックをご提供いただければ幸いです。</p>
@@ -153,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/introducing-more-control-over-direct-send-in-exchange-online/" data-id="cmd3wkns90058mw9ofls35eha" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/introducing-more-control-over-direct-send-in-exchange-online/" data-id="cmd6uux5e0051fs9ob77w9l32" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
