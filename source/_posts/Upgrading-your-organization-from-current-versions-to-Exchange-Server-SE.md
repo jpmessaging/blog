@@ -1,14 +1,12 @@
 ---
 title: 現行バージョンからExchange Server SEへのアップグレード
 date: 2024-10-15 10:00:00
-lastupdate: 2025-07-04 15:00:00
+lastupdate: 2025-07-17
 tags: Exchange
 alias: Upgrading your organization from current versions to Exchange Server SE/index.html
 ---
 
-<p style="background:#66FF99"><b>2025 年 7 月 1 日更新 : Exchange SE が<a href="https://jpmessaging.github.io/blog/exchange-server-subscription-edition-se-is-now-available/">公開されました</a>。本記事は最新の情報に基づき更新されています。</b></p>
-
-Made relevant updates to this blog post.
+<p style="background:#66FF99"><b>2025 年 7 月 15 日更新 : Exchange 2016/2019 の ESU プログラムについても言及を追加しました。</b></p>
 
 ※ この記事は、[Upgrading your organization from current versions to Exchange Server SE](https://techcommunity.microsoft.com/t5/exchange-team-blog/upgrading-your-organization-from-current-versions-to-exchange/ba-p/4241305) をもとに日本のお客様向けに抄訳したものです。最新の情報は元の Blog を参照してください。
 
@@ -161,7 +159,7 @@ Exchange Server 2016 から Exchange Server 2019 への移行は、新しいサ�
 
 **Exchange Server 2016 および Exchange Server 2019 のサポート期限の延長や延長サポートの提供、拡張セキュリティ更新プログラム (ESU) の提供は予定されていますか。**
 
-Exchange Server 2016 または Exchange Server 2019 のサポート終了日を延長することはありません。また、どちらのバージョンに対しても現在予定されている以上の延長サポートや ESU を提供することはありません。私たちは、既存の Exchange 2019 を利用されているお客様がシームレスにアップグレードできるよう、Exchange Server SE のリリースを準備することに集中しています。引き続きオンプレミスの Exchange Server をご利用されるお客様においては、できるだけ早く Exchange Server 2019 にアップグレードされることを強くお勧めします。
+Exchange 2016 および 2019 向けに 6 か月間の ESU プログラムを発表しました。詳細については[こちら](https://techcommunity.microsoft.com/blog/exchange/announcing-exchange-2016--2019-extended-security-update-program/4433495)をご覧ください。
 
 **Exchange Server SE のパブリック ベータ版は提供されますか。**
 
