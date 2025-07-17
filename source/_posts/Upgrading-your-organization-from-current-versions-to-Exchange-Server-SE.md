@@ -159,7 +159,7 @@ Exchange Server 2016 から Exchange Server 2019 への移行は、新しいサ�
 
 **Exchange Server 2016 および Exchange Server 2019 のサポート期限の延長や延長サポートの提供、拡張セキュリティ更新プログラム (ESU) の提供は予定されていますか。**
 
-Exchange 2016 および 2019 向けに 6 か月間の ESU プログラムを発表しました。詳細については[こちら](https://techcommunity.microsoft.com/blog/exchange/announcing-exchange-2016--2019-extended-security-update-program/4433495)をご覧ください。
+Exchange 2016 および 2019 向けに 6 か月間の ESU プログラムを発表しました。詳細については[こちら](/blog/announcing-exchange-2016--2019-extended-security-update-program/)をご覧ください。
 
 **Exchange Server SE のパブリック ベータ版は提供されますか。**
 
