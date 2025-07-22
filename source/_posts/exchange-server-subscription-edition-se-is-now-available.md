@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Server サブスクリプション エディション (SE) が利用可能になりました'
 date: 2025-07-02 10:00:00
-lastupdate: 
+lastupdate: 2025-07-22
 tags: Exchange
 --- 
 
@@ -33,7 +33,7 @@ Exchange 2019 CU15 との*違い*は以下のとおりです。
 
 Exchange SE のインストール前提条件については、[Exchange Server サポート マトリックス](https://learn.microsoft.com/exchange/plan-and-deploy/supportability-matrix)をご確認ください。
 
-- Exchange Server SE RTM の入手先: [VLSC](https://learn.microsoft.com/microsoft-365/commerce/licenses/vl-sign-in)、[Download Center](https://www.microsoft.com/download/details.aspx?id=108244)
+- Exchange Server SE RTM の入手先: [VLSC (ボリューム ライセンス契約をお持ちのお客様専用)](https://learn.microsoft.com/microsoft-365/commerce/licenses/vl-sign-in)、[Download Center (公開ダウンロード サイト)](https://www.microsoft.com/download/details.aspx?id=108244)
 
 ## 今後の展望
 
