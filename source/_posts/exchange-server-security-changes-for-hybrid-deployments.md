@@ -48,9 +48,9 @@ Exchange ハイブリッド展開機能 (予定表の空き時間情報の共有
 <p style="background: #ffff99"><i>Exchange ハイブリッド環境でリッチ共存機能を必要とするお客様</i>は、2025 年 4 月の更新プログラム (HU) リリースから 2025 年 10 月までの間に対応が必要です。2025 年 10 月までに専用の Exchange ハイブリッド アプリに更新し、その後 2026 年 10 月までに Graph 権限モデルに更新しない場合、オンプレミスと Exchange Online ユーザー間の空き時間情報の共有、メール ヒント、プロフィール写真の共有といった一部の Exchange ハイブリッド機能が動作しなくなります。</p>
 
 ## その他の Exchange ハイブリッド利用者への推奨事項
-リッチ共存機能を利用していない場合でも、組織で過去に Exchange ハイブリッド構成ウィザード (HCW) を実行・完了している、または [Exchange と Exchange Online 組織間の OAuth 認証を構成する](https://learn.microsoft.com/exchange/configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help) ドキュメントに記載された手順を実施している場合、HCW の実行過程で組織証明書が共有サービス プリンシパルにアップロードされています。
+リッチ共存機能を利用していない場合でも、組織で過去に Exchange ハイブリッド構成ウィザード (HCW) を実行・完了している、または [Exchange と Exchange Online 組織間の OAuth 認証を構成する](https://learn.microsoft.com/exchange/configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help)ドキュメントに記載された手順を実施している場合、HCW の実行過程で組織証明書が共有サービス プリンシパルにアップロードされています。
 
-ハイブリッド構成のセキュリティ強化のため、提供されているスクリプトを使用して、共有の「Office 365 Exchange Online」アプリケーションから組織証明書を削除することを強く推奨します。詳細は[ドキュメント](https://aka.ms/ConfigureExchangeHybridApplication-Docs)の「サービス プリンシパル クリーンアップ モード」をご参照ください。
+ハイブリッド構成のセキュリティ強化のため、提供されているスクリプトを使用して、共有の「Office 365 Exchange Online」アプリケーションから組織証明書を削除することを強く推奨します。詳細は[ドキュメント](https://aka.ms/ConfigureExchangeHybridApplication-Docs)の「サービス プリンシパル Clean-Up モード」をご参照ください。
 
 リッチ共存機能が不要な場合、専用の Exchange ハイブリッド アプリを作成する必要はありません。また、このスクリプトの実行は、オンプレミスの Exchange Server のバージョンに依存しません (Exchange Server の更新プログラムをインストールしていなくても、スクリプトを実行できます)。
 
