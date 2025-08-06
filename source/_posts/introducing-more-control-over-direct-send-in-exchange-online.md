@@ -1,12 +1,23 @@
 ---
 title: 'Exchange Online におけるダイレクト送信の制御機能強化の導入'
 date: 2025-5-1
-lastupdate: 2025/7/31
+lastupdate: 2025/8/6
 tags:
 - Exchange Online
 ---
 
 ※ この記事は、[Introducing more control over Direct Send in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/introducing-more-control-over-direct-send-in-exchange-online/4408790) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
+<p style="background:#66FF99"><b>2025 年 8 月 4 日更新:</b> ダイレクト送信機能についてさらに詳しく解説した新しい記事 <a href=/blog/what-is-direct-send-and-how-to-secure-it/>ダイレクト送信の概要とセキュアに利用する方法</a>を公開しました。あわせてご参照ください。</p>
+
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px"><path fill="#ff7518" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>
+訳者注
+</div>
+本記事では Direct Send を別の単語に訳した場合に文中で使用すると意味が伝わりにくくなる場合があるため「ダイレクト送信」と訳して統一しています。<br>
+公開情報等では「直接送信」などの記載になっている場合がございますので、ご注意ください。
+</div>
 
 [ダイレクト送信](https://learn.microsoft.com/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365#direct-send-send-mail-directly-from-your-device-or-application-to-microsoft-365-or-office-365)は、オンプレミスのデバイス、アプリケーション、またはサード パーティのクラウド サービスから、Exchange Online でホストされているお客様のメールボックスに対して、お客様自身の承認済みドメインを使用してメールを直接送信する方法です。この方法では、認証は一切必要ありません。なぜならこの方法は、送信者のドメインがお客様自身の承認済みドメインであることを除いて、インターネットからの匿名のメールを受信することと同様であるためです。
 
@@ -56,4 +67,5 @@ Exchange 管理者の皆様には、この機能をぜひお試しいただき�
 
 **この投稿の変更点:**
 
+- 2025 年 8 月 4 日: [ダイレクト送信の概要とセキュアに利用する方法](/blog/what-is-direct-send-and-how-to-secure-it/)への参照を追加しました。
 - 2025 年 7 月 30 日: コメントでのよくある質問に基づいて、本文にいくつかの説明を加えました。
