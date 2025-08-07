@@ -9,25 +9,25 @@ tags: Exchange
 
 2025 年 4 月、Exchange ハイブリッド環境に関するいくつかの変更について、[ハイブリッド展開における Exchange Server のセキュリティ変更](/blog/exchange-server-security-changes-for-hybrid-deployments/)で発表しました。
 
-2025 年 8 月より、Exchange Online の共有サービス プリンシパルを使用した Exchange Web Services (EWS) トラフィックを一時的にブロックする措置を開始します (この共有サービス プリンシパルは、ハイブリッド環境で一部の共存機能にデフォルトで使用されています)。これは、専用の Exchange ハイブリッド アプリの導入を促進し、お客様の環境のセキュリティを強化するための段階的な施策の一環です。
+2025 年 8 月より、Exchange Online の共有サービス プリンシパルを使用した Exchange Web Services (EWS) トラフィックを一時的にブロックする措置を開始します (この共有サービス プリンシパルは、ハイブリッド環境で一部の共存機能に既定で使用されています)。これは、専用の Exchange ハイブリッド アプリの導入を促進し、お客様の環境のセキュリティを強化するための段階的な施策の一環です。
 
 お客様の作業をより簡単にするため、更新された Hybrid Configuration Wizard (HCW) もリリースされています。
 
 ## なぜこの変更が重要なのか
 
-専用の Exchange ハイブリッド アプリは、Exchange Server と Exchange Online 間でのカレンダーの空き時間情報 (Free / Busy)、MailTips、プロフィール写真の共有など、ハイブリッド機能 (リッチ共存機能) を実現します。これらの機能は現在、Exchange Web Services (EWS) と Exchange Online の共有サービス プリンシパルに依存しています。しかし、[こちらの記事](/blog/exchange-server-security-changes-for-hybrid-deployments/)でご案内のとおり、2025 年 10 月以降、共有サービス プリンシパルへの EWS アクセスは恒久的にブロックされる予定です。
+専用の Exchange ハイブリッド アプリは、Exchange Server と Exchange Online 間での予定表の空き時間情報 (Free / Busy)、メール ヒント、プロフィール写真の共有など、ハイブリッド機能 (リッチ共存機能) を実現します。これらの機能は現在、Exchange Web Services (EWS) と Exchange Online の共有サービス プリンシパルに依存しています。しかし、[こちらの記事](/blog/exchange-server-security-changes-for-hybrid-deployments/)で案内したとおり、2025 年 10 月以降、共有サービス プリンシパルでの EWS アクセスは恒久的にブロックされる予定です。
 
 専用ハイブリッド アプリに対応したサーバー バージョンの導入は進んでいるものの、実際に専用アプリを作成したお客様はまだ少数にとどまっています。このため、導入を促進する目的で、2025 年 8 月、9 月、10 月にかけて、共有サービス プリンシパルを利用した EWS トラフィックを短期間ブロックする措置を実施します。これらの一時的なブロックは、お客様に必要な構成作業を完了していただくためのきっかけとなるよう設計されています。*一時的なブロック期間がなければ、10 月末までに対応が行われず、必要な構成変更を行うための猶予がなくなってしまう可能性があります。*
 
-さらに、共有サービス プリンシパルの利用をやめることで、ハイブリッド環境のセキュリティ体制が強化されます（詳細は [CVE-2025-53786](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2025-53786) ― *エクスプロイト後の*脆弱性をご参照ください）。できるだけ早く専用の Exchange ハイブリッド アプリへ移行し、[ハイブリッド展開における Exchange Server のセキュリティ変更](/blog/exchange-server-security-changes-for-hybrid-deployments/)のブログ記事のガイダンスに従うことを強く推奨します。
+さらに、共有サービス プリンシパルの利用をやめることで、ハイブリッド環境のセキュリティ体制が強化されます（詳細は [CVE-2025-53786](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2025-53786) をご参照ください）。<u>**できるだけ早く**</u>専用の Exchange ハイブリッド アプリへ移行し、[ハイブリッド展開における Exchange Server のセキュリティ変更](/blog/exchange-server-security-changes-for-hybrid-deployments/)のブログ記事のガイダンスに従うことを強く推奨します。
 
 ## 一時的なブロックの影響を受けるユーザー
 
 *すべての* Exchange ハイブリッド環境のお客様のテナントには共有サービス プリンシパルが存在しますが、今回の一時的なブロックの影響を受けるのは、以下の条件に該当するハイブリッド環境のお客様のみです。
 
-- ユーザー メールボックスが **Exchange オンプレミス** と **Exchange Online** の両方に存在していること
-- オンプレミスと Exchange Online 間で "リッチ共存" 機能 (空き時間情報の参照、MailTips、プロフィール写真の共有) を利用していること
-- オンプレミスの Exchange サーバーが、専用 Exchange ハイブリッド アプリをサポートするバージョンに更新されていないこと
+- ユーザー メールボックスが Exchange オンプレミス と Exchange Online の**両方**に存在しており、
+- オンプレミスと Exchange Online 間で "リッチ共存" 機能 (空き時間情報の参照、メール ヒント、プロフィール写真の共有) を利用しており、
+- オンプレミスの Exchange サーバーが、専用 Exchange ハイブリッド アプリをサポートするバージョンに更新されておらず、
 - テナント内で専用 Exchange ハイブリッド アプリが作成されていない、または Exchange で利用できるように有効化されていないこと (スクリプト実行や設定のオーバーライドが未実施)
 
 この変更の影響を受けると考えられるテナントには、メッセージ センターの投稿 (MC1085578) を通じてご案内をお送りしています。
@@ -45,21 +45,21 @@ tags: Exchange
 
 ブロック期間中、影響を受けるお客様 (上記参照) では、オンプレミスのメールボックスから Exchange Online のメールボックスに対して以下の機能が利用できなくなります。
 
-- 空き時間情報の参照（Free / Busy ルックアップ）
-- MailTips の表示
+- 空き時間情報の参照
+- メール ヒントの表示
 - プロフィール写真の共有
 
-影響を受けるのは、上記 3 つの機能*のみ*であり、かつ "オンプレミスのメールボックスから Exchange Online のメールボックスへの参照" に限定されます。*その他すべての Exchange ハイブリッド機能には影響はありません*。 詳細は [ドキュメント](https://learn.microsoft.com/exchange/hybrid-deployment/deploy-dedicated-hybrid-app)の FAQ をご参照ください。
+影響を受けるのは、上記 3 つの機能*のみ*であり、かつ "オンプレミスのメールボックスから Exchange Online のメールボックスへの参照" に限定されます。*その他すべての Exchange ハイブリッド機能には影響はありません*。 詳細は[ドキュメント](https://learn.microsoft.com/exchange/hybrid-deployment/deploy-dedicated-hybrid-app)の FAQ をご参照ください。
 
 **ご注意ください:** 今回の一時的なブロックについては例外は認められません。サポート チームでも例外対応はできませんのでご了承ください。専用アプリの構成方法については、[ドキュメント](https://learn.microsoft.com/exchange/hybrid-deployment/deploy-dedicated-hybrid-app)をご参照いただくか、Microsoft サポートまでお問い合わせください。
 
 ## 取るべき対応策
-#### リッチ共存機能を利用している場合
+### リッチ共存機能を利用している場合
 
-オンプレミスと Exchange Online のメールボックス間でリッチ共存機能 (空き時間情報の参照、MailTips、プロフィール写真の共有) を引き続き利用するには、以下の対応が必要です。
+オンプレミスと Exchange Online のメールボックス間でリッチ共存機能 (空き時間情報の参照、メール ヒント、プロフィール写真の共有) を引き続き利用するには、以下の両方の対応が必要です。
 
 - 専用 Exchange ハイブリッド アプリをサポートするバージョンに Exchange サーバーを更新してください。
-- スクリプトを実行して Entra ID に専用 Exchange ハイブリッド アプリを構成し、オンプレミス サーバーで利用できるようにするか、[更新された Hybrid Configuration Wizard (HCW)](https://learn.microsoft.com/exchange/hybrid-configuration-wizard-choose-configuration-feature#deploy-dedicated-exchange-hybrid-app) を使用してから、設定のオーバーライドで機能を有効化してください。
+- スクリプトを実行して Entra ID に専用 Exchange ハイブリッド アプリを構成し、オンプレミス サーバーで利用できるようにしてください。もしくは[更新された Hybrid Configuration Wizard (HCW)](https://learn.microsoft.com/exchange/hybrid-configuration-wizard-choose-configuration-feature#deploy-dedicated-exchange-hybrid-app) を使用してから、設定のオーバーライドで機能を有効化してください。
 
 専用 Exchange ハイブリッド アプリを利用するために必要な [Exchange Server の最低バージョン](https://learn.microsoft.com/exchange/new-features/build-numbers-and-release-dates)は以下の通りです。
 
@@ -72,11 +72,11 @@ tags: Exchange
 
 現在ご利用中の Exchange Server のバージョンを確認するには、[こちらのドキュメント](https://learn.microsoft.com/exchange/new-features/build-numbers-and-release-dates#view-the-build-number-of-an-exchange-based-server)のオプション 1 またはオプション 2 をご参照ください。
 
-#### HCW を使用した専用 Exchange ハイブリッド アプリの構成方法
+### HCW を使用した専用 Exchange ハイブリッド アプリの構成方法
 
-[更新された Hybrid Configuration Wizard (HCW)](https://learn.microsoft.com/exchange/hybrid-configuration-wizard-choose-configuration-feature#deploy-dedicated-exchange-hybrid-app) を使用して、専用の Exchange ハイブリッド アプリを作成できるようになりました。
+[Hybrid Configuration Wizard (HCW) を使用して](https://learn.microsoft.com/exchange/hybrid-configuration-wizard-choose-configuration-feature#deploy-dedicated-exchange-hybrid-app)、専用の Exchange ハイブリッド アプリを作成できるようになりました。
 
-このオプションは、Classic Full、Modern Full、および Choose Exchange Hybrid Configuration 機能の一部として利用できます。HCW でこのオプションを選択すると、Microsoft Entra ID に専用の Exchange ハイブリッド アプリケーションが作成されます。これにより、従来ハイブリッド機能 (カレンダーの空き時間情報 (Free/Busy)、MailTips、プロフィール写真の共有など) を有効化するために使用されていたレガシーの共有サービス プリンシパルが置き換えられます。特に、オンプレミスの Exchange Server のメールボックスが Exchange Online のメールボックスから情報を取得する必要があるシナリオで有効です。
+このオプションは、Classic Full、Modern Full、および Choose Exchange Hybrid Configuration 機能の一部として利用できます。HCW でこのオプションを選択すると、Microsoft Entra ID に専用の Exchange ハイブリッド アプリケーションが作成されます。これにより、従来ハイブリッド機能 (カレンダーの空き時間情報 (Free/Busy)、メール ヒント、プロフィール写真の共有など) を有効化するために使用されていたレガシーの共有サービス プリンシパルが置き換えられます。特に、オンプレミスの Exchange Server のメールボックスが Exchange Online のメールボックスから情報を取得する必要があるシナリオで有効です。
 
 既定では、HCW は Microsoft Graph API を使用して専用 Exchange ハイブリッド アプリの作成と構成を行い、以下の処理を実施します。
 
@@ -116,7 +116,7 @@ tags: Exchange
 今回の一時的な停止はセキュリティ強化のための措置であり、例外対応は認められていません。推奨される対応は、サーバーを最新の状態に更新し、専用の Exchange ハイブリッド アプリを構成していただくことです。
 
 **リッチ共存機能が不要な場合でも、専用ハイブリッド アプリの作成は必要ですか？**  
-いいえ、リッチ共存機能 (空き時間情報の参照、MailTips、プロフィール写真の共有など) が不要な場合は、専用ハイブリッド アプリを作成する必要はありません。ただし、共有サービス プリンシパルにカスタム証明書が登録されている場合は、提供されているスクリプト (Clean-Up モード) を使用して証明書を削除することを*強く推奨*します。
+いいえ、リッチ共存機能 (空き時間情報の参照、メール ヒント、プロフィール写真の共有など) が不要な場合は、専用ハイブリッド アプリを作成する必要はありません。ただし、共有サービス プリンシパルにカスタム証明書が登録されている場合は、提供されているスクリプト (Clean-Up モード) を使用して証明書を削除することを*強く推奨*します。
 
 **過去にハイブリッド構成ウィザード (HCW) を実行したり、OAuth 認証を構成した組織にも影響がありますか？**  
 はい。2025 年 10 月末以降、共有サービス プリンシパルの利用は恒久的にブロックされます。これまで共有サービス プリンシパルに依存していた組織は、ハイブリッド機能を継続して利用するために専用ハイブリッド アプリの構成が必要です。
@@ -168,4 +168,4 @@ HCW (ハイブリッド構成ウィザード) は既存のアプリケーショ�
 HCW ではロールバックはサポートされていません。Microsoft は 2025 年 10 月 31 日以降、共有サービス プリンシパルを利用したトラフィックを恒久的にブロックするため、ロールバックは推奨されません。どうしてもロールバックが必要な場合は、[スクリプト](https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app)を使用してください。
 
 **Microsoft Entra Connect（旧称 Azure AD Connect）を使用してディレクトリ同期を行っており、すべてのメールボックスがオンプレミスに存在しています。この場合、専用 Exchange ハイブリッド アプリの作成は必要ですか？**  
-これまでにハイブリッド構成ウィザード (HCW) を実行したことがなく、また「[Exchange と Exchange Online 組織間の OAuth 認証を構成する](https://learn.microsoft.com/exchange/configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help)」ドキュメントに記載された手順も実施していない場合は、専用 Exchange ハイブリッド アプリの構成は不要です。ただし、HCW を実行したことがあり、空き時間情報、MailTips、プロフィール写真の共有などのリッチ共存機能を利用する場合は、専用 Exchange ハイブリッド アプリの作成が必要です。
+これまでにハイブリッド構成ウィザード (HCW) を実行したことがなく、また「[Exchange と Exchange Online 組織間の OAuth 認証を構成する](https://learn.microsoft.com/exchange/configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help)」ドキュメントに記載された手順も実施していない場合は、専用 Exchange ハイブリッド アプリの構成は不要です。ただし、HCW を実行したことがあり、空き時間情報、メール ヒント、プロフィール写真の共有などのリッチ共存機能を利用する場合は、専用 Exchange ハイブリッド アプリの作成が必要です。
