@@ -76,7 +76,7 @@ tags: Exchange
 
 [Hybrid Configuration Wizard (HCW) を使用して](https://learn.microsoft.com/exchange/hybrid-configuration-wizard-choose-configuration-feature#deploy-dedicated-exchange-hybrid-app)、専用の Exchange ハイブリッド アプリを作成できるようになりました。
 
-このオプションは、Classic Full、Modern Full、および Choose Exchange Hybrid Configuration 機能の一部として利用できます。HCW でこのオプションを選択すると、Microsoft Entra ID に専用の Exchange ハイブリッド アプリケーションが作成されます。これにより、従来ハイブリッド機能 (カレンダーの空き時間情報 (Free/Busy)、メール ヒント、プロフィール写真の共有など) を有効化するために使用されていたレガシーの共有サービス プリンシパルが置き換えられます。特に、オンプレミスの Exchange Server のメールボックスが Exchange Online のメールボックスから情報を取得する必要があるシナリオで有効です。
+このオプションは、完全なハイブリッド構成のうち従来のハイブリッド トポロジ (Classic Full)、最新のハイブリッド トポロジ (Modern Full)、および Exchange ハイブリッド構成の選択 (Choose Exchange Hybrid Configuration) で利用できます。HCW でこのオプションを選択すると、Microsoft Entra ID に専用の Exchange ハイブリッド アプリケーションが作成されます。これにより、従来ハイブリッド機能 (カレンダーの空き時間情報 (Free/Busy)、メール ヒント、プロフィール写真の共有など) を有効化するために使用されていたレガシーの共有サービス プリンシパルが置き換えられます。特に、オンプレミスの Exchange Server のメールボックスが Exchange Online のメールボックスから情報を取得する必要があるシナリオで有効です。
 
 既定では、HCW は Microsoft Graph API を使用して専用 Exchange ハイブリッド アプリの作成と構成を行い、以下の処理を実施します。
 
