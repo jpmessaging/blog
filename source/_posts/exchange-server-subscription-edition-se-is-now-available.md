@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Server サブスクリプション エディション (SE) が利用可能になりました'
 date: 2025-07-02 10:00:00
-lastupdate: 2025-07-22
+lastupdate: 2025-08-08
 tags: Exchange
 --- 
 
@@ -10,6 +10,8 @@ tags: Exchange
 Exchange Server サブスクリプション エディション (SE) の一般提供開始を発表します。このリリースにより、Microsoft はクラウド、オンプレミス、ハイブリッドなど、お客様の組織に最適な形でエンタープライズ メール サービスを提供し続けます。Exchange Online や Microsoft 365 では、Microsoft 365 Copilot の統合を含む最新かつ革新的なソリューションを引き続きご利用いただけますが、Exchange SE はオンプレミス ソリューションが依然として重要なシナリオにおいて、継続的なサポートを提供するという Microsoft のコミットメントを示すものです。
 
 Exchange Server を将来に向けて進化させるため、サブスクリプション エディションではサービス提供やライセンスの方法にいくつかの変更が加えられています。従来の Exchange と異なり、サブスクリプション エディションは[モダン ライフサイクル ポリシー](https://learn.microsoft.com/lifecycle/policies/modern)に準拠しています。これにより、構成を最新の状態に保つ限り、サポートの終了日は設定されません。Exchange SE のコードベースは今後、リリース年を冠したメジャー バージョンアップは行われず、常に最新の状態に保たれた製品として継続的にサービス提供されます。
+
+**2025/8/6 更新 :** Exchange SE はモダン ライフサイクル ポリシーに準拠していますが、Microsoft は Exchange Server、SharePoint Server、Skype for Business Server などの主要サーバー製品について、少なくとも 2035 年までサポートを継続することを発表しました。詳細は[モダン ライフサイクル ポリシーに基づく主要サーバー製品の追加サポート](https://learn.microsoft.com/lifecycle/additional-support-server-modern-lifecycle-policy)をご参照ください。
 
 ## リリースの詳細
 
