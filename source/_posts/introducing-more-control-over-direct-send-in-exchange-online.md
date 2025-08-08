@@ -8,7 +8,7 @@ tags:
 
 ※ この記事は、[Introducing more control over Direct Send in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/introducing-more-control-over-direct-send-in-exchange-online/4408790) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background:#66FF99"><b>2025 年 8 月 4 日更新:</b> ダイレクト送信機能についてさらに詳しく解説した新しい記事 <a href=/blog/what-is-direct-send-and-how-to-secure-it/>ダイレクト送信の概要とセキュアに利用する方法</a>を公開しました。あわせてご参照ください。</p>
+<p style="background:#66FF99"><b>2025 年 8 月 4 日更新:</b> ダイレクト送信機能についてさらに詳しく解説した新しい記事 <a href=/blog/direct-send-vs-sending-directly-to-an-exchange-online-tenant/>ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い</a>を公開しました。あわせてご参照ください。</p>
 
 <div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
 <div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
@@ -67,5 +67,5 @@ Exchange 管理者の皆様には、この機能をぜひお試しいただき�
 
 **この投稿の変更点:**
 
-- 2025 年 8 月 4 日: [ダイレクト送信の概要とセキュアに利用する方法](/blog/what-is-direct-send-and-how-to-secure-it/)への参照を追加しました。
+- 2025 年 8 月 4 日: [ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い](/blog/direct-send-vs-sending-directly-to-an-exchange-online-tenant/)への参照を追加しました。
 - 2025 年 7 月 30 日: コメントでのよくある質問に基づいて、本文にいくつかの説明を加えました。
