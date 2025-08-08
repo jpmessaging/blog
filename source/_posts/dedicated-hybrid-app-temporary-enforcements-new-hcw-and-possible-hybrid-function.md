@@ -1,7 +1,7 @@
 ---
 title: "専用ハイブリッド アプリ: 一時的な強制措置、新しい HCW、およびハイブリッド機能の中断の可能性"
 date: 2025/08/07
-lastupdate: 
+lastupdate: 2025/08/08
 tags: Exchange
 ---
 
@@ -59,7 +59,8 @@ tags: Exchange
 オンプレミスと Exchange Online のメールボックス間でリッチ共存機能 (空き時間情報の参照、メール ヒント、プロフィール写真の共有) を引き続き利用するには、以下の両方の対応が必要です。
 
 - 専用 Exchange ハイブリッド アプリをサポートするバージョンに Exchange サーバーを更新してください。
-- スクリプトを実行して Entra ID に専用 Exchange ハイブリッド アプリを構成し、オンプレミス サーバーで利用できるようにしてください。もしくは[更新された Hybrid Configuration Wizard (HCW)](https://learn.microsoft.com/exchange/hybrid-configuration-wizard-choose-configuration-feature#deploy-dedicated-exchange-hybrid-app) を使用してから、設定のオーバーライドで機能を有効化してください。
+- [スクリプト](https://aka.ms/ConfigureExchangeHybridApplication)を実行して Entra ID に専用 Exchange ハイブリッド アプリを構成し、オンプレミス サーバーで利用できるようにしてください。もしくは[更新された Hybrid Configuration Wizard (HCW)](https://learn.microsoft.com/exchange/hybrid-configuration-wizard-choose-configuration-feature#deploy-dedicated-exchange-hybrid-app) を使用してから、設定のオーバーライドで機能を有効化してください。
+- 上記の対応が完了したら、共有の「Office 365 Exchange Online」アプリケーションからカスタム証明書を削除してください。手順については、[ドキュメント](https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app#service-principal-clean-up-mode)の「サービス プリンシパル Clean-Up モード」をご参照ください。
 
 専用 Exchange ハイブリッド アプリを利用するために必要な [Exchange Server の最低バージョン](https://learn.microsoft.com/exchange/new-features/build-numbers-and-release-dates)は以下の通りです。
 
@@ -100,7 +101,7 @@ tags: Exchange
 
 組織で過去に Exchange ハイブリッド構成ウィザード (HCW) を実行して完了した場合や、[Exchange と Exchange Online 組織間の OAuth 認証を構成する](https://learn.microsoft.com/exchange/configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help)ドキュメントに記載された手順を実施した場合、組織の証明書が共有サービス プリンシパルにアップロードされています。
 
-ハイブリッド構成のセキュリティ強化のため、提供されているスクリプトを使用して、共有の "Office 365 Exchange Online" アプリケーションからカスタム証明書を削除することを*強く推奨*します。手順については、[ドキュメント](https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app#service-principal-clean-up-mode)の「サービス プリンシパル Clean-Up モード」をご参照ください。クリーンアップが必要かどうか分からない場合でも、サービス プリンシパル Clean-Up モードでスクリプトを実行することで、不要な証明書が残っていれば自動的に削除されます。証明書が存在しない場合は、何も変更されません。
+ハイブリッド構成のセキュリティ強化のため、[提供されているスクリプト](https://aka.ms/ConfigureExchangeHybridApplication)を使用して、共有の "Office 365 Exchange Online" アプリケーションからカスタム証明書を削除することを*強く推奨*します。手順については、[ドキュメント](https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app#service-principal-clean-up-mode)の「サービス プリンシパル Clean-Up モード」をご参照ください。クリーンアップが必要かどうか分からない場合でも、サービス プリンシパル Clean-Up モードでスクリプトを実行することで、不要な証明書が残っていれば自動的に削除されます。証明書が存在しない場合は、何も変更されません。
 
 リッチ共存機能が不要な場合は、専用ハイブリッド アプリを作成する必要はありません。また、Clean-Up モードでスクリプトを実行する場合は、オンプレミスの Exchange Server のバージョンに依存せず、Exchange Server 以外のコンピューターからでも実行できます。
 
@@ -116,16 +117,16 @@ tags: Exchange
 今回の一時的な停止はセキュリティ強化のための措置であり、例外対応は認められていません。推奨される対応は、サーバーを最新の状態に更新し、専用の Exchange ハイブリッド アプリを構成していただくことです。
 
 **リッチ共存機能が不要な場合でも、専用ハイブリッド アプリの作成は必要ですか？**  
-いいえ、リッチ共存機能 (空き時間情報の参照、メール ヒント、プロフィール写真の共有など) が不要な場合は、専用ハイブリッド アプリを作成する必要はありません。ただし、共有サービス プリンシパルにカスタム証明書が登録されている場合は、提供されているスクリプト (Clean-Up モード) を使用して証明書を削除することを*強く推奨*します。
+いいえ、リッチ共存機能 (空き時間情報の参照、メール ヒント、プロフィール写真の共有など) が不要な場合は、専用ハイブリッド アプリを作成する必要はありません。ただし、共有サービス プリンシパルにカスタム証明書が登録されている場合は、[提供されているスクリプト](https://aka.ms/ConfigureExchangeHybridApplication) (Clean-Up モード) を使用して証明書を削除することを*強く推奨*します。
 
 **過去にハイブリッド構成ウィザード (HCW) を実行したり、OAuth 認証を構成した組織にも影響がありますか？**  
 はい。2025 年 10 月末以降、共有サービス プリンシパルの利用は恒久的にブロックされます。これまで共有サービス プリンシパルに依存していた組織は、ハイブリッド機能を継続して利用するために専用ハイブリッド アプリの構成が必要です。
 
 **Exchange Server を更新して "クリーンアップ スクリプト" を実行する必要がありますか、それともスクリプトを実行してハイブリッド アプリを作成する必要がありますか?**  
-専用 Exchange ハイブリッド アプリの構成および有効化を行うスクリプトを実行する場合は、オンプレミスの Exchange Server が所定のバージョンに更新されている必要があります (詳細は本記事内の表やドキュメントをご参照ください)。一方で、共有サービス プリンシパルの keyCredentials をクリーンアップするスクリプトについては、Exchange Server のバージョンや更新状況に関係なく、Exchange 以外のコンピューターからでも実行可能です。
+専用 Exchange ハイブリッド アプリの構成および有効化を行う[スクリプト](https://aka.ms/ConfigureExchangeHybridApplication)を実行する場合は、オンプレミスの Exchange Server が所定のバージョンに更新されている必要があります (詳細は本記事内の表やドキュメントをご参照ください)。一方で、共有サービス プリンシパルの keyCredentials をクリーンアップするスクリプトについては、Exchange Server のバージョンや更新状況に関係なく、Exchange 以外のコンピューターからでも実行可能です。
 
 **専用 Exchange ハイブリッド アプリの構成において、HCW (ハイブリッド構成ウィザード) と従来の PowerShell スクリプトは何が違うのですか？**  
-どちらも専用 Exchange ハイブリッド アプリの構成を行いますが、主な違いは以下の通りです。
+HCW と[スクリプト](https://aka.ms/ConfigureExchangeHybridApplication)はどちらも専用 Exchange ハイブリッド アプリの構成を行いますが、主な違いは以下の通りです。
 
 | **機能** | **PowerShell スクリプト** | **HCW** |
 | --- | --- | --- |
@@ -159,13 +160,18 @@ HCW の実行は以下の警告付きで完了します。
 はい、Microsoft Entra ID ポータルから手動で管理者同意を付与することが可能です。ただし、HCW (ハイブリッド構成ウィザード) を使用する場合は、セットアップ中に同意の付与を案内・促進する仕組みになっています。
 
 **なぜ HCW では共有サービス プリンシパルのクリーンアップができないのですか？**  
-HCW (ハイブリッド構成ウィザード) は新しい専用アプリの作成と構成に特化しており、レガシーの共有サービス プリンシパル (keyCredentials) のクリーンアップは行いません。古い認証情報や権限を確実に削除するためには、提供されているスクリプトを使用してクリーンアップ作業を実施する必要があります。手順については[ドキュメント](https://learn.microsoft.com/exchange/hybrid-configuration-wizard-choose-configuration-feature)をご参照ください。
+HCW (ハイブリッド構成ウィザード) は新しい専用アプリの作成と構成に特化しており、レガシーの共有サービス プリンシパル (keyCredentials) のクリーンアップは行いません。古い認証情報や権限を確実に削除するためには、提供されている[スクリプト](https://aka.ms/ConfigureExchangeHybridApplication)を使用してクリーンアップ作業を実施する必要があります。手順については[ドキュメント](https://learn.microsoft.com/exchange/hybrid-configuration-wizard-choose-configuration-feature)をご参照ください。
 
 **すでに専用ハイブリッド アプリが構成されている場合はどうなりますか？**  
 HCW (ハイブリッド構成ウィザード) は既存のアプリケーションを検出し、重複して作成することはありません。詳細については、[ドキュメント](https://learn.microsoft.com/Exchange/hybrid-configuration-wizard)をご参照ください。
 
 **HCW で専用 Exchange ハイブリッド アプリからのロールバックはサポートされていますか？**  
-HCW ではロールバックはサポートされていません。Microsoft は 2025 年 10 月 31 日以降、共有サービス プリンシパルを利用したトラフィックを恒久的にブロックするため、ロールバックは推奨されません。どうしてもロールバックが必要な場合は、[スクリプト](https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app)を使用してください。
+HCW ではロールバックはサポートされていません。Microsoft は 2025 年 10 月 31 日以降、共有サービス プリンシパルを利用したトラフィックを恒久的にブロックするため、ロールバックは推奨されません。どうしてもロールバックが必要な場合は、[スクリプト](https://aka.ms/ConfigureExchangeHybridApplication)を使用してください。
 
 **Microsoft Entra Connect（旧称 Azure AD Connect）を使用してディレクトリ同期を行っており、すべてのメールボックスがオンプレミスに存在しています。この場合、専用 Exchange ハイブリッド アプリの作成は必要ですか？**  
 これまでにハイブリッド構成ウィザード (HCW) を実行したことがなく、また「[Exchange と Exchange Online 組織間の OAuth 認証を構成する](https://learn.microsoft.com/exchange/configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help)」ドキュメントに記載された手順も実施していない場合は、専用 Exchange ハイブリッド アプリの構成は不要です。ただし、HCW を実行したことがあり、空き時間情報、メール ヒント、プロフィール写真の共有などのリッチ共存機能を利用する場合は、専用 Exchange ハイブリッド アプリの作成が必要です。
+
+**本ブログ記事の主な更新内容:**
+
+- 2025/8/7: [ConfigureExchangeHybridApplication.ps1 スクリプト](https://aka.ms/ConfigureExchangeHybridApplication) への直接リンクを記事内に追加しました。
+- 2025/8/7: 「取るべき対応策」セクションにて、リッチ共存機能を利用しているお客様は、共有の「Office 365 Exchange Online」アプリケーションからカスタム証明書を削除するためのスクリプトも実行する必要がある旨を明記しました。
