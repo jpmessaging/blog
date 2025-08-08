@@ -28,7 +28,7 @@ Exchange ハイブリッド専用アプリケーションを有効化および�
 | **組織で以下の Exchange ハイブリッド機能を使用している場合…** | **実施すべきアクションは…** |
 | --- | --- |
 | オンプレミスのメールボックスを持つユーザーと Exchange Online のメールボックスを持つユーザー間でリッチ共存機能 (特定の機能 : 空き時間情報の参照、メール ヒント、プロフィール写真の共有) が必要な場合 | [ドキュメント](https://aka.ms/ConfigureExchangeHybridApplication-Docs)に記載されている*手順を必ず実施し*、(**2025 年 10 月までに**) Exchange ハイブリッド専用アプリを使用するように切り替えてください。その後、(**利用可能になり次第、2026 年 10 月までに**) ハイブリッド構成を Graph API に切り替えてください。これらの手順を実施しない場合、リッチ共存機能が動作しなくなります。<br><br>すべてのサーバーが更新され、Exchange ハイブリッド専用アプリを使用するようになった後、"[サービス プリンシパル クリーンアップ モード](https://aka.ms/ConfigureExchangeHybridApplication-Docs)" を実行してください。 |
-| その他のハイブリッド機能 (移行、SMTP リレー、受信者管理など) のみを使用しており、*リッチ共存は不要*な場合 | ハイブリッド構成を強化するために、<a href="https://aka.ms/ConfigureExchangeHybridApplication">提供されているスクリプト</a>を使用して、共有の「Office 365 Exchange Online」アプリケーションから組織証明書を削除することを*推奨*します。"サービス プリンシパル クリーンアップ モード" の詳細は[ドキュメント](https://aka.ms/ConfigureExchangeHybridApplication-Docs)を参照してください。<br><br>リッチ共存機能が不要な場合、Exchange ハイブリッド専用アプリを作成する必要はありません。 |
+| その他のハイブリッド機能 (移行、SMTP リレー、受信者管理など) のみを使用しており、*リッチ共存は不要*な場合 | ハイブリッド構成を強化するために、[提供されているスクリプト](https://aka.ms/ConfigureExchangeHybridApplication)を使用して、共有の「Office 365 Exchange Online」アプリケーションから組織証明書を削除することを*推奨*します。"サービス プリンシパル クリーンアップ モード" の詳細は[ドキュメント](https://aka.ms/ConfigureExchangeHybridApplication-Docs)を参照してください。<br><br>リッチ共存機能が不要な場合、Exchange ハイブリッド専用アプリを作成する必要はありません。 |
 
 ## リッチ共存機能が必要な Exchange ハイブリッド利用者は対応が*必須です*
 
