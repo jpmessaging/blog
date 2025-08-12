@@ -1,7 +1,7 @@
 ---
 title: "Exchange ハイブリッド専用アプリ: 一時的な強制措置、新しい HCW、およびハイブリッド機能の中断の可能性"
 date: 2025/08/07
-lastupdate: 2025/08/08
+lastupdate: 2025/08/12
 tags: Exchange
 ---
 
@@ -105,6 +105,18 @@ Exchange ハイブリッド専用アプリを利用するために必要な [Exc
 
 リッチ共存機能が不要な場合は、Exchange ハイブリッド専用アプリを作成する必要はありません。また、Clean-Up モードでスクリプトを実行する場合は、オンプレミスの Exchange Server のバージョンに依存せず、Exchange Server 以外のコンピューターからでも実行できます。
 
+#### 手順全体の概要
+
+専用の Exchange ハイブリッド アプリへの移行に必要な手順を視覚的に把握できるよう、以下のフローチャートを作成しました。
+
+![](dha01.jpg)
+
+**フローチャート内の各ステップの補足説明:**
+
+1. [Exchange と Exchange Online 組織間の OAuth 認証を構成します](https://learn.microsoft.com/exchange/configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help)。
+2. リッチ共存機能を有効にすると、オンプレミスと Exchange Online のメールボックス間で空き時間情報の参照、メール ヒント、ユーザー プロフィール写真の共有が可能になります。
+3. 設定のオーバーライドは、専用の Exchange ハイブリッド アプリを [HCW](https://learn.microsoft.com/exchange/hybrid-configuration-wizard-choose-configuration-feature) で作成した場合、または[スクリプトの分割実行構成モード](https://learn.microsoft.com/exchange/hybrid-deployment/deploy-dedicated-hybrid-app)で作成した場合のみ、別途実施が必要です。
+
 ## 最終的な強制措置
 
 2025 年 10 月 31 日以降、共有サービス プリンシパルの利用は恒久的にブロックされます。Exchange ハイブリッド専用アプリの構成が行われていない場合、上記のハイブリッド機能は利用できなくなりますのでご注意ください。
@@ -173,5 +185,6 @@ HCW ではロールバックはサポートされていません。Microsoft は
 
 **本ブログ記事の主な更新内容:**
 
+- 2025/8/11: Exchange ハイブリッド専用アプリの有効化手順を俯瞰できるフローチャートを追加しました。
 - 2025/8/7: [ConfigureExchangeHybridApplication.ps1 スクリプト](https://aka.ms/ConfigureExchangeHybridApplication) への直接リンクを記事内に追加しました。
 - 2025/8/7: 「取るべき対応策」セクションにて、リッチ共存機能を利用しているお客様は、共有の「Office 365 Exchange Online」アプリケーションからカスタム証明書を削除するためのスクリプトも実行する必要がある旨を明記しました。
