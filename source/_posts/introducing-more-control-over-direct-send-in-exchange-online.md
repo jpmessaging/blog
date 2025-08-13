@@ -1,14 +1,14 @@
 ---
 title: 'Exchange Online におけるダイレクト送信の制御機能強化の導入'
-date: 2025-5-1
-lastupdate: 2025/8/6
+date: 2025/5/1
+lastupdate: 2025/8/13
 tags:
 - Exchange Online
 ---
 
 ※ この記事は、[Introducing more control over Direct Send in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/introducing-more-control-over-direct-send-in-exchange-online/4408790) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background:#66FF99"><b>2025 年 8 月 4 日更新:</b> ダイレクト送信機能についてさらに詳しく解説した新しい記事 <a href=/blog/direct-send-vs-sending-directly-to-an-exchange-online-tenant/>ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い</a>を公開しました。あわせてご参照ください。</p>
+<p style="background: #66FF99"><b>2025 年 8 月 12 日更新:</b> よくある質問 (FAQ) を記事に追加しました。また、ダイレクト送信機能についてさらに詳しく解説した新しい記事 <a href="/blog/direct-send-vs-sending-directly-to-an-exchange-online-tenant/">ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い</a>も公開していますので、あわせてご参照ください。</p>
 
 <div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
 <div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
@@ -59,13 +59,55 @@ Set-OrganizationConfig -RejectDirectSend $true
 
 ## 既知の問題
 
-この機能により影響を受ける可能性のある転送シナリオがあります。組織内の誰かがサード パーティにメッセージを送信し、そのサード パーティがそのメッセージを組織内の別のメールボックスに転送する場合です。サード パーティのメール プロバイダーが Sender Rewriting Scheme (SRS) をサポートしていない場合、メッセージは元の送信者のアドレスで戻ってきます。この機能が有効化される前は、これらのメッセージは SPF の失敗によってすでに影響を受けていましたが、受信トレイに届く可能性がありました。しかし、パートナー タイプのインバウンド コネクタを設定せずにダイレクト送信の拒否機能を有効化すると、これらのメッセージは即座に拒否されることになります。
+- この機能により影響を受ける可能性のある転送シナリオがあります。組織内の誰かがサード パーティにメッセージを送信し、そのサード パーティがそのメッセージを組織内の別のメールボックスに転送する場合です。サード パーティのメール プロバイダーが Sender Rewriting Scheme (SRS) をサポートしていない場合、メッセージは元の送信者のアドレスで戻ってきます。この機能が有効化される前は、これらのメッセージは SPF の失敗によってすでに影響を受けていましたが、受信トレイに届く可能性がありました。しかし、パートナー タイプのインバウンド コネクタを設定せずにダイレクト送信の拒否機能を有効化すると、これらのメッセージは即座に拒否されることになります。
+- もし Azure Communication Services (ACS) を利用して自組織のテナント宛てにメールを送信しており、その際に "MAIL FROM" アドレスとして Microsoft 365 の承認済みドメインを使用している場合、RejectDirectSend を有効化すると、これらのメールは Microsoft 365 テナントへの配信がブロックされます。ACS トラフィックがこの設定と両立できるようにするための対応策は現在検討中です。一方、ACS から送信されるメールのドメインが Microsoft 365 の承認済みドメインやサブドメインでない場合は、RejectDirectSend を有効化しても ACS トラフィックには影響しません。また、ACS のメール トラフィックが MX レコードをサード パーティ サービスに向けている Exchange Online ドメインを利用している場合は、下記の FAQ に記載のコネクタ設定手順をご参照ください。
 
 ## 最後に
 
 Exchange 管理者の皆様には、この機能をぜひお試しいただき、一般提供 (GA) に向けた検証と改善のためのフィードバックをご提供いただければ幸いです。
 
+## FAQs
+
+**すべてのお客様が -RejectDirectSend パラメーターを有効化しなければ、自身のテナントが保護されているとは言えませんか？**  
+いいえ。このパラメーターは、Microsoft 365 における多層的な保護の一つです。お客様が承認していないダイレクト送信トラフィックを明確に拒否できる厳格な制御を提供します。テナントやドメインが適切に構成されていれば、なりすましメールは既存の認証チェックによって迷惑メール フォルダーや検疫に振り分けられます。この設定を有効化しなくても、既存の保護機能によって自社ドメインのなりすましメールから十分に守られています。また、この設定を有効化しても、他のサード パーティ ドメインによるなりすましについては、引き続き既存の保護機能が利用されます。
+
+MX レコードを他のサービスに向けているお客様は、[Exchange Online を使用してサード パーティのクラウド サービスを使用してメール フローを管理する](https://learn.microsoft.com/exchange/mail-flow-best-practices/manage-mail-flow-using-third-party-cloud)の手順にすでに従っている必要があります。すべてのお客様は、[クラウド メールボックスのなりすまし対策保護](https://learn.microsoft.com/defender-office-365/anti-phishing-protection-spoofing-about)の推奨事項に従ってスプーフィングからの保護も設定する必要があります。
+
+**RejectDirectSend 設定は、MX レコードがサード パーティ サービスを指している場合でも機能しますか？**  
+はい、MX レコードがサード パーティ サービスを指している場合や Exchange Online を直接指している場合でも RejectDirectSend は機能します。MX の場所には依存しません。ただし、MX を他のサービスに向けている場合は、そのサービスからのトラフィックのみを受け入れるコネクタを作成し、他のトラフィックを除外する構成が推奨されます。推奨されるテナント構成でコネクタを設定している場合、認証されていないダイレクト送信のトラフィックが届くことはなく、拒否の設定が利用されることはありません。  
+
+**ドメインの MX レコードはサード パーティ サービスを指しており、誰かが MX をバイパスして直接 Exchange Online テナントにメールを送信しています。-RejectDirectSend 設定を使えば、Exchange Online テナントをサード パーティ サービス経由のメールだけ受け付けるように制限できますか？**  
+いいえ。-RejectDirectSend は、P1 送信ドメイン (エンベロープ FROM) がテナントの承認済みドメインであり、かつインバウンド コネクタに紐付けられていないメールのみを拒否します。
+
+MX がサード パーティ サービスを指しており、そのサービス以外からのメールを受け付けたくない場合は、サポート記事 [Exchange Online を使用してサード パーティのクラウド サービスを使用してメール フローを管理する](https://learn.microsoft.com/exchange/mail-flow-best-practices/manage-mail-flow-using-third-party-cloud) の手順 4 で推奨されているように、*TlsSenderCertificateName* (推奨) または *SenderIpAddresses* パラメーターを使ってインバウンド コネクタを作成し (第 3 者機関証明書または IP アドレスを指定する必要があります)、*RestrictDomainsToCertificate* または *RestrictDomainsToIPAddresses* を $True に設定してください。これにより、インバウンド コネクタを通過したメールのみがテナントに配信され、それ以外は拒否されます。詳細は[ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い](/blog/direct-send-vs-sending-directly-to-an-exchange-online-tenant/)をご参照ください。
+
+**-RejectDirectSend を有効化し、承認済みドメインから送信する必要があるパートナー向けにインバウンド コネクタを作成しました。パートナーからのメールが本当にそのコネクタに紐付いているかどうかを確認するにはどうすればよいですか？**  
+パートナーからのメールがコネクタに紐付いているかどうかを確認するには、パートナーからテスト メールを送信してもらい、しばらく時間をおいてデータが反映された後、以下のコマンドを実行してください。
+
+``` PowerShell
+Get-MessageTracev2 -MessageId "your message ID here" | Get-MessageTraceDetailv2 | fl
+```
+
+出力結果の中で、コネクタ名が次のように表示されていることを確認できます。
+
+![](DSFAQ.jpg)
+
+また、メールのエンティティ ページでもコネクタ名 (コネクタの GUID) が表示されていることを確認できます。
+
+**RejectDirectSend を有効化しましたが、自社の承認済みドメインから送信する必要があるサード パーティ ベンダーが、コネクタに関連付けられる静的 IP 範囲や専用証明書を持っていません。この場合、ダイレクト送信をブロックしつつ、このサード パーティ ベンダーからのメールのみ許可するにはどうすればよいですか？**  
+サード パーティ ベンダーが静的 IP 範囲や専用の証明書を提供できない場合、またはさらにカスタマイズが必要な場合は、RejectDirectSend 設定で組織全体のダイレクト送信をブロックする代わりに、トランスポート ルール (メール フロー ルール) を利用して、ダイレクト送信メールを隔離またはリダイレクトする方法があります。トランスポート ルールでは、サード パーティ ベンダー固有の例外条件を柔軟に追加できます。たとえば、ベンダーが特定の X- ヘッダーを付与している場合、そのヘッダーを条件に例外を設定できます。  
+例:  
+
+- *メッセージの送信者が "組織外" で、送信者ドメインが "contoso.com" の場合、ホストされた検疫にリダイレクトする*
+- *メッセージ ヘッダー (ヘッダー名と値を指定) が一致する場合を除く*
+
+(検疫以外のアクションも選択可能です)
+
+**RejectDirectSend パラメーターを設定するために必要な権限は何ですか？**  
+RejectDirectSend パラメーターの設定には、Exchange Online の "Organization Configuration" ロールが割り当てられている管理者権限が必要です。通常、このロールは "Organization Management" ロール グループに含まれています。
+
 **この投稿の変更点:**
 
+- 2025 年 8 月 12 日: 既知の問題および FAQ を追加しました。
 - 2025 年 8 月 4 日: [ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い](/blog/direct-send-vs-sending-directly-to-an-exchange-online-tenant/)への参照を追加しました。
 - 2025 年 7 月 30 日: コメントでのよくある質問に基づいて、本文にいくつかの説明を加えました。
