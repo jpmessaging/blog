@@ -124,7 +124,7 @@
         Last Update:
         <a href="/blog/introducing-more-control-over-direct-send-in-exchange-online/" class="article-date-single">    
         
-    <time datetime="2025-08-12T15:00:00.000Z" itemprop="lastupdate">2025-08-13</time>    
+    <time datetime="2025-08-13T15:00:00.000Z" itemprop="lastupdate">2025-08-14</time>    
     
 </a>
       </div>
@@ -146,10 +146,10 @@
 <p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365#direct-send-send-mail-directly-from-your-device-or-application-to-microsoft-365-or-office-365">ダイレクト送信</a>は、オンプレミスのデバイス、アプリケーション、またはサード パーティのクラウド サービスから、Exchange Online でホストされているお客様のメールボックスに対して、お客様自身の承認済みドメインを使用してメールを直接送信する方法です。この方法では、認証は一切必要ありません。なぜならこの方法は、送信者のドメインがお客様自身の承認済みドメインであることを除いて、インターネットからの匿名のメールを受信することと同様であるためです。</p>
 <p>ダイレクト送信では、お客様がテナントに対して SPF、DKIM、および DMARC を適切に構成していることを前提としています。管理者は、デバイス、アプリケーション、またはサード パーティ サービスが送信に使用する送信元 IP アドレスを SPF レコードに追加することで、メールがスパムとしてフラグ付けされるのを防ぐ必要があります。SPF が適切に構成されていない場合、ダイレクト送信を使用して送信されたメールはスパムとしてフラグ付けされる可能性が高くなります。</p>
 <p>SPF は、ドメインのなりすましを防ぐための保護を提供しますが、有効なルーティング シナリオでも SPF の失敗に該当する可能性があるため、Soft Fail させる SPF の構成を使用することをお勧めしています。また、ダイレクト送信を使用する必要がないお客様も多いですがこれまでダイレクト送信をブロックする機能は存在しませんでした。この度、Exchange Online のダイレクト送信を拒否する設定を開発し、本日この機能のパブリック プレビューを発表します。</p>
-<h2 id="ダイレクト送信の拒否機能"><a href="#ダイレクト送信の拒否機能" class="headerlink" title="ダイレクト送信の拒否機能"></a>ダイレクト送信の拒否機能</h2><p>定義上、ダイレクト送信の拒否は、組織のメールボックスに対して自社ドメインから匿名で送信されるメッセージを対象としています。ダイレクト送信の拒否機能を有効にすると、テナントの承認済みドメインに一致するアドレスを使って匿名で送信されたメールはすべてブロックされます。送信ドメインがテナントの承認済みドメインであるかどうかは、簡単かつ明確に評価できる条件です。この場合の送信ドメインとは、P1 エンベロープ From アドレスを指します。この機能では、P2 ヘッダー From アドレスはチェックされません。また、ここでの「匿名」とは、Exchange Online に送信される際に、いずれのメール フロー コネクタにも関連付けられていないメッセージを意味します。</p>
+<h2 id="ダイレクト送信の拒否設定"><a href="#ダイレクト送信の拒否設定" class="headerlink" title="ダイレクト送信の拒否設定"></a>ダイレクト送信の拒否設定</h2><p>定義上、ダイレクト送信の拒否は、組織のメールボックスに対して自社ドメインから匿名で送信されるメッセージを対象としています。ダイレクト送信の拒否機能を有効にすると、テナントの承認済みドメインに一致するアドレスを使って匿名で送信されたメールはすべてブロックされます。送信ドメインがテナントの承認済みドメインであるかどうかは、簡単かつ明確に評価できる条件です。この場合の送信ドメインとは、P1 エンベロープ From アドレスを指します。この機能では、P2 ヘッダー From アドレスはチェックされません。また、ここでの「匿名」とは、Exchange Online に送信される際に、いずれのメール フロー コネクタにも関連付けられていないメッセージを意味します。</p>
 <p>ダイレクト送信のトラフィックには、組織が許可したサード パーティ サービスや、オンプレミスでホストされている独自のメール アプリケーションが含まれる場合があります。この機能を有効化した際にこれらのメッセージが拒否されないようにするには、認証が必要です。これを実現するには、メッセージ送信に使用される証明書 (推奨) または IP アドレスに一致する<strong>パートナー タイプのインバウンド コネクタ</strong>を作成します。パートナー タイプのインバウンド コネクタの詳細については、こちらをご覧ください: <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow-best-practices/use-connectors-to-configure-mail-flow/use-connectors-to-configure-mail-flow">Exchange Online でコネクタを使用してメール フローを構成する</a>。</p>
 <p>ダイレクト送信を使用しているすべての送信者を現在把握できていない管理者もいるかもしれませんが、まずはドメインの SPF レコードを確認することが良い出発点となります。受信者の受信トレイにメールを正常に配信するためには、ダイレクト送信を使用する送信者が承認済みドメインの SPF レコードに含まれている必要があります。SPF レコードに含まれていない送信者は、すでにメール配信に苦労している可能性があります。</p>
-<h2 id="機能を有効化する方法"><a href="#機能を有効化する方法" class="headerlink" title="機能を有効化する方法"></a>機能を有効化する方法</h2><p>デフォルトでは、新しいオプトイン設定である RejectDirectSend は False に設定されています。ダイレクト送信の拒否機能を有効化するには、Exchange Online に管理者で接続した PowerShell で以下のコマンドレットを実行する必要があります。</p>
+<h2 id="設定を有効化する方法"><a href="#設定を有効化する方法" class="headerlink" title="設定を有効化する方法"></a>設定を有効化する方法</h2><p>デフォルトでは、新しいオプトイン設定である RejectDirectSend は False に設定されています。ダイレクト送信の拒否機能を有効化するには、Exchange Online に管理者で接続した PowerShell で以下のコマンドレットを実行する必要があります。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-OrganizationConfig</span> <span class="literal">-RejectDirectSend</span> <span class="variable">$true</span></span><br></pre></td></tr></table></figure>
 
 <p>この変更は、サービス全体に 30 分以内に反映されます。この機能を有効化すると、ダイレクト送信で送られたすべてのメールに対して以下のエラー メッセージが返されます。</p>
@@ -193,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/introducing-more-control-over-direct-send-in-exchange-online/" data-id="cmea1qpaw005crsnma4r8h79s" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/introducing-more-control-over-direct-send-in-exchange-online/" data-id="cmebhfjt50058uknm9ve25638" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
