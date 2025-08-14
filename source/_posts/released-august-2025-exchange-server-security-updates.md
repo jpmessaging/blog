@@ -1,7 +1,7 @@
 ---
 title: "2025 年 8 月の Exchange Server のセキュリティ更新プログラムが公開されました"
 date: 2025/08/13
-lastupdate: 
+lastupdate: 2025/08/14
 tags:
 - Exchange
 ---
@@ -55,7 +55,7 @@ Microsoft は、以下の製品に存在する脆弱性に対応するセキュ�
 ## よくあるご質問
 
 **2025 年 8 月の更新プログラムには、最近発表された [CVE-2025-53786](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2025-53786) への対応が含まれていますか？**  
-はい、すべての Exchange 更新プログラムは[累積的](https://learn.microsoft.com/exchange/plan-and-deploy/post-installation-tasks/security-best-practices/exchange-server-update-faq)なものです。2025 年 8 月のセキュリティ更新プログラム (SU) には CVE-2025-53786 の脆弱性対応に必要な Exchange ハイブリッド専用アプリの仕様をサポートする機能が含まれています。ただし 2025 年 8 月のセキュリティ更新プログラムをインストールするのみではなくガイダンスに従って、組織のシナリオに適用できるようにアプリを構成する必要があります。[ハイブリッド展開における Exchange Server のセキュリティ変更](/blog/exchange-server-security-changes-for-hybrid-deployments/)を参照してください。  
+はい、すべての Exchange 更新プログラムは[累積的](https://learn.microsoft.com/exchange/plan-and-deploy/post-installation-tasks/security-best-practices/exchange-server-update-faq)なものです。2025 年 8 月のセキュリティ更新プログラム (SU) には CVE-2025-53786 の脆弱性対応に必要な Exchange ハイブリッド専用アプリの使用をサポートする機能が含まれています。ただし 2025 年 8 月のセキュリティ更新プログラムをインストールするのみではなくガイダンスに従って、組織のシナリオに適用できるようにアプリを構成する必要があります。[ハイブリッド展開における Exchange Server のセキュリティ変更](/blog/exchange-server-security-changes-for-hybrid-deployments/)を参照してください。  
 
 **弊社の環境は Exchange Online とのハイブリッド構成ですが、対応は必要ですか？**  
 Exchange Online は既に保護されていますが、管理目的のみで利用している場合も含め、オンプレミスの Exchange サーバーには今回のセキュリティ更新プログラム (SU) を必ずインストールしてください。SU 適用後に認証証明書を変更する場合は、ハイブリッド構成ウィザードを再実行する必要があります。

@@ -1,7 +1,7 @@
 ---
 title: 現行バージョンからExchange Server SEへのアップグレード
 date: 2024-10-15 10:00:00
-lastupdate: 2025-07-24
+lastupdate: 2025-08-14
 tags: Exchange
 alias: Upgrading your organization from current versions to Exchange Server SE/index.html
 ---
@@ -123,7 +123,7 @@ Exchange Server 2016 および Exchange Server 2019 は、2025 年 10 月 14 日
 
 **Exchange Server SE のライセンス要件についてもっと明確にしていただけますか。**
 
-Exchange Server SE のライセンスは、1 つの例外を除いて Exchange Server 2019 と同じです。Microsoft は、ライセンスのみの購入は提供しなくなりました (Exchange Server 2019 で使用されるライセンス モデルの詳細については、[Microsoft Exchange Server licensing and FAQ](https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview) を参照してください)。
+Exchange Server SE のライセンスは、Exchange Server 2019 と同じです。Exchange Server 2019 で使用されるライセンス モデルの詳細については、[Microsoft Exchange Server licensing and FAQ](https://www.microsoft.com/microsoft-365/exchange/microsoft-exchange-server-licensing-licensing-overview) を参照してください。
 
 Exchange Server SE の場合、必要なサーバー ライセンスと CAL を購入するだけでなく、お客様はアクティブなサブスクリプションも維持する必要があります。つまり、以下のいずれかを購入する必要があります。
 
