@@ -1,7 +1,7 @@
 ---
 title: "2025 年 8 月の Exchange Server のセキュリティ更新プログラムが公開されました"
 date: 2025/08/13
-lastupdate: 
+lastupdate: 2025/08/14
 tags:
 - Exchange
 ---

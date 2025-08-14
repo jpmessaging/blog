@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Online におけるダイレクト送信の制御機能強化の導入'
 date: 2025/5/1
-lastupdate: 2025/8/13
+lastupdate: 2025/8/14
 tags:
 - Exchange Online
 ---
