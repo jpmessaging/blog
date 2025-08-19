@@ -2,10 +2,12 @@
 title: "Exchange ハイブリッド専用アプリ: 一時的な強制措置、新しい HCW、およびハイブリッド機能の中断の可能性"
 date: 2025/08/07
 lastupdate: 2025/08/19
+lastupdate: 2025/08/19
 tags: Exchange
 ---
 
 ※ この記事は、[Dedicated Hybrid App: temporary enforcements, new HCW and possible hybrid functionality disruptions](https://techcommunity.microsoft.com/blog/exchange/dedicated-hybrid-app-temporary-enforcements-new-hcw-and-possible-hybrid-function/4440682) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
 <p style="background: #FFFF99;"><strong>2025 年 8 月 18 日更新:</strong> お客様からのご意見を踏まえ、準備期間をより多く確保できるよう、8 月に予定していた一時的な強制措置 (第 1 回ブロック) は中止し、9 月から一時的な強制措置のスケジュールを再開することとしました。引き続き、組織の利用状況に応じて Exchange ハイブリッド専用アプリへの切り替えを進めてください。</p>
 
 2025 年 4 月、Exchange ハイブリッド環境に関するいくつかの変更について、[ハイブリッド展開における Exchange Server のセキュリティ変更](/blog/exchange-server-security-changes-for-hybrid-deployments/)で発表しました。
