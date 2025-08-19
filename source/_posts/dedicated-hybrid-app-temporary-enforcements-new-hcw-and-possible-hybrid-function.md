@@ -1,12 +1,12 @@
 ---
 title: "Exchange ハイブリッド専用アプリ: 一時的な強制措置、新しい HCW、およびハイブリッド機能の中断の可能性"
 date: 2025/08/07
-lastupdate: 2025/08/12
+lastupdate: 2025/08/19
 tags: Exchange
 ---
 
 ※ この記事は、[Dedicated Hybrid App: temporary enforcements, new HCW and possible hybrid functionality disruptions](https://techcommunity.microsoft.com/blog/exchange/dedicated-hybrid-app-temporary-enforcements-new-hcw-and-possible-hybrid-function/4440682) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
-
+<p style="background: #FFFF99;"><strong>2025 年 8 月 18 日更新:</strong> お客様からのご意見を踏まえ、準備期間をより多く確保できるよう、8 月に予定していた一時的な強制措置 (第 1 回ブロック) は中止し、9 月から一時的な強制措置のスケジュールを再開することとしました。引き続き、組織の利用状況に応じて Exchange ハイブリッド専用アプリへの切り替えを進めてください。</p>
 2025 年 4 月、Exchange ハイブリッド環境に関するいくつかの変更について、[ハイブリッド展開における Exchange Server のセキュリティ変更](/blog/exchange-server-security-changes-for-hybrid-deployments/)で発表しました。
 
 2025 年 8 月より、Exchange Online の共有サービス プリンシパルを使用した Exchange Web Services (EWS) トラフィックを一時的にブロックする措置を開始します (この共有サービス プリンシパルは、ハイブリッド環境で一部の共存機能に既定で使用されています)。これは、Exchange ハイブリッド専用アプリの導入を促進し、お客様の環境のセキュリティを強化するための段階的な施策の一環です。
@@ -38,7 +38,7 @@ Exchange ハイブリッド専用アプリに対応したサーバー バージ�
 
 |  | **ブロック開始日** | **ブロック期間** |
 | --- | --- | --- |
-| 第 1 回ブロック | 2025 年 8 月 19 日 | 2 日間 |
+| ~~第 1 回ブロック~~ | ~~2025 年 8 月 19 日~~ | ~~2 日間~~（この一時的なブロックは<span style='color: #169179;'>中止</span>されました） |
 | 第 2 回ブロック | 2025 年 9 月 16 日 | 3 日間 |
 | 第 3 回ブロック | 2025 年 10 月 7 日 | 3 日間 |
 | 最終ブロック | 2025 年 10 月 31 日以降 | (恒久的なブロック) |
@@ -185,6 +185,7 @@ HCW ではロールバックはサポートされていません。Microsoft は
 
 **本ブログ記事の主な更新内容:**
 
+- 2025/8/18: 一時的なブロックのスケジュールが変更されました。
 - 2025/8/11: Exchange ハイブリッド専用アプリの有効化手順を俯瞰できるフローチャートを追加しました。
 - 2025/8/7: [ConfigureExchangeHybridApplication.ps1 スクリプト](https://aka.ms/ConfigureExchangeHybridApplication) への直接リンクを記事内に追加しました。
 - 2025/8/7: 「取るべき対応策」セクションにて、リッチ共存機能を利用しているお客様は、共有の「Office 365 Exchange Online」アプリケーションからカスタム証明書を削除するためのスクリプトも実行する必要がある旨を明記しました。
