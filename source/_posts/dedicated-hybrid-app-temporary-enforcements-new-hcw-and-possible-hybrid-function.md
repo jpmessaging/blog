@@ -187,13 +187,13 @@ HCW ではロールバックはサポートされていません。Microsoft は
 
 **共有サービス プリンシパルや Exchange ハイブリッド専用アプリに登録されている証明書の状態はどのように確認できますか？**
 
-- 共有サービス プリンシパルの証明書を確認するには、[Microsoft Graph PowerShell](https://learn.microsoft.com/ja-jp/powershell/microsoftgraph/installation) で Entra に接続した状態で、以下のコマンドを実行します。
+- 共有サービス プリンシパルの証明書を確認するには、[Microsoft Graph PowerShell](https://learn.microsoft.com/powershell/microsoftgraph/installation) で Entra に接続した状態で、以下のコマンドを実行します。
 
 ```PowerShell
 Get-MgServicePrincipal -Filter "AppId eq '00000002-0000-0ff1-ce00-000000000000'" | select -ExpandProperty KeyCredentials | Format-List *
 ```
 
-- Exchange ハイブリッド専用アプリに登録されている証明書を確認するには、Entra に接続した状態で以下のコマンドを実行します。
+- Exchange ハイブリッド専用アプリに登録されている証明書を確認するには、[Microsoft Graph PowerShell](https://learn.microsoft.com/powershell/microsoftgraph/installation) で Entra に接続した状態で以下のコマンドを実行します。
 
 ```PowerShell
 Get-MgApplicationByAppId -AppId ((Get-MgApplication -Filter "startswith(DisplayName,'ExchangeServerApp-')").AppId) -Property id,keyCredentials | select -ExpandProperty KeyCredentials | Format-List *
