@@ -9,7 +9,7 @@ tags: Exchange
 
 ### 背景 : "最後の Exchange サーバー" の課題
 
-多くの組織では、すべてのメールボックスを Exchange Online に移行した後も、受信者属性の管理のためだけにオンプレミスの Exchange サーバーを残しています。ハイブリッド環境では、ディレクトリ同期されたユーザー アカウントのメールボックス属性は設計上 Exchange Online から直接管理できず、クラウド側で属性を編集しようとしても、オブジェクトの管理元 (Source of Authority : SOA) がオンプレミスにあるため通常はブロックされます。管理者は、メール アドレスやエイリアス、アドレス帳非表示フラグなどのメールボックス属性を Active Directory (AD) 上のオンプレ Exchange サーバーで編集し、その変更をクラウドに同期する必要があります。たとえメールボックスが Exchange Online にあっても、この要件のために "最後の Exchange サーバー" を維持し続けなければならず、移行後も煩わしい依存関係が残っていました。
+多くの組織では、すべてのメールボックスを Exchange Online に移行した後も、受信者属性の管理を目的としてオンプレミスの Exchange サーバーを維持しています。ハイブリッド環境では、ディレクトリ同期されたユーザー アカウントのメールボックス属性は設計上 Exchange Online から直接管理できず、クラウド側で属性を編集しようとしても、オブジェクトの管理元 (Source of Authority : SOA) がオンプレミスにあるため通常はブロックされます。管理者は、メール アドレスやエイリアス、アドレス帳非表示フラグなどのメールボックス属性を Active Directory (AD) 上のオンプレ Exchange サーバーで編集し、その変更をクラウドに同期する必要があります。たとえメールボックスが Exchange Online にあっても、この要件のために "最後の Exchange サーバー" を維持し続ける必要があり、移行後も煩わしい依存関係が残っていました。
 
 2022 年 4 月、Microsoft はこの課題に対応するための最初のステップとして、Exchange Server 2019 の管理ツールをアップデートしました。このアップデートにより、[Exchange Management Tools を使用して Exchange 受信者を管理すること](https://learn.microsoft.com/exchange/manage-hybrid-exchange-recipients-with-management-tools)が、ドメイン参加済みのマシン上で Exchange サーバーを稼働させることなく可能になりました。つまり、組織は最後の Exchange サーバーをシャットダウンし、軽量な管理ツールだけで受信者属性の変更を行えるようになったのです。
 
