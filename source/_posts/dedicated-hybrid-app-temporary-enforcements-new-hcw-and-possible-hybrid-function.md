@@ -1,7 +1,7 @@
 ---
 title: "Exchange ハイブリッド専用アプリ: 一時的な強制措置、新しい HCW、およびハイブリッド機能の中断の可能性"
 date: 2025/08/07
-lastupdate: 2025/08/19
+lastupdate: 2025/08/21
 tags: Exchange
 ---
 
@@ -185,8 +185,23 @@ HCW ではロールバックはサポートされていません。Microsoft は
 **Microsoft Entra Connect（旧称 Azure AD Connect）を使用してディレクトリ同期を行っており、すべてのメールボックスがオンプレミスに存在しています。この場合、Exchange ハイブリッド専用アプリの作成は必要ですか？**  
 これまでにハイブリッド構成ウィザード (HCW) を実行したことがなく、また「[Exchange と Exchange Online 組織間の OAuth 認証を構成する](https://learn.microsoft.com/exchange/configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help)」ドキュメントに記載された手順も実施していない場合は、Exchange ハイブリッド専用アプリの構成は不要です。ただし、HCW を実行したことがあり、空き時間情報、メール ヒント、プロフィール写真の共有などのリッチ共存機能を利用する場合は、Exchange ハイブリッド専用アプリの作成が必要です。
 
+**共有サービス プリンシパルや Exchange ハイブリッド専用アプリに登録されている証明書の状態はどのように確認できますか？**
+
+- 共有サービス プリンシパルの証明書を確認するには、[Microsoft Graph PowerShell](https://learn.microsoft.com/powershell/microsoftgraph/installation) で Entra に接続した状態で、以下のコマンドを実行します。
+
+```PowerShell
+Get-MgServicePrincipal -Filter "AppId eq '00000002-0000-0ff1-ce00-000000000000'" | select -ExpandProperty KeyCredentials | Format-List *
+```
+
+- Exchange ハイブリッド専用アプリに登録されている証明書を確認するには、[Microsoft Graph PowerShell](https://learn.microsoft.com/powershell/microsoftgraph/installation) で Entra に接続した状態で以下のコマンドを実行します。
+
+```PowerShell
+Get-MgApplicationByAppId -AppId ((Get-MgApplication -Filter "startswith(DisplayName,'ExchangeServerApp-')").AppId) -Property id,keyCredentials | select -ExpandProperty KeyCredentials | Format-List *
+```
+
 **本ブログ記事の主な更新内容:**
 
+- 2025/8/20: 共有サービス プリンシパルおよび Exchange ハイブリッド専用アプリに登録されている証明書の状態を確認する方法に関する FAQ を追加しました。
 - 2025/8/18: 一時的なブロックのスケジュールが変更されました。
 - 2025/8/11: Exchange ハイブリッド専用アプリの有効化手順を俯瞰できるフローチャートを追加しました。
 - 2025/8/7: [ConfigureExchangeHybridApplication.ps1 スクリプト](https://aka.ms/ConfigureExchangeHybridApplication) への直接リンクを記事内に追加しました。
