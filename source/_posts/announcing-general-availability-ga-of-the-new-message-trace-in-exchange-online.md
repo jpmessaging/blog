@@ -22,7 +22,7 @@ Exchange Online のリソースの不正利用や濫用のリスクを低減し�
 
 ## 従来のメッセージ追跡インターフェイスおよびコマンドレットの廃止スケジュール
 
-移行を円滑に進めるため、Exchange 管理センターの従来のメッセージ追跡のユーザー インターフェイスおよびコマンドレット（Get-MessageTrace、Get-MessageTraceDetail）は、新しいメッセージ追跡のインターフェイスおよびコマンドレット（Get-MessageTraceV2、Get-MessageTraceDetailV2）と並行して、数か月間ご利用いただけます。**従来のメッセージ追跡のインターフェイスおよびコマンドレット（Get-MessageTrace、Get-MessageTraceDetail）は、2025 年 9 月 1 日よりワールド ワイドのお客様向けに廃止が開始されます。**　
+移行を円滑に進めるため、Exchange 管理センターの従来のメッセージ追跡のユーザー インターフェイスおよびコマンドレット（Get-MessageTrace、Get-MessageTraceDetail）は、新しいメッセージ追跡のインターフェイスおよびコマンドレット（Get-MessageTraceV2、Get-MessageTraceDetailV2）と並行して、数か月間ご利用いただけます。**従来のメッセージ追跡のインターフェイスおよびコマンドレット（Get-MessageTrace、Get-MessageTraceDetail）は、2025 年 9 月 1 日よりワールド ワイドのお客様向けに廃止プロセスが開始されます。**　
 
 お客様からいただいたフィードバックを受けて、Reporting Web サービスを利用したメッセージ追跡データの取得機能のサポートを **2026 年 2 月 28 日** まで延期いたします。さらに、新しいメッセージ追跡機能を Graph API に導入する予定です。Graph API での新しいメッセージ追跡のパブリック プレビューは、現時点では 11 月を予定しています。詳細については、パブリック プレビュー公開時期が近づきましたら改めてご案内いたします。
 
