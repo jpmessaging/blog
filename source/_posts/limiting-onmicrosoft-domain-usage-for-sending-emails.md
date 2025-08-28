@@ -1,6 +1,7 @@
 ---
 title: onmicrosoft ドメインのメール送信利用制限について
 date: 2025-08-21 14:00:00
+lastupdate: 2025-08-28
 tags: Exchange Online
 ---
 ※ この記事は、[Limiting Onmicrosoft Domain Usage for Sending Emails](https://techcommunity.microsoft.com/blog/exchange/limiting-onmicrosoft-domain-usage-for-sending-emails/4446167) の抄訳です。最新の情報はリンク先をご確認ください。
@@ -51,6 +52,9 @@ MOERA ドメインがプライマリ SMTP アドレスである場合に通常�
 Exchange 管理センターのメッセージ トレース機能を使用して、テナントから送信される組織外へのトラフィックを取得できます。送信者欄にワイルド カード アドレスを指定することで、onmicrosoft.com ドメインを使用して送信されたすべてのトラフィックを含むレポートを取得できます。このレポートには内部的に送信されたメッセージも含まれますが、受信者ドメインを指定することで、レポートから内部送信メッセージをフィルタリングすることができます。
 
 ![](moera01.jpg)
+
+**注意:** 現在、MessageTraceV2 (新しいメッセージ トレース) では、*@contoso.onmicrosoft.com のようなワイルド カード形式の送信者アドレスを指定した検索は利用できません。そのため、現時点では拡張サマリー レポートまたは拡張レポート、もしくは MessageTraceV1 (従来のメッセージ トレース) をご利用ください（MessageTraceV2 において対応に向けて作業を進めています）。
+
 
 ## ロールアウト タイムライン
 
