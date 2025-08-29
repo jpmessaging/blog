@@ -1,7 +1,7 @@
 ---
 title: onmicrosoft ドメインのメール送信利用制限について
 date: 2025-08-21 14:00:00
-lastupdate: 2025-08-28
+lastupdate: 2025-08-29
 tags: Exchange Online
 ---
 ※ この記事は、[Limiting Onmicrosoft Domain Usage for Sending Emails](https://techcommunity.microsoft.com/blog/exchange/limiting-onmicrosoft-domain-usage-for-sending-emails/4446167) の抄訳です。最新の情報はリンク先をご確認ください。
