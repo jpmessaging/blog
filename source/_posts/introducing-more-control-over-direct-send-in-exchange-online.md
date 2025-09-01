@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Online におけるダイレクト送信の制御機能強化の導入'
 date: 2025/5/1
-lastupdate: 2025/8/14
+lastupdate: 2025/9/1
 tags:
 - Exchange Online
 ---
@@ -106,8 +106,12 @@ Get-MessageTracev2 -MessageId "your message ID here" | Get-MessageTraceDetailv2 
 **RejectDirectSend パラメーターを設定するために必要な権限は何ですか？**  
 RejectDirectSend パラメーターの設定には、Exchange Online の "Organization Configuration" ロールが割り当てられている管理者権限が必要です。通常、このロールは "Organization Management" ロール グループに含まれています。
 
+**RejectDirectSend は承認済みドメインのサブドメインである P1 送信ドメインアドレスにどのような影響を与えますか？**  
+RejectDirectSend は、承認済みドメインで「すべてのサブドメインのメールを受信する」が有効になっている (MatchSubDomains=TRUE) 場合、その承認済みドメインのサブドメインである P1 アドレスからのメールに影響します。
+
 **この投稿の変更点:**
 
+- 2025 年 8 月 29 日: 承認済みドメインのサブドメインに関する FAQ を追加しました。
 - 2025 年 8 月 12 日: 既知の問題および FAQ を追加しました。
 - 2025 年 8 月 4 日: [ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い](/blog/direct-send-vs-sending-directly-to-an-exchange-online-tenant/)への参照を追加しました。
 - 2025 年 7 月 30 日: コメントでのよくある質問に基づいて、本文にいくつかの説明を加えました。
