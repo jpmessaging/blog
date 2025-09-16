@@ -11,26 +11,24 @@ tags: Exchange
 2025 年 10 月 14 日以降、Microsoft は技術サポートを提供しなくなります。これにより、Exchange Server 2016 および Exchange Server 2019 のユーザーは以下を受け取ることができなくなります。 
 
 - サーバーの安定性や使いやすさに影響を与える可能性のある問題の修正。
-
 - サーバーがセキュリティ侵害に対して脆弱になる可能性のある脆弱性に対するセキュリティ修正。
-
 - タイムゾーンの更新。
 
 2025 年 10 月 14 日以降も、Exchange Server 2016 および Exchange Server 2019 をインストールした環境は引き続き動作します。しかし、サポート終了後もこれらの製品を使用し続けることは、潜在的なセキュリティ リスクを招く可能性があります。そのため、今すぐ行動を起こすことを強くお勧めします。
 
-お客様には、[Exchange Online への移行](https://learn.microsoft.com/exchange/mailbox-migration/decide-on-a-migration-path) を検討するか、[Exchange Server Subscription Edition (SE) へアップグレード](https://techcommunity.microsoft.com/t5/exchange-team-blog/upgrading-your-organization-from-current-versions-to-exchange/ba-p/4241305)することをお勧めします。  
+お客様には、[Exchange Online への移行](https://learn.microsoft.com/exchange/mailbox-migration/decide-on-a-migration-path) を検討するか、[Exchange Server Subscription Edition (SE) へアップグレード](/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/)することをお勧めします。  
 
 ## Exchange Online または Microsoft 365 に移行する
 
-Exchange Online または Microsoft 365 への移行は、最大の価値と最良のユーザー エクスペリエンスを提供すると確信しています。クラウドへの移行は、Exchange Server の導入を終了するための最善かつ最も簡単な選択肢です。Microsoft クラウドに移行すると、オンプレミス展開から一歩進み、クラウドでのみ利用可能な高度な生成 AI 技術を含む新しい機能や技術の恩恵を受けることができます。
+Exchange Online または Microsoft 365 への移行は、最大の価値と最良のユーザー エクスペリエンスを提供すると私たちは確信しています。クラウドへの移行は、Exchange Server の展開を終了するための最善かつ最も簡単な選択肢です。Microsoft クラウドに移行することで、オンプレミス展開から一歩進み、クラウドでのみ利用可能な高度な生成 AI 技術を含む新しい機能や技術の恩恵を受けることができます。
 
 クラウドへの移行を検討されている場合、Microsoft FastTrack サービスをご利用いただける可能性があります。FastTrack は、移行を可能な限りスムーズに進めるためのベスト プラクティス、ツール、およびリソースを提供します。さらに、計画や設計から最後のメールボックスの移行まで、サポート エンジニアが支援します。FastTrack の詳細については、[Microsoft FastTrack](https://fasttrack.microsoft.com/) をご覧ください。
 
 ## Exchange Server SE へのアップグレード 
 
-2025 年 7 月、[Exchange Server サブスクリプション エディション (SE) の一般提供開始を発表し、](https://jpmessaging.github.io/blog/exchange-server-subscription-edition-se-is-now-available/) オンプレミスで Exchange Server を引き続き運用する場合のアップグレード方法の詳細も提供しました。
+2025 年 7 月、[Exchange Server サブスクリプション エディション (SE) の一般提供開始を発表し、](/blog/exchange-server-subscription-edition-se-is-now-available/) オンプレミスで Exchange Server を引き続き運用する場合のアップグレード方法の詳細も提供しました。
 
-- Exchange Server 2019 をご利用の場合は、 [Exchange Server SE への インプレース アップグレード](https://jpmessaging.github.io/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/)をお勧めします。
+- Exchange Server 2019 をご利用の場合は、 [Exchange Server SE への インプレース アップグレード](/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/)をお勧めします。
 
 - Exchange Server 2016 をご利用の場合は、Exchange Server SE にレガシー（サイド バイ サイド）方式で直接アップグレードすることをお勧めします。
 
