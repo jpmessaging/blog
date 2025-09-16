@@ -6,7 +6,7 @@
   <link href="https://jpmessaging.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2025-08-21T06:00:00.000Z</updated>
+  <updated>2025-09-16T15:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>残り 1 か月 : Exchange Server 2016 および Exchange Server 2019 のサポート終了</title>
+    <link href="https://jpmessaging.github.io/blog/t-1-month-exchange-server-2016-and-exchange-server-2019-end-of-support/"/>
+    <id>https://jpmessaging.github.io/blog/t-1-month-exchange-server-2016-and-exchange-server-2019-end-of-support/</id>
+    <published>2025-09-16T15:00:00.000Z</published>
+    <updated>2025-09-16T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/t-1-month-exchange-server-2016-and-exchange-server-2019-end-of-support/4453133">T-1 month: Exchange Server 2016 and Exchange Server 2019 End of Support</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>2025 年 10 月 14 日、<strong>あと 1 か月</strong>で <a href="https://learn.microsoft.com/lifecycle/products/exchange-server-2016">Exchange Server 2016</a> および <a href="https://learn.microsoft.com/lifecycle/products/exchange-server-2019">Exchange Server 2019</a> のサポートが終了します。引き続きサポートとセキュリティを確保するために、今すぐアップグレードすることが重要です。</p><p>2025 年 10 月 14 日以降、Microsoft は技術サポートを提供しなくなります。これにより、Exchange Server 2016 および Exchange Server 2019 のユーザーは以下を受け取ることができなくなります。 </p><ul><li>サーバーの安定性や使いやすさに影響を与える可能性のある問題の修正。</li><li>サーバーがセキュリティ侵害に対して脆弱になる可能性のある脆弱性に対するセキュリティ修正。</li><li>タイムゾーンの更新。</li></ul><p>2025 年 10 月 14 日以降も、Exchange Server 2016 および Exchange Server 2019 をインストールした環境は引き続き動作します。しかし、サポート終了後もこれらの製品を使用し続けることは、潜在的なセキュリティ リスクを招く可能性があります。そのため、今すぐ行動を起こすことを強くお勧めします。</p><p>お客様には、<a href="https://learn.microsoft.com/exchange/mailbox-migration/decide-on-a-migration-path">Exchange Online への移行</a> を検討するか、<a href="/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/">Exchange Server Subscription Edition (SE) へアップグレード</a>することをお勧めします。  </p><h2 id="Exchange-Online-または-Microsoft-365-に移行する"><a href="#Exchange-Online-または-Microsoft-365-に移行する" class="headerlink" title="Exchange Online または Microsoft 365 に移行する"></a>Exchange Online または Microsoft 365 に移行する</h2><p>Exchange Online または Microsoft 365 への移行は、最大の価値と最良のユーザー エクスペリエンスを提供すると私たちは確信しています。クラウドへの移行は、Exchange Server の展開を終了するための最善かつ最も簡単な選択肢です。Microsoft クラウドに移行することで、オンプレミス展開から一歩進み、クラウドでのみ利用可能な高度な生成 AI 技術を含む新しい機能や技術の恩恵を受けることができます。</p><p>クラウドへの移行を検討されている場合、Microsoft FastTrack サービスをご利用いただける可能性があります。FastTrack は、移行を可能な限りスムーズに進めるためのベスト プラクティス、ツール、およびリソースを提供します。さらに、計画や設計から最後のメールボックスの移行まで、サポート エンジニアが支援します。FastTrack の詳細については、<a href="https://fasttrack.microsoft.com/">Microsoft FastTrack</a> をご覧ください。</p><h2 id="Exchange-Server-SE-へのアップグレード"><a href="#Exchange-Server-SE-へのアップグレード" class="headerlink" title="Exchange Server SE へのアップグレード"></a>Exchange Server SE へのアップグレード</h2><p>2025 年 7 月、<a href="/blog/exchange-server-subscription-edition-se-is-now-available/">Exchange Server サブスクリプション エディション (SE) の一般提供開始を発表し、</a> オンプレミスで Exchange Server を引き続き運用する場合のアップグレード方法の詳細も提供しました。</p><ul><li><p>Exchange Server 2019 をご利用の場合は、 <a href="/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/">Exchange Server SE への インプレース アップグレード</a>をお勧めします。</p></li><li><p>Exchange Server 2016 をご利用の場合は、Exchange Server SE にレガシー（サイド バイ サイド）方式で直接アップグレードすることをお勧めします。</p></li></ul><div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">組織内にまだ Exchange Server 2013 以前のバージョンがある場合は、<a href="https://www.microsoft.com/download/details.aspx?id=106402">Exchange Server 2019 CU15</a> をインストールするか Exchange Server SE にアップグレードする前に、まずそれを削除する必要があります。</div><h2 id="Exchange-Server-Technology-Adoption-Program"><a href="#Exchange-Server-Technology-Adoption-Program" class="headerlink" title="Exchange Server Technology Adoption Program"></a>Exchange Server Technology Adoption Program</h2><p>お客様が Exchange Server の運用を継続する予定であり、Exchange Server SE のプレリリース ビルドをテストおよび評価したい場合は、<a href="https://techcommunity.microsoft.com/t5/exchange-team-blog/open-enrollment-for-exchange-server-2019-tap/ba-p/3421627">Exchange Server Technology Adoption Program (TAP)</a> への参加を申し込むことができます。 </p><p>Exchange Server TAP に参加することにはいくつかの利点があります。例えば、将来のアップデートに関する意見やフィードバックを提供できること、Exchange Server のエンジニアリング チームとの密接な関係を築けること、Exchange Server に関するプレリリース情報を受け取れることなどです。また、TAP メンバーは TAP に関連する問題について Microsoft から追加料金なしでサポートを受けることができます。 </p><p>すべてのお申込みは、受け入れ前に審査されます。すべての法的書類が適切に処理されるまで、お客様はプレリリースのダウンロードや情報にアクセスすることはできません。お申込みは受け入れを意味するものではなく、すべてのお申込みいただいたお客様が TAP に選ばれるわけではありません。お申し込みが受け入れられた場合、必要な書類の手続きを開始するためにご連絡いたします。</p><p>TAP プログラムの参加有無にかかわらず、<a href="https://www.microsoft.com/download/details.aspx?id=108244">Exchange Server Subscription Edition RTM</a> をダウンロードし、ご利用の組織内で Exchange Server SE をすぐに評価することができます。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/t-1-month-exchange-server-2016-and-exchange-server-2019-end-of-support</summary>
+      
+    
+    
+    
+    
+    <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Exchange ハイブリッド専用アプリの使用に関する初回の一時的な強制措置は、9 月 16 日に実施される</title>
+    <link href="https://jpmessaging.github.io/blog/the-first-temporary-enforcement-of-dedicated-hybrid-app-use-is-coming-on-sep/"/>
+    <id>https://jpmessaging.github.io/blog/the-first-temporary-enforcement-of-dedicated-hybrid-app-use-is-coming-on-sep/</id>
+    <published>2025-09-15T15:00:00.000Z</published>
+    <updated>2025-09-15T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/the-first-temporary-enforcement-of-dedicated-hybrid-app-use-is-coming-on-septemb/4452910">The first temporary enforcement of dedicated hybrid app use is coming on September 16 </a>の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>2025 年 9 月 16 日より、先日公開した <a href="https://jpmessaging.github.io/blog/dedicated-hybrid-app-temporary-enforcements-new-hcw-and-possible-hybrid-function/">Exchange ハイブリッド専用アプリ: 一時的な強制措置、新しい HCW、およびハイブリッド機能の中断の可能性</a>に基づき、ハイブリッドのお客様向けに共有サービス プリンシパルの使用を一時的にブロックする初回の強制措置が実施されます。</p><p>ご利用の環境が以下に該当する場合は、影響を受ける可能性があります：</p><ul><li>ユーザー メールボックスが Exchange オンプレミス と Exchange Online の両方に存在している</li><li>すべてのオンプレミス Exchange サーバーが 2025 年 4 月の HU（またはそれ以降）に更新されていない</li><li>Exchange ハイブリッド専用アプリが作成されていない、または Exchange で利用できるように有効化されていない</li></ul><p>上記のすべてが該当する場合、一時的な強制措置の期間中以下の機能が影響を受けます：</p><ul><li>オンプレミスの Exchange メールボックスを利用しているユーザーは、Exchange Online ユーザーの空き時間情報、メール ヒント、またはプロフィール写真を確認できない可能性があります</li></ul><p>その他のハイブリッド機能（移行、ハイブリッド管理、メール フローなど）は<em><strong>影響を受けません</strong></em>。</p><h2 id="この強制措置は正確にはいつ実施されますか？"><a href="#この強制措置は正確にはいつ実施されますか？" class="headerlink" title="この強制措置は正確にはいつ実施されますか？"></a>この強制措置は正確にはいつ実施されますか？</h2><ul><li><strong>一時的なブロック期間:</strong> 48 時間</li><li><strong>開始日時:</strong> 2025 年 9 月 16 日 午前 7 時 UTC (日本時間 2025 年 9 月 16 日 16 時)</li><li><strong>終了日時:</strong> 2025 年 9 月 18 日 午前 7 時 UTC (日本時間 2025 年 9 月 18 日 16 時)</li><li><strong>影響を受けるクラウド環境:</strong> WW、21Vianet</li></ul><h2 id="影響をどのように回避できますか？"><a href="#影響をどのように回避できますか？" class="headerlink" title="影響をどのように回避できますか？"></a>影響をどのように回避できますか？</h2><p>テナントにて Exchange ハイブリッド専用アプリを作成および有効化する方法については、<a href="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/">ハイブリッド展開における Exchange Server のセキュリティ変更</a> を参照してください。なお、2025 年 9 月 16 日の一時的な強制措置の後、2025 年 10 月 7 日にも再度一時的な強制装置が予定されており、2025 年 10 月末には共有サービス プリンシパルでの EWS アクセスが最終的に廃止される予定です。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/the-first-temporary-enforcement-of-dedicated-hybrid-app-use-is-coming-</summary>
+      
+    
+    
+    
+    
+    <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
+    
+  </entry>
   
   <entry>
     <title>クラウド管理のリモート メールボックスの導入：最後の Exchange Server 廃止に向けたステップ</title>
@@ -411,50 +455,6 @@
     
     
     <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Exchange Online の Get-FederationInformation コマンドレットに関する重要なお知らせ</title>
-    <link href="https://jpmessaging.github.io/blog/important-update-to-the-get-federationinformation-cmdlet-in-exchange-online/"/>
-    <id>https://jpmessaging.github.io/blog/important-update-to-the-get-federationinformation-cmdlet-in-exchange-online/</id>
-    <published>2025-05-07T08:00:00.000Z</published>
-    <updated>2025-05-07T08:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/important-update-to-the-get-federationinformation-cmdlet-in-exchange-online/4410095">Important Update to the Get-FederationInformation Cmdlet in Exchange Online</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>Microsoft では、お客様のセキュリティとプライバシーを最優先に考えています。この取り組みの一環として、Microsoft Exchange Online の <strong>Get-FederationInformation</strong> コマンドレットに重要な更新を行います。この変更は、認可されていないユーザーによるドメイン名の露出を制限することで、テナント情報のセキュリティを強化することを目的としています。本記事では、この変更の内容、背景にある理由、およびお客様の運用に与える可能性のある影響について説明します。</p><h3 id="現在の動作"><a href="#現在の動作" class="headerlink" title="現在の動作"></a>現在の動作</h3><p>現在、<strong>Get-FederationInformation</strong> コマンドレットでは、認証を必要とせずに任意のユーザーが指定されたドメインのフェデレーション情報を取得することが可能です。この情報には、ターゲット テナントのすべての承認済みドメインのリストを返す “DomainNames” フィールドなどが含まれます。</p><p>例えば、次のコマンドを実行すると、次のような結果が返されます。</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-FederationInformation</span> <span class="literal">-DomainName</span> contoso.com</span><br></pre></td></tr></table></figure><p>出力の例</p><blockquote><p>TargetApplicationUri : outlook.com<br>DomainNames : <span style="color:red">{ contoso.com, contoso.net, mail.contoso.com, …}</span><br>TargetAutodiscoverEpr : https&#58;&#x2F;&#x2F;autodiscover-s.outlook.com&#x2F;autodiscover&#x2F;autodiscover.svc&#x2F;WSSecurity<br>TokenIssuerUris : {urn:federation:MicrosoftOnline}<br>IsValid : True<br>ObjectState : Unchanged</p></blockquote><p>このように、対象テナントのすべてのフェデレーション ドメイン名が公開されるため、明示的な同意がない限り、この情報を共有するべきではありません。</p><h3 id="変更後の動作"><a href="#変更後の動作" class="headerlink" title="変更後の動作"></a>変更後の動作</h3><p>この問題に対処するため、Get-FederationInformation コマンドレットを更新します。今後、”DomainNames” フィールドはすべてのフェデレーション ドメイン情報を返すのではなく、パラメーターとして指定されたドメイン情報のみを含むようになります。</p><p>例えば、更新後に同じコマンドを実行すると、次のような結果が返されます。</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-FederationInformation</span> <span class="literal">-DomainName</span> contoso.com</span><br></pre></td></tr></table></figure><p>出力の例</p><blockquote><p>TargetApplicationUri : outlook.com<br>DomainNames : <span style="color:limegreen">{ contoso.com }</span><br>TargetAutodiscoverEpr : https&#58;&#x2F;&#x2F;autodiscover-s.outlook.com&#x2F;autodiscover&#x2F;autodiscover.svc&#x2F;WSSecurity<br>TokenIssuerUris : {urn:federation:MicrosoftOnline}<br>IsValid : True<br>ObjectState : Unchanged</p></blockquote><p>この変更により、テナント情報のセキュリティとプライバシーが強化されます。</p><h3 id="お客様への影響"><a href="#お客様への影響" class="headerlink" title="お客様への影響"></a>お客様への影響</h3><p>この変更により、現在のワークフローに影響が出る可能性があることを理解しています。特に、ターゲット テナントのすべてのフェデレーション ドメイン名を取得するために Get-FederationInformation コマンドレットに依存している場合は注意が必要です。この変更は 6 月中旬から適用される予定であり、それ以降、この情報が必要な場合は、対象テナントの管理者と直接連携する必要があります。</p><p>テナント管理者は、Get-FederatedOrganizationIdentifier コマンドレットを使用してフェデレーション ドメインのリストを取得し、必要に応じて他のテナントと共有することで、予定表の空き時間情報の共有などのテナント間の関係を確立することができます。</p><h3 id="組織の関係を作成する際のチップス"><a href="#組織の関係を作成する際のチップス" class="headerlink" title="組織の関係を作成する際のチップス"></a>組織の関係を作成する際のチップス</h3><p>Microsoft 365 にホストされているテナントとの組織の関係を作成する際には、DomainNames リストに &lt;tenant&gt;.mail.onmicrosoft.com を含めることをお勧めします。例えば、Microsoft 365 のマルチテナント エンドポイントにホストされているテナントとの組織の関係を作成する場合は、次のように指定します。</p><blockquote><p>New-OrganizationRelationship -Name “Office 365 Contoso” -Enabled $true -FreeBusyAccessEnabled $true -FreeBusyAccessLevel LimitedDetails -TargetApplicationUri outlook.com -TargetAutodiscoverEpr https&#58;&#x2F;&#x2F;autodiscover-s.outlook.com&#x2F;autodiscover&#x2F;autodiscover.svc&#x2F;WSSecurity -DomainNames contoso.onmicrosoft.com, <strong>contoso.mail.onmicrosoft.com</strong>, contoso.com</p></blockquote><h3 id="次のステップ"><a href="#次のステップ" class="headerlink" title="次のステップ"></a>次のステップ</h3><p>現在の Get-FederationInformation コマンドレットの使用状況を確認し、必要に応じてワークフローを調整することをお勧めします。ご不明な点やさらなるサポートが必要な場合は、ぜひお問い合わせください。</p><p>この変更の実施にあたり、ご理解とご協力をお願いいたします。Microsoft Exchange Online を引き続きご利用いただき、誠にありがとうございます。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/important-update-to-the-get-federationinformation-cmdlet-in-exchange-o</summary>
-      
-    
-    
-    
-    
-    <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>新しい Outlook for Windows の始め方：従来版との違いを学ぶ</title>
-    <link href="https://jpmessaging.github.io/blog/Getting-started-with-new-outlook-for-windows/"/>
-    <id>https://jpmessaging.github.io/blog/Getting-started-with-new-outlook-for-windows/</id>
-    <published>2025-05-02T08:00:00.000Z</published>
-    <updated>2025-05-02T08:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの杉山です。<br>本記事では 2024 年 8 月 1 日に一般提供 (General Availability, GA) された新しい Outlook for Windows (以下、新しい Outlook) の概要や始め方、お問い合わせいただくことも増えている従来の Outlook for Windows (以下、従来の Outlook) との違いについてご紹介します。<br>まだ新しい Outlook をご利用いただいていない方はこの記事をきっかけにお試しください！  </p><h2 id="目次"><a href="#目次" class="headerlink" title="目次"></a>目次</h2><p><a href="#1-%E6%96%B0%E3%81%97%E3%81%84-Outlook-%E3%81%AE%E6%A6%82%E8%A6%81%E3%82%92%E7%9F%A5%E3%82%8D%E3%81%86%EF%BC%81">1. 新しい Outlook の概要を知ろう！</a><br><a href="#2-%E5%BE%93%E6%9D%A5%E3%81%AE-Outlook-%E3%81%A8%E3%81%AE%E6%A9%9F%E8%83%BD%E3%82%92%E6%AF%94%E8%BC%83%E3%81%97%E3%82%88%E3%81%86%EF%BC%81">2. 従来の Outlook との機能を比較しよう！</a><br><a href="#3-%E6%96%B0%E3%81%97%E3%81%84-Outlook-%E3%81%A8%E5%BE%93%E6%9D%A5%E3%81%AE-Outlook-%E3%82%92%E4%B8%A6%E8%A1%8C%E7%A8%BC%E5%83%8D%E3%81%97%E3%82%88%E3%81%86%EF%BC%81">3. 新しい Outlook と従来の Outlook を並行稼働しよう！</a><br><a href="#4-%E3%83%95%E3%82%A3%E3%83%BC%E3%83%89%E3%83%90%E3%83%83%E3%82%AF%E3%82%92%E6%B4%BB%E7%94%A8%E3%81%97%E3%82%88%E3%81%86%EF%BC%81">4. フィードバックを活用しよう！</a><br><a href="#5-Appendix-%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9-%E3%83%8E%E3%83%BC%E3%83%88-%E3%83%AD%E3%83%BC%E3%83%89%E3%83%9E%E3%83%83%E3%83%97">5. Appendix: リリース ノート&#x2F;ロードマップ</a></p><h2 id="1-新しい-Outlook-の概要を知ろう！"><a href="#1-新しい-Outlook-の概要を知ろう！" class="headerlink" title="1. 新しい Outlook の概要を知ろう！"></a>1. 新しい Outlook の概要を知ろう！</h2><p>新しい Outlook はアジャイル性を高め、より迅速な機能の展開と可用性を提供するよう再考されているため、多くの新機能を素早く利用できます。<br>たとえば <a href="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/">Copilot と連携</a>し AI を使用することにより、インテリジェントなスペル&#x2F;文法チェック機能を用いてより優れたメールを作成できます。<br>また、新機能の配信については従来の Outlook と異なり新しいビルド更新プログラムが毎週配布され、自動的に更新されます。<br>これにより従来の Outlook では数日または数週間かかった機能更新が素早く提供されます。</p><p>新しい Outlook のアーキテクチャとしては、基本的に Outlook on the web をベースに構築されており <a href="https://learn.microsoft.com/microsoft-365-apps/deploy/webview2-install">Microsoft Edge WebView2</a> (以下、WebView2) を利用した最新のサービス アーキテクチャに基づいております。<br>そのため、UI は Outlook on the web に似ており、従来の Outlook とは異なります。<br>WebView2 を利用することにより、デバイス プラットフォーム間で統一した機能を提供することが可能となります。</p><p>新しい Outlook の概要については<a href="https://learn.microsoft.com/microsoft-365-apps/outlook/overview-new-outlook">新しい Outlook for Windows の概要</a>の公開情報も参照ください。</p><p>なお、従来の Outlook から新しい Outlook への移行は<a href="https://learn.microsoft.com/microsoft-365-apps/outlook/get-started/guide-product-availability">段階的なアプローチ</a>を用いて 3 つのフェーズ (オプトイン、オプトアウト、カットオーバー) に分けて展開が進められております。<br>従来の Outlook は少なくとも 2029 年までサポートが継続する予定ですが、将来的にはサポートが終了するため、段階的に新しい Outlook への移行を検討いただくことをお勧めします。</p><p>新しい Outlook の提供に関するガイドラインについては<a href="/blog/new-outlook-for-windows-a-guide-to-product-availability/">新しい Outlook for Windows 一般提供に向けたガイド</a>のブログも参照ください。</p><h2 id="2-従来の-Outlook-との機能を比較しよう！"><a href="#2-従来の-Outlook-との機能を比較しよう！" class="headerlink" title="2. 従来の Outlook との機能を比較しよう！"></a>2. 従来の Outlook との機能を比較しよう！</h2><p>新しい Outlook と従来の Outlook との機能比較については以下の公開情報に比較表としてまとめられています。<br>なお、現時点で新しい Outlook で利用できない機能については今後の機能開発にて使用可能となる場合もありますので、公開情報および後述のロードマップをご確認ください。　　</p><p>比較表は<a href="https://support.microsoft.com/office/de453583-1e76-48bf-975a-2e9cd2ee16dd">新しい Outlook と従来の Outlook の機能の比較</a>の公開情報を参照ください。</p><p>例として 2 つの機能の違いをご紹介します。</p><h4 id="COM-アドイン"><a href="#COM-アドイン" class="headerlink" title="COM アドイン"></a>COM アドイン</h4><p>特に多くのお問い合わせをいただく機能としては COM アドインが挙げられます。<br>新しい Outlook では <a href="https://learn.microsoft.com/microsoft-365-apps/outlook/overview-new-outlook#com-add-ins">COM アドイン</a>はサポートされておりません。<br>COM アドインはさまざまな方法で Outlook を操作でき、多くの場合は Outlook で不安定さとクラッシュを引き起こしました。<br>そのため、新しい Outlook では COM アドインをサポートしておらず、代わりに Web アドインがサポートされております。<br>Web アドインは従来の Outlook でも利用いただけるため、既に Web アドインをご利用の場合には新しい Outlook へ移行するために追加の作業は不要となります。<br>現時点で COM アドインをご利用の場合には <a href="https://learn.microsoft.com/microsoft-365-apps/outlook/get-started/migrate-com-to-web-addins">Web アドインへの移行</a>も検討ください。</p><h4 id="更新プログラムの管理"><a href="#更新プログラムの管理" class="headerlink" title="更新プログラムの管理"></a>更新プログラムの管理</h4><p>新しい Outlook のビルド更新プログラムは毎週配布され、ネイティブ コンポーネントにより自動的に更新されます。<br>そして、従来の Outlook のような更新チャネルというものはありません。<br>そのため、従来の Outlook と異なり MCM (Microsoft Configuration Manager) などを使用した更新プログラムの管理は不要となります。<br>また、更新プログラムは Microsoft 365 Content Delivery Network (CDN) より直接ダウンロードされるため、*.office.net ドメインへの通信が可能である必要があります。  </p><h2 id="3-新しい-Outlook-と従来の-Outlook-を並行稼働しよう！"><a href="#3-新しい-Outlook-と従来の-Outlook-を並行稼働しよう！" class="headerlink" title="3. 新しい Outlook と従来の Outlook を並行稼働しよう！"></a>3. 新しい Outlook と従来の Outlook を並行稼働しよう！</h2><p>新しい Outlook と従来の Outlook は<a href="https://support.microsoft.com/office/a624c36d-c50f-43bc-9c8b-dd17b5690ffb">並行稼働</a>することが可能です。<br>たとえば、新しい Outlook ではまだ使用できない機能がある場合には従来の Outlook に戻すことも可能ですが、両方を並行して実行することにより、新しい Outlook で使用できない機能のみ従来の Outlook で操作することもできます。<br>また、並行稼働により両方の製品でシームレスに作業をしながら機能を比較することも可能です。<br>ぜひ、新しい Outlook と従来の Outlook を並行稼働いただき、機能を比較ください。<br>そして、新しい Outlook で実装されていない機能や機能改善のご要望がありましたらフィードバックにてご意見をいただき、今後の製品開発にご協力ください。  </p><p>新しい Outlook のインストール方法については<a href="/blog/Summary-of-installation-methods-for-new-outlook-for-windows/">新しい Outlook for Windows のインストール方法まとめ</a>のブログ記事も参照ください。　　</p><h2 id="4-フィードバックを活用しよう！"><a href="#4-フィードバックを活用しよう！" class="headerlink" title="4. フィードバックを活用しよう！"></a>4. フィードバックを活用しよう！</h2><p>新しい Outlook はリリースされたばかりであり、機能開発はまだ進行中です。<br>加えて新しい Outlook の機能開発は活発におこなわれているため、皆様からのフィードバックをお待ちしております。<br>サポートやフィードバックの詳細については、<a href="https://support.microsoft.com/office/4a4bcc80-c71e-4e44-97c1-d0e62452ef4a">新しい Outlook for Windows でサポートに問い合わせ、フィードバックを提供する</a>の記事を参照ください。<br>また、<a href="https://feedbackportal.microsoft.com/feedback/forum/14c10fe9-fe8b-ef11-ac20-7c1e520b2631">フィードバック ポータル</a>もご用意がございますので投稿および同じ意見の投稿がある場合には Vote ボタンをクリックください。<br>※ フィードバック ポータルについては英語での投稿にご協力ください。  </p><h2 id="5-Appendix-リリース-ノート-ロードマップ"><a href="#5-Appendix-リリース-ノート-ロードマップ" class="headerlink" title="5. Appendix: リリース ノート&#x2F;ロードマップ"></a>5. Appendix: リリース ノート&#x2F;ロードマップ</h2><p>新しい Outlook の新機能などの更新については<a href="https://learn.microsoft.com/officeupdates/release-notes-outlook-new">リリース ノート</a>を参照ください。<br>また、新しい Outlook の既知の問題や回避策については<a href="https://support.microsoft.com/office/3b3dbdaa-b20b-4c79-a352-49bee8dc8bb5">こちら</a>の公開情報を参照ください。</p><p>新しい Outlook の最新機能について情報を入手するには、<a href="https://www.microsoft.com/microsoft-365/roadmap?filters=Outlook,Desktop,Web&searchterms=newoutlookforwindows">ロードマップ</a>をフォローいただくと、素早く情報をチェックできますのでご活用ください。</p><p><strong>本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</strong></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;こんにちは。日本マイクロソフト Exchange &amp;amp; Outlook サポート チームの杉山です。&lt;br&gt;本記事では 2024 年 8 月 1 日に一般提供 (General Availability, GA) された新しい Outlook for Windows </summary>
-      
-    
-    
-    
-    
-    <category term="New Outlook" scheme="https://jpmessaging.github.io/blog/tags/New-Outlook/"/>
     
   </entry>
   
