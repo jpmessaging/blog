@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Online テナントの外部送信メール制限の導入'
 date: 2025-02-26
-lastupdate: 2025-07-15
+lastupdate: 2025-09-18
 tags: Exchange Online
 ---
 ※ この記事は、[Introducing Exchange Online Tenant Outbound Email Limits](https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-tenant-outbound-email-limits/4372797) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
