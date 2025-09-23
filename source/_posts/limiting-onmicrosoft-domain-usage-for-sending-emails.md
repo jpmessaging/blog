@@ -1,7 +1,7 @@
 ---
 title: onmicrosoft ドメインのメール送信利用制限について
 date: 2025-08-21 14:00:00
-lastupdate: 2025-08-29
+lastupdate: 2025-09-24
 tags: Exchange Online
 ---
 ※ この記事は、[Limiting Onmicrosoft Domain Usage for Sending Emails](https://techcommunity.microsoft.com/blog/exchange/limiting-onmicrosoft-domain-usage-for-sending-emails/4446167) の抄訳です。最新の情報はリンク先をご確認ください。
@@ -46,6 +46,10 @@ MOERA ドメインがプライマリ SMTP アドレスである場合に通常�
 - Microsoft からの通知メールは、必ずカスタム ドメインを使用するように設定してください。([Microsoft 365 製品からのメール送信に使用するドメインの選択](https://learn.microsoft.com/microsoft-365/admin/email/select-domain-to-use-for-email-from-microsoft-365-products))
 - ジャーナル レポートは、テナントに設定された Microsoft Exchange Recipient アドレス (Get-OrganizationConfig の MicrosoftExchangeRecipientPrimarySmtpAddress) を使用します。このアドレスは管理者が変更できないため、これらのメッセージはスロットリングの制限にはカウントされません。
 - 複雑なルーティングを伴うハイブリッド構成では、*mail.onmicrosoft.com* を含む MOERA ドメインが使用されることがあります。これらのドメインを使用したアドレスが外部受信者にメールを送信する（例: エイリアスから送信された OOF メッセージ）場合がありますが、元のトラフィックでこれらのドメインが使用されていない限り、これらのメッセージはスロットリングの対象にはなりません。
+- ポストマスター アドレス: 外部のポストマスター アドレスに onmicrosoft.com ドメインを設定している場合は、カスタム ドメインに変更する必要があります。[外部のポストマスター アドレスの構成方法](https://learn.microsoft.com/exchange/mail-flow-best-practices/configure-external-postmaster-address)
+- OOF (不在応答) メッセージはスロットリングの制限にはカウントされませんが、配信確認の配信状態通知 (DSNs) にはカウントされます。
+
+**注意:** スロットリングの判定には P1 Mail From アドレスがチェックされますが、NDR（配信不能通知）の場合はこのアドレスが null であるため、スロットリングの対象外となります。
 
 ## MOERA メール トラフィックの分析
 
@@ -60,12 +64,12 @@ Exchange 管理センターのメッセージ トレース機能を使用して�
 | **MOERA の送信メールスロットリング開始日** | **テナント内の Exchange シート数** |
 | --- | --- |
 | 2025年10月15日 | トライアル |
-| 2025年12月1日 | 3未満 |
+| 2025年12月1日 | 3 未満 |
 | 2026年1月7日 | 3～10 |
 | 2026年2月2日 | 11～50 |
 | 2026年3月2日 | 51～200 |
 | 2026年4月1日 | 201～2,000 |
 | 2026年5月4日 | 2,001～10,000 |
-| 2026年6月1日 | 10,001以上 |
+| 2026年6月1日 | 10,001 以上 |
 
 各ロールアウト段階のアナウンスは、対象のシート数条件を満たすすべてのお客様に対し、開始日の 1 か月前にメッセージ センターを通じて通知されます。MOERA ドメインを利用しているすべてのお客様は、早めに計画を立て、移行を開始することが推奨されます。
