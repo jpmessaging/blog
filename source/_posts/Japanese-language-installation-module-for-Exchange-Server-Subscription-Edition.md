@@ -6,11 +6,11 @@ tags:
 ---
 
 こんにちは。日本マイクロソフト Exchange & Outlook サポート チームです。
-[こちら](https://jpmessaging.github.io/blog/exchange-server-subscription-edition-se-is-now-available/)でアナウンスしているとおり 2025 年 7 月 1 日 (日本時間では 7 月 2 日) に Exchange Server Subscription Edition (Exchange Server SE) がリリースされました。
-また、Exchange Server 2016 CU23 および Exchange Server 2019 CU14 / CU15 については[こちら](https://jpmessaging.github.io/blog/t-6-months-exchange-server-2016-and-exchange-server-2019-end-of-support/)にてご案内のとおり 2025 年 10 月 14 日をもって延長サポートが終了となります。この延長サポートの終了に向けてこれから Exchange Server SE のインストールを予定しているお客様もいらっしゃるかと思います。
+[こちら](/blog/exchange-server-subscription-edition-se-is-now-available/)でアナウンスしているとおり 2025 年 7 月 1 日 (日本時間では 7 月 2 日) に Exchange Server Subscription Edition (Exchange Server SE) がリリースされました。
+また、Exchange Server 2016 CU23 および Exchange Server 2019 CU14 / CU15 については[こちら](/blog/t-6-months-exchange-server-2016-and-exchange-server-2019-end-of-support/)にてご案内のとおり 2025 年 10 月 14 日をもって延長サポートが終了となります。この延長サポートの終了に向けてこれから Exchange Server SE のインストールを予定しているお客様もいらっしゃるかと思います。
 
 そういったお客様から、「Exchange  Server SE RTM の日本語版の提供はあるか」といったお問い合わせを少なからずいただいています。
-Exchange  Server SE のインストール モジュールは[こちら](https://www.microsoft.com/en-us/download/details.aspx?id=108244)からダウンロードできますが、**現在公開されているモジュール (ExchangeServerSE-x64.iso) には日本語も含まれています。**
+Exchange  Server SE のインストール モジュールは[こちら](https://www.microsoft.com/download/details.aspx?id=108244)からダウンロードできますが、**現在公開されているモジュール (ExchangeServerSE-x64.iso) には日本語も含まれています。**
 つまり、ISO ファイルをダウンロードして日本語環境でインストーラーを起動すれば、日本語で表示されたインストール ウィザードを使用してインストール作業ができますのでご安心ください。
 
 
