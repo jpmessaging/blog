@@ -8,7 +8,7 @@ tags:
 
 ※ この記事は、[New Resource: Getting Started with Custom Analysis in Viva Insights and Copilot Analytics](https://techcommunity.microsoft.com/blog/microsoftvivablog/new-resource-getting-started-with-custom-analysis-in-viva-insights-and-copilot-a/4455517) の抄訳です。最新の情報はリンク先をご確認ください。 
 
-先月、Microsoft 365 Copilot を活用して、より深いインサイトを得るための新しいリソース「Copilot Analytics でのカスタム分析入門」プレイブックを公開しました。このプレイブックは現在、[Copilot Success Kit](https://adoption.microsoft.com/copilot/#user-enablement) の「User enablement」セクションからご利用いただけます。
+先月、Microsoft 365 Copilot を活用して、より深いインサイトを得るための新しいリソース「Copilot Analytics でのカスタム分析の開始」プレイブックを公開しました。このプレイブックは現在、[Copilot Success Kit](https://adoption.microsoft.com/copilot/#user-enablement) の「ユーザーの有効化」セクションからご利用いただけます。
 
 ![](Choose_your_role.png)
 
@@ -16,7 +16,7 @@ tags:
 
 Microsoft 365 Copilot を導入・活用する企業が増える中、多くの方から「成功をどう測定すればよいのか？」「標準のダッシュボードや Power BI レポートだけでは答えられない、より深い疑問にどう対応すればよいのか？」「測定プログラムの計画や構築はどう進めればよいのか？」といった声が寄せられています。
 
-このプレイブックは、Copilot Analytics の導入や戦略策定に関する実践的なガイダンスを求めるお客様やパートナーからのフィードバックを受けて作成されました。すでに公開されている [Advanced analysis playbook](https://aka.ms/CopilotAdvancedAnalytics) は、分析プログラムが整った後のデータ解釈に焦点を当てていますが、今回の新しいプレイブックは、カスタム分析戦略をゼロから構築するためのステップを詳しく解説しています。
+このプレイブックは、Copilot Analytics の導入や戦略策定に関する実践的なガイダンスを求めるお客様やパートナーからのフィードバックを受けて作成されました。すでに公開されている [高度な分析プレイブック](https://aka.ms/CopilotAdvancedAnalytics) は、分析プログラムが整った後のデータ解釈に焦点を当てていますが、今回の新しいプレイブックは、カスタム分析戦略をゼロから構築するためのステップを詳しく解説しています。
 
 ### **習得できること**
 
