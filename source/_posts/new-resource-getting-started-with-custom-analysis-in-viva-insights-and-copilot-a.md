@@ -1,5 +1,5 @@
 ---
-title: '新リソース: Viva Insights および Copilot Analytics でのカスタム分析の開始方法'
+title: '新リソース: Viva Insights および Copilot Analytics でのカスタム分析のはじめ方'
 date: 2025-10-03　10:00:00
 lastupdate: 
 tags: 
