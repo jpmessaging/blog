@@ -1,13 +1,15 @@
 ---
 title: High Volume Email (HVE) に関する基本認証の継続サポートとその他重要な更新情報
 date: 2025-05-08 15:00:00
-lastupdate: 
+lastupdate: 2025-10-07
 tags: Exchange Online
 ---
 
 ※ この記事は、[High Volume Email: Continued support for Basic Authentication & other important updates](https://techcommunity.microsoft.com/blog/exchange/high-volume-email-continued-support-for-basic-authentication--other-important-up/4411197) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-Microsoft 365 の High Volume Email (HVE) は、内部受信者に対して大量のメールを送信する機能を提供し、受信者数の制限がありません。HVE のパブリック プレビューは [2024 年 4 月 1 日](https://techcommunity.microsoft.com/t5/exchange-team-blog/public-preview-high-volume-email-for-microsoft-365/ba-p/4102271) にリリースされ、2025 年 9 月の一般提供開始を目指しています。
+<p style="background: #66FF99">この機能の一般提供 (GA) 開始日は<strong>2026 年 3 月</strong>に変更されました。</p>
+
+Microsoft 365 の High Volume Email (HVE) は、内部受信者に対して大量のメールを送信する機能を提供し、受信者数の制限がありません。HVE のパブリック プレビューは [2024 年 4 月 1 日](https://techcommunity.microsoft.com/t5/exchange-team-blog/public-preview-high-volume-email-for-microsoft-365/ba-p/4102271) にリリースされ、2026 年 3 月の一般提供開始を目指しています。
 
 この発表では、High Volume Email (HVE) に関する重要な更新情報をお届けします。具体的には、基本認証のサポートが 2028 年 9 月まで継続されること、HVE が内部受信者専用の機能に焦点を当てること、そして現在のパブリック プレビューの制限に変更が加えられることが含まれます。
 
