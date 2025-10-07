@@ -1,11 +1,19 @@
 ---
 title: 'サポート エンジニアとして働く仲間を募集しています！'
 date: 2025-05-02 15:00:00
-lastupdate: 
+lastupdate: 2025-10-07
 tags:
 alias: we-are-hiring-2022Feb/index.html
 ---
 
+こんにちは、Exchange/Outlook サポート チームの竹本です。
+
+おかげさまで多くの魅力的な方々とお話させていただくことができ、2025 年 10 月 7 日現在を持ちまして、Exchange/Outlook サポート チームでの募集については一旦締め切りをさせていただく運びとなりました。私たちのチームに限らず、CSS やサポート エンジニアに興味を持っていただいた皆様に、心から御礼申し上げます。
+Microsoft のサポート ビジネスはまだまだ拡大を続けます。私たちのチームでもまた募集を再開させていただく可能性がございますが、その際にはまたこちらの Blog でもお知らせをさせていただきますので、どうぞ皆様よろしくお願いいたします！
+
+---
+
+<font color="LightGray">
 
 こんにちは、Exchange/Outlook サポート チームの竹本です。
  
@@ -46,3 +54,5 @@ Exchange/Outlook サポート チームでのエンジニア募集を再開い�
 募集要項や応募はこちらから！
  
 - [Technical Support Engineering (Exchange＆Outlook)](https://jobs.careers.microsoft.com/global/en/job/1817057/Technical-Support-Engineer---Exchange-%26-Outlook)
+
+</font>
