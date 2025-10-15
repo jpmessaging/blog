@@ -16,27 +16,20 @@
 
 
   
-  <title>意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入 | Japan Exchange &amp; Outlook Support Blog</title>
+  <title>Exchange Online の &#34;Contact&#34; 受信者タイプ用の Get-Contact および Set-Contact コマンドレットの更新情報 | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※ この記事は、Introducing Exchange Online Delicensing Resiliency to protect against unintended delicensing actions の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています">
+  <meta name="description" content="※ この記事は、Updates to Get-Contact and Set-Contact Cmdlets for “Contacts” Recipient Type in Exchange Online の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 現在、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入">
-<meta property="og:url" content="https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/index.html">
+<meta property="og:title" content="Exchange Online の &quot;Contact&quot; 受信者タイプ用の Get-Contact および Set-Contact コマンドレットの更新情報">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/updates-to-get-contact-and-set-contact-cmdlets-for-contacts-recipient-type-in/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="※ この記事は、Introducing Exchange Online Delicensing Resiliency to protect against unintended delicensing actions の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています">
+<meta property="og:description" content="※ この記事は、Updates to Get-Contact and Set-Contact Cmdlets for “Contacts” Recipient Type in Exchange Online の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 現在、">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic01.jpg">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic02.jpg">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic03.jpg">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic04.jpg">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic05.jpg">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic06.jpg">
-<meta property="article:published_time" content="2024-11-21T15:00:00.000Z">
-<meta property="article:modified_time" content="2024-11-21T15:00:00.000Z">
+<meta property="article:published_time" content="2025-10-15T02:00:00.000Z">
+<meta property="article:modified_time" content="2025-10-15T02:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="Exchange Online">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic01.jpg">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
@@ -106,10 +99,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-updates-to-get-contact-and-set-contact-cmdlets-for-contacts-recipient-type-in" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/" class="article-date">
-  <time datetime="2024-11-21T15:00:00.000Z" itemprop="datePublished">2024-11-22</time>
+    <a href="/blog/updates-to-get-contact-and-set-contact-cmdlets-for-contacts-recipient-type-in/" class="article-date">
+  <time datetime="2025-10-15T02:00:00.000Z" itemprop="datePublished">2025-10-15</time>
 </a>
     <!--  -->
   </div>
@@ -120,47 +113,52 @@
         
   
     <h1 class="article-title" itemprop="name">
-      意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入
+      Exchange Online の &#34;Contact&#34; 受信者タイプ用の Get-Contact および Set-Contact コマンドレットの更新情報
     </h1>
   
 
       </header>
       <div class="article-share">
         Last Update:
-        <a href="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/" class="article-date-single">    
-    
-    <time datetime="2024-11-21T15:00:00.000Z" itemprop="dateUpdated">2024-11-22</time>
+        <a href="/blog/updates-to-get-contact-and-set-contact-cmdlets-for-contacts-recipient-type-in/" class="article-date-single">    
+        
+    <time datetime="2025-10-15T02:00:00.000Z" itemprop="lastupdate">2025-10-15</time>    
     
 </a>
       </div>
     
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
-        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/4082759">Introducing Exchange Online Delicensing Resiliency to protect against unintended delicensing actions</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
-<p style="background:#66FF99"><b>2025 年 7 月 16 日更新 : Exchange Online ライセンス解除レジリエンシー機能のテナント ライセンス要件が、10,000 から 5,000 の評価版ではないライセンスに引き下げられました。詳細は<a href="/blog/reduced-license-count-requirement-for-exchange-online-delicensing-resiliency-fea/">こちら</a>をご覧ください。</b></p>
-
-<p>最近、Exchange Online に新機能が導入され、ライセンス解除の際に 30 日間の猶予期間を提供することで、Exchange Online メールボックスの誤ったまたは意図しないライセンス解除から保護できるようになりました。この機能は、管理者およびユーザーへの通知オプションも提供し、意図しないライセンス解除の影響を事前に回避することができます。この機能は、5,000 以上の評価版ではない Exchange Online ライセンスを持つテナントでオプト インすることで利用ができます。</p>
-<h2 id="ライセンス解除レジリエンシーの仕組み"><a href="#ライセンス解除レジリエンシーの仕組み" class="headerlink" title="ライセンス解除レジリエンシーの仕組み"></a>ライセンス解除レジリエンシーの仕組み</h2><p>Exchange Online ユーザーのメールボックス アクセスはライセンスの有無に依存しています。ライセンスが削除されると、ユーザーはメールボックスを利用できなくなり、メール フローに影響を与え、配信不能レポート (NDR) やメールの誤送信が発生します。</p>
-<p>過去には、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/fundamentals/concept-group-based-licensing">グループ ベースのライセンス</a>を使用している顧客が誤って多数のユーザーのライセンスを解除し、広範なサービスの中断やメール フローの中断を引き起こした事例がありました。</p>
-<p>この新機能は、ライセンス解除のエラーによる即時の影響を防ぐために、ライセンス解除から 30 日間の猶予期間を提供し、管理者が誤りを修正するための時間を確保します。この猶予期間中、メールボックスはライセンス解除前の機能を維持し、管理者がライセンス解除の誤りに対処するための必要な時間を提供します。この猶予期間中に、管理者はユーザーのライセンス解除を迅速化したり、ユーザーに再度ライセンスを付与したり、猶予期間が終了するまでライセンスを付与しないままにすることができます。</p>
-<p>Exchange Online ライセンス解除レジリエンシー機能の 30 日間の猶予期間が終了し、ライセンスが削除されると、ユーザー メールボックスは<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/recipients-in-exchange-online/delete-or-restore-mailboxes?source=recommendations#license-removal">デフォルトの 30 日間の猶予期間</a>に従います。この期間中、ユーザーはメールボックスにアクセスできませんが、ライセンスが再度付与されるとアクセスが復元され、メールボックスが再びアクティブになります。30 日間の猶予期間が終了すると、データは削除され、復元できなくなります。</p>
-<p>以下の図は、動作の変更をまとめたものです。</p>
-<p><strong>Exchange Online ライセンス解除レジリエンシー機能が有効でない場合 (デフォルトの動作)</strong><br><img src="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic01.jpg"></p>
-<p><strong>Exchange Online ライセンス解除レジリエンシー機能が有効になった場合 (新しい動作)</strong><br><img src="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic02.jpg"></p>
-<p>この機能が有効になると、Get-PendingDelicenseUser を実行することで、30 日間の猶予期間がいつ終了するかを確認できます。<br><img src="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic03.jpg"></p>
-<p>Microsoft 365 管理センターを使用して、猶予期間がいつ終了するかを確認し、ライセンス解除の迅速化などの他のアクションを実行することもできます。<br><img src="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic04.jpg"></p>
-<p>さらに、管理者向けの<a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/enterprise/view-service-health?view=o365-worldwide&amp;WT.mc_id=365AdminCSH_inproduct">サービス正常性ダッシュボード</a>のアドバイザリ通知とユーザー向けのメール通知を追加しました。これにより、管理者は 30 日間の猶予期間が終了する前に、Exchange Online ユーザーの意図しないライセンス解除を事前に対処することができます。この機能が有効になると、管理者向けのサービス正常性ダッシュボードのアドバイザリ通知とユーザー向けのメール通知も有効になります。</p>
-<p>サービス正常性ダッシュボードのアドバイザリ通知は、テナント内でライセンス解除が発生した場合に、管理者がアドバイザリのダイジェスト通知を受け取るように設計されています。サービス正常性ダッシュボードの投稿には、過去 8 日間にわたり、ライセンスが解除された状態にありまだ 30 日間の猶予期間内にあるユーザーの数が日毎に記載されます。</p>
-<p>以下は、サービス正常性ダッシュボードのアドバイザリ通知のサンプルです。<br><img src="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic05.jpg"></p>
-<p>管理者は、ユーザーのライセンス解除を迅速化したり、ユーザーに再度ライセンスを付与したりするなど、適切なアクションを実行できます。</p>
-<p>サービス正常性ダッシュボードのアドバイザリ通知に気付かない、または対応しない管理者がいる可能性があるため、ユーザー通知はデフォルトで有効になっています。ライセンスが解除されたユーザーには、ライセンス解除の約 18 日後から数回のメールが送信されます。これらのメール リマインダーは、ライセンス解除後 24 時間以内にメールを送信したり、メールボックスにアクセスしたりするなどのアクティビティがあるユーザーにのみ送信されます。</p>
-<p>以下は、ユーザーへのメール通知の例です。<br><img src="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/Delic06.jpg"></p>
-<h2 id="詳細情報"><a href="#詳細情報" class="headerlink" title="詳細情報"></a>詳細情報</h2><p>この新機能の詳細については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/recipients-in-exchange-online/manage-user-mailboxes/exchange-online-delicensing-resiliency">Exchange Online ライセンス解除レジリエンシーの開始</a>をご覧ください。</p>
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/updates-to-get-contact-and-set-contact-cmdlets-for-%E2%80%9Ccontacts%E2%80%9D-recipient-type-in-/4459678">Updates to Get-Contact and Set-Contact Cmdlets for “Contacts” Recipient Type in Exchange Online</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>現在、Exchange Online の Get-Contact および Set-Contact コマンドレットは、<em><strong>Contact</strong></em> (SMTP アドレスを持たないメール非対応の連絡先) と <em><strong>MailContact</strong></em> (メール連絡先) の 2 種類の受信者タイプの表示および管理に使用されています。最近の分析により、Exchange Online では <em><strong>Contact 受信者タイプ</strong></em>のオブジェクトが機能していないことが判明したため、これらの管理を廃止されることが決定されました。<strong>2025 年 12 月 15 日</strong>以降、Exchange Online の Get-Contact および Set-Contact コマンドレットでは <em><strong>Contact 受信者タイプ</strong></em>のオブジェクトが返されず、管理もできなくなります。</p>
+<p><strong>注意</strong>:</p>
+<ul>
+<li>この更新は、<em><strong>Contact 受信者タイプ</strong></em> オブジェクトの管理に特化したものであり、<em><strong>MailContact 受信者タイプ</strong></em>には影響しません。</li>
+<li>この変更の影響を受けるのは、Exchange Online で *-Contact コマンドレットを使用して管理される組織レベルの連絡先のみです。Outlook でユーザー個人が作成した連絡先には影響せず、個人のアドレス帳の連絡先は引き続き完全にサポートされます。</li>
+</ul>
+<h3 id="何が変わるのか？"><a href="#何が変わるのか？" class="headerlink" title="何が変わるのか？"></a>何が変わるのか？</h3><ul>
+<li>2025 年 12 月 15 日以降、Exchange Online の Get-Contact および Set-Contact コマンドレットでは、SMTP アドレスを持たない Contact 受信者タイプのオブジェクトが返されず、管理もできなくなります。</li>
+<li>この変更は “MailContact” (MailContact 受信者タイプ) には影響しません。MailContact はこれまでどおり、同じコマンドレットで表示・管理できます。</li>
+</ul>
+<h3 id="なぜ変わるのか？"><a href="#なぜ変わるのか？" class="headerlink" title="なぜ変わるのか？"></a>なぜ変わるのか？</h3><ul>
+<li>Contact 受信者タイプは SMTP アドレスを持たずメールの送受信ができないレガシーなオブジェクトです。これらは Exchange Online 上では直接作成できず、機能的な役割を持たないため、主にオンプレミス環境からの履歴同期によって存在しています。  </li>
+<li>分析の結果、これらのオブジェクトを *-Contact コマンドレットで管理しているテナントはごく少数であることが判明しました。大多数の組織にとって、この変更は日常業務に影響を与えません。    </li>
+<li>本更新は、Exchange Online のディレクトリ インフラストラクチャを簡素化・最新化する取り組みの一環です。</li>
+</ul>
+<h3 id="管理者は何をする必要があるか？"><a href="#管理者は何をする必要があるか？" class="headerlink" title="管理者は何をする必要があるか？"></a>管理者は何をする必要があるか？</h3><p>ほとんどの組織では対応は不要です。本変更は軽微な変更であり、大多数の組織に影響を与えることは想定されていません。</p>
+<p>ただし、Contact 受信者タイプのオブジェクトをご利用の場合、現在使用しているスクリプトや自動化プロセスを確認し、*-Contact コマンドレットで Contact 受信者タイプ (メール非対応の連絡先) を明示的に検索・処理していないことを確認することをお勧めします。スクリプトが MailContact のみを参照している場合は、変更は不要です。</p>
+<p>Contact オブジェクトに対して独自のユースケースで利用されている組織は、ぜひコメント欄でシナリオを共有ください。Exchange Online チームはすべてのシナリオを適切に考慮できるよう、フィードバックを積極的に受け付けています。</p>
+<h3 id="よくある質問"><a href="#よくある質問" class="headerlink" title="よくある質問"></a>よくある質問</h3><p><strong>Q: MailContact に影響しますか？</strong><br>A: いいえ。影響を受けるのは、SMTP アドレスを持たないメール非対応の Contact のみです。MailContact（メール連絡先）は、オンプレミスから同期されたかどうかに関係なく、引き続き完全にサポートされます。</p>
+<p><strong>Q: どれくらいの組織が影響を受けますか？</strong><br>A: ログによると、Exchange Online で Contact 受信者タイプのオブジェクトを *-Contact コマンドレットで管理しているテナントはごく少数です。ほとんどの組織ではこの変更に気付かない可能性があります。影響を受けるテナントには、メッセージセンター (MC) を通じて通知が届きます。</p>
+<p><strong>Q: Exchange Online にてどうメール非対応の Contact を識別すればいいですか？</strong><br>A: Exchange Online PowerShell で次のコマンドを実行してください。 </p>
+<p>Get-Contact | Where-Object { $_.RecipientType -eq “Contact” }  </p>
+<p>このコマンドは RecipientType プロパティが “Contact” であるオブジェクトを返します。結果が空の場合、そのテナントにはメール非対応の Contact は存在しません。</p>
+<p><strong>Q: Contact オブジェクトに関して懸念や特殊なシナリオがある場合はどうすればいいですか？</strong><br>A: Exchange Online における Contact 受信者タイプに関して懸念や特有のユースケースがある組織は、ぜひコメント欄でシナリオを共有してください。Exchange Online チームでは、すべてのユースケースを考慮し、必要に応じて対応を検討します。現時点で、Exchange Online において Contact 受信者タイプが必要とされる具体的なシナリオは報告されていません。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/" data-id="cmgrl3wum0059c89obws3a27s" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/updates-to-get-contact-and-set-contact-cmdlets-for-contacts-recipient-type-in/" data-id="cmgrl3wuy006uc89o489c68xo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
@@ -171,19 +169,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/Outlook-does-not-display-toast/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Outlook のデスクトップ通知が表示されない時の確認ポイント
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/support-for-exchange-server-2016-and-exchange-server-2019-ends-today/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Microsoft Outlook の新機能と今後の展望 – Ignite 2024</div>
+      <div class="article-nav-title">Exchange Server 2016 および Exchange Server 2019 のサポート終了</div>
     </a>
   
 </nav>
