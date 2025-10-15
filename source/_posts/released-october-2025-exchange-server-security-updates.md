@@ -30,7 +30,7 @@ Microsoft は、以下の製品に存在する脆弱性に対応するセキュ�
 
 2025 年 10 月のセキュリティ更新プログラム (SU) は、Exchange Server 2016 および 2019 向けに一般公開される最後の更新プログラムとなります。今後は、Microsoft アカウント チームへご連絡いただき、[拡張セキュリティ更新プログラム (ESU)](https://techcommunity.microsoft.com/blog/exchange/announcing-exchange-2016--2019-extended-security-update-program/4433495) を取得したお客様のみが、2026 年 4 月まで Exchange 2016 および 2019 向けの新しい更新プログラムを受け取ることができます。
 
-弊社としては、Exchange 2016 および 2019 の ESU を取得するのではなく、[Exchange SE へのアップグレード](https://techcommunity.microsoft.com/blog/exchange/upgrading-your-organization-from-current-versions-to-exchange-server-se/4241305) を行うことを推奨しています。なお、Exchange SE CU2 以降は、Exchange 2016 および 2019 との共存ができなくなることにご注意ください。 (CU2 では、組織内に Exchange 2016 または 2019 が存在する場合、CU2 のインストールがブロックされます)
+Microsoft では、Exchange 2016 および 2019 の ESU を取得するのではなく、[Exchange SE へのアップグレード](https://techcommunity.microsoft.com/blog/exchange/upgrading-your-organization-from-current-versions-to-exchange-server-se/4241305) を行うことを推奨しています。なお、Exchange SE CU2 以降は、Exchange 2016 および 2019 との共存ができなくなることにご注意ください。 (CU2 では、組織内に Exchange 2016 または 2019 が存在する場合、CU2 のインストールがブロックされます)
 
 ## Export-ExchangeCertificate による認証証明書 (Auth Certificate) のエクスポートができなくなります
 
