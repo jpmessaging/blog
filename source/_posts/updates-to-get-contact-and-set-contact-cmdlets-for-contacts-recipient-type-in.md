@@ -1,6 +1,6 @@
 ---
 title: 'Exchange Online の "Contact" 受信者タイプ用の Get-Contact および Set-Contact コマンドレットの更新情報'
-date: 2025-10-10
+date: 2025-10-15 11:00
 lastupdate: 2025-10-15 11:00
 tags: 
 - Exchange Online
