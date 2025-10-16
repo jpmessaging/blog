@@ -1,11 +1,13 @@
 ---
 title: "クラウド管理のリモート メールボックスの導入：最後の Exchange Server 廃止に向けたステップ"
 date: 2025/08/21 15:00:00
-lastupdate: 
+lastupdate: 2025/10/16 15:00
 tags: Exchange
 ---
 
 ※ この記事は、[Introducing Cloud-Managed Remote Mailboxes: a Step to Last Exchange Server Retirement](https://techcommunity.microsoft.com/blog/exchange/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/4446042) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
+<p style="background: #9cff99ff;"><strong>更新 2025/10/15:</strong>新規投稿された<a herf="https://jpmessaging.github.io/blog/cloud-managed-remote-mailboxes-now-generally-available/"> [クラウド管理のリモート メールボックス: 一般提供が開始されました!] もご覧ください。</a></p>
 
 ## 背景 : "最後の Exchange サーバー" の課題
 
