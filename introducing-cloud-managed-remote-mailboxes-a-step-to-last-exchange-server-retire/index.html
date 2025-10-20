@@ -18,12 +18,12 @@
   
   <title>クラウド管理のリモート メールボックスの導入：最後の Exchange Server 廃止に向けたステップ | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※ この記事は、Introducing Cloud-Managed Remote Mailboxes: a Step to Last Exchange Server Retirement の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 背景 : “最後の Exc">
+  <meta name="description" content="※ この記事は、Introducing Cloud-Managed Remote Mailboxes: a Step to Last Exchange Server Retirement の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 更新 2025&#x2F;10&#x2F;15">
 <meta property="og:type" content="article">
 <meta property="og:title" content="クラウド管理のリモート メールボックスの導入：最後の Exchange Server 廃止に向けたステップ">
 <meta property="og:url" content="https://jpmessaging.github.io/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="※ この記事は、Introducing Cloud-Managed Remote Mailboxes: a Step to Last Exchange Server Retirement の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 背景 : “最後の Exc">
+<meta property="og:description" content="※ この記事は、Introducing Cloud-Managed Remote Mailboxes: a Step to Last Exchange Server Retirement の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 更新 2025&#x2F;10&#x2F;15">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-08-21T06:00:00.000Z">
 <meta property="article:modified_time" content="2025-08-21T06:00:00.000Z">
@@ -121,8 +121,8 @@
       <div class="article-share">
         Last Update:
         <a href="/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/" class="article-date-single">    
-    
-    <time datetime="2025-08-21T06:00:00.000Z" itemprop="dateUpdated">2025-08-21</time>
+        
+    <time datetime="2025-10-16T06:00:00.000Z" itemprop="lastupdate">2025-10-16</time>    
     
 </a>
       </div>
@@ -130,6 +130,8 @@
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
         <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/4446042">Introducing Cloud-Managed Remote Mailboxes: a Step to Last Exchange Server Retirement</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p style="background: #9cff99ff;"><strong>更新 2025/10/15:</strong>新規投稿された<a href="/blog/cloud-managed-remote-mailboxes-now-generally-available/"> [クラウド管理のリモート メールボックス: 一般提供が開始されました!] もご覧ください。</a></p>
+
 <h2 id="背景-“最後の-Exchange-サーバー”-の課題"><a href="#背景-“最後の-Exchange-サーバー”-の課題" class="headerlink" title="背景 : “最後の Exchange サーバー” の課題"></a>背景 : “最後の Exchange サーバー” の課題</h2><p>多くの組織では、すべてのメールボックスを Exchange Online に移行した後も、受信者属性の管理を目的としてオンプレミスの Exchange サーバーを維持しています。ハイブリッド環境では、ディレクトリ同期されたユーザー アカウントのメールボックス属性は設計上 Exchange Online から直接管理できず、クラウド側で属性を編集しようとしても、オブジェクトの Source of Authority (SOA &#x2F; 属性値のマスターとなる情報源のこと) がオンプレミスにあるため通常はブロックされます。管理者は、Active Directory (AD) 上にあるメール アドレスやエイリアス、アドレス帳非表示フラグなどのメールボックス属性をオンプレ Exchange サーバーで編集し、その変更をクラウドに同期する必要があります。たとえメールボックスが Exchange Online にあっても、この要件のために “最後の Exchange サーバー” を維持し続ける必要があり、移行後も煩わしい依存関係が残っていました。</p>
 <p>2022 年 4 月、Microsoft はこの課題に対応するための最初のステップとして、Exchange Server 2019 の管理ツールをアップデートしました。このアップデートにより、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/manage-hybrid-exchange-recipients-with-management-tools">Exchange Management Tools を使用して Exchange 受信者を管理すること</a>が、ドメイン参加済みのマシン上で Exchange サーバーを稼働させることなく可能になりました。つまり、組織は最後の Exchange サーバーをシャットダウンし、軽量な管理ツールだけで受信者属性の変更を行えるようになったのです。</p>
 <p>このソリューションは PowerShell の専門知識が必要であり、ログ記録や監査機能も備わっていなかったため、運用が煩雑でした。また、同期されたユーザーのリモート (クラウド上にある) メールボックスのプロパティを Exchange Online から直接変更できない点も課題として残っていました。理想的な解決策は、管理者がクラウド上のメールボックスの Exchange 属性を完全にクラウドで管理でき、同時にオンプレミス AD からのアイデンティティ データの同期も維持できることです。</p>
@@ -154,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/" data-id="cmgswg476005ajsnm18hsc4xq" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/" data-id="cmgzsax2z005hownmb5omc4ps" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
