@@ -1,12 +1,12 @@
 ---
 title: 現行バージョンからExchange Server SEへのアップグレード
 date: 2024-10-15 10:00:00
-lastupdate: 2025-08-14
+lastupdate: 2025-10-24
 tags: Exchange
 alias: Upgrading your organization from current versions to Exchange Server SE/index.html
 ---
 
-<p style="background:#66FF99"><b>2025 年 7 月 15 日更新 : Exchange 2016/2019 の ESU プログラムについても言及を追加しました。</b></p>
+<p style="background:#66FF99"><b>2025 年 10 月 22 日更新:</b> FAQ を 2 件追加しました。</p>
 
 ※ この記事は、[Upgrading your organization from current versions to Exchange Server SE](https://techcommunity.microsoft.com/t5/exchange-team-blog/upgrading-your-organization-from-current-versions-to-exchange/ba-p/4241305) をもとに日本のお客様向けに抄訳したものです。最新の情報は元の Blog を参照してください。
 
@@ -173,3 +173,12 @@ Exchange Server 2016 および Exchange Server 2019 のサポート終了日を�
 **バージョンの共存に関して、今までは同一組織内での N-2 (現在および過去2つのバージョン) の Exchange Server の共存がサポートされていました。なぜ Exchange Server SE でこれが変更されるのでしょうか。**
 
 Exchange Server SE の RTM リリース後、間もなく Exchange Server 2016 と Exchange Server 2019 がサポート終了を迎えるためです。Exchange Server SE CU1 のリリースにより、Exchange Server SE が唯一のサポート対象バージョンとなることにくわえて他のすべてのバージョンがサポート対象外となるため、N-2 が適用されなくなります。
+
+**Exchange 2019 から Exchange SE へのインプレース アップグレードが可能とされていますが、データベース可用性グループ (DAG) に参加している Exchange 2019 サーバーにも適用できますか？**
+
+はい。DAG のメンバーである Exchange 2019 CU14/CU15 サーバーから Exchange SE へのアップグレードは完全にサポートされています。Exchange SE は Exchange 2019 CU14/CU15 からの "累積更新 (CU)" レベルのアップグレードであり (詳細は[こちら](/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk))、DAG 内で上位の CU へアップグレードすることと同様にサポートされています。通常の CU レベルのアップグレード プロセスに従って実施してください。
+ 
+**2025 年 10 月 14 日を迎え、Exchange 2016 / 2019 のサポートが終了しました。これによって Exchange SE へのアップグレード パスに変更はありますか？**  
+
+いいえ。[Exchange 2016 および 2019 のサポートは終了](/blog/support-for-exchange-server-2016-and-exchange-server-2019-ends-today/)となりましたが、これらのバージョンは引き続き従来通り動作します。しかしながら、できるだけ早く Exchange SE へアップグレードすることを推奨します。
+[Exchange 2016 / 2019 向け拡張セキュリティ更新プログラム (ESU)](/blog/announcing-exchange-2016--2019-extended-security-update-program/) を取得されているお客様も、ESU は延長サポート プログラムではないため、できるだけ早くアップグレードする必要があります。
