@@ -11,7 +11,7 @@ tags: Exchange
 
 Exchange Server をご利用のお客様向けのお知らせとなります。Office Online Server チームから、Office Online Server (OOS) のサポート終了日が **2026年12月31日** に決定したことが発表されました。詳細は [Announcing the retirement for Office Online Server](https://techcommunity.microsoft.com/blog/officeeos/announcing-the-retirement-for-office-online-server/4462402) をご覧ください。
 
-Office Online Server は、[オンプレミス Exchange Server の環境に統合可能なオプションのコンポーネント](https://learn.microsoft.com/ja-jp/exchange/plan-and-deploy/install-office-online-server) であり、Outlook on the web 上でサポートされている種類の添付ファイルをダウンロードせずに閲覧・編集できる機能を提供します。
+Office Online Server は、[オンプレミス Exchange Server の環境に統合可能なオプションのコンポーネント](https://learn.microsoft.com/exchange/plan-and-deploy/install-office-online-server) であり、Outlook on the web 上でサポートされている種類の添付ファイルをダウンロードせずに閲覧・編集できる機能を提供します。
 
 Exchange Server では、以下の操作で Office Online Server が利用されています。
 
