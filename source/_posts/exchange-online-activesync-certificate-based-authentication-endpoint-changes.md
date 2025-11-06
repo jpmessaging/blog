@@ -1,7 +1,6 @@
 ---
 title: "Exchange Online の ActiveSync における証明書ベースの認証エンド ポイントの変更"
-date: 2025/11/4
-lastupdate: 2025/11/4
+date: 2025/11/6
 tags: Exchange
 ---
 
