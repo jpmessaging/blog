@@ -6,7 +6,7 @@
   <link href="https://jpmessaging.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2025-10-29T15:00:00.000Z</updated>
+  <updated>2025-11-05T15:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Exchange Online の ActiveSync における証明書ベースの認証エンド ポイントの変更</title>
+    <link href="https://jpmessaging.github.io/blog/exchange-online-activesync-certificate-based-authentication-endpoint-changes/"/>
+    <id>https://jpmessaging.github.io/blog/exchange-online-activesync-certificate-based-authentication-endpoint-changes/</id>
+    <published>2025-11-05T15:00:00.000Z</published>
+    <updated>2025-11-05T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/exchange-online-activesync-certificate-based-authentication-endpoint-changes/4459760">Exchange Online ActiveSync Certificate-based Authentication endpoint changes</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><h4 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h4><p>継続的なセキュリティ強化の一環として、Exchange ActiveSync の証明書ベースの認証（CBA）の動作を最近変更しました。この変更により TLS 1.3 のサポートを追加し、セキュリティと信頼性を強化します。</p><h4 id="何が変わるのか？"><a href="#何が変わるのか？" class="headerlink" title="何が変わるのか？"></a>何が変わるのか？</h4><p>今回の変更により、すべての Exchange ActiveSync の証明書ベースの認証（CBA）トラフィックは、テナントの場所に応じて新しい専用エンドポイントへルーティングされます。</p><ul><li><strong>Multi-tenant:</strong> outlook-cba.office365.com</li><li><strong>Dod:</strong> outlook-dod-cba.office365.us</li><li><strong>GCC-High:</strong> outlook-cba.office365.us</li><li><strong>Gallatin (China):</strong> outlook-cba.partner.outlook.cn</li></ul><p>この変更は、すでにグローバルのマルチテナント環境で展開が開始されており、他のクラウド環境でも 11 月から順次展開が開始される予定です。</p><h4 id="考えられる影響"><a href="#考えられる影響" class="headerlink" title="考えられる影響"></a>考えられる影響</h4><p>ほとんどの Exchange ActiveSync クライアントでは、この変更による影響はありません。ユーザーによる操作は不要で、クライアントの通信は自動的に新しい証明書ベースの認証 (CBA) エンドポイントへリダイレクトされます。</p><p>ただし、組織で Secure Email Gateway（SEG）や ActiveSync トラフィックをフィルタリングまたは検査する類似のゲートウェイを使用している場合は、上記の新しい CBA エンドポイントへの通信を許可するよう、ファイアウォールやゲートウェイの設定を更新する必要があります。</p><h4 id="サポートについて"><a href="#サポートについて" class="headerlink" title="サポートについて"></a>サポートについて</h4><p>この変更についてご不明点やご懸念がある場合は、ご利用の SEG ベンダーにお問い合わせください。安全な環境の維持にご協力いただきありがとうございます。</p><h4 id="付属情報"><a href="#付属情報" class="headerlink" title="付属情報"></a>付属情報</h4><ul><li><a href="https://datatracker.ietf.org/doc/html/rfc8446">RFC 8446 - The Transport Layer Security (TLS) Protocol Version 1.3</a></li><li><a href="https://learn.microsoft.com/openspecs/exchange_server_protocols/ms-ashttp/7b7fabb9-910c-4f1c-9396-57d7ca579a31">MS-ASHTTP]: Authorization | Microsoft Learn</a>: 認証ヘッダーが含まれていない EAS リクエストは、証明書ベースの認証（CBA）リクエストとして扱われます。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/exchange-online-activesync-certificate-based-authentication-endpoint-c</summary>
+      
+    
+    
+    
+    
+    <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
+    
+  </entry>
   
   <entry>
     <title>Office Online Server (OOS) のサポート終了日が発表されました</title>
@@ -432,28 +454,6 @@
     
     
     <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Exchange Server SE のリリースと押さえておきたいポイントについて</title>
-    <link href="https://jpmessaging.github.io/blog/Exchange-Server-SE-release-and-important-points/"/>
-    <id>https://jpmessaging.github.io/blog/Exchange-Server-SE-release-and-important-points/</id>
-    <published>2025-07-03T15:00:00.000Z</published>
-    <updated>2025-07-03T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>こんにちは。Exchange &#x2F; Outlook サポート チームです。さて、<a href="/blog/exchange-server-subscription-edition-se-is-now-available/">こちら</a>でアナウンスしているとおり 2025&#x2F;7&#x2F;1 (日本時間では 7&#x2F;2) にいよいよ Exchange Server Subscription Edition (Exchange Server SE) がリリースされました。</p><p>Exchange Online の受信者管理用として Exchange の管理ツールを利用されている場合も含め、Exchange Server をご利用のお客様は、サポート ライフサイクルの観点から Exchange Server 2016 CU23 または Exchange Server 2019 CU14 &#x2F; CU15 をご利用になっていることと思います。<br>しかしながら、これらの製品は<a href="/blog/t-6-months-exchange-server-2016-and-exchange-server-2019-end-of-support/">こちら</a>にてご案内のとおり、2025 年 10 月 14 日をもって、延長サポートが終了となる見込みです。</p><p>そのため、Exchange Online の受信者管理用として Exchange の管理ツールをご利用になる場合も含め、Exchange Server を引き続きご利用いただくためには、サポータビリティやセキュリティの観点からも Exchange Server SE へ移行していただく必要があります。</p><p>Exchange Server 2016 &#x2F; Exchange Server 2019 のサポート終了に先立ち、昨年から Exchange Server SE に関する情報は主に以下のブログにて発信しており、随時更新が行われてきました。</p><p>(原文) <a href="https://techcommunity.microsoft.com/blog/exchange/exchange-server-roadmap-update/4132742">Exchange Server Roadmap Update | Microsoft Community Hub</a><br>(日本語訳) <a href="https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/">Exchange Server ロードマップの更新 | Japan Exchange &amp; Outlook Support Blog</a></p><p>(原文) <a href="https://techcommunity.microsoft.com/blog/exchange/upgrading-your-organization-from-current-versions-to-exchange-server-se/4241305">Upgrading your organization from current versions to Exchange Server SE | Microsoft Community Hub</a><br>(日本語訳) <a href="https://jpmessaging.github.io/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/">現行バージョンからExchange Server SEへのアップグレード | Japan Exchange &amp; Outlook Support Blog</a></p><p>本稿では Exchange Server SE のリリースに際し、改めて確認していただきたいことを整理しました。<br>こちらをご確認いただき、Exchange Server SE への移行プランをご検討いただければ幸いです。</p><hr><h2 id="Exchange-Server-SE-への移行方針は明確となっているか"><a href="#Exchange-Server-SE-への移行方針は明確となっているか" class="headerlink" title="Exchange Server SE への移行方針は明確となっているか"></a>Exchange Server SE への移行方針は明確となっているか</h2><p>Exchange Server SE の移行パスとしては、Exchange Server 2019 から Exchange Server SE へのインプレース アップグレード、またはインプレース アップグレードがサポートされない Exchange Server 2016 からでも Exchange Server SE へ移行可能な従来のアップグレードの 2 つの方法がサポートされます。</p><ul><li>インプレース アップグレード: 最速で簡単に Exchange Server 2019 (CU14 または CU15) を Exchange Server SE にアップグレードする方法です。CU 適用作業と同様の操作でアップグレードが可能です。</li><li>従来の移行 : これまでと同様に、新規 Windows Server OS をインストールしたサーバーを用意して Exchange Server SE をインストールし、名前空間とメールボックスをその新しいインフラストラクチャに移動する従来のアップグレード方法です。この方法は Exchange Server のハードウェアをリプレースする場合や、新しい Windows Server OS に更新したい場合などのシナリオで利用されます。</li></ul><p>Exchange Server SE への移行パスとしてのお薦めは以下の通りです。</p><ul><li>Exchange Server 2016 をご利用の場合: 以下の 2 つのパターンが想定されます。<ul><li>Exchange Server 2019 CU15 を別のサーバーとして構築し従来の移行を実施後、Exchange Server SE へインプレース アップグレードを行います。</li><li>Exchange Server SE を別のサーバーとして構築し従来の移行を行います。</li></ul></li><li>Exchange Server 2019 をご利用の場合: Exchange Server 2019 CU15 を適用し、Exchange Server SE へのインプレース アップグレードを行います。</li></ul><p>Exchange Server SE は Exchange Server 2019 CU15 とコードが同等であり機能の追加や削除が行われることはなく、違いは以下の通りです。</p><ul><li>ライセンス契約書 (GUI バージョンのセットアップでのみ表示される RTF ファイル) が更新されます。</li><li>名前が Microsoft Exchange Server 2019 から Microsoft Exchange Server Subscription Edition に変更されます。</li><li>ビルド番号が更新されます。</li></ul><p>実質的には Exchange Server 2019 の CU16 をインストールするのと同じと考えることができ、この CU の名前を Exchange Server SE RTM に変更したイメージとなります。<br>そのため、Exchange Server SE へのインプレース アップグレードをお薦めしております。</p><p>(原文) <a href="https://techcommunity.microsoft.com/blog/exchange/why-%E2%80%9Cin-place-upgrade%E2%80%9D-from-exchange-2019-to-exchange-se-is-low-risk/4410173">Why “in-place upgrade” from Exchange 2019 to Exchange SE is low risk | Microsoft Community Hub</a><br>(日本語訳) <a href="https://jpmessaging.github.io/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/">Exchange 2019 から Exchange SE への “インプレース アップグレード” が低リスクである理由 | Japan Exchange &amp; Outlook Support Blog</a></p><hr><h2 id="Exchange-Server-SE-へ移行後に検討すべきこと"><a href="#Exchange-Server-SE-へ移行後に検討すべきこと" class="headerlink" title="Exchange Server SE へ移行後に検討すべきこと"></a>Exchange Server SE へ移行後に検討すべきこと</h2><p>Exchange Server SE RTM や Exchange Server SE CU1 では、Exchange Server 2016、Exchange Server 2019 との共存は引き続き可能です。<br>一方、Exchange Server SE CU1 のリリース時点では、すでに Exchange Server 2016、Exchange Server 2019 のサポートが終了しているため、これらの製品に対する技術サポートの提供はありません (サポート契約をお持ちのお客様がお問い合わせを起票いただいても、ご支援を提供することができません)。<br>Exchange Server 2016、Exchange Server 2019 から Exchange Server SE への移行に関する内容についてはベストエフォートにて技術サポートを提供しますが、Exchange Server SE CU1 と Exchange Server 2016、Exchange Server 2019 の共存をお薦めするものではありません。<br>可能な限り、Exchange Server 2016、Exchange Server 2019 のサポート期間内に Exchange Server SE へ移行いただくことをお薦めいたします。</p><p>なお、Exchange Server SE CU2 のセットアップでは、すべてのサポートされていないバージョン (例：Exchange Server 2013、Exchange Server 2016、Exchange Server 2019) との共存がブロックされ、Exchange Server SE との共存のみが許可されます。<br>Exchange Server SE CU2 (またはそれ以降) をインストールするには、組織内のすべての古いバージョンの Exchange Server を廃止して削除する必要があります。</p><div style="margin:1.25em;border-left:.25em solid #4493f8;padding:.5em;"><div style="margin-bottom:16px;display:flex;align-items:center;line-height:1;color:#4493f8"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true" style="margin-right:8px"><path fill="#4493f8" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>情報</div><div>以前は Exchange Server CU1 の時点で Exchange Server 2016、Exchange Server 2019 との共存がブロックされるとアナウンスしておりましたが、直近の更新で変更となりました。</div></div><p>Exchange Server SE へ移行後は、古いバージョンの Exchange Server の撤去を行い Exchange Server SE CU2 へ備えていくことが重要です。</p><p>他にも Exchange Server SE についての情報は下記にまとめています。<br>気になる方はぜひチェックしてみてください。</p><p>(原文) <a href="https://learn.microsoft.com/en-us/exchange/release-notes">Release notes for Exchange Server Subscription Edition (SE) | Microsoft Learn</a><br>(日本語機械翻訳) <a href="https://learn.microsoft.com/ja-jp/exchange/release-notes">Exchange Server サブスクリプション エディション (SE) のリリース ノート | Microsoft Learn</a></p><p>(原文) <a href="https://learn.microsoft.com/en-us/exchange/new-features/new-features">What’s new in Exchange Server Subscription Edition (SE) | Microsoft Learn</a><br>(日本語機械翻訳) <a href="https://learn.microsoft.com/ja-jp/exchange/new-features/new-features">Exchange Server サブスクリプション エディション (SE) の新機能 | Microsoft Learn</a></p><p>(原文) <a href="https://learn.microsoft.com/en-us/exchange/new-features/discontinued-features">What’s discontinued in Exchange Server SE | Microsoft Learn</a><br>(日本語機械翻訳) <a href="https://learn.microsoft.com/ja-jp/exchange/new-features/discontinued-features">Exchange Server SE で廃止された内容 | Microsoft Learn</a></p><hr><p>本稿の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;こんにちは。Exchange &amp;#x2F; Outlook サポート チームです。さて、&lt;a href=&quot;/blog/exchange-server-subscription-edition-se-is-now-available/&quot;&gt;こちら&lt;/a&gt;でアナウンスしているとお</summary>
-      
-    
-    
-    
-    
-    <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
     
   </entry>
   
