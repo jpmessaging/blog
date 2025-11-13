@@ -1,7 +1,7 @@
 ---
 title: 'ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い'
 date: 2025-08-08
-lastupdate: 
+lastupdate: 2025/11/13
 tags: 'Exchange Online'
 ---
 
@@ -116,7 +116,7 @@ Advanced Hunting で以下のクエリを実行し、結果を CSV 形式でエ�
 EmailEvents
 |where Timestamp > ago(30d)
 |where EmailDirection == 'Inbound' and Connectors == '' and isnotempty(SenderIPv4)
-|project Timestamp, RecipientEmailAddress, SenderFromAddress, Subject, NetworkMessageId, EmailDirection, Connectors, SenderIPv4,
+|project Timestamp, RecipientEmailAddress, SenderMailFromAddress, Subject, NetworkMessageId, EmailDirection, Connectors, SenderIPv4,
 ```
 
 送信元 IP アドレスごとにメール数を集計するクエリ例は以下の通りです。
