@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Online におけるダイレクト送信の制御機能強化の導入'
 date: 2025/5/1
-lastupdate: 2025/10/7
+lastupdate: 2025/11/13
 tags:
 - Exchange Online
 ---
@@ -46,6 +46,8 @@ Set-OrganizationConfig -RejectDirectSend $true
     550 5.7.68 TenantInboundAttribution; Direct Send not allowed for this organization from unauthorized sources
 
 ダイレクト送信を再度有効化しない限り、このエラーに該当するメッセージは受信者に送られません。受信者に配信するには、送信者を認証するためのパートナー タイプのインバウンド コネクタを作成する必要があります。
+
+<p style="background: #e9e9e9ff;">RejectDirectSend 設定は、現在 GCC-High、DoD、および USNat/USSec 環境では有効化されていません。</p>
 
 ## パブリック プレビューとリリース ロードマップ
 
