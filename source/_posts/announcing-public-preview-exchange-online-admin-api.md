@@ -21,7 +21,7 @@ tags: "Exchange Online"
 
 Admin API のパブリック プレビューでは、6 つのエンドポイントが提供されています。各エンドポイントと対応する機能は以下のとおりです。
 
-- **OrganizationConfig** — テナント全体の MailTips に関連するテナント全体の設定の参照
+- **OrganizationConfig** — MailTips に関連するテナント全体の設定の参照
 - **AcceptedDomain** — テナントの承認済みドメインと主要なドメイン設定の一覧を取得
 - **Mailbox** — メールボックスのプロパティの参照および**代理送信権限**の管理（表示・更新）
 - **MailboxFolderPermission** — フォルダー単位（受信トレイ、予定表、サブフォルダー）の権限の参照、付与、変更、削除
