@@ -16,19 +16,19 @@
 
 
   
-  <title>Exchange Server 2016 および Exchange Server 2019 のサポート終了: 残り 12 か月 | Japan Exchange &amp; Outlook Support Blog</title>
+  <title>Exchange Online Admin API パブリック プレビューのご案内 | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※ この記事は、End of Support for Exchange Server 2016 and Exchange Server 2019: T-12 Months の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 2025 年 10 月 14 日、今日から">
+  <meta name="description" content="※ この記事は、Announcing Public Preview: Exchange Online Admin API の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 本日 (2025 年 11 月 17 日現在) 、Exchange Online Admin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Exchange Server 2016 および Exchange Server 2019 のサポート終了: 残り 12 か月">
-<meta property="og:url" content="https://jpmessaging.github.io/blog/end-of-support-for-exchange-server-2016-and-exchange-server-2019/index.html">
+<meta property="og:title" content="Exchange Online Admin API パブリック プレビューのご案内">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/announcing-public-preview-exchange-online-admin-api/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="※ この記事は、End of Support for Exchange Server 2016 and Exchange Server 2019: T-12 Months の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 2025 年 10 月 14 日、今日から">
+<meta property="og:description" content="※ この記事は、Announcing Public Preview: Exchange Online Admin API の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 本日 (2025 年 11 月 17 日現在) 、Exchange Online Admin">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-10-14T15:00:00.000Z">
-<meta property="article:modified_time" content="2024-10-14T15:00:00.000Z">
+<meta property="article:published_time" content="2025-11-17T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-17T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
-<meta property="article:tag" content="Exchange">
+<meta property="article:tag" content="Exchange Online">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
@@ -99,10 +99,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-end-of-support-for-exchange-server-2016-and-exchange-server-2019" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-announcing-public-preview-exchange-online-admin-api" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/end-of-support-for-exchange-server-2016-and-exchange-server-2019/" class="article-date">
-  <time datetime="2024-10-14T15:00:00.000Z" itemprop="datePublished">2024-10-15</time>
+    <a href="/blog/announcing-public-preview-exchange-online-admin-api/" class="article-date">
+  <time datetime="2025-11-17T15:00:00.000Z" itemprop="datePublished">2025-11-18</time>
 </a>
     <!--  -->
   </div>
@@ -113,65 +113,57 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Exchange Server 2016 および Exchange Server 2019 のサポート終了: 残り 12 か月
+      Exchange Online Admin API パブリック プレビューのご案内
     </h1>
   
 
       </header>
       <div class="article-share">
         Last Update:
-        <a href="/blog/end-of-support-for-exchange-server-2016-and-exchange-server-2019/" class="article-date-single">    
+        <a href="/blog/announcing-public-preview-exchange-online-admin-api/" class="article-date-single">    
         
-    <time datetime="2025-01-16T15:00:00.000Z" itemprop="lastupdate">2025-01-17</time>    
+    <time datetime="2025-11-17T15:00:00.000Z" itemprop="lastupdate">2025-11-18</time>    
     
 </a>
       </div>
     
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
-        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/end-of-support-for-exchange-server-2016-and-exchange-server-2019/ba-p/4268516">End of Support for Exchange Server 2016 and Exchange Server 2019: T-12 Months</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
-<p>2025 年 10 月 14 日、今日から 1 年後に <a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/exchange-server-2016">Exchange Server 2016</a> および <a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/exchange-server-2019">Exchange Server 2019</a> のサポートが終了します。</p>
-<p>2025 年 10 月 14 日以降、Microsoft は Exchange Server 2016 または Exchange Server 2019 に関する問題に対する技術サポートを提供しなくなります。これには以下が含まれます：</p>
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/announcing-public-preview-exchange-online-admin-api/4470562">Announcing Public Preview: Exchange Online Admin API</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>本日 (2025 年 11 月 17 日現在) 、<strong>Exchange Online Admin API</strong> の<strong>パブリック プレビュー</strong>を開始しました。この API は、REST ベースかつコマンドレット形式の管理インターフェースであり、特定の Exchange 管理シナリオを EWS から移行する場合や、HTTP 経由での自動化ワークフローのモダナイズを支援するために設計されています。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online">Exchange Web Services (EWS) は <strong>2026 年 10 月</strong> に廃止予定</a> ですが、多くの組織ではこれまで代替 API が提供されていなかったため、特定の Exchange 管理タスクには依然として EWS を利用し続けてきました。Admin API は、これらのシナリオに対して <strong>REST ベース</strong> かつ <strong>コマンドレット形式</strong> の新しい選択肢を提供し、Exchange 管理者にとって馴染みのあるセマンティクス (操作概念) を維持しつつ、最新の自動化を実現します。</p>
+<p><strong>注意:</strong> Admin API は Exchange Online の管理機能をすべて REST で代替するものではありません。EWS で提供されていた一部の管理シナリオに対する代替手段として設計されています。Exchange Online の全体的な管理には、<strong>Exchange Online PowerShell</strong> の利用を推奨します。</p>
+<h2 id="パブリック-プレビューで利用可能な機能"><a href="#パブリック-プレビューで利用可能な機能" class="headerlink" title="パブリック プレビューで利用可能な機能"></a>パブリック プレビューで利用可能な機能</h2><p>Admin API のパブリック プレビューでは、6 つのエンドポイントが提供されています。各エンドポイントと対応する機能は以下のとおりです。</p>
 <ul>
-<li>発生する可能性のある問題に対する技術サポート。</li>
-<li>サーバーの安定性と使いやすさに影響を与える可能性のある問題に対する不具合の修正。</li>
-<li>サーバーがセキュリティ侵害に対して脆弱になる可能性のある脆弱性に対するセキュリティ修正。</li>
-<li>タイム ゾーンの更新。</li>
+<li><strong>OrganizationConfig</strong> — MailTips に関連するテナント全体の設定の参照</li>
+<li><strong>AcceptedDomain</strong> — テナントの承認済みドメインと主要なドメイン設定の一覧を取得</li>
+<li><strong>Mailbox</strong> — メールボックスのプロパティの参照および<strong>代理送信権限</strong>の管理（表示・更新）</li>
+<li><strong>MailboxFolderPermission</strong> — フォルダー単位（受信トレイ、予定表、サブフォルダー）の権限の参照、付与、変更、削除</li>
+<li><strong>DistributionGroupMember</strong> — 配布グループのメンバー一覧の取得</li>
+<li><strong>DynamicDistributionGroupMember</strong> — 動的配布グループのメンバー一覧の取得</li>
 </ul>
-<p>もちろん、お客様がインストールした Exchange Server 2016 および Exchange Server 2019 は 2025 年10 月 14 日以降も引き続き動作しますが、サポート終了日が近づいていることや将来のセキュリティ リスクの可能性があるため、今すぐ行動することを強くお勧めします。</p>
-<p>お客様には、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mailbox-migration/decide-on-a-migration-path">Exchange Online への移行</a>を行うか、2025 年下半期の前半に利用可能になる <a href="https://jpmessaging.github.io/blog/Upgrading%20your%20organization%20from%20current%20versions%20to%20Exchange%20Server%20SE/">Exchange Server Subscription Edition (SE) へのアップグレード</a>の準備をすることをお勧めします。</p>
-<h2 id="Exchange-Online-や-Microsoft-365-への移行"><a href="#Exchange-Online-や-Microsoft-365-への移行" class="headerlink" title="Exchange Online や Microsoft 365 への移行"></a>Exchange Online や Microsoft 365 への移行</h2><p>クラウドへの移行は、Exchange Server の展開を廃止するための最良かつ最も簡単なオプションです。Microsoft クラウドに移行すると、オンプレミスの展開から一度に移行し、クラウドで利用可能な新機能や技術（高度な生成 AI 技術を含む）を活用できます。Exchange Online や Microsoft 365 への完全な移行により、最高の価値とユーザー エクスペリエンスを得られると強く信じています。</p>
-<p>クラウドへの移行を検討している場合、Microsoft FastTrack サービスを利用できる可能性があります。FastTrack はベスト プラクティスを共有し、移行をできるだけシームレスにするためのツールとリソースを提供します。さらに、計画と設計から最後のメールボックスの移行まで、サポート エンジニアが支援します。FastTrack の詳細については、<a target="_blank" rel="noopener" href="https://fasttrack.microsoft.com/">Microsoft FastTrack</a> を参照してください。</p>
-<h2 id="Exchange-Server-SE-へのアップグレード準備"><a href="#Exchange-Server-SE-へのアップグレード準備" class="headerlink" title="Exchange Server SE へのアップグレード準備"></a>Exchange Server SE へのアップグレード準備</h2><p>今年の初めに、<a href="https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/">Exchange Server ロードマップの更新</a>と、オンプレミスで Exchange Server を引き続き運用する場合の <a href="https://jpmessaging.github.io/blog/Upgrading%20your%20organization%20from%20current%20versions%20to%20Exchange%20Server%20SE/">Exchange Server SE へのアップグレード</a>方法に関する詳細を提供しました。</p>
-<p>Exchange Server 2019 を使用している場合は、Exchange Server を最新の状態に保ち、利用可能になったときに Exchange Server SE へのインプレース アップグレードを行うことをお勧めします。</p>
-<p>Exchange Server 2016 を使用している場合は、今すぐ Exchange Server 2019 へのレガシー アップグレードを実行し、利用可能になったときに Exchange Server SE へのインプレース アップグレードを実行することをお勧めします。Exchange Server 2016 から Exchange Server SE RTM へのレガシー アップグレードを実行し、Exchange Server 2019 を完全にスキップするオプションもあります。ただし、Exchange Server SE のリリースと Exchange Server 2016 のサポート終了の間には 4 か月未満しかないため、展開の規模やその他の要因によっては十分な時間がない可能性があります（Exchange Server 2016 から Exchange Server SE へのインプレース アップグレードは利用できません）。このため、今すぐ <a target="_blank" rel="noopener" href="https://setup.cloud.microsoft/exchange/deployment-assistant">Exchange Server 2019 へのアップグレード</a>を実行し、<a href="https://jpmessaging.github.io/blog/Decommissioning-Exchange-Server-2016/">Exchange Server 2016 を廃止</a>し、Exchange Server SE が利用可能になったときにインプレース アップグレードを実行することをお勧めします。</p>
-<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
-組織内にまだ Exchange Server 2013 以前のバージョンがある場合は、Exchange Server 2019 CU15 をインストールするか Exchange Server SE にアップグレードする前に、まずそれを削除する必要があります。
-</div>
-
-<h2 id="Exchange-Server-Technology-Adoption-Program"><a href="#Exchange-Server-Technology-Adoption-Program" class="headerlink" title="Exchange Server Technology Adoption Program"></a>Exchange Server Technology Adoption Program</h2><p>お客様が現在 Exchange Server 2019 を実行しており、Exchange Server 2019 CU15 のプレリリース ビルドや後の Exchange Server SE をテストおよび評価したい場合は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/open-enrollment-for-exchange-server-2019-tap/ba-p/3421627">Exchange Server Technology Adoption Program (TAP)</a> への参加を申し込むことができます。</p>
-<p>Exchange Server TAP に参加することにはいくつかの利点があります。例えば、将来のアップデートに関する意見やフィードバックを提供できること、Exchange Server のエンジニアリング チームとの密接な関係を築けること、Exchange Server に関するプレリリース情報を受け取れることなどです。また、TAP メンバーは TAP に関連する問題について Microsoft から追加料金なしでサポートを受けることができます。</p>
-<p>すべてのお申込みは、受け入れ前に審査されます。すべての法的書類が適切に処理されるまで、お客様はプレリリースのダウンロードや情報にアクセスすることはできません。お申込みは受け入れを意味するものではなく、すべてのお申込みいただいたお客様が TAP に選ばれるわけではありません。お申し込みが受け入れられた場合、必要な書類の手続きを開始するためにご連絡いたします。</p>
-<p>TAP プログラムに参加しなくても、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/upgrading-your-organization-from-current-versions-to-exchange/ba-p/4241305">アナウンス</a>に従って Exchange Server 2019 CU15（利用可能になった場合）をインストールすることで、お客様組織内で Exchange Server SE 相当のコードをテストすることができます。</p>
-<h2 id="2025-年-10-月-14-日にサポート終了となる関連-Microsoft-製品"><a href="#2025-年-10-月-14-日にサポート終了となる関連-Microsoft-製品" class="headerlink" title="2025 年 10 月 14 日にサポート終了となる関連 Microsoft 製品"></a>2025 年 10 月 14 日にサポート終了となる関連 Microsoft 製品</h2><p>Exchange Server 2016 および Exchange Server 2019 に加えて、いくつかの他の製品（Exchange Server と一緒に使用されることが多い製品も含む）も 2025 年 10 月 14 日に<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/announcements/october-14-2025-products-end-of-support">サポート終了または廃止</a>となります。これには、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/microsoft-office-2016">Microsoft Office 2016</a>、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/microsoft-office-2019">Microsoft Office 2019</a>、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/outlook-2016">Outlook 2016</a>、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/outlook-2019">Outlook 2019</a>、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/skype-for-business-2016">Skype for Business 2016</a>、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/skype-for-business-2019">Skype for Business 2019</a>、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/skype-for-business-server-2015">Skype for Business Server 2015</a>、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/skype-for-business-server-2019">Skype for Business Server 2019</a> などが含まれます。</p>
-<p>Microsoft 製品およびサービスの詳細情報については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/">製品およびサービスのライフサイクル情報を検索</a>してください。</p>
-<h2 id="追加のお知らせ"><a href="#追加のお知らせ" class="headerlink" title="追加のお知らせ"></a>追加のお知らせ</h2><p>他のサポート終了に関するお知らせについては、以下のブログ投稿をご覧ください：</p>
+<p>リクエスト パターンや各エンドポイントの詳細については、以下のドキュメントをご参照ください。</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://aka.ms/EOS2025-T-12blog">Prepare now for key end of support moments in 2025</a></li>
-<li><a target="_blank" rel="noopener" href="https://aka.ms/EOS2025-T-12/Office">Microsoft Office 2016&#x2F;2019 End of Support</a></li>
-<li><a target="_blank" rel="noopener" href="https://aka.ms/EOS2025-T-12/SfB">Skype for Business Server 2016&#x2F;2019 End of Support</a></li>
-<li><a target="_blank" rel="noopener" href="https://aka.ms/EOS2025-T-12/Project">Microsoft Project 2016&#x2F;2019 End of Support</a></li>
-<li><a target="_blank" rel="noopener" href="https://aka.ms/EOS2025-T-12/Visio">Microsoft Visio 2016&#x2F;2019 End of Support</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/reference/admin-api-overview">概要 | Microsoft Learn</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/reference/admin-api-get-started">はじめに | Microsoft Learn</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/reference/admin-api-endpoints-reference">エンドポイント リファレンス | Microsoft Learn</a></li>
 </ul>
-<p><font color="#CF3600">Exchange Server Engineering Team</font></p>
+<p>EWS からの移行に関する最新情報は <a target="_blank" rel="noopener" href="https://aka.ms/ews1Page">https://aka.ms/ews1Page</a> をご確認ください。</p>
+<h2 id="提供状況と今後の予定"><a href="#提供状況と今後の予定" class="headerlink" title="提供状況と今後の予定"></a>提供状況と今後の予定</h2><ul>
+<li><strong>パブリック プレビュー (全世界):</strong> 2025 年 11 月 17 日より利用可能です。この期間中に機能の評価や移行計画、EWS 管理シナリオと Admin API のギャップに関するフィードバックをお寄せください。</li>
+<li><strong>一般提供 (全世界):</strong> 提供開始日は未定です。</li>
+<li><strong>政府機関向け環境 (GCC、GCC High、DoD):</strong> 提供開始日は未定です。</li>
+</ul>
+<p>現在、API のレスポンスには追加のプロパティが含まれていますが、一般提供 (GA) では各エンドポイントのドキュメントに記載されているプロパティのみが利用可能となります。一般提供時に利用可能なプロパティ一覧は、各エンドポイントのドキュメントをご参照ください。出力プロパティの変更がある場合は、一般提供のリリース時にお知らせします。</p>
+<h2 id="フィードバックの共有"><a href="#フィードバックの共有" class="headerlink" title="フィードバックの共有"></a>フィードバックの共有</h2><p>パブリック プレビュー期間中のご意見・ご要望は重要な役割を果たします。不具合や不足している機能、ご提案などがありましたら、<a target="_blank" rel="noopener" href="https://forms.office.com/r/Zt4fdv7s86">フィードバック フォーム</a> からお知らせください。皆さまからのフィードバックをもとに、一般提供に向けて API やドキュメントの改善を進めてまいります。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/end-of-support-for-exchange-server-2016-and-exchange-server-2019/" data-id="cmi4a4q5e004v5g9o9xx91m8v" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/announcing-public-preview-exchange-online-admin-api/" data-id="cmi4a4q5700475g9o9t9i5zkz" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
 
     </footer>
   </div>
@@ -179,19 +171,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          現行バージョンからExchange Server SEへのアップグレード
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-3/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/exchange-online-activesync-certificate-based-authentication-endpoint-changes/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">新しい Outlook for Windows: 役員秘書や代理人のためのガイド - Part 3</div>
+      <div class="article-nav-title">Exchange Online の ActiveSync における証明書ベースの認証エンド ポイントの変更</div>
     </a>
   
 </nav>

@@ -6,7 +6,7 @@
   <link href="https://jpmessaging.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2025-11-05T15:00:00.000Z</updated>
+  <updated>2025-11-17T15:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Exchange Online Admin API パブリック プレビューのご案内</title>
+    <link href="https://jpmessaging.github.io/blog/announcing-public-preview-exchange-online-admin-api/"/>
+    <id>https://jpmessaging.github.io/blog/announcing-public-preview-exchange-online-admin-api/</id>
+    <published>2025-11-17T15:00:00.000Z</published>
+    <updated>2025-11-17T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/announcing-public-preview-exchange-online-admin-api/4470562">Announcing Public Preview: Exchange Online Admin API</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>本日 (2025 年 11 月 17 日現在) 、<strong>Exchange Online Admin API</strong> の<strong>パブリック プレビュー</strong>を開始しました。この API は、REST ベースかつコマンドレット形式の管理インターフェースであり、特定の Exchange 管理シナリオを EWS から移行する場合や、HTTP 経由での自動化ワークフローのモダナイズを支援するために設計されています。</p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a href="https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online">Exchange Web Services (EWS) は <strong>2026 年 10 月</strong> に廃止予定</a> ですが、多くの組織ではこれまで代替 API が提供されていなかったため、特定の Exchange 管理タスクには依然として EWS を利用し続けてきました。Admin API は、これらのシナリオに対して <strong>REST ベース</strong> かつ <strong>コマンドレット形式</strong> の新しい選択肢を提供し、Exchange 管理者にとって馴染みのあるセマンティクス (操作概念) を維持しつつ、最新の自動化を実現します。</p><p><strong>注意:</strong> Admin API は Exchange Online の管理機能をすべて REST で代替するものではありません。EWS で提供されていた一部の管理シナリオに対する代替手段として設計されています。Exchange Online の全体的な管理には、<strong>Exchange Online PowerShell</strong> の利用を推奨します。</p><h2 id="パブリック-プレビューで利用可能な機能"><a href="#パブリック-プレビューで利用可能な機能" class="headerlink" title="パブリック プレビューで利用可能な機能"></a>パブリック プレビューで利用可能な機能</h2><p>Admin API のパブリック プレビューでは、6 つのエンドポイントが提供されています。各エンドポイントと対応する機能は以下のとおりです。</p><ul><li><strong>OrganizationConfig</strong> — MailTips に関連するテナント全体の設定の参照</li><li><strong>AcceptedDomain</strong> — テナントの承認済みドメインと主要なドメイン設定の一覧を取得</li><li><strong>Mailbox</strong> — メールボックスのプロパティの参照および<strong>代理送信権限</strong>の管理（表示・更新）</li><li><strong>MailboxFolderPermission</strong> — フォルダー単位（受信トレイ、予定表、サブフォルダー）の権限の参照、付与、変更、削除</li><li><strong>DistributionGroupMember</strong> — 配布グループのメンバー一覧の取得</li><li><strong>DynamicDistributionGroupMember</strong> — 動的配布グループのメンバー一覧の取得</li></ul><p>リクエスト パターンや各エンドポイントの詳細については、以下のドキュメントをご参照ください。</p><ul><li><a href="https://learn.microsoft.com/exchange/reference/admin-api-overview">概要 | Microsoft Learn</a></li><li><a href="https://learn.microsoft.com/exchange/reference/admin-api-get-started">はじめに | Microsoft Learn</a></li><li><a href="https://learn.microsoft.com/exchange/reference/admin-api-endpoints-reference">エンドポイント リファレンス | Microsoft Learn</a></li></ul><p>EWS からの移行に関する最新情報は <a href="https://aka.ms/ews1Page">https://aka.ms/ews1Page</a> をご確認ください。</p><h2 id="提供状況と今後の予定"><a href="#提供状況と今後の予定" class="headerlink" title="提供状況と今後の予定"></a>提供状況と今後の予定</h2><ul><li><strong>パブリック プレビュー (全世界):</strong> 2025 年 11 月 17 日より利用可能です。この期間中に機能の評価や移行計画、EWS 管理シナリオと Admin API のギャップに関するフィードバックをお寄せください。</li><li><strong>一般提供 (全世界):</strong> 提供開始日は未定です。</li><li><strong>政府機関向け環境 (GCC、GCC High、DoD):</strong> 提供開始日は未定です。</li></ul><p>現在、API のレスポンスには追加のプロパティが含まれていますが、一般提供 (GA) では各エンドポイントのドキュメントに記載されているプロパティのみが利用可能となります。一般提供時に利用可能なプロパティ一覧は、各エンドポイントのドキュメントをご参照ください。出力プロパティの変更がある場合は、一般提供のリリース時にお知らせします。</p><h2 id="フィードバックの共有"><a href="#フィードバックの共有" class="headerlink" title="フィードバックの共有"></a>フィードバックの共有</h2><p>パブリック プレビュー期間中のご意見・ご要望は重要な役割を果たします。不具合や不足している機能、ご提案などがありましたら、<a href="https://forms.office.com/r/Zt4fdv7s86">フィードバック フォーム</a> からお知らせください。皆さまからのフィードバックをもとに、一般提供に向けて API やドキュメントの改善を進めてまいります。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/announcing-public-preview-exchange-online-admin-api/4470562&quot;&gt;Announcin</summary>
+      
+    
+    
+    
+    
+    <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
+    
+  </entry>
   
   <entry>
     <title>Exchange Online の ActiveSync における証明書ベースの認証エンド ポイントの変更</title>
@@ -432,28 +454,6 @@
     
     
     <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Exchange Online ライセンス解除レジリエンシー機能の必要ライセンス数が緩和されました</title>
-    <link href="https://jpmessaging.github.io/blog/reduced-license-count-requirement-for-exchange-online-delicensing-resiliency-fea/"/>
-    <id>https://jpmessaging.github.io/blog/reduced-license-count-requirement-for-exchange-online-delicensing-resiliency-fea/</id>
-    <published>2025-07-17T01:00:00.000Z</published>
-    <updated>2025-07-17T01:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/reduced-license-count-requirement-for-exchange-online-delicensing-resiliency-fea/4433407">Reduced License Count Requirement for Exchange Online Delicensing Resiliency Feature</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>Exchange Online ライセンス解除レジリエンシーの機能が大幅にアップデートされ、これまで 10,000 以上の評価版でない Exchange Online ライセンスを持つテナントのみが対象だったところ、5,000 以上の評価版でないライセンスを持つテナントにも利用可能となりました。詳細は<a href="/blog/introducing-exchange-online-delicensing-resiliency-to-protect-against-unintended/">意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入</a>をご覧ください。</p><p>ライセンス解除レジリエンシーは、ライセンスが削除された際に 30 日間の猶予期間を提供することで、業務への影響を最小限に抑え、シームレスな運用を実現します。これにより、グループ ベースのライセンス割り当てのミスなどによる、Exchange Online メールボックスの意図しないライセンス解除から保護することができます。</p><p>この変更は、より多くの大規模テナントで本機能をご利用いただけるようにするという継続的な取り組みの一環です。これまで利用要件を満たせなかった多くのお客様からのご要望を受けて、今回の対象拡大が実現しました。</p><h3 id="この変更がもたらす影響は何か"><a href="#この変更がもたらす影響は何か" class="headerlink" title="この変更がもたらす影響は何か"></a>この変更がもたらす影響は何か</h3><p>ワールド ワイドのテナントで 5,000 以上の評価版でない Exchange Online ライセンスをお持ちの場合、この機能をご利用いただけるようになりました。これにより、動的な環境におけるフォールト トレランスが向上します。現在、この変更を反映した<a href="https://learn.microsoft.com/Exchange/recipients-in-exchange-online/manage-user-mailboxes/exchange-online-delicensing-resiliency">ドキュメント</a>の更新作業を進めています。</p><p>引き続きユーザー コミュニティの皆さまからのご意見やご協力に感謝いたします。皆さまからのフィードバックが、私たちのイノベーションの原動力となっています。</p><p>今後ともどうぞよろしくお願いいたします。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/reduced-license-count-requirement-for-exchange-online-delicensing-resi</summary>
-      
-    
-    
-    
-    
-    <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
     
   </entry>
   
