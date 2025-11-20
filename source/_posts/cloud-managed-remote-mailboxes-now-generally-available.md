@@ -1,15 +1,14 @@
 ---
 title: 'クラウド管理のリモート メールボックス: 一般提供が開始されました!'
 date: 2025-10-16
-lastupdate: 2025-11-07
+lastupdate: 2025-11-20
 tags: 
 - Exchange
 ---
 ※ この記事は、[Cloud-Managed Remote Mailboxes: Now Generally Available!](https://techcommunity.microsoft.com/blog/exchange/cloud-managed-remote-mailboxes-now-generally-available/4461705) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #ffff99ff;"><font color="red"><strong>更新 2025/11/5:</strong></font><br>
-Microsfot Entra Connect のバージョン 2.5.79.0 を使用し、ユーザーの Exchange 属性のクラウド管理を有効にしている場合、「ExchangeManagedAttributesUpdateNotAllowed」というエラーが継続的に発生する可能性があります。このエラーにより、対象ユーザーの属性は同期できなくなります。
-現在、この問題を注意深く監視し、今後の対応策を検討しています。当面の間、この機能をユーザーに対して有効化しないでください。現在影響を受けているお客様には、問題の解決方法をご案内します。
+<p style="background: #99ffb8e3;"><strong>更新 2025/11/19:</strong><br>
+以前のバージョンの Microsfot Entra Connect で「ExchangeManagedAttributesUpdateNotAllowed」エラーが発生していたお客様は、この問題が解決されたバージョン <strong>2.5.190.0</strong> へアップグレードのうえ、クラウド管理のリモート メールボックスの展開を進めてください。
 </p>
 
 2025 年 8 月 2 日、組織の「最後の Exchange Server」廃止に向けた重要なステップとして、[クラウド管理のリモート メールボックスのパブリック プレビュー](/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/)を発表しました。コミュニティからの反響は非常に大きく、皆様からいただいたフィードバックをもとに、さらなる改善を行うことができました。
