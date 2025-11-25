@@ -1,7 +1,7 @@
 ---
 title: "Exchange Online の自動アーカイブ"
 date: 2025/10/09
-lastupdate: 2025/10/21
+lastupdate: 2025/11/25
 tags: Exchange
 ---
 
@@ -37,7 +37,7 @@ tags: Exchange
 - 一般提供 (WW クラウド): 2026 年 1 月 15 日 (暫定)
 - 政府機関向けクラウドでの展開: 2026 年 2 月 15 日 (暫定)
 
-本機能に関する Microsoft 365 ロードマップ アイテムを[こちらで確認できます](https://www.microsoft.com/en-us/microsoft-365/roadmap?id=515172)。また、一般提供 (GA) の前には、本機能の影響を受けるテナントに対してメッセージ センターで通知する予定です。
+本機能に関する Microsoft 365 ロードマップ アイテムを[こちらで確認できます](https://www.microsoft.com/microsoft-365/roadmap?id=515172)。また、一般提供 (GA) の前には、本機能の影響を受けるテナントに対してメッセージ センターで通知する予定です。
 
 ### よくある質問 (FAQ) 
 
