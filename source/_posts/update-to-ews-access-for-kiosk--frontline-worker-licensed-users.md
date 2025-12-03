@@ -7,7 +7,7 @@ tags: 'Exchange Online'
 
 ※ この記事は、[Update to EWS Access for Kiosk / Frontline Worker Licensed Users](https://techcommunity.microsoft.com/blog/exchange/update-to-ews-access-for-kiosk--frontline-worker-licensed-users/4474299) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-[Exchange Online での Exchange Web サービス (EWS) の廃止](https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online) に向けた継続的な取り組みの一環として、2026 年 3 月 1 日より、EWS のライセンス権限を持たないすべてのメールボックスに対する EWS アクセスのブロックを開始します。これにより、EWS のセキュリティと制御メカニズムがさらに強化されます。
+[Exchange Online での Exchange Web サービス (EWS) の廃止](https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online) に向けた継続的な取り組みの一環として、2026 年 3 月 1 日より、EWS のライセンス権限を持たないすべてのメールボックスへのアクセスをブロックします。これは、EWS のセキュリティと制御メカニズムを強化するための継続的な取り組みの一環です。
 
 影響を受けるライセンスは以下の通りです:
 
