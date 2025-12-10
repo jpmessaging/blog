@@ -23,7 +23,7 @@ Microsoft は、以下の製品に存在する脆弱性に対応するセキュ�
 
 これらの脆弱性は Exchange Server に影響します。Exchange Online のお客様は、今回のセキュリティ更新プログラムで対応された脆弱性について既に保護されていますので、特別な対応は不要です。ただし、環境内に存在する Exchange サーバーや Exchange 管理ツールをインストールしたワークステーションについては、引き続き更新プログラムの適用を行ってください。
 
-特定の脆弱性 (CVE) に関する詳細は、[Security Update Guide](https://msrc.security.microsoft.com/update-guide/) (Exchange SE については Product Family で "Server Software" でフィルター、Exchange Server 2016 および 2019 については Product Family で "ESU" でフィルター) を参照してください
+特定の脆弱性 (CVE) に関する詳細は、[Security Update Guide](https://msrc.security.microsoft.com/update-guide/) (Exchange SE については Product Family で "Server Software" でフィルター、Exchange Server 2016 および 2019 については Product Family で "ESU" でフィルター) を参照してください。
 
 ### 解決済み: ハイブリッド専用アプリ有効化後の Skype for Business 統合の問題
 この更新プログラムは、[Exchange ハイブリッド専用アプリ](https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/)を有効にした後に発生する Exchange Server と Skype for Business Server 間の統合に影響する問題を解決します。この問題の影響を受けている場合は、[KB 記事](https://support.microsoft.com/topic/b6614f37-c49f-456c-b073-da2da8d3a0b2) に記載されている情報を確認してください。
