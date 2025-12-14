@@ -1,11 +1,11 @@
 ---
 title: ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する
 date: 2025-12-15
-lastupdate: 2025-12-15
 tags: Exchange Online
 ---
+※ この記事は、[Using ExcludeFromAllHolds to Remove Holds from Inactive Mailboxes](https://techcommunity.microsoft.com/blog/exchange/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/4476933) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #99ffa7ff;">非アクティブなメールボックスに対する保持機能のサポートが、<strong>パブリック クラウド</strong>で利用可能になりました。<strong>政府機関向けクラウド</strong>へのロールアウトは 12 月 15 日の週より開始される予定です。詳細と今後のマイルストーンについては、こちらの<strong>ロードマップ</strong><a href = https://www.microsoft.com/microsoft-365/roadmap?id=537204> (https://www.microsoft.com/microsoft-365/roadmap?id=537204)</a> をご確認ください。</p>
+<p style="background: #99ffa7ff;">非アクティブなメールボックスに対する保持機能のサポートが、<strong>パブリック クラウド</strong>で利用可能になりました。詳細と今後のマイルストーンについては、こちらの<strong>ロードマップ</strong><a href = https://www.microsoft.com/microsoft-365/roadmap?id=537204> (https://www.microsoft.com/microsoft-365/roadmap?id=537204)</a> をご確認ください。</p>
 
 ### はじめに
 
@@ -23,9 +23,9 @@ ExcludeFromAllHolds パラメーターは、電子情報開示ホールド、訴
 
 - 包括的なカバレッジ： ExcludeFromAllHolds は組織レベルとユーザーレベルの両方の保持ポリシーに対応
 - 柔軟なスコープ： 静的スコープとアダプティブ スコープの両方で動作
-- コンプライアンスの維持： 電子情報開示ホールド、インプレイスホールド (eDiscovery-ComplianceSearch)、訴訟ホールド、および制限付き保持ポリシーを維持
-- 自動処理： 1 つのコマンドで複数のホールド タイプを同時に削除
-- 関連付けがなくなったホールドの削除： このコマンドは、組織レベルおよびユーザーレベルでスコープ指定された関連付けがなくなったホールを削除
+- コンプライアンスの維持： 電子情報開示ホールド、インプレース ホールド (eDiscovery-ComplianceSearch)、訴訟ホールド、および制限付き保持ポリシーを維持
+- 自動処理： 1 つのコマンドで複数種類のホールドを同時に削除
+- 関連付けがなくなったホールドの削除： このコマンドは、組織レベルおよびユーザーレベルでスコープ指定された関連付けがなくなったホールドを削除
 - 詳細なタグ制御： RemoveComplianceTagHold は、他のホールドに影響を与えず、コンプライアンス タグ ホールドのみを削除
 
 #### 主な使用例
@@ -50,13 +50,13 @@ ExcludeFromAllHolds パラメーターは、コンプライアンス要件とポ
 | ユーザーレベルの保持ポリシー | 対象範囲を指定した特定のメールボックスのホールド | 個別 |
 | コンプライアンス タグ ホールド | コンテンツベースの保持ホールド (制限付きポリシーが存在しない場合) | コンテンツ固有 |
 | 遅延ホールド | ポリシー移行時の一時的なホールド | 一時的 |
-| 遅延リリース ホールド | ポリシー変更時に即時削除を防ぐするホールド | 一時的 |
+| 遅延リリース ホールド | ポリシー変更時に即時削除を防ぐホールド | 一時的 |
 
 **削除されないホールド:**
 
 | **ホールドの種類** | **保持される理由** | **影響** |
 | --- | --- | --- |
-| インプレスホールド (ComplianceSearch - eDiscovery) | 法令遵守要件 | コンプライアンスのため維持 |
+| インプレース ホールド (ComplianceSearch - eDiscovery) | 法令遵守要件 | コンプライアンスのため維持 |
 | 電子情報開示ホールド | 法令遵守および訴訟要件 | コンプライアンスのため維持 |
 | 訴訟ホールド | 法令遵守および訴訟要件 | コンプライアンスのため維持 |
 | 制限付き保持ポリシー | 規制遵守要件 | コンプライアンス ルールに従って保持 |
@@ -243,7 +243,7 @@ Get-Mailbox -InactiveMailboxOnly -Identity "user@contoso.com" |  Select-Object I
 ```
 ##### 部分的なホールドの削除
 
-**期待される動作:** インプレイスホールド (eDiscovery-ComplianceSearch)、電子情報開示ホールド、訴訟ホールド、および制限付きホールドは保持されます
+**期待される動作:** インプレース ホールド (eDiscovery-ComplianceSearch)、電子情報開示ホールド、訴訟ホールド、および制限付きホールドは保持されます
 ```powershell
 $Mailbox = Get-Mailbox -InactiveMailboxOnly -Identity "user@contoso.com"
 foreach ($Hold in $Mailbox.InPlaceHolds) {
@@ -300,7 +300,7 @@ ExcludeFromAllHolds パラメーターは、コンプライアンスの整合性
 **A:** メールボックスにスタンプされたアダプティブ スコープ ポリシーは除外されます。一度除外されると、メールボックスをポリシーに再スコープすることはできません。
 
 **Q: RemoveComplianceTagHold とどう違いますか？**  
-**A:** ExcludeFromAllHolds は、インプレイスホールド (eDiscovery-ComplianceSearch)、電子情報開示、訴訟、および制限付き保持ポリシーを保持しながら、適用可能な複数のホールド (組織レベル、ユーザーレベル、遅延ホールド、およびコンプライアンス タグ ホール (許可されている場合)) を削除します。RemoveComplianceTagHold は、メールボックスからコンプライアンス タグ ホールドのみを削除し、他のすべてのホールドはそのまま残します。
+**A:** ExcludeFromAllHolds は、インプレース ホールド (eDiscovery-ComplianceSearch)、電子情報開示、訴訟、および制限付き保持ポリシーを保持しながら、適用可能な複数のホールド (組織レベル、ユーザーレベル、遅延ホールド、およびコンプライアンス タグ ホール (許可されている場合)) を削除します。RemoveComplianceTagHold は、メールボックスからコンプライアンス タグ ホールドのみを削除し、他のすべてのホールドはそのまま残します。
 
 **Q: 適用済みの保持ラベルも削除されますか？**  
 **A:** いいえ、アイテムから保持ラベルは削除されません。ExcludeFromAllHolds と RemoveComplianceTagHold の両方とも、保管ロックされているポリシーが存在しない場合、メールボックスからコンプライアンス タグベースのホールドを削除します。メールボックスに保持ラベルが適用され、適用可能なポリシーが適用されているアイテムがある場合、ホールドはメール ライフサイクル アシスタントによって再適用される可能性があります。
