@@ -18,7 +18,7 @@ tags: Exchange
 
 デバイスの更新に関してご質問がある場合やサポートが必要な場合は、お使いのデバイスまたはアプリケーションのベンダーにお問い合わせください。
 
-なお、このアナウンスは Exchange Online のみが対象であり (Exchange Server は対象外)、なおかつネイティブ メール アプリを使用しているモバイル デバイスのみが対象となります。例えば Exchange Online のメールボックスにアクセスする際の iOS メール アプリ (iOS 10 で EAS 16.1 を採用)、Gmail アプリ、Samsung メール アプリ (これらは現在アプリの更新作業中のため、最新の状態に保つことで間もなく 16.1 の使用が開始されます) などが該当します。[Outlook Mobile](https://www.microsoft.com/microsoft-365/outlook-mobile-for-android-and-ios) を使用して Exchange Online に接続しているデバイスは、EAS プロトコルを使用していないため、この変更の影響を受けません。
+なお、このアナウンスは Exchange Online のみが対象であり (Exchange Server は対象外)、なおかつネイティブ メール アプリを使用しているモバイル デバイスのみが対象となります。例えば Exchange Online のメールボックスにアクセスする際の iOS メール アプリ (iOS 10 で EAS 16.1 に対応)、Gmail アプリ、Samsung メール アプリ (これらは現在アプリの更新作業中のため、最新バージョンに更新することで順次 16.1 を使用するようになります) などが該当します。[Outlook Mobile](https://www.microsoft.com/microsoft-365/outlook-mobile-for-android-and-ios) を使用して Exchange Online に接続しているデバイスは、EAS プロトコルを使用していないため、この変更の影響を受けません。
 
 すべてのユーザーに安全で信頼性の高い環境を維持するためのご協力に感謝いたします。
 
