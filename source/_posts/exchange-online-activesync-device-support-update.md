@@ -1,7 +1,7 @@
 ---
 title: "Exchange Online における ActiveSync デバイスのサポートの更新"
 date: 2025/12/16
-lastupdate: 2025/12/16
+lastupdate: 2025/12/17
 tags: Exchange
 ---
 
@@ -14,7 +14,7 @@ tags: Exchange
 
 管理者は、PowerShell を使用して、ActiveSync のバージョン 16.1 未満を使用しているデバイスとアプリのレポートを素早く取得できます。以下は実行例です:
 
-    Get-MobileDevice | Where-Object {($_.ClientType -eq 'EAS' -or $_.ClientType -match 'ActiveSync') -and $_.ClientVersion -and ([version]$_.ClientVersion -lt [version]'16.1')} | Sort-Object UserDisplayName | Select-Object UserDisplayName, UserPrincipalName, DeviceId, DeviceModel
+    Get-MobileDevice -ResultSize Unlimited | Where-Object {($_.ClientType -eq 'EAS' -or $_.ClientType -match 'ActiveSync') -and $_.ClientVersion -and ([version]$_.ClientVersion -lt [version]'16.1')} | Sort-Object UserDisplayName | Select-Object UserDisplayName, Identity, DeviceId, DeviceModel | Format-List
 
 デバイスの更新に関してご質問がある場合やサポートが必要な場合は、お使いのデバイスまたはアプリケーションのベンダーにお問い合わせください。
 
