@@ -1,11 +1,11 @@
 ---
 title: ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する
-date: 2025-12-15
+date: 2025-12-18
 tags: Exchange Online
 ---
 ※ この記事は、[Using ExcludeFromAllHolds to Remove Holds from Inactive Mailboxes](https://techcommunity.microsoft.com/blog/exchange/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/4476933) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #99ffa7ff;">非アクティブなメールボックスに対する保持機能のサポートが、<strong>パブリック クラウド</strong>で利用可能になりました。詳細と今後のマイルストーンについては、こちらの<strong>ロードマップ</strong><a href = https://www.microsoft.com/microsoft-365/roadmap?id=537204> (https://www.microsoft.com/microsoft-365/roadmap?id=537204)</a> をご確認ください。</p>
+<p style="background: #99ffa7ff;">非アクティブなメールボックスに対する保持機能のサポートが、<strong>パブリック クラウド</strong>で利用可能になりました。詳細と今後のマイルストーンについては、こちらの<strong>ロードマップ</strong> (<a href = https://www.microsoft.com/microsoft-365/roadmap?id=537204>https://www.microsoft.com/microsoft-365/roadmap?id=537204</a>) をご確認ください。</p>
 
 ### はじめに
 
