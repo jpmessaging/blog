@@ -6,7 +6,7 @@ tags: Copilot
 ---
 
 こんにちは。日本マイクロソフト Exchange ＆ Outlook サポート チームの山本です。
-[「Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ」](https://jpmessaging.github.io/blog/Outlook-microsoft365-copilot-chat-pin/) で Microsoft 365 Copilot Chat (以下、Copilot Chat) のピン留めの対象として Outlook on the web を含む各 Outlook クライアントの画面左に表示されている Copilot アイコンを指していること、またモバイル版の Outlook アプリではオーバーレイ表示される Copilot アイコンを指していることに触れました。
+[「Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ」](/blog/Outlook-microsoft365-copilot-chat-pin/) で Microsoft 365 Copilot Chat (以下、Copilot Chat) のピン留めの対象として Outlook on the web を含む各 Outlook クライアントの画面左に表示されている Copilot アイコンを指していること、またモバイル版の Outlook アプリではオーバーレイ表示される Copilot アイコンを指していることに触れました。
 本記事では **Outlook で Copilot Chat のピン留めを管理者が制御する方法**について説明します。
 
 ## 本記事で分かること
