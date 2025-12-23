@@ -13,7 +13,7 @@ tags: Copilot
 
 現在 Copilot Chat は、Microsoft 365 Copilot ライセンス (以下、Copilot ライセンス) の有無 (※) に関わらず、Web、デスクトップ、モバイルといった各プラットフォーム上の Microsoft 365 の Outlook でピン留めして利用することが可能になっています。
  
-Title: Microsoft 365 アプリでMicrosoft 365 Copilot Chatをピン留めする
+[Microsoft 365 アプリでMicrosoft 365 Copilot Chatをピン留めする](https://learn.microsoft.com/copilot/microsoft-365/pin-copilot-chat-navbar)
 URL: https://learn.microsoft.com/copilot/microsoft-365/pin-copilot-chat-navbar
  
 以前は、Copilot ライセンスが割り当てられたユーザーのみ、Copilot Chat が自動的にナビゲーションバーにピン留めされて利用が可能でした。
