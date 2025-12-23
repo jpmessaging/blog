@@ -56,7 +56,6 @@ Copilot Chat のピン留めをユーザー操作により実施している場�
 テナント全体のユーザーを対象にして Copilot Chat のピン留めを制御したい場合には Microsoft 365 管理センターの [Microsoft 365 Copilot Chat をピン留めする] の設定を使用し、特定のユーザーまたはグループを対象に設定したい場合は個別に作成したクラウド ポリシーを使用するといったように使い分けするのが良いと思います。
  
 [Microsoft 365 アプリに Microsoft 365 Copilot Chat をピン留めする](https://learn.microsoft.com/copilot/microsoft-365/pin-copilot-chat-navbar)
-URL: https://learn.microsoft.com/copilot/microsoft-365/pin-copilot-chat-navbar
 ※ 「グループまたはユーザー レベルでピン留めする」 に記載
 
 ![](image4.jpg)
