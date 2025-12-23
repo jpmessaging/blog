@@ -1,13 +1,13 @@
 ---
 title: 'Exchange Online テナントの外部送信メール制限の導入'
 date: 2025-02-26
-lastupdate: 2025-09-18
+lastupdate: 2025-12-23
 tags: Exchange Online
 ---
 ※ この記事は、[Introducing Exchange Online Tenant Outbound Email Limits](https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-tenant-outbound-email-limits/4372797) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 <div style="margin:1.25em;border-left:.25em solid #4493f8;padding:.5em;">
-2025 年 9 月 18 日更新: GCC の日付を更新しました。
+2025 年 12 月 19 日更新: GCC の日付を更新しました。
 </div>
 
 クラウド サービス全般に言えることですが、Exchange Online では Exchange Online リソースの不正使用を防ぎ、すべてのユーザーに対して可用性を確保するためにサービスの制限を設けています。例えば、High-Volume Email の機能を除いて、Exchange Online は大量のメール送信をサポートしておらず、これまでは主にメールボックスごとの 1 日あたりの送信制限 (Recipient Rate Limit または RRL として知られています) を使用してこれを制限していました。
@@ -32,8 +32,8 @@ tags: Exchange Online
 
 | | |
 | --- | --- |
-| EAC レポートの有効化 | 2025/12/1 |
-| 強制の有効化 | 2026/1/26 |
+| EAC レポートの有効化 | 2026 年 3 月末 |
+| 強制の有効化 | 2026 年 4 月末 |
 
 GCC 環境のお客様は、5 月末までレポートにアクセスしようとすると、レポートが空白であったり、まったく表示されなかったりするなど、一貫性のない体験をする可能性がありますのでご注意ください。
 
