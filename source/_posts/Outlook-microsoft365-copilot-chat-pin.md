@@ -68,6 +68,6 @@ Copilot 機能は日々更新されており、実際にご利用の際は画面
 ### 本記事の最後に
 
 「Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ」 では、Copilot Chat のピン留めの概要と具体的にどの Outlook 画面に Copilot Chat がピン留めされるのかを紹介しました。
-[「Microsoft 365 Copilot Chat のピン留めの制御方法」](https://jpmessaging.github.io/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/) では、Microsoft 365 Copilot Chat のピン留めを管理者が制御する方法について紹介します。
+[「Microsoft 365 Copilot Chat のピン留めの制御方法」](/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/) では、Microsoft 365 Copilot Chat のピン留めを管理者が制御する方法について紹介します。
 
 **本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。**
