@@ -12,7 +12,7 @@ tags: Copilot
 ## 本記事で分かること
 ・Microsoft 365 Copilot ライセンス (以下、Copilot ライセンス) を未割り当てのユーザーの Copilot Chat のピン留めを制御したい場合は、[「1. Microsoft 365 管理センターの Copilot 設定」](#1-Microsoft-365-管理センターの-Copilot-設定) を使用すること
  
-・Copilot ライセンスの有無に関わらず、ユーザーの Copilot Chat のピン留めを制御したい場合は、[「2. Microsoft 365 管理センターの統合アプリ」](#2-microsoft-365-管理センターの統合アプリ) を使用すること
+・Copilot ライセンスの有無に関わらず、ユーザーの Copilot Chat のピン留めを制御したい場合は、[「2. Microsoft 365 管理センターの統合アプリ」](#2-Microsoft-365-管理センターの統合アプリ) を使用すること
 
 ## 1. Microsoft 365 管理センターの Copilot 設定
 [Microsoft 365 Copilot Chat をピン留めする] の設定を使用することで、**Copilot ライセンスを未割り当てのユーザー**に対して Copilot Chat のピン留めを制御することができます。
