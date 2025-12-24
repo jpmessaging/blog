@@ -65,7 +65,7 @@ Viva Insights ではこのような個人を特定できる状況を防ぐため
 なお、最小チーム サイズと最小グループ サイズの設定はそれぞれ独立したものとなり、両者に相関関係はありません。
  
 これらの違いについては以下の公開情報にも記載がありますので、ご参照ください。
-[マネージャー設定を構成する](https://learn.microsoft.com/ja-jp/viva/insights/advanced/setup-maint/manager-settings)
+[マネージャー設定を構成する](https://learn.microsoft.com/viva/insights/advanced/setup-maint/manager-settings)
 
 本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。
 
