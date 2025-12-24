@@ -1,6 +1,6 @@
 ---
 title: '最小チーム サイズと最小グループ サイズの違い'
-date: 2025-12-17
+date: 2025-12-24
 lastupdate:
 tags: 'Viva Insights'
 ---
