@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>onmicrosoft ドメインのメール送信利用制限について | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Limiting Onmicrosoft Domain Usage for Sending Emails の抄訳です。最新の情報はリンク先をご確認ください。 メール用 MOERA ドメインMicrosoft 365 で新しいテナントを作成すると、onmicrosoft.com (または onmicrosoft.de などのようなデフォルト ドメイン) が自動的に提供されます。これら">
+<meta property="og:type" content="article">
+<meta property="og:title" content="onmicrosoft ドメインのメール送信利用制限について">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/limiting-onmicrosoft-domain-usage-for-sending-emails/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Limiting Onmicrosoft Domain Usage for Sending Emails の抄訳です。最新の情報はリンク先をご確認ください。 メール用 MOERA ドメインMicrosoft 365 で新しいテナントを作成すると、onmicrosoft.com (または onmicrosoft.de などのようなデフォルト ドメイン) が自動的に提供されます。これら">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/limiting-onmicrosoft-domain-usage-for-sending-emails/moera01.jpg">
+<meta property="article:published_time" content="2025-08-21T05:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-21T05:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/limiting-onmicrosoft-domain-usage-for-sending-emails/moera01.jpg">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-limiting-onmicrosoft-domain-usage-for-sending-emails" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/limiting-onmicrosoft-domain-usage-for-sending-emails/" class="article-date">
+  <time datetime="2025-08-21T05:00:00.000Z" itemprop="datePublished">2025-08-21</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      onmicrosoft ドメインのメール送信利用制限について
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/limiting-onmicrosoft-domain-usage-for-sending-emails/" class="article-date-single">    
+        
+    <time datetime="2025-12-18T15:00:00.000Z" itemprop="lastupdate">2025-12-19</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/limiting-onmicrosoft-domain-usage-for-sending-emails/4446167">Limiting Onmicrosoft Domain Usage for Sending Emails</a> の抄訳です。最新の情報はリンク先をご確認ください。</p>
+<h2 id="メール用-MOERA-ドメイン"><a href="#メール用-MOERA-ドメイン" class="headerlink" title="メール用 MOERA ドメイン"></a>メール用 MOERA ドメイン</h2><p>Microsoft 365 で新しいテナントを作成すると、<em>onmicrosoft.com</em> (または <em>onmicrosoft.de</em> などのようなデフォルト ドメイン) が自動的に提供されます。これらの MOERA (Microsoft Online Email Routing Address) ドメインにより、すぐに接続やユーザー作成が可能となります。新しいテナントの迅速な開始やテストには有効ですが、今後のブランド認知や管理性の向上のためには、独自のカスタム ドメインを追加することが推奨されます。MOERA ドメインを「プライマリ ドメイン」として使い続けると、重大な課題に直面する可能性があります。</p>
+<h2 id="無料の「onmicrosoft」共有ドメインの制限事項"><a href="#無料の「onmicrosoft」共有ドメインの制限事項" class="headerlink" title="無料の「onmicrosoft」共有ドメインの制限事項"></a>無料の「onmicrosoft」共有ドメインの制限事項</h2><p>これらの「デフォルト」ドメインはメール フローのテストには便利ですが、通常のメッセージ送信には適していません。お客様のブランド アイデンティティを反映できず、管理面でも制約があります。さらに、これらのドメインはすべて「onmicrosoft」ドメイン (例: ‘contoso.onmicrosoft.com’) を共有しているため、レピュテーションも全体で影響を受けます。Microsoft では悪用を最小限に抑える努力をしているものの、スパム送信者は新規テナントを利用して「.onmicrosoft.com」アドレスから大量のスパムを送信することがあり、対応が間に合わない場合があります。その結果、この共有ドメインのレピュテーションが低下し、正当なユーザーのメール配信にも悪影響を及ぼす可能性があります。ブランドの信頼性とメールの到達率を確保するため、組織は独自のカスタム ドメインを作成し、メール送信に使用することが推奨されます。これまでは、MOERA ドメインによるメール配信の利用制限はありませんでした。</p>
+<h2 id="新しいスロットリング強制の導入"><a href="#新しいスロットリング強制の導入" class="headerlink" title="新しいスロットリング強制の導入"></a>新しいスロットリング強制の導入</h2><p>悪用防止とメールの配信性向上のため、ポリシーを変更します。今後、MOERA ドメインはテスト用途のみで使用し、通常のメール送信には使用しないことを推奨します。onmicrosoft.com ドメインから外部宛てに送信できるメッセージ数を、組織単位で 24 時間のローリング ウィンドウで最大 100 件に制限するスロットリングを導入します。受信メールには影響しません。外部受信者数は、配布リストなどの展開後の総数でカウントされます。送信者がこの上限に達した場合、以下の内容を含む NDR (配信不能レポート) が返送されます。</p>
+<blockquote>
+<p>550 5.7.236 Your message can’t be sent because your tenant has exceeded its daily limit for sending email to external recipients from your tenant’s onmicrosoft.com domains” for any attempts to send to external recipients from your organization’s onmicrosoft.com domains</p>
+</blockquote>
+<h2 id="管理者が取るべき対応"><a href="#管理者が取るべき対応" class="headerlink" title="管理者が取るべき対応"></a>管理者が取るべき対応</h2><p>MOERA ドメインの利用状況に応じて、以下の対応を行う必要があります。</p>
+<ul>
+<li>まだカスタム ドメインを導入していない場合は、購入のうえ、移行を行ってください。</li>
+<li>テスト用途以外のメール送信には、必ずカスタム ドメインのみを使用してください。</li>
+<li>テナントの既定のドメインが MOERA ドメインの場合は、Microsoft 365 管理センターで既定のドメインをカスタム ドメインに変更してください。</li>
+<li>各メールボックスのプライマリ SMTP アドレスをカスタム ドメインのエイリアスに変更する必要があります。プライマリ SMTP アドレスの変更は、アカウントのログイン時に使用するユーザー名にも影響するため、デバイスやアプリケーションでユーザー アカウント認証に使用している資格情報の更新が必要になる場合があります。</li>
+</ul>
+<p><strong>注意:</strong> フェデレーション ドメインを利用している場合は、Microsoft 365 に非フェデレーションのカスタム ドメインを追加して既定ドメインとして設定する必要があります。フェデレーション ドメインは既定のドメインとして設定することができません。詳細はこちら: <a target="_blank" rel="noopener" href="https://learn.microsoft.com/windows-server/identity/ad-fs/ad-fs-overview">AD FS の概要</a>.</p>
+<h3 id="ドメインの購入"><a href="#ドメインの購入" class="headerlink" title="ドメインの購入"></a>ドメインの購入</h3><p><strong>ドメイン レジストラ</strong>は、ドメイン名の販売と管理を認可された企業です。ドメインを購入するには、通常、レジストラのウェブ サイトで希望するドメイン名を検索し、購入手続きを経て自分の名義で登録します。購入後は、レジストラの管理画面から DNS 設定を管理し、Exchange Online に承認済みドメインとして追加する際の所有権確認を行います。購入後、以下の手順でテナントに承認済みドメインとして追加できます - <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow-best-practices/manage-accepted-domains/manage-accepted-domains">ドキュメント</a>。</p>
+<h3 id="既存メールボックスへの新しいエイリアス追加"><a href="#既存メールボックスへの新しいエイリアス追加" class="headerlink" title="既存メールボックスへの新しいエイリアス追加"></a>既存メールボックスへの新しいエイリアス追加</h3><p>ユーザーを新しいカスタム ドメインに移行するには、管理者が各ユーザー アカウントに新しいカスタム ドメインのエイリアスを追加する必要があります。これらの新しいエイリアスは、メールボックスのプライマリ SMTP アドレスとして設定する必要があり、メール送信時に使用されます。MOERA エイリアス宛てのメールに返信する際には、送信に使用するエイリアスが正しく選択されていることを確認してください。</p>
+<h2 id="既知の-MOERA-ドメイン利用シナリオ"><a href="#既知の-MOERA-ドメイン利用シナリオ" class="headerlink" title="既知の MOERA ドメイン利用シナリオ"></a>既知の MOERA ドメイン利用シナリオ</h2><p>MOERA ドメインがプライマリ SMTP アドレスである場合に通常のメール クライアントがメール送信で利用する以外にも、注意すべき既知の利用シナリオは以下のようなものがあります:</p>
+<ul>
+<li>Sender Rewriting Scheme (SRS) は、デフォルト ドメインとして設定されている場合、MOERA ドメインをフォールバックとして使用することがあります。これを回避するには、既定のドメインを変更する必要があります。(<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/reference/sender-rewriting-scheme">Microsoft 365 の Sender Rewriting Scheme (SRS)</a>)</li>
+<li>Bookings アプリの招待メールは、MOERA ドメインから送信されるように設定されている場合があります。Bookings がカスタム ドメインを使用するように設定されていることを確認してください。(<a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/bookings/custom-domain-support">Shared Bookings のカスタム ドメイン サポート</a>)</li>
+<li>Microsoft からの通知メールは、必ずカスタム ドメインを使用するように設定してください。(<a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/admin/email/select-domain-to-use-for-email-from-microsoft-365-products">Microsoft 365 製品からのメール送信に使用するドメインの選択</a>)</li>
+<li>ジャーナル レポートは、テナントに設定された Microsoft Exchange Recipient アドレス (Get-OrganizationConfig の MicrosoftExchangeRecipientPrimarySmtpAddress) を使用します。このアドレスは管理者が変更できないため、これらのメッセージはスロットリングの制限にはカウントされません。</li>
+<li>複雑なルーティングを伴うハイブリッド構成では、<em>mail.onmicrosoft.com</em> を含む MOERA ドメインが使用されることがあります。これらのドメインを使用したアドレスが外部受信者にメールを送信する（例: エイリアスから送信された OOF メッセージ）場合がありますが、元のトラフィックでこれらのドメインが使用されていない限り、これらのメッセージはスロットリングの対象にはなりません。</li>
+<li>ポストマスター アドレス: 外部のポストマスター アドレスに onmicrosoft.com ドメインを設定している場合は、カスタム ドメインに変更する必要があります。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow-best-practices/configure-external-postmaster-address">外部のポストマスター アドレスの構成方法</a></li>
+<li>OOF (不在応答) メッセージはスロットリングの制限にはカウントされませんが、配信確認の配信状態通知 (DSNs) にはカウントされます。</li>
+</ul>
+<p><strong>注意:</strong> スロットリングの判定には P1 Mail From アドレスがチェックされますが、NDR（配信不能通知）の場合はこのアドレスが null であるため、スロットリングの対象外となります。</p>
+<h2 id="MOERA-メール-トラフィックの分析"><a href="#MOERA-メール-トラフィックの分析" class="headerlink" title="MOERA メール トラフィックの分析"></a>MOERA メール トラフィックの分析</h2><p>Exchange 管理センターのメッセージ トレース機能を使用して、テナントから送信される組織外へのトラフィックを取得できます。送信者欄にワイルド カード アドレスを指定することで、onmicrosoft.com ドメインを使用して送信されたすべてのトラフィックを含むレポートを取得できます。このレポートには内部的に送信されたメッセージも含まれますが、受信者ドメインを指定することで、レポートから内部送信メッセージをフィルタリングすることができます。</p>
+<p><img src="/blog/limiting-onmicrosoft-domain-usage-for-sending-emails/moera01.jpg"></p>
+<h2 id="ロールアウト-タイムライン"><a href="#ロールアウト-タイムライン" class="headerlink" title="ロールアウト タイムライン"></a>ロールアウト タイムライン</h2><p>スロットリングのロールアウトは、組織内の Exchange シートの数に基づいて行われます。</p>
+<table>
+<thead>
+<tr>
+<th><strong>MOERA の送信メールスロットリング開始日</strong></th>
+<th><strong>テナント内の Exchange シート数</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2025年10月15日</td>
+<td>トライアル</td>
+</tr>
+<tr>
+<td>2025年12月1日</td>
+<td>3 未満</td>
+</tr>
+<tr>
+<td>2026年1月7日</td>
+<td>3～10</td>
+</tr>
+<tr>
+<td>2026年2月2日</td>
+<td>11～50</td>
+</tr>
+<tr>
+<td>2026年3月2日</td>
+<td>51～200</td>
+</tr>
+<tr>
+<td>2026年4月1日</td>
+<td>201～2,000</td>
+</tr>
+<tr>
+<td>2026年5月4日</td>
+<td>2,001～10,000</td>
+</tr>
+<tr>
+<td>2026年6月1日</td>
+<td>10,001 以上</td>
+</tr>
+</tbody></table>
+<p>各ロールアウト段階のアナウンスは、対象のシート数条件を満たすすべてのお客様に対し、開始日の 1 か月前にメッセージ センターを通じて通知されます。MOERA ドメインを利用しているすべてのお客様は、早めに計画を立て、移行を開始することが推奨されます。</p>
+<p><strong>主な更新履歴</strong>:<br><strong>2025 年 12 月 18 日</strong>: スロットリング制限に達した場合の NDR に関する詳細を追加</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/limiting-onmicrosoft-domain-usage-for-sending-emails/" data-id="cmjksis0f0065hg2aakpzhl2k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          クラウド管理のリモート メールボックスの導入：最後の Exchange Server 廃止に向けたステップ
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/released-august-2025-exchange-server-security-updates/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2025 年 8 月の Exchange Server のセキュリティ更新プログラムが公開されました</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

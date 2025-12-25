@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange Online のメール アプリケーションにサインインできない、またはパスワードを繰り返し要求されますか? ここから対策を始めましょう。
+ | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Exchange Online email applications stopped signing in, or keep asking for passwords? Start here. の抄訳です。最新の情報はリンク先をご確認ください。 2022 年 10 月 1 日より、Microsoft は、”基本認証” と呼ばれる Exchange Online への古いログイン方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange Online のメール アプリケーションにサインインできない、またはパスワードを繰り返し要求されますか? ここから対策を始めましょう。
+">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Exchange Online email applications stopped signing in, or keep asking for passwords? Start here. の抄訳です。最新の情報はリンク先をご確認ください。 2022 年 10 月 1 日より、Microsoft は、”基本認証” と呼ばれる Exchange Online への古いログイン方法">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/image1.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/image2.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/image3.png">
+<meta property="article:published_time" content="2022-10-10T15:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-10T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/image1.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/" class="article-date">
+  <time datetime="2022-10-10T15:00:00.000Z" itemprop="datePublished">2022-10-11</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange Online のメール アプリケーションにサインインできない、またはパスワードを繰り返し要求されますか? ここから対策を始めましょう。
+
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/" class="article-date-single">    
+    
+    <time datetime="2022-10-10T15:00:00.000Z" itemprop="dateUpdated">2022-10-11</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-online-email-applications-stopped-signing-in-or-keep/ba-p/3641943">Exchange Online email applications stopped signing in, or keep asking for passwords? Start here.</a> の抄訳です。最新の情報はリンク先をご確認ください。</p>
+<p>2022 年 10 月 1 日より、Microsoft は、”基本認証” と呼ばれる Exchange Online への古いログイン方法を無効化します。この古い方法は、様々な形式のパスワード攻撃に対して脆弱です。最新の認証規格は OAuth という規格に基づいており、弊社が実装するこの規格は、“先進認証” と呼ばれます。<br>組織において古いログイン方法が無効化されると、メール システムにサインインできないなどの問題が、一部のお客様に発生する可能性があります。<br>組織の基本認証が無効化されたものの、様々なメール クライアントで引き続き基本認証を使用する場合は、以下の 2 つの点を確認しておく必要があります。</p>
+<ul>
+<li>組織の基本認証を一時的に再有効化する方法 (サインインできない問題が直ちに解消されます)-</li>
+<li>基本認証の使用を完全に停止する方法 (一時的な再有効化機能が 2022 年 12 月 31 日に停止するため)。<strong>本件に対処しない場合、基本認証が完全に無効化される 2023 年 1 月以降、ユーザーは Exchange Online にサインインできなくなります。</strong></li>
+</ul>
+<p>両者について以下に記載しています。</p>
+<h2 id="組織の基本認証を一時的に再有効化する"><a href="#組織の基本認証を一時的に再有効化する" class="headerlink" title="組織の基本認証を一時的に再有効化する"></a>組織の基本認証を一時的に再有効化する</h2><p>弊社のセルフサービス診断を使用することにより、テナントの基本認証を再有効化することができます。全体管理者である場合は、以下のボタンをクリックすると、Microsoft 365 管理センター内の診断機能に誘導され、セルフサービス診断を開始することができます。</p>
+<a class="fancybox" href="https://aka.ms/PillarEXOBasicAuth" target="_blank">
+<img src="/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/image1.png" class="" title="Diag">
+</a>
+
+
+<p>または、<a target="_blank" rel="noopener" href="https://admin.microsoft.com/">Microsoft 365 管理センター</a>へ移動し、画面の右下にある緑色の [ヘルプとサポート] ボタンをクリックします。</p>
+<p><img src="/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/image2.png">  </p>
+<p>[ヘルプとサポート] ボタンをクリックすると、セルフヘルプ システムに入ります。ここで、「<strong>Diag: Enable Basic Auth in EXO</strong>」 (診断: Exchange Online の基本認証を有効化する) というフレーズを入力し、テストを実行します。テストの結果は以下のように表示されます (結果は、組織で無効化された内容に応じて異なります)。</p>
+<p><img src="/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/image3.png">  </p>
+<p>必要なプロトコルごとに基本認証を (1 度に 1 つずつ) 有効化することができます。プロトコルの基本認証の再有効化を弊社に依頼していただくと、1 時間以内に (通常はそれより早く) 機能が再開されます。<br>プロトコルについて基本認証を再有効化することにより、ユーザーおよびデータがセキュリティ リスクに対してより脆弱になることに注意してください。</p>
+<h2 id="基本認証の使用を完全に停止する"><a href="#基本認証の使用を完全に停止する" class="headerlink" title="基本認証の使用を完全に停止する"></a>基本認証の使用を完全に停止する</h2><p>クライアント固有のヒントを以下に挙げました。詳細については、リンク先を参照してください。</p>
+<ul>
+<li><strong>Outlook for Windows</strong>: 最初に、Outlook が最新であること、および組織全体で先進認証の有効化に切り替えるという設定が True (真) であることを確認します。このように設定されていない場合、Outlook for Windows で先進認証を使用できません。<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/enabling-modern-auth-for-outlook-how-hard-can-it-be/ba-p/2278411">このため、必ず有効化してください</a> (英語)。Messaging Application Programming Interface (メッセージング アプリケーション プログラミング インタフェース) (MAPI) またはリモート プロシージャ コール (RPC) プロトコルの基本認証を無効化する際に、お客様の組織の設定も切り替えられるため、既に有効化されているはずですが、念のため設定を確認してください。まだ機能していない場合は、Outlook に<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/microsoft-365/admin/security-and-compliance/enable-modern-authentication?view=o365-worldwide">適切なレジストリ キーがある</a>か確認してください。</li>
+</ul>
+<blockquote>
+<p>注: POP または IMAP で Outlook for Windows を使用している場合、2022 年末に基本認証が無効化されると、機能は完全に停止します。Outlook for Windows は、POP または IMAP を使用する先進認証に対応しておらず、これらのレガシ プロトコルを引き続き使用する必要がある場合、別のメール クライアント (Thunderbird など) を使用する必要があります。</p>
+</blockquote>
+<ul>
+<li><strong>Outlook for Mac</strong>: Outlook for Mac クライアントが引き続き基本認証の使用を求める場合、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/notes-from-the-field-does-outlook-for-mac-insist-on-using-basic/ba-p/3629510">当該内容に関する最近のブログ投稿</a> (英語) を参照してください。</li>
+<li><strong>Exchange ActiveSync</strong>: iOS のメール アプリなど、電子メールとカレンダーの様々なネイティブ アプリで使用されるプロトコルを指します。最新モバイル クライアントのすべての主流アプリは、先進認証に対応しているものの、多くのユーザー デバイスでは依然として基本認証が使用されている可能性があります。デバイスからアカウントを削除して再度追加すると、自動的に先進認証へ切り替わります。</li>
+</ul>
+<p>ただし、いずれかの種類のモバイル デバイス管理 (MDM または MAM) ソリューションを使用している場合、当該ソリューションを使用して新しいプロファイルを展開する必要があります。例えば、Intune を使用して iPhone または iPad 向けの認証メカニズムを設定する方法については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/mem/intune/configuration/email-settings-ios">こちら</a>を参照してください。Basic Mobility and Security (基本的なモビリティとセキュリティ) を使用している場合、これらのデバイスを修正する方法の詳細については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/exchange/clients-and-mobile-in-exchange-online/deprecation-of-basic-authentication-exchange-online#exchange-activesync-eas">こちら</a>のドキュメントを参照してください。</p>
+<p>また、あまり一般的ではない種類のクライアントの場合、基本認証が無効化されると機能が停止する可能性があります。これらを使用する場合は、以下を参照してください。</p>
+<ul>
+<li><strong>POP または IMAP アプリケーション</strong>: 一部のお客様は、これらのプロトコルを使用してアプリケーションにアクセスしています。対話型アプリおよび対話型以外のアプリの両方に対処する方法については、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/notes-from-the-field-using-oauth-for-activesync-and-pop-imap-in/ba-p/3606118">こちらのブログ投稿</a> (英語) を参照してください。</li>
+<li><strong>Exchange Web Service (EWS) アプリケーション</strong>: EWS は、アプリ専用アクセスに対応しており、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/graph/auth-limit-mailbox-access">アプリケーション アクセス ポリシー</a>を使用してアプリのアクセス対象を管理できます。基本認証で EWS を使用するアプリを所有している場合、コードを修正するか、またはアプリ開発者にコードを修正してもらう必要があります。多くのパートナー アプリは先進認証に対応しており、構成を修正するか最新バージョンにアップデートするだけで使用できます。</li>
+<li><strong>PowerShell スクリプト</strong>: スクリプトを所有している場合、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/powershell/exchange/app-only-auth-powershell-v2?view=exchange-ps">こちら</a>のガイドに従ってスクリプト内で先進認証を使用します。</li>
+</ul>
+<p>2022 年 10 月 1 日以降、<strong>問題が生じない</strong>と想定されているクライアントは以下のとおりです。</p>
+<ul>
+<li><strong>iOS 版 Outlook および Android 版 Outlook</strong> – 直接 Exchange Online メールボックスに接続している場合、これらのクライアントにおいて基本認証は使用されません。</li>
+<li><strong>Outlook on the web</strong> – メールボックスが Exchange Online 内にある場合、Web ブラウザーを通して Outlook on the web で認証する際は、常に先進認証が使用されます。</li>
+</ul>
+<h3 id="アプリケーション-パスワードとその機能について"><a href="#アプリケーション-パスワードとその機能について" class="headerlink" title="アプリケーション パスワードとその機能について"></a>アプリケーション パスワードとその機能について</h3><p>アプリケーション パスワードが多要素認証 (MFA) に使用されており、別の認証メカニズムとして基本認証が使用されている場合、基本認証が無効化されると、MFA に使用されているアプリケーション パスワードの機能も停止します。</p>
+<h3 id="詳細情報"><a href="#詳細情報" class="headerlink" title="詳細情報"></a>詳細情報</h3><p>詳細情報については、以下の資料を参照してください。</p>
+<ul>
+<li><a href="https://jpmessaging.github.io/blog/basic-authentication-deprecation-in-exchange-online-september/">Exchange Online の基本認証の廃止</a> – 2022 年 9 月の更新 – 包括的な内容の投稿であり、本件に関する詳細情報が含まれています。</li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/exchange/clients-and-mobile-in-exchange-online/deprecation-of-basic-authentication-exchange-online">Exchange Online での基本認証の廃止</a> – 本件に関する弊社の公式ドキュメントであり、詳細情報やガイダンスへのリンクが含まれています。</li>
+</ul>
+<p>The Exchange Team</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/" data-id="cmjksiryn001rhg2a8srm2f9y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/identify-applications-using-exchange-online-outlookrestv2-or/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Outlook REST v2 API または Exchange Web Services (EWS) API を使用しているアプリケーションを見つける
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/basic-authentication-deprecation-in-exchange-online-september/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange Online における基本認証の廃止 – 2022 年 9 月の更新
+</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

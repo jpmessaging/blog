@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>インターネット接続性チェックが失敗する環境で Outlook による先進認証が失敗する | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="現象Windows OS の NCSI によりインターネット接続性がないと判断されている場合、Edge や Internet Explorer などのブラウザによるインターネット上のコンテンツ参照が可能であっても、Outlook による先進認証が失敗します。多くの場合、以下の通り「現在接続できません。ネットワークを確認して、後でもう一度お試しください。」というメッセージのダイアログが表示されます。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="インターネット接続性チェックが失敗する環境で Outlook による先進認証が失敗する">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Advanced-Authentication-in-Outlook-Fails-in-Environments-Where-Internet-Connectivity-Checks-Fail/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="現象Windows OS の NCSI によりインターネット接続性がないと判断されている場合、Edge や Internet Explorer などのブラウザによるインターネット上のコンテンツ参照が可能であっても、Outlook による先進認証が失敗します。多くの場合、以下の通り「現在接続できません。ネットワークを確認して、後でもう一度お試しください。」というメッセージのダイアログが表示されます。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Advanced-Authentication-in-Outlook-Fails-in-Environments-Where-Internet-Connectivity-Checks-Fail/NCSI_NG.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Advanced-Authentication-in-Outlook-Fails-in-Environments-Where-Internet-Connectivity-Checks-Fail/NCSI1.png">
+<meta property="article:published_time" content="2021-02-02T15:00:00.000Z">
+<meta property="article:modified_time" content="2021-02-02T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta property="article:tag" content="Outlook">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Advanced-Authentication-in-Outlook-Fails-in-Environments-Where-Internet-Connectivity-Checks-Fail/NCSI_NG.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Advanced-Authentication-in-Outlook-Fails-in-Environments-Where-Internet-Connectivity-Checks-Fail" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Advanced-Authentication-in-Outlook-Fails-in-Environments-Where-Internet-Connectivity-Checks-Fail/" class="article-date">
+  <time datetime="2021-02-02T15:00:00.000Z" itemprop="datePublished">2021-02-03</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      インターネット接続性チェックが失敗する環境で Outlook による先進認証が失敗する
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Advanced-Authentication-in-Outlook-Fails-in-Environments-Where-Internet-Connectivity-Checks-Fail/" class="article-date-single">    
+        
+    <time datetime="2021-09-29T15:00:00.000Z" itemprop="lastupdate">2021-09-30</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <h1 id="現象"><a href="#現象" class="headerlink" title="現象"></a>現象</h1><p>Windows OS の NCSI によりインターネット接続性がないと判断されている場合、Edge や Internet Explorer などのブラウザによるインターネット上のコンテンツ参照が可能であっても、Outlook による先進認証が失敗します。<br>多くの場合、以下の通り「現在接続できません。ネットワークを確認して、後でもう一度お試しください。」というメッセージのダイアログが表示されます。</p>
+<p><img src="/blog/Advanced-Authentication-in-Outlook-Fails-in-Environments-Where-Internet-Connectivity-Checks-Fail/NCSI_NG.png"></p>
+<p>NCSI がインターネット接続性なしと判断している場合、ライセンス認証や “Office へサインイン” など Office 共通の動作が失敗する場合もあります。</p>
+<p>本現象の特徴として、端末ごとに発生状況が異なっていたり、ネットワーク構成の変更などの変化点と事象の発生時期が一致しないなどがあり、切り分けが難しい傾向があります。</p>
+<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>先進認証においては Azure AD などインターネット上のサービスへのアクセスが必要となります。<br>このため、Outlook を含む Office アプリケーションでは先進認証実行時に Windows OS の NCSI によるインターネットの接続性を確認するロジックが存在します。このロジックにより、インターネット接続性がないという応答が NCSI から返った場合、先進認証ができないと判断され認証処理が中断され、結果的に認証が失敗します。</p>
+<p>これは Office アプリケーションが先進認証を使用する際に発生する固有の動作です。<br>この動作は変更する方法がありません。</p>
+<h1 id="NCSI-のインジケーター"><a href="#NCSI-のインジケーター" class="headerlink" title="NCSI のインジケーター"></a>NCSI のインジケーター</h1><p>以下の画像の赤枠内にあるネットワーク接続性を示すインジケーター (小さなアイコン) も NCSI の機能の一部です。</p>
+<p><img src="/blog/Advanced-Authentication-in-Outlook-Fails-in-Environments-Where-Internet-Connectivity-Checks-Fail/NCSI1.png"></p>
+<p>こちらのアイコンでインターネット接続性が無い表示となっていると、多くの場合前述の現象が発生します。</p>
+<h1 id="NCSI-によるインターネット接続性確認の動作"><a href="#NCSI-によるインターネット接続性確認の動作" class="headerlink" title="NCSI によるインターネット接続性確認の動作"></a>NCSI によるインターネット接続性確認の動作</h1><p>Windows OS の機能である NCSI がどのようにインターネット接続性を判定しているかについては以下の技術情報で公開されています。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/troubleshoot/windows-client/networking/internet-explorer-edge-open-connect-corporate-public-network">https://docs.microsoft.com/ja-jp/troubleshoot/windows-client/networking/internet-explorer-edge-open-connect-corporate-public-network</a></p>
+<p>上記技術情報内でも言及されている通り、弊社は NCSI のアクティブ プローブ、パッシブ プローブの無効化を推奨しておりません。<br>また、無効化により Office による先進認証時の失敗を回避することはできません。</p>
+<p>前述の通り、NCSI は Windows OS の機能で Exchange Online に特化したものではありません。<br>このため、システム管理者は Office 365 の URL と IP 一覧に記載されている Microsoft 365 向けの通信以外にも、NCSI の接続先を考慮しなくてはならないケースがあります。</p>
+<p>NCSI の接続先は以下の通り Windows 10 の接続ポイントとして公開されています。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/windows/privacy/manage-windows-1903-endpoints">https://docs.microsoft.com/ja-jp/windows/privacy/manage-windows-1903-endpoints</a></p>
+<p>※ 上記ページは左ペインからご利用のバージョンを選択してご参照ください。</p>
+<h1 id="Outlook-で問題が起きた場合の有効な対処方法"><a href="#Outlook-で問題が起きた場合の有効な対処方法" class="headerlink" title="Outlook で問題が起きた場合の有効な対処方法"></a>Outlook で問題が起きた場合の有効な対処方法</h1><p>問題が起きていない端末があるからと言って、人為的に問題の起きていない端末と同じ状態で動作をさせるように仕向けることは現実的ではありません。</p>
+<p>事例から確認できている情報として、以下のような対処が有効です。</p>
+<h2 id="A-ネットワーク関連のサービスが正常に起動しているか確認する"><a href="#A-ネットワーク関連のサービスが正常に起動しているか確認する" class="headerlink" title="A. ネットワーク関連のサービスが正常に起動しているか確認する"></a>A. ネットワーク関連のサービスが正常に起動しているか確認する</h2><p>既定で自動実行となっている例えば以下のようなネットワーク関連のサービスが停止している場合、NCSI の接続性確認が失敗します。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DHCP Client</span><br><span class="line">Network Location Awareness</span><br><span class="line">Network List Service</span><br></pre></td></tr></table></figure>
+
+<p>サービスの状態を確認して、上記サービスが起動していない場合は起動します。</p>
+<h2 id="B-デフォルト-ゲートウェイに到達できる-IP-アドレスが設定されているか確認する"><a href="#B-デフォルト-ゲートウェイに到達できる-IP-アドレスが設定されているか確認する" class="headerlink" title="B. デフォルト ゲートウェイに到達できる IP アドレスが設定されているか確認する"></a>B. デフォルト ゲートウェイに到達できる IP アドレスが設定されているか確認する</h2><p>NCSI は、厳密には Network Location Awareness (NLA) と呼ばれる Windows OS によるネットワーク接続性管理の機能の一部です。<br>NLA ではネットワーク接続性の確認の一つとして、デフォルト ゲートウェイへの疎通を確認する動作を行います。<br>クライアント PC のネットワーク設定でデフォルト ゲートウェイに疎通不可の IP アドレスが設定されている場合、この影響を受けて Outlook や OS によるネットワーク接続性のチェックに影響を及ぼします。<br>このため、デフォルト ゲートウェイには疎通可能な IP アドレスを設定ください。</p>
+<h2 id="C-Windows-OS-観点の追加の確認を行う"><a href="#C-Windows-OS-観点の追加の確認を行う" class="headerlink" title="C. Windows OS 観点の追加の確認を行う"></a>C. Windows OS 観点の追加の確認を行う</h2><p>以下のリンクより、日本マイクロソフトの Windows OS のサポートを担当しておりますプラットフォーム チームによる、本事象に関するブログ記事が参照いただけます。</p>
+<p><a target="_blank" rel="noopener" href="https://jpwinsup.github.io/blog/2021/09/30/Networking/NCSI/network-connectivity-status-indicator-overview-and-troubleshooting-guide/">https://jpwinsup.github.io/blog/2021/09/30/Networking/NCSI/network-connectivity-status-indicator-overview-and-troubleshooting-guide/</a></p>
+<p>本ブログ記事では言及できていない切り分け方法や対応策、調査が必要な場合の情報採取手順についてもご紹介していますので是非ご参照ください。</p>
+<p><strong>本情報の内容 (添付文書、リンク先などを含む) は作成日時点でのものであり、予告なく変更される場合があります。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Advanced-Authentication-in-Outlook-Fails-in-Environments-Where-Internet-Connectivity-Checks-Fail/" data-id="cmjksiry80011hg2acznogw6t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/office-365-message-attribution/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Office 365 におけるメッセージの帰属
+
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/all-you-need-to-know-about-automatic-email-forwarding-in-exchange-online/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange Online でのメールの自動転送について知っておくべきこと
+</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

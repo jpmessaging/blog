@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange Online プロビジョニングの解明：アーキテクチャ、Exchange オブジェクトの種類、および属性 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Demystifying Exchange Online Provisioning: Architecture, Exchange Object Types, and Attributes の抄訳です。最新の情報はリンク先をご確認ください。 Exchange Online のさまざまな受信者オブジェクトの同期とプロビジョニングのプロセスを解明したいと考えました。このコンテンツの一部">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange Online プロビジョニングの解明：アーキテクチャ、Exchange オブジェクトの種類、および属性">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Demystifying-Exchange-Online-Provisioning/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Demystifying Exchange Online Provisioning: Architecture, Exchange Object Types, and Attributes の抄訳です。最新の情報はリンク先をご確認ください。 Exchange Online のさまざまな受信者オブジェクトの同期とプロビジョニングのプロセスを解明したいと考えました。このコンテンツの一部">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Demystifying-Exchange-Online-Provisioning/Prov01_01.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Demystifying-Exchange-Online-Provisioning/Prov01_02.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Demystifying-Exchange-Online-Provisioning/Prov01_03.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Demystifying-Exchange-Online-Provisioning/Prov01_04.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Demystifying-Exchange-Online-Provisioning/Prov01_05.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Demystifying-Exchange-Online-Provisioning/Prov01_06.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Demystifying-Exchange-Online-Provisioning/Prov01_07.jpg">
+<meta property="article:published_time" content="2024-10-02T15:00:00.000Z">
+<meta property="article:modified_time" content="2024-10-02T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Demystifying-Exchange-Online-Provisioning/Prov01_01.jpg">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Demystifying-Exchange-Online-Provisioning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Demystifying-Exchange-Online-Provisioning/" class="article-date">
+  <time datetime="2024-10-02T15:00:00.000Z" itemprop="datePublished">2024-10-03</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange Online プロビジョニングの解明：アーキテクチャ、Exchange オブジェクトの種類、および属性
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Demystifying-Exchange-Online-Provisioning/" class="article-date-single">    
+    
+    <time datetime="2024-10-02T15:00:00.000Z" itemprop="dateUpdated">2024-10-03</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/demystifying-exchange-online-provisioning-architecture-exchange/ba-p/4204206">Demystifying Exchange Online Provisioning: Architecture, Exchange Object Types, and Attributes</a> の抄訳です。最新の情報はリンク先をご確認ください。</p>
+<p>Exchange Online のさまざまな受信者オブジェクトの同期とプロビジョニングのプロセスを解明したいと考えました。このコンテンツの一部はすでにご存知かもしれませんが、新しい情報を含め、Exchange オブジェクトのプロビジョニングに関するほとんどの問題を理解し、トラブルシューティングするのに役立つことを願っています。このトピックの範囲が広いため、1 つのブログ投稿ではなく、今後シリーズのブログとして投稿する予定です。また、経験に関係なく、すべての人がコンテンツを理解できるように、基本から始めます。</p>
+<h2 id="アーキテクチャの基本"><a href="#アーキテクチャの基本" class="headerlink" title="アーキテクチャの基本"></a>アーキテクチャの基本</h2><p>オンプレミスの Exchange において最も単純なアーキテクチャは、「シングル フォレスト」トポロジです。この場合、ローカルの Active Directory (AD) と Microsoft Exchange 組織が同じフォレストにあります。したがって、Exchange が有効化された場合でもユーザー オブジェクトは単一となります。<br>Exchange Online では、シングル フォレスト トポロジとは異なり、リソース フォレスト トポロジの概念のように別の Active Directory のインスタンス (Exchange Online Directory Services と呼びます) が存在します。すべてのユーザー アカウントの認証は Microsoft Entra ID (旧称 Azure Active Directory) で行われます。これにより、2 つの Active Directory が存在し、1 つのユーザーあたり 2 つのオブジェクトが存在します。<br>ユーザー アカウント (およびその他のメールが有効なオブジェクト) は、ForwardSync および Dual Write として知られるプロセスを使用して Microsoft Entra ID と Exchange Online の間で同期されます。Exchange Online のオブジェクトは、ExternalDirectoryObjectID プロパティを介して Microsoft Entra ID 内の対応するユーザー アカウントとリンクされています。ExternalDirectoryObjectID プロパティは、Microsoft Entra ID の対応するユーザー アカウントの ObjectID の値を保持しています。</p>
+<p><img src="/blog/Demystifying-Exchange-Online-Provisioning/Prov01_01.jpg"></p>
+<p>SharePoint Online、Teams などの他のワークロードにも同様の設計が利用されています。</p>
+<p><img src="/blog/Demystifying-Exchange-Online-Provisioning/Prov01_02.jpg"></p>
+<p>次に、新しい要素として Microsoft Exchange ハイブリッド環境を紹介します。Microsoft Exchange ハイブリッド環境を簡潔に言い表すと、オンプレミスの Active Directory と Microsoft Entra ID という 2 つの Microsoft Exchange 組織が同期されている環境と言えます。ハイブリッド構成ウィザード (HCW) のおかげで、これは 1 つの組織として動作します。</p>
+<p>HCW はハイブリッド環境を機能させる唯一の要素ではありません。実際には、HCW は双方の Exchange 組織が多くの面で互いを信頼して様々な機能が動作するよう構成変更を行うだけであり、受信者オブジェクトを 2 つのディレクトリ間で同期させる必要もあります。</p>
+<p>そして、上記の同期を行うためにトポロジ内に必要なもう 1 つの要素が Microsoft Entra Connect です (このコンポーネントは何度か名前が変更されており、DirSync、AAD Sync、AAD Connect として知られているかもしれません)。Microsoft Entra Connect は、オンプレミスの Active Directory と Microsoft Entra ID 間でオブジェクトが同期されることを保証します。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity/hybrid/connect/how-to-connect-install-custom#optional-features">「Exchange Hybrid オプション機能」</a>が有効になっている (Microsoft Entra Connect の構成時にチェックされている場合) と、オブジェクトが持つ可能性のあるすべての Exchange プロパティも同期に含まれます。Microsoft Entra ID から、それらのオブジェクトが自動的に Exchange Online Directory Service に同期されるのは、すでに述べた ForwardSync および Dual Write 処理のおかげです。</p>
+<p>したがって、ForwardSync と Dual Write は、Microsoft Entra Connect と同様に、Microsoft Entra ID と Exchange Online Directory Services オブジェクトの同期状態を維持するための同期エンジンを形成します。ただし、Microsoft Entra Connect と異なる点もあります。Microsoft Entra Connect は変更があると Microsoft Entra ID にプッシュしますが、ForwardSync は技術的には Microsoft Entra ID から Exchange Online Directory Services に変更をプッシュしません。代わりに、Exchange Online Directory Services は定期的に Microsoft Entra ID にクエリを実行し、同期が必要な変更があるかどうかを確認し、ある場合はそれらを同期します。</p>
+<p>すべての要素がどのように連携しているかについて、以下の図にまとめました。</p>
+<p><img src="/blog/Demystifying-Exchange-Online-Provisioning/Prov01_03.jpg"></p>
+<h2 id="オブジェクトの種類"><a href="#オブジェクトの種類" class="headerlink" title="オブジェクトの種類"></a>オブジェクトの種類</h2><p>Microsoft Exchange はメールボックスだけでなく、メールが有効になっていないプレーン ユーザー、メールが有効なユーザー、グループ、連絡先などの他のオブジェクトも扱います。</p>
+<p>ただし、Exchange Online とオンプレミスの Exchange ではオブジェクトの種類が異なり、一部のオブジェクトの種類はこれらの環境のいずれかでしか使用できない場合があります。下図は、左側にオンプレミスの Exchange のオブジェクトの種類を示し、右側に Exchange Online のオブジェクトの種類を示しています。</p>
+<p><img src="/blog/Demystifying-Exchange-Online-Provisioning/Prov01_04.jpg"></p>
+<p>両方の環境でプレーン ユーザーというオブジェクトの種類を持つことはできますが、Exchange Online ではリモート メールボックスのオブジェクトの種類がなく (少なくともテナント管理者には公開されません)、オンプレミスの Exchange にはあります。同じことが、Exchange Online で Microsoft 365 グループ (Unified Group) にも当てはまりますが、オンプレミスの Exchange では Microsoft 365 グループがありません。</p>
+<p>もう一つ考慮すべき点は、動的配布グループが両方の環境で扱われているにもかかわらず、Microsoft Entra Connect によって同期されないことです。Exchange Online の動的配布グループは純粋なクラウド オブジェクトです。その理由は非常に簡単です。動的配布グループのメンバーシップは特定のフィルターに基づいており、仮に同じフィルターで同期されたとしても、両方の環境でメンバーシップが異なってしまいます。</p>
+<p>いずれの Exchange 組織においても、オブジェクトの種類を定義するものは何でしょうか? 答えは属性です。オンプレミスの Exchange サーバーのバージョンによっては、あるオブジェクトが他のオブジェクトよりも多くの属性を持つ場合があります。</p>
+<p>オブジェクトを構成する多くの属性の中で、オブジェクトの種類を定義する特定の 3 つの属性があります。それらは、<em><strong>msExchRecipientDisplayType</strong></em>、<em><strong>msExchRecipientTypeDetails</strong></em>、および <em><strong>msExchRemoteRecipientType</strong></em> であり、それぞれ <em><strong>RecipientType</strong></em>、<em><strong>RecipientTypeDetails</strong></em>、および <em><strong>RemoteRecipientType</strong></em> プロパティにマッピングされます。これらは、Get-Recipient、Get-MailUser、または Get-RemoteMailbox などのコマンドレットを実行するときに確認できます:</p>
+<p><img src="/blog/Demystifying-Exchange-Online-Provisioning/Prov01_05.jpg"></p>
+<blockquote>
+<p>さて、属性について話しているところですが、Exchange オブジェクトを作成または変更するためにサポートされている唯一の方法は、Exchange Management Shell (EMS) と Exchange Admin Center (EAC) を使用することであることをご存知ですか？たとえ Set-ADUser を EMS で実行している場合でも、サポートしていません (明示的に Microsoft サポートの監督下にある場合を除きます)。その理由は、Set-ADUser、属性エディター、ADSIEdit、またはサード パーティのツールは、検証なしで特定の属性に必要な値をスタンプするだけですが、EMS と EAC は、プロパティにスタンプしようとしている値が有効であるかや、別のオブジェクトによって使用されているかどうかの確認まで行うためです (電子メール アドレスはよい例です)。また、EMS と EAC は他の必要な属性も一緒に設定をしてくれます (例えば、アーカイブを有効にするために ArchiveGuid をスタンプするだけでは、アーカイブを機能させるために十分ではありません) 。</p>
+</blockquote>
+<p>ここですべてのマッピングを説明することはしませんが、以下に最も関連性の高いものを示します。</p>
+<p><img src="/blog/Demystifying-Exchange-Online-Provisioning/Prov01_06.jpg"></p>
+<ul>
+<li><p>オンプレミスの Exchange の MailUser は、Exchange Online では MailUser または UserMailbox のいずれかになります (Exchange Online のライセンスが割り当てられているかどうかによります)。</p>
+</li>
+<li><p>オンプレミスの Exchange の RemoteMailbox オブジェクトは MailUser のサブタイプですが、Get-MailUser を実行して一覧表示することはできません。代わりに Get-RemoteMailbox を使用してください。このオブジェクトは Exchange Online ではメールボックスとして表示されることが期待されます。ちなみに、すべてのメールボックスがライセンスを必要とするわけではありません。共有メールボックスまたはリソース メールボックスには必ずしもライセンスは必要ありません。通常のメールボックスはライセンスが必要であり、ライセンスが割り当てられていない場合、それらはメールボックスとしてではなく MailUser として表示されることになるかもしれません。これについては後で説明します。</p>
+</li>
+<li><p>動的配布グループは、オンプレミスの Exchange から Exchange Online に同期されないため、どちらかの環境に動的配布グループが表示されている場合は、そのオブジェクトは同期されず、その環境でのみ作成されているため、対象オブジェクトに適用された変更が他方に同期されることを期待しないでください。</p>
+</li>
+<li><p>Microsoft 365 グループについて。オンプレミスの Exchange はそれらを全く認識しませんが、Microsoft Entra Connect Group Writeback 機能が有効になっている場合、グループごとに対してオンプレミスの Exchange にメールが有効なユニバーサル配布グループが作成されます。これは <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/set-up-microsoft-365-groups#enable-group-writeback-in-microsoft-entra-connect">Microsoft Entra Connect で手動で有効にする</a>必要があるオプション機能です。</p>
+</li>
+</ul>
+<h2 id="プロビジョニング"><a href="#プロビジョニング" class="headerlink" title="プロビジョニング"></a>プロビジョニング</h2><p>次に、Exchange Online のさまざまなオブジェクトの種類に対するプロビジョニングのしくみについて説明します。</p>
+<p>これを説明する最も簡単な方法は、配布グループまたはセキュリティ グループで例をあげることです。例えば、オンプレミスで 3 人のメンバーを持つグループを作成し、Microsoft Entra Connect が同期すると、Microsoft Entra ID にプッシュされ、そこから Forwardsync&#x2F;DualWrite を介して Exchange Online Directory Services に送信されます。簡単に聞こえますでしょうか。3 人のメンバーを持つグループを同期するには、Microsoft Entra ID でいくつかのサブステップを経る必要があります。そのうちの 1 つは「正規化」と呼ばれ、このステップでは 1 つのタスクをより簡単なタスクに分割します。</p>
+<p>先ほど述べたグループを例にとると、一連の処理はグループの作成とメンバーの追加という 2 つの異なるタスクに分かれます。さらに、メンバーの追加も 3 つのアクションに分けられます。各ユーザーついてグループのメンバーとして追加する処理です。</p>
+<p><img src="/blog/Demystifying-Exchange-Online-Provisioning/Prov01_07.jpg"></p>
+<h2 id="メールボックスのプロビジョニング-–-注意点"><a href="#メールボックスのプロビジョニング-–-注意点" class="headerlink" title="メールボックスのプロビジョニング – 注意点"></a>メールボックスのプロビジョニング – 注意点</h2><h3 id="権限のソース"><a href="#権限のソース" class="headerlink" title="権限のソース"></a>権限のソース</h3><p>Microsoft Exchange のハイブリッド環境でのメールボックスのプロビジョニングについて説明する前に、すべてのユーザー ID をオンプレミスで作成および管理できることがこの環境の大きな利点であることを理解する必要があります。同じオブジェクトが異なるディレクトリで更新される状況を避けるために、常に一方が他方に優先される側に存在する必要があります。これは権限のソース (<strong>Source of Authority</strong>、SOA) と呼ばれ、この環境 (ハイブリッドで、Microsoft Entra Connect が Exchange 属性を同期している) では、オンプレミスのディレクトリが SOA となります (ごく少数の例外を除く) 。これを念頭に置いておくことが、特定の動作を理解するための鍵となります。</p>
+<h3 id="30日間の猶予期間"><a href="#30日間の猶予期間" class="headerlink" title="30日間の猶予期間"></a>30日間の猶予期間</h3><p>オンプレミスで新しいリモート メールボックスをプロビジョニングする場合でも、Exchange Online ライセンスを付与されていないメールボックスを Exchange Online に移行する場合でも、ユーザーに Exchange Online ライセンスを割り当てるまで 30 日間の猶予期間がサービスによって管理者に与えられます。これは 30 日間の無料サービスを提供するためのものではなく、お客様それぞれのプロビジョニング プロセスを尊重し、通常のメールボックスに Exchange Online ライセンスを割り当てが終わるまでの間に一定の時間を与えるためのものです。Exchange Online でメールボックスがプロビジョニングされたことを確認した後、または移行シナリオでは移行が完了する前にライセンスを割り当てることをお勧めします。</p>
+<h3 id="リモート-ルーティング-アドレスとその他のプロパティ"><a href="#リモート-ルーティング-アドレスとその他のプロパティ" class="headerlink" title="リモート ルーティング アドレスとその他のプロパティ"></a>リモート ルーティング アドレスとその他のプロパティ</h3><p>次に知っておくべきことは、オンプレミスの Exchange 受信者の<strong>リモート ルーティング アドレス</strong> (@YourDomain.mail.onmicrosoft.com のメール アドレス) を誰がスタンプするかです。オンプレミスの Exchange は、次のシナリオに応じてスタンプします。 </p>
+<ul>
+<li><p>オンプレミスの Exchange を使用しているすべてのユーザー向け:  </p>
+<p>既定の電子メール アドレス ポリシーは、ハイブリッド構成ウィザード (HCW) によって変更され、すべてのオンプレミスの受信者のセカンダリ アドレスに YourDomain.mail.onmicrosoft.com アドレスが追加されます。このメール アドレス ポリシーが有効になっている場合、オブジェクトに一致する優先度の高い他のポリシーがなく、受信者の “EmailAddressPolicyEnabled” プロパティが “True” に設定されている場合、このアドレスはユーザーの “EmailAddresses” プロパティに表示されます。(“proxyaddresses” AD 属性にマッピングされます)</p>
+</li>
+<li><p>メールボックスが Exchange Online に移行される場合:  </p>
+<p> オンプレミス ユーザーの “ExternalEmailAddress” プロパティ (“TargetAddress” AD 属性にマッピングされます) は、メールボックスのハイブリッド移行が完了すると、メールボックス レプリケーション サービス (MRS) によってリモート ルーティング アドレス値 (該当ユーザーの “EmailAddresses” に既に存在する必要があります) にスタンプされます。</p>
+</li>
+<li><p>リモート メールボックスがオンプレミスからプロビジョニングされる場合:  </p>
+<p>リモート メールボックスをプロビジョニングする方法 (Enable-RemoteMailbox、New-RemoteMailbox、または EAC を使用) に関係なく、必須のパラメーターである “RemoteRoutingAddress” に YourDomain.mail.onmicrosoft.com のアドレスを値として指定する必要があります。これは、Exchange オンプレミスから Get-RemoteMailbox コマンドレットを実行すると、”RemoteRoutingAddress” プロパティと “EmailAddresses” のセカンダリ アドレスとして表示されます。</p>
+</li>
+</ul>
+<p>リモート ルーティング アドレスは、Autodiscover、ハイブリッド メール フロー (トランスポート)、または空き時間情報のリクエストなどの他の Exchange 関連サービスを Exchange Online にリダイレクトするために重要です。</p>
+<p>リモート ルーティング アドレス (YourDomain.mail.onmicrosoft.com) と <strong>Microsoft Online Email Routing Address</strong> (MOERA) (YourDomain.onmicrosoft.com) を混同しないでください。リモート ルーティング アドレスはオンプレミスの Exchange によってスタンプされますが、MOERA は Microsoft Entra ID によってスタンプされます (ただし、ユーザーを Microsoft Entra ID で直接作成し、その時点で Exchange Online ライセンスが割り当てられていない場合を除きます。その場合、オブジェクトには MOERA がスタンプされません)。</p>
+<p>もう 1 つ重要なプロパティは <strong>LegacyExchangeDN</strong> です。オンプレミスから同期されたオブジェクトが Exchange Online にメールボックスを持つ場合、Exchange Online の LegacyExchangeDN が X500 アドレスとしてオンプレミスのリモート メールボックス オブジェクトに書き戻されます。</p>
+<p><strong>ExchangeGuid</strong> は、最初にメールボックスを作成した Microsoft Exchange 組織によって生成されます。</p>
+<ul>
+<li>オンプレミスの Exchange Management Shell から New-RemoteMailbox、Enable-RemoteMailbox を実行するか、Exchange Admin Center から Exchange Online メールボックスを作成することにより、メールボックスがオンプレミスからプロビジョニングされた場合、Exchange Online で ExchangeGuid を生成します。</li>
+<li>オンプレミスの Exchange でメールボックスを作成し、その後 Exchange Online に移行した場合、オンプレミスの Exchange で ExchangeGuid を生成します。</li>
+</ul>
+<p><strong>ArchiveGuid プロパティ</strong>は、ホストする Exchange 組織 (オンプレミスまたはオンライン) に関係なく、常に Exchange オンプレミスによって生成され、これが Exchange Online に同期されます。</p>
+<blockquote>
+<p>Exchange Online でのプロビジョニングまたは変更は、最大 24 時間かかる場合があります。ほとんどの場合、ほぼ即時に処理されますが、リソースが通常よりも多く消費されると、遅延が発生する場合があります。詳細については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/troubleshoot/user-and-shared-mailboxes/delays-provision-mailbox-sync-changes">この記事</a>と自己診断ツールへのリンクをご覧ください。</p>
+</blockquote>
+<p>これで、プロビジョニング シリーズ記事の Part1 が終わります。Part2 をお楽しみに！</p>
+<p>Alberto Pascual Montoya と Ben Winzenz</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Demystifying-Exchange-Online-Provisioning/" data-id="cmjksiryj001jhg2a8igf2jm6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          新しい Outlook for Windows: 役員秘書や代理人のためのガイド - Part 3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">新しい Outlook for Windows: 役員秘書や代理人のためのガイド - part 1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

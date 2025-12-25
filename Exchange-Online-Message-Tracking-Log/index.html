@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange Online のメッセージ追跡ログ
+ | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="こんにちは。Exchange &#x2F; Outlook サポートの柳本です。以前までこちらのブログで Exchange Online で採取可能なメッセージ追跡ログに関する記事を公開しておりました。数年前に公開された記事であり内容が古くなってきたため、改めて Exchange Online のメッセージ追跡ログの取得方法についてご案内します。Exchange Online にはいくつかの種類の">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange Online のメッセージ追跡ログ
+">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Exchange-Online-Message-Tracking-Log/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="こんにちは。Exchange &#x2F; Outlook サポートの柳本です。以前までこちらのブログで Exchange Online で採取可能なメッセージ追跡ログに関する記事を公開しておりました。数年前に公開された記事であり内容が古くなってきたため、改めて Exchange Online のメッセージ追跡ログの取得方法についてご案内します。Exchange Online にはいくつかの種類の">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-08-12T15:00:00.000Z">
+<meta property="article:modified_time" content="2021-08-12T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Exchange-Online-Message-Tracking-Log" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Exchange-Online-Message-Tracking-Log/" class="article-date">
+  <time datetime="2021-08-12T15:00:00.000Z" itemprop="datePublished">2021-08-13</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange Online のメッセージ追跡ログ
+
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Exchange-Online-Message-Tracking-Log/" class="article-date-single">    
+    
+    <time datetime="2021-08-12T15:00:00.000Z" itemprop="dateUpdated">2021-08-13</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>こんにちは。Exchange &#x2F; Outlook サポートの柳本です。以前までこちらのブログで Exchange Online で採取可能なメッセージ追跡ログに関する記事を公開しておりました。数年前に公開された記事であり内容が古くなってきたため、改めて Exchange Online のメッセージ追跡ログの取得方法についてご案内します。Exchange Online にはいくつかの種類のメッセージ追跡ログがあるのですが、今回は弊社サポートから最もご案内する頻度が高い HistoricalSearch と呼ばれるタイプのメッセージ追跡ログを Windows PowerShell のコマンド ベースで取得する方法をご案内します。</p>
+<h2 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h2><p>Windows Powershell から Exchange Online に接続します。</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps">Exchange Online PowerShell に接続する</a></p>
+<h2 id="HistoricalSearch-取得手順"><a href="#HistoricalSearch-取得手順" class="headerlink" title="HistoricalSearch 取得手順"></a>HistoricalSearch 取得手順</h2><p>※ 取得対象のメッセージの送信 or 受信後すぐにメッセージ追跡ログを取得しようとすると結果が得られない可能性があります。<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">取得可能になるまでメッセージの送受信後から数時間要する</span>場合がございますので、結果が得られない場合は数時間置いて再度本手順を実行してください。</p>
+<h3 id="1-メッセージ追跡-HistoricalSearch-を開始"><a href="#1-メッセージ追跡-HistoricalSearch-を開始" class="headerlink" title="1. メッセージ追跡 (HistoricalSearch) を開始"></a>1. メッセージ追跡 (HistoricalSearch) を開始</h3><p>取得対象メッセージのメッセージ ID が判明している場合は下記 [メッセージ ID を指定して実行する場合] を、メッセージ ID が不明な場合などは [送信者、受信者を指定して実行する場合] を実行してください。</p>
+<p><strong>メッセージ ID を指定して実行する場合</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Start-HistoricalSearch</span> <span class="literal">-ReportTitle</span> &lt;任意の実行名&gt; <span class="literal">-StartDate</span> yyyy/mm/dd <span class="literal">-EndDate</span> yyyy/mm/dd <span class="literal">-MessageID</span> <span class="string">&#x27;&lt;メッセージ ID&gt;&#x27;</span> <span class="literal">-ReportType</span> MessageTraceDetail <span class="literal">-NotifyAddress</span> &lt;通知メールアドレス&gt;</span><br></pre></td></tr></table></figure>
+
+<p>実行例:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Start-HistoricalSearch</span> <span class="literal">-ReportTitle</span> HistoricalSearch01 <span class="literal">-StartDate</span> <span class="number">2021</span>/<span class="number">8</span>/<span class="number">12</span> <span class="literal">-EndDate</span> <span class="number">2021</span>/<span class="number">8</span>/<span class="number">14</span> <span class="literal">-MessageID</span> <span class="string">&#x27;&lt;TYAP286MB0889D5500E1B82DC368C092F95FA9@TYAP286MB0889.JPNP286.PROD.OUTLOOK.COM&gt;&#x27;</span> <span class="literal">-ReportType</span> MessageTraceDetail <span class="literal">-NotifyAddress</span> admin@contoso.com</span><br></pre></td></tr></table></figure>
+
+<p>メッセージ ID の確認方法がわからない方は<a target="_blank" rel="noopener" href="https://support.microsoft.com/ja-jp/office/cd039382-dc6e-4264-ac74-c048563d212c">こちらの公開情報</a>をご参照ください。</p>
+<p><strong>送信者、受信者を指定して実行する場合</strong></p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Start-HistoricalSearch</span> <span class="literal">-ReportTitle</span> &lt;任意の実行名&gt; <span class="literal">-StartDate</span> yyyy/mm/dd <span class="literal">-EndDate</span> yyyy/mm/dd <span class="literal">-SenderAddress</span> &lt;送信者メールアドレス&gt; <span class="literal">-RecipientAddress</span> &lt;受信者メールアドレス&gt; <span class="literal">-ReportType</span> MessageTraceDetail <span class="literal">-NotifyAddress</span> &lt;通知メールアドレス&gt;</span><br></pre></td></tr></table></figure>
+
+<p>実行例:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Start-HistoricalSearch</span> <span class="literal">-ReportTitle</span> HistoricalSearch01 <span class="literal">-StartDate</span> <span class="number">2021</span>/<span class="number">8</span>/<span class="number">12</span> <span class="literal">-EndDate</span> <span class="number">2021</span>/<span class="number">8</span>/<span class="number">14</span> <span class="literal">-SenderAddress</span> sender@contoso.com <span class="literal">-RecipientAddress</span> recipient@contoso.com <span class="literal">-ReportType</span> MessageTraceDetail <span class="literal">-NotifyAddress</span> admin@contoso.com</span><br></pre></td></tr></table></figure>
+
+<p>上記は送受信者ともに指定していますが、送信者 (-SenderAddress) または受信者 (-RecipientAddress) のどちらか一方のパラメーターのみを指定して実行することも可能です。(利用シナリオ例: ある送信者が送信したメールを受信者を問わず取得したい時)</p>
+<p>※ パラメーターの<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)"> StartDate および EndDate は協定世界時 (UTC) を基準としています</span>。日本標準時 (JST) での受信時刻とは異なりますので、例えば、2021&#x2F;08&#x2F;13 (JST) に受信した場合は、StartDate を 2021&#x2F;08&#x2F;12、EndDate を 2021&#x2F;08&#x2F;14 と指定することをお勧めします。</p>
+<h3 id="2-HistoricalSearch-のステータス確認"><a href="#2-HistoricalSearch-のステータス確認" class="headerlink" title="2. HistoricalSearch のステータス確認"></a>2. HistoricalSearch のステータス確認</h3><p>手順 1. 実行後に表示された JobId を控えておき、以下のコマンドを実行して Status が Done となっていることを確認します。<br>Status が Done となるまでには数時間かかる場合があるので、以下のコマンドは Start-HistoricalSearch でのメッセージ追跡開始後、しばらく時間が経ってから実行することをお勧めします。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-HistoricalSearch</span> <span class="literal">-JobId</span> <span class="string">&#x27;xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx&#x27;</span> | <span class="built_in">FL</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-実行結果-CSV-ファイル-のダウンロード"><a href="#3-実行結果-CSV-ファイル-のダウンロード" class="headerlink" title="3. 実行結果 (CSV ファイル) のダウンロード"></a>3. 実行結果 (CSV ファイル) のダウンロード</h3><p>該当の JobId の Status が Done となったら、FileUrl に記載されている URL より CSV 形式のメッセージ追跡ログをダウンロードします。<br>URL アクセス時に証明書の警告画面が表示された場合には、[キャンセル] を押して処理を進めます。</p>
+<p>注意点:</p>
+<ul>
+<li><p>1 日経過しても Status が Done とならない場合には、再度新しく HistoricalSearch を作成、開始いただけますようお願いいたします。</p>
+</li>
+<li><p>手順 3 にて CSV 形式のメッセージ追跡ログをダウンロードできる回数には制限があります。2021 年 8 月時点では 20 回以上ダウンロードすると以下のエラーとなります。</p>
+<blockquote>
+<p>503<br>サーバーがビジー状態です<br>サービスはビジー状態です。しばらくしてからもう一度やり直してください。</p>
+</blockquote>
+<p>エラーとなる場合は、再度手順 1 からメッセージ追跡の手順を実施ください。</p>
+</li>
+</ul>
+<h4 id="補足"><a href="#補足" class="headerlink" title="補足"></a>補足</h4><p>本記事では PowerShell コマンドによるメッセージ追跡ログ (HistoricalSearch) の取得手順をご案内しました。<br>Microsoft 365 管理センター上でメッセージ追跡ログを取得する手順につきましては下記の公開情報をご参照ください。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/exchange/monitoring/trace-an-email-message/message-trace-modern-eac">Message trace in the modern Exchange admin center</a></li>
+<li>(機械翻訳版) <a target="_blank" rel="noopener" href="https://docs.microsoft.com/ja-jp/exchange/monitoring/trace-an-email-message/message-trace-modern-eac">最新の Exchange 管理センターでのメッセージの追跡</a></li>
+</ul>
+<h4 id="参考リンク"><a href="#参考リンク" class="headerlink" title="参考リンク"></a>参考リンク</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/powershell/module/exchange/start-historicalsearch?view=exchange-ps">Start-HistoricalSearch</a></li>
+</ul>
+<p>本記事は 2021 年 8 月 13 日時点で執筆されたものであり、ご紹介したコマンドの動作、機能は今後変更される場合がございます。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Exchange-Online-Message-Tracking-Log/" data-id="cmjksiryk001nhg2a6mxsfr3n" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/outlookversion/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Outlook のバージョンを確認する方法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/enabled-addin-crash/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">アドインを有効にする方法 &lt;第 2 回&gt; アドインがクラッシュした場合</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Outlook REST v2 API または Exchange Web Services (EWS) API を使用しているアプリケーションを見つける | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Identify applications using Exchange Online OutlookRESTv2 or Exchange Web Services (EWS) APIs の抄訳です。最新の情報はリンク先をご確認ください。 この投稿は EWS (Exchange Web Services) to Microsoft Graph Migration Guide Ser">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Outlook REST v2 API または Exchange Web Services (EWS) API を使用しているアプリケーションを見つける">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/identify-applications-using-exchange-online-outlookrestv2-or/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Identify applications using Exchange Online OutlookRESTv2 or Exchange Web Services (EWS) APIs の抄訳です。最新の情報はリンク先をご確認ください。 この投稿は EWS (Exchange Web Services) to Microsoft Graph Migration Guide Ser">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-14T15:00:00.000Z">
+<meta property="article:modified_time" content="2023-11-14T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-identify-applications-using-exchange-online-outlookrestv2-or" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/identify-applications-using-exchange-online-outlookrestv2-or/" class="article-date">
+  <time datetime="2023-11-14T15:00:00.000Z" itemprop="datePublished">2023-11-15</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Outlook REST v2 API または Exchange Web Services (EWS) API を使用しているアプリケーションを見つける
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/identify-applications-using-exchange-online-outlookrestv2-or/" class="article-date-single">    
+    
+    <time datetime="2023-11-14T15:00:00.000Z" itemprop="dateUpdated">2023-11-15</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/identify-applications-using-exchange-online-outlookrestv2-or/ba-p/3957435">Identify applications using Exchange Online OutlookRESTv2 or Exchange Web Services (EWS) APIs</a> の抄訳です。最新の情報はリンク先をご確認ください。</p>
+<p>この投稿は <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/ews-exchange-web-services-to-microsoft-graph-migration-guide/ba-p/3957158">EWS (Exchange Web Services) to Microsoft Graph Migration Guide Series</a> の一部です。  </p>
+<p>2023 年 10 月上旬に Exchange チームは Exchange Online に接続する API の利用に影響のある 2 つの大きな変更を発表しました。</p>
+<ul>
+<li>Outlook REST v2 API は 2024 年 3 月 31 日に廃止される予定です。詳細は <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/outlook-rest-api-v2-0-and-beta-endpoints-decommissioning-update/ba-p/3920254">こちら</a> の情報を参照ください。</li>
+<li>Exchange Web Services (EWS) API を利用したリクエストは 2026 年 10 月 1 日からブロックが開始される予定です。詳細は <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/retirement-of-exchange-web-services-in-exchange-online/ba-p/3924440">こちら</a> の情報を参照ください。</li>
+</ul>
+<p>一部のお客様にて、これらの API を利用しているテナント内のアプリケーションを事前に特定するためのガイダンスや支援について Microsoft サポートに問い合わせをいただいています。</p>
+<p>この記事の目的は、どのような手段が利用可能であるかを説明し、一連の詳細手順を提供することです。</p>
+<p>Exchange Online に接続するための API のアクセス許可を付与する場所は、使用されている API に応じて以下の 2 つが存在します。</p>
+<ul>
+<li>Azure AD におけるアプリの登録: Outlook REST v2 API、Exchange Web Services (EWS)、Microsoft Graph、IMAP、POP、SMTP を含むすべての Exchagne Online の API に対して使用されます。</li>
+<li>Exchange Online におけるアプリケーション用の RBAC: Microsoft Graph および EWS アプリケーションにのみ使用されます。</li>
+</ul>
+<p>Azure AD では ‘Microsoft Entra 管理センター’ または Windows PowerShell を利用することで、個々のアプリケーションそれぞれに付与されている API のアクセス許可を確認することができます。</p>
+<p>‘Microsoft Entra 管理センター’ にて個々のアプリの登録を手動で確認するのは、特にテナントに数百ものアプリケーションが登録されている場合には、非常に手間と時間のかかる作業です。</p>
+<p>Windows PowerShell を使用して Azure AD から API の権限をエクスポートすることも、気の遠くなるような作業であるため、必要な手順の詳細な説明を提供することがこの記事の目的です。  </p>
+<blockquote>
+<p>注: Azure AD から API のアクセス許可をエクスポートするサンプル スクリプトは、この記事の末尾にて掲載しています。  </p>
+</blockquote>
+<p>前述の通り、Azure AD にて付与された API のアクセス許可に加えて、Microsoft Graph と EWS API 向けには Exchange Online の RBAC の役割を通じてアクセス許可を付与することが可能であり、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/exchange/permissions-exo/application-rbac">こちら</a> のドキュメントに詳細が記載されています。</p>
+<p>現時点で、アプリケーション用の RBAC で付与された API のアクセス許可を確認する唯一の方法は、Exchange Online Management v3 PowerShell モジュールを使用することです。これらのアクセス許可を確認するための詳細な手順は、このタスクを自動化するためのサンプル スクリプトと併せて後述します。</p>
+<h2 id="Azure-Active-Directory-にて付与された-API-のアクセス許可をエクスポートする"><a href="#Azure-Active-Directory-にて付与された-API-のアクセス許可をエクスポートする" class="headerlink" title="Azure Active Directory にて付与された API のアクセス許可をエクスポートする"></a>Azure Active Directory にて付与された API のアクセス許可をエクスポートする</h2><p>前述の通り、Azure AD にて付与された API のアクセス許可を確認するには 2 つの方法があります。  </p>
+<h3 id="Microsoft-Entra-管理センターの-GUI-を利用する"><a href="#Microsoft-Entra-管理センターの-GUI-を利用する" class="headerlink" title="Microsoft Entra 管理センターの GUI を利用する"></a>Microsoft Entra 管理センターの GUI を利用する</h3><ul>
+<li>グローバル管理者にて <a target="_blank" rel="noopener" href="https://entra.microsoft.com/">Microsoft Entra 管理センター</a> にサインインします。</li>
+<li>[ID] メニューを展開し、 [アプリケーション] &gt; [アプリの登録] を選択します。</li>
+<li>[アプリの登録] 画面にて、[すべてのアプリケーション] タブから、確認したい各アプリケーション登録を選択します。アプリケーション登録の [概要] ペインが開かれます。</li>
+<li>ウィンドウの左ペインから、[管理] メニュー配下の [API のアクセス許可] を選択します。</li>
+</ul>
+<h3 id="PowerShell-AzureAD-または-Microsoft-Graph-モジュールのいずれかを利用する"><a href="#PowerShell-AzureAD-または-Microsoft-Graph-モジュールのいずれかを利用する" class="headerlink" title="PowerShell: AzureAD または Microsoft.Graph モジュールのいずれかを利用する"></a>PowerShell: AzureAD または Microsoft.Graph モジュールのいずれかを利用する</h3><p>PowerShell で実施する場合、’AzureAD’ モジュールまたは ‘Microsoft.Graph’ モジュールのいずれかを使用することが可能で、どちらも同じような高度なアプローチをかけることができます。</p>
+<p>‘Microsoft.Graph’ モジュールをアプリケーションのアクセス許可で使用する場合には、テナントに Microsoft Graph モジュール用のアプリが登録され、’Application.Read.All’ のアクセス許可が適切に付与されていることを確認ください。</p>
+<p>これらの手順の詳細については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/authentication-commands?view=graph-powershell-1.0">Authentication module cmdlets in Microsoft Graph PowerShell</a> の情報を参照ください。  </p>
+<blockquote>
+<p>この記事の最後に、記事で紹介したステップを自動化するために役立ついくつかのサンプル スクリプトのリンクがあります。</p>
+</blockquote>
+<h3 id="‘AzureAD’-PowerShell-モジュールを利用する"><a href="#‘AzureAD’-PowerShell-モジュールを利用する" class="headerlink" title="‘AzureAD’ PowerShell モジュールを利用する"></a>‘AzureAD’ PowerShell モジュールを利用する</h3><p>重要: AzureAD PowerShell モジュールは 2024 年 3 月 30 日に廃止される予定です。詳細については、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/microsoft-entra-azure-ad-blog/important-azure-ad-graph-retirement-and-powershell-module/ba-p/3848270">Important: Azure AD Graph Retirement and Powershell Module Deprecation</a> および <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/powershell/microsoftgraph/migration-steps?view=graph-powershell-1.0">Upgrade from Azure AD PowerShell to Microsoft Graph PowerShell</a> の情報を参照ください。</p>
+<p><ins>詳細手順</ins></p>
+<p>最新の Azure AD モジュールがインストールされていることを確認します。Azure AD モジュールは PowerShell 7 では利用できませんのでご注意ください。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="built_in">Get-InstalledModule</span> <span class="string">&#x27;AzureAD&#x27;</span> | <span class="built_in">Select-Object</span> Name, Version</span><br><span class="line">Name    Version</span><br><span class="line"><span class="literal">----</span>    <span class="literal">-------</span></span><br><span class="line">AzureAD <span class="number">2.0</span>.<span class="number">2.182</span></span><br></pre></td></tr></table></figure>
+
+<p>グローバル管理者アカウントにて Connect-AzureAD コマンドレットを実行し、Azure Active Directory に接続します。  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="built_in">Connect-AzureAD</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Get-AzureADApplication -All $true</code> コマンドを実行すると、すべてのアプリの登録を取得できます。</p>
+<p>注: 以降の説明では、EWS の委任およびアプリケーションのアクセス許可を持つ特定のアプリの登録 (ObjectId が 7cb7d375-b0e9-40e3-8abe-4c4fcfe4e1de であるもの) を例に使用しています。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AppReg</span> = <span class="built_in">Get-AzureADApplication</span> <span class="literal">-ObjectId</span> <span class="number">7</span>cb7d375<span class="literal">-b0e9-40e3-8abe-4c4fcfe4e1de</span></span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AppReg</span> | <span class="built_in">Select-Object</span> DisplayName, AppId</span><br><span class="line">DisplayName        AppId</span><br><span class="line"><span class="literal">-----------</span>        <span class="literal">-----</span></span><br><span class="line">My EWS Application <span class="number">5951643</span>e<span class="literal">-5013-442f-963c-1ee875bbe74a</span></span><br></pre></td></tr></table></figure>
+
+<p>アプリの登録について、RequiredResourceAccess コレクションを取得します。RequireResourceAccess コレクションに含まれるそれぞれのアイテムについて、ResourceAppId プロパティ (GUID) と ResourceAccess コレクションの両方を取得します。上記のコマンドで取得した特定のアプリの登録に対して、次の例では RequiredResourceAccess コレクションの最初の 1 つのオブジェクトの ResourceAppId および ResourceAccess コレクションのみを取得しています。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ReqResAccess</span> = <span class="variable">$AppReg</span>.RequiredResourceAccess[<span class="number">0</span>]</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ReqResAccess</span>[<span class="number">0</span>].ResourceAppId</span><br><span class="line"><span class="number">00000002</span><span class="literal">-0000-0ff1-ce00-000000000000</span></span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ReqResAccess</span>[<span class="number">0</span>].ResourceAccess</span><br><span class="line">Id                                   <span class="built_in">Type</span></span><br><span class="line"><span class="literal">--</span>                                   <span class="literal">----</span></span><br><span class="line"><span class="number">3</span>b5f3d61<span class="literal">-589b-4a3c-a359-5dd4b5ee5bd5</span> Scope</span><br><span class="line">dc890d15<span class="literal">-9560-4a4c-9b7f-a736ec74ec40</span> Role</span><br></pre></td></tr></table></figure>
+
+<p>取得した ResourceAppId プロパティ (GUID) を使って <code>Get-AzureADServicePrincipal</code> コマンドを実行することで、ResourceAppId に対応する Service Principal オブジェクトを Azure AD から取得します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ServicePrincipal</span> = <span class="built_in">Get-AzureADServicePrincipal</span> <span class="literal">-All</span> <span class="variable">$true</span> | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.AppId <span class="operator">-eq</span> <span class="variable">$</span>(<span class="variable">$ReqResAccess</span>[<span class="number">0</span>].ResourceAppId)&#125;</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ServicePrincipal</span> | <span class="built_in">Select-Object</span> AppId, DisplayName</span><br><span class="line">AppId                                DisplayName</span><br><span class="line"><span class="literal">-----</span>                                <span class="literal">-----------</span></span><br><span class="line"><span class="number">00000002</span><span class="literal">-0000-0ff1-ce00-000000000000</span> Office <span class="number">365</span> Exchange Online</span><br></pre></td></tr></table></figure>
+
+<p>RequiredResourceAccess コレクション内のアイテムそれぞれに対して前記の手順をループして実行します。  </p>
+<p>ResourceAccess コレクション内のアイテムの Type プロパティが ‘Scope’ の場合、そのアイテムは委任されたアクセス許可です。Service Principal オブジェクトの Oauth2Permissions コレクション内のエントリのうち、ID プロパティが対象の ResourceAccess コレクション内のアイテムの ID プロパティと合致するエントリを探します。次の例では、委任されたアクセス許可が ResourceAccess コレクション内の最初のオブジェクトであるため、インデックスが 0 となります。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ReqResAccess</span>[<span class="number">0</span>].ResourceAccess[<span class="number">0</span>]</span><br><span class="line">Id                                   <span class="built_in">Type</span></span><br><span class="line"><span class="literal">--</span>                                   <span class="literal">----</span></span><br><span class="line"><span class="number">3</span>b5f3d61<span class="literal">-589b-4a3c-a359-5dd4b5ee5bd5</span> Scope</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AppScope</span> = <span class="variable">$ServicePrincipal</span>.Oauth2Permissions | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.Id <span class="operator">-eq</span> <span class="string">&quot;<span class="variable">$</span>(<span class="variable">$ReqResAccess</span>[0].ResourceAccess[0].Id)&quot;</span>&#125;</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AppScope</span> | <span class="built_in">Select-Object</span> <span class="built_in">Type</span>, Value</span><br><span class="line"><span class="built_in">Type</span> Value</span><br><span class="line"><span class="literal">----</span> <span class="literal">-----</span></span><br><span class="line">User EWS.AccessAsUser.All</span><br></pre></td></tr></table></figure>
+
+<p>ResourceAccess コレクション内のアイテムの Type プロパティが ‘Role’ の場合、そのアイテムはアプリケーションのアクセス許可です。Service Principal オブジェクトの AppRoles コレクション内のエントリのうち、ID プロパティが対象の ResourceAccess コレクション内のアイテムの ID プロパティと合致するエントリを探します。次の例では、アプリケーションのアクセス許可が ResourceAccess コレクション内の 2 番目のオブジェクトであるため、インデックスが 1 となります。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ReqResAccess</span>[<span class="number">0</span>].ResourceAccess[<span class="number">1</span>]</span><br><span class="line">Id                                   <span class="built_in">Type</span></span><br><span class="line"><span class="literal">--</span>                                   <span class="literal">----</span></span><br><span class="line">dc890d15<span class="literal">-9560-4a4c-9b7f-a736ec74ec40</span> Role</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AppRole</span> = <span class="variable">$ServicePrincipal</span>.AppRoles | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.Id <span class="operator">-eq</span> <span class="string">&quot;<span class="variable">$</span>(<span class="variable">$ReqResAccess</span>[0].ResourceAccess[1].Id)&quot;</span>&#125;</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AppRole</span> | <span class="built_in">Select-Object</span> AllowedMemberTypes, Value</span><br><span class="line">AllowedMemberTypes Value</span><br><span class="line"><span class="literal">------------------</span> <span class="literal">-----</span></span><br><span class="line">&#123;Application&#125;      full_access_as_app</span><br></pre></td></tr></table></figure>
+
+<h3 id="‘Microsoft-Graph’-PowerShell-モジュールを利用する"><a href="#‘Microsoft-Graph’-PowerShell-モジュールを利用する" class="headerlink" title="‘Microsoft.Graph’ PowerShell モジュールを利用する"></a>‘Microsoft.Graph’ PowerShell モジュールを利用する</h3><p><ins>詳細手順</ins></p>
+<p>最新の Microsoft.Graph モジュールがインストールされていることを確認します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="built_in">Get-InstalledModule</span> <span class="string">&#x27;Microsoft.Graph&#x27;</span> | <span class="built_in">Select-Object</span> Name, Version</span><br><span class="line">Name            Version</span><br><span class="line"><span class="literal">----</span>            <span class="literal">-------</span></span><br><span class="line">Microsoft.Graph <span class="number">2.6</span>.<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>グローバル管理者アカウントにて Connect-MgGraph コマンドレットを実行し、Microsoft Graph に接続します。ベスト プラクティスとして必要最小限のアクセス許可を使用しているため、ここでは Application.Read.All を Scopes に指定します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Connect-MgGraph</span> <span class="literal">-Scopes</span> Application.Read.All</span><br></pre></td></tr></table></figure>
+
+<p><code>Get-MgApplication -All</code> コマンドを実行すると、すべてのアプリの登録を取得できます。</p>
+<p>注: 以降の説明では、Microsoft Graph の委任された ‘User.Read’ のアクセス許可、および、アプリケーションの ‘User.Read.All’ のアクセス許可を持つ特定のアプリの登録 (AppId が 283a0ec7-65c3-45a8-9739-1322b5696045 であるもの) を例に使用しています。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AppReg</span> = <span class="built_in">Get-MgApplication</span> | <span class="built_in">Where</span> &#123;<span class="variable">$_</span>.AppId <span class="operator">-eq</span> <span class="string">&#x27;283a0ec7-65c3-45a8-9739-1322b5696045&#x27;</span>&#125;</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AppReg</span> | <span class="built_in">Select-Object</span> DisplayName, AppId</span><br><span class="line">DisplayName          AppId</span><br><span class="line"><span class="literal">-----------</span>          <span class="literal">-----</span></span><br><span class="line">My Graph Application <span class="number">283</span>a0ec7<span class="literal">-65c3-45a8-9739-1322b5696045</span></span><br></pre></td></tr></table></figure>
+
+<p>アプリの登録について、 RequiredResourceAccess コレクションを取得します。RequireResourceAccess コレクションに含まれるそれぞれのアイテムについて、ResourceAppId プロパティ (GUID) と ResourceAccess コレクションの両方を取得します。次の例では RequiredResourceAccess コレクションの最初の 1 つのオブジェクトの ResourceAppId および ResourceAccess コレクションのみを取得しています。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ReqResAccess</span> = <span class="variable">$AppReg</span>.RequiredResourceAccess[<span class="number">0</span>]</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ReqResAccess</span>.ResourceAppId</span><br><span class="line"><span class="number">00000002</span><span class="literal">-0000-0ff1-ce00-000000000000</span></span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ReqResAccess</span>.ResourceAccess</span><br><span class="line">Id                                   <span class="built_in">Type</span></span><br><span class="line"><span class="literal">--</span>                                   <span class="literal">----</span></span><br><span class="line">e1fe6dd8<span class="literal">-ba31-4d61-89e7-88639da4683d</span> Scope</span><br><span class="line">df021288<span class="literal">-bdef-4463-88db-98f22de89214</span> Role</span><br></pre></td></tr></table></figure>
+
+<p>取得した ResourceAppId プロパティ (GUID) を使って <code>Get-MgServicePrincipal</code> コマンドを実行することで、ResourceAppId に相当する Service Principal オブジェクトを Graph から取得します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ServicePrincipal</span> = <span class="built_in">Get-MgServicePrincipal</span> <span class="literal">-All</span> | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.AppId <span class="operator">-eq</span> <span class="variable">$</span>(<span class="variable">$ReqResAccess</span>.ResourceAppId)&#125;</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ServicePrincipal</span> | <span class="built_in">Select-Object</span> AppId, DisplayName</span><br><span class="line">AppId                                DisplayName</span><br><span class="line"><span class="literal">-----</span>                                <span class="literal">-----------</span></span><br><span class="line"><span class="number">00000003</span><span class="literal">-0000-0000-c000-000000000000</span> Microsoft Graph</span><br></pre></td></tr></table></figure>
+
+<p>RequiredResourceAccess コレクション内のアイテムそれぞれに対して前記の手順をループして実行します。  </p>
+<p>ResourceAccess コレクション内のアイテムの Type プロパティが ‘Scope’ の場合、そのアイテムは委任されたアクセス許可です。Service Principal オブジェクトの Oauth2Permissions コレクション内のエントリのうち、ID プロパティが対象の ResourceAccess コレクション内のアイテムの ID プロパティと合致するエントリを探します。次の例では、委任されたアクセス許可が ResourceAccess コレクション内の最初のオブジェクトであるため、インデックスが 0 となります。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ReqResAccess</span>.ResourceAccess[<span class="number">0</span>]</span><br><span class="line">Id                                   <span class="built_in">Type</span></span><br><span class="line"><span class="literal">--</span>                                   <span class="literal">----</span></span><br><span class="line">e1fe6dd8<span class="literal">-ba31-4d61-89e7-88639da4683d</span> Scope</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AppScope</span> = <span class="variable">$ServicePrincipal</span>. Oauth2PermissionScopes | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.Id <span class="operator">-eq</span> <span class="string">&quot;<span class="variable">$</span>(<span class="variable">$ReqResAccess</span>.ResourceAccess[0].Id)&quot;</span>&#125;</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AppScope</span> | <span class="built_in">Select-Object</span> <span class="built_in">Type</span>, Value</span><br><span class="line"><span class="built_in">Type</span> Value</span><br><span class="line"><span class="literal">----</span> <span class="literal">-----</span></span><br><span class="line">User User.Read</span><br></pre></td></tr></table></figure>
+
+<p>ResourceAccess コレクション内のアイテムの Type プロパティが ‘Role’ の場合、そのアイテムはアプリケーションのアクセス許可です。Service Principal オブジェクトの AppRoles コレクション内のエントリのうち、ID プロパティが対象の ResourceAccess コレクション内のアイテムの ID プロパティと合致するエントリを探します。次の例では、アプリケーションのアクセス許可が ResourceAccess コレクション内の 2 番目のオブジェクトであるため、インデックスが 1 となります。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$ReqResAccess</span>.ResourceAccess[<span class="number">1</span>]</span><br><span class="line">Id                                   <span class="built_in">Type</span></span><br><span class="line"><span class="literal">--</span>                                   <span class="literal">----</span></span><br><span class="line">df021288<span class="literal">-bdef-4463-88db-98f22de89214</span> Role</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AppRole</span> = <span class="variable">$ServicePrincipal</span>.AppRoles | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.Id <span class="operator">-eq</span> <span class="string">&quot;<span class="variable">$</span>(<span class="variable">$ReqResAccess</span>.ResourceAccess[1].Id)&quot;</span>&#125;</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AppRole</span> | <span class="built_in">Select-Object</span> AllowedMemberTypes, Value</span><br><span class="line">AllowedMemberTypes Value</span><br><span class="line"><span class="literal">------------------</span> <span class="literal">-----</span></span><br><span class="line">&#123;Application&#125;      User.Read.All</span><br></pre></td></tr></table></figure>
+
+<h2 id="Exchange-Online-にて-RBAC-を利用してアプリケーション用に付与された-API-のアクセス許可をエクスポートする"><a href="#Exchange-Online-にて-RBAC-を利用してアプリケーション用に付与された-API-のアクセス許可をエクスポートする" class="headerlink" title="Exchange Online にて RBAC を利用してアプリケーション用に付与された API のアクセス許可をエクスポートする"></a>Exchange Online にて RBAC を利用してアプリケーション用に付与された API のアクセス許可をエクスポートする</h2><p>注: 下記で説明する方法とは別の方法として、<code>Test-ServicePrincipalAuthorization</code> コマンドレットを実行することで RBAC を利用して付与された API のアクセス許可を確認することもできます。  </p>
+<p><ins>詳細手順</ins></p>
+<p>最新の ExchangeOnlineManagement v3 モジュールがインストールされていることを確認します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="built_in">Get-InstalledModule</span> <span class="string">&#x27;ExchangeOnlineManagement&#x27;</span> | <span class="built_in">Select-Object</span> Name, Version</span><br><span class="line">Name                     Version</span><br><span class="line"><span class="literal">----</span>                     <span class="literal">-------</span></span><br><span class="line">ExchangeOnlineManagement <span class="number">3.3</span>.<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>Exchange 管理者アカウントにて Connect-ExchangeOnline コマンドレットを実行し、Exchange Online に接続します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="built_in">Connect-ExchangeOnline</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Get-ServicePrincipal</code> コマンドを実行すると、Exchange Online 内のすべての Service Principal オブジェクトを取得できます。</p>
+<p>以降の説明では、’Application EWS.AccessAsApp’ 役割が割り当てられている特定の Service Principal (Identity が 9672ee63-6e28-4ced-885e-fb595158a843 であるもの) を例に使用しています。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$SP</span> = <span class="built_in">Get-ServicePrincipal</span> <span class="literal">-Identity</span> <span class="number">9672</span>ee63<span class="literal">-6e28-4ced-885e-fb595158a843</span></span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$SP</span> | <span class="built_in">Select-Object</span> DisplayName, AppId</span><br><span class="line">DisplayName                   AppId</span><br><span class="line"><span class="literal">-----------</span>                   <span class="literal">-----</span></span><br><span class="line"><span class="built_in">SP</span> <span class="keyword">for</span> My EWS Application     <span class="number">5951643</span>e<span class="literal">-5013-442f-963c-1ee875bbe74a</span></span><br></pre></td></tr></table></figure>
+
+<p>Service Principal オブジェクトについて <code>Get-ManagementRoleAssignment</code> コマンドを実行し、すべての ManagementRoleAssignment を取得します。取得した ManagementRoleAssignment コレクションのそれぞれについて、Role、RoleAssignee、CustomerResourceScope を表示させるよう、ループして実行します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AllMgmtRoleAssigment</span> = <span class="built_in">Get-ManagementRoleAssignment</span> <span class="literal">-RoleAssignee</span> <span class="variable">$</span>(<span class="variable">$SP</span>.Identity)</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AllMgmtRoleAssigment</span>[<span class="number">0</span>] | <span class="built_in">Select-Object</span> RoleAssignee, Role, CustomResourceScope</span><br><span class="line">RoleAssignee                         Role                        CustomResourceScope</span><br><span class="line"><span class="literal">------------</span>                         <span class="literal">----</span>                        <span class="literal">-------------------</span></span><br><span class="line"><span class="number">9672</span>ee63<span class="literal">-6e28-4ced-885e-fb595158a843</span> Application EWS.AccessAsApp User1 scope</span><br></pre></td></tr></table></figure>
+
+<p>割り当てられた Role に関する詳細情報を取得したい場合には、<code>Get-ManagementRole</code> コマンドレットを実行します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="built_in">Get-ManagementRole</span> <span class="literal">-Identity</span> <span class="variable">$</span>(<span class="variable">$AllMgmtRoleAssigment</span>[<span class="number">0</span>].Role)</span><br><span class="line">Name                        RoleType</span><br><span class="line"><span class="literal">----</span>                        <span class="literal">--------</span></span><br><span class="line">Application EWS.AccessAsApp ApplicationEWSAccessAsApp</span><br></pre></td></tr></table></figure>
+
+<p>CustomResourceScope に関する詳細情報を取得したい場合には、RecipientWriteScope プロパティを確認します。そして、RecipientWriteScope の値に応じて、次のいずれかを実行します。</p>
+<p>RecipientWriteScope が CustomRecipientScope の場合には、<code>Get-ManagementScope</code> コマンドレットを実行します。  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AllMgmtRoleAssigment</span>[<span class="number">0</span>].RecipientWriteScope</span><br><span class="line">CustomRecipientScope</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="built_in">Get-ManagementScope</span> <span class="literal">-Identity</span> <span class="variable">$</span>(<span class="variable">$AllMgmtRoleAssigment</span>[<span class="number">0</span>].CustomResourceScope)</span><br><span class="line">Name        ScopeRestrictionType Exclusive RecipientRoot RecipientFilter   ServerFilter</span><br><span class="line"><span class="literal">----</span>        <span class="literal">--------------------</span> <span class="literal">---------</span> <span class="literal">-------------</span> <span class="literal">---------------</span>   <span class="literal">------------</span></span><br><span class="line">User1 scope RecipientScope       False                   Alias <span class="operator">-eq</span> <span class="string">&#x27;user1&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>RecipientWriteScope が AdministrativeUnit の場合には、<code>Get-AdministrativeUnit</code> コマンドレットを実行します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="variable">$AllMgmtRoleAssigment</span>[<span class="number">1</span>].RecipientWriteScope</span><br><span class="line">AdministrativeUnit</span><br><span class="line"><span class="built_in">PS</span> C:\&gt; <span class="built_in">get-AdministrativeUnit</span> <span class="literal">-Identity</span> <span class="variable">$AllMgmtRoleAssigment</span>[<span class="number">1</span>].CustomResourceScope</span><br><span class="line">Name                                                    DisplayName</span><br><span class="line"><span class="literal">----</span>                                                    <span class="literal">-----------</span></span><br><span class="line"><span class="number">60</span>f565a0<span class="literal">-9a30-40e6-a34e-4023db4616c2</span>                    Europe Admin Unit</span><br></pre></td></tr></table></figure>
+
+<h2 id="Azure-Active-Directory-にて付与された-API-のアクセス許可をエクスポートするためのサンプル-スクリプト"><a href="#Azure-Active-Directory-にて付与された-API-のアクセス許可をエクスポートするためのサンプル-スクリプト" class="headerlink" title="Azure Active Directory にて付与された API のアクセス許可をエクスポートするためのサンプル スクリプト"></a>Azure Active Directory にて付与された API のアクセス許可をエクスポートするためのサンプル スクリプト</h2><p>Azure AD に登録されたそれぞれのアプリの API のアクセス許可をエクスポートするサンプル スクリプト <strong>Export-AppReg_APIPermissions</strong> は <a target="_blank" rel="noopener" href="https://github.com/DirkBuntinx/Export-App-Registration-API-Permissions">こちらの GitHub サイトより利用可能</a> です。</p>
+<p>重要: このスクリプトは、Azure Active Directory に対して読み取り操作のみ実行します。  </p>
+<p>このスクリプトには 3 つの必須のパラメーターがあります。詳細情報は、スクリプトのドキュメントを参照ください。  </p>
+<p>以下にいくつか使用例を挙げます。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\<span class="built_in">Export-AppReg_APIPermissions_v1</span>.<span class="number">0</span>.ps1 <span class="literal">-UsePSModule</span>:Microsoft.Graph <span class="literal">-ExportAPIPermissions</span>:EWS <span class="literal">-OutputPath</span>:<span class="string">&#x27;C:\temp&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>‘Microsoft.Graph’ PowerShell モジュールを利用して Azure AD からすべてのアプリの登録を取得し、すべての ‘EWS’ API のアクセス許可をディレクトリ ‘C:\temp’ 配下のファイル ‘Export-AppReg_APIPermissions_<timestamp>.csv’ にエクスポートします。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\<span class="built_in">Export-AppReg_APIPermissions_v1</span>.<span class="number">0</span>.ps1 <span class="literal">-UsePSModule</span>:AzureAD <span class="literal">-ExportAPIPermissions</span>:EWS <span class="literal">-OutputPath</span>:<span class="string">&#x27;C:\temp&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>‘AzureAD’ PowerShell モジュールを利用して Azure AD からすべてのアプリの登録を取得し、すべての ‘EWS’ API のアクセス許可をディレクトリ ‘C:\temp’ 配下のファイル ‘Export-AppReg_APIPermissions_<timestamp>.csv’ にエクスポートします。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\<span class="built_in">Export-AppReg_APIPermissions_v1</span>.<span class="number">0</span>.ps1 <span class="literal">-UsePSModule</span>:Microsoft.Graph <span class="literal">-ExportAPIPermissions</span>:OutlookRESTv2 <span class="literal">-OutputPath</span>:<span class="string">&#x27;C:\temp&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>‘Microsoft.Graph’ PowerShell モジュールを利用して Azure AD からすべてのアプリの登録を取得し、すべての Outlook REST v2 API のアクセス許可をディレクトリ ‘C:\temp’ 配下のファイル ‘Export-AppReg_APIPermissions_<timestamp>.csv’ にエクスポートします。</p>
+<h2 id="Exchange-Online-にて-RBAC-を利用してアプリケーション用に付与された-API-のアクセス許可をエクスポートするためのサンプル-スクリプト"><a href="#Exchange-Online-にて-RBAC-を利用してアプリケーション用に付与された-API-のアクセス許可をエクスポートするためのサンプル-スクリプト" class="headerlink" title="Exchange Online にて RBAC を利用してアプリケーション用に付与された API のアクセス許可をエクスポートするためのサンプル スクリプト"></a>Exchange Online にて RBAC を利用してアプリケーション用に付与された API のアクセス許可をエクスポートするためのサンプル スクリプト</h2><p>Exchange Online 内のそれぞれの Service Principal オブジェクトについて API のアクセス許可をエクスポートするサンプル スクリプト <strong>Export-RBAC_APIPermissions</strong> は <a target="_blank" rel="noopener" href="https://github.com/DirkBuntinx/Export-RBAC-for-Applications-Permissions">こちらの GitHub サイトより利用可能</a> です。</p>
+<p>重要: このスクリプトは、Exchange Online に対して読み取り操作のみ実行します。  </p>
+<p>記事の投稿内容に対するフィードバックをお待ちしています。</p>
+<p>Dirk Buntinx</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/identify-applications-using-exchange-online-outlookrestv2-or/" data-id="cmjksis08005lhg2ae103b13x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/Exchange-Server-Roadmap-Update/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Exchange Server ロードマップの更新
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/Exchange-Online-email-applications-stopped-signing-in-or-keep-asking-for-passwords/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange Online のメール アプリケーションにサインインできない、またはパスワードを繰り返し要求されますか? ここから対策を始めましょう。
+</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

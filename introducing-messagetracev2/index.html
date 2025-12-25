@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>MessageTraceV2 の紹介
+ | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="こんにちは。Exchange &#x2F; Outlook サポートの柳本です。以前よりこちらの記事で、HistoricalSearch と呼ばれる Exchange Online で提供されている中で最も詳細なメッセージ追跡ログを紹介していました。今回は新たに MessageTraceV2 と呼ばれる種類のメッセージ追跡ログが追加されましたのでご紹介いたします。   MessageTraceV2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MessageTraceV2 の紹介
+">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/introducing-messagetracev2/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="こんにちは。Exchange &#x2F; Outlook サポートの柳本です。以前よりこちらの記事で、HistoricalSearch と呼ばれる Exchange Online で提供されている中で最も詳細なメッセージ追跡ログを紹介していました。今回は新たに MessageTraceV2 と呼ばれる種類のメッセージ追跡ログが追加されましたのでご紹介いたします。   MessageTraceV2">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-messagetracev2/image.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-messagetracev2/image2.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-messagetracev2/image3.png">
+<meta property="article:published_time" content="2025-06-22T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-22T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/introducing-messagetracev2/image.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-introducing-messagetracev2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/introducing-messagetracev2/" class="article-date">
+  <time datetime="2025-06-22T15:00:00.000Z" itemprop="datePublished">2025-06-23</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MessageTraceV2 の紹介
+
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/introducing-messagetracev2/" class="article-date-single">    
+    
+    <time datetime="2025-06-22T15:00:00.000Z" itemprop="dateUpdated">2025-06-23</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>こんにちは。Exchange &#x2F; Outlook サポートの柳本です。以前より<a href="https://jpmessaging.github.io/blog/Exchange-Online-Message-Tracking-Log/">こちら</a>の記事で、HistoricalSearch と呼ばれる Exchange Online で提供されている中で最も詳細なメッセージ追跡ログを紹介していました。<br>今回は新たに MessageTraceV2 と呼ばれる種類のメッセージ追跡ログが追加されましたのでご紹介いたします。  </p>
+<h2 id="MessageTraceV2-とは"><a href="#MessageTraceV2-とは" class="headerlink" title="MessageTraceV2 とは"></a>MessageTraceV2 とは</h2><p>MessageTraceV2 とは、従来の MessageTrace (以降 MessageTraceV1) に改良を加えたメッセージ追跡ログです。<br>MessageTraceV2 はここしばらくパブリック プレビュー版でご提供していましたが、<a href="https://jpmessaging.github.io/blog/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/">こちらの記事</a>でもアナウンスがあった通り一般提供が開始されました。</p>
+<p>MessageTraceV2 は Exchange 管理センターと PowerShell の Get-MessageTraceV2 &#x2F; Get-MessageTraceDetailV2 コマンドの両方で利用可能です。<br>(本記事では Get-MessageTraceDetailV2 コマンドの利用方法は述べませんが、概ね従来の Get-MessageTraceDetail コマンドと同様にお使いいただけます。)</p>
+<p>Exchange 管理センターと Get-MessageTraceV2 コマンド両方に共通している <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">MessageTraceV1 からの大きな改善点は以下の 2 点です。</span></p>
+<ul>
+<li><strong>最大で過去 90 日前までのログを取得可能 (ただし、一度の取得で 10 日間以内)</strong></li>
+<li><strong>メールの件名でフィルターが可能</strong></li>
+</ul>
+<p>* MessageTraceV1 は最大で過去 10 日まで かつ 件名でのフィルターは不可</p>
+<p>これまでは 10 日より前のログを取得したい場合には<a href="https://jpmessaging.github.io/blog/Exchange-Online-Message-Tracking-Log/">こちら</a>で紹介している HistoricalSearch を使用する必要がありました。<br>しかしながら、HistoricalSearch はメールの送受信からログに反映されるまでに時間を要したり、HistoricalSearch 自体の取得にも時間を要したり、気軽に取得することが難しいという欠点がありました。<br>MessageTraceV2 は HistoricalSearch よりも比較的短時間でログに反映され、かつログの取得も短時間で行うことが可能です。<br>メールのステータスや受信日時などの簡単な情報だけをすぐに確認したい機会は多いと思いますので、Exchange Online の管理者の皆様にも MessageTraceV2 のメリットを感じていただけるのではないでしょうか。</p>
+<p>ただし、あくまで MessageTraceV2 は MessageTraceV1 の後継であるため、取得できる内容に変更はありません。<br><span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">最も詳細なメッセージ追跡ログは HistoricalSearch であるという点も変わりはありませんので、弊社サポート サービスにてトラブルシューティングのご支援を行う場合には引き続き HistoricalSearch の取得を依頼させていただく場合が多いことをご了承ください。</span></p>
+<p>それでは MessageTraceV2 を Exchange 管理センターと PowerShell の Get-MessageTraceV2 コマンドそれぞれで取得する方法を見ていきましょう。</p>
+<h2 id="Exchange-管理センターで取得する場合"><a href="#Exchange-管理センターで取得する場合" class="headerlink" title="Exchange 管理センターで取得する場合"></a>Exchange 管理センターで取得する場合</h2><p>Exchange 管理センターでは <strong>[Exchange 管理センター] &gt; [メール フロー] &gt; [メッセージ追跡]</strong> より MessageTraceV2 を利用可能です。<br>以下の URL より直接開くことも可能です。</p>
+<p><a target="_blank" rel="noopener" href="https://admin.exchange.microsoft.com/#/messagetrace">https://admin.exchange.microsoft.com/#/messagetrace</a></p>
+<p>以下の画面では <strong>[新しいメッセージ追跡を試す]</strong> のトグルをオンにすることで MessageTraceV2 になります。<br>トグルをオンにすることで件名を入力する項目が増えます。</p>
+<p><img src="/blog/./introducing-messagetracev2/image.png">  </p>
+<p>後はお好みの条件を指定して実行するだけです。ただし、上述の通り一度に取得できる期間は 10 日までであることにご注意ください。</p>
+<p>※ MessageTraceV2 を利用するためには [レポートの種類] を <strong>[要約レポート]</strong> に設定する必要があります。<br><img src="/blog/./introducing-messagetracev2/image2.png"></p>
+<h2 id="Get-MessageTraceV2-コマンドで取得する場合"><a href="#Get-MessageTraceV2-コマンドで取得する場合" class="headerlink" title="Get-MessageTraceV2 コマンドで取得する場合"></a>Get-MessageTraceV2 コマンドで取得する場合</h2><p>事前準備として、PowerShell から Exchange Online に接続します。詳細は下記の公開情報をご参照ください。<br>なお、Get-MessageTraceV2 は継続的に改良が加えられていますので、<span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">最新版の ExchangeOnlineManagement モジュールへ更新した上でご利用ください。</span></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps">Exchange Online PowerShell に接続する</a></p>
+<p>冒頭に記載した MessageTraceV2 の特徴 (取得期間と件名でのフィルター) 以外にも細かな差異はありますが、基本的な使い方は従来の Get-MessageTrace コマンドと同等です。<br>最も大きな差異は Get-MessageTraceV2 コマンドにはページング機能がないことです。<br>そのため、多数のログを取得する方法が従来の Get-MessageTrace コマンドとは異なっていますが、その方法は後述します。<br>まずは基本的な使い方をご紹介します。</p>
+<h3 id="パラメーターを指定しないで実行する"><a href="#パラメーターを指定しないで実行する" class="headerlink" title="パラメーターを指定しないで実行する"></a>パラメーターを指定しないで実行する</h3><p>まず、以下の通り何もパラメーターを付けないで実行することができます。  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-MessageTraceV2</span></span><br></pre></td></tr></table></figure>
+
+<p>この場合、過去 48 時間以内のログが取得され、かつ最大で 1,000 件までのログが表示されます。<br><span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">出力結果はまず受信日時 (Received) で降順で並び替えられ、同一受信日時内では受信者のメール アドレス (RecipientAddress) で昇順に並び替えられて表示されます。</span></p>
+<h3 id="開始-終了日時と出力結果数を指定する"><a href="#開始-終了日時と出力結果数を指定する" class="headerlink" title="開始&#x2F;終了日時と出力結果数を指定する"></a>開始&#x2F;終了日時と出力結果数を指定する</h3><p>以下は検索対象の開始&#x2F;終了日時と出力結果数を指定する例です。  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-MessageTraceV2</span> <span class="literal">-StartDate</span> <span class="string">&quot;2025-06-05Z&quot;</span> <span class="literal">-EndDate</span> <span class="string">&quot;2025-06-15Z&quot;</span> <span class="literal">-ResultSize</span> <span class="number">100</span></span><br></pre></td></tr></table></figure>
+
+<p><span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">開始&#x2F;終了日時は最大で過去 90 日前まで指定できますが、一度に指定できるのは最大 10 日間です。<br>出力結果数 (-ResultSize) は 1 から 5000 の間で指定可能です。</span></p>
+<h4 id="日時についての補足"><a href="#日時についての補足" class="headerlink" title="日時についての補足"></a>日時についての補足</h4><p>-StartDate や -EndDate パラメーターには日時を指定できますが、様々な表記で指定することができます。<br>本ブログでは ISO 8601 で定められた表記に従って <code>2025-06-05Z</code> のように記載しています。<br>これは、末尾に <code>Z</code> を付与することで明示的に UTC (協定世界時) で指定していることを示しています。<br>日本時間は UTC より 9 時間進んでいます (UTC + 9 時間)。</p>
+<p>もし明示的に日本時間で指定する場合には <code>2025-06-05+09:00</code> と記載します。<br>更に、時刻まで指定する場合には <code>2025-06-05T10:00:00+09:00</code> (日本時間 10:00) となります。  </p>
+<p>意図しない結果が取得されてしまうことを防ぐためにも、タイムゾーンは明示的に指定することをおすすめします。<br><span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">取得したい対象のメールが定まっており、取りこぼしを防ぎたい場合には少し広めの日時を指定することも有効です。</span></p>
+<p><span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">なお、指定方法に依らず Get-MessageTraceV2 コマンドの出力結果は UTC で表記されています。</span></p>
+<h3 id="件名でフィルターする"><a href="#件名でフィルターする" class="headerlink" title="件名でフィルターする"></a>件名でフィルターする</h3><p>以下はメールの件名でフィルターする例です。  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-MessageTraceV2</span> <span class="literal">-Subject</span> <span class="string">&quot;1 on 1&quot;</span> <span class="literal">-SubjectFilterType</span> StartsWith</span><br></pre></td></tr></table></figure>
+
+<p>-SubjectFilterType パラメーターで以下の中からフィルター方法を選択可能です。</p>
+<ul>
+<li>Contains: 部分一致</li>
+<li>EndsWith: 後方一致</li>
+<li>StartsWith: 前方一致</li>
+</ul>
+<p>※パフォーマンスの観点から、可能な限り EndsWith または StartsWith の利用を推奨しています。</p>
+<h3 id="多数のログをページングする"><a href="#多数のログをページングする" class="headerlink" title="多数のログをページングする"></a>多数のログをページングする</h3><p>最後に多数のログを出力する場合の方法をご紹介します。<br>多数のログを出力する必要がある場合、少数のログを小分けにして複数回取得する方法 (ページング) があります。  </p>
+<p>Get-MessageTraceV2 コマンドでは、従来の Get-MessageTrace コマンドでは使用できたページングのためのパラメーター (-Page や -PageSize) が使用できなくなりました。<br>そこで、Get-MessageTraceV2 コマンドの結果が受信日時で降順に並べらているという特徴と、新たに導入された -StartingRecipientAddress パラメーターを使用してページングを実現します。</p>
+<p>ページングは基本的に Get-MessageTraceV2 コマンド実行時に出力される場合がある以下の警告に従うだけです。  </p>
+<pre><code>WARNING: There are more results, use the following command to get more. Get-MessageTraceV2 -StartDate &quot;2025-06-05T00:00:00.0000000Z&quot; -EndDate &quot;2025-06-12T03:01:53.7240000Z&quot; -StartingRecipientAddress &quot;xxxx@contoso.com&quot; -ResultSize 10
+</code></pre>
+<p>上記の警告が表示された場合、条件に合致する結果が更に存在するということを示しています。<br>そして警告には残りのログを取得するためのコマンドが記載されていますので、そのまま実行することで残りのログを取得することが可能です。<br>(-StartingRecipientAddress パラメーターなどの仕組みは後述します。)  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-MessageTraceV2</span> <span class="literal">-StartDate</span> <span class="string">&quot;2025-06-05T00:00:00.0000000Z&quot;</span> <span class="literal">-EndDate</span> <span class="string">&quot;2025-06-12T03:01:53.7240000Z&quot;</span> <span class="literal">-StartingRecipientAddress</span> <span class="string">&quot;xxxx@contoso.com&quot;</span> <span class="literal">-ResultSize</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<p>更に警告が表示されたらその内容に従って警告が表示されなくなるまで繰り返し実行することで、最後までログを取得可能です。  </p>
+<p>上記のページングを機械的に、例えばスクリプトに組み込みたいというご要望もあるかと存じます。<br>その場合には以下の手順を実施することで同様の方法でページングを実現可能です。</p>
+<p>まず、以下の通り開始&#x2F;終了日時を絞った上でページ サイズ (1 回当たりの取得数) を指定してコマンドを実行します。その他のフィルターは適宜追加ください。<br>また、結果は変数に格納されますので、必要に応じてファイルに出力するなどして活用ください。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$mt1</span> = <span class="built_in">Get-MessageTraceV2</span> <span class="literal">-StartDate</span> <span class="string">&quot;2025-06-05Z&quot;</span> <span class="literal">-EndDate</span> <span class="string">&quot;2025-06-15Z&quot;</span> <span class="literal">-ResultSize</span> <span class="number">10</span></span><br></pre></td></tr></table></figure>
+
+<p>次に、以下の通りコマンドを実行することで続きのログを取得することが可能です。<br>Get-MessageTraceV2 コマンドの結果は受信日時で降順に並べられているという特徴がありますので、このように指定することで前回の結果の最後の行 (前回の結果で一番古い日) から続きを取得することが可能となります。  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$mt2</span> = <span class="built_in">Get-MessageTraceV2</span> <span class="literal">-StartDate</span> <span class="string">&quot;2025-06-05Z&quot;</span> <span class="literal">-EndDate</span> <span class="variable">$mt1</span>[-<span class="number">1</span>].Received.ToString(<span class="string">&quot;O&quot;</span>) <span class="literal">-ResultSize</span> <span class="number">10</span> <span class="literal">-StartingRecipientAddress</span> <span class="variable">$mt1</span>[-<span class="number">1</span>].RecipientAddress</span><br></pre></td></tr></table></figure>
+
+<p>-StartDate には前回の実行時と同じ値を指定します。<br>-EndDate には前回の実行結果の最後のログに記録されている受信日時を指定しています。  </p>
+<p>後は以下の通り繰り返し実行します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$mt3</span> = <span class="built_in">Get-MessageTraceV2</span> <span class="literal">-StartDate</span> <span class="string">&quot;2025-06-05Z&quot;</span> <span class="literal">-EndDate</span> <span class="variable">$mt2</span>[-<span class="number">1</span>].Received.ToString(<span class="string">&quot;O&quot;</span>) <span class="literal">-ResultSize</span> <span class="number">10</span> <span class="literal">-StartingRecipientAddress</span> <span class="variable">$mt2</span>[-<span class="number">1</span>].RecipientAddress</span><br><span class="line"><span class="variable">$mt4</span> = <span class="built_in">Get-MessageTraceV2</span> <span class="literal">-StartDate</span> <span class="string">&quot;2025-06-05Z&quot;</span> <span class="literal">-EndDate</span> <span class="variable">$mt3</span>[-<span class="number">1</span>].Received.ToString(<span class="string">&quot;O&quot;</span>) <span class="literal">-ResultSize</span> <span class="number">10</span> <span class="literal">-StartingRecipientAddress</span> <span class="variable">$mt3</span>[-<span class="number">1</span>].RecipientAddress</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>実行結果を格納する変数に何もログが格納されていなければ、それ以上ログが存在しないことを示します。<br>これを持って終了と判断できます。<br>変数名等を適宜変更し、ご要望に合わせてスクリプト化することもご検討ください。</p>
+<h4 id="StartingRecipientAddress-パラメーターに関する補足"><a href="#StartingRecipientAddress-パラメーターに関する補足" class="headerlink" title="-StartingRecipientAddress パラメーターに関する補足"></a>-StartingRecipientAddress パラメーターに関する補足</h4><p>ページングをする時のコマンドに見慣れないパラメーター -StartingRecipientAddress が登場したことにお気づきかと思います。<br>-StartingRecipientAddress パラメーターは上記例のように特に意味を気にせず付けていただいて構いませんが、もう少し詳細に解説します。</p>
+<p>-StartingRecipientAddress パラメーターの目的はログを重複することなく効率的に取得することです。<br>逆に言うと、-StartingRecipientAddress パラメーターがない場合には重複したログを取得してしまう可能性があるということです。</p>
+<p>Get-MessageTraceV2 コマンドの出力結果は 1 受信者につき 1 ログ (1 行) として記録されます。<br>つまり、1 通のメールに複数の受信者が含まれている場合には、同じ受信日時に複数行ログが出力されることとなります。  </p>
+<p>上記で紹介したページングを行うためのコマンドでは、前回実行したコマンドの最終行にある受信日時を次回の -EndDate パラメーターに指定しています。<br>-EndDate パラメーターだけの指定では、以下の例のように複数回のコマンドで重複したログを取得してしまう可能性があります。</p>
+<p><img src="/blog/./introducing-messagetracev2/image3.png"></p>
+<p>これを防ぐために、-StartingRecipientAddress パラメーターは「指定した受信者の次の受信者からログ取得を開始する」ことを意味します。<br>つまり、前回の結果に含まれる最後の受信者を指定しておけば間違いありません。</p>
+<p>Get-MessageTraceV2 コマンドにはこれまでにご紹介したパラメーター以外にも -Status や -SenderAddress などのパラメーターがあります。これらは従来の Get-MessageTrace コマンドでも利用可能だったもので、組み合わせてお使いいただけます。<br>詳細はコマンド リファレンス (<a target="_blank" rel="noopener" href="https://learn.microsoft.com/powershell/module/exchange/get-messagetracev2?view=exchange-ps">Get-MessageTraceV2</a>) をご参照ください。</p>
+<h4 id="スロットリングに関する補足"><a href="#スロットリングに関する補足" class="headerlink" title="スロットリングに関する補足"></a>スロットリングに関する補足</h4><p>Get-MessageTraceV2 コマンドおよび Get-MessageTraceDetailV2 コマンドにはスロットリングの制限が設けられています。<br>これには、コマンドを大量に実行することで Exchange Online のリソースを大きく消費してしまうことを防ぎ、多くのお客様に平等にサービスをご利用いただけるようにする目的があります。</p>
+<p>これらのコマンドの制限は以下の通りテナント単位で設定されています。<br>スクリプト等でコマンドを大量に実行される予定のある場合はご注意ください。</p>
+<table>
+<thead>
+<tr>
+<th>コマンド</th>
+<th>テナント単位の制限値</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Get-MessageTraceV2</td>
+<td>100 リクエスト &#x2F; 5 分</td>
+</tr>
+<tr>
+<td>Get-MessageTraceDetailV2</td>
+<td>100 リクエスト &#x2F; 5 分</td>
+</tr>
+</tbody></table>
+<h2 id="MessageTraceV1-の廃止"><a href="#MessageTraceV1-の廃止" class="headerlink" title="MessageTraceV1 の廃止"></a>MessageTraceV1 の廃止</h2><p>Exchange 管理センターおよび Get-MessageTrace&#x2F;Get-MessageTraceDetail コマンドで取得可能な <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">MessageTraceV1 は 2025 年 9 月 1 日に廃止が開始される予定です。</span><br>それまでの間は MessageTraceV1 と MessageTraceV2 を並行してご利用いただくことが可能です。  </p>
+<p>また、Reporting web service を使用したメッセージ追跡ログも同日に廃止が開始されます。<br>MessageTraceV2 は Reporting web service では提供されません。<br>そのため、Reporting web service をご利用の場合も PowerShell の Get-MessageTraceV2 コマンドへの以降をご検討ください。</p>
+<h2 id="参考情報"><a href="#参考情報" class="headerlink" title="参考情報"></a>参考情報</h2><ul>
+<li><p>MessageTraceV2 の GA (一般提供) をお知らせしたブログ<br><a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/4420243">Announcing General Availability (GA) of the New Message Trace in Exchange Online</a> (日本語抄訳版は<a href="https://jpmessaging.github.io/blog/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/">こちら</a>)</p>
+</li>
+<li><p>MessageTraceV2 の詳細についてご案内したブログ<br><a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/announcing-public-preview-of-the-new-message-trace-in-exchange-online/4356561">Announcing Public Preview of the New Message Trace in Exchange Online</a></p>
+</li>
+<li><p>MessageTraceV2 に関する公開情報<br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/monitoring/trace-an-email-message/new-message-trace">New Message trace in Exchange admin center in Exchange Online</a></p>
+</li>
+</ul>
+<hr>
+<p><strong>本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/introducing-messagetracev2/" data-id="cmjksis0e0061hg2abfth18c5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/embracing-the-future-transitioning-to-new-outlook-for-windows/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          未来に向けた進化 : 新しい Outlook for Windows への移行
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ディレクトリ ベースのエッジ ブロックがパブリック フォルダーと動的配布グループで利用可能になりました</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

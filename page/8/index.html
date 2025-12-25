@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/page/8/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="jpmessaging">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Decommissioning-Exchange-Server-2016" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Decommissioning-Exchange-Server-2016/" class="article-date">
+  <time datetime="2024-11-18T15:00:00.000Z" itemprop="datePublished">2024-11-19</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/Decommissioning-Exchange-Server-2016/">Exchange サーバー 2016 を廃止する</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Decommissioning-Exchange-Server-2016/" class="article-date-single">    
+    
+    <time datetime="2024-11-18T15:00:00.000Z" itemprop="dateUpdated">2024-11-19</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、Decommissioning Exchange Server 2016 をもとに日本のお客様向けに抄訳、再編集したものです。最新の情報は元の Blog を参照してください。
+こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームです。
+Exchange サーバー 2016 は延長サポートの終了が近づいており、2025 年 10 月 14 日にサポートが終了します。Exchange サーバー 2019 を使用している場合は、次のバージョンである Exchange サーバー サブスクリプション エディション (SE) にインプレース アップグレード (抄訳版) することができるため、それまでに Exchange サーバー 2016 を廃止にする必要があります。
+この記事では、Exchange サーバー 2019 が既にインストールされて...
+        <p class="article-more-link">
+          <a href="/blog/Decommissioning-Exchange-Server-2016/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Decommissioning-Exchange-Server-2016/" data-id="cmjksiryi001hhg2a7dw6b9jw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-MC854648" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/MC854648/" class="article-date">
+  <time datetime="2024-10-24T15:00:00.000Z" itemprop="datePublished">2024-10-25</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/MC854648/">新しい Outlook for Windows への移行を促すポリシー制御</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/MC854648/" class="article-date-single">    
+    
+    <time datetime="2024-10-24T15:00:00.000Z" itemprop="dateUpdated">2024-10-25</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※この記事は、MC854648 - Admin policy to migrate users from classic Outlook to new Outlook for Windows に関する解説です。  
+新しい Outlook for Windows 一般提供に向けたガイド にてご案内の通り、従来の Outlook for Windows (以下、従来の Outlook) は将来的に新しい Outlook for Windows (以下、新しい Outlook) へ切り替わる予定です。これに伴い、「早い段階からエンド ユーザーが新しい Outlook を利用するように促したい (新しい Outlook に慣れてもらいたい)」 「原則として新しい Outlook を利用させたい」といったニーズもあるかと存じます。このようなニーズに応えるべく、MC854648 ではその制御方法をご...
+        <p class="article-more-link">
+          <a href="/blog/MC854648/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/MC854648/" data-id="cmjksiryx002hhg2a12p4fzx2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/" class="article-date">
+  <time datetime="2024-10-15T01:00:00.000Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/">現行バージョンからExchange Server SEへのアップグレード</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/" class="article-date-single">    
+        
+    <time datetime="2025-10-23T15:00:00.000Z" itemprop="lastupdate">2025-10-24</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        2025 年 10 月 22 日更新: FAQ を 2 件追加しました。
+
+※ この記事は、Upgrading your organization from current versions to Exchange Server SE をもとに日本のお客様向けに抄訳したものです。最新の情報は元の Blog を参照してください。
+こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームです。
+2024 年 5 月に、私たちは Exchange Server Roadmap Update と今後の計画を共有しました。この重要な発表以来、お寄せ頂いた質問の中で今後の移行計画に役立ちそうな質問とその回答を本記事にまとめました。*抄訳版:「Exchange Server のロードマップの更新 」
+この投稿で使用される用語をいくつか紹介します。
+
+CU は累積更新...
+        <p class="article-more-link">
+          <a href="/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/" data-id="cmjksirzj003shg2abxyab7ce" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-end-of-support-for-exchange-server-2016-and-exchange-server-2019" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/end-of-support-for-exchange-server-2016-and-exchange-server-2019/" class="article-date">
+  <time datetime="2024-10-14T15:00:00.000Z" itemprop="datePublished">2024-10-15</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/end-of-support-for-exchange-server-2016-and-exchange-server-2019/">Exchange Server 2016 および Exchange Server 2019 のサポート終了: 残り 12 か月</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/end-of-support-for-exchange-server-2016-and-exchange-server-2019/" class="article-date-single">    
+        
+    <time datetime="2025-01-16T15:00:00.000Z" itemprop="lastupdate">2025-01-17</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、End of Support for Exchange Server 2016 and Exchange Server 2019: T-12 Months の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+2025 年 10 月 14 日、今日から 1 年後に Exchange Server 2016 および Exchange Server 2019 のサポートが終了します。
+2025 年 10 月 14 日以降、Microsoft は Exchange Server 2016 または Exchange Server 2019 に関する問題に対する技術サポートを提供しなくなります。これには以下が含まれます：
+
+発生する可能性のある問題に対す...
+        <p class="article-more-link">
+          <a href="/blog/end-of-support-for-exchange-server-2016-and-exchange-server-2019/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/end-of-support-for-exchange-server-2016-and-exchange-server-2019/" data-id="cmjksis030057hg2a5oppd3ub" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-3/" class="article-date">
+  <time datetime="2024-10-07T15:00:00.000Z" itemprop="datePublished">2024-10-08</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-3/">新しい Outlook for Windows: 役員秘書や代理人のためのガイド - Part 3</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-3/" class="article-date-single">    
+    
+    <time datetime="2024-10-07T15:00:00.000Z" itemprop="dateUpdated">2024-10-08</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、New Outlook for Windows: a guide for Executive Assistants and Delegates – part 3 の抄訳です。最新の情報はリンク先をご確認ください。
+このブログでは、役員秘書や代理人が新しい Outlook for Windows (以下、新しい Outlook) でメールボックスの管理をより適切に実施するために役立つメールの Tips をいくつか紹介します。
+1. 役員秘書や代理人向けのメール フィルターとルール新しい Outlook では、「カレンダーの招待がある」のメール フィルターを使用して、会議招集のメールを簡単に見つけることができます。
+また、役員のアカウントに向けて「他のユーザーのために受信したメール」ルールを設定し、自動的に別のフォルダーに移動して好きなように分類することもできます。
+2. メー...
+        <p class="article-more-link">
+          <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-3/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-3/" data-id="cmjksirz2002thg2adsltcbya" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Demystifying-Exchange-Online-Provisioning" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Demystifying-Exchange-Online-Provisioning/" class="article-date">
+  <time datetime="2024-10-02T15:00:00.000Z" itemprop="datePublished">2024-10-03</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/Demystifying-Exchange-Online-Provisioning/">Exchange Online プロビジョニングの解明：アーキテクチャ、Exchange オブジェクトの種類、および属性</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Demystifying-Exchange-Online-Provisioning/" class="article-date-single">    
+    
+    <time datetime="2024-10-02T15:00:00.000Z" itemprop="dateUpdated">2024-10-03</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、Demystifying Exchange Online Provisioning: Architecture, Exchange Object Types, and Attributes の抄訳です。最新の情報はリンク先をご確認ください。
+Exchange Online のさまざまな受信者オブジェクトの同期とプロビジョニングのプロセスを解明したいと考えました。このコンテンツの一部はすでにご存知かもしれませんが、新しい情報を含め、Exchange オブジェクトのプロビジョニングに関するほとんどの問題を理解し、トラブルシューティングするのに役立つことを願っています。このトピックの範囲が広いため、1 つのブログ投稿ではなく、今後シリーズのブログとして投稿する予定です。また、経験に関係なく、すべての人がコンテンツを理解できるように、基本から始めます。
+アーキテクチャの基本オンプレ...
+        <p class="article-more-link">
+          <a href="/blog/Demystifying-Exchange-Online-Provisioning/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Demystifying-Exchange-Online-Provisioning/" data-id="cmjksiryj001jhg2a8igf2jm6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-1/" class="article-date">
+  <time datetime="2024-09-24T15:00:00.000Z" itemprop="datePublished">2024-09-25</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-1/">新しい Outlook for Windows: 役員秘書や代理人のためのガイド - part 1</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-1/" class="article-date-single">    
+    
+    <time datetime="2024-09-24T15:00:00.000Z" itemprop="dateUpdated">2024-09-25</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、New Outlook for Windows: A guide for Executive Assistants and Delegates – part 1 の抄訳です。最新の情報はリンク先をご確認ください。
+新しい Outlook for Windows (以下、新しい Outlook) は、役員や代理人が日常業務でより生産的になるための強力なメール体験を提供します。このブログでは、代理人が新しい Outlook を使い始めるのに役立つ Tips をいくつか紹介します。
+1. 新しい Outlook に切り替える組織で新しい Outlook へのアクセスを有効にしている場合は、従来の Outlook for Windows (以下、従来の Outlook) アプリの右上に [新しいOutlookを試す] というトグルが表示されます。このトグルをオンにして、新しい Ou...
+        <p class="article-more-link">
+          <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-1/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-1/" data-id="cmjksirz0002phg2agy9r892g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-2/" class="article-date">
+  <time datetime="2024-09-24T15:00:00.000Z" itemprop="datePublished">2024-09-25</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-2/">新しい Outlook for Windows: 役員秘書や代理人のためのガイド - part 2</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-2/" class="article-date-single">    
+    
+    <time datetime="2024-09-24T15:00:00.000Z" itemprop="dateUpdated">2024-09-25</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、New Outlook for Windows: a guide for Executive Assistants and Delegates – part 2 の抄訳です。最新の情報はリンク先をご確認ください。  
+このブログでは、役員秘書や代理人が新しい Outlook for Windows でより効果的に時間を管理できるように予定表機能の Tips をいくつか紹介します。
+1. 時間を検索して対面イベントを設定する会議を設定する際、[時間の検索] をクリックすることで出席者の予定表上で最適な時間枠を簡単に見つけることができます。出席者のアイコンにカーソルを合わせると、空き時間情報を確認できます。また、[対面イベント] トグルをオンにして対面出席をリクエストすることもできます。対面で参加できない出席者のために Teams 会議リンクを追加することもできます。
+2. ス...
+        <p class="article-more-link">
+          <a href="/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-2/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/New-Outlook-for-Windows-a-guide-for-Executive-Assistants-and-Delegates-part-2/" data-id="cmjksirzb003ehg2a3r77eu5p" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Accessibility-and-Usability-Improvements-in-the-new-Outlook-for-Windows" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Accessibility-and-Usability-Improvements-in-the-new-Outlook-for-Windows/" class="article-date">
+  <time datetime="2024-09-23T15:00:00.000Z" itemprop="datePublished">2024-09-24</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/Accessibility-and-Usability-Improvements-in-the-new-Outlook-for-Windows/">新しい Outlook for Windows のアクセシビリティと操作性の向上
+</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Accessibility-and-Usability-Improvements-in-the-new-Outlook-for-Windows/" class="article-date-single">    
+    
+    <time datetime="2024-09-23T15:00:00.000Z" itemprop="dateUpdated">2024-09-24</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、Accessibility and Usability Improvements in the new Outlook for Windows の抄訳です。最新の情報はリンク先をご確認ください。
+新しい Outlook for Windows (以下、新しい Outlook) は、最新の機能、インテリジェントな支援機能、そして新しくモダンでシンプルなデザインを Outlook アプリにもたらします。自分のスタイルに合わせてカスタマイズし、新しい Outlook でより多くのことを行うことができます。アクセシビリティと利便性の向上により、Microsoft は、全てのユーザーが日々のワークフローを遂行するために Outlook に期待する効率性、生産性、そして親しみやすさを提供することに引き続き取り組んでいます。  
+新しい Outlook は、Windows 上のメール、カ...
+        <p class="article-more-link">
+          <a href="/blog/Accessibility-and-Usability-Improvements-in-the-new-Outlook-for-Windows/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Accessibility-and-Usability-Improvements-in-the-new-Outlook-for-Windows/" data-id="cmjksiry4000uhg2aak5b0340" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-new-outlook-for-windows-a-guide-to-product-availability" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/new-outlook-for-windows-a-guide-to-product-availability/" class="article-date">
+  <time datetime="2024-07-27T15:00:00.000Z" itemprop="datePublished">2024-07-28</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/new-outlook-for-windows-a-guide-to-product-availability/">新しい Outlook for Windows 一般提供に向けたガイド</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/new-outlook-for-windows-a-guide-to-product-availability/" class="article-date-single">    
+        
+    <time datetime="2024-11-06T15:00:00.000Z" itemprop="lastupdate">2024-11-07</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、New Outlook for Windows: A Guide to Product Availability の抄訳です。最新の情報はリンク先をご確認ください。  
+※ 2024&#x2F;11&#x2F;07 更新: 本記事の公開後に元となった記事に入った更新内容を、本記事にも反映しました。
+新しい Outlook for Windows をより多くのお客様にお届けするにあたり、「この変更に対して組織はどの程度の期間をかけて準備する必要があるのか、また、従来の Outlook for Windows は将来的にどうなるのか」といった、製品の提供やその時期について多くの質問をいただきました。  
+現在、新しい Outlook for Windows は法人のお客様向けにプレビュー版を提供しており、一般提供の準備に近づいています。このブログ投稿では、これらの質問に対する回...
+        <p class="article-more-link">
+          <a href="/blog/new-outlook-for-windows-a-guide-to-product-availability/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/new-outlook-for-windows-a-guide-to-product-availability/" data-id="cmjksis0h006dhg2aduru9gon" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/blog/page/7/">Prev</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/6/">6</a><a class="page-number" href="/blog/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/blog/page/9/">9</a><a class="page-number" href="/blog/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/14/">14</a><a class="extend next" rel="next" href="/blog/page/9/">Next</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

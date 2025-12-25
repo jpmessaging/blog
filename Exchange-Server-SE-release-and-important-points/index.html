@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange Server SE のリリースと押さえておきたいポイントについて | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="こんにちは。Exchange &#x2F; Outlook サポート チームです。さて、こちらでアナウンスしているとおり 2025&#x2F;7&#x2F;1 (日本時間では 7&#x2F;2) にいよいよ Exchange Server Subscription Edition (Exchange Server SE) がリリースされました。 Exchange Online の受信者管理用として">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange Server SE のリリースと押さえておきたいポイントについて">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Exchange-Server-SE-release-and-important-points/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="こんにちは。Exchange &#x2F; Outlook サポート チームです。さて、こちらでアナウンスしているとおり 2025&#x2F;7&#x2F;1 (日本時間では 7&#x2F;2) にいよいよ Exchange Server Subscription Edition (Exchange Server SE) がリリースされました。 Exchange Online の受信者管理用として">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-07-03T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-07-03T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Exchange-Server-SE-release-and-important-points" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Exchange-Server-SE-release-and-important-points/" class="article-date">
+  <time datetime="2025-07-03T15:00:00.000Z" itemprop="datePublished">2025-07-04</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange Server SE のリリースと押さえておきたいポイントについて
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Exchange-Server-SE-release-and-important-points/" class="article-date-single">    
+    
+    <time datetime="2025-07-03T15:00:00.000Z" itemprop="dateUpdated">2025-07-04</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>こんにちは。Exchange &#x2F; Outlook サポート チームです。さて、<a href="/blog/exchange-server-subscription-edition-se-is-now-available/">こちら</a>でアナウンスしているとおり 2025&#x2F;7&#x2F;1 (日本時間では 7&#x2F;2) にいよいよ Exchange Server Subscription Edition (Exchange Server SE) がリリースされました。</p>
+<p>Exchange Online の受信者管理用として Exchange の管理ツールを利用されている場合も含め、Exchange Server をご利用のお客様は、サポート ライフサイクルの観点から Exchange Server 2016 CU23 または Exchange Server 2019 CU14 &#x2F; CU15 をご利用になっていることと思います。<br>しかしながら、これらの製品は<a href="/blog/t-6-months-exchange-server-2016-and-exchange-server-2019-end-of-support/">こちら</a>にてご案内のとおり、2025 年 10 月 14 日をもって、延長サポートが終了となる見込みです。</p>
+<p>そのため、Exchange Online の受信者管理用として Exchange の管理ツールをご利用になる場合も含め、Exchange Server を引き続きご利用いただくためには、サポータビリティやセキュリティの観点からも Exchange Server SE へ移行していただく必要があります。</p>
+<p>Exchange Server 2016 &#x2F; Exchange Server 2019 のサポート終了に先立ち、昨年から Exchange Server SE に関する情報は主に以下のブログにて発信しており、随時更新が行われてきました。</p>
+<p>(原文) <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/exchange-server-roadmap-update/4132742">Exchange Server Roadmap Update | Microsoft Community Hub</a><br>(日本語訳) <a href="https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/">Exchange Server ロードマップの更新 | Japan Exchange &amp; Outlook Support Blog</a></p>
+<p>(原文) <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/upgrading-your-organization-from-current-versions-to-exchange-server-se/4241305">Upgrading your organization from current versions to Exchange Server SE | Microsoft Community Hub</a><br>(日本語訳) <a href="https://jpmessaging.github.io/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/">現行バージョンからExchange Server SEへのアップグレード | Japan Exchange &amp; Outlook Support Blog</a></p>
+<p>本稿では Exchange Server SE のリリースに際し、改めて確認していただきたいことを整理しました。<br>こちらをご確認いただき、Exchange Server SE への移行プランをご検討いただければ幸いです。</p>
+<hr>
+<h2 id="Exchange-Server-SE-への移行方針は明確となっているか"><a href="#Exchange-Server-SE-への移行方針は明確となっているか" class="headerlink" title="Exchange Server SE への移行方針は明確となっているか"></a>Exchange Server SE への移行方針は明確となっているか</h2><p>Exchange Server SE の移行パスとしては、Exchange Server 2019 から Exchange Server SE へのインプレース アップグレード、またはインプレース アップグレードがサポートされない Exchange Server 2016 からでも Exchange Server SE へ移行可能な従来のアップグレードの 2 つの方法がサポートされます。</p>
+<ul>
+<li>インプレース アップグレード: 最速で簡単に Exchange Server 2019 (CU14 または CU15) を Exchange Server SE にアップグレードする方法です。CU 適用作業と同様の操作でアップグレードが可能です。</li>
+<li>従来の移行 : これまでと同様に、新規 Windows Server OS をインストールしたサーバーを用意して Exchange Server SE をインストールし、名前空間とメールボックスをその新しいインフラストラクチャに移動する従来のアップグレード方法です。この方法は Exchange Server のハードウェアをリプレースする場合や、新しい Windows Server OS に更新したい場合などのシナリオで利用されます。</li>
+</ul>
+<p>Exchange Server SE への移行パスとしてのお薦めは以下の通りです。</p>
+<ul>
+<li>Exchange Server 2016 をご利用の場合: 以下の 2 つのパターンが想定されます。<ul>
+<li>Exchange Server 2019 CU15 を別のサーバーとして構築し従来の移行を実施後、Exchange Server SE へインプレース アップグレードを行います。</li>
+<li>Exchange Server SE を別のサーバーとして構築し従来の移行を行います。</li>
+</ul>
+</li>
+<li>Exchange Server 2019 をご利用の場合: Exchange Server 2019 CU15 を適用し、Exchange Server SE へのインプレース アップグレードを行います。</li>
+</ul>
+<p>Exchange Server SE は Exchange Server 2019 CU15 とコードが同等であり機能の追加や削除が行われることはなく、違いは以下の通りです。</p>
+<ul>
+<li>ライセンス契約書 (GUI バージョンのセットアップでのみ表示される RTF ファイル) が更新されます。</li>
+<li>名前が Microsoft Exchange Server 2019 から Microsoft Exchange Server Subscription Edition に変更されます。</li>
+<li>ビルド番号が更新されます。</li>
+</ul>
+<p>実質的には Exchange Server 2019 の CU16 をインストールするのと同じと考えることができ、この CU の名前を Exchange Server SE RTM に変更したイメージとなります。<br>そのため、Exchange Server SE へのインプレース アップグレードをお薦めしております。</p>
+<p>(原文) <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/why-%E2%80%9Cin-place-upgrade%E2%80%9D-from-exchange-2019-to-exchange-se-is-low-risk/4410173">Why “in-place upgrade” from Exchange 2019 to Exchange SE is low risk | Microsoft Community Hub</a><br>(日本語訳) <a href="https://jpmessaging.github.io/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/">Exchange 2019 から Exchange SE への “インプレース アップグレード” が低リスクである理由 | Japan Exchange &amp; Outlook Support Blog</a></p>
+<hr>
+<h2 id="Exchange-Server-SE-へ移行後に検討すべきこと"><a href="#Exchange-Server-SE-へ移行後に検討すべきこと" class="headerlink" title="Exchange Server SE へ移行後に検討すべきこと"></a>Exchange Server SE へ移行後に検討すべきこと</h2><p>Exchange Server SE RTM や Exchange Server SE CU1 では、Exchange Server 2016、Exchange Server 2019 との共存は引き続き可能です。<br>一方、Exchange Server SE CU1 のリリース時点では、すでに Exchange Server 2016、Exchange Server 2019 のサポートが終了しているため、これらの製品に対する技術サポートの提供はありません (サポート契約をお持ちのお客様がお問い合わせを起票いただいても、ご支援を提供することができません)。<br>Exchange Server 2016、Exchange Server 2019 から Exchange Server SE への移行に関する内容についてはベストエフォートにて技術サポートを提供しますが、Exchange Server SE CU1 と Exchange Server 2016、Exchange Server 2019 の共存をお薦めするものではありません。<br>可能な限り、Exchange Server 2016、Exchange Server 2019 のサポート期間内に Exchange Server SE へ移行いただくことをお薦めいたします。</p>
+<p>なお、Exchange Server SE CU2 のセットアップでは、すべてのサポートされていないバージョン (例：Exchange Server 2013、Exchange Server 2016、Exchange Server 2019) との共存がブロックされ、Exchange Server SE との共存のみが許可されます。<br>Exchange Server SE CU2 (またはそれ以降) をインストールするには、組織内のすべての古いバージョンの Exchange Server を廃止して削除する必要があります。</p>
+<div style="margin:1.25em;border-left:.25em solid #4493f8;padding:.5em;">
+<div style="margin-bottom:16px;display:flex;align-items:center;line-height:1;color:#4493f8">
+<svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true" style="margin-right:8px">
+<path fill="#4493f8" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path>
+</svg>
+情報
+</div>
+<div>
+以前は Exchange Server CU1 の時点で Exchange Server 2016、Exchange Server 2019 との共存がブロックされるとアナウンスしておりましたが、直近の更新で変更となりました。
+</div>
+</div>
+
+<p>Exchange Server SE へ移行後は、古いバージョンの Exchange Server の撤去を行い Exchange Server SE CU2 へ備えていくことが重要です。</p>
+<p>他にも Exchange Server SE についての情報は下記にまとめています。<br>気になる方はぜひチェックしてみてください。</p>
+<p>(原文) <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/exchange/release-notes">Release notes for Exchange Server Subscription Edition (SE) | Microsoft Learn</a><br>(日本語機械翻訳) <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/exchange/release-notes">Exchange Server サブスクリプション エディション (SE) のリリース ノート | Microsoft Learn</a></p>
+<p>(原文) <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/exchange/new-features/new-features">What’s new in Exchange Server Subscription Edition (SE) | Microsoft Learn</a><br>(日本語機械翻訳) <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/exchange/new-features/new-features">Exchange Server サブスクリプション エディション (SE) の新機能 | Microsoft Learn</a></p>
+<p>(原文) <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/exchange/new-features/discontinued-features">What’s discontinued in Exchange Server SE | Microsoft Learn</a><br>(日本語機械翻訳) <a target="_blank" rel="noopener" href="https://learn.microsoft.com/ja-jp/exchange/new-features/discontinued-features">Exchange Server SE で廃止された内容 | Microsoft Learn</a></p>
+<hr>
+<p>本稿の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Exchange-Server-SE-release-and-important-points/" data-id="cmjksiryo001thg2a3rc57z5b" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/reduced-license-count-requirement-for-exchange-online-delicensing-resiliency-fea/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Exchange Online ライセンス解除レジリエンシー機能の必要ライセンス数が緩和されました
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/exchange-server-subscription-edition-se-is-now-available/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange Server サブスクリプション エディション (SE) が利用可能になりました</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

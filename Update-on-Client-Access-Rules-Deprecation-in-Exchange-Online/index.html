@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange Online のクライアント アクセス ルール廃止に関する最新情報 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Update on Client Access Rules Deprecation in Exchange Online の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 2022 年 9 月に、Exchange Online でのクライアント ア">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange Online のクライアント アクセス ルール廃止に関する最新情報">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Update-on-Client-Access-Rules-Deprecation-in-Exchange-Online/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Update on Client Access Rules Deprecation in Exchange Online の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 2022 年 9 月に、Exchange Online でのクライアント ア">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-12-26T15:00:00.000Z">
+<meta property="article:modified_time" content="2024-12-26T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Update-on-Client-Access-Rules-Deprecation-in-Exchange-Online" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Update-on-Client-Access-Rules-Deprecation-in-Exchange-Online/" class="article-date">
+  <time datetime="2024-12-26T15:00:00.000Z" itemprop="datePublished">2024-12-27</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange Online のクライアント アクセス ルール廃止に関する最新情報
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Update-on-Client-Access-Rules-Deprecation-in-Exchange-Online/" class="article-date-single">    
+    
+    <time datetime="2024-12-26T15:00:00.000Z" itemprop="dateUpdated">2024-12-27</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/update-on-client-access-rules-deprecation-in-exchange-online/4354809">Update on Client Access Rules Deprecation in Exchange Online</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>2022 年 9 月に、Exchange Online でのクライアント アクセス ルール（CARs）の廃止を開始することを<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecation-of-client-access-rules-in-exchange-online/ba-p/3638563">発表</a>しました。それ以来、アクティブなルールのないテナントではすでに CARs が廃止されています。CARs は 2025 年 9 月 1 日にすべてのテナントで廃止されます。さらに、お客様が期限前に CARs をオフにすることを選択した場合、私たちはそのテナントの CARs を無効にします。スムーズな移行を確保し、継続的アクセス評価（CAE）を備えた条件付きアクセス（CA）が提供する強化されたセキュリティ機能を活用できるように、できるだけ早く CARs から移行することをお勧めします。</p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>CARs は、クライアントのプロパティやクライアント アクセス要求に基づいて Exchange Online 組織へのアクセスを制御するのに役立ちます。ただし、CARs は現在レガシー技術と見なされています。さらに、CARs は Exchange Online の機能として実装されているので、Exchange Online でしか機能しません。<br>CARs の代わりに <a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity/conditional-access/overview">条件付きアクセス</a> (CA) と <a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity/conditional-access/concept-continuous-access-evaluation">継続的アクセス評価</a> (CAE) を使用することをお勧めします。IP 範囲を条件として指定した CA ポリシーを構成しているとき、CAE によってユーザーの場所に応じたポリシーが確実に適用されるようになります。複数の Microsoft 365 サービスが CAE をサポートしており、Exchange Online、SharePoint Online、Teams などが含まれます。<br>Exchange Online のみを考慮しても、Exchange Online にはこれまでに多くの新しいプロトコルやサービスが導入されており、CARs を強制するプロトコルはごく一部に過ぎません。それに対して、CA と CAE はこれらのサービスへのアクセスを真に許可またはブロックすることができます。さらに、CARs は IP アドレス、プロトコル、ユーザーによるフィルタリングなどの基本的な強制しか提供しません。デバイスの物理的な場所、多要素認証 (MFA)、デバイスのコンプライアンスなど、より高いセキュリティ基準に必要な最新の強制コントロールが欠けています。</p>
+<p>これにより、CARs は時代遅れとなり、高いセキュリティ要件を満たすには不十分です。CARs が提供する限られた機能は、CA および CAE と重複しています。Exchange Online は CAE を実装しており、IP 範囲を条件とした CA ポリシーが Exchange Online へのアクセスごとに評価されるため、CARs と同等の機能を提供します。<br>条件付きアクセスは、豊富な監視およびレポート機能を提供し、IT 管理者がポリシーの適用状況を把握できるようにします。Microsoftは、Entra ID サービスの一環として CA および CAE の両方を強化し続けており、この分野での継続的な改善と投資を確保しています。<br>なお、オンプレミスの Exchange Server の CAR は、この廃止およびガイダンスとは完全に別物であり、引き続きオンプレミスで個別に管理されます。</p>
+<h3 id="CARs-から-CAE-への移行"><a href="#CARs-から-CAE-への移行" class="headerlink" title="CARs から CAE への移行"></a>CARs から CAE への移行</h3><p>CARs を使用している場合、2025 年 9 月 1 日以降は使用できなくなります。CARs から移行するには、次の点を考慮してください:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity/conditional-access/policy-block-by-location">必要な IP 範囲の条件付きアクセス ポリシーを構成する</a> ことで、Exchange Online にアクセスする際に <a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity/conditional-access/concept-continuous-access-evaluation#example-flow-diagrams">継続的アクセス評価</a> を使用したポリシーの強制を有効にします。</li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/powershell/module/exchange/set-casmailbox?view=exchange-ps">Set-CASMailbox</a> および <a target="_blank" rel="noopener" href="https://learn.microsoft.com/powershell/module/exchange/set-casmailboxplan?view=exchange-ps">Set-CASMailboxPlan</a> コマンドレットを使用して、特定のプロトコルに対するメールボックスのクライアント アクセス設定を構成します。たとえば、Exchange ActiveSync、Outlook、Outlook on the web、POP3、および IMAP4 の設定を構成できます。</li>
+</ul>
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
+現在 CARs をご利用の場合、2025 年 9 月までに対応する必要があります。&nbsp; この日以降、機能が廃止されるため既存の CARs は機能しなくなります。
+</div>
+
+<h3 id="移行オプション"><a href="#移行オプション" class="headerlink" title="移行オプション"></a>移行オプション</h3><p>単一ルールの移行は、以下の表に示すように、IP アドレス条件とプロトコル条件のバリエーションにより 3 つのカテゴリに分類されます。<br>この表を使用して、ルールがどのカテゴリに該当するかを分析してください。<br>既存の CAR を削除する前に新しい CA ルールをテストすることをお勧めします。<br>また、CA を設定した後、ポリシーが Exchange Online と同期するのを待つために、CAR を削除する前に 24 時間待つことをお勧めします。<br>これにより、テナントがルールによって保護されていない期間をなくすことができます。</p>
+<table border="1" width="646px">
+<tbody>
+<tr>
+<td width="200.891px">
+<p>&nbsp;</p>
+</td>
+<td width="58.7969px">
+<p>&nbsp;</p>
+</td>
+<td colspan="2" width="385.312px">
+<p><strong>AnyOfClientIPAddressesOrRanges</strong> または <strong>ExceptAnyOfClientIPAddressesOrRanges</strong> が設定されているか</p>
+</td>
+</tr>
+<tr>
+<td width="200.891px">
+<p>&nbsp;</p>
+</td>
+<td width="58.7969px">
+<p>&nbsp;</p>
+</td>
+<td width="203.562px">
+<p>いいえ</p>
+</td>
+<td width="181.75px">
+<p>はい</p>
+</td>
+</tr>
+<tr>
+<td rowspan="2" width="200.891px">
+<p><strong>AnyOfProtocols</strong> または <strong>ExceptAnyOfProtocols</strong> が設定されているか</p>
+</td>
+<td width="58.7969px">
+<p>いいえ</p>
+</td>
+<td width="203.562px">
+<p><span style="color: green;">サポートされています</span></p>
+<p>以下の「ユーザーのみを対象としたルールの移行」セクションを参照してください。</p>
+</td>
+<td width="181.75px">
+<p><span style="color: green;">サポートされています</span></p>
+<p>以下の「IP アドレスのみを対象としたルールの移行」セクションを参照してください。</p>
+</td>
+</tr>
+<tr>
+<td width="58.7969px">
+<p>はい</p>
+</td>
+<td width="203.562px">
+<p><span style="color: orange;">部分的にサポートされています</span></p>
+<p>以下の「プロトコルのみを対象としたルールの移行」セクションを参照してください。</p>
+</td>
+<td width="181.75px">
+<p><span style="color: red;">サポートされていません</span></p>
+<p>「IP アドレスおよびプロトコル条件を持つルールについて」を参照してください。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+
+
+<h3 id="カテゴリ-1-ユーザーのみを対象としたルールの移行"><a href="#カテゴリ-1-ユーザーのみを対象としたルールの移行" class="headerlink" title="カテゴリ 1: ユーザーのみを対象としたルールの移行"></a>カテゴリ 1: ユーザーのみを対象としたルールの移行</h3><p>これらのルールには、IP アドレスやプロトコルに基づく条件はありません。基本的に、Exchange Online 全体へのアクセスを許可または拒否します。</p>
+<div class="styles_lia-table-wrapper__h6Xo9 styles_table-responsive__MW0lN">
+<table border="1" width="623px">
+<thead>
+<tr>
+<td width="392">
+<p><strong>クライアント アクセス ルールが次のようになっている場合</strong></p>
+</td>
+<td width="231">
+<p><strong>次の操作を行います</strong></p>
+</td>
+</tr>
+<tr>
+<td width="392">
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : contoso.com\jsmith<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+</td>
+<td width="231">
+<p>CAR で使用されている同じユーザーを参照して、Exchange Online アプリケーションへのアクセスを許可または拒否する条件付きアクセス ポリシーを作成します。</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="392">
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : contoso.com\admin*<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+</td>
+<td width="231">
+<p>ユーザー プリンシパル名プロパティの正規表現を条件として使用する動的メンバーシップを持つセキュリティ グループを作成します（domain\user 形式はサポートされていません）。詳細はこちらをご覧ください: <a href="https://learn.microsoft.com/entra/identity/users/groups-dynamic-membership" target="_blank" rel="noopener noreferrer">Microsoft Entra ID での動的メンバーシップ グループのルール管理</a>。</p>
+<p>次に、Exchange Online アプリケーションへのアクセスを許可または拒否する条件付きアクセス ポリシーを作成し、上記のセキュリティ グループを参照する条件を設定します。</p>
+</td>
+</tr>
+<tr>
+<td width="392">
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : City -eq 'Redmond'</pre>
+</td>
+<td width="231">
+<p>同じフィルターを使用する動的メンバーシップを持つセキュリティ グループを作成します。詳細はこちらをご覧ください: <a href="https://learn.microsoft.com/entra/identity/users/groups-dynamic-membership" target="_blank" rel="noopener noreferrer">Microsoft Entra ID での動的メンバーシップ グループのルール管理</a>。</p>
+<p>Exchange Online アプリケーションへのアクセスを許可または拒否する条件付きアクセス ポリシーを作成し、上記のセキュリティ グループを参照する条件を設定します。</p>
+</td>
+</tr>
+</thead>
+</table>
+</div>
+
+<h3 id="カテゴリ-2-IP-アドレスのみを対象としたルールの移行"><a href="#カテゴリ-2-IP-アドレスのみを対象としたルールの移行" class="headerlink" title="カテゴリ 2: IP アドレスのみを対象としたルールの移行"></a>カテゴリ 2: IP アドレスのみを対象としたルールの移行</h3><p>これは、プロトコル条件（AnyOfProtocols または ExceptAnyOfProtocols のいずれか）を指定せずに、IP アドレス条件（AnyOfClientIPAddressesOrRanges または ExceptAnyOfClientIPAddressesOrRanges のいずれか）を指定するルールに適用されます。</p>
+<p>これらのルールには、ユーザーに基づく条件（UsernameMatchesAnyOfPatterns、ExceptUsernameMatchesAnyOfPatterns、UserIsMemberOf、ExceptUserIsMemberOf のいずれか）が含まれている場合と含まれていない場合があります。<br>上記のセクションで説明した対象ユーザーを特定する手順は、このセクションで説明する内容にも適用することができます。</p>
+<div class="styles_lia-table-wrapper__h6Xo9 styles_table-responsive__MW0lN">
+<table border="1" width="623px">
+<thead>
+<tr>
+<td width="392">
+<p><strong>クライアント アクセス ルールが次のようになっている場合</strong></p>
+</td>
+<td width="231">
+<p><strong>次の操作を行います</strong></p>
+</td>
+</tr>
+<tr>
+<td width="392">
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 203.0.113.4<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+<p><strong>または</strong></p>
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfClientIPAddressesOrRanges : 203.0.113.4<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+</td>
+<td width="231">
+<p>これらの IP アドレスに対して Exchange Online アプリケーションへのアクセスを許可または拒否する条件付きアクセス ポリシーを作成します。</p>
+<p><a href="https://learn.microsoft.com/entra/identity/conditional-access/concept-assignment-network" target="_blank" rel="noopener noreferrer">条件付きアクセス ポリシーのネットワーク</a></p>
+<p>&nbsp;</p>
+<p>ポリシーを設定するための手順については、<a href="https://learn.microsoft.com/entra/identity/conditional-access/policy-block-by-location" target="_blank" rel="noopener noreferrer">条件付きアクセス - 場所によるアクセスのブロック</a> を参照してください。</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td width="392">
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 203.0.113.4<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : contoso.com\jsmith<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+<p><strong>または</strong></p>
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfClientIPAddressesOrRanges : 203.0.113.4<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : contoso.com\jsmith<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+</td>
+<td width="231">
+<p>これらの IP 範囲に対して、特定のユーザーにのみ適用される条件付きアクセス ポリシーを作成します。</p>
+</td>
+</tr>
+</thead>
+</table>
+</div>
+
+<p>上記の例のいずれかに一致する条件付きアクセス ポリシーを作成するためのサンプル手順:</p>
+<pre><code>$params = @&#123; 
+    &quot;@odata.type&quot; = &quot;#microsoft.graph.ipNamedLocation&quot; 
+    DisplayName = &quot;Corp network IPv4 address&quot; 
+    IsTrusted = $true 
+    IpRanges = @( 
+        @&#123; 
+            &quot;@odata.type&quot; = &quot;#microsoft.graph.iPv4CidrRange&quot; 
+            CidrAddress = &quot;203.0.113.4/32&quot; 
+        &#125; 
+    )
+&#125;
+$namedLocation = New-MgIdentityConditionalAccessNamedLocation -BodyParameter $params 
+$params = @&#123;
+     displayName = &quot;Allow access only from corp network.&quot; 
+     state = &quot;enabled&quot; 
+     conditions = @&#123; 
+        clientAppTypes = @(&quot;all&quot;) 
+        applications = @&#123; includeApplications = @(&quot;00000002-0000-0ff1-ce00-000000000000&quot;) &#125; 
+        locations = @&#123; includeLocations = @($namedLocation.Id) &#125;
+    &#125; 
+    grantControls = @&#123; 
+        operator = &quot;OR&quot; 
+        builtInControls = @(&quot;block&quot;) 
+    &#125;
+&#125;
+New-MgIdentityConditionalAccessPolicy -BodyParameter $params
+</code></pre>
+<h3 id="カテゴリ-3-プロトコルのみを対象としたルールの移行"><a href="#カテゴリ-3-プロトコルのみを対象としたルールの移行" class="headerlink" title="カテゴリ 3: プロトコルのみを対象としたルールの移行"></a>カテゴリ 3: プロトコルのみを対象としたルールの移行</h3><p>これは、プロトコル条件（AnyOfProtocols または ExceptAnyOfProtocols のいずれか）を指定するが、IP アドレス条件（AnyOfClientIPAddressesOrRanges または ExceptAnyOfClientIPAddressesOrRanges のいずれか）を指定しないルールに適用されます。</p>
+<h4 id="プロトコルが-Active-Sync、Admin-Center、EWS、IMAP、OutlookAnywhere、OWA、または-POP-の場合"><a href="#プロトコルが-Active-Sync、Admin-Center、EWS、IMAP、OutlookAnywhere、OWA、または-POP-の場合" class="headerlink" title="プロトコルが Active Sync、Admin Center、EWS、IMAP、OutlookAnywhere、OWA、または POP の場合"></a>プロトコルが Active Sync、Admin Center、EWS、IMAP、OutlookAnywhere、OWA、または POP の場合</h4><div class="styles_lia-table-wrapper__h6Xo9 styles_table-responsive__MW0lN">
+<table border="1" width="623px">
+<thead>
+<tr>
+<td width="391.547px">
+<p><strong>クライアント アクセス ルールが次のようになっている場合</strong></p>
+</td>
+<td width="230.453px">
+<p><strong>次の操作を行います</strong></p>
+</td>
+</tr>
+<tr>
+<td width="391.547px">
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : <br>{OutlookWebApp, ExchangeWebServices}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+<td width="230.453px">
+<p>このルールが適用される既存の（メールボックスとライセンスを持つ）ユーザーに対して、Set-CASMailbox コマンドを使用して対象のプロトコルを有効もしくは無効にします。</p>
+<p>これらの制限を特定のライセンスを持つすべての将来のユーザーに適用したい場合、CAS メールボックス プランを作成しておくこともできます。</p>
+<p>ただし、特定の新しいユーザーにのみ適用したい場合は、将来そのユーザーに対して Set-CASMailbox を実行する必要があります。</p>
+<p>（注：以下の表で、CARs パラメーター名に対応する Set-CASMailboxPlan パラメーター名を参照してください。）</p>
+</td>
+</tr>
+</thead>
+</table>
+</div>
+
+
+<h4 id="プロトコルが-RemotePowerShell-の場合"><a href="#プロトコルが-RemotePowerShell-の場合" class="headerlink" title="プロトコルが RemotePowerShell の場合"></a>プロトコルが RemotePowerShell の場合</h4><div class="styles_lia-table-wrapper__h6Xo9 styles_table-responsive__MW0lN">
+<table border="1">
+<tbody>
+<tr>
+<td width="392">
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : RemotePowerShell<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+<p>&nbsp;</p>
+</td>
+<td width="231">
+<p>このルールが適用される既存のユーザーに対して、Set-Userコマンドの RemotePowerShellEnabled パラメーターを使用して PowerShell 接続を有効もしくは無効にします。</p>
+<p>このルールが適用されるはずだった新しいユーザーに対しても、同じ方法で Set-User を再度実行する必要があります。新しいユーザーも含め特定のライセンスが適用されたメールボックスを持つユーザーに適用される Set-CASMailboxPlan とは異なります。RPS はメールボックスやライセンスを持たないユーザーでも使用できるため、将来のユーザーに対しても Set-User を適用する必要があります。</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<h4 id="プロトコルが-OfflineAddressBook、PowerShellWebServices、または-REST-の場合"><a href="#プロトコルが-OfflineAddressBook、PowerShellWebServices、または-REST-の場合" class="headerlink" title="プロトコルが OfflineAddressBook、PowerShellWebServices、または REST の場合"></a>プロトコルが OfflineAddressBook、PowerShellWebServices、または REST の場合</h4><p>これは、プロトコルのみを対象としたルールで、プロトコルが次のいずれかである場合に適用されます: OfflineAddressBook、PowerShellWebServices、REST。</p>
+<div class="styles_lia-table-wrapper__h6Xo9 styles_table-responsive__MW0lN">
+<table border="1">
+<tbody>
+<tr>
+<td width="392">
+<p>特定のプロトコルおよび特定のユーザー名 / ユーザー名パターン / ユーザーグループを条件としているが、IP 範囲は条件としておらず、プロトコルが次のいずれかの場合: <br>OfflineAddressBook、PowerShellWebServices、REST</p>
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : REST<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+<p>&nbsp;</p>
+</td>
+<td width="231">
+<p>OfflineAddressBook、PowerShellWebServices、REST のプロトコルに対して他のコマンドレットを使用する同等の方法はありません。</p>
+<p>OfflineAddressBook は Outlook Win32 および Outlook for Mac のみが使用するサービスであり、OutlookAnywhere を使用して Outlook Win32 へのユーザー アクセスをブロックする場合、Outlook クライアントが OfflineAddressBook にアクセスすることはないため、OfflineAddressBook をブロックする必要はありません。</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h4 id="IP-アドレスおよびプロトコル条件を持つルールについて"><a href="#IP-アドレスおよびプロトコル条件を持つルールについて" class="headerlink" title="IP アドレスおよびプロトコル条件を持つルールについて"></a>IP アドレスおよびプロトコル条件を持つルールについて</h4><p>プロトコル条件 (AnyOfProtocols または ExceptAnyOfProtocols のいずれか) と IP アドレス条件 (AnyOfClientIPAddressesOrRanges または ExceptAnyOfClientIPAddressesOrRanges のいずれか) の両方を指定するルールのシナリオです。</p>
+<p>複数のルールがあり、それらのルールが異なる IP アドレスまたはアドレス範囲を使用しているが、すべてのユーザーに対して同じプロトコルを対象としている場合、IP アドレスの条件は CA ポリシーに移行でき、プロトコルの条件は CASMailbox および CASMailboxPlan に移行できます。</p>
+<div class="styles_lia-table-wrapper__h6Xo9 styles_table-responsive__MW0lN">
+<table border="1" width="623px">
+<tbody>
+<tr>
+<td width="392">
+<p><strong>クライアント アクセス ルールが次のようになっている場合</strong></p>
+</td>
+<td width="231">
+<p><strong>次の操作を行います</strong></p>
+</tr>
+<tr>
+<td width="392">
+<p>ルール 1:</p>
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 203.0.113.4<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : OutlookAnywhere<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+<p>ルール 2:</p>
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 203.0.201.10<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : OutlookAnywhere<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+</td>
+<td width="231">
+<p>各 IP 範囲に対して、Exchange Online アプリケーションへのアクセスを許可または拒否する条件付きアクセス ポリシーを作成します。</p>
+<p>&nbsp;</p>
+<p>Set-CASMailbox を使用して、既存のすべてのユーザーに対して MapiEnabled を除くすべてのプロトコルへのアクセスを無効にします。Set-CASMailboxPlan を使用して、将来作成されるすべてのユーザーに同じポリシーを設定します。</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p>複数のルールがあり、それらのルールが異なるプロトコルを条件としているが、同じ IP アドレスまたはアドレス範囲を条件としている場合、IP 範囲を条件とした CA ポリシーと CASMailbox および CASMailboxPlan に移行できます。</p>
+<div class="styles_lia-table-wrapper__h6Xo9 styles_table-responsive__MW0lN">
+<table border="1" width="623px">
+<thead>
+<tr>
+<td width="392" height="31px">
+<p><strong>クライアント アクセス ルールが次のようになっている場合</strong></p>
+</td>
+<td width="231" height="31px">
+<p><strong>次の操作を行います</strong></p>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td width="392" height="601px">
+<p>ルール 1:</p>
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 203.0.113.4<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : OutlookAnywhere<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+<p>ルール 2:</p>
+<pre>AnyOfClientIPAddressesOrRanges&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 203.0.113.4<br>ExceptAnyOfClientIPAddressesOrRanges : {}<br>AnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptAnyOfProtocols&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : ExchangeActiveSync<br>UsernameMatchesAnyOfPatterns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}<br>ExceptUsernameMatchesAnyOfPatterns&nbsp;&nbsp; : {}<br>UserRecipientFilter&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : {}</pre>
+</td>
+<td width="231" height="601px">
+<p>その IP アドレスに対して、Exchange Online アプリケーションへのアクセスを許可または拒否する条件付きアクセス ポリシーを作成します。</p>
+<p>&nbsp;</p>
+<p>Set-CASMailbox を使用して、既存のすべてのユーザーに対して MapiEnabled および ActiveSync を除くすべてのプロトコルへのアクセスを無効にします。Set-CASMailboxPlan を使用して、将来作成されるすべてのユーザーに同じポリシーを設定します。</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<p>ただし、複数のルールがあり、それらのルールが異なるプロトコルと異なる IP アドレスまたはアドレス範囲を条件としている場合、それらのルールに対する移行オプションはありません。私たちの推奨は、すべてのアドレスのスーパー セットである単一の IP アドレスまたはアドレス範囲を持つようにルールを調整し、それを条件付きアクセス ポリシーで Exchange Online アプリケーションに適用することです。</p>
+<h3 id="Set-CASMailboxPlan-に対応するパラメーター"><a href="#Set-CASMailboxPlan-に対応するパラメーター" class="headerlink" title="Set-CASMailboxPlan に対応するパラメーター"></a>Set-CASMailboxPlan に対応するパラメーター</h3><p>以下は、CARs プロトコル名と Set-CASMailboxPlan に対応するパラメーターの表です:</p>
+<table>
+<thead>
+<tr>
+<th><strong>CARs プロトコル</strong></th>
+<th><strong>SetCASMailboxPlan パラメーター</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ExchangeActiveSync</td>
+<td>ActiveSyncEnabled</td>
+</tr>
+<tr>
+<td>ExchangeAdminCenter</td>
+<td>ECPEnabled</td>
+</tr>
+<tr>
+<td>ExchangeWebServices</td>
+<td>EwsEnabled</td>
+</tr>
+<tr>
+<td>IMAP4</td>
+<td>ImapEnabled</td>
+</tr>
+<tr>
+<td>OutlookAnywhere</td>
+<td>MAPIEnabled</td>
+</tr>
+<tr>
+<td>OutlookWebApp</td>
+<td>OWAEnabled</td>
+</tr>
+<tr>
+<td>POP3</td>
+<td>PopEnabled</td>
+</tr>
+</tbody></table>
+<h3 id="よくある質問"><a href="#よくある質問" class="headerlink" title="よくある質問"></a>よくある質問</h3><p><em>1. IP ベースの CARs ポリシーを条件付きアクセスに移行しました。Exchange Online へのアクセスは以前と同じように強制されますか？</em></p>
+<p>移行後もポリシーにより制御されますが、その強制のメカニズムが変わります。CARs では、ユーザーが Exchange Online リソースに接続する際に IP ベースのアクセス ポリシーが評価されましたが、条件付きアクセスではログイン時に評価され、その後 CAE によってリソース アクセス時に評価されます。</p>
+<p><em>2. 厳格な強制を伴う CAE とは何ですか？また、組織を保護するために必要ですか？</em></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity/conditional-access/policy-block-by-location?source=recommendations">IP 範囲を条件とした CA ポリシーが正しく構成されている場合</a>、CAE は CA ポリシーで構成された信頼できる場所にない IP アドレスからの Exchange Online へのアクセスを直ちに拒否します。CAE の IP ポリシーが機能するために厳格な場所の強制は必要ありません。<br>一部の<a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity/conditional-access/concept-continuous-access-evaluation#ip-address-variation-and-networks-with-ip-address-shared-or-unknown-egress-ips">複雑なネットワーク トポロジ</a>では、アクセス要求が許可されていない IP アドレスから発信されても、認証要求が許可された IP アドレスから来ることがあります。このような場合、Microsoft Entra は Exchange Online の IP アドレス チェックを 1 時間停止し、ロケーション チェックはトークン発行時に毎時間定期的に行われます。この例外は、重要なリソースへのアクセスを確保することでユーザーの生産性を維持します。これらのトポロジでは、厳格なロケーション強制を有効にしないでください。ユーザーは直ちに Exchange Online へのアクセスを失うことになります。</p>
+<p>認証要求元とリソースへのアクセス元と CA ポリシーの IP 範囲の条件が一致する安定したネットワークの場合、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity/conditional-access/concept-continuous-access-evaluation-strict-enforcement">厳格なロケーション強制モード（プレビュー）</a>を選択できますが、ドキュメントに従って慎重に有効にしてください。ユーザーに悪影響を及ぼす可能性があります。</p>
+<p>この投稿が CAR の廃止についての理解を深める助けになれば幸いです。</p>
+<p>The Exchange Online Team</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Update-on-Client-Access-Rules-Deprecation-in-Exchange-Online/" data-id="cmjksirzm003yhg2a2tgu2ne7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/t-9-months-exchange-server-2016-and-exchange-server-2019-end-of-support/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          残り 9 か月 : Exchange Server 2016 および Exchange Server 2019 のサポート終了
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/exchange-online-to-introduce-external-recipient-rate-limit/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange Online への外部受信者数の制限の導入</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

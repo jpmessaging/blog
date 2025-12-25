@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Outlook のコマンド ライン スイッチと初期化される情報について | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="こんにちは。日本マイクロソフト Exchange ＆ Outlook サポートチームの劉です。 通常、従来の Outlook for Windows (以下、従来の Outlook) を起動する際にコマンドを入力したり目にしたりすることはありませんが、プログラムを起動するときは必ず outlook.exe コマンドが実行されています。この outlook.exe コマンドに、スイッチと呼ばれるサブ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Outlook のコマンド ライン スイッチと初期化される情報について">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Outlook-command-line/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="こんにちは。日本マイクロソフト Exchange ＆ Outlook サポートチームの劉です。 通常、従来の Outlook for Windows (以下、従来の Outlook) を起動する際にコマンドを入力したり目にしたりすることはありませんが、プログラムを起動するときは必ず outlook.exe コマンドが実行されています。この outlook.exe コマンドに、スイッチと呼ばれるサブ">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Outlook-command-line/command_line_1.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Outlook-command-line/command_line_2.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Outlook-command-line/command_line_3.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Outlook-command-line/command_line_4.png">
+<meta property="article:published_time" content="2025-04-04T01:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-04T01:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Outlook">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Outlook-command-line/command_line_1.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Outlook-command-line" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Outlook-command-line/" class="article-date">
+  <time datetime="2025-04-04T01:00:00.000Z" itemprop="datePublished">2025-04-04</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Outlook のコマンド ライン スイッチと初期化される情報について
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Outlook-command-line/" class="article-date-single">    
+    
+    <time datetime="2025-04-04T01:00:00.000Z" itemprop="dateUpdated">2025-04-04</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>こんにちは。日本マイクロソフト Exchange ＆ Outlook サポートチームの劉です。</p>
+<p>通常、従来の Outlook for Windows (以下、従来の Outlook) を起動する際にコマンドを入力したり目にしたりすることはありませんが、プログラムを起動するときは必ず outlook.exe コマンドが実行されています。<br>この outlook.exe コマンドに、スイッチと呼ばれるサブ コマンドを追加することにより、プログラムの起動方法を部分的に変えることができます。</p>
+<h2 id="コマンド-ライン-スイッチについて"><a href="#コマンド-ライン-スイッチについて" class="headerlink" title="コマンド ライン スイッチについて"></a>コマンド ライン スイッチについて</h2><p>コマンド ライン スイッチとは、スラッシュの後に続くコマンド名と、その後に指定できるパラメーターです。<br>メイン コマンドの後に<strong>スペース</strong>を <strong>1 つ</strong>入力し、その後にスラッシュとスイッチ名を入力することによって表され、コマンドの実行方法に関する追加情報を示します。<br>コマンド ライン スイッチを使用してプログラムを起動する方法の 1 つとして、スタート メニューにある [ファイル名を指定して実行] を起動して実行する方法があります。<br>例えば、Outlook に何かトラブルが発生している場合、この outlook.exe コマンドに、特定の情報をクリアしたり、削除したりするスイッチを追加することで、事象を回避することが期待できます。<br>コマンド ライン スイッチを実行したことにより、すでに設定している情報がクリアされる場合は再設定が必要になります。<br>今回は、よくご案内するコマンド ライン スイッチをピックアップし、初期化されてしまう情報、実行することによる影響についてご案内したいと思います。  </p>
+<p>ここでご紹介する以外にもたくさんの使用可能なスイッチが存在します。<br>詳細については、Office のアプリケーションごとに以下の公開情報にまとまっていますのでご参照ください。<br>※ Office 製品のコマンド ライン スイッチのリスト セクションの Outlook タブをクリックしてください。  </p>
+<p><strong>公開情報</strong> : <a target="_blank" rel="noopener" href="https://support.microsoft.com/office/079164cd-4ef5-4178-b235-441737deb3a6#category=outlook">Microsoft Office 製品のコマンド ライン スイッチ</a> </p>
+<h3 id="cleanviews"><a href="#cleanviews" class="headerlink" title="&#x2F;cleanviews"></a>&#x2F;cleanviews</h3><p>このスイッチを追加して起動することにより、ビューの設定を既定に復元するため、作成したユーザー設定のビューはすべてリセットされます。<br>ログオンするメールボックス、PST ファイル、およびアクセスを行ったパブリック フォルダーのうちアイテムを削除する権限を持つフォルダーのビューが初期化され、メール以外の予定表や連絡先、タスク フォルダーもビューの初期化の対象となります。<br>ビュー情報とは、メッセージ一覧でのソート順序や各列の表示幅、フォント幅などの設定です。<br>従来の Outlook の [表示]–[ビューの変更] や [ビューの設定] からカスタマイズが可能な設定やフィルダーの並び順などが該当します。<br><strong>現在の設定値をバックアップ ファイルなどに出力するといった機能はないため、このスイッチを追加して起動した場合には、手動にて再設定する必要があります。</strong></p>
+<p>使用する例:<br>ビューの破損による問題の可能性が疑われる場合、回避が期待できます。<br>特定のフォルダーを表示すると、クラッシュしたり、アイテムが正しく表示されてないといった事象などの場合も、ビューの破損が疑われる事象です。  </p>
+<h3 id="cleanrules"><a href="#cleanrules" class="headerlink" title="&#x2F;cleanrules"></a>&#x2F;cleanrules</h3><div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em; padding-bottom:0em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px">
+<path fill="#ff7518" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg>
+注意
+</div>
+このコマンド ライン スイッチを実施すると仕分けルールがリセットされるため再設定する必要があります。
+
+<p>また、ユーザーがご利用の Outlook プロファイルに以下のように追加したメールボックスの仕分けルールも含めて削除されますのでご注意ください。<br>そのため、仕分けルールをリセットする対象のメールボックスのみを含む Outlook プロファイルで実行することをお勧めします。  </p>
+<ul>
+<li>追加のアカウント<br>[ファイル]-[情報]-[アカウント設定]-[アカウント設定] で開いた画面の [メール] タブより別アカウントを追加している場合</li>
+<li>AutoMapping 機能で追加したメールボックス<br>フル アクセス権を持つ他のメールボックスを AutoMapping 機能で追加している場合</li>
+<li>追加のメールボックス<br>フル アクセス権を持つ他のメールボックス (AutoMapping 無効) を、[ファイル]-[情報]-[アカウント設定]-[アカウント名と同期の設定]-[その他の設定]-[詳細設定] の [次の追加のメールボックスを開きます] より追加した場合</div></li>
+</ul>
+<p>このスイッチを追加して起動することにより、クライアント ベースおよびサーバー ベースの仕分けルールを削除します。<br>どのような仕訳ルールがクライアント ベース、サーバー ベースに該当するかなど、詳細は以下の公開情報をご参照ください。</p>
+<p><strong>公開情報</strong> : <a target="_blank" rel="noopener" href="https://support.microsoft.com/office/e1847992-8aa1-4158-8e24-ad043decf1eb#id0edj=newer_versions">Outlook で壊れたルールを編集または修正する</a><br>※ [クラシック Outlook] タブの「サーバー側とクライアント側の規則の違い」セクションをご覧ください。</p>
+<p>仕分けルールは、バックアップが可能です。実行前には以下の手順でバックアップを取ることをおすすめいたします。</p>
+<p>– 従来の Outlook の場合</p>
+<ol>
+<li>Outlook を起動し、[ファイル] タブ – [情報]-[仕分けルールと通知の管理] をクリックします。</li>
+<li>表示されたダイアログで、画面右上の [オプション] をクリックし、[仕分けルールをエクスポート] を実施します。</li>
+<li>任意のパスに、ルールのバックアップを保存します。(ファイルの種類は “自動仕分けウィザード” のままにします。)</li>
+</ol>
+<p>使用する例:<br>仕分けルールが動作しないなど、仕分けルールが不正な場合に回避が期待できます。</p>
+<h3 id="resetnavpane"><a href="#resetnavpane" class="headerlink" title="&#x2F;resetnavpane"></a>&#x2F;resetnavpane</h3><p>このスイッチを追加して起動することにより、Outlook のナビゲーション ペインの情報が初期化されます。<br>ナビゲーション ペインとは、以下の公開情報をご参照ください。<br><strong>公開情報</strong> : <a target="_blank" rel="noopener" href="https://support.microsoft.com/office/24fcad76-7604-4ab0-80ed-18d65fcc9dc3">ナビゲーション ウインドウとは</a>  </p>
+<p>リセットされる設定&#x2F;項目は以下のものが該当します。</p>
+<ul>
+<li><p>ナビゲーション ペインの設定が初期化される<br> 例：<br>Outlook の [オプション]-[詳細設定] で [Outlook でアプリを表示する] のチェックをオフにしている場合、[ナビゲーション] をクリックして確認ができる以下の設定がリセットされます。<br><img src="/blog/Outlook-command-line/command_line_1.png"></p>
+</li>
+<li><p>メール フォルダーのお気に入り、 検索フォルダーが初期化される<br>例：<br><img src="/blog/Outlook-command-line/command_line_2.png"></p>
+</li>
+<li><p>予定表のグループ、連絡先のグループが初期化される<br>(この場合の “グループ” とは、各ユーザーが表示のために作成したものとなり、左ペインに表示されています。)<br>※グループ配下に追加したユーザー自身が作成した予定表フォルダーや連絡先フォルダーは削除されません。<br>例：<br><img src="/blog/Outlook-command-line/command_line_3.png"></p>
+</li>
+<li><p>共有の予定表&#x2F;連絡先&#x2F;タスクを左ペインに追加している場合、表示状態が一旦初期化され共有情報がリセットとなる<br>(項目横のチェックがオフにされるのではなく、追加している項目自体が Outlook からリセットとなります。)<br>例：<br><img src="/blog/Outlook-command-line/command_line_4.png"></p>
+</li>
+</ul>
+<p><strong>現在の設定値をバックアップ ファイルなどに出力するといった機能はないため、このスイッチを追加して起動した場合には、手動にて再設定する必要があります。</strong></p>
+<p>使用する例:<br>例えば、予定表に表示される共有予定表が二重表示されるなど、ナビゲーション ペインに表示されている情報が不正な時、回避が期待できます。</p>
+<h3 id="resetsharedfolders"><a href="#resetsharedfolders" class="headerlink" title="&#x2F;resetsharedfolders"></a>&#x2F;resetsharedfolders</h3><p>このスイッチを追加して起動することにより、Outlook に手動で追加した共有予定表を含むすべての共有フォルダーの情報がリセットされます。<br><strong>現在の設定値をバックアップ ファイルなどに出力するといった機能はないため、このスイッチを追加して起動した場合には、手動にて再追加する必要があります。</strong></p>
+<p>使用する例:<br>予定表に追加している共有予定表の表示リストに関するトラブルや従来の Outlook と Outlook on the Web にて表示されている共有予定表情報に不一致がある時、このスイッチの実行後に共有予定表を再追加することにより、回避が期待できます。</p>
+<h3 id="resetfolders"><a href="#resetfolders" class="headerlink" title="&#x2F;resetfolders"></a>&#x2F;resetfolders</h3><p>このスイッチを追加して起動することにより、メールボックスの既定のフォルダー (受信トレイ、削除済みアイテム、送信トレイ、送信済みアイテムなど) が不整合な状態で失われている場合に、既定の配信場所で復元されます。<br>既定のフォルダーが失われている場合には復元を行いますが、既定のフォルダー以外の独自に作成したフォルダーには影響しません。<br>そのため、特にバックアップなどをしておく必要はありません。</p>
+<p>使用する例:<br>存在するはずのメールボックスの既定のフォルダーが表示されないときなどに回避が期待できます。</p>
+<h3 id="resetfoldernames"><a href="#resetfoldernames" class="headerlink" title="&#x2F;resetfoldernames"></a>&#x2F;resetfoldernames</h3><p>このスイッチを追加して起動することにより、メールボックスの既定のフォルダー (受信トレイ、削除済みアイテム、送信トレイ、送信済みアイテムなど) をメールボックスに設定している言語に合わせて既定の名前に復元します。<br>既定のフォルダー以外の独自に作成したフォルダーには影響しません。</p>
+<p>使用する例:<br>既定のフォルダーに関する問題のトラブルシューティングで、&#x2F;resetfolders のスイッチとセットで利用されることが多く、詳細は以下の公開情報をご参照ください。</p>
+<p><strong>公開情報</strong> : <a target="_blank" rel="noopener" href="https://learn.microsoft.com/outlook/troubleshoot/user-interface/incorrect-folder-names">Outlook の既定のフォルダーに関する問題</a>  </p>
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em; padding-bottom:0em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px">
+<path fill="#ff7518" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg>
+注意
+</div>
+Exchange Server 2010 以降に接続する環境では、本機能は制限されています。<br />
+既定のフォルダー名をリセットするには、Outlook on the Web より [設定]–[全般]-[言語とタイムゾーン] で [言語(国/地域)] より言語を選択し、[指定した言語に合わせて既定のフォルダーの名前を変更する] にチェックを入れ [保存] をクリックします。
+</div>
+ 
+<h3 id="safe"><a href="#safe" class="headerlink" title="&#x2F;safe"></a>&#x2F;safe</h3><p>このスイッチを追加して起動することにより、Outlook をセーフ モードで起動します。<br>セーフ モードでの起動時は、以下のように機能が制限されます。</p>
+<ul>
+<li>ウィンドウ サイズが初期化される (セーフモード起動中に変更可能)</li>
+<li>閲覧ウィンドウの表示をオフにする (セーフモード起動中に変更可能)</li>
+<li>Outlook のリコール機能 (未読メールの取り消し機能) を無効化する</li>
+<li>リボンのユーザー設定、クイック アクセス ツール バーのユーザー設定を無効化する (セーフモード起動中に変更不可)</li>
+<li>アドインのロードを行わない</li>
+</ul>
+<div style="margin:1.25em;border-left:4px solid #1a7f37;padding:.5em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#1a7f37">
+<svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true" style="margin-right:8px">
+<path fill="#1a7f37" d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path>
+</svg>
+補足
+</div>
+セーフ モードでは、アドインのロードなどを行わない動作となるため、ウイルス スキャン ソフトが動作しない場合があります。<br />
+さらに、Outlook は VBA マクロをアドインとして実装しているため、セーフ モードではマクロも実行できなくなります。
+</div>
+ 
+<p>セーフ モードについては、以下の技術情報もご参照ください。<br><strong>公開情報</strong> : <a target="_blank" rel="noopener" href="https://support.microsoft.com/office/dedf944a-5f4b-4afb-a453-528af4f7ac72">Windows PC 上の Office アプリをセーフ モードで開く</a></p>
+<p>セーフ モードでの起動中は制限された動作となりますが、Outlook を再起動すれば通常に戻ります。<br>そのため、表示や設定のバックアップの必要はありません。</p>
+<p>使用する例:<br>Outlook セーフ モードの起動は、一部クライアント側データの修復を行うことが可能か試行し、他社製アドインによって引き起こされる事象かどうかの要因について切り分ける場合などに使用されます。<br>何か正常な動作でない場合には、アドインなどの拡張機能が影響していないかどうかの切り分けとして、まず行っていただくことをおすすめしております。<br>セーフ モードで起動中、事象が回避する場合には、アドインの動作が原因の可能性があります。</p>
+<h3 id="profiles"><a href="#profiles" class="headerlink" title="&#x2F;profiles"></a>&#x2F;profiles</h3><p>このスイッチを追加して起動することにより、[常に使用するプロファイル] が指定されていても、[プロファイルの選択] ダイアログ ボックスを開きます。<br>[プロファイルの選択] ダイアログ ボックスの [オプション]-[作成] より新しい Outlook プロファイルを作成する際、このコマンド ライン スイッチが利用できます。<br>また、キーボードの Shift キーを押したままにしながら従来の Outlook を起動することでも、[プロファイルの選択] ダイアログ ボックスが開けます。</p>
+<p>使用する例：<br>新しく Outlook プロファイルを作成する際や異なる Outlook プロファイルで Outlook を起動する際、このコマンド ライン スイッチを利用します。</p>
+<p><strong>公開情報</strong> : <a target="_blank" rel="noopener" href="https://support.microsoft.com/office/f544c1ba-3352-4b3b-be0b-8d42a540459d">Outlook のプロファイルの作成</a></p>
+<p><strong>本情報の内容 (添付文書、リンク先などを含む) は、作成日時点でのものであり、予告なく変更される場合があります。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Outlook-command-line/" data-id="cmjksirz2002vhg2aakr2emo6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/t-6-months-exchange-server-2016-and-exchange-server-2019-end-of-support/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          残り 6 か月 : Exchange Server 2016 および Exchange Server 2019 のサポート終了
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/more-licensing-and-pricing-information-for-exchange-se-is-now-available/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange SE のライセンスおよび価格情報が公開されました</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

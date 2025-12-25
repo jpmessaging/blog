@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>他人の予定のアラームが表示された際の確認ポイント | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの御正 (ミショウ) です。 本記事では Outlook にて見覚えのない予定アイテムのアラームが表示される事象が発生したときのチェック ポイントについて説明します。なお、本記事では従来の Outlook for Windows (以下、従来の Outlook) に焦点を当てて記載しています。 A. 予定">
+<meta property="og:type" content="article">
+<meta property="og:title" content="他人の予定のアラームが表示された際の確認ポイント">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Other-users-alarm-pops-up/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの御正 (ミショウ) です。 本記事では Outlook にて見覚えのない予定アイテムのアラームが表示される事象が発生したときのチェック ポイントについて説明します。なお、本記事では従来の Outlook for Windows (以下、従来の Outlook) に焦点を当てて記載しています。 A. 予定">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Other-users-alarm-pops-up/alarm.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Other-users-alarm-pops-up/currentfolder.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Other-users-alarm-pops-up/folder.png">
+<meta property="article:published_time" content="2025-03-23T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-03-23T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Outlook">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Other-users-alarm-pops-up/alarm.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Other-users-alarm-pops-up" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Other-users-alarm-pops-up/" class="article-date">
+  <time datetime="2025-03-23T15:00:00.000Z" itemprop="datePublished">2025-03-24</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      他人の予定のアラームが表示された際の確認ポイント
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Other-users-alarm-pops-up/" class="article-date-single">    
+    
+    <time datetime="2025-03-23T15:00:00.000Z" itemprop="dateUpdated">2025-03-24</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの御正 (ミショウ) です。</p>
+<p>本記事では Outlook にて見覚えのない予定アイテムのアラームが表示される事象が発生したときのチェック ポイントについて説明します。<br>なお、本記事では従来の Outlook for Windows (以下、従来の Outlook) に焦点を当てて記載しています。</p>
+<h2 id="A-予定アイテムのアラームの場所を確認する"><a href="#A-予定アイテムのアラームの場所を確認する" class="headerlink" title="A. 予定アイテムのアラームの場所を確認する"></a>A. 予定アイテムのアラームの場所を確認する</h2><p>Outlook では、起動直後や、設定した予定や会議の開始前にアラーム通知が表示されます。</p>
+<p><img src="/blog/Other-users-alarm-pops-up/alarm.png"></p>
+<p>このアラームが表示された際、表示されている予定&#x2F;会議アイテムをダブル クリックし、[ファイル] を選択すると、アイテムが格納されているフォルダーの情報を確認することが可能です。</p>
+<p><img src="/blog/Other-users-alarm-pops-up/currentfolder.png"></p>
+<p>この方法で、アラームが表示された予定&#x2F;会議アイテムの保存先を確認しましょう。<br>格納先が自身の予定表である場合、予定表のなかにそのアイテムがないか確認し、不要な場合は予定アイテムを削除しましょう。</p>
+<p>稀に自分が設定した覚えがなく、自身の予定表ではない予定表に登録されている予定&#x2F;会議のアラームが表示される場合もありますので、他人の予定表のアラームが表示されている場合はその予定表を削除して改善されるか確認してみましょう。</p>
+<p>予定&#x2F;会議アイテムが見つからなかったり、共有予定表を追加し直しても改善しない場合、後段のポイントを確認してみます。</p>
+<h2 id="B-削除済みアイテム-フォルダー内にある予定表の確認"><a href="#B-削除済みアイテム-フォルダー内にある予定表の確認" class="headerlink" title="B. 削除済みアイテム フォルダー内にある予定表の確認"></a>B. 削除済みアイテム フォルダー内にある予定表の確認</h2><p>手順 A の確認方法でアラームが表示されたアイテムがある予定表が特定できても、その予定表がどこにあるかがわからない場合、メールボックスの [削除済みアイテム] フォルダーに予定表が残っているかもしれません。<br>[削除済みアイテム] に移動された予定表フォルダーは完全に削除されたわけではないので、そこにあるアイテムのアラームが表示される可能性があります。</p>
+<p>[削除済みアイテム] フォルダー内の予定表フォルダーは以下の手順で完全削除することができます。</p>
+<ol>
+<li><p>Outlook の左パネルにある [その他のアプリ] を選択し、[フォルダー] を選択します。</p>
+<p>   <img src="/blog/Other-users-alarm-pops-up/folder.png"></p>
+</li>
+<li><p>[削除済みアイテム] を展開し、対象の予定表フォルダーを右クリックして [予定表の削除] を選択し、完全削除します。</p>
+</li>
+</ol>
+<p>次にオンライン アーカイブを使用している場合はオンライン アーカイブ メールボックスでも同様に確認してみましょう。</p>
+<ol>
+<li>Outlook の左パネルにある [その他のアプリ] を選択し、[フォルダー] を選択します。</li>
+<li>Outlook の左パネルからオンライン アーカイブを展開します。</li>
+<li>[削除済みアイテム] を展開し、対象の予定表フォルダーを右クリックして [予定表の削除] を選択し、完全削除します。</li>
+</ol>
+<h2 id="C-MFCMAPI-の利用"><a href="#C-MFCMAPI-の利用" class="headerlink" title="C. MFCMAPI の利用"></a>C. MFCMAPI の利用</h2><p>冒頭の手順 A でアイテムの格納先の予定表名を確認できていて、ここまで来てもまだ予定&#x2F;会議アイテムのアラームが表示されていたら、もしかしたらアイテムの保管先の予定表フォルダーが隠しアイテムとしてメールボックスに残っているかもしれません。もしくは、ユーザーが利用しているオンライン アーカイブに他人の予定表フォルダーが保存されている可能性もあります。<br>少々複雑な手順ですが、MFCMAPI というツールを利用して、アラームの削除と、予定表フォルダーの削除をしてみます。</p>
+<ol>
+<li><p>アラームが表示されてしまうアイテムの格納先の予定表がどこにあるか分かっており、その予定表を削除できる場合は、事前に Outlook にて削除します。</p>
+</li>
+<li><p>MFCMAPI をダウンロードします。<br><a target="_blank" rel="noopener" href="https://github.com/microsoft/mfcmapi/releases/tag/24.0.24362.01">GitHub</a> から MFCMAPI のファイルをダウンロードして展開し、展開された MFCMapi.exe のプロパティを開いて [許可する] のチェックをオンにしておきます。ダウンロードするファイルは利用している Outlook に応じて以下のファイルです。</p>
+<p>32 ビット版の Outlook を使用している場合: MFCMAPI.exe.&lt;バージョン&gt;.zip<br>64 ビット版の Outlook を使用している場合: MFCMAPI.x64.exe.&lt;バージョン&gt;.zip</p>
+<p>※ 使用している Outlook が 32 ビット版か 64 ビット版かは、[ファイル] タブ-[Office アカウント]-[Outlook のバージョン情報] から確認します。 </p>
+</li>
+<li><p>Outlook が起動している場合は終了します。</p>
+</li>
+<li><p>MFCMAPI.exe をダブルクリックして起動します。</p>
+</li>
+<li><p>[Tools] メニューの [Options] をクリックし、以下のチェックボックスがオンになっていない場合はオンにして [OK] をクリックします。</p>
+<p> Use the MDB_ONLINE_ flag when calling OpenMsgStore<br> Use the MAPI_NO_CACHE flag when calling OpenEntry</p>
+</li>
+<li><p>[Session]、[Logon] の順にクリックし、Outlook プロファイルを選択して、[OK] をクリックします。</p>
+</li>
+<li><p>対象のメールボックス ストアをダブルクリックします。</p>
+</li>
+<li><p>画面中央に開かれた画面左側のツリーの [Root Container] をクリックして展開します。</p>
+</li>
+<li><p>展開したツリーを下までスクロールし、[アラーム] フォルダーの右クリック メニューから [Delete folder] をクリックします。[アラーム] ではなく日本語表記で [リマインダー] と表記される場合もあります。フォルダー名が英語の場合は [アラーム] は [Reminders] と表記されます。</p>
+</li>
+<li><p>確認ダイアログが表示されますので [OK] をクリックします。</p>
+</li>
+<li><p>[Root Container] - [インフォメーション ストアの先頭] - [予定表] を展開します。英語では [インフォメーション ストアの先頭] が [Top of Information Store]、[予定表] は [Calendar] と表記されます。</p>
+</li>
+<li><p>[予定表] フォルダー配下に、本記事の序盤で確認したアラームが表示される予定表フォルダーがないか探します。(複数存在している場合もあります。)</p>
+</li>
+<li><p>手順 12. で確認したフォルダーの右クリック メニューから [Delete folder] をクリックし、[Hard Deletion] をオンにして [OK] をクリックします。</p>
+</li>
+<li><p>再度 [予定表] フォルダーを展開し、手順 13. で削除したフォルダーが存在しないことを確認します。</p>
+</li>
+<li><p>同様の手順を繰り返し、[予定表] フォルダー配下にアラームが表示される予定表フォルダーがなくなるまでフォルダーを削除します。</p>
+</li>
+<li><p>ウィンドウを閉じ 7 番の手順で今度はオンライン アーカイブ メールボックスをダブルクリックして開きます。</p>
+</li>
+<li><p>11 から 15 の手順をオンライン アーカイブ メールボックスでも繰り返し行います。</p>
+</li>
+<li><p>MFCMAPI のウィンドウをすべて閉じます。</p>
+</li>
+<li><p>Outlook を起動し、事象の発生状況を確認します。</p>
+</li>
+</ol>
+<h2 id="D-cleanreminders-スイッチの実行"><a href="#D-cleanreminders-スイッチの実行" class="headerlink" title="D. cleanreminders スイッチの実行"></a>D. cleanreminders スイッチの実行</h2><p>手順 C を行っても改善されない場合、本項目 D 以降の手順を試してみます。<br>Outlook には cleanreminders スイッチがあり、アラームの削除と再生成ができます。<br>以下のスイッチを付けて Outlook を起動し、事象が直るか確認してみましょう。</p>
+<ol>
+<li><p>Outlook が起動している場合は終了します。</p>
+</li>
+<li><p>Windows スタート ボタンの右クリック メニューから、[ファイル名を指定して実行] を起動します。</p>
+</li>
+<li><p>[名前] に以下のように入力し [OK] をクリックします。<br>※ <code>Outlook.exe</code> と <code>/cleanreminders</code> の間には半角スペースが必要となるのでご注意ください。</p>
+<pre><code> Outlook.exe /cleanreminders
+</code></pre>
+</li>
+<li><p>Outlook が起動します。</p>
+</li>
+</ol>
+<div style="margin:1.25em;border-left:4px solid #f85149;padding:.5em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#f85149">
+<svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true" style="margin-right:8px">
+<path fill="#f85149" d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>
+注意
+</div>
+/cleanreminders を実施すると、内部的にアラーム フォルダーを削除、再作成を行い、その後アラーム情報を再度検索し、取得するような動作が行われます。
+そのため、検索対象のアイテムが多い場合や、取得するアラーム情報が多い場合には、アラームが正常に表示されるまでに時間を要することが予測されます。
+</div>
+
+<h2 id="E-OST-ファイルの再作成"><a href="#E-OST-ファイルの再作成" class="headerlink" title="E. OST ファイルの再作成"></a>E. OST ファイルの再作成</h2><p>Outlook on the Web には他人の予定アイテムのアラームが表示されず、Outlook のみ表示されてしまう場合、ローカルのキャッシュ ファイルにサーバーとは同期されていない予定表が残っているかもしれません。<br>OST ファイルを削除し、問題が解決されるか見てみましょう。</p>
+<ol>
+<li>Outlook を起動し [ファイル]-[アカウント設定]-[アカウント設定] を開きます。</li>
+<li>[データ ファイル] タブを開き、自身のアカウントを選択し [ファイルの場所を開く] を選択してエクスプローラーを開きます。これで OST ファイルの場所を特定します。</li>
+<li>Outlook を終了し、先程特定した OST ファイルを削除します。</li>
+</ol>
+<h2 id="F-PST-ファイルの確認"><a href="#F-PST-ファイルの確認" class="headerlink" title="F. PST ファイルの確認"></a>F. PST ファイルの確認</h2><p>今利用している Outlook で PST ファイルは開いていますか？予定&#x2F;会議アイテムの保存先がわかっていて、削除済みアイテムを確認しても解決しない場合、もしかしたら開いている PST ファイルのアラームが有効になっているかもしれません。<br>当該 PST ファイルを右クリックして、[データ ファイルのプロパティ] を選択し、[このフォルダーのアラームとタスクを To Do バーに表示する] がオンになっているかを確認しましょう。オンになっていると PST ファイル内のアイテムのアラームが表示される可能性があります。<br>オフにして [適用] をクリックすると、Outlook 再起動のメッセージが表示されます。複数の PST を開いている場合、それぞれの [このフォルダーのアラームとタスクを To Do バーに表示する] 設定を確認し、変更したうえで、Outlook を再起動します。</p>
+<p><strong>本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Other-users-alarm-pops-up/" data-id="cmjksirz4002zhg2a0hjg37az" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/optional-connected-experiences-notice/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          &#34;あなたのプライバシーは重要です&#34; の通知について
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/Summary-of-installation-methods-for-new-outlook-for-windows/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">新しい Outlook for Windows のインストール方法まとめ</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

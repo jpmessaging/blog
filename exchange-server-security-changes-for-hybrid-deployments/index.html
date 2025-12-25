@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>ハイブリッド展開における Exchange Server のセキュリティ変更 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Exchange Server Security Changes for Hybrid Deployments の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Microsoft の Secure Future Initiative (SFI)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ハイブリッド展開における Exchange Server のセキュリティ変更">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Exchange Server Security Changes for Hybrid Deployments の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Microsoft の Secure Future Initiative (SFI)">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/DedicatedHybirdApp.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/dha01.jpg">
+<meta property="article:published_time" content="2025-04-22T01:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-22T01:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/DedicatedHybirdApp.jpg">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-exchange-server-security-changes-for-hybrid-deployments" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/exchange-server-security-changes-for-hybrid-deployments/" class="article-date">
+  <time datetime="2025-04-22T01:00:00.000Z" itemprop="datePublished">2025-04-22</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ハイブリッド展開における Exchange Server のセキュリティ変更
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/exchange-server-security-changes-for-hybrid-deployments/" class="article-date-single">    
+        
+    <time datetime="2025-08-11T15:00:00.000Z" itemprop="lastupdate">2025-08-12</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/exchange-server-security-changes-for-hybrid-deployments/4396833">Exchange Server Security Changes for Hybrid Deployments</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>Microsoft の <a target="_blank" rel="noopener" href="https://www.microsoft.com/trust-center/security/secure-future-initiative">Secure Future Initiative (SFI)</a> の一環として、セキュリティは常に最優先事項です。SFI に沿って、Exchange Server ハイブリッド展開のセキュリティを強化するために、いくつかの変更が実施されます。本ブログ記事では、Exchange Server ハイブリッド展開に特化した現在および今後の変更について説明します。なお、組織で Exchange ハイブリッド構成を使用していない場合、本記事の内容は該当しません。</p>
+<h2 id="変更点-1-Exchange-ハイブリッド専用アプリケーションへの移行"><a href="#変更点-1-Exchange-ハイブリッド専用アプリケーションへの移行" class="headerlink" title="変更点 1: Exchange ハイブリッド専用アプリケーションへの移行"></a>変更点 1: Exchange ハイブリッド専用アプリケーションへの移行</h2><p>Exchange ハイブリッド展開機能 (予定表の空き時間情報の共有、メール ヒント、ユーザーのプロフィール写真の共有など、これを “リッチ共存” と呼びます) を実現にするために、Exchange Server は現在、Exchange Online と共有のアプリケーションのサービス プリンシパルを利用しています。このアプリケーションの名前は <em>Office 365 Exchange Online</em> で、アプリケーション ID は <em>00000002-0000-0ff1-ce00-000000000000</em> です。この構成は、ハイブリッド構成ウィザード (HCW) を初めて実行した際に設定され、Exchange Server と Exchange Online 間の通信を認証し、安全に保つために使用されます。</p>
+<p>2025 年 4 月の更新プログラム (<a href="/blog/released-april-2025-exchange-server-hotfix-updates/">2025 年 4 月の HU リリース</a>) 以降、Exchange Server はテナントの Entra ID 内に用意した Exchange ハイブリッド専用アプリケーションを使用するよう移行を開始します。2025 年 10 月までに、リッチ共存機能を必要とするすべての既存および新規の Exchange Server ハイブリッド展開は、Exchange ハイブリッド専用アプリケーションを<u><strong>使用する必要があります</strong></u>。この期限を過ぎると、Exchange Online サービスは共有サービス プリンシパルの使用を許可しなくなります。</p>
+<p>Exchange ハイブリッド専用アプリケーションを有効化および使用するためには、管理者がいくつかの変更を行う必要があります。詳細については、<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">ドキュメント</a> をご参照ください。</p>
+<h2 id="変更点-2-Exchange-ハイブリッドにおける-EWS-呼び出しの廃止と-REST-ベースの-Microsoft-Graph-API-呼び出しへの移行"><a href="#変更点-2-Exchange-ハイブリッドにおける-EWS-呼び出しの廃止と-REST-ベースの-Microsoft-Graph-API-呼び出しへの移行" class="headerlink" title="変更点 2: Exchange ハイブリッドにおける EWS 呼び出しの廃止と REST ベースの Microsoft Graph API 呼び出しへの移行"></a>変更点 2: Exchange ハイブリッドにおける EWS 呼び出しの廃止と REST ベースの Microsoft Graph API 呼び出しへの移行</h2><p><a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/retirement-of-exchange-web-services-in-exchange-online/3924440">Exchange Web Services (EWS) の Exchange Online での廃止</a> が予定されています。Exchange ハイブリッド機能を維持するために、Exchange Server は今年後半に、Exchange Server から Exchange Online への EWS 呼び出しの代替として Microsoft Graph API のサポートを開始ます。この機能は、2025 年第 3 四半期にリリースされる Exchange Server 2019 および Exchange Server 2016 の更新プログラムを通じて提供されます。Microsoft Graph への移行に伴い、Exchange ハイブリッド専用アプリケーションが使用する API 権限が見直され、より細かい Graph API 権限を利用するようになります。このリリースに関する追加情報を含むブログ記事およびドキュメントは、リリース時に公開される予定です。</p>
+<p><strong>重要:</strong> Exchange Server ハイブリッド環境で Microsoft Graph を利用するには、<strong>Exchange ハイブリッド専用アプリ</strong> (上記の “変更点 1” を参照) が必要です。現在の共有サービス プリンシパルのアプローチは使用されなくなります。この変更は、<u><strong>Exchange Server (オンプレミス) での EWS API の利用可能性には影響しません</strong></u>。Exchange Server から Exchange Online への EWS 呼び出しが REST ベースの Microsoft Graph API 呼び出しに置き換えられます。</p>
+<h2 id="誰がいつ対応が必要なのか"><a href="#誰がいつ対応が必要なのか" class="headerlink" title="誰がいつ対応が必要なのか"></a>誰がいつ対応が必要なのか</h2><table>
+<thead>
+<tr>
+<th><strong>組織で以下の Exchange ハイブリッド機能を使用している場合…</strong></th>
+<th><strong>実施すべきアクションは…</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>オンプレミスのメールボックスを持つユーザーと Exchange Online のメールボックスを持つユーザー間でリッチ共存機能 (特定の機能 : 空き時間情報の参照、メール ヒント、プロフィール写真の共有) が必要な場合</td>
+<td><a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">ドキュメント</a>に記載されている<em>手順を必ず実施し</em>、(<strong>2025 年 10 月までに</strong>) Exchange ハイブリッド専用アプリを使用するように切り替えてください。その後、(<strong>利用可能になり次第、2026 年 10 月までに</strong>) ハイブリッド構成を Graph API に切り替えてください。これらの手順を実施しない場合、リッチ共存機能が動作しなくなります。<br><br>すべてのサーバーが更新され、Exchange ハイブリッド専用アプリを使用するようになった後、”<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">サービス プリンシパル クリーンアップ モード</a>“ を実行してください。</td>
+</tr>
+<tr>
+<td>その他のハイブリッド機能 (移行、SMTP リレー、受信者管理など) のみを使用しており、<em>リッチ共存は不要</em>な場合</td>
+<td>ハイブリッド構成を強化するために、<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication">提供されているスクリプト</a>を使用して、共有の「Office 365 Exchange Online」アプリケーションから組織証明書を削除することを<em>推奨</em>します。”サービス プリンシパル クリーンアップ モード” の詳細は<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">ドキュメント</a>を参照してください。<br><br>リッチ共存機能が不要な場合、Exchange ハイブリッド専用アプリを作成する必要はありません。</td>
+</tr>
+</tbody></table>
+<h2 id="リッチ共存機能が必要な-Exchange-ハイブリッド利用者は対応が必須です"><a href="#リッチ共存機能が必要な-Exchange-ハイブリッド利用者は対応が必須です" class="headerlink" title="リッチ共存機能が必要な Exchange ハイブリッド利用者は対応が必須です"></a>リッチ共存機能が必要な Exchange ハイブリッド利用者は対応が<em>必須です</em></h2><p><strong>ステップ 1</strong> – Exchange ハイブリッドを共有サービス プリンシパルから Exchange ハイブリッド専用アプリに切り替える作業を、<strong>2025 年 10 月までに</strong>実施してください。この変更は、以下の 2 つの方法で行うことができます。</p>
+<ul>
+<li><strong>オプション 1 (推奨)</strong>: 2025 年 4 月の更新プログラム (またはそれ以降) をインストールし、*<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication">ConfigureExchangeHybridApplication.ps1</a>* スクリプトを実行して、Exchange ハイブリッドを現在の “共有プリンシパル” 構成から Exchange ハイブリッド専用アプリを使用する構成に切り替えます。詳細は<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">ドキュメント</a>をご参照ください。</li>
+<li><strong>オプション 2</strong>: <a href="/blog/dedicated-hybrid-app-temporary-enforcements-new-hcw-and-possible-hybrid-function/">更新版のハイブリッド構成ウィザード (HCW)</a> がリリースされました。HCW を再実行して、Exchange ハイブリッド専用アプリを構成してください。ただし、スクリプト (オプション 1) の方が新しい Exchange ハイブリッド専用アプリに対応したより堅牢な方法である点にご留意ください。</li>
+</ul>
+<p><strong>ステップ 2</strong> – Exchange ハイブリッドを Graph API 呼び出しに切り替え、Exchange ハイブリッド専用アプリの権限をより細かい Graph 権限モデルに更新する作業を、<strong>2026 年 10 月までに</strong>実施してください。</p>
+<ul>
+<li>2025 年第 3 四半期に、Exchange Server の Graph API 更新プログラムが利用可能になり次第、リッチ共存を必要とするすべてのお客様 (すでに上記のステップ 1 を実施済みの方も含む) は、Exchange 2016&#x2F;2019 の更新プログラムをインストールし、Exchange ハイブリッド専用アプリの権限をより細かい Graph API 権限モデルに切り替える必要があります。この作業は、<strong>2026 年 10 月までに</strong>完了する必要があります。詳細な手順については、リリース時に提供されるドキュメントをご参照ください。</li>
+</ul>
+<p>以下の図は、ハイブリッド環境でリッチ共存を利用する組織が、上記の変更 1 および変更 2 に関連して、いつ何が必要になるかを示しています。</p>
+<p><img src="/blog/exchange-server-security-changes-for-hybrid-deployments/DedicatedHybirdApp.jpg"></p>
+<p style="background: #ffff99"><i>Exchange ハイブリッド環境でリッチ共存機能を必要とするお客様</i>は、2025 年 4 月の更新プログラム (HU) リリースから 2025 年 10 月までの間に対応が必要です。2025 年 10 月までに Exchange ハイブリッド専用アプリに更新し、その後 2026 年 10 月までに Graph 権限モデルに更新しない場合、オンプレミスと Exchange Online ユーザー間の空き時間情報の共有、メール ヒント、プロフィール写真の共有といった一部の Exchange ハイブリッド機能が動作しなくなります。</p>
+
+<h2 id="その他の-Exchange-ハイブリッド利用者への推奨事項"><a href="#その他の-Exchange-ハイブリッド利用者への推奨事項" class="headerlink" title="その他の Exchange ハイブリッド利用者への推奨事項"></a>その他の Exchange ハイブリッド利用者への推奨事項</h2><p>リッチ共存機能を利用していない場合でも、組織で過去に Exchange ハイブリッド構成ウィザード (HCW) を実行・完了している、または <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help">Exchange と Exchange Online 組織間の OAuth 認証を構成する</a>ドキュメントに記載された手順を実施している場合、HCW の実行過程で組織証明書が共有サービス プリンシパルにアップロードされています。</p>
+<p>ハイブリッド構成のセキュリティ強化のため、<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication">提供されているスクリプト</a>を使用して、共有の「Office 365 Exchange Online」アプリケーションから組織証明書を削除することを強く推奨します。詳細は<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">ドキュメント</a>の「サービス プリンシパル Clean-Up モード」をご参照ください。</p>
+<p>リッチ共存機能が不要な場合、Exchange ハイブリッド専用アプリを作成する必要はありません。また、このスクリプトの実行は、オンプレミスの Exchange Server のバージョンに依存しません (Exchange Server の更新プログラムをインストールしていなくても、スクリプトを実行できます)。</p>
+<h2 id="手順全体の概要"><a href="#手順全体の概要" class="headerlink" title="手順全体の概要"></a>手順全体の概要</h2><p>専用の Exchange ハイブリッド アプリへの移行に必要な手順を視覚的に把握できるよう、以下のフローチャートを作成しました。</p>
+<p><img src="/blog/exchange-server-security-changes-for-hybrid-deployments/dha01.jpg"></p>
+<p><strong>フローチャート内の各ステップの補足説明:</strong></p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help">Exchange と Exchange Online 組織間の OAuth 認証を構成します</a>。</li>
+<li>リッチ共存機能を有効にすると、オンプレミスと Exchange Online のメールボックス間で空き時間情報の参照、メール ヒント、ユーザー プロフィール写真の共有が可能になります。</li>
+<li>設定のオーバーライドは、専用の Exchange ハイブリッド アプリを <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-configuration-wizard-choose-configuration-feature">HCW</a> で作成した場合、または<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/deploy-dedicated-hybrid-app">スクリプトの分割実行構成モード</a>で作成した場合のみ、別途実施が必要です。</li>
+</ol>
+<h2 id="よくあるご質問"><a href="#よくあるご質問" class="headerlink" title="よくあるご質問"></a>よくあるご質問</h2><p>このトピックに関するよくあるご質問 (FAQ) は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app#frequently-asked-questions">公開情報</a>に移動しました。</p>
+<p><strong>主な変更点:</strong></p>
+<ul>
+<li>2025&#x2F;8&#x2F;11 : 手順全体の概要を示すフローチャートを追加しました。</li>
+<li>2025&#x2F;8&#x2F;7 : ブログ本文内に ConfigureExchangeHybridApplication.ps1 スクリプトへの直接リンクを追加しました。</li>
+<li>2025&#x2F;8&#x2F;6 : ハイブリッド構成ウィザード (HCW) が Exchange ハイブリッド専用アプリの作成に対応しました。関連する内容を更新しました。</li>
+<li>2025&#x2F;8&#x2F;4 : 本トピックに関するよくあるご質問 (FAQ) を<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app#frequently-asked-questions">公開情報</a>に移動しました。</li>
+<li>2025&#x2F;7&#x2F;31 : 「リッチ共存」機能を利用していないお客様向けの推奨事項を明確化しました。</li>
+<li>2025&#x2F;5&#x2F;16 : 複数のオンプレミス フォレスト構成に関する FAQ を追加しました。</li>
+<li>2025&#x2F;4&#x2F;24 : Exchange ハイブリッド専用アプリの名前変更に関する FAQ を追加しました。</li>
+<li>2025&#x2F;4&#x2F;22 : スクリプトを使用してセキュリティ プリンシパルのクリーンアップのみを行う場合、4月の更新プログラム (HU) をインストールする必要がないことに関する FAQ を追加しました。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/" data-id="cmjksis0a005rhg2a9kty1jtl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/System-requirements-for-copilot-in-outlook/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Copilot in Outlook の機能について
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/released-april-2025-exchange-server-hotfix-updates/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">リリース: 2025 年 4 月の Exchange Server Hotfix 更新</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

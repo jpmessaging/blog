@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>リリース: Exchange Server 2019 向け 2025 H1 累積更新プログラム | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Released: 2025 H1 Cumulative Update for Exchange Server の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 本日、Exchange Server 2019 向け 2025 H1 累積更新プログラ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="リリース: Exchange Server 2019 向け 2025 H1 累積更新プログラム">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/released-2025-h1-cumulative-update-for-exchange-server/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Released: 2025 H1 Cumulative Update for Exchange Server の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 本日、Exchange Server 2019 向け 2025 H1 累積更新プログラ">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/released-2025-h1-cumulative-update-for-exchange-server/image01.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/released-2025-h1-cumulative-update-for-exchange-server/image02.jpg">
+<meta property="article:published_time" content="2025-02-12T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-12T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/released-2025-h1-cumulative-update-for-exchange-server/image01.jpg">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-released-2025-h1-cumulative-update-for-exchange-server" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/released-2025-h1-cumulative-update-for-exchange-server/" class="article-date">
+  <time datetime="2025-02-12T15:00:00.000Z" itemprop="datePublished">2025-02-13</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      リリース: Exchange Server 2019 向け 2025 H1 累積更新プログラム
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/released-2025-h1-cumulative-update-for-exchange-server/" class="article-date-single">    
+        
+    <time datetime="2025-03-03T15:00:00.000Z" itemprop="lastupdate">2025-03-04</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/released-2025-h1-cumulative-update-for-exchange-server/4362055">Released: 2025 H1 Cumulative Update for Exchange Server</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>本日、Exchange Server 2019 向け 2025 H1 累積更新プログラム (CU) (別名 CU15) の提供を発表します。これは、Exchange Server 2019 向けにリリースする最後の CU です。</p>
+<p>CU15 には、新機能、お客様から報告された問題の修正、セキュリティ更新が含まれており、これまでにリリースされたすべてのセキュリティ更新プログラム (SU) が組み込まれています。</p>
+<p><mark>CU15 には、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/re-release-of-november-2024-exchange-server-security-update-packages/4341892">2024 年 11 月の SU v2</a> (再リリース パッケージ) に含まれるすべてのセキュリティ更新が含まれており、<a target="_blank" rel="noopener" href="https://support.microsoft.com/topic/time-zone-exception-occurs-after-installing-exchange-server-november-2024-su-version-1-or-version-2-851b3005-6d39-49a9-a6b5-5b4bb42a606f">2024 年 11 月の SU における既知のタイムゾーンの問題</a>の修正も含まれています。</mark></p>
+<p>CU15 の修正の完全なリストは、CU15 の KB 記事に記載されていますが、この記事では CU15 の重要な変更点をいくつか紹介します。</p>
+<h3 id="Exchange-Server-機能フライティング"><a href="#Exchange-Server-機能フライティング" class="headerlink" title="Exchange Server 機能フライティング"></a>Exchange Server 機能フライティング</h3><p>CU15 では、Exchange Server Subscription Edition (SE) に導入される新機能 「<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/plan-and-deploy/post-installation-tasks/feature-flighting">機能フライティング</a>」のサーバー側コンポーネントが導入されます。従来、Exchange Server の更新プログラムを本番環境にインストールする前に、テスト環境で更新プログラムを展開し、まずその更新プログラムを検証してから本番環境に展開することが一般的でした。これは重要な作業ですが、時間がかかるため、重要な更新プログラムの展開が遅れることがあります。さらに、すべてのお客様がテスト環境を持っているわけではありません。</p>
+<p>機能フライティングは、管理者が Exchange Server SE 組織全体で選択した新機能をテストおよび展開する方法を提供します。機能フライティングは、オンプレミスの Exchange Server 向けのオプションのクラウド ベース サービスです。Emergency Mitigation サービスや Microsoft Office クライアントが使用しているのと同じ Office Config Service (OCS) のエンドポイントを使用して、Microsoft からの機能フライティングに関連する情報を取得します。</p>
+<p>機能フライティングを使用すると、管理者は更新を即座に展開したり、フライトされた機能が環境内で有効になるタイミングを制御したりできます。また、機能フライティングにより、フライトされた機能を含む更新プログラムがリリースされた後に重大な問題が発見された場合、Microsoft がその機能を無効にすることも可能です。</p>
+<p>機能フライティングは、すべての新機能や変更に適用されるわけではありません。Exchange Server エンジニアリング チームが、どの機能を機能フライティングで配布するかを決定し、フライトされた機能の詳細なリストは<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/plan-and-deploy/post-installation-tasks/feature-flighting#flighted-features">こちら</a>で随時更新されます。</p>
+<p>機能フライティングの使用はオプションですが、デフォルトで有効になっています。設定や無効化の手順については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/plan-and-deploy/post-installation-tasks/feature-flighting">ドキュメント</a>をご参照ください。</p>
+<p><strong>注:</strong> CU15 ではフライトされる機能はありません。また、コードの同等性の約束により、Exchange Server SE RTM でもフライトされる機能はありません。機能フライティングは今後の更新にのみ適用され、フライトされる機能がある場合は、今後の更新で詳細を提供します。</p>
+<h3 id="オプションの追加診断データの-Microsoft-への送信"><a href="#オプションの追加診断データの-Microsoft-への送信" class="headerlink" title="オプションの追加診断データの Microsoft への送信"></a>オプションの追加診断データの Microsoft への送信</h3><p>Microsoft は、Exchange Server を安全かつ最新の状態に保ち、問題を見つけて修正し、脅威を特定して軽減するために診断データを収集します。管理者が有効にすると、Exchange Server 2019 は<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/diagnostic-data-exchange-server">診断データ</a>を OCS に送信します。</p>
+<p>CU15 から、Exchange Server は Microsoft に<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/diagnostic-data-exchange-server#diagnostic-data-collected">追加の診断データ</a>を収集して送信します。これには、フライトされた機能に関する追加情報も含まれます。この追加データは、サーバーで診断データが有効になっている場合にのみ収集および送信されます。</p>
+<h3 id="Windows-Server-2025-のサポート"><a href="#Windows-Server-2025-のサポート" class="headerlink" title="Windows Server 2025 のサポート"></a>Windows Server 2025 のサポート</h3><p>CU14 および CU15 の両方で、Windows Server 2025 上での Exchange Server 2019 の動作がサポートされ、また、Windows Server 2025 の Active Directory サーバーの組織での利用がサポートされることをお知らせします。これにより、Windows Server 2025 を搭載した新しいハードウェアに CU14 または CU15 のいずれかをインストールし、その後 <a href="https://jpmessaging.github.io/blog/Upgrading%20your%20organization%20from%20current%20versions%20to%20Exchange%20Server%20SE/">Exchange Server Subscription Edition (SE) にインプレース アップグレード</a>することで、サーバーの<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/windows-server-2025">最大サポート製品ライフサイクル</a>を得ることができます。このサポートは CU15 に提供されると以前お伝えしましたが、最新バージョンの Windows Server への移行を容易にするために、このシナリオに対して CU14 も検証しました。</p>
+<h3 id="Oracle-Outside-In-Technology-が-DocParser-に置き換わります"><a href="#Oracle-Outside-In-Technology-が-DocParser-に置き換わります" class="headerlink" title="Oracle Outside In Technology が DocParser に置き換わります"></a>Oracle Outside In Technology が DocParser に置き換わります</h3><p>Exchange Server は以前から使用されていた Oracle Outside In Technology の代わりに CU15 から DocParser を使用します。DocParser は、さまざまなファイル形式を解析するために設計された Microsoft のライブラリです。これは、データ損失防止 (DLP) および Exchange トランスポート ルールのために、トランスポート中のメールを処理する際にテキスト抽出を行います。</p>
+<h3 id="部分的な-TLS-1-3-のサポート"><a href="#部分的な-TLS-1-3-のサポート" class="headerlink" title="部分的な TLS 1.3 のサポート"></a>部分的な TLS 1.3 のサポート</h3><p>CU15 から、Exchange Server 2019 は Windows Server 2022 以降で、SMTP を除くすべてのプロトコルに対して TLS 1.3 をサポートします。CU15 が Windows Server 2022 以降にインストールされると、TLS 1.3 は既定で有効になります (ただし、CU15 は既存の TLS バージョンを<em>無効にすることはありません</em>)。</p>
+<p>SMTP に対する TLS 1.3 のサポートは、将来の更新で追加される予定です。</p>
+<h3 id="Exchange-Server-の-AMSI-統合の改善"><a href="#Exchange-Server-の-AMSI-統合の改善" class="headerlink" title="Exchange Server の AMSI 統合の改善"></a>Exchange Server の AMSI 統合の改善</h3><p>CU15 には、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/released-november-2024-exchange-server-security-updates/4293125">2024 年 11 月の SU</a> で発表された Exchange Server の AMSI 統合の改善も含まれています。</p>
+<h3 id="証明書管理-UI-が-EAC-に復活"><a href="#証明書管理-UI-が-EAC-に復活" class="headerlink" title="証明書管理 UI が EAC に復活"></a>証明書管理 UI が EAC に復活</h3><p>以前の CU で EAC から削除された証明書管理タスクが、CU15 で再導入されます。詳細については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/architecture/client-access/certificate-procedures?view=exchserver-2019">証明書の手順</a>を参照してください。</p>
+<h3 id="Exchange-Server-2013-との共存はブロックされます"><a href="#Exchange-Server-2013-との共存はブロックされます" class="headerlink" title="Exchange Server 2013 との共存はブロックされます"></a>Exchange Server 2013 との共存はブロックされます</h3><p><a href="https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/">以前の発表</a>の通り、Exchange Server 2019 CU15 は Exchange Server 2013 を実行しているサーバーが存在する組織にはインストールできません。CU15 をインストールする前に、すべての Exchange Server 2013 のサーバーを<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/decommissioning-exchange-server-2013/ba-p/3613793">廃止</a>し、アンインストールする必要があります。Edge Transport サーバーの削除には追加の手順が必要であり、詳細は<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/architecture/edge-transport-servers/edge-subscription-procedures?view=exchserver-2019">こちら</a>をご参照ください。</p>
+<h3 id="リマインダー-拡張保護が既定で有効化されています"><a href="#リマインダー-拡張保護が既定で有効化されています" class="headerlink" title="リマインダー: 拡張保護が既定で有効化されています"></a>リマインダー: 拡張保護が既定で有効化されています</h3><p>お客様が古い CU からアップグレードする際のリマインダーとして、Exchange 2019 CU14 以降、CU をインストールした後に拡張保護が既定で有効になります。SSL オフロードを使用する場合など、拡張保護がサポートされないシナリオもあります。詳細および拡張保護をオプト アウトする方法については、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/released-2024-h1-cumulative-update-for-exchange-server/4047506">このブログ記事</a>をご覧ください。拡張保護の設定が正しくないと、Outlook の接続に問題が発生する可能性があります。</p>
+<h3 id="Exchange-Server-SE-CU1-に延期された機能"><a href="#Exchange-Server-SE-CU1-に延期された機能" class="headerlink" title="Exchange Server SE CU1 に延期された機能"></a>Exchange Server SE CU1 に延期された機能</h3><p><a href="https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/">以前の発表</a>で、Exchange Server 2019 CU15 が Exchange Server SE プロダクトキーのサポートを追加することをお知らせしました。この変更を Exchange Server SE CU1 まで延期し、Exchange Server 2019 から Exchange Server SE RTM へのインプレース アップグレードができるだけスムーズかつ簡単になるようにします。そのため、Exchange Server SE RTM は <em>Exchange 2019 プロダクト キーを受け入れ、適用し</em>、Exchange Server SE プロダクト キーを使用するためにサーバーを更新する必要は Exchange Server SE CU1 までありません。インプレース アップグレードをさらに簡素化するために、いくつかの前提条件およびセットアップ依存関係の変更 (VC++ 再頒布可能パッケージの新バージョンへの移行など) も延期しました。</p>
+<h2 id="サポータビリティ"><a href="#サポータビリティ" class="headerlink" title="サポータビリティ"></a>サポータビリティ</h2><p>Microsoft には、サーバーの構成や製品のライフサイクル ステータスに基づいた Exchange Server のサポート基準が確立されています。例えば、すべての CU リリース発表の末尾に記載されているように、「<em>Exchange ハイブリッド展開を行っているお客様や、オンプレミスの Exchange と一緒に Exchange Online Archiving を使用しているお客様は、製品のサポートを受けるために最新の CU を展開する必要があります。</em>」</p>
+<p>Exchange Server 製品がメインストリーム サポート中の場合、<em>N-1</em> ポリシーが適用されます。これは、サポート (例：SU の提供やお問い合わせを起票しての技術サポート) を受けるために最新の CU またはその 1 つ前の CU を実行する必要があることを意味します。Exchange Server 2019 は<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/exchange-server-2019">製品ライフサイクル</a>の延長サポート フェーズにあり、1 年以上経過しています。Exchange Server 製品が延長サポートに入ると、サポートを受けるために最新の CU を必要とするポリシーが適用されます (<em>N</em> のみ)。実際、Exchange Server 2016 ではこのポリシーが適用されており、すべてのサーバーはサポートを受けるために CU23 を実行する必要があります。</p>
+<p>必要なセキュリティ作業のために CU15 のリリースを遅らせる必要があり、また CU14 を Windows Server 2025 で検証できたため、Exchange Server 2019 のサポート終了日である 2025 年 10 月 14 日まで、CU14 と CU15 の両方をサポートし続けます。ただし、サーバー構成に関するサポート ポリシーが優先されるため、ハイブリッド構成やオンプレミスのメールボックスにクラウド アーカイブを持つお客様は、サポートを受けるために CU15 を実行する必要があります。</p>
+<p>CU15 のリリースに伴い、<em>CU13 のサポートは終了しました</em>。お客様には、できるだけ早くサーバーを更新することをお勧めします。</p>
+<h2 id="Exchange-Server-SE-RTM-への移行パス"><a href="#Exchange-Server-SE-RTM-への移行パス" class="headerlink" title="Exchange Server SE RTM への移行パス"></a>Exchange Server SE RTM への移行パス</h2><p>以前の<a href="https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/">ロードマップ発表</a>で述べたように、迅速な導入を可能にするために、Exchange Server SE の RTM リリースは Exchange Server 2019 CU15 と<em>コード同等</em> (つまり、<em>全く同じコード</em>) になりますが、以下の変更を<em>除きます</em>：</p>
+<ul>
+<li>ライセンス契約書 (GUI バージョンのセットアップでのみ表示される RTF ファイル) は、更新されます。</li>
+<li>名前が Microsoft Exchange Server 2019 から Microsoft Exchange Server Subscription Edition に変更されます。</li>
+<li>ビルド番号が更新されます。</li>
+</ul>
+<p>また、CU15 の<em>後に</em>リリースされる更新プログラムがある場合、Exchange Server SE の RTM リリースは Exchange Server 2019 CU15 と最新の更新プログラムを合わせたコードと同等になります。</p>
+<p>いくつかの Exchange Server 2019 に関するお客様から報告された不具合が残っており、今後数か月以内に修正する予定です。これらの修正を提供するために、Exchange Server 2019 CU15 用のホットフィックス更新プログラム (HU) をリリースします。この HU はオプションですが、修正を適用し、Exchange Server SE の RTM リリースとコードの同等性を維持するために推奨されます。HU は Exchange Server 2019 CU14 および Exchange Server 2016 CU23 にも提供されます。</p>
+<h3 id="アップグレード-パス"><a href="#アップグレード-パス" class="headerlink" title="アップグレード パス"></a>アップグレード パス</h3><p>推奨されるサポート対象のアップグレード パスは以下の通りです。また、以前のブログ投稿「<a href="https://jpmessaging.github.io/blog/Upgrading%20your%20organization%20from%20current%20versions%20to%20Exchange%20Server%20SE/">現行バージョンからExchange Server SEへのアップグレード</a>」もご参照ください。</p>
+<h3 id="Exchange-Server-2016-CU23-からのアップグレード"><a href="#Exchange-Server-2016-CU23-からのアップグレード" class="headerlink" title="Exchange Server 2016 CU23 からのアップグレード"></a>Exchange Server 2016 CU23 からのアップグレード</h3><p>Exchange Server 2016 をご利用のお客様には、Exchange Server 2019 へのアップグレードを推奨し、Exchange Server SE RTM が利用可能になった際にインプレース アップグレードを実行することをお勧めします。Exchange Server 2016 CU23 から Exchange Server SE RTM へのレガシー アップグレードもサポートされています。</p>
+<p><img src="/blog/released-2025-h1-cumulative-update-for-exchange-server/image01.jpg" alt="図 1 - Exchange Server 2016 の推奨およびサポートされているアップグレード パス"></p>
+<h3 id="Exchange-Server-2019-CU14-CU15-からのアップグレード"><a href="#Exchange-Server-2019-CU14-CU15-からのアップグレード" class="headerlink" title="Exchange Server 2019 CU14&#x2F;CU15 からのアップグレード"></a>Exchange Server 2019 CU14&#x2F;CU15 からのアップグレード</h3><p>Exchange Server SE RTM が利用可能になった際には、インプレース アップグレードを実行することをお勧めします。ただし、Exchange Server 2019 から Exchange Server SE へのレガシー アップグレードもサポートされています。</p>
+<p><img src="/blog/released-2025-h1-cumulative-update-for-exchange-server/image02.jpg" alt="図 2 - Exchange Server 2019 の推奨およびサポートされているアップグレード パス"></p>
+<h2 id="リリース詳細"><a href="#リリース詳細" class="headerlink" title="リリース詳細"></a>リリース詳細</h2><p>このリリースの修正内容と製品のダウンロードについては、以下の KB 記事をご覧ください：</p>
+<ul>
+<li>Exchange Server 2019 Cumulative Update 15 (KB5042461), <a target="_blank" rel="noopener" href="https://www.microsoft.com/Licensing/servicecenter/default.aspx">VLSC</a>, <a target="_blank" rel="noopener" href="https://www.microsoft.com/download/details.aspx?id=106402">Download</a></li>
+</ul>
+<p><mark>Exchange Server 2019 CU15 のインストールを開始する前に、Exchange Server を再起動して、すべての Windows Server 更新プログラムが完全にインストールされていることを確認してください。</mark></p>
+<p>CU をインストールした後は、常に利用可能な <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019">SU</a> を確認してインストールしてください。<a target="_blank" rel="noopener" href="https://aka.ms/ExchangeHealthChecker">Exchange Server Health Checker</a> も、追加の手順が必要かどうかを教えてくれます。</p>
+<h3 id="このリリースの既知の問題"><a href="#このリリースの既知の問題" class="headerlink" title="このリリースの既知の問題"></a>このリリースの既知の問題</h3><p>一部のお客様は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/enterprise/configure-exchange-server-for-hybrid-modern-authentication?view=o365-worldwide">ハイブリッド モダン認証 (HMA)</a> を有効にしている場合、CU15 のインストール後に OWA&#x2F;ECP のログインが <strong>HTTP 401</strong> エラーで正常に動作しない場合があります。</p>
+<p>この既知の問題の回避策は以下の通りです。</p>
+<p>次のコマンドを使用して、OAuth を無効にします。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-EcpVirtualDirectory</span> <span class="literal">-Server</span> server1 | <span class="built_in">Set-EcpVirtualDirectory</span> <span class="literal">-OAuthAuthentication</span> <span class="variable">$false</span></span><br><span class="line"><span class="built_in">Get-OwaVirtualDirectory</span> <span class="literal">-Server</span> server1 | <span class="built_in">Set-OwaVirtualDirectory</span> <span class="literal">-OAuthAuthentication</span> <span class="variable">$false</span></span><br><span class="line"><span class="built_in">Restart-WebAppPool</span> MSExchangeOWAAppPool</span><br><span class="line"><span class="built_in">Restart-WebAppPool</span> MSExchangeECPAppPool</span><br></pre></td></tr></table></figure>
+
+<p>次に、以下のコマンドを使用して OAuth を再度有効化します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-EcpVirtualDirectory</span> <span class="literal">-Server</span> server1 | <span class="built_in">Set-EcpVirtualDirectory</span> <span class="literal">-OAuthAuthentication</span> <span class="variable">$true</span></span><br><span class="line"><span class="built_in">Get-OwaVirtualDirectory</span> <span class="literal">-Server</span> server1 | <span class="built_in">Set-OwaVirtualDirectory</span> <span class="literal">-OAuthAuthentication</span> <span class="variable">$true</span></span><br><span class="line"><span class="built_in">Restart-WebAppPool</span> MSExchangeOWAAppPool</span><br><span class="line"><span class="built_in">Restart-WebAppPool</span> MSExchangeECPAppPool</span><br></pre></td></tr></table></figure>
+
+<p>※ <em>HMA を使用しているすべてのお客様がこの問題に直面するわけではありません</em>のでご注意ください。</p>
+<h2 id="追加情報"><a href="#追加情報" class="headerlink" title="追加情報"></a>追加情報</h2><p>Microsoft は、すべてのお客様に対して、更新プログラムの展開を本番環境にインストールする前に、検証環境でテストすることを推奨しています。これにより、本番環境に適したインストール プロセスを確認することができます。</p>
+<p>Active Directory の準備に関する情報は<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/plan-and-deploy/prepare-ad-and-domains?view=exchserver-2019">こちら</a>をご覧ください。Exchange Server によって行われたスキーマ変更はすべて<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/plan-and-deploy/active-directory/ad-schema-changes?view=exchserver-2019">こちら</a>で追跡されています。</p>
+<p>インストールのベスト プラクティスについては、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/plan-and-deploy/install-cumulative-updates?view=exchserver-2019">Exchange を最新の累積更新プログラムにアップグレードする</a>を参照してください。詳細なインストール手順については、<a target="_blank" rel="noopener" href="https://aka.ms/exchangeupdatewizard">Exchange Update Wizard</a> もご覧ください。</p>
+<p>更新プログラムを PowerShell またはコマンド プロンプトから無人モードでインストールする場合は、Setup.exe へのフルパスを指定するか、CU を含むフォルダーから直接 Setup を実行する際にコマンドの前に “.” を付けてください。これを行わないと、セットアップが正常に完了したと表示されても実際には完了していない可能性があります。詳細は<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/troubleshoot/setup/ex2019-setup-does-not-run-correctly-started-powershell">こちら</a>をご覧ください。</p>
+<p>ハイブリッド展開を行っているお客様や、オンプレミスの Exchange と一緒に Exchange Online Archiving を使用しているお客様は、製品のサポートを受けるために最新の CU を展開する必要があります。</p>
+<p>最新の Exchange Server に関する発表については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/new-features/new-features?view=exchserver-2019">Exchange Server の新機能</a>および <a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/release-notes?view=exchserver-2019">Exchange Server リリース ノート</a>をご覧ください。</p>
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px"><path fill="#ff7518" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>
+注意
+</div>
+この記事が公開された時点では、ドキュメントが完全に利用可能でない場合があります。
+</div>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/released-2025-h1-cumulative-update-for-exchange-server/" data-id="cmjksis0l006nhg2a7cxueqsi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/the-way-to-control-ews-usage-in-exchange-online-is-changing/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Exchange Online で EWS の利用を制限する方法が変わります
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/when-is-exchange-2019-cu15-coming-and-more-news/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange 2019 CU15 のリリース時期と最新情報</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

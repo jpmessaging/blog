@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange キャッシュモードとオンラインモードのメリット・デメリット/[共有フォルダーをダウンロード] のメリット・デメリット
+ | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="こんにちは。日本マイクロソフト Outlook サポート チームです。 キャッシュモードは既定では有効であり弊社では基本的にはキャッシュモードを推奨していますが、お客様の希望や利用状況によってはオンライン モードで利用した方がよい場合もあります。この記事ではキャッシュモードとオンラインモードでの動作の違いやメリット・デメリットを紹介します。また、キャッシュモードにある [共有フォルダーをダウンロー">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange キャッシュモードとオンラインモードのメリット・デメリット&#x2F;[共有フォルダーをダウンロード] のメリット・デメリット
+">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/cachedmode-onlinemode-merit-demerit/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="こんにちは。日本マイクロソフト Outlook サポート チームです。 キャッシュモードは既定では有効であり弊社では基本的にはキャッシュモードを推奨していますが、お客様の希望や利用状況によってはオンライン モードで利用した方がよい場合もあります。この記事ではキャッシュモードとオンラインモードでの動作の違いやメリット・デメリットを紹介します。また、キャッシュモードにある [共有フォルダーをダウンロー">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2015-07-06T15:00:00.000Z">
+<meta property="article:modified_time" content="2015-07-06T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Outlook">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-cachedmode-onlinemode-merit-demerit" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/cachedmode-onlinemode-merit-demerit/" class="article-date">
+  <time datetime="2015-07-06T15:00:00.000Z" itemprop="datePublished">2015-07-07</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange キャッシュモードとオンラインモードのメリット・デメリット/[共有フォルダーをダウンロード] のメリット・デメリット
+
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/cachedmode-onlinemode-merit-demerit/" class="article-date-single">    
+    
+    <time datetime="2015-07-06T15:00:00.000Z" itemprop="dateUpdated">2015-07-07</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>こんにちは。日本マイクロソフト Outlook サポート チームです。</p>
+<p>キャッシュモードは既定では有効であり弊社では基本的にはキャッシュモードを推奨していますが、お客様の希望や利用状況によってはオンライン モードで利用した方がよい場合もあります。この記事ではキャッシュモードとオンラインモードでの動作の違いやメリット・デメリットを紹介します。また、キャッシュモードにある [共有フォルダーをダウンロード] の設定がオンの場合とオフの場合のメリット・デメリットも紹介いたします。どの設定で利用した方がよいかを検討する際に参考にしていただければ幸いです。なお、Outlook のパフォーマンスの観点で、インターネットによる遅延の影響を受けやすい Exchange Online 環境ではキャッシュ モード有効でのご利用を推奨しています。</p>
+<h2 id="キャッシュモード"><a href="#キャッシュモード" class="headerlink" title="キャッシュモード"></a>キャッシュモード</h2><h3 id="メリット"><a href="#メリット" class="headerlink" title="メリット"></a>メリット</h3><ul>
+<li>メール一覧を表示・メールを開く・メールを作成して送信するなどの作業を行う際に、まずローカルのコピーに対して操作が行われるため処理がはやい。</li>
+<li>一定の間隔でまとめてデータの同期が行われており、ネットワーク効率がよい。そのため、サーバーやネットワークへの負荷を低く抑えることができる。</li>
+<li>ネットワークの遅延や切断などの問題が発生した際は自動的にオフラインに切り替わり、ローカルのキャッシュを使用して操作し続けることができる。</li>
+</ul>
+<h3 id="デメリット"><a href="#デメリット" class="headerlink" title="デメリット"></a>デメリット</h3><ul>
+<li>ローカルにキャッシュするためのディスク領域が必要。</li>
+<li>ローカルにデータがダウンロードされる (セキュリティ上の理由によりローカルにメールなどのデータを残したくない場合はキャッシュモードでは利用できない)。</li>
+<li>Outlook で変更を行うと、まずローカルのデータに対して処理が行われた後に、一定の同期タイミングによりまとめて変更が反映されるのでそれまでは更新されない (最大 60 秒)。</li>
+<li>Exchange サーバーのメールボックス上で変更が行われると、一定の同期タイミングによりまとめて変更が反映されるのでそれまでは更新されない (最大 60 秒)。</li>
+<li>負荷分散が構成されている仮想環境を利用する場合のように OST ファイルの再作成が頻繁に発生するような状況では、キャッシュ モードでは利用できない (OST ファイルを作成してキャッシュし直すことが繰り返されるため効率が悪く、 キャッシュモードで利用し続けると将来 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/outlook/troubleshoot/performance/cannot-start-outlook-in-cached-mode-or-create-profile">こちら</a> の問題 (OST ファイルの再作成が多数行われるとキャッシュモードでログオンできなくなる) が発生するため)</li>
+</ul>
+<h2 id="オンラインモード"><a href="#オンラインモード" class="headerlink" title="オンラインモード"></a>オンラインモード</h2><h3 id="メリット-1"><a href="#メリット-1" class="headerlink" title="メリット"></a>メリット</h3><ul>
+<li>ローカルにデータがダウンロードされない (セキュリティ上の理由によりローカルにメールなどのデータを残したくない場合はオンライン モードで利用する必要がある)。</li>
+<li>ローカルにキャッシュするためのディスク領域が不要。</li>
+<li>常に最新のデータを表示したり更新したりすることができる。</li>
+<li>負荷分散が構成されている仮想環境を利用する場合のように OST ファイルの再作成が頻繁に発生するような状況ではキャッシュ モードでは利用できないため、オンラインモードで利用する必要がある。(OST ファイルを作成してキャッシュし直すことが繰り返されることは効率が悪く、 キャッシュモードで利用し続けると将来 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/outlook/troubleshoot/performance/cannot-start-outlook-in-cached-mode-or-create-profile">こちら</a> の問題 (OST ファイルの再作成が多数行われるとキャッシュモードでログオンできなくなる) が発生するため)</li>
+</ul>
+<h3 id="デメリット-1"><a href="#デメリット-1" class="headerlink" title="デメリット"></a>デメリット</h3><ul>
+<li>一般的にはキャッシュモードに比べて操作が遅くなる。<br>(毎回 Exchange サーバーのメールボックスにアクセスしてデータを取得するため。2 回目以降はメモリ上に読み込まれているデータが残っている場合はメモリから読み込むため高速に処理されるが、メモリ解放後は再度 Exchange サーバーにアクセスしてデータを取得する動作となる)</li>
+<li>頻繁に Exchange サーバーからデータを取得する必要があるため、ネットワークや Exchange サーバーに負荷がかかる。</li>
+<li>検索を行うと Exchange サーバー側で検索を行うため、Exchange サーバーに負荷がかかる。</li>
+<li>ネットワークに接続していない場合は、データを参照できない。</li>
+</ul>
+<h2 id="キャッシュモードの-共有フォルダーをダウンロード-をオン"><a href="#キャッシュモードの-共有フォルダーをダウンロード-をオン" class="headerlink" title="キャッシュモードの [共有フォルダーをダウンロード] をオン"></a>キャッシュモードの [共有フォルダーをダウンロード] をオン</h2><h3 id="メリット-2"><a href="#メリット-2" class="headerlink" title="メリット"></a>メリット</h3><p>他のユーザーの予定表などの共有フォルダーのデータをローカルにキャッシュし、ローカルにキャッシュされたデータの表示や更新を行うため、一般的にはユーザーの操作が速くなる。</p>
+<h3 id="デメリット-2"><a href="#デメリット-2" class="headerlink" title="デメリット"></a>デメリット</h3><ul>
+<li>他のユーザーの予定表などのデータをキャッシュするためのディスク容量が必要。</li>
+<li>予定表に他のユーザーの予定表が多数登録されていると、以下のような問題が発生する場合がある。<ul>
+<li>Outlook は起動時に予定表に登録されている全ユーザー (ユーザー名の左側のチェックがオンオフどちらでも。ただし同期が完了したことがあるユーザーのみ) の予定表を同期し、ユーザーごとのセッションを維持し続けて変更があると同期が行われる。その影響によって Outlook の起動に時間がかかったり Outlook の全体的なパフォーマンスが悪くなったりする場合がある。</li>
+<li>他のユーザーの共有フォルダーをキャッシュするため OST ファイルのサイズが大きくなり、OST ファイルのサイズに比例してパフォーマンスが悪化する。</li>
+</ul>
+</li>
+</ul>
+<h2 id="キャッシュモードの-共有フォルダーをダウンロード-をオフ"><a href="#キャッシュモードの-共有フォルダーをダウンロード-をオフ" class="headerlink" title="キャッシュモードの [共有フォルダーをダウンロード] をオフ"></a>キャッシュモードの [共有フォルダーをダウンロード] をオフ</h2><h3 id="メリット-3"><a href="#メリット-3" class="headerlink" title="メリット"></a>メリット</h3><ul>
+<li>他のユーザーの共有フォルダーに対して操作を行う際、最新のデータの表示と更新ができる (直接ネットワーク上の他のユーザーのメールボックスからクライアントのメモリにデータを読み込む動作となるため、同期タイミングの影響を受けない)</li>
+<li>自分のメールボックスはキャッシュし他のユーザーの予定表などのフォルダーはキャッシュしないことになるため、OST ファイルのサイズを抑えることができる (他のユーザーの共有フォルダーをキャッシュするためのディスク容量が不要)。</li>
+<li>予定表に他のユーザーの予定表が多数登録されていて、[共有フォルダーをダウンロード] がオンで以下のような問題が発生している場合は、[共有フォルダーをダウンロード] をオフにするとパフォーマンスが改善する。<ul>
+<li>Outlook は起動時に予定表に登録されている全ユーザー (ユーザー名の左側のチェックがオンオフどちらでも。ただし同期が完了したことがあるユーザーのみ) の予定表を同期し、ユーザーごとのセッションを維持し続けて変更があると同期が行われる。その影響によって Outlook の起動に時間がかかったり Outlook の全体的なパフォーマンスが悪くなったりする場合がある。</li>
+<li>他のユーザーの共有フォルダーをキャッシュするため OST ファイルのサイズが大きくなり、OST ファイルのサイズに比例してパフォーマンスが悪化する。</li>
+</ul>
+</li>
+</ul>
+<h3 id="デメリット-3"><a href="#デメリット-3" class="headerlink" title="デメリット"></a>デメリット</h3><ul>
+<li>予定表に多数のユーザーが登録されている場合は、[共有フォルダーをダウンロード] がオンの場合に比べてユーザーの操作が遅くなる。</li>
+<li>ネットワークに接続していない場合は、他のユーザーのデータを参照できない。</li>
+</ul>
+<p><em>本情報の内容 (添付文書、リンク先などを含む) は、作成日時点でのものであり、予告なく変更される場合があります。</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/cachedmode-onlinemode-merit-demerit/" data-id="cmjksis000051hg2a3t7x3gs6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/About-Export-CliXml/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Export-CliXml について
+
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/What-to-Do-When-Items-Suddenly-Disappear/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">突然アイテムが消えた！場合の対策
+</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

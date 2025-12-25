@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>ディレクトリ ベースのエッジ ブロックがパブリック フォルダーと動的配布グループで利用可能になりました | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Directory Based Edge Blocking Now Available for Public Folders &amp; Dynamic Distribution Groups の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 メー">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ディレクトリ ベースのエッジ ブロックがパブリック フォルダーと動的配布グループで利用可能になりました">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Directory Based Edge Blocking Now Available for Public Folders &amp; Dynamic Distribution Groups の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 メー">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb01.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb02.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb03.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb04.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb05.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb06.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb07.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb08.jpg">
+<meta property="article:published_time" content="2025-06-09T02:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-09T02:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb01.jpg">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/" class="article-date">
+  <time datetime="2025-06-09T02:00:00.000Z" itemprop="datePublished">2025-06-09</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ディレクトリ ベースのエッジ ブロックがパブリック フォルダーと動的配布グループで利用可能になりました
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/" class="article-date-single">    
+    
+    <time datetime="2025-06-09T02:00:00.000Z" itemprop="dateUpdated">2025-06-09</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/4421006">Directory Based Edge Blocking Now Available for Public Folders &amp; Dynamic Distribution Groups</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>メールが有効なパブリック フォルダー (MEPF) および動的配布グループ (DDG) に対して、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/mail-flow-best-practices/use-directory-based-edge-blocking">ディレクトリ ベースのエッジ ブロック (DBEB)</a> 機能が利用可能になったことをお知らせします。これにより、DBEB を有効にすることで、組織内に存在しない MEPF や DDG 宛ての外部からのメールを Exchange Online Protection (EOP) レベルで拒否できるようになりました。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/mail-flow-best-practices/use-directory-based-edge-blocking#configure-dbeb">ディレクトリ ベースのエッジ ブロック (DBEB)</a> は、組織のディレクトリに存在しない受信者宛てのメールを拒否する Exchange Online Protection (EOP) の機能です。これまで、この機能はメールが有効なパブリック フォルダー (MEPF) や動的配布グループ (DDG) など、一部の受信者タイプでは動作しませんでした。</p>
+<p>そのため、パブリック フォルダーや DDG を利用しているお客様には以下のような影響がありました。</p>
+<ul>
+<li><strong>Exchange Online のみ利用する環境の場合</strong> : 外部送信者から MEPF や DDG 宛てのメールを受信したい場合、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/mail-flow-best-practices/use-directory-based-edge-blocking">DBEB 機能を無効化</a>する必要がありました。</li>
+<li><strong>Exchange オンプレミスも利用する環境の場合</strong> : EOP 経由でメールを受信する場合、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/office-365-directory-based-edge-blocking-support-for-on-premises/ba-p/606740">Entra Connect を利用して MEPF を Entra ID に同期</a>することで、DBEB を有効のまま、外部送信者からオンプレミスの MEPF 宛てメールも受信できていました。</li>
+</ul>
+<h2 id="何が変わるのか"><a href="#何が変わるのか" class="headerlink" title="何が変わるのか"></a>何が変わるのか</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/mail-flow-best-practices/use-directory-based-edge-blocking">ディレクトリ ベースのエッジ ブロック (DBEB)</a> 機能が MEPF にも対応しました。これにより、パブリック フォルダーや DDG を利用しているお客様のメール フローにどのような影響があるのでしょうか？</p>
+<h3 id="シナリオ-1-Exchange-Online-のみ利用する環境の場合"><a href="#シナリオ-1-Exchange-Online-のみ利用する環境の場合" class="headerlink" title="シナリオ 1 : Exchange Online のみ利用する環境の場合"></a>シナリオ 1 : Exchange Online のみ利用する環境の場合</h3><ul>
+<li>外部送信者から MEPF や DDG 宛てのメール配信を希望するお客様は、DBEB 機能を有効化できるようになりました。これまで MEPF や DDG のために DBEB を無効化していた場合も、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/mail-flow-best-practices/use-directory-based-edge-blocking">こちらの手順</a>または下記 FAQ の手順に従って再度有効化できます。なお、DBEB は<em>任意</em>の機能であり、必要に応じて有効化してください。</li>
+</ul>
+<p><strong>この環境のお客様に対するアクション</strong></p>
+<p>Exchange Online で<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/collaboration-exo/public-folders/public-folders">パブリック フォルダー</a>や<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/recipients-in-exchange-online/manage-dynamic-distribution-groups/create-manage-dynamic-distribution-groups">動的配布グループ</a>を利用しており、外部送信者からのメール受信のために DBEB を無効化していた場合でも、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/mail-flow-best-practices/use-directory-based-edge-blocking">こちらの手順</a> または下記 FAQ の手順に従って、DBEB を有効化できるようになりました。</p>
+<p style="background:#F0F0F0">DBEB を有効にするには、承認済みドメインの種類を "権限あり (Authoritative)" に設定する必要があります。特定の理由でドメインの種類を "権限あり" 以外に設定している場合は、他のメール フロー (例えば<a href="https://learn.microsoft.com/exchange/mail-flow-best-practices/manage-accepted-domains/enable-mail-flow-for-subdomains" target="_blank" rel="noopener noreferrer">サブドメインのメール フロー</a>など) へ影響がないことを確認した上で変更してください。</p>
+
+<h3 id="シナリオ-2-Exchange-オンプレミスも利用する環境の場合"><a href="#シナリオ-2-Exchange-オンプレミスも利用する環境の場合" class="headerlink" title="シナリオ 2 : Exchange オンプレミスも利用する環境の場合"></a>シナリオ 2 : Exchange オンプレミスも利用する環境の場合</h3><ul>
+<li>オンプレミスの Exchange 環境で、MEPF を Entra ID (Entra Connect を使用) および Exchange Online (Sync-ModernMailPublicFolder スクリプトを使用) の両方に同期している場合は、Entra Connect の構成を変更して Entra ID への MEPF 同期を停止できます (手順は後述)。</li>
+<li>オンプレミスの Exchange 環境で、MEPF を Entra ID (Entra Connect を使用) にのみ同期している場合は、まず Sync-ModernMailPublicFolder スクリプトを使用して MEPF を Exchange Online に同期する必要があります。その後、Entra Connect での MEPF 同期を停止できます。</li>
+</ul>
+<p><strong>この環境のお客様に対するアクション</strong></p>
+<p>オンプレミスのパブリック フォルダーを展開し、Exchange Online Protection または Exchange Online 経由でメールを受信しているお客様の場合、まだ MEPF を Exchange Online に同期していなければ、<a target="_blank" rel="noopener" href="https://www.microsoft.com/download/details.aspx?id=54855">Sync-ModernMailPublicFolder</a> スクリプトを使用して MEPF を Exchange Online に同期してください。その後、Entra Connect での MEPF 同期を無効化できます。</p>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="Exchange-Online-でパブリック-フォルダーや動的配布グループが展開されているか確認する方法"><a href="#Exchange-Online-でパブリック-フォルダーや動的配布グループが展開されているか確認する方法" class="headerlink" title="Exchange Online でパブリック フォルダーや動的配布グループが展開されているか確認する方法"></a>Exchange Online でパブリック フォルダーや動的配布グループが展開されているか確認する方法</h3><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps">Exchange Online PowerShell</a> にテナント管理者として接続し、以下のコマンドを実行します。</p>
+<ul>
+<li><p>パブリック フォルダーの場合</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-OrganizationConfig</span> | <span class="built_in">fl</span> RootPublicFolderMailbox</span><br><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-PublicFolder</span></span><br><span class="line"><span class="built_in">Get-PublicFolder</span> \ <span class="literal">-Recurse</span></span><br></pre></td></tr></table></figure>
+
+<p>  パブリック フォルダーが展開されていない場合、次のメッセージが表示されます。</p>
+  <p style="background:#F0F0F0">No active public folder mailboxes were found for organization (organization name). This happens when no public folder mailboxes are provisioned or they are provisioned in 'HoldForMigration' mode. If you're not currently performing a migration, create a public folder mailbox.</p>
+
+<p>  パブリック フォルダーが展開されている場合、以下のような出力が表示されます。<br>  <img src="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb01.jpg"></p>
+<p>  次に、<code>Get-MailPublicFolder</code> コマンドを使用して、MEPF が存在するか確認します。<br>  <img src="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb02.jpg"></p>
+</li>
+<li><p>DDG の場合</p>
+  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-DynamicDistributionGroup</span></span><br></pre></td></tr></table></figure>
+
+<p>  DDG が展開されていない場合、以下のような出力が表示されます。</p>
+<p>  <img src="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb03.jpg"></p>
+</li>
+</ul>
+<h3 id="DBEB-が有効か無効かを確認する方法"><a href="#DBEB-が有効か無効かを確認する方法" class="headerlink" title="DBEB が有効か無効かを確認する方法"></a>DBEB が有効か無効かを確認する方法</h3><p>DBEB の状態を確認するには、Exchange Online PowerShell に接続し、<code>Get-AcceptedDomain</code> コマンドを実行します。</p>
+<p><code>DomainType</code> が <em>Internal relay (内部の中継)</em> の場合は DBEB が無効、<em>Authoritative (権限あり)</em> の場合は DBEB が有効です。<br><img src="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb04.jpg"></p>
+<p>EAC から確認する場合は、<a target="_blank" rel="noopener" href="https://admin.exchange.microsoft.com/#/accepteddomains">EAC</a> にサインインし、[メール フロー] - [受信ドメイン] を選択します。<br><img src="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb05.jpg"></p>
+<p>特定のドメインで DBEB を有効にするには、ドメインの種類を<em>権限あり</em>に変更してください。</p>
+<p>注意: 承認済みドメインを<em>内部の中継</em>に設定していた理由が “メールが有効なパブリック フォルダーで外部メールを受信するため” であれば、<em>権限あり</em>に変更して DBEB を有効化できます。それ以外の理由で<em>内部の中継</em>にしている場合は、<em>権限あり</em>へ変更しないでください。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-AcceptedDomain</span> contoso.com <span class="literal">-DomainType</span> Authoritative</span><br></pre></td></tr></table></figure>
+
+<p>または、EAC からドメインの種類を変更することもできます。</p>
+<p><img src="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb06.jpg"></p>
+<h3 id="Entra-Connect-ツールで-MEPF-の同期状態を確認する方法"><a href="#Entra-Connect-ツールで-MEPF-の同期状態を確認する方法" class="headerlink" title="Entra Connect ツールで MEPF の同期状態を確認する方法"></a>Entra Connect ツールで MEPF の同期状態を確認する方法</h3><p>オンプレミス組織が Exchange オンプレミスの MEPF を Entra ID (旧 Azure Active Directory) に同期しているか確認するには、以下の手順を実施します。</p>
+<ul>
+<li>“Microsoft Entra Connect Sync” (旧称 AAD sync または AAD connect) がインストールされているサーバーにサインインします。</li>
+<li>“Microsoft Entra Connect Sync” を開き、[構成] をクリックします。</li>
+<li>[現在の構成の表示またはエクスポート] を選択し、[次へ] をクリックします。</li>
+<li>下にスクロールし、[EXCHANGE メールのパブリック フォルダー] オプションを確認します。</li>
+<li>このオプションが有効になっている場合、以下のように表示されます。</li>
+</ul>
+<p><img src="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb07.jpg"></p>
+<h3 id="オンプレミスの-MEPF-を-Exchange-Online-に同期する方法"><a href="#オンプレミスの-MEPF-を-Exchange-Online-に同期する方法" class="headerlink" title="オンプレミスの MEPF を Exchange Online に同期する方法"></a>オンプレミスの MEPF を Exchange Online に同期する方法</h3><p><a target="_blank" rel="noopener" href="https://www.microsoft.com/download/details.aspx?id=54855">Sync-ModernMailPublicFolders.ps1</a> をダウンロードし、実行してください。</p>
+<h3 id="Entra-Connect-を使用して-MEPF-の-Entra-ID-AAD-への同期を停止する方法"><a href="#Entra-Connect-を使用して-MEPF-の-Entra-ID-AAD-への同期を停止する方法" class="headerlink" title="Entra Connect を使用して MEPF の Entra ID (AAD) への同期を停止する方法"></a>Entra Connect を使用して MEPF の Entra ID (AAD) への同期を停止する方法</h3><ul>
+<li>“Microsoft Entra Connect Sync” (旧称 AAD sync または AAD connect) がインストールされているサーバーにサインインします。</li>
+<li>“Microsoft Entra Connect Sync” を開き、[構成] をクリックします。</li>
+<li>[同期オプションのカスタマイズ] を選択し、[次へ] をクリックします。</li>
+<li>必要な情報を入力し、[次へ] を進めます。</li>
+<li>[オプション機能] 画面で [Exchange メールのパブリック フォルダー] のチェックを外し、[次へ] をクリックします。</li>
+</ul>
+<p><img src="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/dbeb08.jpg"></p>
+<ul>
+<li>最後の画面で [構成] をクリックして設定を完了します。</li>
+</ul>
+<h3 id="注意-オンプレミスの-DDG-と-DBEB-について"><a href="#注意-オンプレミスの-DDG-と-DBEB-について" class="headerlink" title="注意: オンプレミスの DDG と DBEB について"></a>注意: オンプレミスの DDG と DBEB について</h3><p><strong>問題</strong><br>DBEB は Exchange Online で作成された DDG には対応していますが、オンプレミスの Exchange で作成された DDG は Exchange Online に同期されません。そのため、これらのグループ宛てのメールは DBEB によってブロックされ、配信されなくなります。</p>
+<p><strong>回避策</strong><br>Exchange Online 経由でオンプレミスの DDG 宛てメールが DBEB によりブロックされる場合、以下の回避策を検討してください。</p>
+<ol>
+<li><p><strong>Exchange Online にメール連絡先を作成する:</strong><br>Exchange Online 上に、ブロックされている DDG と同じ外部メール アドレスを持つメール連絡先を追加します。これにより、Exchange Online が該当アドレスを認識し、適切にメッセージをルーティングできるようになります。詳細は <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/recipients-in-exchange-online/manage-mail-contacts">Exchange Online でメール連絡先を管理する | Microsoft Learn</a> をご参照ください。</p>
+</li>
+<li><p><strong>ドメインで DBEB を無効化する:</strong><br>Exchange Online でドメインの種類を “権限あり” から “内部の中継” に変更します。これにより、そのドメインに対する DBEB が無効化され、メッセージがオンプレミス サーバーへリレーされるようになります。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/" data-id="cmjksirzv004rhg2a02vk4nmz" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/introducing-messagetracev2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MessageTraceV2 の紹介
+
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/tls-certificates-in-exchange-hybrid---common-issues--how-to-fix-them/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange ハイブリッド環境における TLS 証明書 - よくある問題とその解決方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

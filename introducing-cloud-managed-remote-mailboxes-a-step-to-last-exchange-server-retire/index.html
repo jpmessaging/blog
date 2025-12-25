@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>クラウド管理のリモート メールボックスの導入：最後の Exchange Server 廃止に向けたステップ | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Introducing Cloud-Managed Remote Mailboxes: a Step to Last Exchange Server Retirement の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 更新 2025&#x2F;10&#x2F;15">
+<meta property="og:type" content="article">
+<meta property="og:title" content="クラウド管理のリモート メールボックスの導入：最後の Exchange Server 廃止に向けたステップ">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Introducing Cloud-Managed Remote Mailboxes: a Step to Last Exchange Server Retirement の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 更新 2025&#x2F;10&#x2F;15">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-08-21T06:00:00.000Z">
+<meta property="article:modified_time" content="2025-08-21T06:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/" class="article-date">
+  <time datetime="2025-08-21T06:00:00.000Z" itemprop="datePublished">2025-08-21</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      クラウド管理のリモート メールボックスの導入：最後の Exchange Server 廃止に向けたステップ
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/" class="article-date-single">    
+        
+    <time datetime="2025-10-16T06:00:00.000Z" itemprop="lastupdate">2025-10-16</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/4446042">Introducing Cloud-Managed Remote Mailboxes: a Step to Last Exchange Server Retirement</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p style="background: #9cff99ff;"><strong>更新 2025/10/15:</strong>新規投稿された<a href="/blog/cloud-managed-remote-mailboxes-now-generally-available/"> [クラウド管理のリモート メールボックス: 一般提供が開始されました!] もご覧ください。</a></p>
+
+<h2 id="背景-“最後の-Exchange-サーバー”-の課題"><a href="#背景-“最後の-Exchange-サーバー”-の課題" class="headerlink" title="背景 : “最後の Exchange サーバー” の課題"></a>背景 : “最後の Exchange サーバー” の課題</h2><p>多くの組織では、すべてのメールボックスを Exchange Online に移行した後も、受信者属性の管理を目的としてオンプレミスの Exchange サーバーを維持しています。ハイブリッド環境では、ディレクトリ同期されたユーザー アカウントのメールボックス属性は設計上 Exchange Online から直接管理できず、クラウド側で属性を編集しようとしても、オブジェクトの Source of Authority (SOA &#x2F; 属性値のマスターとなる情報源のこと) がオンプレミスにあるため通常はブロックされます。管理者は、Active Directory (AD) 上にあるメール アドレスやエイリアス、アドレス帳非表示フラグなどのメールボックス属性をオンプレ Exchange サーバーで編集し、その変更をクラウドに同期する必要があります。たとえメールボックスが Exchange Online にあっても、この要件のために “最後の Exchange サーバー” を維持し続ける必要があり、移行後も煩わしい依存関係が残っていました。</p>
+<p>2022 年 4 月、Microsoft はこの課題に対応するための最初のステップとして、Exchange Server 2019 の管理ツールをアップデートしました。このアップデートにより、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/manage-hybrid-exchange-recipients-with-management-tools">Exchange Management Tools を使用して Exchange 受信者を管理すること</a>が、ドメイン参加済みのマシン上で Exchange サーバーを稼働させることなく可能になりました。つまり、組織は最後の Exchange サーバーをシャットダウンし、軽量な管理ツールだけで受信者属性の変更を行えるようになったのです。</p>
+<p>このソリューションは PowerShell の専門知識が必要であり、ログ記録や監査機能も備わっていなかったため、運用が煩雑でした。また、同期されたユーザーのリモート (クラウド上にある) メールボックスのプロパティを Exchange Online から直接変更できない点も課題として残っていました。理想的な解決策は、管理者がクラウド上のメールボックスの Exchange 属性を完全にクラウドで管理でき、同時にオンプレミス AD からのアイデンティティ データの同期も維持できることです。</p>
+<p>Microsoft はこのフィードバックを受け止め、新しい Exchange Online の機能 (プレビュー版) を提供開始しました。この新機能により、ディレクトリ同期されたユーザーのリモート メールボックス属性をクラウド側で管理できるようになり、管理のためだけに Exchange サーバーを残す必要があった制限の解消に貢献します。この機能は、ハイブリッド環境で “最後の Exchange サーバー” をいよいよ廃止するための重要なステップとなります。</p>
+<h2 id="ハイブリッド環境向け-Exchange-リモート-メールボックス属性のクラウド管理機能のご紹介"><a href="#ハイブリッド環境向け-Exchange-リモート-メールボックス属性のクラウド管理機能のご紹介" class="headerlink" title="ハイブリッド環境向け Exchange リモート メールボックス属性のクラウド管理機能のご紹介"></a>ハイブリッド環境向け Exchange リモート メールボックス属性のクラウド管理機能のご紹介</h2><p>Exchange Online に新たに追加された機能をご紹介します。この機能により、管理者はディレクトリ同期されたリモート メールボックス ユーザーの Exchange 属性をクラウド上で直接管理できるようになります。具体的には、ユーザーのアイデンティティがオンプレミスの Active Directory から同期されている場合でも、Exchange 関連の属性 (メール アドレスやメールボックス設定など) を Exchange Online PowerShell、Microsoft 365 の Exchange 管理センター、または Microsoft 365 管理センターから編集できるようになります。一方で、ユーザーの氏名や住所、電話番号などのコアなアイデンティティ属性は、従来通りオンプレミスで管理されます。</p>
+<h3 id="どのように動作するのか"><a href="#どのように動作するのか" class="headerlink" title="どのように動作するのか"></a>どのように動作するのか</h3><p>Exchange Online および Entra ID には新しいメールボックス プロパティ <strong>IsExchangeCloudManaged</strong> が導入されます。これは、ディレクトリ同期されたユーザーの Exchange 属性の Source of Authority (SOA) がクラウドかオンプレミスかを示すものです。既定では、現在ディレクトリ同期されているすべてのユーザーに対してこの値は False (Exchange 属性がオンプレミスで管理され、クラウドに同期される) となっています。特定のユーザーに対して <strong>IsExchangeCloudManaged</strong> を True に設定すると、そのユーザーの Exchange 属性の管理元がクラウドに移行されます。以降は、Exchange 属性をクラウド側で直接管理できるようになります。</p>
+<ul>
+<li>Exchange 属性 (リモート メールボックスに関連するプロパティ) は Exchange Online 上で編集可能となり、オンプレミスからの同期によって上書きされなくなります。</li>
+<li>アイデンティティ属性 (氏名や部署などのユーザー オブジェクトのコア プロパティ) は従来通りオンプレミスの AD で管理され、クラウド側から変更することはできません (これまでと同様です)。</li>
+<li>この機能は<em>ユーザー メールボックス、共有メールボックス、リソース メールボックス</em>の Exchange 属性の SOA 移行のみをサポートします。グループや連絡先については、オブジェクト レベルの SOA 移行 (後述) をご利用ください。</li>
+</ul>
+<p>この機能の有効化方法や、<strong>IsExchangeCloudManaged</strong> によってクラウド管理へ移行される Exchange 属性の SOA の詳細については、公式ドキュメント<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management">ハイブリッド環境におけるリモート メールボックスの Exchange 属性のクラウド管理</a>をご参照ください。</p>
+<h3 id="機能提供計画-段階的なロールアウト"><a href="#機能提供計画-段階的なロールアウト" class="headerlink" title="機能提供計画 : 段階的なロールアウト"></a>機能提供計画 : 段階的なロールアウト</h3><p>Microsoft はこの機能を <strong>2 つのフェーズ</strong>で提供します。</p>
+<ul>
+<li><strong>フェーズ 1 (プレビュー版 : 現在利用可能)</strong> – Exchange 属性のクラウド管理をメールボックス単位で制御できるようになります。管理者は、個々のメールボックスごとにクラウド管理を有効化 (IsExchangeCloudManaged&#x3D;True) することで <strong>“オプトイン”</strong> できます。また、必要に応じてオンプレミス管理 (IsExchangeCloudManaged&#x3D;False) へ戻すことも可能です。フェーズ 1 では、既存のユーザーのリモート メールボックス属性を 1 つずつ管理し、機能をテストすることに重点を置きます。また、<em>新たに同期される</em>ユーザーの Exchange 属性をデフォルトでクラウド管理にする組織単位の設定 (9月提供予定) も含まれます。</li>
+<li><strong>フェーズ 2</strong> – 特定属性の<strong>書き戻し (Write-back) 機能</strong>と <strong>Entra ID Cloud Sync 統合</strong>が追加されます。フェーズ 2 では、クラウド側で変更された重要な Exchange プロパティが自動的に<strong>オンプレミスの Active Directory に同期 (Write-back)</strong> されるようになります (それまでは、同期されていない可能性があります)。例えば、Exchange Online でプロキシ アドレスを変更した場合、オンプレミスの AD にも自動反映 (Write-back) されます。書き戻し (Write-back) 機能を利用するには Entra Cloud Sync が必要です。詳細は今後公開予定です。書き戻し対象の属性一覧は上記ドキュメントをご参照ください。</li>
+</ul>
+<h3 id="最後の-Exchange-サーバー廃止に一歩近づきました"><a href="#最後の-Exchange-サーバー廃止に一歩近づきました" class="headerlink" title="最後の Exchange サーバー廃止に一歩近づきました"></a>最後の Exchange サーバー廃止に一歩近づきました</h3><p>新しいクラウド管理のメールボックス機能により、オンプレミスの Active Directory をアイデンティティ管理に利用している組織でも、<strong>Exchange Online のメールボックスを完全にクラウド上で管理できる</strong>ようになりました。これにより、日常的な管理作業のためだけにオンプレ Exchange サーバーやスタンドアロンの管理ツールを稼働させ続ける必要が大幅に減少します。</p>
+<p>この機能は、<strong>オンプレミスの Active Directory (AD) を引き続き利用したいが、Exchange サーバーは廃止したい</strong>というシナリオに対応するための重要なステップです。もし、組織としてオンプレ AD そのものの依存も完全に排除したい場合、Microsoft では<strong>オブジェクト レベルの SOA 移行</strong>にも取り組んでいます。これは、ユーザー・グループ・連絡先などのオブジェクト全体を Entra ID 上でクラウド管理に移行できる機能です。例えば、<strong>グループ SOA</strong> (クラウド管理の配布グループ) は<a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity/hybrid/concept-source-of-authority-overview">すでにパブリック プレビュー</a>で提供されており、<strong>ユーザー SOA</strong> (クラウド管理のユーザー オブジェクト) や <strong>連絡先 SOA</strong> も今後のロードマップに含まれています。これらは、将来的にアイデンティティ管理もクラウドへ移行したい場合に適用されます。一方、<strong>本記事で紹介した Exchange 属性のクラウド管理機能は、AD は残しつつ Exchange サーバーのみ廃止したい組織向け</strong>のものです。ハイブリッド環境において、オンプレ Exchange を完全に撤去しながらも、管理機能を維持するための重要な要素となります。</p>
+<p>この新機能が、<strong>完全なクラウド管理型 Exchange 環境</strong>への移行を進める皆様のお役に立てれば幸いです。フェーズ 1 のプレビューは始まりに過ぎません。皆様からのフィードバックをもとに機能をさらに改善し、フェーズ 2 では属性の自動書き戻し (Write-back) や Entra Cloud Sync への対応など、よりシームレスな統合を実現します。<strong>「AD を同期しているから」という理由だけで Exchange サーバーを維持しなければならない時代は、いよいよ終わりを迎えようとしています！</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/" data-id="cmjksis0b005thg2afaj596wf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/the-first-temporary-enforcement-of-dedicated-hybrid-app-use-is-coming-on-sep/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Exchange ハイブリッド専用アプリの使用に関する初回の一時的な強制措置は、9 月 16 日に実施される
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/limiting-onmicrosoft-domain-usage-for-sending-emails/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">onmicrosoft ドメインのメール送信利用制限について</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

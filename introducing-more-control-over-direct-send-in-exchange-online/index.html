@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange Online におけるダイレクト送信の制御機能強化の導入 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Introducing more control over Direct Send in Exchange Online の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 2025 年 8 月 12 日更新: よくある質問 (FAQ) を記事に追加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange Online におけるダイレクト送信の制御機能強化の導入">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/introducing-more-control-over-direct-send-in-exchange-online/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Introducing more control over Direct Send in Exchange Online の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 2025 年 8 月 12 日更新: よくある質問 (FAQ) を記事に追加">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-more-control-over-direct-send-in-exchange-online/DSFAQ.jpg">
+<meta property="article:published_time" content="2025-04-30T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-04-30T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/introducing-more-control-over-direct-send-in-exchange-online/DSFAQ.jpg">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-introducing-more-control-over-direct-send-in-exchange-online" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/introducing-more-control-over-direct-send-in-exchange-online/" class="article-date">
+  <time datetime="2025-04-30T15:00:00.000Z" itemprop="datePublished">2025-05-01</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange Online におけるダイレクト送信の制御機能強化の導入
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/introducing-more-control-over-direct-send-in-exchange-online/" class="article-date-single">    
+        
+    <time datetime="2025-11-12T15:00:00.000Z" itemprop="lastupdate">2025-11-13</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/introducing-more-control-over-direct-send-in-exchange-online/4408790">Introducing more control over Direct Send in Exchange Online</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p style="background: #66FF99"><b>2025 年 8 月 12 日更新:</b> よくある質問 (FAQ) を記事に追加しました。また、ダイレクト送信機能についてさらに詳しく解説した新しい記事 <a href="/blog/direct-send-vs-sending-directly-to-an-exchange-online-tenant/">ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い</a>も公開していますので、あわせてご参照ください。</p>
+
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px"><path fill="#ff7518" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>
+訳者注
+</div>
+本記事では Direct Send を別の単語に訳した場合に文中で使用すると意味が伝わりにくくなる場合があるため「ダイレクト送信」と訳して統一しています。<br>
+公開情報等では「直接送信」などの記載になっている場合がございますので、ご注意ください。
+</div>
+
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365#direct-send-send-mail-directly-from-your-device-or-application-to-microsoft-365-or-office-365">ダイレクト送信</a>は、オンプレミスのデバイス、アプリケーション、またはサード パーティのクラウド サービスから、Exchange Online でホストされているお客様のメールボックスに対して、お客様自身の承認済みドメインを使用してメールを直接送信する方法です。この方法では、認証は一切必要ありません。なぜならこの方法は、送信者のドメインがお客様自身の承認済みドメインであることを除いて、インターネットからの匿名のメールを受信することと同様であるためです。</p>
+<p>ダイレクト送信では、お客様がテナントに対して SPF、DKIM、および DMARC を適切に構成していることを前提としています。管理者は、デバイス、アプリケーション、またはサード パーティ サービスが送信に使用する送信元 IP アドレスを SPF レコードに追加することで、メールがスパムとしてフラグ付けされるのを防ぐ必要があります。SPF が適切に構成されていない場合、ダイレクト送信を使用して送信されたメールはスパムとしてフラグ付けされる可能性が高くなります。</p>
+<p>SPF は、ドメインのなりすましを防ぐための保護を提供しますが、有効なルーティング シナリオでも SPF の失敗に該当する可能性があるため、Soft Fail させる SPF の構成を使用することをお勧めしています。また、ダイレクト送信を使用する必要がないお客様も多いですがこれまでダイレクト送信をブロックする機能は存在しませんでした。この度、Exchange Online のダイレクト送信を拒否する設定を開発し、本日この機能のパブリック プレビューを発表します。</p>
+<h2 id="ダイレクト送信の拒否設定"><a href="#ダイレクト送信の拒否設定" class="headerlink" title="ダイレクト送信の拒否設定"></a>ダイレクト送信の拒否設定</h2><p>定義上、ダイレクト送信の拒否は、組織のメールボックスに対して自社ドメインから匿名で送信されるメッセージを対象としています。ダイレクト送信の拒否機能を有効にすると、テナントの承認済みドメインに一致するアドレスを使って匿名で送信されたメールはすべてブロックされます。送信ドメインがテナントの承認済みドメインであるかどうかは、簡単かつ明確に評価できる条件です。この場合の送信ドメインとは、P1 エンベロープ From アドレスを指します。この機能では、P2 ヘッダー From アドレスはチェックされません。また、ここでの「匿名」とは、Exchange Online に送信される際に、いずれのメール フロー コネクタにも関連付けられていないメッセージを意味します。</p>
+<p>ダイレクト送信のトラフィックには、組織が許可したサード パーティ サービスや、オンプレミスでホストされている独自のメール アプリケーションが含まれる場合があります。この機能を有効化した際にこれらのメッセージが拒否されないようにするには、認証が必要です。これを実現するには、メッセージ送信に使用される証明書 (推奨) または IP アドレスに一致する<strong>パートナー タイプのインバウンド コネクタ</strong>を作成します。パートナー タイプのインバウンド コネクタの詳細については、こちらをご覧ください: <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow-best-practices/use-connectors-to-configure-mail-flow/use-connectors-to-configure-mail-flow">Exchange Online でコネクタを使用してメール フローを構成する</a>。</p>
+<p>ダイレクト送信を使用しているすべての送信者を現在把握できていない管理者もいるかもしれませんが、まずはドメインの SPF レコードを確認することが良い出発点となります。受信者の受信トレイにメールを正常に配信するためには、ダイレクト送信を使用する送信者が承認済みドメインの SPF レコードに含まれている必要があります。SPF レコードに含まれていない送信者は、すでにメール配信に苦労している可能性があります。</p>
+<h2 id="設定を有効化する方法"><a href="#設定を有効化する方法" class="headerlink" title="設定を有効化する方法"></a>設定を有効化する方法</h2><p>デフォルトでは、新しいオプトイン設定である RejectDirectSend は False に設定されています。ダイレクト送信の拒否機能を有効化するには、Exchange Online に管理者で接続した PowerShell で以下のコマンドレットを実行する必要があります。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-OrganizationConfig</span> <span class="literal">-RejectDirectSend</span> <span class="variable">$true</span></span><br></pre></td></tr></table></figure>
+
+<p>この変更は、サービス全体に 30 分以内に反映されます。この機能を有効化すると、ダイレクト送信で送られたすべてのメールに対して以下のエラー メッセージが返されます。</p>
+<pre><code>550 5.7.68 TenantInboundAttribution; Direct Send not allowed for this organization from unauthorized sources
+</code></pre>
+<p>ダイレクト送信を再度有効化しない限り、このエラーに該当するメッセージは受信者に送られません。受信者に配信するには、送信者を認証するためのパートナー タイプのインバウンド コネクタを作成する必要があります。</p>
+<p style="background: #e9e9e9ff;">RejectDirectSend 設定は、現在 GCC-High、DoD、および USNat/USSec 環境では有効化されていません。</p>
+
+<h2 id="パブリック-プレビューとリリース-ロードマップ"><a href="#パブリック-プレビューとリリース-ロードマップ" class="headerlink" title="パブリック プレビューとリリース ロードマップ"></a>パブリック プレビューとリリース ロードマップ</h2><p>この機能は、管理者がテストを行いフィードバックを提供するためのパブリック プレビューとしてリリースされています。一部のお客様では、組織に送信されるダイレクト送信トラフィックの追跡が難しく、この機能を有効化することに不安を感じる場合があります。機能リクエストやバグ報告を含むフィードバックは、次のアドレスに送信してください。<em>directsend-feedback[AT]microsoft.com</em>。注意 : ここに送信されたフィードバックには返信されません。この機能に関する質問や問題については、元の記事のコメント欄に記載するか、通常のサポート チャネルを通じてお問い合わせください。</p>
+<p>また、<a target="_blank" rel="noopener" href="https://feedbackportal.microsoft.com/feedback/forum/84b411cc-50d1-ec11-a7b5-0022481f35a4">Exchange Online Feedback Portal</a> を使用して、他の顧客が投票できる機能リクエストを送信することも可能です。この方法は、私たちが機能に関する意思決定を行う際の参考になります。</p>
+<p><strong>現在、管理者がダイレクト送信トラフィックの概要を把握し、どのトラフィックが影響を受けるかを確認できるレポート機能の提供に取り組んでいます。</strong>これにより、管理者は正当なトラフィックを特定して対応し、この機能を自信を持って有効化できるようになります。この取り組みに関する進捗は、元の記事で随時更新していきます。この機能の一般提供 (GA) の具体的な日程は、いただいたフィードバックに基づいて決定されるため、現時点では未定です。GA の発表については、別途お知らせいたします。</p>
+<p>将来的には、この機能を新しいテナントに対してデフォルトで有効化する予定です。これは、組織をデフォルトでより安全にするための取り組みの一環です。また、この計画には、新しいテナントがこの機能を無効化できないようにすることも含まれています。これにより、認証されていないダイレクト送信のトラフィックの使用を抑制することを目指しています。</p>
+<h2 id="既知の問題"><a href="#既知の問題" class="headerlink" title="既知の問題"></a>既知の問題</h2><ul>
+<li>この機能により影響を受ける可能性のある転送シナリオがあります。組織内の誰かがサード パーティにメッセージを送信し、そのサード パーティがそのメッセージを組織内の別のメールボックスに転送する場合です。サード パーティのメール プロバイダーが Sender Rewriting Scheme (SRS) をサポートしていない場合、メッセージは元の送信者のアドレスで戻ってきます。この機能が有効化される前は、これらのメッセージは SPF の失敗によってすでに影響を受けていましたが、受信トレイに届く可能性がありました。しかし、パートナー タイプのインバウンド コネクタを設定せずにダイレクト送信の拒否機能を有効化すると、これらのメッセージは即座に拒否されることになります。</li>
+<li>もし Azure Communication Services (ACS) を利用して自組織のテナント宛てにメールを送信しており、その際に “MAIL FROM” アドレスとして Microsoft 365 の承認済みドメインを使用している場合、RejectDirectSend を有効化すると、これらのメールは Microsoft 365 テナントへの配信がブロックされます。ダイレクト送信の拒否設定において ACS トラフィックを信頼済みとして扱うためのソリューションが完成し、現在サービス全体への展開が進行中です。この機能は 2025 年 11 月 1 日までに全世界でご利用いただける予定です。一方、ACS から送信されるメールのドメインが Microsoft 365 の承認済みドメインやサブドメインでない場合は、RejectDirectSend を有効化しても ACS トラフィックには影響しません。また、ACS のメール トラフィックが MX レコードをサード パーティ サービスに向けている Exchange Online ドメインを利用している場合は、下記の FAQ に記載のコネクタ設定手順をご参照ください。</li>
+</ul>
+<h2 id="最後に"><a href="#最後に" class="headerlink" title="最後に"></a>最後に</h2><p>Exchange 管理者の皆様には、この機能をぜひお試しいただき、一般提供 (GA) に向けた検証と改善のためのフィードバックをご提供いただければ幸いです。</p>
+<h2 id="FAQs"><a href="#FAQs" class="headerlink" title="FAQs"></a>FAQs</h2><p><strong>すべてのお客様が -RejectDirectSend パラメーターを有効化しなければ、自身のテナントが保護されているとは言えませんか？</strong><br>いいえ。このパラメーターは、Microsoft 365 における多層的な保護の一つです。お客様が承認していないダイレクト送信トラフィックを明確に拒否できる厳格な制御を提供します。テナントやドメインが適切に構成されていれば、なりすましメールは既存の認証チェックによって迷惑メール フォルダーや検疫に振り分けられます。この設定を有効化しなくても、既存の保護機能によって自社ドメインのなりすましメールから十分に守られています。また、この設定を有効化しても、他のサード パーティ ドメインによるなりすましについては、引き続き既存の保護機能が利用されます。</p>
+<p>MX レコードを他のサービスに向けているお客様は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow-best-practices/manage-mail-flow-using-third-party-cloud">Exchange Online を使用してサード パーティのクラウド サービスを使用してメール フローを管理する</a>の手順にすでに従っている必要があります。すべてのお客様は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/defender-office-365/anti-phishing-protection-spoofing-about">クラウド メールボックスのなりすまし対策保護</a>の推奨事項に従ってスプーフィングからの保護も設定する必要があります。</p>
+<p><strong>RejectDirectSend 設定は、MX レコードがサード パーティ サービスを指している場合でも機能しますか？</strong><br>はい、MX レコードがサード パーティ サービスを指している場合や Exchange Online を直接指している場合でも RejectDirectSend は機能します。MX の場所には依存しません。ただし、MX を他のサービスに向けている場合は、そのサービスからのトラフィックのみを受け入れるコネクタを作成し、他のトラフィックを除外する構成が推奨されます。推奨されるテナント構成でコネクタを設定している場合、認証されていないダイレクト送信のトラフィックが届くことはなく、拒否の設定が利用されることはありません。  </p>
+<p><strong>ドメインの MX レコードはサード パーティ サービスを指しており、誰かが MX をバイパスして直接 Exchange Online テナントにメールを送信しています。-RejectDirectSend 設定を使えば、Exchange Online テナントをサード パーティ サービス経由のメールだけ受け付けるように制限できますか？</strong><br>いいえ。-RejectDirectSend は、P1 送信ドメイン (エンベロープ FROM) がテナントの承認済みドメインであり、かつインバウンド コネクタに紐付けられていないメールのみを拒否します。</p>
+<p>MX がサード パーティ サービスを指しており、そのサービス以外からのメールを受け付けたくない場合は、サポート記事 <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow-best-practices/manage-mail-flow-using-third-party-cloud">Exchange Online を使用してサード パーティのクラウド サービスを使用してメール フローを管理する</a> の手順 4 で推奨されているように、<em>TlsSenderCertificateName</em> (推奨) または <em>SenderIpAddresses</em> パラメーターを使ってインバウンド コネクタを作成し (第 3 者機関証明書または IP アドレスを指定する必要があります)、<em>RestrictDomainsToCertificate</em> または <em>RestrictDomainsToIPAddresses</em> を $True に設定してください。これにより、インバウンド コネクタを通過したメールのみがテナントに配信され、それ以外は拒否されます。詳細は<a href="/blog/direct-send-vs-sending-directly-to-an-exchange-online-tenant/">ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い</a>をご参照ください。</p>
+<p><strong>-RejectDirectSend を有効化し、承認済みドメインから送信する必要があるパートナー向けにインバウンド コネクタを作成しました。パートナーからのメールが本当にそのコネクタに紐付いているかどうかを確認するにはどうすればよいですか？</strong><br>パートナーからのメールがコネクタに紐付いているかどうかを確認するには、パートナーからテスト メールを送信してもらい、しばらく時間をおいてデータが反映された後、以下のコマンドを実行してください。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-MessageTracev2</span> <span class="literal">-MessageId</span> <span class="string">&quot;your message ID here&quot;</span> | <span class="built_in">Get-MessageTraceDetailv2</span> | <span class="built_in">fl</span></span><br></pre></td></tr></table></figure>
+
+<p>出力結果の中で、コネクタ名が次のように表示されていることを確認できます。</p>
+<p><img src="/blog/introducing-more-control-over-direct-send-in-exchange-online/DSFAQ.jpg"></p>
+<p>また、メールのエンティティ ページでもコネクタ名 (コネクタの GUID) が表示されていることを確認できます。</p>
+<p><strong>RejectDirectSend を有効化しましたが、自社の承認済みドメインから送信する必要があるサード パーティ ベンダーが、コネクタに関連付けられる静的 IP 範囲や専用証明書を持っていません。この場合、ダイレクト送信をブロックしつつ、このサード パーティ ベンダーからのメールのみ許可するにはどうすればよいですか？</strong><br>サード パーティ ベンダーが静的 IP 範囲や専用の証明書を提供できない場合、またはさらにカスタマイズが必要な場合は、RejectDirectSend 設定で組織全体のダイレクト送信をブロックする代わりに、トランスポート ルール (メール フロー ルール) を利用して、ダイレクト送信メールを隔離またはリダイレクトする方法があります。トランスポート ルールでは、サード パーティ ベンダー固有の例外条件を柔軟に追加できます。たとえば、ベンダーが特定の X- ヘッダーを付与している場合、そのヘッダーを条件に例外を設定できます。<br>例:  </p>
+<ul>
+<li><em>メッセージの送信者が “組織外” で、送信者ドメインが “contoso.com” の場合、ホストされた検疫にリダイレクトする</em></li>
+<li><em>メッセージ ヘッダー (ヘッダー名と値を指定) が一致する場合を除く</em></li>
+</ul>
+<p>(検疫以外のアクションも選択可能です)</p>
+<p><strong>RejectDirectSend パラメーターを設定するために必要な権限は何ですか？</strong><br>RejectDirectSend パラメーターの設定には、Exchange Online の “Organization Configuration” ロールが割り当てられている管理者権限が必要です。通常、このロールは “Organization Management” ロール グループに含まれています。</p>
+<p><strong>RejectDirectSend は承認済みドメインのサブドメインである P1 送信ドメインアドレスにどのような影響を与えますか？</strong><br>RejectDirectSend は、承認済みドメインで「すべてのサブドメインのメールを受信する」が有効になっている (MatchSubDomains&#x3D;TRUE) 場合、その承認済みドメインのサブドメインである P1 アドレスからのメールに影響します。</p>
+<p><strong>この投稿の変更点:</strong></p>
+<ul>
+<li>2025 年 10 月 6 日: ACS トラフィックを「信頼済み」として扱う方法について詳細を追記しました。</li>
+<li>2025 年 8 月 29 日: 承認済みドメインのサブドメインに関する FAQ を追加しました。</li>
+<li>2025 年 8 月 12 日: 既知の問題および FAQ を追加しました。</li>
+<li>2025 年 8 月 4 日: <a href="/blog/direct-send-vs-sending-directly-to-an-exchange-online-tenant/">ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い</a>への参照を追加しました。</li>
+<li>2025 年 7 月 30 日: コメントでのよくある質問に基づいて、本文にいくつかの説明を加えました。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/introducing-more-control-over-direct-send-in-exchange-online/" data-id="cmjksis0e0063hg2acvzfdxrk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/we-are-hiring-2025May/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          サポート エンジニアとして働く仲間を募集しています！
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/System-requirements-for-copilot-in-outlook/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Copilot in Outlook の機能について</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

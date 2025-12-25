@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange サーバー 2016 を廃止する | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Decommissioning Exchange Server 2016 をもとに日本のお客様向けに抄訳、再編集したものです。最新の情報は元の Blog を参照してください。 こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームです。 Exchange サーバー 2016 は延長サポートの終了が近づいており、2025 年 10 月 14 日">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange サーバー 2016 を廃止する">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Decommissioning-Exchange-Server-2016/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Decommissioning Exchange Server 2016 をもとに日本のお客様向けに抄訳、再編集したものです。最新の情報は元の Blog を参照してください。 こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームです。 Exchange サーバー 2016 は延長サポートの終了が近づいており、2025 年 10 月 14 日">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-11-18T15:00:00.000Z">
+<meta property="article:modified_time" content="2024-11-18T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Decommissioning-Exchange-Server-2016" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Decommissioning-Exchange-Server-2016/" class="article-date">
+  <time datetime="2024-11-18T15:00:00.000Z" itemprop="datePublished">2024-11-19</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange サーバー 2016 を廃止する
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Decommissioning-Exchange-Server-2016/" class="article-date-single">    
+    
+    <time datetime="2024-11-18T15:00:00.000Z" itemprop="dateUpdated">2024-11-19</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/decommissioning-exchange-server-2016/ba-p/4214475">Decommissioning Exchange Server 2016</a> をもとに日本のお客様向けに抄訳、再編集したものです。最新の情報は元の Blog を参照してください。</p>
+<p>こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームです。</p>
+<p>Exchange サーバー 2016 は延長サポートの終了が近づいており、2025 年 10 月 14 日に<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/exchange-server-2016">サポートが終了</a>します。Exchange サーバー 2019 を使用している場合は、次のバージョンである Exchange サーバー サブスクリプション エディション (SE) に<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-roadmap-update/ba-p/4132742">インプレース アップグレード</a> (<a href="https://jpmessaging.github.io/blog/Exchange-Server-Roadmap-Update/">抄訳版</a>) することができるため、それまでに Exchange サーバー 2016 を廃止にする必要があります。</p>
+<p>この記事では、Exchange サーバー 2019 が既にインストールされている環境から Exchange サーバー 2016 を削除する方法に焦点を当てます。Exchange サーバー 2019 へのアップグレードについて既に文書化されている手順については、この記事では説明しません。これらの詳細については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/exchange-deployment-assistant?view=exchserver-2019">Exchange 展開アシスタント</a>を参照し、環境に合わせたステップバイステップの展開チェックリストを作成してください。また、新しいバージョンの Exchange サーバーへのアップグレードの詳細については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/exchange-server?view=exchserver-2019">Exchange サーバーのドキュメント</a>も参照してください。</p>
+<p>オンプレミスの Exchange サーバーを引き続きご利用になる予定の場合は、できる限り早く Exchange サーバー 2019 に移行することを推奨します。Exchange サーバーではじめてインプレース アップグレードを実行できるようになりますが、Exchange サーバー SE へのインプレース アップグレードをサポートするのは Exchange サーバー 2019 のみです。今すぐ Exchange サーバー 2019 に移行して、Exchange サーバー SE が利用可能になったときに簡単にインプレース アップグレードできるようにすることが推奨されます。</p>
+<h1 id="シャットダウンの準備"><a href="#シャットダウンの準備" class="headerlink" title="シャットダウンの準備"></a>シャットダウンの準備</h1><p>Exchange サーバー 2016 から Exchange サーバー 2019 への移行が完了したら、Exchange サーバー 2016 を廃止するための準備を開始できます。</p>
+<h2 id="サード-パーティ-アプリケーションの棚卸しとアップグレード"><a href="#サード-パーティ-アプリケーションの棚卸しとアップグレード" class="headerlink" title="サード パーティ アプリケーションの棚卸しとアップグレード"></a>サード パーティ アプリケーションの棚卸しとアップグレード</h2><p>Exchange サーバー 2016 を使用するすべてのアプリケーションの一覧を作成し、新しい Exchange サーバー 2019 を使用するように各アプリケーションを構成します。これらのアプリケーションで共有の名前空間を使用している場合は、最小限の構成変更にとどめることができます。これらのアプリケーションの提供元に問い合わせて、最新バージョンの Exchange サーバーでサポートされていることを確認してください。</p>
+<h1 id="クライアント-アクセス-サービス"><a href="#クライアント-アクセス-サービス" class="headerlink" title="クライアント アクセス サービス"></a>クライアント アクセス サービス</h1><h2 id="Exchange-仮想ディレクトリの名前空間を確認する"><a href="#Exchange-仮想ディレクトリの名前空間を確認する" class="headerlink" title="Exchange 仮想ディレクトリの名前空間を確認する"></a>Exchange 仮想ディレクトリの名前空間を確認する</h2><p>すべてのクライアント接続の名前空間を確認し、それらが Exchange 組織内の最新の Exchange サーバーにルーティングされていることを確認します。これには、Exchange 仮想ディレクトリに対して公開されているすべての名前が含まれます。新しい Exchange 環境で同じ名前空間を使用している場合は、既存の SSL 証明書を再利用できます。新しい Exchange 環境で、現在の SSL 証明書のサブジェクト別名 (SAN) として存在しない新しい名前空間を使用している場合は、必要な名前すべてを含むように新しい証明書を取得する必要があります。</p>
+<blockquote>
+<p><strong>ヒント:</strong> ActiveSync、Outlook (MAPI&#x2F;HTTP または RPC&#x2F;HTTP)、EWS、OWA、OAB、POP3&#x2F;IMAP、Autodiscover を含むすべてのクライアントが従来の Exchange サーバーに接続しなくなったことを確認します。Log Parser Studio (LPS) を使用して、各クライアント アクセス サーバーの IIS ログを確認します。LPS は Log Parser 2.2 用の GUI で、ログの解析の複雑さを大幅に軽減し、大量のログを同時に解析できます (合計ログ サイズ &gt;60GB でテスト済み)。詳細については、この<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/introducing-log-parser-studio/ba-p/601131">ブログ記事</a>を参照してください。</p>
+</blockquote>
+<h1 id="Active-Directory-内のサービス接続ポイント-オブジェクトを確認する"><a href="#Active-Directory-内のサービス接続ポイント-オブジェクトを確認する" class="headerlink" title="Active Directory 内のサービス接続ポイント オブジェクトを確認する"></a>Active Directory 内のサービス接続ポイント オブジェクトを確認する</h1><p>クライアントが Autodiscover で使用するサービス接続ポイント (SCP) を、Exchange サーバー 2019 に向けます。また、Exchange サーバー 2016 の SCP を削除します。</p>
+<ol>
+<li><p>以下のコマンドですべての Exchange サーバーの AutoDiscoverServiceInternalURI の値を確認します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ClientAccessService</span> | <span class="built_in">Format-Table</span> Name, FQDN, AutoDiscoverServiceInternalUri <span class="literal">-AutoSize</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Exchange サーバー 2019 の AutoDiscoverServiceInternalURI の値が Exchange サーバー 2019 もしくはそれ用のロード バランサー (LB) に向いていない場合は設定を変更します。必要であれば Exchange サーバー 2019 の AutoDiscoverServiceInternalURI の値を Exchange サーバー 2016 の AutoDiscoverServiceInternalURI の値を参考に設定しなおします。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ClientAccessService</span> <span class="literal">-Identity</span> &lt;Exchange サーバー <span class="number">2019</span> のサーバー名&gt; <span class="literal">-AutoDiscoverServiceInternalUri</span> &lt;Exchange サーバー <span class="number">2019</span> もしくはそれ用の LB の SCP の URI&gt;</span><br></pre></td></tr></table></figure>
+
+<p>以下は mbx01 という名前の Exchange サーバー 2019 の AutoDiscoverServiceInternalURI に “<a target="_blank" rel="noopener" href="https://mbx01.contoso.com/autodiscover/autodiscover.xml">https://mbx01.contoso.com/autodiscover/autodiscover.xml</a>“ を設定する場合のコマンドになります。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ClientAccessService</span> <span class="literal">-Identity</span> mbx01 <span class="literal">-AutoDiscoverServiceInternalUri</span> <span class="string">&quot;https://mbx01.contoso.com/autodiscover/autodiscover.xml&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Exchange サーバー 2016 の AutoDiscoverServiceInternalURI を $null にします。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ClientAccessService</span> <span class="literal">-Identity</span> &lt;Exchange サーバー <span class="number">2016</span> のサーバー名&gt; <span class="literal">-AutoDiscoverServiceInternalUri</span> <span class="variable">$Null</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="メール-フロー"><a href="#メール-フロー" class="headerlink" title="メール フロー"></a>メール フロー</h1><p>次に、すべてのメール フローに利用されるすべてのコネクタを確認して、サーバーを廃止にする準備ができていることを確認します。</p>
+<h2 id="送信コネクタを確認する"><a href="#送信コネクタを確認する" class="headerlink" title="送信コネクタを確認する"></a>送信コネクタを確認する</h2><p>送信コネクタを確認し、送信コネクタの SourceTransportServers から Exchange サーバー 2016 が削除され、新しい Exchange サーバーが追加されていることを確認します。ほとんどの組織では、ポート 25 でのアウトバウンドの通信は少数の IP アドレスに対してのみ許可されているため、アウトバウンド通信の構成を確認して更新する必要がある場合もあります。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-SendConnector</span> | <span class="built_in">Format-Table</span> Name, SourceTransportServers <span class="literal">-AutoSize</span></span><br><span class="line"><span class="built_in">Get-ForeignConnector</span> | <span class="built_in">Format-Table</span> Name, SourceTransportServers <span class="literal">-Autosize</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="受信コネクタを確認する"><a href="#受信コネクタを確認する" class="headerlink" title="受信コネクタを確認する"></a>受信コネクタを確認する</h2><p>Exchange サーバー 2016 上の受信コネクタを確認し、新しい Exchange サーバーで再作成されていることを確認します (例: SMTP リレー、匿名リレー、パートナーなど) 。受信メールのルーティングに使用されているすべての名前空間を確認し、新しい Exchange サーバーに接続するようにネットワークが構成されていることを確認します。Exchange サーバー 2016 にカスタム コネクタまたはサード パーティ製コネクタがある場合は、新しい Exchange サーバーで再作成できることを確認します。受信コネクタの構成は以下のコマンドで確認することができます。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ReceiveConnector</span> <span class="literal">-Server</span> &lt;サーバー名&gt; | <span class="built_in">fl</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>ヒント:</strong> SMTP ログをチェックして、ハードコードされた名前または IP アドレスを使用してサーバーに SMTP トラフィックを送信しているサービスがあるかどうかを確認します。ログを有効にするには、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/configure-protocol-logging-exchange-2013-help">プロトコル ログの構成</a>を確認してください。給与計算処理や月末レポートなど、週次または月次のイベントを中継するアプリやプロセスを考慮するのに十分な期間のメッセージ ログをキャプチャしてください。これらは、SMTP プロトコル ログの小さなサンプル サイズではキャプチャされない可能性があるためです。</p>
+</blockquote>
+<p>Exchange サーバー 2016 の廃止を進めることは、メール フローの構成を監査し、必要なすべてのコネクタが適切に構成され、セキュリティで保護されていることを確認する絶好の機会です。あなたの環境で使用されていない可能性のある<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow/connectors/allow-anonymous-relay?view=exchserver-2019">匿名リレー</a> コネクタを取り除くのに最適な時期です。または、Exchange がハイブリッドで展開されている場合は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow-best-practices/how-to-set-up-a-multifunction-device-or-application-to-send-email-using-microsoft-365-or-office-365">Office 365 に対してリレー</a>が構成されている場合があります。</p>
+<h1 id="エッジ-サーバー"><a href="#エッジ-サーバー" class="headerlink" title="エッジ サーバー"></a>エッジ サーバー</h1><p>エッジ トランスポート サーバーを利用している場合は、エッジ トランスポート サーバーも Exchange サーバー 2019 に移行する必要があります。エッジ トランスポート サーバーが Active Directory サイトを購読している場合は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/architecture/edge-transport-servers/edge-subscription-procedures?view=exchserver-2019">こちらの公開情報</a>に記載されているように <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/architecture/edge-transport-servers/edge-subscriptions?view=exchserver-2019">エッジ サブスクリプション</a>を再作成する必要があります。</p>
+<p>エッジ サーバーを交換せずに廃止にする予定の場合は、受信トラフィックをメールボックス サーバーにルーティングするようにファイアウォール ルールが更新されていることを確認します。また、メールボックス サーバーは、TCP ポート 25 番経由でアウトバウンド通信できる必要もあります。</p>
+<h1 id="メールボックス"><a href="#メールボックス" class="headerlink" title="メールボックス"></a>メールボックス</h1><h2 id="すべての-Exchange-サーバー-2016-上のメールボックスを新しいバージョンの-Exchange-サーバーに移動する"><a href="#すべての-Exchange-サーバー-2016-上のメールボックスを新しいバージョンの-Exchange-サーバーに移動する" class="headerlink" title="すべての Exchange サーバー 2016 上のメールボックスを新しいバージョンの Exchange サーバーに移動する"></a>すべての Exchange サーバー 2016 上のメールボックスを新しいバージョンの Exchange サーバーに移動する</h2><p>Exchange サーバー 2016 は、すべてのメールボックスが新しい Exchange サーバーに移行されるまで廃止することはできません。移行は、最新バージョンの Exchange から開始してください。Exchange サーバー 2019 に移行するので、Exchange サーバー 2019 からすべての移行バッチと移動要求を作成します。最初にすべての調停メールボックスを最新の Exchange サーバーに移動する必要があります。</p>
+<p>すべてのメールボックス移動が完了したら、すべての移行バッチと移動要求を削除します。移動要求やメールボックスが残っていると、Exchange サーバー 2016 のアンインストールがブロックされます。</p>
+<p>Exchange 管理シェル (EMS) で次のコマンドを実行して、新しい Exchange サーバーに移動する必要があるメールボックスを特定します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ADServerSettings</span> <span class="literal">-ViewEntireForest</span> <span class="variable">$True</span></span><br><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-Server</span> &lt;Exchange サーバー <span class="number">2016</span> のサーバー名&gt; <span class="literal">-Arbitration</span></span><br><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-Server</span> &lt;Exchange サーバー <span class="number">2016</span> のサーバー名&gt; <span class="literal">-ResultSize</span> Unlimited</span><br><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-Server</span> &lt;Exchange サーバー <span class="number">2016</span> のサーバー名&gt; <span class="literal">-Archive</span> <span class="literal">-ResultSize</span> Unlimited</span><br><span class="line"><span class="built_in">Get-SiteMailbox</span></span><br><span class="line"><span class="built_in">Get-Mailbox</span> –AuditLog</span><br></pre></td></tr></table></figure>
+
+<p>また、以前にサイト メールボックスが削除されていた場合は、<strong>Get-SiteMailbox –DeletedSiteMailbox</strong> を実行する必要がある場合もあります (これはデータベースを削除するためのブロッカーになる可能性があるため)。</p>
+<p>Exchange サーバー 2016 上にメールボックスが見つかった場合は、先に進む前に、それらを新しいバージョンの Exchange サーバーに移動します。詳細については、「<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/architecture/mailbox-servers/manage-mailbox-moves?view=exchserver-2019">Exchange Server でオンプレミスメールボックスの移動を管理する</a>」を参照してください。</p>
+<p>すべての調停メールボックスとユーザー メールボックスが移動されたことを確認したら、すべてのパブリック フォルダー メールボックスが移動されたことを確認します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-Server</span> &lt;Exchange サーバー <span class="number">2016</span> のサーバー名&gt; <span class="literal">-PublicFolder</span> <span class="literal">-ResultSize</span> Unlimited</span><br></pre></td></tr></table></figure>
+
+<p>パブリック フォルダーの移動要求の詳細については、「<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/collaboration/public-folders/migrate-from-exchange-2013?view=exchserver-2019">パブリック フォルダーを Exchange 2013 から Exchange 2016 または Exchange 2019 に移行する</a>」を参照してください。</p>
+<p>すべてのメールボックスが新しい Exchange サーバーに移動されたら、移動要求と移行バッチを確認した後、移動要求と移行バッチを削除できます。最初に <strong>-WhatIf</strong> パラメーターを指定してコマンドを実行し、リストされたすべての移動要求と移行バッチを削除できることを確認した後、**-WhatIf** パラメーターを指定せずに再度実行します。</p>
+<p>完了したすべての移動要求は、次のコマンドを使用して削除できます。「<a target="_blank" rel="noopener" href="https://learn.microsoft.com/powershell/module/exchange/remove-moverequest?view=exchange-ps">Remove-MoveRequest</a>」を参照してください。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-MoveRequest</span> <span class="literal">-ResultSize</span> Unlimited | <span class="built_in">Remove-MoveRequest</span> <span class="literal">-Confirm</span>:<span class="variable">$false</span> <span class="literal">-WhatIf</span></span><br></pre></td></tr></table></figure>
+
+<p>すべての移行バッチは、次のコマンドを使用して削除できます。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/powershell/module/exchange/remove-migrationbatch?view=exchange-ps">「Remove-MigrationBatch</a>」を参照してください。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-MigrationBatch</span> | <span class="built_in">Remove-MigrationBatch</span> <span class="literal">-Confirm</span>:<span class="variable">$false</span> <span class="literal">-WhatIf</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="データベース可用性グループの廃止"><a href="#データベース可用性グループの廃止" class="headerlink" title="データベース可用性グループの廃止"></a>データベース可用性グループの廃止</h1><h2 id="Exchange-サーバー-2016-にメールボックスが存在しないことを確認する"><a href="#Exchange-サーバー-2016-にメールボックスが存在しないことを確認する" class="headerlink" title="Exchange サーバー 2016 にメールボックスが存在しないことを確認する"></a>Exchange サーバー 2016 にメールボックスが存在しないことを確認する</h2><p>次のコマンドを実行します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Mailbox</span> –ResultSize unlimited | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.AdminDisplayVersion <span class="operator">-like</span> <span class="string">&quot;Version 15.1*&quot;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<p>メールボックスが見つかった場合は、メールボックスを新しい Exchange サーバーに移行するか、メールボックスを削除します。</p>
+<h2 id="メールボックス-データベースのコピーを削除する"><a href="#メールボックス-データベースのコピーを削除する" class="headerlink" title="メールボックス データベースのコピーを削除する"></a>メールボックス データベースのコピーを削除する</h2><p>Exchange サーバー 2016 上のすべてのメールボックス データベース コピーを削除する必要があります。これは、Exchange 管理センター (EAC) または EMS を使用して行うことができます。これらのツールの使用方法の詳細については、「<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/remove-a-mailbox-database-copy-exchange-2013-help">メールボックス データベース コピーを削除する</a>」を参照してください。</p>
+<p>なお、データベース コピーを削除しても、実際のデータベース ファイルやトランザクション ログはサーバから削除されません。</p>
+<p>サーバーごとにパッシブ コピーを検索して削除するには、次のコマンドを実行します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-MailboxDatabaseCopyStatus</span> –Server &lt;Exchange サーバー <span class="number">2016</span> のサーバー名&gt; | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.Status <span class="operator">-notlike</span> <span class="string">&quot;*mounted&quot;</span>&#125; | <span class="built_in">Remove-MailboxDatabaseCopy</span></span><br></pre></td></tr></table></figure>
+
+<p>データベースごとにパッシブ コピーを検索して削除するには、次のコマンドを実行します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-MailboxDatabaseCopyStatus</span> &lt;データベース名&gt; | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.Status <span class="operator">-notlike</span> <span class="string">&quot;*mounted&quot;</span>&#125; | <span class="built_in">Remove-MailboxDatabaseCopy</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="メールボックス-データベースを削除する"><a href="#メールボックス-データベースを削除する" class="headerlink" title="メールボックス データベースを削除する"></a>メールボックス データベースを削除する</h2><p>廃止する Exchange サーバー 2016 環境がベスト プラクティスに従っていれば、高可用性や災害対策のために DAG が設定されているはずです。ここまでの手順ですべてのメールボックスが Exchange サーバー 2016 上から削除され、DAG を破棄して Exchange サーバー 2016 の廃止を進める準備が整いました。すべてのメールボックスが Exchange サーバー 2016 から移行され、すべてのパッシブ データベース コピーが削除されたら、Exchange サーバー 2016 環境から残りのデータベースを削除できます。</p>
+<p>次のコマンドを <strong>-WhatIf</strong> パラメーターと共に実行して、リストされているすべてのデータベースを削除できることを確認してから、**-WhatIf** パラメーターを指定せずにコマンドを実行して削除します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-MailboxDatabase</span> –Server &lt;Exchange サーバー <span class="number">2016</span> のサーバー名&gt; | <span class="built_in">Remove-MailboxDatabase</span> –Confirm:<span class="variable">$false</span> <span class="literal">-WhatIf</span></span><br></pre></td></tr></table></figure>
+
+<p>データベースにメールボックスがまだ存在する場合は、データベースを削除することはできません。上記のコマンドは、次のエラーで失敗します。</p>
+<blockquote>
+<p>このメールボックス データベース内に 1 つ以上のメールボックス、メールボックス プラン、アーカイブ メールボックス、パブリック フォルダー メールボックスまたは調停メールボックス、監査メールボックスがあります。</p>
+</blockquote>
+<hr>
+<p>データベースにメールボックスが存在しないことを確認したにもかかわらず、データベースを削除できない場合は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/this-mailbox-database-contains-one-or-more-mailboxes-8230/ba-p/587212">この記事</a>を参照してください。削除しようとしているデータベースには、別のデータベース内のプライマリ メールボックスのためのアーカイブ メールボックスが含まれている可能性があります。メールボックスに <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/policy-and-compliance/holds/holds?view=exchserver-2019">InPlaceHold または LitigationHold がかかっている</a>場合、削除がブロックされるため、削除の続行を可能にするために、各保留を安全に削除できることを確認する必要があります。</p>
+<blockquote>
+<p><strong>注意:</strong> アクティブなメールボックスをホストしていないメールボックス データベースを削除しようとして問題が発生した場合、このデータベースを指しているオブジェクトを特定する方法の 1 つは、次のコマンドです。</p>
+</blockquote>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-ADServerSettings</span> <span class="literal">-ViewEntireForest</span> <span class="variable">$True</span></span><br><span class="line"><span class="variable">$DN</span> =(<span class="built_in">Get-MailboxDatabase</span> <span class="string">&quot;DBNAME&quot;</span>).DistinguishedName</span><br><span class="line"><span class="built_in">Get-AdObject</span> <span class="literal">-Filter</span> <span class="string">&#x27;(homemdb -eq $DN -or msExchArchiveDatabaseLink -eq $DN) -and (Name -notlike &quot;HealthMailbox*&quot; -and Name -notlike &quot;SystemMailbox*&quot;)&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="データベース可用性グループからすべてのメンバーを削除する"><a href="#データベース可用性グループからすべてのメンバーを削除する" class="headerlink" title="データベース可用性グループからすべてのメンバーを削除する"></a>データベース可用性グループからすべてのメンバーを削除する</h2><p>DAG を削除する前に、各 DAG メンバーを DAG から削除する必要があります。これは、EAC または EMS を使用して行うことができます。これらのツールの使用の詳細については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/manage-database-availability-group-membership-exchange-2013-help">データベース可用性グループのメンバーシップの管理</a> を参照してください。</p>
+<h2 id="DAG-の削除"><a href="#DAG-の削除" class="headerlink" title="DAG の削除"></a>DAG の削除</h2><p>すべてのデータベース コピーが削除され、すべてのメンバーが DAG から削除されたら、EAC または EMS を使用して DAG を削除できます。これらのツールの使用の詳細については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/remove-a-database-availability-group-exchange-2013-help">データベース可用性グループの削除</a> を参照してください。</p>
+<blockquote>
+<p><strong>ヒント:</strong> ファイル共有監視を持つ DAG がある場合は、Exchange サーバー 2016 DAG に使用されているファイル共有監視の使用を停止することを忘れないでください。</p>
+</blockquote>
+<h1 id="ユニファイド-メッセージングの役割に関する注意事項"><a href="#ユニファイド-メッセージングの役割に関する注意事項" class="headerlink" title="ユニファイド メッセージングの役割に関する注意事項"></a>ユニファイド メッセージングの役割に関する注意事項</h1><p>この投稿では、ユニファイド メッセージングの機能は <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/new-features/discontinued-features?view=exchserver-2019#architecture">Exchange サーバー 2019</a> から削除されているため、その機能については説明しません。ユニファイド メッセージングを別のソリューションに移行する詳細な手順については、「<a target="_blank" rel="noopener" href="https://learn.microsoft.com/skypeforbusiness/hybrid/plan-um-migration">Skype for Business Server と Exchange Server の移行の計画</a>」を参照してください。ただし、Exchange サーバー 2016 ユーザーが UM が有効なメールボックスを持っている場合は、Skype for Business サーバー 2019 に移動する前に Exchange サーバー 2019 に移動しないでください。そうしないと、ボイス メッセージングが停止します。</p>
+<h1 id="Exchange-サーバー-2016-をメンテナンス-モードにする"><a href="#Exchange-サーバー-2016-をメンテナンス-モードにする" class="headerlink" title="Exchange サーバー 2016 をメンテナンス モードにする"></a>Exchange サーバー 2016 をメンテナンス モードにする</h1><p>ここまでの説明で記載のすべての項目が Exchange サーバー 2016 から新しいバージョンの Exchange サーバーに移行されたら、Exchange サーバー 2016 を 1 週間メンテナンス モードにして、予期しない問題が発生しないことを確認します。問題が発生した場合は、Exchange サーバー 2016 を削除する前に解決する必要があります。問題が発生しない場合は、Exchange サーバー 2016 をアンインストールできます。<strong>Exchange サーバー 2016 をシャットダウンすると、リソースが完全に移行されていない場合に問題が発生する可能性があるためお勧めしません。</strong></p>
+<p>目的は、これらの Exchange サーバー 2016 に接続しようとしているものがないことを確認することです。何かが見つかった場合は、新しい Exchange サーバーを使用するように更新するか、更新が行われるまで Exchange サーバー 2016 が利用できるように戻します。</p>
+<p>メッセージ追跡ログと各種の接続ログから Exchange サーバー 2016 に接続しているクライアントが存在しなくなったことを確認した後でも、組織が従来の Exchange サーバーを (メンテナンス モードで) 長期間オンラインにしておくことは珍しことではありません。これにより把握していなかった業務プロセスを見つけたり、不要な復旧作業を防いだりすることができます。</p>
+<p>Exchange サーバーを保守モードにするには、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/high-availability/manage-ha/manage-dags?view=exchserver-2019">Exchange Serverでデータベース可用性グループを管理する</a>の <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/high-availability/manage-ha/manage-dags?view=exchserver-2019#performing-maintenance-on-dag-members">DAG メンバーに対するメンテナンスの実行</a>セクションを参照してください。</p>
+<p>Exchange サーバーのコンポーネントの状態の詳細については、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/server-component-states-in-exchange-2013/ba-p/591342">このブログ記事</a>を参照してください。</p>
+<h1 id="Exchange-サーバー-2016-をアンインストールする"><a href="#Exchange-サーバー-2016-をアンインストールする" class="headerlink" title="Exchange サーバー 2016 をアンインストールする"></a>Exchange サーバー 2016 をアンインストールする</h1><h2 id="ベスト-プラクティスを確認する"><a href="#ベスト-プラクティスを確認する" class="headerlink" title="ベスト プラクティスを確認する"></a>ベスト プラクティスを確認する</h2><p>まず、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/plan-and-deploy/install-cumulative-updates?view=exchserver-2019">Exchange を最新の累積的な更新プログラムにアップグレードする</a>の<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/plan-and-deploy/install-cumulative-updates?view=exchserver-2019#best-practices">ベスト プラクティス</a>セクションを確認します。これらのセクションは、Exchange サーバーのアンインストール時にも適用されます (たとえば、セットアップの実行前後にサーバーを再起動する、ウイルス対策を無効にするなど)。</p>
+<h2 id="監視メールボックスを削除する"><a href="#監視メールボックスを削除する" class="headerlink" title="監視メールボックスを削除する"></a>監視メールボックスを削除する</h2><p>Exchange サーバー 2016 をアンインストールする前に、次のコマンドを使用して、すべての Exchange サーバー 2016 の監視メールボックスを削除します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-Monitoring</span> | <span class="built_in">Where-Object</span> &#123;<span class="variable">$_</span>.AdminDisplayVersion <span class="operator">-like</span> <span class="string">&quot;Version 15.1*&quot;</span>&#125; | <span class="built_in">Remove-Mailbox</span> <span class="literal">-Confirm</span>:<span class="variable">$false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Exchange-サーバー-2016-をアンインストールする-1"><a href="#Exchange-サーバー-2016-をアンインストールする-1" class="headerlink" title="Exchange サーバー 2016 をアンインストールする"></a>Exchange サーバー 2016 をアンインストールする</h2><p>アンインストール プロセスを開始する前に、EMS と、アンインストール プロセスを遅らせる可能性のあるその他のプログラム (.NET Framework を使用するプログラム、ウイルス対策製品、バックアップ製品など) をすべて終了します。次に、以下のいずれかの推奨される方法を使用して Exchange サーバー 2016 をアンインストールします (コントロール パネルの使用は推奨しません)。</p>
+<ul>
+<li>無人セットアップ モードの使用: Setup.exe &#x2F;mode:Uninstall</li>
+<li>セットアップ ファイルの場所から Setup.exe を実行</li>
+</ul>
+<h2 id="アンインストール後のタスクの実行"><a href="#アンインストール後のタスクの実行" class="headerlink" title="アンインストール後のタスクの実行"></a>アンインストール後のタスクの実行</h2><p>Exchange サーバーをアンインストールした後も、いくつかのタスクがあります。これらは組織の運用要件によって異なる場合があります。</p>
+<p>たとえば、次のような場合です。</p>
+<ul>
+<li>Active Directory から Exchange サーバー 2016 のコンピューター アカウントを削除 (DAG のクラスター名オブジェクトと Kerberos ASA オブジェクトを含む)。</li>
+<li>Exchange サーバー 2016 を他のサービス (バックアップ ソフトウェア、ウイルス対策&#x2F;セキュリティ エージェント、ネットワーク監視など) のターゲットから削除。</li>
+<li>DNS から Exchange サーバー 2016 のレコードの削除。</li>
+<li>DAG のファイル共有監視 (FSW) サーバー上のフォルダーが正常に削除されたことの確認。</li>
+<li>Exchange Trusted Subsystem の FSW サーバーのローカル管理者グループからの削除。ただし、これらのサーバーが他の DAG のミラーリング監視サーバーである場合を除く。</li>
+<li>Exchange サーバー 2016 環境へのポートを開く古いファイアウォール ルールの削除。</li>
+<li>Exchange サーバー 2016 環境の物理機器の取り外しと廃棄。</li>
+<li>Exchange サーバー 2016 仮想マシンの削除。</li>
+</ul>
+<p>要約すると、Exchange サーバー 2016 を廃止する場合、最も重要な考慮事項は次のとおりです。</p>
+<ul>
+<li>削除の計画 (Exchange サーバーに依存しているものをすべて更新して、新しい Exchange サーバーを使用する)</li>
+<li>適切な監視を行い、削除されるサーバーへの接続が試行されないことを確認する</li>
+</ul>
+<p>ご質問がある場合、または特定のシナリオについて話し合いたい場合は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange/bd-p/Exchange_General">Exchange Tech Community フォーラム</a>でお気軽に質問してください。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Decommissioning-Exchange-Server-2016/" data-id="cmjksiryi001hhg2a7dw6b9jw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/what%E2%80%99s-new-and-coming-to-microsoft-outlook-%E2%80%93-ignite-2024/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Microsoft Outlook の新機能と今後の展望 – Ignite 2024
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/MC854648/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">新しい Outlook for Windows への移行を促すポリシー制御</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Using ExcludeFromAllHolds to Remove Holds from Inactive Mailboxes の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 非アクティブなメールボックスに対する保持機能のサポートが、パブリッ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Using ExcludeFromAllHolds to Remove Holds from Inactive Mailboxes の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 非アクティブなメールボックスに対する保持機能のサポートが、パブリッ">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-12-17T15:00:00.000Z">
+<meta property="article:modified_time" content="2025-12-17T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-using-excludefromallholds-to-remove-holds-from-inactive-mailboxes" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/" class="article-date">
+  <time datetime="2025-12-17T15:00:00.000Z" itemprop="datePublished">2025-12-18</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/" class="article-date-single">    
+    
+    <time datetime="2025-12-17T15:00:00.000Z" itemprop="dateUpdated">2025-12-18</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/4476933">Using ExcludeFromAllHolds to Remove Holds from Inactive Mailboxes</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p style="background: #99ffa7ff;">非アクティブなメールボックスに対する保持機能のサポートが、<strong>パブリック クラウド</strong>で利用可能になりました。詳細と今後のマイルストーンについては、こちらの<strong>ロードマップ</strong> (<a href = https://www.microsoft.com/microsoft-365/roadmap?id=537204>https://www.microsoft.com/microsoft-365/roadmap?id=537204</a>) をご確認ください。</p>
+
+<h3 id="はじめに"><a href="#はじめに" class="headerlink" title="はじめに"></a>はじめに</h3><p>Microsoft Exchange Online で非アクティブなメールボックスを管理する際、管理者はコンプライアンス要件を維持しつつ、完全削除を可能にするためにホールドを解除する必要がよくあります。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/powershell/module/exchangepowershell/set-mailbox?view=exchange-ps#-excludefromallholds">ExcludeFromAllHolds</a> パラメーターは、非アクティブなメールボックスに適用されている複数種類のホールドを、1 回の操作で削除できる包括的かつ強化されたソリューションを提供します。</p>
+<p>この記事では、ExcludeFromAllHolds パラメーターの使用方法、削除対象となるホールド、前提条件、および RemoveComplianceTagHold スイッチとの関連性について説明します。これらのオプションを組み合わせることで、コンプライアンスの整合性を維持しながら、非アクティブなメールボックスのライフサイクルを効率的に管理できます。</p>
+<h3 id="概要と目的"><a href="#概要と目的" class="headerlink" title="概要と目的"></a>概要と目的</h3><p>ExcludeFromAllHolds パラメーターは、電子情報開示ホールド、訴訟ホールド、および RestrictiveRetention パラメーターを true に設定した保持ポリシー (以下、当記事では便宜上 “制限付き保持ポリシー” とします) を除き、非アクティブなメールボックスに適用されているすべてのホールドを削除するためのコマンドレット スイッチです。このパラメーターは、訴訟ホールドや制限付き保持ポリシーが適用されていない場合に、不要な保持ホールドを削除し、メールボックスを完全に削除できるようにするシナリオを対象としています。ただし、コマンドレットは規制遵守に必要な訴訟ホールドを引き続き保持します。</p>
+<p>一方、RemoveComplianceTagHold スイッチは、コンプライアンス タグ ベースのホールド (ComplianceTagHoldApplied) のみをメールボックスから削除します。これにより、他のホールドから除外せずにコンプライアンス タグの適用のみを調整する場合に、より詳細な制御が可能になります。</p>
+<h4 id="主な機能"><a href="#主な機能" class="headerlink" title="主な機能"></a>主な機能</h4><ul>
+<li>包括的なカバレッジ： ExcludeFromAllHolds は組織レベルとユーザーレベルの両方の保持ポリシーに対応</li>
+<li>柔軟なスコープ： 静的スコープとアダプティブ スコープの両方で動作</li>
+<li>コンプライアンスの維持： 電子情報開示ホールド、インプレース ホールド (eDiscovery-ComplianceSearch)、訴訟ホールド、および制限付き保持ポリシーを維持</li>
+<li>自動処理： 1 つのコマンドで複数種類のホールドを同時に削除</li>
+<li>関連付けがなくなったホールドの削除： このコマンドは、組織レベルおよびユーザーレベルでスコープ指定された関連付けがなくなったホールドを削除</li>
+<li>詳細なタグ制御： RemoveComplianceTagHold は、他のホールドに影響を与えず、コンプライアンス タグ ホールドのみを削除</li>
+</ul>
+<h4 id="主な使用例"><a href="#主な使用例" class="headerlink" title="主な使用例"></a>主な使用例</h4><p>ExcludeFromAllHolds の主な使用例は、コンプライアンス要件を維持しながらホールドを削除することで、非アクティブなメールボックスを完全に削除することです。これは特に以下のような場合に役立ちます。</p>
+<ul>
+<li>訴訟期間終了後のユーザー アカウントの廃止</li>
+<li>法的要件を維持しながらコンプライアンス体制を合理化</li>
+<li>組織変更時の非アクティブなメールボックスの一括処理</li>
+</ul>
+<p>RemoveComplianceTagHold は、他のすべてのホールドをそのまま維持しながら、コンプライアンス タグ ホールドのみを削除する必要がある場合に使用されます (たとえば、タグ ロジックの再計算や変更を許可する場合など)。RemoveComplianceTagHold はアクティブなメールボックスにも使用でき、主に移行関連のシナリオで使用されます。</p>
+<h3 id="ExcludeFromAllHolds-はどのようなホールドを削除するか？"><a href="#ExcludeFromAllHolds-はどのようなホールドを削除するか？" class="headerlink" title="ExcludeFromAllHolds はどのようなホールドを削除するか？"></a>ExcludeFromAllHolds はどのようなホールドを削除するか？</h3><p>ExcludeFromAllHolds パラメーターは、コンプライアンス要件とポリシーの種類に基づいて、選択的にホールドを削除します。</p>
+<p><strong>削除されるホールド:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>ホールドの種類</strong></th>
+<th><strong>説明</strong></th>
+<th><strong>スコープ</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>組織レベルの保持ポリシー</td>
+<td>すべてまたはほとんどのメールボックスに適用される組織全体のホールド</td>
+<td>グローバル</td>
+</tr>
+<tr>
+<td>ユーザーレベルの保持ポリシー</td>
+<td>対象範囲を指定した特定のメールボックスのホールド</td>
+<td>個別</td>
+</tr>
+<tr>
+<td>コンプライアンス タグ ホールド</td>
+<td>コンテンツベースの保持ホールド (制限付きポリシーが存在しない場合)</td>
+<td>コンテンツ固有</td>
+</tr>
+<tr>
+<td>遅延ホールド</td>
+<td>ポリシー移行時の一時的なホールド</td>
+<td>一時的</td>
+</tr>
+<tr>
+<td>遅延リリース ホールド</td>
+<td>ポリシー変更時に即時削除を防ぐホールド</td>
+<td>一時的</td>
+</tr>
+</tbody></table>
+<p><strong>削除されないホールド:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>ホールドの種類</strong></th>
+<th><strong>保持される理由</strong></th>
+<th><strong>影響</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>インプレース ホールド (ComplianceSearch - eDiscovery)</td>
+<td>法令遵守要件</td>
+<td>コンプライアンスのため維持</td>
+</tr>
+<tr>
+<td>電子情報開示ホールド</td>
+<td>法令遵守および訴訟要件</td>
+<td>コンプライアンスのため維持</td>
+</tr>
+<tr>
+<td>訴訟ホールド</td>
+<td>法令遵守および訴訟要件</td>
+<td>コンプライアンスのため維持</td>
+</tr>
+<tr>
+<td>制限付き保持ポリシー</td>
+<td>規制遵守要件</td>
+<td>コンプライアンス ルールに従って保持</td>
+</tr>
+<tr>
+<td>ポリシー構成</td>
+<td>ポリシー除外リストは更新されない</td>
+<td>ポリシーの変更なし</td>
+</tr>
+</tbody></table>
+<p><strong>重要:</strong> ExcludeFromAllHolds はポリシー自体を変更しません。特定のメールボックスだけをホールドから除外し、他のメールボックスには既存のポリシーをそのまま維持します。</p>
+<h4 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h4><h5 id="1-PowerShell-環境"><a href="#1-PowerShell-環境" class="headerlink" title="1. PowerShell 環境"></a>1. PowerShell 環境</h5><ul>
+<li>Exchange Online PowerShell での実行が必要です。Exchange 管理センター (EAC) または Microsoft Purview ポータル (SCC) では使用できません。</li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps">Exchange Online PowerShell に接続する</a>必要があります。</li>
+</ul>
+<h5 id="2-メールボックスの状態"><a href="#2-メールボックスの状態" class="headerlink" title="2. メールボックスの状態"></a>2. メールボックスの状態</h5><ul>
+<li>メールボックスは非アクティブ状態である必要があります (ホールドが適用されたソフトデリート)。</li>
+<li>アクティブ&#x2F;非アクティブなパブリック フォルダー&#x2F;スケジュール&#x2F;会議室メールボックス、完全に削除されたメールボックス、アクティブなメール ユーザー、アクティブなグループ メールボックスには使用できません。</li>
+<li>実行前に非アクティブ状態を確認してください。</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 非アクティブなメールボックスの状態を確認</span></span><br><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-InactiveMailboxOnly</span> <span class="literal">-Identity</span> <span class="string">&quot;user@contoso.com&quot;</span> |</span><br><span class="line">    <span class="built_in">Select-Object</span> Name, IsInactiveMailbox, InPlaceHolds</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-RBAC-権限"><a href="#3-RBAC-権限" class="headerlink" title="3. RBAC 権限"></a>3. RBAC 権限</h5><p>必要な RBAC 権限は次のとおりです。</p>
+<ul>
+<li>Mailbox Import Export role (メールボックスのインポートとエクスポートの役割)</li>
+<li>Retention Management role (保持管理の役割)</li>
+<li>eDiscovery Manager role (電子情報開示マネージャーの役割：eDiscovery ホールドを表示する場合)</li>
+</ul>
+<h5 id="4-コンプライアンスの検証"><a href="#4-コンプライアンスの検証" class="headerlink" title="4. コンプライアンスの検証"></a>4. コンプライアンスの検証</h5><ul>
+<li>削除前に現在のホールドを文書化する</li>
+<li>法的要件とコンプライアンス要件を確認する</li>
+<li>アクティブな訴訟または規制要件がないことを確認する</li>
+</ul>
+<h4 id="構文と例"><a href="#構文と例" class="headerlink" title="構文と例"></a>構文と例</h4><h5 id="基本的な構文"><a href="#基本的な構文" class="headerlink" title="基本的な構文"></a>基本的な構文</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-Mailbox</span> <span class="literal">-Identity</span> &lt;inactive<span class="literal">-mailbox-identity</span>&gt; <span class="literal">-ExcludeFromAllHolds</span></span><br></pre></td></tr></table></figure>
+<h5 id="例-1-単一の非アクティブなメールボックスからホールドを削除する"><a href="#例-1-単一の非アクティブなメールボックスからホールドを削除する" class="headerlink" title="例 1: 単一の非アクティブなメールボックスからホールドを削除する"></a>例 1: 単一の非アクティブなメールボックスからホールドを削除する</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-Mailbox</span> <span class="literal">-Identity</span> <span class="string">&quot;john.doe@contoso.com&quot;</span> <span class="literal">-ExcludeFromAllHolds</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-InactiveMailboxOnly</span> <span class="literal">-Identity</span> <span class="string">&quot;john.doe@contoso.com&quot;</span> | </span><br><span class="line">    <span class="built_in">Select-Object</span> Name, InPlaceHolds, IsInactiveMailbox</span><br></pre></td></tr></table></figure>
+<h5 id="例-2-複数の非アクティブなメールボックスを一括処理する"><a href="#例-2-複数の非アクティブなメールボックスを一括処理する" class="headerlink" title="例 2: 複数の非アクティブなメールボックスを一括処理する"></a>例 2: 複数の非アクティブなメールボックスを一括処理する</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$InactiveMailboxes</span> = <span class="built_in">Get-Mailbox</span> <span class="literal">-InactiveMailboxOnly</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$Mailbox</span> <span class="keyword">in</span> <span class="variable">$InactiveMailboxes</span>) &#123;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">&quot;Processing: <span class="variable">$</span>(<span class="variable">$Mailbox</span>.DisplayName)&quot;</span></span><br><span class="line">    <span class="variable">$CurrentHolds</span> = <span class="variable">$Mailbox</span>.InPlaceHolds</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">&quot;Current holds: <span class="variable">$</span>(<span class="variable">$CurrentHolds</span>.Count)&quot;</span></span><br><span class="line">    <span class="built_in">Set-Mailbox</span> <span class="literal">-Identity</span> <span class="variable">$Mailbox</span>.Guid <span class="literal">-ExcludeFromAllHolds</span></span><br><span class="line">    <span class="variable">$UpdatedMailbox</span> = <span class="built_in">Get-Mailbox</span> <span class="literal">-InactiveMailboxOnly</span> <span class="literal">-Identity</span> <span class="variable">$Mailbox</span>.Guid</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">&quot;Remaining holds: <span class="variable">$</span>(<span class="variable">$UpdatedMailbox</span>.InPlaceHolds.Count)&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="例-3-事前検証による選択的処理"><a href="#例-3-事前検証による選択的処理" class="headerlink" title="例 3: 事前検証による選択的処理"></a>例 3: 事前検証による選択的処理</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Test-HaseDiscoveryHolds</span></span> &#123;</span><br><span class="line">    <span class="keyword">param</span>(<span class="variable">$Mailbox</span>)</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="variable">$Hold</span> <span class="keyword">in</span> <span class="variable">$Mailbox</span>.InPlaceHolds) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$Hold</span> <span class="operator">-match</span> <span class="string">&quot;^cld|^skp|^unih&quot;</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="variable">$true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$InactiveMailboxes</span> = <span class="built_in">Get-Mailbox</span> <span class="literal">-InactiveMailboxOnly</span></span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$Mailbox</span> <span class="keyword">in</span> <span class="variable">$InactiveMailboxes</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!(<span class="built_in">Test-HaseDiscoveryHolds</span> <span class="literal">-Mailbox</span> <span class="variable">$Mailbox</span>)) &#123;</span><br><span class="line">        <span class="built_in">Write-Host</span> <span class="string">&quot;Safe to process: <span class="variable">$</span>(<span class="variable">$Mailbox</span>.DisplayName)&quot;</span></span><br><span class="line">        <span class="built_in">Set-Mailbox</span> <span class="literal">-Identity</span> <span class="variable">$Mailbox</span>.DistinguishedName <span class="literal">-ExcludeFromAllHolds</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">Write-Warning</span> <span class="string">&quot;eDiscovery holds detected on: <span class="variable">$</span>(<span class="variable">$Mailbox</span>.DisplayName)&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="検証と監視"><a href="#検証と監視" class="headerlink" title="検証と監視"></a>検証と監視</h4><h5 id="即時検証"><a href="#即時検証" class="headerlink" title="即時検証"></a>即時検証</h5><p>メールボックスにスタンプされている除外を確認します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Mailbox</span> - SoftDeletedMailbox <span class="literal">-Identity</span> <span class="string">&quot;user@contoso.com&quot;</span> |  <span class="built_in">Select-Object</span> Name, InPlaceHolds, ComplianceTagHoldApplied, DelayHoldApplied, DelayReleaseHoldApplied</span><br></pre></td></tr></table></figure>
+<h5 id="状態遷移の監視"><a href="#状態遷移の監視" class="headerlink" title="状態遷移の監視"></a>状態遷移の監視</h5><p>メールボックスが非アクティブからソフトデリートされたメールボックスに遷移した状態を確認します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-SoftDeletedMailbox</span> <span class="literal">-Identity</span> <span class="string">&quot;user@contoso.com&quot;</span> |  <span class="built_in">Select-Object</span> Name, IsInactiveMailbox, WasInactiveMailbox, InactiveMailboxRetireTime, WhenSoftDeleted</span><br></pre></td></tr></table></figure>
+<h5 id="監査証跡の確認"><a href="#監査証跡の確認" class="headerlink" title="監査証跡の確認"></a>監査証跡の確認</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Search-UnifiedAuditLog</span> <span class="literal">-StartDate</span> (<span class="built_in">Get-Date</span>).AddDays(<span class="literal">-7</span>) <span class="literal">-EndDate</span> (<span class="built_in">Get-Date</span>) `</span><br><span class="line">    <span class="literal">-RecordType</span> ExchangeAdmin <span class="literal">-Operations</span> <span class="string">&quot;Set-Mailbox&quot;</span> `</span><br><span class="line">    <span class="literal">-FreeText</span> <span class="string">&quot;ExcludeFromAllHolds&quot;</span></span><br></pre></td></tr></table></figure>
+<h4 id="他の-Exchange-オブジェクトに-ExcludeFromAllHolds-の使用"><a href="#他の-Exchange-オブジェクトに-ExcludeFromAllHolds-の使用" class="headerlink" title="他の Exchange オブジェクトに ExcludeFromAllHolds の使用"></a>他の Exchange オブジェクトに ExcludeFromAllHolds の使用</h4><h5 id="例-4-非アクティブなメール-ユーザーに対する-ExcludeFromAllHolds-の使用"><a href="#例-4-非アクティブなメール-ユーザーに対する-ExcludeFromAllHolds-の使用" class="headerlink" title="例 4: 非アクティブなメール ユーザーに対する ExcludeFromAllHolds の使用"></a>例 4: 非アクティブなメール ユーザーに対する ExcludeFromAllHolds の使用</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 非アクティブなメール ユーザーを取得</span></span><br><span class="line"><span class="variable">$MailUser</span> = <span class="built_in">Get-MailUser</span> <span class="literal">-Identity</span> <span class="string">&quot;user@contoso.com&quot;</span> <span class="literal">-SoftDeletedMailUser</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 関連付けられた非アクティブなメールボックスを適用可能なすべてのホールドから除外</span></span><br><span class="line"><span class="built_in">Set-MailUser</span> <span class="literal">-Identity</span> <span class="variable">$MailUser</span>.ExchangeGuid <span class="literal">-ExcludeFromAllHolds</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 非アクティブなメールボックスの状態とホールドを確認</span></span><br><span class="line"><span class="built_in">Get-MailUser</span> <span class="literal">-SoftDeletedMailUser</span> <span class="literal">-Identity</span> <span class="variable">$MailUser</span>.ExchangeGuid | </span><br><span class="line">    <span class="built_in">Select-Object</span> Name, IsInactiveMailbox, InPlaceHolds</span><br></pre></td></tr></table></figure>
+
+<h5 id="例-5-非アクティブなグループ-メールボックスに対する-ExcludeFromAllHolds-の使用"><a href="#例-5-非アクティブなグループ-メールボックスに対する-ExcludeFromAllHolds-の使用" class="headerlink" title="例 5: 非アクティブなグループ メールボックスに対する ExcludeFromAllHolds の使用"></a>例 5: 非アクティブなグループ メールボックスに対する ExcludeFromAllHolds の使用</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 非アクティブなグループ メールボックスを取得</span></span><br><span class="line"><span class="variable">$Group</span> = <span class="built_in">Get-Mailbox</span> <span class="literal">-Identity</span> <span class="string">&quot;group@contoso.com&quot;</span> <span class="literal">-SoftDeletedMailbox</span> <span class="literal">-GroupMailbox</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 関連付けられた非アクティブなメールボックスを適用可能なすべてのホールドから除外</span></span><br><span class="line"><span class="built_in">Set-Mailbox</span> <span class="literal">-Identity</span> <span class="variable">$Group</span>.ExchangeGuid <span class="literal">-ExcludeFromAllHolds</span> <span class="literal">-GroupMailbox</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 非アクティブなメールボックスの状態とホールドを確認</span></span><br><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-Identity</span> <span class="string">&quot;group@contoso.com&quot;</span> <span class="literal">-SoftDeletedMailbox</span> <span class="literal">-GroupMailbox</span> | </span><br><span class="line">    <span class="built_in">Select-Object</span> Name, IsInactiveMailbox, InPlaceHolds</span><br></pre></td></tr></table></figure>
+<h4 id="RemoveComplianceTagHold-の使用"><a href="#RemoveComplianceTagHold-の使用" class="headerlink" title="RemoveComplianceTagHold の使用"></a>RemoveComplianceTagHold の使用</h4><p>一部のシナリオでは、メールボックスに適用可能なすべての保持ポリシーやその他のホールドからメールボックスを除外せずに、コンプライアンス タグ ベースのホールドのみを削除したい場合があります。Set-Mailbox の RemoveComplianceTagHold スイッチを使用すると、より詳細な制御が可能になります。</p>
+<h5 id="例-6-非アクティブなメールボックスからコンプライアンス-タグ-ホールドのみを削除する"><a href="#例-6-非アクティブなメールボックスからコンプライアンス-タグ-ホールドのみを削除する" class="headerlink" title="例 6: 非アクティブなメールボックスからコンプライアンス タグ ホールドのみを削除する"></a>例 6: 非アクティブなメールボックスからコンプライアンス タグ ホールドのみを削除する</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 非アクティブなメールボックスからコンプライアンス タグ ホールドのみを削除</span></span><br><span class="line"><span class="built_in">Set-Mailbox</span> <span class="literal">-Identity</span> <span class="string">&quot;john.doe@contoso.com&quot;</span> <span class="literal">-RemoveComplianceTagHold</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ComplianceTagHoldApplied がクリアされ、他のホールドは残っていることを確認</span></span><br><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-InactiveMailboxOnly</span> <span class="literal">-Identity</span> <span class="string">&quot;john.doe@contoso.com&quot;</span> |</span><br><span class="line">    <span class="built_in">Select-Object</span> Name, InPlaceHolds, ComplianceTagHoldApplied, DelayHoldApplied, DelayReleaseHoldApplied</span><br></pre></td></tr></table></figure>
+
+<h5 id="例-7-同意を得たうえ、アクティブなメールボックスからコンプライアンス-タグ-ホールドを削除する"><a href="#例-7-同意を得たうえ、アクティブなメールボックスからコンプライアンス-タグ-ホールドを削除する" class="headerlink" title="例 7: 同意を得たうえ、アクティブなメールボックスからコンプライアンス タグ ホールドを削除する"></a>例 7: 同意を得たうえ、アクティブなメールボックスからコンプライアンス タグ ホールドを削除する</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># アクティブなメールボックスからコンプライアンス タグ ホールドのみを削除 (明示的な同意が必要)</span></span><br><span class="line"><span class="built_in">Set-Mailbox</span> <span class="literal">-Identity</span> <span class="string">&quot;active.user@contoso.com&quot;</span> <span class="literal">-RemoveComplianceTagHold</span> <span class="literal">-ProvideConsent</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># アクティブなメールボックスの更新されたホールド状態を確認</span></span><br><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-Identity</span> <span class="string">&quot;active.user@contoso.com&quot;</span> | </span><br><span class="line">    <span class="built_in">Select-Object</span> Name, InPlaceHolds, ComplianceTagHoldApplied</span><br></pre></td></tr></table></figure>
+<h4 id="ベスト-プラクティスと考慮事項"><a href="#ベスト-プラクティスと考慮事項" class="headerlink" title="ベスト プラクティスと考慮事項"></a>ベスト プラクティスと考慮事項</h4><ul>
+<li>削除前に現在の状態を文書化する</li>
+<li>法的要件とコンプライアンス要件を確認する</li>
+<li>小さなバッチで処理する</li>
+<li>監査ログと承認ワークフローを有効にする</li>
+<li>進行状況を監視および追跡する</li>
+</ul>
+<h4 id="トラブルシューティング-よくある問題"><a href="#トラブルシューティング-よくある問題" class="headerlink" title="トラブルシューティング: よくある問題"></a>トラブルシューティング: よくある問題</h4><h5 id="ExcludeFromAllHolds-が効果を示さない"><a href="#ExcludeFromAllHolds-が効果を示さない" class="headerlink" title="ExcludeFromAllHolds が効果を示さない"></a>ExcludeFromAllHolds が効果を示さない</h5><p><strong>原因:</strong></p>
+<ul>
+<li>電子情報開示ホールドまたは制限付きホールドのみが存在する</li>
+<li>権限が不足している</li>
+<li>メールボックスが非アクティブではない<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-InactiveMailboxOnly</span> <span class="literal">-Identity</span> <span class="string">&quot;user@contoso.com&quot;</span> |  <span class="built_in">Select-Object</span> InPlaceHolds | <span class="built_in">Format-List</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h5 id="部分的なホールドの削除"><a href="#部分的なホールドの削除" class="headerlink" title="部分的なホールドの削除"></a>部分的なホールドの削除</h5><p><strong>期待される動作:</strong> インプレース ホールド (eDiscovery-ComplianceSearch)、電子情報開示ホールド、訴訟ホールド、および制限付きホールドは保持されます</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$Mailbox</span> = <span class="built_in">Get-Mailbox</span> <span class="literal">-InactiveMailboxOnly</span> <span class="literal">-Identity</span> <span class="string">&quot;user@contoso.com&quot;</span></span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$Hold</span> <span class="keyword">in</span> <span class="variable">$Mailbox</span>.InPlaceHolds) &#123;</span><br><span class="line">    <span class="variable">$HoldType</span> = <span class="keyword">switch</span> <span class="operator">-Regex</span> (<span class="variable">$Hold</span>) &#123;</span><br><span class="line">        <span class="string">&#x27;^cld&#x27;</span> &#123; <span class="string">&quot;eDiscovery Hold (Preserved)&quot;</span> &#125;</span><br><span class="line">        <span class="string">&#x27;^unih&#x27;</span> &#123; <span class="string">&quot;eDiscovery Hold (Preserved)&quot;</span> &#125;</span><br><span class="line">        <span class="string">&#x27;^mbx&#x27;</span> &#123; <span class="string">&quot;Retention Policy (Should be removed, check if restrictive policy)&quot;</span> &#125;</span><br><span class="line">        default &#123; <span class="string">&quot;ComplianceSearch (Preserved)&quot;</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">Write-Host</span> <span class="string">&quot;<span class="variable">$Hold</span> - <span class="variable">$HoldType</span>&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="関連するコマンドとツール"><a href="#関連するコマンドとツール" class="headerlink" title="関連するコマンドとツール"></a>関連するコマンドとツール</h5><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-InactiveMailboxOnly</span></span><br><span class="line"><span class="built_in">Get-RetentionCompliancePolicy</span></span><br><span class="line"><span class="built_in">Get-ComplianceSearch</span></span><br><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-SoftDeletedMailbox</span></span><br><span class="line"><span class="built_in">Set-Mailbox</span> <span class="literal">-Identity</span> &lt;mailbox&gt; <span class="literal">-RecalculateInactiveMailbox</span></span><br></pre></td></tr></table></figure>
+<h4 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h4><p>ExcludeFromAllHolds パラメーターは、コンプライアンスの整合性を維持しながら、非アクティブなメールボックスからホールドを削除するための包括的かつ安全な方法を提供します。RemoveComplianceTagHold スイッチは、必要に応じてコンプライアンス タグ ホールドのみを削除できるようにすることで、この機能を補完します。</p>
+<p>重要なポイント:</p>
+<ul>
+<li>コンプライアンスの安全性を確保した包括的なホールド削除</li>
+<li>電子情報開示ホールドおよび制限付きホールドは保持される</li>
+<li>監査およびコンプライアンス レポートをサポート</li>
+<li>非アクティブなメール ユーザーおよび非アクティブなグループ メールボックスにも使用可能</li>
+<li>RemoveComplianceTagHold を使用したコンプライアンス タグ ホールドの詳細な削除 (アクティブなメールボックスには -ProvideConsent を使用)</li>
+</ul>
+<h3 id="よくあるご質問"><a href="#よくあるご質問" class="headerlink" title="よくあるご質問"></a>よくあるご質問</h3><p><strong>Q: ExcludeFromAllOrgHolds とどう違いますか？</strong><br><strong>A:</strong> ExcludeFromAllOrgHolds は、組織設定にスタンプされた保持ポリシーから除外します。このスイッチは、保管ロックが有効なポリシーを除き、適用可能なすべての保持ポリシー (ユーザー + 組織スコープ) から除外します。</p>
+<p><strong>Q: 適用済みの保持ラベルも削除されますか？</strong><br><strong>A:</strong> いいえ、保持ラベルはアイテムから削除されません。保管ロックされているポリシーが存在しない場合、メールボックスからコンプライアンス タグ ホールドを削除します。保持ラベルが適用されたアイテムがメールボックスにある場合、メール ライフサイクル アシスタントによってホールドが再適用されます。</p>
+<p><strong>Q: メールボックスを ExcludeFromAllHolds で除外すると、メールボックスはすぐに削除されますか？</strong><br><strong>A:</strong> いいえ、メールボックスはソフトデリートされた状態に移行し、ソフトデリートされたメールボックスのライフサイクルに従って削除されます。</p>
+<p><strong>Q: 切り戻しするにはどうすればよいですか？</strong><br><strong>A:</strong> スタンプされた除外と RemoveComplianceTagHold アクションは、コマンドレットで元に戻すことはできません。改めて新しいポリシーを適用する必要があります。以前に除外された状態は自動的には復元されません。メールボックスに保持ラベルが適用されたアイテムがある場合、コンプライアンス タグ ホールドはメール ライフサイクル アシスタントによって再適用されます。</p>
+<p><strong>Q: 除外が有効になるまでに遅延はありますか？</strong><br><strong>A:</strong> キャッシュの影響で、設定が反映されるまで 5 分未満の遅延が発生する可能性があります。変更のタイムスタンプを記録し、完全削除の操作を実行する前に十分な反映時間を確保してください。</p>
+<p><strong>Q: 制限やクォータはありますか？</strong><br><strong>A:</strong> テナントごとの特定の除外上限はありませんが、一括自動化は調整される可能性があります。大規模なバッチは段階的に実行し、サービス正常性メッセージを監視してください。</p>
+<p><strong>Q: アダプティブ スコープ ポリシーについて想定される動作は何ですか？</strong><br><strong>A:</strong> メールボックスにスタンプされたアダプティブ スコープ ポリシーは除外されます。一度除外されると、メールボックスをポリシーに再スコープすることはできません。</p>
+<p><strong>Q: RemoveComplianceTagHold とどう違いますか？</strong><br><strong>A:</strong> ExcludeFromAllHolds は、インプレース ホールド (eDiscovery-ComplianceSearch)、電子情報開示、訴訟、および制限付き保持ポリシーを保持しながら、適用可能な複数のホールド (組織レベル、ユーザーレベル、遅延ホールド、およびコンプライアンス タグ ホール (許可されている場合)) を削除します。RemoveComplianceTagHold は、メールボックスからコンプライアンス タグ ホールドのみを削除し、他のすべてのホールドはそのまま残します。</p>
+<p><strong>Q: 適用済みの保持ラベルも削除されますか？</strong><br><strong>A:</strong> いいえ、アイテムから保持ラベルは削除されません。ExcludeFromAllHolds と RemoveComplianceTagHold の両方とも、保管ロックされているポリシーが存在しない場合、メールボックスからコンプライアンス タグベースのホールドを削除します。メールボックスに保持ラベルが適用され、適用可能なポリシーが適用されているアイテムがある場合、ホールドはメール ライフサイクル アシスタントによって再適用される可能性があります。</p>
+<p><strong>Q: アクティブなメールボックスからコンプライアンス タグ ホールドを削除できますか？</strong><br><strong>A:</strong> はい。Set-Mailbox -Identity &lt;active-mailbox&gt; -RemoveComplianceTagHold -ProvideConsent を使用してください。アクティブなメールボックスでは、コンプライアンス タグ ホールドを削除する場合、コンプライアンス上の影響を確認するために -ProvideConsent スイッチが必要です。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/" data-id="cmjksis10007phg2aek1lbmca" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/Outlook-microsoft365-copilot-chat-pin/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/exchange-online-activesync-device-support-update/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange Online における ActiveSync デバイスのサポートの更新</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

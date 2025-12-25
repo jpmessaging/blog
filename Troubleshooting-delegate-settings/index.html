@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>代理人から非公開のアイテムが参照できなくなった場合や代理人設定時に「[代理人] タブの設定は正しく保存されませんでした」エラーが発生する場合の対処方法について
+ | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="現象代理人アクセスの設定時に 「代理人に非公開に設定したアイテムへのアクセスを許可する」 をオンにしておくことで、代理人は非公開のアイテムであっても参照を行うことが可能です。この設定を行っているにもかかわらず非公開のアイテムの参照ができない場合や代理人設定時以下のようなエラーが発生する場合があります。※ エラーメッセージは異なる場合もあります。    「[代理人] タブの設定は正しく保存されません">
+<meta property="og:type" content="article">
+<meta property="og:title" content="代理人から非公開のアイテムが参照できなくなった場合や代理人設定時に「[代理人] タブの設定は正しく保存されませんでした」エラーが発生する場合の対処方法について
+">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Troubleshooting-delegate-settings/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="現象代理人アクセスの設定時に 「代理人に非公開に設定したアイテムへのアクセスを許可する」 をオンにしておくことで、代理人は非公開のアイテムであっても参照を行うことが可能です。この設定を行っているにもかかわらず非公開のアイテムの参照ができない場合や代理人設定時以下のようなエラーが発生する場合があります。※ エラーメッセージは異なる場合もあります。    「[代理人] タブの設定は正しく保存されません">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2017-02-14T15:00:00.000Z">
+<meta property="article:modified_time" content="2017-02-14T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta property="article:tag" content="Outlook">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Troubleshooting-delegate-settings" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Troubleshooting-delegate-settings/" class="article-date">
+  <time datetime="2017-02-14T15:00:00.000Z" itemprop="datePublished">2017-02-15</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      代理人から非公開のアイテムが参照できなくなった場合や代理人設定時に「[代理人] タブの設定は正しく保存されませんでした」エラーが発生する場合の対処方法について
+
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Troubleshooting-delegate-settings/" class="article-date-single">    
+        
+    <time datetime="2025-03-04T15:00:00.000Z" itemprop="lastupdate">2025-03-05</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <h2 id="現象"><a href="#現象" class="headerlink" title="現象"></a>現象</h2><p>代理人アクセスの設定時に 「代理人に非公開に設定したアイテムへのアクセスを許可する」 をオンにしておくことで、代理人は非公開のアイテムであっても参照を行うことが可能です。この設定を行っているにもかかわらず非公開のアイテムの参照ができない場合や代理人設定時以下のようなエラーが発生する場合があります。<br>※ エラーメッセージは異なる場合もあります。  </p>
+<blockquote>
+<p>「[代理人] タブの設定は正しく保存されませんでした。空き時間と予定の入っている時間の情報をアクティブできません」  </p>
+</blockquote>
+<blockquote>
+<p>[代理人] タブは使用できません。 Outlook フォルダーにアクセスできません。</p>
+</blockquote>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>非公開アイテムの設定が格納されている Freebusy フォルダーやルールに不整合が生じている場合に発生します。  </p>
+<h2 id="対処方法"><a href="#対処方法" class="headerlink" title="対処方法"></a>対処方法</h2><h3 id="1-無効にされたユーザーの代理人権限の削除"><a href="#1-無効にされたユーザーの代理人権限の削除" class="headerlink" title="(1) 無効にされたユーザーの代理人権限の削除"></a>(1) 無効にされたユーザーの代理人権限の削除</h3><p>この手順は管理者側で行う手順です。</p>
+<p>このエラー メッセージが表示される場合の多くの原因が、複数の代理人がいるシナリオで、代理人設定を付与したまま一部のユーザーが削除されてしまったときであることを確認しています。過去に代理人設定をし、権限を削除する前にユーザーやメールボックスの削除を行った場合は、対象ユーザーの代理人権限を削除してください。  </p>
+<p>予定表フォルダーに対して付与した権限を以下のコマンドで削除します。  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># フォルダー名が日本語の場合は、`&lt;被代理人&gt;:\予定表` と指定します。  </span></span><br><span class="line"><span class="built_in">Remove-MailboxFolderPermission</span> <span class="literal">-Identity</span> &lt;被代理人&gt;:\calendar <span class="literal">-User</span> &lt;削除済みの代理人&gt;</span><br></pre></td></tr></table></figure>
+<p>この手順は特定のユーザーの権限のみを削除するものであるため、削除されたユーザー以外の代理人動作などには影響はありません。このコマンドでエラーが回避できない場合は、Exchange Online をご利用であれば (2) の手順をお試しください。Exchange オンプレミスをご利用であれば (3) の手順をお試しください。</p>
+<h3 id="2-ResetDelegateUserCollection-スイッチで代理人設定と隠しルールを削除"><a href="#2-ResetDelegateUserCollection-スイッチで代理人設定と隠しルールを削除" class="headerlink" title="(2) ResetDelegateUserCollection スイッチで代理人設定と隠しルールを削除"></a>(2) ResetDelegateUserCollection スイッチで代理人設定と隠しルールを削除</h3><p>この手順は管理者側で行う手順です。</p>
+<p>管理者から以下のコマンドレット スイッチを実行し、隠しルールと代理人設定をリセットします。  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Remove-MailboxFolderPermission</span> <span class="literal">-Identity</span> &lt;被代理人&gt;:\calendar <span class="literal">-ResetDelegateUserCollection</span></span><br></pre></td></tr></table></figure>
+<p>このコマンドは、予定表の参照や書き込みの権限は削除しませんが、対象の被代理人 (役職者) が設定している全ての代理人権限が削除されます。代理人特有の以下のような動作は利用できなくなります。</p>
+<ul>
+<li>会議出席依頼を代理人に転送する</li>
+<li>非公開のアイテムを参照する</li>
+</ul>
+<p>加えて、以下のコマンドで代理送信権限を削除します。  </p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-Mailbox</span> &lt;ユーザー&gt; <span class="literal">-GrantSendOnBehalfTo</span> <span class="variable">$null</span></span><br></pre></td></tr></table></figure>
+<p>これらのコマンド実行後は代理人の設定がクリアされます。被代理人による代理人の再設定が必要となるため、実行される際にはタイミングに十分ご注意ください。こちらで回避できない場合は、(3) の手順をお試しください。  </p>
+<h3 id="3-MFCMAPI-による-Freebusy-フォルダーの初期化とルールの削除"><a href="#3-MFCMAPI-による-Freebusy-フォルダーの初期化とルールの削除" class="headerlink" title="(3) MFCMAPI による Freebusy フォルダーの初期化とルールの削除"></a>(3) MFCMAPI による Freebusy フォルダーの初期化とルールの削除</h3><p>この手順はユーザー側で行う手順です。</p>
+<p>Freebusy フォルダーの初期化と代理人のルールの削除を行ってから、代理人の再設定を行うことで事象を解消することができます。  </p>
+<h3 id="事前準備"><a href="#事前準備" class="headerlink" title="事前準備"></a>事前準備</h3><p>代理人設定については、[ファイル]タブ -[アカウント設定]-[代理人アクセス] をクリックし、スクリーンショットを採取しバックアップとしてください。  </p>
+<h3 id="手順"><a href="#手順" class="headerlink" title="手順"></a>手順</h3><ol>
+<li><p>代理人を設定する側の端末にて Outlook を終了の上、以下の URL から MFCMAPI.exe をダウンロードします。  </p>
+<p><a target="_blank" rel="noopener" href="https://github.com/stephenegriffin/mfcmapi/releases">https://github.com/stephenegriffin/mfcmapi/releases</a></p>
+<p>※ インストールされている Office クライアントの bit にあわせてダウンロードをお願いします。  </p>
+<p>例:<br>32 bit : MFCMAPI.exe.23.0.23089.01.zip<br>64 bit : MFCMAPI.x64.exe.23.0.23089.01.zip  </p>
+<p>※ 最新バージョンで何らかの問題が発生する場合は過去にリリースされているバージョンをお試しください。  </p>
+</li>
+<li><p>zip ファイルを実行して、C:\MFCMAPI などとフォルダーを指定して解凍します。  </p>
+</li>
+<li><p>解凍されたファイルの MFCMAPI.exe を起動します。  </p>
+</li>
+<li><p>[About MFCMAPI] というダイアログが表示されたら [OK] をクリックします。  </p>
+</li>
+<li><p>[Tools] - [Options] をクリックします。  </p>
+</li>
+<li><p>“Use the MDB_ONLINE flag when calling OpenMsgStore” をチェックをオンにし、[OK] をクリックします。  </p>
+</li>
+<li><p>[Session] - [Logon] をクリックします。  </p>
+</li>
+<li><p>プロファイル選択が表示されたら、対象のプロファイルを選択して、[OK] をクリックします。  </p>
+</li>
+<li><p>[&lt;本人のメールアドレス&gt;] をダブル クリックします。  </p>
+</li>
+<li><p>[Root Container] - [Freebusy Data] をダブル クリックします。  </p>
+</li>
+<li><p>新しく開いた [Freebusy Data] ウィンドウにて、[Subject] 列が [LocalFreebusy] のアイテムを右クリックし、[Delete message] をクリックします。  </p>
+</li>
+<li><p>“Deletion style” を [Permanent delete passing DELETE_HARD_DELETE (unrecoverable)] に変更の上、[OK] をクリックし、ウィンドウは [X] で閉じます。  </p>
+</li>
+<li><p>次に [Root Container] をクリックします。  </p>
+</li>
+<li><p>右ペインに表示されている一覧から、[Name] 列が “PR_FREEBUSY_ENTRYIDS” で始まるエントリを右クリックして [Delete Property] を選択し、確認ダイアログが表示されたら [OK] をクリックします。  </p>
+</li>
+<li><p>さらに [Root Container] - [インフォメーション ストアの先頭 (または、Top of information Store 表記)] - [受信トレイ] をクリックします。  </p>
+</li>
+<li><p>右ペインに表示されている一覧から、[Name] 列が “PR_FREEBUSY_ENTRYIDS” で始まるエントリを右クリックして [Delete Property] を選択し、確認ダイアログが表示されたら [OK] をクリックします。  </p>
+</li>
+<li><p>引き続き、代理人についてのルールを削除します。  </p>
+</li>
+<li><p>[Root Container] - [インフォメーション ストアの先頭 (または、Top of information Store 表記)] - [受信トレイ] を右クリックして [Other tables] - [Rules table] をクリックします。  </p>
+</li>
+<li><p>上半分の 1 行目を選択し、下半分の [PR_RULE_PROVIDER] で始まるエントリーの [Value] 列が [Schedule+ EMS Interface] になっているかを確認します。  </p>
+</li>
+<li><p>[Schedule+ EMS Interface] になっている場合は、上半分側で選択している行を右クリックして [Delete] をクリックして削除します。  </p>
+</li>
+<li><p>[Schedule+ EMS Interface] になっている他の行に対しても同様に作業を行います。  </p>
+</li>
+<li><p>MFCMAPI を終了します。  </p>
+</li>
+<li><p>Outlook を起動します。  </p>
+</li>
+<li><p>[ファイル]タブ - [アカウント設定] - [代理人アクセス] をクリックします。  </p>
+</li>
+<li><p>現在設定されている代理人をすべて削除します。  </p>
+</li>
+<li><p>Outlook を再起動します。  </p>
+</li>
+<li><p>[ファイル]タブ - [アカウント設定] - [代理人アクセス] をクリックします。  </p>
+</li>
+<li><p>代理人の再設定を行います。<br>代理人の設定をエラーなく完了できるか、代理人側より非公開のアイテムの参照が可能かご確認ください。<br>代理人側からの参照ができない場合には、代理人の Outlook プロファイルの再作成もお試しください。</p>
+</li>
+</ol>
+<h3 id="4-仕分けルールのリセット"><a href="#4-仕分けルールのリセット" class="headerlink" title="(4) 仕分けルールのリセット"></a>(4) 仕分けルールのリセット</h3><p>この手順はユーザー側で行う手順です。</p>
+<p>(3) の作業を行っても解消しない場合や MFCMAPI を利用して作業することができない場合は、仕分けルールをリセットすることで解消するかを確認します。  </p>
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em; padding-bottom:0em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px">
+<path fill="#ff7518" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg>
+注意
+</div>
+下記手順を実施すると仕分けルールがリセットされるため再設定する必要があります。  
+また、ユーザーがご利用の Outlook プロファイルに以下のように追加したメールボックスの仕分けルールも含めて削除されますのでご注意ください。そのため、仕分けルールをリセットする対象メールボックスのみを含む Outlook プロファイルで実行することをお勧めします。  
+
+<ul>
+<li>追加のアカウント<br>[ファイル] タブ -[アカウントの追加] から別アカウントを追加している場合</li>
+<li>AutoMapping 機能で追加したメールボックス<br>フル アクセス権を持つ他のメールボックスを AutoMapping 機能で追加している場合</li>
+<li>追加のメールボックス<br>フル アクセス権を持つ他のメールボックス (AutoMapping 無効) を、[ファイル]-[アカウント名と同期の設定]-[その他の設定]-[詳細設定] の “次の追加のメールボックスを開きます” より追加した場合</div></li>
+</ul>
+<ol>
+<li>Outlook の仕分けルールをバックアップします。<br>(Outlook の [ファイル] タブ-[仕分けルールと通知の管理]-[オプション]-[仕分けルールをエクスポート]-任意の場所に任意のファイル名で .rwz ファイルを保存)</li>
+<li>Outlook を終了します。</li>
+<li>Windows キー＋R キーを押し、outlook &#x2F;cleanrules と入力して実行します。仕分けルールがリセットされてから、Outlook が起動されます。</li>
+<li>現象が解消しているかを確認します。</li>
+<li>手順 1 でバックアップしていたファイルをインポートします。<br>(Outlook の [ファイル] タブ-[仕分けルールと通知の管理]-[オプション]-[仕分けルールをインポート] から .rwz ファイルを指定)</li>
+<li>現象が解消しているかを確認します。</li>
+<li>手順 4 では発生せず手順 6 で発生する場合はインポートしたルール情報に依存しているため、以下のような方法での対処を行います。  <ul>
+<li>すべての仕分けルールを手動で削除しても現象が発生する場合は、再度手順 3, 4, 5 を行った後、手動ですべての仕分けルールを作成し直す。  </li>
+<li>すべての仕分けルールを手動で削除すると解消する場合は、再度 .rwz ファイルをインポートしてから問題の仕分けルールの切り分けを行い、問題の仕分けルールのみを作成し直す。</li>
+</ul>
+</li>
+</ol>
+<p><strong>本情報の内容 (添付文書、リンク先などを含む) は作成日時点でのものであり、予告なく変更される場合があります。</strong>  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Troubleshooting-delegate-settings/" data-id="cmjksirzl003whg2a5ttzaorc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/About-the-Issue-of-Mailboxes-Being-Created-Both-On-Premises-and-in-Exchange-Online-in-a-Hybrid-Environment/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ハイブリッド環境でオンプレミスと Exchange Online の両方にメールボックスが作成される事象について
+
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/Retention-Period-for-Safety-Net-in-Exchange-2013-2016/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange 2013/2016 のセーフティネットの保存期間
+</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">39</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">Microsoft 365 Copilot Chat のピン留めの制御方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/">ExcludeFromAllHolds を使用して非アクティブなメールボックスからホールドを解除する</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2025 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
