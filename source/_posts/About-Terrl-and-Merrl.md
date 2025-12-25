@@ -8,7 +8,7 @@ tags:
 
 こんにちは。日本マイクロソフト Exchange & Outlook サポート チームの山﨑です。   
 2025年4月より、Exchange Online における送信制限の仕組みが大きくアップデートしました。   
-これまで主に「1 メールボックスあたりの送信制限RRL（Recipient Rate Limit）」が中心でしたが、新たに以下の 2 つの制限が導入されました。    
+これまで主に「1 メールボックスあたりの送信制限 RRL（Recipient Rate Limit）」が中心でしたが、新たに以下の 2 つの制限が導入されました。    
 下記のリンクでは、それぞれの制限についてより詳細をまとめているので、ぜひ下記のリンクのブログもご参照ください。
 
 - [TERRL  (Tenant External Recipient Rate Limit)](https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/): テナント単位の組織外宛てメッセージの受信者数の制限
@@ -32,7 +32,7 @@ Exchange Online はクラウドサービスである以上、すべてのテナ�
 
 | 項目 | TERRL | MERRL |
 |------|------|------| 
-| 名称 | Tenant External Recipient Rate Limit | 	Mailbox External Recipient Rate Limit |
+| 名称 | Tenant External Recipient Rate Limit | Mailbox External Recipient Rate Limit |
 | 単位 | テナント単位 | メールボックス単位 |
 | 対象 | 組織外宛てメッセージの受信者数 | 組織外宛てメッセージの受信者数 |
 | 制限方式 | ライセンス数に応じたテナント全体の上限 | 1 メールボックスあたり最大 2,000 件/日 |
@@ -50,7 +50,7 @@ Exchange Online において元々適用されていた送信制限 RRL は、�
 ## 4. まとめ
 このブログでは、MERRL と TERRL の違いについてまとめました。     
 名前は似ていますが、MERRL と TERRL で注意すべきメッセージ数が異なる (テナント全体での制限なのか、メールボックス単位での制限なのか) ため、ご注意ください。   
-また TERRL に関しては展開が一時停止している状況でもあるため、今後のアップデートをお待ちいただければと思います。
+また TERRL に関しては展開が一時停止している状況でもあるため、今後のアップデートをお待ちいただけますと幸いです。
 今後のアップデートも含め、より各制限の詳細を知りたい方はぜひ冒頭のブログもご参照ください。      
 
 本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。
