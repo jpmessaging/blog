@@ -1,15 +1,13 @@
 ---
 title: 'Exchange Online への外部受信者数の制限の導入'
 date: 2024-12-20
-lastupdate: 2025-06-26
+lastupdate: 2026-01-07
 tags: 'Exchange Online'
 --- 
 
 ※ この記事は、[Exchange Online to introduce External Recipient Rate Limit](https://techcommunity.microsoft.com/blog/exchange/exchange-online-to-introduce-external-recipient-rate-limit/4114733) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<div style="margin:1.25em; border-left:4px solid rgb(160, 160, 160); padding:.5em">
-<strong>2025 年 6 月 25 日 重要なお知らせ: クラウドホスト型メールボックスの外部受信者数制限 (MERRL) の導入時期が再度延期されました。</strong> お客様への影響を最小限に抑えるため、Microsoft はクラウド上のメールボックスの外部受信者数制限 (MERRL) の展開を約 6 ヶ月延期することを決定しました。MERRL は、2026 年 4 月以降にプロビジョニングされた試用テナントおよび新規テナントに対して、2026 年 4 月から適用されます。また、2026 年 4 月には Exchange 管理センターのレポート機能が利用可能となり、テナント管理者は送信者メールボックスごとの外部受信者数を確認できるようになります。2026 年 10 月には、既存テナントを含むワールド ワイドのすべてのクラウド上のメールボックスに対して MERRL の適用が開始されます。
-</div>
+<p style="background: #66FF99;"><strong>2026 年 1 月 6 日 クラウドホスト型メールボックスの外部受信者数制限 (MERRL) に関する重要な更新:</strong> 現在この制限の実装は<strong>キャンセル</strong>されており、実施されないことになりました。このブログ記事に関しましては記録として残されております。詳細については、<a href= https://techcommunity.microsoft.com/blog/exchange/exchange-online-canceling-the-mailbox-external-recipient-rate-limit/4483498>Exchange Online canceling the Mailbox External Recipient Rate Limit</a> をご覧ください。</p>
 
 Exchange Online は **24 時間で 2,000 人の外部受信者**というレート制限を 2026 年 4 月より適用し始めます。
 
