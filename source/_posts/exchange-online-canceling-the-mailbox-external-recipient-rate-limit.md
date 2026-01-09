@@ -1,9 +1,11 @@
 ---
 title: 'Exchange Online の外部受信者数の制限 (MERRL) 廃止について'
 date: 2026-01-07
-lastupdate:
+lastupdate: 2026-01-09
 tags: 'Exchange Online'
 --- 
+
+※ この記事は、[Exchange Online canceling the Mailbox External Recipient Rate Limit](https://techcommunity.microsoft.com/blog/exchange/exchange-online-canceling-the-mailbox-external-recipient-rate-limit/4483498) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 重要な変更をお知らせ：<strong>[Exchange Online における外部受信者数の制限](https://techcommunity.microsoft.com/blog/exchange/exchange-online-to-introduce-external-recipient-rate-limit/4114733)の実装は、現時点で無期限に中止されることになりました</strong>。
 
