@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange Onlineにおけるローカル移動要求 – なぜサポートされていないのか | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Local Move Requests in Exchange Online – Why They’re Not Supported の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange Online では、管理者が New-Move">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange Onlineにおけるローカル移動要求 – なぜサポートされていないのか">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/local-move-requests-in-exchange-online-%E2%80%93-why-they%E2%80%99re-not-supported/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Local Move Requests in Exchange Online – Why They’re Not Supported の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange Online では、管理者が New-Move">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-01-13T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-13T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-local-move-requests-in-exchange-online-–-why-they’re-not-supported" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/local-move-requests-in-exchange-online-%E2%80%93-why-they%E2%80%99re-not-supported/" class="article-date">
+  <time datetime="2026-01-13T15:00:00.000Z" itemprop="datePublished">2026-01-14</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange Onlineにおけるローカル移動要求 – なぜサポートされていないのか
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/local-move-requests-in-exchange-online-%E2%80%93-why-they%E2%80%99re-not-supported/" class="article-date-single">    
+        
+    <time datetime="2026-01-13T15:00:00.000Z" itemprop="lastupdate">2026-01-14</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/local-move-requests-in-exchange-online-%E2%80%93-why-they%E2%80%99re-not-supported/4484222">Local Move Requests in Exchange Online – Why They’re Not Supported</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>Exchange Online では、管理者が New-MoveRequest コマンドレットを使用して、同じテナントまたはデータセンター内でメールボックスを移動することを検討する場合があります。過去の経緯によりこのコマンドは存在していますが、<strong>Microsoft はローカル移動要求をサポートしていません</strong>。この記事では、その理由、リスク、および代わりに使用すべき方法について説明します。</p>
+<p>Microsoft は過去に<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/disabling-new-moverequest-for-local-mailbox-moves/1214776">ローカル移動要求を無効化する</a>と述べていましたが、実際には無効化していません。特定の状況下では問題解決に<em>役立つ場合がある</em>ことは認識していますが、<strong>ローカル移動要求の使用はサポート対象外であり、推奨もしていません</strong>。<u>使用する場合は自己責任において行ってください。</u></p>
+<h4 id="ローカル移動要求が問題となる理由"><a href="#ローカル移動要求が問題となる理由" class="headerlink" title="ローカル移動要求が問題となる理由"></a>ローカル移動要求が問題となる理由</h4><p>ローカル移動要求は、もともとオンプレミスの Exchange Server 2010 におけるデータベース間の移動、および Exchange ハイブリッド環境でのオンボーディング &#x2F; オフボーディング シナリオ (Exchange Server と Exchange Online 間でのメールボックスの移動) のためのリモート移動要求として設計されました。その後、同じ New-MoveRequest コマンドを使用して 2 つの異なるテナント間でメールボックスを移行する機能 (クロス テナント移行) や、同一テナント内の異なる地域にメールボックスを持つマルチ Geo 環境向けの機能が追加されました。Microsoft 365 環境では、メールボックスの配置と負荷分散はサービスによって自動的に処理されます。テナント内で手動移動を強制すると、いくつかの問題が発生します。</p>
+<ul>
+<li><p><strong>サポート対象外</strong>: Microsoft サポートは、ローカル移動のトラブルシューティングや処理の迅速化を行うことができません。これらの要求は低優先度のバックグラウンド タスクとして扱われ、完了までに数週間かかる場合があります。詳細については、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/resource-based-throttling-and-prioritization-in-exchange-online-migrations/608020">Resource Based Throttling and Prioritization in Exchange Online Migrations | Microsoft Community Hub</a> を参照してください。管理者がデータセンター内の任意のターゲット サーバーを指定して移動を開始した場合、そのターゲット サーバーが過負荷状態にあるか、あるいは近くメンテナンスが予定されているかを事前に把握することはできません。また、大規模なメールボックス移動によってサーバーに過剰な負荷をかけてしまう可能性があり、その場合は自動負荷分散が状況を検出して修正するまで待つ必要があります。管理者によって開始されたローカル移動はサポートされていないため、完了までに要する時間の目安は提供されていません。一方、Exchange Online による自動的かつ負荷分散された移動については、所要時間の推定値が提供されています: <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mailbox-migration/office-365-migration-best-practices#duration-estimates-for-mailbox-migration-in-exchange-online">Microsoft 365 and Office 365 migration performance and best practices | Microsoft Learn</a></p>
+</li>
+<li><p><strong>関連付けのないデータとなるリスク</strong>: 移動要求は、プライマリ メールボックスとメイン アーカイブ メールボックスの両方に使用できます。ローカル移動要求を使用してデータセンター内でプライマリ シャードやメイン アーカイブ シャードを移動できることは事実ですが、利用には十分な注意が必要です。ローカル移動の完了時にユーザー情報を更新する処理は、プライマリ シャードとメイン アーカイブ シャードを指すユーザーのプロパティ<strong>のみ</strong>を認識しています。もし何らかの方法で MailboxLocation ベースのシャード (ComponentShared や AuxArchive シャードなど) に対して New-MoveRequest を実行した場合、完了処理では MailboxLocation ベースのシャードのデータベースを更新<strong>しない</strong>だけでなく、プライマリ シャードの Database プロパティがリセットされ、プライマリ シャードがダイヤルトーン (関連付けのない) 状態になる可能性があります。この点について十分にご注意ください。</p>
+</li>
+<li><p><strong>手動移動は自動化に置き換えられています</strong>: Exchange Online はインテリジェントな負荷分散と自動修復プロセスを使用しています。そのため、手動によるローカル移動要求は不要であり、多くの場合はかえって逆効果となります。</p>
+</li>
+</ul>
+<h4 id="よくある誤解"><a href="#よくある誤解" class="headerlink" title="よくある誤解"></a>よくある誤解</h4><ul>
+<li><p><strong>ローカル移動ですべてのメールボックスの問題とデータ破損が「修復」される</strong>: 基本的なレベルでは、移動要求はメールボックスをあるデータベースから別のデータベースに移動するだけであり、明示的な修復は行われません。しかし、メールボックス移動では、サービスがターゲット メールボックス内のすべてのアイテムを再作成するため、ソースに何らかの問題があった場合、一部の不良データがそのまま残ってしまう<em>可能性は十分に考えられます</em>。ただし、メールボックス移動を使用して問題をトラブルシューティングする状況は、ベスト プラクティスというよりも例外的なケースであることに注意してください。なぜなら、メールボックスが抱えている特定の問題に対して何の効果もない可能性があり、場合によっては、問題の根本原因を追跡することが不可能になる可能性もあるためです。</p>
+</li>
+<li><p><strong>ローカル移動によってメールボックスのパフォーマンスが向上する</strong>: そうではありません。メールボックスのパフォーマンスは、手動での再配置ではなく、サービス レベルの最適化に依存します。手動で移動した場合、(たとえ成功したとしても) より多くのリソースの負荷を受けるサーバーにメールボックスが配置される可能性もあります。</p>
+</li>
+</ul>
+<h4 id="ローカル移動の代わりに検討すべき対処方法"><a href="#ローカル移動の代わりに検討すべき対処方法" class="headerlink" title="ローカル移動の代わりに検討すべき対処方法"></a>ローカル移動の代わりに検討すべき対処方法</h4><p>メールボックスの問題に遭遇した場合、またはデータを再作成する必要がある場合は、<strong>サポートされている方法</strong>を実施してください。</p>
+<ul>
+<li><p><strong>根本原因を調査する</strong>: Microsoft サポートにケースを起票いただき、問題を適切に調査および解決してください。エンジニアリング チームがメールボックスの移動を選択する場合もありますが、このプロセスは十分に検討された上で正当な理由に基づいて実施され、また監視されています。</p>
+</li>
+<li><p><strong>サービス側の自動処理に任せる</strong>: Exchange Online は、メールボックスの配置を継続的に監視し、再バランス化を行っています。手動での介入が必要になることはほとんどありません。</p>
+</li>
+</ul>
+<h4 id="推奨事項と非推奨事項"><a href="#推奨事項と非推奨事項" class="headerlink" title="推奨事項と非推奨事項"></a>推奨事項と非推奨事項</h4><p><strong>推奨事項:</strong></p>
+<ul>
+<li>メールボックスの問題の根本原因を調査する。</li>
+<li>最適なパフォーマンスを得るために、サービスの自動負荷分散を信頼する。</li>
+</ul>
+<p><strong>非推奨事項:</strong></p>
+<ul>
+<li>Exchange Online 内でローカル移動要求を開始しない。</li>
+<li>ローカル移動要求を使用してシャード レベルの移動や拡張されたアーカイブの移動を試みない。</li>
+<li>ローカル移動要求について、サポートによる迅速化やトラブルシューティングを期待しない。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/local-move-requests-in-exchange-online-%E2%80%93-why-they%E2%80%99re-not-supported/" data-id="cmkdgwoko0068vg2a7ahj0t54" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/exchange-online-canceling-the-mailbox-external-recipient-rate-limit/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange Online の外部受信者数の制限 (MERRL) 廃止について</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">63</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">40</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/01/">January 2026</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/local-move-requests-in-exchange-online-%E2%80%93-why-they%E2%80%99re-not-supported/">Exchange Onlineにおけるローカル移動要求 – なぜサポートされていないのか</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-online-canceling-the-mailbox-external-recipient-rate-limit/">Exchange Online の外部受信者数の制限 (MERRL) 廃止について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/About-Terrl-and-Merrl/">TERRL と MERRL について</a>
+          </li>
+        
+          <li>
+            <a href="/blog/difference-between-minimumteamsize-minimumgroupsize/">最小チーム サイズと最小グループ サイズの違い</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Outlook-microsoft365-copilot-chat-pin/">Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
