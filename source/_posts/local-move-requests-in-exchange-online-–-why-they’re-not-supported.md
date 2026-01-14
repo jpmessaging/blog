@@ -1,7 +1,7 @@
 ---
 title: "Exchange Onlineにおけるローカル移動要求 – なぜサポートされていないのか"
-date: 2026/01/13
-lastupdate: 2026/01/13
+date: 2026/01/14
+lastupdate: 2026/01/14
 tags: Exchange
 ---
 
