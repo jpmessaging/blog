@@ -1,7 +1,7 @@
 ---
 title: onmicrosoft ドメインのメール送信利用制限について
 date: 2025-08-21 14:00:00
-lastupdate: 2025-12-19
+lastupdate: 2026-1-15
 tags: Exchange Online
 ---
 ※ この記事は、[Limiting Onmicrosoft Domain Usage for Sending Emails](https://techcommunity.microsoft.com/blog/exchange/limiting-onmicrosoft-domain-usage-for-sending-emails/4446167) の抄訳です。最新の情報はリンク先をご確認ください。
@@ -74,7 +74,7 @@ Exchange 管理センターのメッセージ トレース機能を使用して�
 | 2026年5月4日 | 2,001～10,000 |
 | 2026年6月1日 | 10,001 以上 |
 
-各ロールアウト段階のアナウンスは、対象のシート数条件を満たすすべてのお客様に対し、開始日の 1 か月前にメッセージ センターを通じて通知されます。MOERA ドメインを利用しているすべてのお客様は、早めに計画を立て、移行を開始することが推奨されます。
+各ロールアウト段階のアナウンスは、まだ onmicrosoft.com トラフィックがあり、シート数条件を満たすお客様に送信されます。MOERA ドメインを利用しているすべてのお客様は、早めに計画を立て、移行を開始することが推奨されます。
 
 **主な更新履歴**:  
 **2025 年 12 月 18 日**: スロットリング制限に達した場合の NDR に関する詳細を追加
