@@ -1,13 +1,13 @@
 ---
 title: 'Exchange Online の新しいメッセージ追跡の一般提供 (GA) を発表'
 date: 2025-06-04
-lastupdate: 2025-12-23
+lastupdate: 2026-1-23
 tags: 'Exchange Online'
 ---
 
 ※ この記事は、[Announcing General Availability (GA) of the New Message Trace in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/4420243) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #FFFF99;"><strong>更新 2025 年 12 月 19 日:</strong> Reporting Web サービスにおける従来のメッセージ追跡サポートの廃止は、当初の廃止予定日である 2026 年 2 月 28 日から 2 週間遅れて <strong>2026 年 3 月 18 日</strong> となります。Graph API における新しいメッセージ追跡サポートのパブリック プレビューの暫定的なスケジュールは、現在 <strong>2026 年 1 月</strong> となっています。これは従来のメッセージ追跡コマンドレットの廃止スケジュールには影響しません。従来のメッセージ追跡コマンドレット (Get-MessageTrace、Get-MessageTraceDetail) は、2025 年 9 月 1 日より廃止プロセスが開始されました。</p>
+<p style="background: #FFFF99;"><strong>更新 2026 年 1 月 22 日:</strong> Graph API を使用した新しいメッセージ追跡が<a href = https://techcommunity.microsoft.com/blog/exchange/message-trace-support-using-graph-api-is-now-in-public-preview/4488587>パブリック プレビューで利用可能</a>になりました。Reporting Web サービスを使用した従来のメッセージ追跡の廃止は <strong>2026 年 4 月 8 日</strong>  に予定されています。</p>
 
 本日、Exchange Online の Exchange 管理センター (EAC) における新しいメッセージ追跡の一般提供 (GA) を、ワールド ワイド (WW) のお客様向けに発表いたします。機能の展開は 6 月中旬より開始し、7 月中に完了する予定です。[パブリック プレビュー](https://techcommunity.microsoft.com/blog/exchange/announcing-public-preview-of-the-new-message-trace-in-exchange-online/4356561)と同様に、管理者の皆様は Exchange 管理センターの "メール フロー" > "メッセージ追跡" から新しいメッセージ追跡に既定でアクセスできるようになります。パブリック プレビュー期間中には、新しいメッセージ追跡の設計、パフォーマンス、機能の充実について多くの貴重なご意見をいただきました。今後は新しいメッセージ追跡体験への移行を進めてまいります。追加のご意見がございましたら、Exchange 管理センターの "フィードバックの送信" よりお寄せください。
 
