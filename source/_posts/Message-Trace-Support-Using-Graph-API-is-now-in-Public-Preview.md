@@ -1,11 +1,13 @@
 ---
 title: >
  Graph API を使用したメッセージ トレースのサポートにおけるパブリック プレビューのご案内
-date: 2026-02-22
-lastupdate: 2026-02-22
+date: 2026-01-22
+lastupdate: 2026-01-26
 tags: Exchange Online
 categories:
 ---
+
+<span style="background-color: yellow; font-weight: bold;">2026/1/23 編集: オンボーディングのセクションを追加しました。</span>
 
 ※ この記事は、[Message Trace Support Using Graph API is now in Public Preview](https://techcommunity.microsoft.com/blog/exchange/message-trace-support-using-graph-api-is-now-in-public-preview/4488587) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
@@ -14,6 +16,18 @@ GA（一般提供）は 1 月末から展開を開始し、2 月第 1 週まで�
 この RESTful Web API を使用すると、Exchange Online 組織全体での電子メールメッセージを追跡できます。
 Graph API を使用した新しいメッセージトレース サポートは、既存の Reporting Webservice API を使用したメッセージ トレースを置き換えるものです。
 詳細については、Graph API ドキュメント [exchangeMessageTrace resource type - Microsoft Graph beta | Microsoft Learn](https://learn.microsoft.com/graph/api/resources/exchangemessagetrace?view=graph-rest-beta) をご参照ください。
+
+## オンボーディング
+サービス プリンシパルレス認証の廃止対応に伴い、弊社ファーストパーティ製アプリ ID 8bd644d1-64a1-4d4b-ae52-2e0cbf64e373 に対するサービス プリンシパルを作成いただく必要があります。リクエストがブロックされないよう、下記ガイドラインに従ってプロビジョニングを実施してください。
+
+[Create an enterprise application from a multitenant application - Microsoft Entra ID | Microsoft Learn](https://learn.microsoft.com/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=msgraph-powershell&branch=main)
+
+新しいサービス プリンシパルの作成後、プロビジョニングが完了するまでに数時間かかる場合があります。
+この間、401 (Unauthorized) エラーが発生する可能性がありますので、プロビジョニングが完了、及び、反映されるまで数時間お待ちください。
+関連情報については、以下のページをご参照ください。
+
+[Retirement of service principal-less authentication - Microsoft identity platform | Microsoft Learn](https://learn.microsoft.com/entra/identity-platform/retire-service-principal-less-authentication?branch=main)
+
 
 ## 移行ガイダンスおよび廃止スケジュール
 現在、Reporting Webservice を使用したメッセージ トレースを利用している場合は、2026 年 4 月 6 日までに Graph API を使用したメッセージ トレースへ移行してください。
