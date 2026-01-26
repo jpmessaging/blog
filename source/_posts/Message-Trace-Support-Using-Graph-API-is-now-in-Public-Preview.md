@@ -18,15 +18,15 @@ Graph API を使用した新しいメッセージトレース サポートは、
 詳細については、Graph API ドキュメント [exchangeMessageTrace resource type - Microsoft Graph beta | Microsoft Learn](https://learn.microsoft.com/graph/api/resources/exchangemessagetrace?view=graph-rest-beta) をご参照ください。
 
 ## オンボーディング
-サービス プリンシパルレス認証の廃止対応に伴い、弊社ファーストパーティ製アプリ ID 8bd644d1-64a1-4d4b-ae52-2e0cbf64e373 に対するサービス プリンシパルを作成いただく必要となります。リクエストがブロックされないよう、下記ガイドラインに従ってプロビジョニングを実施してください。
+サービス プリンシパルレス認証の廃止対応に伴い、弊社ファーストパーティ製アプリ ID 8bd644d1-64a1-4d4b-ae52-2e0cbf64e373 に対するサービス プリンシパルを作成いただく必要があります。リクエストがブロックされないよう、下記ガイドラインに従ってプロビジョニングを実施してください。
 
-[Create an enterprise application from a multitenant application - Microsoft Entra ID | Microsoft Learn](https://review.learn.microsoft.com/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=msgraph-powershell&branch=main)
+[Create an enterprise application from a multitenant application - Microsoft Entra ID | Microsoft Learn](https://learn.microsoft.com/entra/identity/enterprise-apps/create-service-principal-cross-tenant?pivots=msgraph-powershell&branch=main)
 
-新しいサービス プリンシパルを作成後、プロビジョニングが完了されるまでに数時間かかる場合があります。
-この間、401（Unauthorized）エラーが発生する可能性がありますので、プロビジョニングが完了、及び、反映されるまで数時間お待ちください。
+新しいサービス プリンシパルの作成後、プロビジョニングが完了するまでに数時間かかる場合があります。
+この間、401 (Unauthorized) エラーが発生する可能性がありますので、プロビジョニングが完了、及び、反映されるまで数時間お待ちください。
 関連情報については、以下のページをご参照ください。
 
-[Retirement of service principal-less authentication - Microsoft identity platform | Microsoft Learn](https://review.learn.microsoft.com/entra/identity-platform/retire-service-principal-less-authentication?branch=main)
+[Retirement of service principal-less authentication - Microsoft identity platform | Microsoft Learn](https://learn.microsoft.com/entra/identity-platform/retire-service-principal-less-authentication?branch=main)
 
 
 ## 移行ガイダンスおよび廃止スケジュール
