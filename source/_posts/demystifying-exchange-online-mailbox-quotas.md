@@ -30,7 +30,7 @@ Exchange Online におけるメールボックスのサイズ制限について�
 
 たとえば、`Get-Mailbox <User> | FL alias, *Quota` を実行すると、これらすべてのクォータとその値を確認できます。
 
-![](./demystifying-exchange-online-mailbox-quotas/q01.jpg)
+![](q01.jpg)
 
 以下は、[Set-Mailbox (ExchangePowerShell) | Microsoft Learn](https://learn.microsoft.com/powershell/module/exchangepowershell/set-mailbox?view=exchange-ps) から引用した、各クォータの定義です。
 
@@ -57,11 +57,11 @@ Exchange Online では、ProhibitSendQuota、ProhibitSendReceiveQuota、IssueWar
 
 この値は `Get-Mailbox <user> | FL ProhibitSendReceiveQuota` を実行して確認できます。
 
-![](./demystifying-exchange-online-mailbox-quotas/q02.jpg)
+![](q02.jpg)
 
 プライマリ メールボックスの使用容量を確認するには、`Get-MailboxStatistics` コマンドをプライマリ メールボックスに対して実行し、TotalItemSize の値を確認します。
 
-![](./demystifying-exchange-online-mailbox-quotas/q03.jpg)
+![](q03.jpg)
 
 ProhibitSendReceiveQuota の値から TotalItemSize を差し引くことで、メールボックスの残り容量を確認できます。この例では、以下の計算により約 57.5 GB の空き容量があることがわかります。
 
@@ -69,7 +69,7 @@ ProhibitSendReceiveQuota の値から TotalItemSize を差し引くことで、�
 
 プライマリ メールボックスの統計情報は、ユーザーの識別子 (UPN、メール アドレス、エイリアス) を指定して Get-MailboxStatistics コマンドを実行することで取得できますが、メールボックスの MailboxGuid を指定しても同様の結果を得ることができます。以下の例では、mailbox1 にプライマリ メールボックス (545e88f1-5bbe-45d5-bc99-599928eabbd7) とアーカイブ メールボックス (1c2d9561-0b6a-4f6a-9479-902f98b17546) の両方が存在することを示します。
 
-![](./demystifying-exchange-online-mailbox-quotas/q04.jpg)
+![](q04.jpg)
 
 TotalItemSize の値に含まれるデータ (フォルダー) の種類を確認したい場合は、Get-MailboxFolderStatistics を実行し、TargetQuota が User に設定されているすべてのフォルダーを確認します。
 以下のようなコマンドから確認ができます。
@@ -80,20 +80,20 @@ TotalItemSize の値に含まれるデータ (フォルダー) の種類を確�
 
 例として、mailbox1 には TargetQuota が User に設定されたフォルダーが 900 個あり、これらのフォルダーのサイズはすべて TotalItemSize にカウントされます。
 
-![](./demystifying-exchange-online-mailbox-quotas/q05.jpg)
+![](q05.jpg)
 
 #### アーカイブ メールボックスのクォータ
 
 アーカイブ メールボックスにおけるサイズ制限値は、メールボックス プランやライセンスに応じて 50 GB または 100 GB となります。この値は `Get-Mailbox <user> | FL ArchiveQuota` を実行して確認できます。
 
-![](./demystifying-exchange-online-mailbox-quotas/q06.jpg)
+![](q06.jpg)
 
 アーカイブ メールボックスの使用容量を確認するには、`Get-MailboxStatistics -Archive <user>` を実行するか、メイン アーカイブの ArchiveGuid または MailboxGuid を指定して実行し、TotalItemSize の値を確認します。
 
 同様にアーカイブ メールボックス内のどのフォルダーが TotalItemSize に加算されているか確認したい場合は、Get-MailboxFolderStatistics に -Archive スイッチを指定して実行するか、ArchiveGuid を指定して実行し、TargetQuota が User に設定されているフォルダーを確認します。
 (複数のアーカイブ メールボックス、つまり自動拡張アーカイブが存在する場合には、ArchiveGuid を指定して実行する方法を推奨します。)
 
-![](./demystifying-exchange-online-mailbox-quotas/q07.jpg)
+![](q07.jpg)
 
 #### 回復可能なアイテム フォルダーのクォータ
 
@@ -101,7 +101,7 @@ TotalItemSize の値に含まれるデータ (フォルダー) の種類を確�
 
 RecoverableItemsQuota の設定値を確認するには、`Get-Mailbox <user> | FL RecoverableItemsQuota` を実行します。
 
-![](./demystifying-exchange-online-mailbox-quotas/q08.jpg)
+![](q08.jpg)
 
 回復可能なアイテム フォルダーのサイズ制限値は、プライマリ メールボックスとアーカイブ メールボックスの両方に適用されます。プライマリ メールボックスにおける回復可能なアイテム フォルダーの使用容量を確認するには、以下のコマンドを実行します。
 
@@ -126,7 +126,7 @@ Get-MailboxStatistics -Archive に関する補足事項:
 
 以下の例では、shared1 というメールボックスのプライマリ メールボックス内の回復可能なアイテム フォルダーには 307 MB、アーカイブ メールボックス内の回復可能なアイテム フォルダーには 1 GB のデータが格納されています。
 
-![](./demystifying-exchange-online-mailbox-quotas/q09.jpg)
+![](q09.jpg)
 
 回復可能なアイテム フォルダーとそのサイズを確認したい場合、以下のコマンドを実行します。(回復可能なアイテム フォルダー内のサイズの合計が TotalDeletedItemSize になります。)
 
@@ -140,7 +140,7 @@ Get-MailboxStatistics -Archive に関する補足事項:
 
 上記の Get-MailboxStatistics の出力結果に続いて、Get-MailboxFolderStatistics の出力結果も以下に示します。プライマリ メールボックスとアーカイブ メールボックスの両方とも、回復可能なアイテム フォルダーのサイズは 30 GB の制限値を十分に下回っています。
 
-![](./demystifying-exchange-online-mailbox-quotas/q10.jpg)
+![](q10.jpg)
 
 次に、よくある問題が発生するシナリオとその対処方法について確認しましょう。
 
@@ -152,7 +152,7 @@ Get-MailboxStatistics -Archive に関する補足事項:
 
 以下の例では、このスイッチを使用してメール ユーザー オブジェクトの RecoverableItemsQuota を 30 GB から 100 GB に引き上げています。
 
-![](./demystifying-exchange-online-mailbox-quotas/q11.jpg)
+![](q11.jpg)
 
 補足事項:
 
@@ -162,15 +162,15 @@ Get-MailboxStatistics -Archive に関する補足事項:
 
 訴訟ホールドが一時的に有効化された状態:
 
-![](./demystifying-exchange-online-mailbox-quotas/q12.jpg)
+![](q12.jpg)
 
 ディレクトリ同期後に訴訟ホールドが自動的に無効になった状態:
 
-![](./demystifying-exchange-online-mailbox-quotas/q13.jpg)
+![](q13.jpg)
 
 なお、移行先テナントのメール ユーザーがディレクトリ同期されており、オンプレミス AD にもメール ユーザーとして存在する場合、訴訟ホールド フラグは次回のディレクトリ同期サイクルで上書きされることはありません。
 
-![](./demystifying-exchange-online-mailbox-quotas/q14.jpg)
+![](q14.jpg)
 
 また、クロス テナント移行の目的でメール ユーザーの訴訟ホールドを有効にした後、Exchange Online でそれを無効にするためのスイッチは用意されていません。移行完了後、ユーザーがメールボックスとして有効になった状態であれば、`Set-Mailbox <user> -LitigationHoldEnabled $false` を実行して無効にすることができます。ただし、訴訟ホールドを無効にすると回復可能なアイテム フォルダーからデータが削除される可能性がありますのでご注意ください。
 
@@ -206,19 +206,19 @@ Get-MailboxStatistics -Archive に関する補足事項:
 
     Get-Mailbox <user> | FL Alias, ProhibitSendReceiveQuota, ArchiveQuota, RecoverableItemsQuota, LitigationHoldEnabled, ArchiveGuid, AutoExpandingArchiveEnabled
 
-![](./demystifying-exchange-online-mailbox-quotas/q15.jpg)
+![](q15.jpg)
 
 ユーザーに訴訟ホールドを設定すると、RecoverableItemsQuota が 30 GB から 100 GB に増加します。
 
-![](./demystifying-exchange-online-mailbox-quotas/q16.jpg)
+![](q16.jpg)
 
 さらにアーカイブ メールボックスを有効にすると、RecoverableItemsQuota は 105 GB まで増加します。
 
-![](./demystifying-exchange-online-mailbox-quotas/q17.jpg)
+![](q17.jpg)
 
 さらにメールボックス レベルで自動拡張アーカイブを有効にすると、RecoverableItemsQuota と ArchiveQuota はそれぞれ 110 GB まで増加します。
 
-![](./demystifying-exchange-online-mailbox-quotas/q18.jpg)
+![](q18.jpg)
 
 **重要**: 自動拡張アーカイブを有効にすると、メールボックスをオンプレミス Exchange に戻すこと、メールボックスの復元要求 (New-MailboxRestoreRequest) を実行すること、および非アクティブなメールボックスを回復することができなくなります。
 
