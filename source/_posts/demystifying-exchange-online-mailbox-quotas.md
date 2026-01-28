@@ -1,7 +1,6 @@
 ---
 title: "Exchange Online メールボックス クォータの詳細解説"
-date: 2026/01/26
-lastupdate: 2026/01/26
+date: 2026/01/28 9:00:00
 tags: Exchange
 ---
 
@@ -15,8 +14,8 @@ Exchange Online におけるメールボックスのサイズ制限について�
 
 ## メールボックスのサイズ制限と使用容量の確認方法
 
-既定では、[プライマリ メールボックスとアーカイブ メールボックスのクォータ](https://learn.microsoft.com/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#storage-limits) (プライマリ メールボックスとアーカイブ メールボックスにおけるサイズ制限) の上限値は 100 GB に設定されています。一方、[回復可能なアイテムのクォータ](https://learn.microsoft.com/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#mailbox-folder-limits-1) (回復可能なアイテム フォルダーにおけるサイズ制限) は、保留が設定されていないユーザー (訴訟ホールド、インプレース ホールド、組織のホールド、またはコンプライアンス ポリシーのホールドなどが設定されていないユーザー) の場合は 30 GB、保留が設定されたユーザーの場合は 100 GB に設定されています。
-自動拡張アーカイブを有効にすると、最大 1.5 TB のアーカイブ メールボックスを利用できるようになりますが、この 1.5 TB の [格納域](https://learn.microsoft.com/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#storage-limits) は複数のアーカイブ メールボックスに分割して割り当てられます。つまり、各アーカイブ メールボックスごとに最大 100 GB のサイズ制限が適用されるため、ArchiveQuota の値は各アーカイブ メールボックスごとに 100 GB のままとなります。このため複数のアーカイブ メールボックスを合わせて、全体として最大 1.5 TB の格納域が提供されます。したがって、自動拡張アーカイブを有効にしても ArchiveQuota が *単一の* 1.5 TB として表示されることはありません。
+既定では、[プライマリ メールボックスとアーカイブ メールボックスのクォータ](https://learn.microsoft.com/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#storage-limits) (プライマリ メールボックスとアーカイブ メールボックスにおけるサイズ制限) の上限値は 100 GB に設定されています。一方、[回復可能なアイテムのクォータ](https://learn.microsoft.com/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#mailbox-folder-limits-1) (回復可能なアイテム フォルダーにおけるサイズ制限) は、保持が設定されていないユーザー (訴訟ホールド、インプレース ホールド、組織のホールド、またはコンプライアンス ポリシーのホールドなどが設定されていないユーザー) の場合は 30 GB、保持が設定されたユーザーの場合は 100 GB に設定されています。
+自動拡張アーカイブを有効にすると、最大 1.5 TB のアーカイブ メールボックスを利用できるようになりますが、この 1.5 TB の[格納域](https://learn.microsoft.com/office365/servicedescriptions/exchange-online-service-description/exchange-online-limits#storage-limits)は複数のアーカイブ メールボックスに分割して割り当てられます。つまり、各アーカイブ メールボックスごとに最大 100 GB のサイズ制限が適用されるため、ArchiveQuota の値は各アーカイブ メールボックスごとに 100 GB のままとなります。このため複数のアーカイブ メールボックスを合わせて、全体として最大 1.5 TB の格納域が提供されます。したがって、自動拡張アーカイブを有効にしても ArchiveQuota が *単一の* 1.5 TB として表示されることはありません。
 
 メールボックスのサイズ制限には、主に以下の 3 種類があります。
 
@@ -97,7 +96,7 @@ TotalItemSize の値に含まれるデータ (フォルダー) の種類を確�
 
 #### 回復可能なアイテム フォルダーのクォータ
 
-前述のとおり、回復可能なアイテム フォルダーにおけるサイズ制限値は、保留が設定されていないユーザーの場合は 30 GB、保留が設定されているユーザーの場合は 100 GB となります。保留が設定されているユーザーはデータを完全に削除することができないため、回復可能なアイテム用により多くの格納域が必要となります。そのため、ユーザーに訴訟ホールドなどの保留が設定されると、サービスによって自動的に 70 GB 増加されます。
+前述のとおり、回復可能なアイテム フォルダーにおけるサイズ制限値は、保持が設定されていないユーザーの場合は 30 GB、保持が設定されているユーザーの場合は 100 GB となります。保持が設定されているユーザーはデータを完全に削除することができないため、回復可能なアイテム用により多くの格納域が必要となります。そのため、ユーザーに訴訟ホールドなどの保持が設定されると、サービスによって自動的に 70 GB 増加されます。
 
 RecoverableItemsQuota の設定値を確認するには、`Get-Mailbox <user> | FL RecoverableItemsQuota` を実行します。
 
@@ -144,9 +143,9 @@ Get-MailboxStatistics -Archive に関する補足事項:
 
 次に、よくある問題が発生するシナリオとその対処方法について確認しましょう。
 
-### クロス テナント メールボックス移行 (CTMM) における MRS の使用
+### クロステナント メールボックス移行 (CTMM) における MRS の使用
 
-既定では、メール ユーザーの回復可能なアイテム フォルダーのサイズ制限値は 30 GB に設定されていますが、移行元メールボックスの回復可能なアイテム フォルダーのサイズ制限値がこのサイズを超えている場合があります (通常は何らかの保留が設定されていることに起因します)。この場合以下のコマンドを実行して、移行先テナントのメール ユーザー オブジェクトに対する訴訟ホールドを有効にすることで、回復可能なアイテム フォルダーのサイズ制限値を 100 GB まで引き上げることができます。これにより、QuotaExceeded の例外による移行時のエラーを回避できます。
+既定では、メール ユーザーの回復可能なアイテム フォルダーのサイズ制限値は 30 GB に設定されていますが、移行元メールボックスの回復可能なアイテム フォルダーのサイズ制限値がこのサイズを超えている場合があります (通常は何らかの保持が設定されていることに起因します)。この場合以下のコマンドを実行して、移行先テナントのメール ユーザー オブジェクトに対する訴訟ホールドを有効にすることで、回復可能なアイテム フォルダーのサイズ制限値を 100 GB まで引き上げることができます。これにより、QuotaExceeded の例外による移行時のエラーを回避できます。
 
     Set-MailUser <id> -EnableLitigationHoldForMigration
 
@@ -157,7 +156,7 @@ Get-MailboxStatistics -Archive に関する補足事項:
 補足事項:
 
 - このコマンドは、クラウドのみのメール ユーザーだけでなく、ディレクトリ同期された (IsDirSynced = True の) メール ユーザーにも適用されます。
-- 移行元メールボックスがオンプレミス Exchange でホストされており、クラウド上に対応するメール ユーザーが存在する場合のハイブリッド移行のシナリオでは、この手順を使用*しないでください*。たとえば、オンプレミス上のメールボックスに 70 GB の回復可能なアイテムがあり、そのメールボックスに保留の設定がされていない場合、オンプレミス側で対象のメールボックスに対して訴訟ホールドを有効にすることを推奨します。ディレクトリ同期後、クラウド上の対応するメール ユーザーの回復可能なアイテム フォルダーのサイズ制限値は 100 GB に増加しますが、さらに重要なのは当該メール ユーザーで訴訟ホールドが有効になり、その状態が維持されることです。これにより、ハイブリッド移行を使用してオンプレミスのメールボックスをクラウドに移行する際、メール ユーザーはオンプレミスから同期された LitigationHold フラグを引き継ぎ、Exchange Online 移行後に RetainDeletedItemsFor の設定によって回復可能なアイテムが削除されることを防ぐことができます。
+- 移行元メールボックスがオンプレミス Exchange でホストされており、クラウド上に対応するメール ユーザーが存在する場合のハイブリッド移行のシナリオでは、この手順を使用*しないでください*。たとえば、オンプレミス上のメールボックスに 70 GB の回復可能なアイテムがあり、そのメールボックスに保持の設定がされていない場合、オンプレミス側で対象のメールボックスに対して訴訟ホールドを有効にすることを推奨します。ディレクトリ同期後、クラウド上の対応するメール ユーザーの回復可能なアイテム フォルダーのサイズ制限値は 100 GB に増加しますが、さらに重要なのは当該メール ユーザーで訴訟ホールドが有効になり、その状態が維持されることです。これにより、ハイブリッド移行を使用してオンプレミスのメールボックスをクラウドに移行する際、メール ユーザーはオンプレミスから同期された LitigationHold フラグを引き継ぎ、Exchange Online 移行後に RetainDeletedItemsFor の設定によって回復可能なアイテムが削除されることを防ぐことができます。
 - ハイブリッド移行を行うユーザーに対して Exchange Online から Set-MailUser -EnableLitigationHoldForMigration を実行した場合、次回のディレクトリ同期時にオンプレミス AD から訴訟ホールド フラグが上書きされることにご注意ください。つまり、コマンドを実行することで訴訟ホールドが有効になったと思われるかもしれませんが、オンプレミスのメールボックスで訴訟ホールドが設定されていない場合、その情報が同期されます。したがって、コマンドから訴訟ホールドを有効にしても設定は維持されません。なお、この状況で RecoverableItemsQuota が 30 GB に戻ることはありませんが、メールボックスを Exchange Online に移行した後に回復可能なアイテムが削除される可能性についてご留意ください。
 
 訴訟ホールドが一時的に有効化された状態:
@@ -172,7 +171,7 @@ Get-MailboxStatistics -Archive に関する補足事項:
 
 ![](q14.jpg)
 
-また、クロス テナント移行の目的でメール ユーザーの訴訟ホールドを有効にした後、Exchange Online でそれを無効にするためのスイッチは用意されていません。移行完了後、ユーザーがメールボックスとして有効になった状態であれば、`Set-Mailbox <user> -LitigationHoldEnabled $false` を実行して無効にすることができます。ただし、訴訟ホールドを無効にすると回復可能なアイテム フォルダーからデータが削除される可能性がありますのでご注意ください。
+また、クロステナント移行の目的でメール ユーザーの訴訟ホールドを有効にした後、Exchange Online でそれを無効にするためのスイッチは用意されていません。移行完了後、ユーザーがメールボックスとして有効になった状態であれば、`Set-Mailbox <user> -LitigationHoldEnabled $false` を実行して無効にすることができます。ただし、訴訟ホールドを無効にすると回復可能なアイテム フォルダーからデータが削除される可能性がありますのでご注意ください。
 
 ### Gmail および IMAP からの大容量メールボックスの Exchange Online への移行
 
@@ -198,11 +197,11 @@ Get-MailboxStatistics -Archive に関する補足事項:
 - 管理者はアーカイブ メールボックスを有効にし、プライマリ メールボックスからアーカイブ メールボックスへデータを移動するためのアイテム保持ポリシーおよび保持タグを作成する。
 - 現在ユーザーに割り当てられているライセンスが提供する格納域が少ない場合 (例: Exchange Online P1 の 50 GB)、より多くの格納域を提供するライセンス (Exchange Online P2 の 100 GB) を割り当てることを検討する。
 
-メイン アーカイブが制限値に到達し (**ArchiveQuota の制限値に到達し**)、かつデータを保持する必要がある場合は、自動拡張アーカイブを有効にする方法があります。これにより、拡張アーカイブ (AuxArchive) が割り当てられ、コンテンツはメイン アーカイブと拡張アーカイブの間で自動的に分割させることができます。また、訴訟ホールドなどの保留が有効化され、かつメールボックス レベルで自動拡張アーカイブが有効な場合、ArchiveQuota は 110 GB まで拡張されます (詳細は後述)。
+メイン アーカイブが制限値に到達し (**ArchiveQuota の制限値に到達し**)、かつデータを保持する必要がある場合は、自動拡張アーカイブを有効にする方法があります。これにより、拡張アーカイブ (AuxArchive) が割り当てられ、コンテンツはメイン アーカイブと拡張アーカイブの間で自動的に分割させることができます。また、訴訟ホールドなどの保持が有効化され、かつメールボックス レベルで自動拡張アーカイブが有効な場合、ArchiveQuota は 110 GB まで拡張されます (詳細は後述)。
 
 **RecoverableItemsQuota の制限値に達した場合**、回復可能なアイテム フォルダー内のアイテムを完全に削除する、RecoverableItemsQuota を設定可能な最大値まで引き上げる、または自動拡張アーカイブを有効にしてデータをアーカイブ メールボックスに分割・移動するといった対処方法があります。なお、回復可能なアイテム フォルダー内のアイテムに関する処理として、Exchange Online サービスには Dumpster Expiration Enforcer と呼ばれるコンポーネントが存在します。このコンポーネントでは、回復可能なアイテム フォルダーの警告のしきい値 (RecoverableItemsWarningQuota) を超えると、アイテムの更新日時に基づいて FIFO (先入れ先出し) 方式でアイテムを削除します。この仕組みにより、RetainDeletedItemsFor の期間に到達する前であっても、ユーザーが追加のデータを削除するための空き容量が確保されます。この動作は単一アイテムの回復の設定に関係なく行われます。詳細は [Recoverable Items folder in Exchange Online | Microsoft Learn](https://learn.microsoft.com/exchange/security-and-compliance/recoverable-items-folder/recoverable-items-folder#single-item-recovery) をご参照ください。
 
-ここで、回復可能なアイテム フォルダーのサイズ制限値 (RecoverableItemsQuota) が 30 GB、アーカイブ メールボックスのサイズ制限値 (ArchiveQuota) が 100 GB に設定されており、アーカイブ メールボックスも訴訟ホールドも有効になっていないユーザー メールボックスのシナリオを見ていきましょう。なお、以下の例では説明を簡単にするために LitigationHold パラメーターを使用していますが、RecoverableItemsQuota は他の種類の保留でも同様に増加します。
+ここで、回復可能なアイテム フォルダーのサイズ制限値 (RecoverableItemsQuota) が 30 GB、アーカイブ メールボックスのサイズ制限値 (ArchiveQuota) が 100 GB に設定されており、アーカイブ メールボックスも訴訟ホールドも有効になっていないユーザー メールボックスのシナリオを見ていきましょう。なお、以下の例では説明を簡単にするために LitigationHold パラメーターを使用していますが、RecoverableItemsQuota は他の種類の保持でも同様に増加します。
 
     Get-Mailbox <user> | FL Alias, ProhibitSendReceiveQuota, ArchiveQuota, RecoverableItemsQuota, LitigationHoldEnabled, ArchiveGuid, AutoExpandingArchiveEnabled
 
@@ -224,9 +223,9 @@ Get-MailboxStatistics -Archive に関する補足事項:
 
 #### 参考資料
 
-- [保留中のメールボックスの回復可能なアイテムのクォータを拡大する | Microsoft Learn](https://learn.microsoft.com/purview/ediscovery-increase-the-recoverable-quota-for-mailboxes-on-hold)
-- [自動拡張アーカイブに関する詳細情報 | Microsoft Learn](https://learn.microsoft.com/purview/autoexpanding-archiving)
-- [自動拡張アーカイブを有効にする | Microsoft Learn](https://learn.microsoft.com/purview/enable-autoexpanding-archiving)
+- [Increase the Recoverable Items quota for mailboxes on hold | Microsoft Learn](https://learn.microsoft.com/purview/ediscovery-increase-the-recoverable-quota-for-mailboxes-on-hold)
+- [Learn about auto-expanding archiving | Microsoft Learn](https://learn.microsoft.com/purview/autoexpanding-archiving)
+- [Enable auto-expanding archiving | Microsoft Learn](https://learn.microsoft.com/purview/enable-autoexpanding-archiving)
 - [Advancing Microsoft 365: New capabilities and pricing update | Microsoft 365 Blog](https://www.microsoft.com/microsoft-365/blog/2025/12/04/advancing-microsoft-365-new-capabilities-and-pricing-update/)
 
 この記事がお役に立てば幸いです。最後までお読みいただきありがとうございました。
