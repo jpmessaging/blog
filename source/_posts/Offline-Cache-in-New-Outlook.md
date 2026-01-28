@@ -1,6 +1,6 @@
 ---
 title: 新しい Outlook for Windows のオフライン アクセス機能の紹介
-date: 2026-01-27
+date: 2026-01-28 11:00:00
 lastupdate:
 tags: New Outlook
 ---
@@ -30,18 +30,19 @@ tags: New Outlook
 |                                             | スヌーズ                         |                   |
 
 Title: Outlook でオフライン作業する  
-URL: https://support.microsoft.com/ja-jp/office/outlook-2460e4a8-16c7-47fc-b204-b1549275aac9
+URL: https://support.microsoft.com/office/2460e4a8-16c7-47fc-b204-b1549275aac9
 
 新しい Outlook のオフライン アクセス機能ではローカル端末にキャッシュを保存する際に、一般的なブラウザーで利用される Web 標準技術である IndexedDB というデータベースを使用しています。
 既定で以下のパスにキャッシュが保存されます。
 
       %localappdata%\Microsoft\Olk\EBWebView\Default\IndexedDB
 
-**IndexedDB は先にも記載したとおり一般的なブラウザで利用される Web 標準の技術であり、マイクロソフトでサポートを提供している製品ではありません。サポートでは IndexedDB 自体についてのご質問を受け付けることはできかねますので、予めご了承いただければ幸いです。**
+**IndexedDB は先にも記載したとおり一般的なブラウザーで利用される Web 標準の技術であり、マイクロソフトでサポートを提供している製品ではありません。サポートでは IndexedDB 自体についてのご質問を受け付けることはできかねますので、予めご了承いただければ幸いです。**
 
 従来の Outlook for Windows (Microsoft 365 Apps や永続的なライセンスの Office に付随する Outlook を示します。以後、従来の Outlook と記します。) でオンライン モードとキャッシュ モードを切り替えられるように、オフライン アクセス機能は新しい Outlook にて以下の手順から有効/無効にすることができます。
-       
-      [設定] - [全般] - [オフライン] の [オフライン時のメール、予定表、連絡先を有効にします] のトグルを切り変えます。
+
+手順
+[設定] - [全般] - [オフライン] の [オフライン時のメール、予定表、連絡先を有効にします] のトグルを切り変えます。
 
 ちなみに、同様の機能として従来の Outlook でもキャッシュ モードを利用していると、Outlook Data File (.ost) というファイルでローカル端末にメールなどのデータが保持されオフライン環境でも利用することができます。
 既定ではこの OST ファイルは以下のパスに保存されます。
@@ -57,7 +58,7 @@ Q1. オフライン アクセスの利用に必要なデバイス上の空き容
 A1. 残念ながら、一概に必要な空き容量について公開している情報はありません。また、メールのサイズから IndexedDB で使用するファイルがどれくらいのサイズになるか換算する方法もありません。メールの受信数や、それぞれのメールのサイズは利用者によって異なるので、実績ベースでどの程度のサイズが利用されているか確認しましょう。
 
 Q2. オフライン アクセス機能を管理者から一元管理することはできるの？  
-A2. Exchange Online にアクセスした PowerShell から Set-OwaMailboxPolicy というコマンドを利用して、オフライン アクセス機能を無効化することができます。具体的には、OfflineEnabledWin というパラメーターを False に設定します。OfflineEnabledWin が既定値の True の場合、ユーザーは新しい Outlook の設定画面からオフライン アクセスの設定を自分で有効または無効にできます。False に変更すると、オフライン アクセス機能は無効になり、新しい Outlook の [設定]-[全般] より [オフライン] が非表示になるため、ユーザーは自分自身で有効にできなくなります。
+A2. Exchange Online にアクセスした PowerShell から Set-OwaMailboxPolicy というコマンドを利用して、オフライン アクセス機能を無効化することができます。具体的には、OfflineEnabledWin というパラメーターを False に設定します。OfflineEnabledWin が既定値の True の場合、ユーザーは新しい Outlook の設定画面からオフライン アクセスの設定を自分で有効または無効にできます。False に変更すると、オフライン アクセス機能は無効になり、新しい Outlook の [設定] - [全般] より [オフライン] が非表示になるため、ユーザーは自分自身で有効にできなくなります。
  
 > Set-OwaMailboxPolicy <ポリシー名> -OfflineEnabledWin $false
  
@@ -68,7 +69,7 @@ A2. Exchange Online にアクセスした PowerShell から Set-OwaMailboxPolicy
 メールボックスに OwaMailboxPolicy を割り当てる手順は以下の公開情報でも詳しく紹介されているので、確認してみてください。
 
 Title: Exchange Onlineのメールボックスに対してメールボックス ポリシーを適用または削除する | Microsoft Learn  
-URL: https://learn.microsoft.com/ja-jp/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/apply-or-remove-outlook-web-app-mailbox-policy
+URL: https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/apply-or-remove-outlook-web-app-mailbox-policy
 
 Q3. キャッシュを削除したい場合はどうすればいい？  
 A3. 先に記載した新しい Outlook 内の設定でオフライン アクセス機能を手動で無効化する方法か、PowerShell コマンドでオフライン アクセス機能を無効化します。なお、オフライン アクセス機能を無効にすると IndexedDB フォルダー配下のキャッシュの量は小さくなりますが、IndexedDB フォルダーは完全に削除されません。これは IndexedDB のフォルダーにはキャッシュ以外にも新しい Outlook の設定など様々な情報が保存されるためです。IndexedDB フォルダーを手動で削除しても、次回起動時に自動で作成されます。
@@ -76,17 +77,27 @@ A3. 先に記載した新しい Outlook 内の設定でオフライン アクセ
 Q4. キャッシュの量を削減する方法はある？  
 A4. キャッシュの量を減らしたい場合は、[メールの保存日数] を短く設定してください。さらに、[添付ファイルを含める] をオフにすることで、キャッシュの量をある程度抑えることができます。
 
-      <手順>  
-      新しい Outlook で [設定] を開き、[全般] – [オフライン] にある “メールの保存日数” を短くして [保存] を選択します。
+<手順>  
+新しい Outlook で [設定] を開き、[全般] – [オフライン] にある [メールの保存日数] を短くして [保存] を選択します。
 
 なお、設定した直後にキャッシュの量が減るわけではなく、データ ベースの処理が実行されることで徐々にキャッシュの量が減っていきます。
  
 Q5. PC の空き容量が少ない場合、オフライン アクセスの設定はどうなる？  
 A5. PC の空き容量が足りない場合は自動的に保存日数が少なくなったり、オフライン アクセス機能が無効化されたりする可能性があります。
  
-      重要: デバイスで使用できる領域のために、設定に基づいて保存するのに十分なローカル ストレージが得られない場合、保存するアイテムの数が削減されるか、オフライン アクセスが無効になる可能性があります。
+<div style="margin:1.25em;border-left:.25em solid #8957e5;padding:.5em;">
+<div style="margin-bottom:16px;display:flex;align-items:center;line-height:1;color:#8957e5">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px">
+<path fill=#8957e5 d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg>
+重要
+</div>
+<div>
+デバイスで使用できる領域のために、設定に基づいて保存するのに十分なローカル ストレージが得られない場合、保存するアイテムの数が削減されるか、オフライン アクセスが無効になる可能性があります。
+</div>
+</div>
  
 Title: Outlook でオフライン作業する  
-URL: https://support.microsoft.com/ja-jp/office/outlook-2460e4a8-16c7-47fc-b204-b1549275aac9
+URL: https://support.microsoft.com/office/outlook-2460e4a8-16c7-47fc-b204-b1549275aac9
  
 **本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。**
