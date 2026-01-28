@@ -1,6 +1,6 @@
 ---
 title: 新しい Outlook for Windows におけるキーボード ショートカットの設定と活用ガイド
-date: 2026-01-27
+date: 2026-01-28 10:00:00
 lastupdate:
 tags: New Outlook
 ---
