@@ -16,19 +16,21 @@
 
 
   
-  <title>Exchange Server 2019 に関する更新 | Japan Exchange &amp; Outlook Support Blog</title>
+  <title>Exchange Online における SMTP AUTH 基本認証廃止スケジュールの更新のご案内
+ | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※ この記事は、Updates on Servicing Exchange Server 2019 の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 2022 年初頭に、Exchange Server のサービス モデルの変更を発表し、各暦年の上半期 (H1) と">
+  <meta name="description" content="※ この記事は、Updated Exchange Online SMTP AUTH Basic Authentication Deprecation Timeline の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 多くの方が従来の電子メール ワークフローの最新">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Exchange Server 2019 に関する更新">
-<meta property="og:url" content="https://jpmessaging.github.io/blog/updates-on-servicing-exchange-server-2019/index.html">
+<meta property="og:title" content="Exchange Online における SMTP AUTH 基本認証廃止スケジュールの更新のご案内
+">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Updated-Exchange-Online-SMTP-AUTH-Basic-Authentication-Deprecation-Timeline/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="※ この記事は、Updates on Servicing Exchange Server 2019 の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 2022 年初頭に、Exchange Server のサービス モデルの変更を発表し、各暦年の上半期 (H1) と">
+<meta property="og:description" content="※ この記事は、Updated Exchange Online SMTP AUTH Basic Authentication Deprecation Timeline の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 多くの方が従来の電子メール ワークフローの最新">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-12-10T00:00:00.000Z">
-<meta property="article:modified_time" content="2024-12-10T00:00:00.000Z">
+<meta property="article:published_time" content="2026-01-28T03:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-28T03:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
-<meta property="article:tag" content="Exchange">
+<meta property="article:tag" content="Exchange Online">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
@@ -99,10 +101,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-updates-on-servicing-exchange-server-2019" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Updated-Exchange-Online-SMTP-AUTH-Basic-Authentication-Deprecation-Timeline" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/updates-on-servicing-exchange-server-2019/" class="article-date">
-  <time datetime="2024-12-10T00:00:00.000Z" itemprop="datePublished">2024-12-10</time>
+    <a href="/blog/Updated-Exchange-Online-SMTP-AUTH-Basic-Authentication-Deprecation-Timeline/" class="article-date">
+  <time datetime="2026-01-28T03:00:00.000Z" itemprop="datePublished">2026-01-28</time>
 </a>
     <!--  -->
   </div>
@@ -113,41 +115,41 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Exchange Server 2019 に関する更新
+      Exchange Online における SMTP AUTH 基本認証廃止スケジュールの更新のご案内
+
     </h1>
   
 
       </header>
       <div class="article-share">
         Last Update:
-        <a href="/blog/updates-on-servicing-exchange-server-2019/" class="article-date-single">    
-        
-    <time datetime="2025-02-17T00:00:00.000Z" itemprop="lastupdate">2025-02-17</time>    
+        <a href="/blog/Updated-Exchange-Online-SMTP-AUTH-Basic-Authentication-Deprecation-Timeline/" class="article-date-single">    
+    
+    <time datetime="2026-01-28T03:00:00.000Z" itemprop="dateUpdated">2026-01-28</time>
     
 </a>
       </div>
     
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
-        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/updates-on-servicing-exchange-server-2019/4355545">Updates on Servicing Exchange Server 2019</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
-<p>2022 年初頭に、Exchange Server のサービス モデルの変更を<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/released-2022-h1-cumulative-updates-for-exchange-server/ba-p/3285026">発表</a>し、各暦年の上半期 (H1) と下半期 (H2) に合計 2 回の累積更新 (CU) をリリースするサービス サイクルに移行しました。一般的なリリース目標日は 3 月と 9 月です。リリース日は内容と品質、およびセキュリティ更新 (SU) のリリースなど、優先される他の作業によって決まります。</p>
-<p>前回の<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/exchange-server-roadmap-update/4132742">ロードマップ更新</a>では、Exchange Server 2019 の最終 CU（H2 2024 CU、別名 CU15）が今年後半にリリースされると述べました。</p>
-<p>本日、Exchange Server 2019 の最後の CU が H1 2025 CU（ただし、CU15 のまま）であり、2025 年 1 月上旬にリリースされることを発表します (<strong>2025&#x2F;2&#x2F;10 更新</strong> : CU15 は<a href="https://jpmessaging.github.io/blog/released-2025-h1-cumulative-update-for-exchange-server/">リリースされました</a>)。<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/servicing-exchange-server-2019/3989195">昨年</a>と同様のアプローチを取り、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/servicing-exchange-server/ba-p/3676996">一昨年</a>も同様でした。</p>
-<p>その間、すべての顧客に対して、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/re-release-of-november-2024-exchange-server-security-update-packages/4341892">2024 年 11 月 SU の v2 バージョン</a>に更新し、<a target="_blank" rel="noopener" href="https://support.microsoft.com/topic/time-zone-exception-occurs-after-installing-exchange-server-november-2024-su-version-1-or-version-2-851b3005-6d39-49a9-a6b5-5b4bb42a606f">既知のタイムゾーン問題</a>の手動回避策を実行することをお勧めします。その後、最新リリースの<a target="_blank" rel="noopener" href="https://aka.ms/HealthChecker">Exchange Server HealthChecker</a>をダウンロードして実行し、問題がないことを確認してください。</p>
-<p>最後に、いくつかの注意点があります：</p>
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/updated-exchange-online-smtp-auth-basic-authentication-deprecation-timeline/4489835">Updated Exchange Online SMTP AUTH Basic Authentication Deprecation Timeline</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>多くの方が従来の電子メール ワークフローの最新化において、現実的な課題に直面され続け、実行可能で安全な代替手段を導入するために十分な時間が必要とすることを認識しています。</p>
+<p>皆様からのフィードバック、及び、実際の利用状況を踏まえ、より明確なマイルストーンと追加の移行猶予期間を提供するため、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/exchange-online-to-retire-basic-auth-for-client-submission-smtp-auth/4114750">Exchange Online SMTP AUTH Basic Authentication Deprecation</a> のスケジュールを以下のように見直しました。</p>
 <ul>
-<li>ライフサイクルの日付は変更されません。</li>
-<li>Exchange Server SE の RTM リリースのタイミングには影響しません。これは引き続き暦年 2025 年の H2 初頭に予定されています。</li>
-<li>すべての顧客に対するガイダンスは変わりません：Exchange Server 2019 に移行し、最新の更新プログラムをインストールし、利用可能になったら Exchange Server SE にインプレースアップグレードしてください。</li>
+<li><strong>2026 年 12 月まで:</strong> SMTP AUTH 基本認証の動作に変更はありません。</li>
+<li><strong>2026 年 12 月末:</strong> SMTP AUTH 基本認証は<strong>既存テナントでは既定で無効化されます。</strong> 管理者は必要に応じて有効化できます。</li>
+<li><strong>2026 年 12 月以降に作成される新規テナントの場合:</strong> SMTP AUTH 基本認証は<strong>既定で使用できません。</strong> サポートされる認証方式は OAuth のみとなります。</li>
+<li><strong>2027 年後半:</strong> SMTP AUTH 基本認証の<strong>最終的な削除日</strong>を発表されます。</li>
 </ul>
+<p>これらの更新は、皆様が最新の認証方式への移行を計画、検証、展開するための十分な時間を確保しつつ、既定のセキュリティ水準を維持できることを目的としています。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/updates-on-servicing-exchange-server-2019/" data-id="cmkxqbu0p008464nm57g2c3wk" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Updated-Exchange-Online-SMTP-AUTH-Basic-Authentication-Deprecation-Timeline/" data-id="cmkxqbtzn004964nmgh1ze95v" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
 
     </footer>
   </div>
@@ -155,19 +157,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/exchange-online-to-introduce-external-recipient-rate-limit/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Exchange Online への外部受信者数の制限の導入
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/Outlook-does-not-display-toast/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/Offline-Cache-in-New-Outlook/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Outlook のデスクトップ通知が表示されない時の確認ポイント</div>
+      <div class="article-nav-title">新しい Outlook for Windows のオフライン アクセス機能の紹介</div>
     </a>
   
 </nav>
