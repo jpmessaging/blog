@@ -28,8 +28,8 @@ Exchange Online においてパブリック フォルダーを管理する管理
 
 保持ポリシーは、コンテンツを保持するのみ、指定した期間保持した後に削除する、または指定した期間後に削除するように構成できます。保持ポリシーの期間は、以下に基づいて設定できます。
 
-- アイテムの作成日 (例: CreationTime)
-- アイテムの最終変更日 (例: LastModificationTime)
+- アイテムの作成日時 (例: CreationTime)
+- アイテムの最終変更日時 (例: LastModificationTime)
 ![](pfh02.jpg)
 
 詳細については、「[コンテンツを保持および削除するための設定](https://learn.microsoft.com/purview/retention-settings#settings-for-retaining-and-deleting-content)」を参照してください。
@@ -117,7 +117,7 @@ Original Path または Location Name フィールドを使用することで、
 Update-publicFolderMailbox "affected mailbox" -InvokeSynchronizer -ForceOnlineSync -FullSync
 ```
 DiscoveryHolds フォルダーがメールボックス (例: 2ndmbx) に同期されていない場合、ダンプスター (回復可能なアイテム フォルダー) 内のアイテムは処理されません。メールボックスで強制同期を実行すると、DiscoveryHolds フォルダーが同期され、ダンプスター (回復可能なアイテム フォルダー) 内のアイテムが正常に処理されるようになります。
-![](pfh09.jpg) 
+![](pfh09.jpg)  
 <small style="color: gray;">2ndmbx に対して強制同期を実行すると、DiscoveryHolds フォルダーが同期され、ダンプスター (回復可能なアイテム フォルダー) 内のアイテムが正常に処理されるようになります。</small>
 
 - Outlook on the Web (OWA) において、以前ユーザーのお気に入りに追加されていた完全に削除されたフォルダは、保持期間が満了するまで、新しい保持名 ("Name\_GUID") のままで表示されることがあります。この場合の回避策として、Outlook on the Web のお気に入りから[これらのフォルダーをお気に入りから削除する](https://learn.microsoft.com/exchange/collaboration-exo/public-folders/use-favorite-public-folders)よう、ユーザーへ案内してください。
