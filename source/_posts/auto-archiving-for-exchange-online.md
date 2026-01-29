@@ -1,7 +1,7 @@
 ---
 title: "Exchange Online の自動アーカイブ"
 date: 2025/10/09
-lastupdate: 2026/1/13
+lastupdate: 2026/01/29
 tags: Exchange
 ---
 
@@ -31,6 +31,9 @@ tags: Exchange
 管理フォルダー アシスタントは、プライマリ メールボックスのサイズを継続的に監視します。使用率が現在のクォータの 96% を超え、かつアーカイブ メールボックスがプロビジョニングされていて空き容量がある場合、管理フォルダー アシスタントは自動的に**最も古いアイテム**から順にアーカイブへ移動し、使用率が閾値を下回るまで処理を続けます。同様の仕組みは、クォータに近づいた回復可能なアイテム フォルダー ("Dumpster") にも適用されます。
 
 **注意:** IPM フォルダー内の最も古いアイテムは、受信日時に基づいて判定されます。
+
+<p style="background: #F0F0F0; ">この機能の前提条件や詳細については、<a href="https://learn.microsoft.com/exchange/security-and-compliance/messaging-records-management/auto-archiving" target="_blank" rel="noopener noreferrer">Exchange Onlineでの自動アーカイブ | Microsoft Learn</a> をご参照ください。</p>
+
 #### 提供開始時期
 
 - パブリック プレビュー: 2025 年 11 月 15 日より[対象指定リリース](https://learn.microsoft.com/microsoft-365/admin/manage/release-options-in-office-365?view=o365-worldwide) オプションにオプトインしているテナントで有効化が開始されます。
