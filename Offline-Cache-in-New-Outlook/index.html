@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>新しい Outlook for Windows のオフライン アクセス機能の紹介 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの御正 (ミショウ) です。本記事では新しい Outlook for Windows (2024 年の 8 月から一般公開されました Outlook を示します。以後、新しい Outlook と記します。) のオフライン アクセス機能について解説します。 そもそもオフライン アクセスとはオフライン アクセ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="新しい Outlook for Windows のオフライン アクセス機能の紹介">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Offline-Cache-in-New-Outlook/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの御正 (ミショウ) です。本記事では新しい Outlook for Windows (2024 年の 8 月から一般公開されました Outlook を示します。以後、新しい Outlook と記します。) のオフライン アクセス機能について解説します。 そもそもオフライン アクセスとはオフライン アクセ">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-01-28T02:00:00.000Z">
+<meta property="article:modified_time" content="2026-01-28T02:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="New Outlook">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Offline-Cache-in-New-Outlook" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Offline-Cache-in-New-Outlook/" class="article-date">
+  <time datetime="2026-01-28T02:00:00.000Z" itemprop="datePublished">2026-01-28</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      新しい Outlook for Windows のオフライン アクセス機能の紹介
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Offline-Cache-in-New-Outlook/" class="article-date-single">    
+    
+    <time datetime="2026-01-28T02:00:00.000Z" itemprop="dateUpdated">2026-01-28</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの御正 (ミショウ) です。<br>本記事では新しい Outlook for Windows (2024 年の 8 月から一般公開されました Outlook を示します。以後、新しい Outlook と記します。) のオフライン アクセス機能について解説します。</p>
+<h2 id="そもそもオフライン-アクセスとは"><a href="#そもそもオフライン-アクセスとは" class="headerlink" title="そもそもオフライン アクセスとは"></a>そもそもオフライン アクセスとは</h2><p>オフライン アクセスを利用すると新しい Outlook でネットワーク接続がない環境でもメールを読んだり、下書きメールを作成したりすることができます。<br>オフライン アクセス有効時にネットワーク接続がなくても行える操作は以下の通りです。</p>
+<table>
+<thead>
+<tr>
+<th>Outlook アイテムの読み取り、管理、および表示</th>
+<th>メールに対するアクションの実行</th>
+<th>設定の表示と更新</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>メールの読み取り</td>
+<td>アーカイブ</td>
+<td>Outlook について</td>
+</tr>
+<tr>
+<td>添付ファイルとインライン画像を表示する</td>
+<td>分類</td>
+<td>自動応答</td>
+</tr>
+<tr>
+<td>メールの下書きの作成と保存</td>
+<td>フォルダーへのコピー</td>
+<td>分類</td>
+</tr>
+<tr>
+<td>新しいメッセージを送信トレイに格納する</td>
+<td>削除</td>
+<td>電子メール アカウント</td>
+</tr>
+<tr>
+<td>メールの返信と転送</td>
+<td>フラグ&#x2F;フラグ解除</td>
+<td>連絡先ビュー</td>
+</tr>
+<tr>
+<td>メールの検索</td>
+<td>無視</td>
+<td></td>
+</tr>
+<tr>
+<td>フォルダーの作成、名前の変更、移動、削除</td>
+<td>既読&#x2F;未読としてマーク</td>
+<td></td>
+</tr>
+<tr>
+<td>検索フォルダーの表示</td>
+<td>優先&#x2F;その他への移動</td>
+<td></td>
+</tr>
+<tr>
+<td>アカウントとして追加された共有メールボックスを表示する</td>
+<td>フォルダーに移動する</td>
+<td></td>
+</tr>
+<tr>
+<td>予定表とイベントの表示</td>
+<td>固定 (ピン)</td>
+<td></td>
+</tr>
+<tr>
+<td>連絡先の表示</td>
+<td>迷惑メール &#x2F; 非迷惑メールの報告</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>フィッシング詐欺の報告</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>会議出席依頼への RSVP</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>スヌーズ</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Title: Outlook でオフライン作業する<br>URL: <a target="_blank" rel="noopener" href="https://support.microsoft.com/office/2460e4a8-16c7-47fc-b204-b1549275aac9">https://support.microsoft.com/office/2460e4a8-16c7-47fc-b204-b1549275aac9</a></p>
+<p>新しい Outlook のオフライン アクセス機能ではローカル端末にキャッシュを保存する際に、一般的なブラウザーで利用される Web 標準技術である IndexedDB というデータベースを使用しています。<br>既定で以下のパスにキャッシュが保存されます。</p>
+<pre><code>  %localappdata%\Microsoft\Olk\EBWebView\Default\IndexedDB
+</code></pre>
+<p><strong>IndexedDB は先にも記載したとおり一般的なブラウザーで利用される Web 標準の技術であり、マイクロソフトでサポートを提供している製品ではありません。サポートでは IndexedDB 自体についてのご質問を受け付けることはできかねますので、予めご了承いただければ幸いです。</strong></p>
+<p>従来の Outlook for Windows (Microsoft 365 Apps や永続的なライセンスの Office に付随する Outlook を示します。以後、従来の Outlook と記します。) でオンライン モードとキャッシュ モードを切り替えられるように、オフライン アクセス機能は新しい Outlook にて以下の手順から有効&#x2F;無効にすることができます。</p>
+<p>手順<br>[設定] - [全般] - [オフライン] の [オフライン時のメール、予定表、連絡先を有効にします] のトグルを切り変えます。</p>
+<p>ちなみに、同様の機能として従来の Outlook でもキャッシュ モードを利用していると、Outlook Data File (.ost) というファイルでローカル端末にメールなどのデータが保持されオフライン環境でも利用することができます。<br>既定ではこの OST ファイルは以下のパスに保存されます。</p>
+<pre><code>  %localappdata%\Microsoft\Outlook
+</code></pre>
+<p>なお、従来の Outlook の OST ファイルから新しい Outlook の IndexedDB にデータは引き継がれませんので、新しい Outlook でオフライン アクセス機能を利用する場合は新規にメールをダウンロードします。</p>
+<h2 id="よくある質問"><a href="#よくある質問" class="headerlink" title="よくある質問"></a>よくある質問</h2><p>お問い合わせ窓口によくいただく質問をまとめました。</p>
+<p>Q1. オフライン アクセスの利用に必要なデバイス上の空き容量はどれくらいになるの？<br>A1. 残念ながら、一概に必要な空き容量について公開している情報はありません。また、メールのサイズから IndexedDB で使用するファイルがどれくらいのサイズになるか換算する方法もありません。メールの受信数や、それぞれのメールのサイズは利用者によって異なるので、実績ベースでどの程度のサイズが利用されているか確認しましょう。</p>
+<p>Q2. オフライン アクセス機能を管理者から一元管理することはできるの？<br>A2. Exchange Online にアクセスした PowerShell から Set-OwaMailboxPolicy というコマンドを利用して、オフライン アクセス機能を無効化することができます。具体的には、OfflineEnabledWin というパラメーターを False に設定します。OfflineEnabledWin が既定値の True の場合、ユーザーは新しい Outlook の設定画面からオフライン アクセスの設定を自分で有効または無効にできます。False に変更すると、オフライン アクセス機能は無効になり、新しい Outlook の [設定] - [全般] より [オフライン] が非表示になるため、ユーザーは自分自身で有効にできなくなります。</p>
+<blockquote>
+<p>Set-OwaMailboxPolicy &lt;ポリシー名&gt; -OfflineEnabledWin $false</p>
+</blockquote>
+<p>メールボックスにポリシーを割り当てるには以下コマンドを使用します。</p>
+<blockquote>
+<p>Set-CASMailbox &lt;ユーザー名&gt; -OwaMailboxPolicy &lt;ポリシー名&gt;</p>
+</blockquote>
+<p>メールボックスに OwaMailboxPolicy を割り当てる手順は以下の公開情報でも詳しく紹介されているので、確認してみてください。</p>
+<p>Title: Exchange Onlineのメールボックスに対してメールボックス ポリシーを適用または削除する | Microsoft Learn<br>URL: <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/apply-or-remove-outlook-web-app-mailbox-policy">https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/outlook-on-the-web/apply-or-remove-outlook-web-app-mailbox-policy</a></p>
+<p>Q3. キャッシュを削除したい場合はどうすればいい？<br>A3. 先に記載した新しい Outlook 内の設定でオフライン アクセス機能を手動で無効化する方法か、PowerShell コマンドでオフライン アクセス機能を無効化します。なお、オフライン アクセス機能を無効にすると IndexedDB フォルダー配下のキャッシュの量は小さくなりますが、IndexedDB フォルダーは完全に削除されません。これは IndexedDB のフォルダーにはキャッシュ以外にも新しい Outlook の設定など様々な情報が保存されるためです。IndexedDB フォルダーを手動で削除しても、次回起動時に自動で作成されます。</p>
+<p>Q4. キャッシュの量を削減する方法はある？<br>A4. キャッシュの量を減らしたい場合は、[メールの保存日数] を短く設定してください。さらに、[添付ファイルを含める] をオフにすることで、キャッシュの量をある程度抑えることができます。</p>
+<p>&lt;手順&gt;<br>新しい Outlook で [設定] を開き、[全般] – [オフライン] にある [メールの保存日数] を短くして [保存] を選択します。</p>
+<p>なお、設定した直後にキャッシュの量が減るわけではなく、データ ベースの処理が実行されることで徐々にキャッシュの量が減っていきます。</p>
+<p>Q5. PC の空き容量が少ない場合、オフライン アクセスの設定はどうなる？<br>A5. PC の空き容量が足りない場合は自動的に保存日数が少なくなったり、オフライン アクセス機能が無効化されたりする可能性があります。</p>
+<div style="margin:1.25em;border-left:.25em solid #8957e5;padding:.5em;">
+<div style="margin-bottom:16px;display:flex;align-items:center;line-height:1;color:#8957e5">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px">
+<path fill=#8957e5 d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path>
+</svg>
+重要
+</div>
+<div>
+デバイスで使用できる領域のために、設定に基づいて保存するのに十分なローカル ストレージが得られない場合、保存するアイテムの数が削減されるか、オフライン アクセスが無効になる可能性があります。
+</div>
+</div>
+ 
+<p>Title: Outlook でオフライン作業する<br>URL: <a target="_blank" rel="noopener" href="https://support.microsoft.com/office/outlook-2460e4a8-16c7-47fc-b204-b1549275aac9">https://support.microsoft.com/office/outlook-2460e4a8-16c7-47fc-b204-b1549275aac9</a></p>
+<p><strong>本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Offline-Cache-in-New-Outlook/" data-id="cmkz7rem30034gg2a51l93w2h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/Updated-Exchange-Online-SMTP-AUTH-Basic-Authentication-Deprecation-Timeline/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Exchange Online における SMTP AUTH 基本認証廃止スケジュールの更新のご案内
+
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/Configuration-and-Usage-Guide-for-Keyboard-Shortcuts-in-New-Outlook-for-Windows/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">新しい Outlook for Windows におけるキーボード ショートカットの設定と活用ガイド</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">64</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">43</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">14</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/01/">January 2026</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/exchange-online-public-folder-data-and-retention-questions/">Exchange Online のパブリック フォルダーのデータおよび保持に関する質問</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Updated-Exchange-Online-SMTP-AUTH-Basic-Authentication-Deprecation-Timeline/">Exchange Online における SMTP AUTH 基本認証廃止スケジュールの更新のご案内
+</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Offline-Cache-in-New-Outlook/">新しい Outlook for Windows のオフライン アクセス機能の紹介</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Configuration-and-Usage-Guide-for-Keyboard-Shortcuts-in-New-Outlook-for-Windows/">新しい Outlook for Windows におけるキーボード ショートカットの設定と活用ガイド</a>
+          </li>
+        
+          <li>
+            <a href="/blog/demystifying-exchange-online-mailbox-quotas/">Exchange Online メールボックス クォータの詳細解説</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
