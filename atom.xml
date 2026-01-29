@@ -17,6 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>新しい Outlook for Windows のメール テンプレート機能の紹介</title>
+    <link href="https://jpmessaging.github.io/blog/Introduction-to-the-Email-Template-Features-in-New-Outlook-for-Windows/"/>
+    <id>https://jpmessaging.github.io/blog/Introduction-to-the-Email-Template-Features-in-New-Outlook-for-Windows/</id>
+    <published>2026-01-28T15:00:00.000Z</published>
+    <updated>2026-01-28T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの杉山です。<br>本記事では、新しい Outlook for Windows (以下、新しい Outlook) に 2025 年 11 月に<a href="https://support.microsoft.com/office/c4c33813-1e9a-4304-8499-90fe7f164bd1">新機能</a>として追加されたメール テンプレート機能をご紹介します。<br>メール テンプレートを活用することにより、共通の情報が含まれるメッセージを簡単に作成できますので是非活用ください！  </p><h2 id="メール-テンプレートの作成方法"><a href="#メール-テンプレートの作成方法" class="headerlink" title="メール テンプレートの作成方法"></a>メール テンプレートの作成方法</h2><p>新しい Outlook では以下の手順でメール テンプレートを作成できます。  </p><ol><li>新しいメール メッセージを作成し、共通情報が含まれるメールを作成します。  </li><li>メールを作成後、[ファイル] - [テンプレート] より [メールをテンプレートとして保存] をクリックします。<br>※ [メッセージ] -タブより [メール テンプレート] - [メールをテンプレートとして保存] からも実行できます。  </li><li>[メールをテンプレートとして保存] ダイアログより、メール テンプレートに名前を付け、[保存] をクリックします。</li></ol><p><img src="/blog/Introduction-to-the-Email-Template-Features-in-New-Outlook-for-Windows/Saveemailastemplate.png"></p><h2 id="メール-テンプレートからメールを作成する方法"><a href="#メール-テンプレートからメールを作成する方法" class="headerlink" title="メール テンプレートからメールを作成する方法"></a>メール テンプレートからメールを作成する方法</h2><p>保存したメール テンプレートは新規メール作成時に使用できます。  </p><ol><li>[新規] - [テンプレートからのメール] をクリックします。  </li><li>使用するテンプレートを選択します。</li></ol><p><img src="/blog/Introduction-to-the-Email-Template-Features-in-New-Outlook-for-Windows/Mailfromtemplate.png"><br><img src="/blog/Introduction-to-the-Email-Template-Features-in-New-Outlook-for-Windows/Template.png"></p><h2 id="テンプレートの設定"><a href="#テンプレートの設定" class="headerlink" title="テンプレートの設定"></a>テンプレートの設定</h2><p>保存されたテンプレートは [設定] - [メール] - [テンプレート] より確認できます。<br>※ 新しい Outlook で保存したテンプレートは Outlook on the web でも使用できます。  </p><p><img src="/blog/Introduction-to-the-Email-Template-Features-in-New-Outlook-for-Windows/Settings.png"></p><p>右上の [テンプレートを追加] より OFT ファイルをインポートすることもできます。<br>これにより、従来の Outlook for Windows (以下、従来の Outlook) で利用していたテンプレートの内容をもとに新しい Outlook のテンプレートを追加できます。  </p><p><img src="/blog/Introduction-to-the-Email-Template-Features-in-New-Outlook-for-Windows/Addtemplate.png"></p><div style="margin:1.25em;border-left:4px solid #1a7f37;padding:.5em"><div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#1a7f37"><svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true" style="margin-right:8px"><path fill="#1a7f37" d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tips</div>画面内に記載の通り従来の Outlook で使用していたテンプレートは <span style="background: linear-gradient(transparent 80%, #ffcc99 80%)">%APPDATA%\Microsoft\Templates</span> に保存されていますので、エクスプローラーなどで OFT ファイルを確認できます。</div><p>メール メッセージのテンプレートの作成については<a href="https://support.microsoft.com/office/43ec7142-4dd0-4351-8727-bd0977b6b2d1#officeversion=new_outlook">こちら</a>の公開情報もご一読ください。  </p><p><strong>本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;こんにちは。日本マイクロソフト Exchange &amp;amp; Outlook サポート チームの杉山です。&lt;br&gt;本記事では、新しい Outlook for Windows (以下、新しい Outlook) に 2025 年 11 月に&lt;a href=&quot;https://su</summary>
+      
+    
+    
+    
+    
+    <category term="New Outlook" scheme="https://jpmessaging.github.io/blog/tags/New-Outlook/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Exchange Online のパブリック フォルダーのデータおよび保持に関する質問</title>
     <link href="https://jpmessaging.github.io/blog/exchange-online-public-folder-data-and-retention-questions/"/>
     <id>https://jpmessaging.github.io/blog/exchange-online-public-folder-data-and-retention-questions/</id>
@@ -430,28 +452,6 @@
       
       
     <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/exchange-online-activesync-certificate-based-authentication-endpoint-c</summary>
-      
-    
-    
-    
-    
-    <category term="Exchange" scheme="https://jpmessaging.github.io/blog/tags/Exchange/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Office Online Server (OOS) のサポート終了日が発表されました</title>
-    <link href="https://jpmessaging.github.io/blog/retirement-date-for-office-online-server-oos-has-been-announced/"/>
-    <id>https://jpmessaging.github.io/blog/retirement-date-for-office-online-server-oos-has-been-announced/</id>
-    <published>2025-10-29T15:00:00.000Z</published>
-    <updated>2025-10-29T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/retirement-date-for-office-online-server-oos-has-been-announced/4463222">Retirement Date for Office Online Server (OOS) has been Announced</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>Exchange Server をご利用のお客様向けのお知らせとなります。Office Online Server チームから、Office Online Server (OOS) のサポート終了日が <strong>2026年12月31日</strong> に決定したことが発表されました。詳細は <a href="https://techcommunity.microsoft.com/blog/officeeos/announcing-the-retirement-for-office-online-server/4462402">Announcing the retirement for Office Online Server</a> をご覧ください。</p><p>Office Online Server は、<a href="https://learn.microsoft.com/exchange/plan-and-deploy/install-office-online-server">オンプレミス Exchange Server の環境に統合可能なオプションのコンポーネント</a> であり、Outlook on the web 上でサポートされている種類の添付ファイルをダウンロードせずに閲覧・編集できる機能を提供します。</p><p>Exchange Server では、以下の操作で Office Online Server が利用されています。</p><ul><li>Ootw (Outlook on the web) での Office ファイルのプレビュー表示</li><li>Ootw 上でのライブ編集機能</li></ul><p>Office Online Server のサポート終了後も、Exchange Server で OOS の利用が技術的に妨げられることはありません。ただし、OOS は今後メンテナンスされず、セキュリティ更新プログラムなどの提供も行われませんのでご注意ください。</p><p>なお Office Online Server のサポート終了後、オンプレミス環境のユーザーは添付ファイルを閲覧・編集する際、まずファイルをダウンロードする必要があります。一方で Exchange Online のユーザーは、クラウド環境では OOS が使用されていないため、引き続き Outlook on the web 上で添付ファイルを直接操作できます。</p><p>詳細については、<a href="https://techcommunity.microsoft.com/blog/officeeos/announcing-the-retirement-for-office-online-server/4462402">Announcing the retirement for Office Online Server</a> をご覧ください。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/retirement-date-for-office-online-server-oos-has-been-announced/446322</summary>
       
     
     
