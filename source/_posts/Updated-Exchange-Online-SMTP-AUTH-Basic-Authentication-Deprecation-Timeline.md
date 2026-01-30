@@ -2,7 +2,7 @@
 title: >
  Exchange Online における SMTP AUTH 基本認証廃止スケジュールの更新のご案内
 date: 2026-01-28 12:00:00
-lastupdate:2026-01-30 11:00
+lastupdate: 2026-01-30 11:00
 tags: Exchange Online
 categories:
 ---
