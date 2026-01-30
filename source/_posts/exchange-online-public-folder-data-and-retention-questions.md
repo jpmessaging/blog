@@ -1,6 +1,7 @@
 ---
 title: Exchange Online のパブリック フォルダーのデータおよび保持に関する質問
-date: 2026-1-29
+date: 2026-1-29 17:00
+lastupdate: 2026-1-30 11:00
 tags: Exchange Online
 ---
 ※ この記事は、[Exchange Online Public Folder Data and Retention Questions](https://techcommunity.microsoft.com/blog/exchange/exchange-online-public-folder-data-and-retention-questions/4488872) の抄訳です。最新の情報はリンク先をご確認ください。
@@ -81,7 +82,7 @@ Exchange Online においてパブリック フォルダーを管理する管理
 
 これらの値の確認方法と、正常なクォータの維持に関するガイダンスにつきましては、こちらの[記事](https://techcommunity.microsoft.com/blog/exchange/troubleshooting-public-folder-deletion-issues-in-exchange-online/3819379)を参照してください。
 
-注意: クォータの問題が検出された場合は、以下のスクリプトを使用して対処できます: [Scripts/Public Folders/CheckEXOMePf/CheckEXOMePf.md at main · hazemembaby/Scripts](https://github.com/hazemembaby/Scripts/blob/main/Public%20Folders/ValidateEXOMePf/ValidateEXOMePf.md)
+注意: クォータの問題が検出された場合は、以下のスクリプトを使用して対処できます: [Scripts/Public Folders/CheckEXOMePf/CheckEXOMePf.md at main · hazemembaby/Scripts · GitHub](https://github.com/hazemembaby/Scripts/blob/main/Public%20Folders/CheckEXOMePf/CheckEXOMePf.md)
 
 #### 保持ポリシーの対象となっている削除済みパブリック フォルダー アイテムを復元する方法
 
@@ -124,5 +125,5 @@ DiscoveryHolds フォルダーがメールボックス (例: 2ndmbx) に同期�
 
 ![](pfh10.jpg) 
 
-今回の記事がお役に立てれば幸いです。
+今回の記事がお役に立てれば幸いです。  
 本記事のレビューおよび内容へのご協力をいただいた Bhalchandra Atre に、心より感謝します。
