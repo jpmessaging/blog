@@ -1,6 +1,6 @@
 ---
 title: Exchange Online のメール中断を回避するため、DigiCert Global Root G2 認証局 (CA) を信頼してください
-date: 2026-01-30
+date: 2026-02-02
 lastupdate:
 tags: Exchange Online
 ---
