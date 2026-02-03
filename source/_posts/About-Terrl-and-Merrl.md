@@ -3,7 +3,7 @@ title: 'TERRL と MERRL について'
 date: 2025-12-25
 lastupdate: 2026-01-09
 tags: 
-- Exchange
+- Exchange Online
 --- 
 
 <p style="background: #66FF99;"><strong>2026 年 1 月 6 日 クラウドホスト型メールボックスの外部受信者数制限 (MERRL) に関する重要な更新:</strong> 現在この制限の実装は<strong>キャンセル</strong>されており、実施されないことになりました。このブログ記事に関しましては記録として残されております。詳細については、<a href= https://techcommunity.microsoft.com/blog/exchange/exchange-online-canceling-the-mailbox-external-recipient-rate-limit/4483498>Exchange Online canceling the Mailbox External Recipient Rate Limit</a> (日本語翻訳版は<a href= https://jpmessaging.github.io/blog/exchange-online-canceling-the-mailbox-external-recipient-rate-limit/>こちら</a>) をご覧ください。</p>

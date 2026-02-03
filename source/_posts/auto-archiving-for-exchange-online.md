@@ -2,7 +2,7 @@
 title: "Exchange Online の自動アーカイブ"
 date: 2025/10/09
 lastupdate: 2026/01/29
-tags: Exchange
+tags: Exchange Online
 ---
 
 ※ この記事は、[Auto-Archiving for Exchange Online](https://techcommunity.microsoft.com/blog/exchange/auto-archiving-for-exchange-online/4459735) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
