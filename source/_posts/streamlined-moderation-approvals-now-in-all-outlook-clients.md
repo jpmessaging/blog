@@ -43,7 +43,7 @@ tags: Exchange
       Set-OrganizationConfig -SmtpActionableMessagesEnabled $true 
       Set-OrganizationConfig -ConnectorsActionableMessagesEnabled $true
 
-- Actionable Messages 機能は Microsoft 365 でのみサポートされており、オンプレミス環境ではサポートされていません。そのため、Exchange ハイブリッド構成の組織では、オンプレミスのモデレーターには承認ボタンが表示されません。Actionable Messages への移行を円滑に進めるため、2026 年 7 月 31 日まで従来の投票ボタンとアダプティブ カードの両方のエクスペリエンスをサポートします。それ以降は、新しい Actionable Messages アダプティブ カード方式のみがサポートされるため、モデレーターのメールボックスは Microsoft 365 でホストされている必要があります。
+- Actionable Messages 機能は Microsoft 365 でのみサポートされており、オンプレミスの Exchange 環境では利用できません。そのため、Exchange ハイブリッド構成の組織では、オンプレミスのモデレーターには承認ボタンが表示されません。Actionable Messages への移行を円滑に進めるため、2026 年 7 月 31 日まで従来の投票ボタンとアダプティブ カードの両方のエクスペリエンスをサポートします。それ以降は、新しい Actionable Messages アダプティブ カード方式のみがサポートされるため、モデレーターのメールボックスは Microsoft 365 でホストされている必要があります。
 
 - 移行期間中 (7 月末まで)、モデレーターには承認メッセージがさまざまな形式で表示される場合があります。従来の投票ボタンのみ、アダプティブ カードによる承認ボタンのみ、またはその両方が表示されることがあります。7 月末まではすべての形式がサポートされ、正常に動作します。それ以降は、投票ボタンによる承認は廃止され、Actionable Messages のアダプティブ カードによる承認ボタンのみがサポートおよび表示されるようになります。
 
