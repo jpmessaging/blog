@@ -16,22 +16,17 @@
 
 
   
-  <title>Exchange 2019 から Exchange SE への &#34;インプレース アップグレード&#34; が低リスクである理由 | Japan Exchange &amp; Outlook Support Blog</title>
+  <title>Tag: Exchange Online | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※ この記事は、Why “in-place upgrade” from Exchange 2019 to Exchange SE is low risk の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange Server 2019 から Exchan">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Exchange 2019 から Exchange SE への &quot;インプレース アップグレード&quot; が低リスクである理由">
-<meta property="og:url" content="https://jpmessaging.github.io/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/index.html">
+  <meta name="description" content="日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/tags/Exchange-Online/page/6/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="※ この記事は、Why “in-place upgrade” from Exchange 2019 to Exchange SE is low risk の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange Server 2019 から Exchan">
+<meta property="og:description" content="日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/SERTM.jpg">
-<meta property="article:published_time" content="2025-05-02T07:00:00.000Z">
-<meta property="article:modified_time" content="2025-05-02T07:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
-<meta property="article:tag" content="Exchange">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmessaging.github.io/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/SERTM.jpg">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
@@ -101,121 +96,46 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/" class="article-date">
-  <time datetime="2025-05-02T07:00:00.000Z" itemprop="datePublished">2025-05-02</time>
-</a>
-    <!--  -->
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header-single">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      Exchange 2019 から Exchange SE への &#34;インプレース アップグレード&#34; が低リスクである理由
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/blog/archives/2015" class="archive-year">2015</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/blog/What-to-Do-When-Items-Suddenly-Disappear/" class="archive-article-date">
+  <time datetime="2015-04-14T15:00:00.000Z" itemprop="datePublished">Apr 15</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/blog/What-to-Do-When-Items-Suddenly-Disappear/">突然アイテムが消えた！場合の対策
+</a>
     </h1>
   
 
-      </header>
-      <div class="article-share">
-        Last Update:
-        <a href="/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/" class="article-date-single">    
-    
-    <time datetime="2025-05-02T07:00:00.000Z" itemprop="dateUpdated">2025-05-02</time>
-    
-</a>
-      </div>
-    
-    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
-      
-        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/why-%E2%80%9Cin-place-upgrade%E2%80%9D-from-exchange-2019-to-exchange-se-is-low-risk/4410173">Why “in-place upgrade” from Exchange 2019 to Exchange SE is low risk</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
-<p>Exchange Server 2019 から Exchange Server Subscription Edition (SE) への移行に関して、非常に多くのお客様から寄せられる質問について解説する記事を作成しました。</p>
-<p><a href="/blog/Upgrading%20your%20organization%20from%20current%20versions%20to%20Exchange%20Server%20SE">現行バージョンから Exchange Server SE へのアップグレード</a>で述べたように、Exchange SE への移行方法は次の 2 つがあります。</p>
-<ul>
-<li><strong>従来型 (レガシー) 移行 :</strong> 新しい Exchange サーバーを組織に追加し、メールボックスを移行する方法です。この方法は、Exchange 2016 から Exchange SE への移行では<u>必須</u>ですが、Exchange 2019 から Exchange SE への移行では<u>任意</u>です。</li>
-<li><strong>インプレース アップグレード :</strong> Exchange 2019 CU14&#x2F;CU15 上に Exchange SE RTM をインストールし、Exchange 2019 サーバーを Exchange SE サーバーにアップグレードする方法です。この方法は新しいもので、一部のお客様には「信じられないほど簡単」でリスクがあるのではと見られることがあります。</li>
-</ul>
-<p>この第 2 のアプローチを “低リスク” と見なす理由を説明します。</p>
-<h3 id="新しい-Exchange-バージョンの-RTM-が以前はどのように作成されていたか"><a href="#新しい-Exchange-バージョンの-RTM-が以前はどのように作成されていたか" class="headerlink" title="新しい Exchange バージョンの RTM が以前はどのように作成されていたか"></a>新しい Exchange バージョンの RTM が<em>以前は</em>どのように作成されていたか</h3><p>過去に新しいバージョンの Exchange をリリースする際には、コード ベースで大幅な変更を加えていました。以下は簡略化した説明ですが、一般的な流れを示しています。通常、次のような手順を踏んでいました。</p>
-<ol>
-<li>新バージョンのリリース約 <em>2 年</em>前に、現在市場に出ている製品のバージョンを新製品の “ベース コード” として選定します。</li>
-<li>多数の機能を追加および削除します。</li>
-<li>インストール要件を変更します。</li>
-<li>最低ハードウェア要件を設定します。</li>
-<li>新しいプロダクト キーを作成し、必須とします。</li>
-<li>ビルド システムで “コードのメジャー バージョン” を変更します。(例 : Exchange 2013 の “15.00” から Exchange 2016 の “15.1”、Exchange 2019 の “15.2” への変更。この詳細は<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019">こちらのページ</a>をご覧ください)</li>
-<li>リリース日が近づいた段階で、過去 2 年間に現在市場に出ている製品向けにリリースされた重要な機能やセキュリティ更新、ホットフィックスを移植します。(ステップ 1 がかなり前に行われているため)</li>
-<li>製品名を変更し、EULA (エンド ユーザー ライセンス契約) を更新します。(Exchange イメージ内のファイルです)</li>
-</ol>
-<p>これらの変更の多くは大規模なものであったため、実質的にお客様は次のような対応を求められていました。</p>
-<ul>
-<li>従来型 (サイドバイサイド) 移行を実施する。</li>
-<li>追加または削除された機能が業務プロセスやサード パーティ アプリケーションに影響を与えないことを確認するため、組織内で大規模なテストを行う。</li>
-<li>製品の大幅な変更に伴い、エンド ユーザー向けのトレーニングを開発する。</li>
-<li>RTM ビルドが “高リスク” と見なされるため、CU1 のリリースを待つ。(注 : CU1 を待つことが必須であったわけではありませんが、多くのお客様が少なくとも CU1 がリリースされるまで移行を待つ傾向がありました)</li>
-</ul>
-<h3 id="Exchange-SE-RTM-をどのように作成するか"><a href="#Exchange-SE-RTM-をどのように作成するか" class="headerlink" title="Exchange SE RTM をどのように作成するか"></a>Exchange SE RTM をどのように作成するか</h3><p>従来の新しいバージョンの Exchange RTM 作成時の長いリストとは異なり、Exchange SE RTM は次のように作成されています。</p>
-<ol>
-<li>Exchange 2019 CU15 (最新の CU) を “ベース コード” として使用します。</li>
-<li>CU15 以降に公開されたセキュリティ更新やホットフィックスを追加します。</li>
-<li>製品名を変更し、EULA (エンド ユーザー ライセンス契約) を更新します (Exchange イメージ内のファイル)。</li>
-</ol>
-<p>上記の最初の 2 点は、<em>すべての Exchange CU のリリース時</em>に行われる通常のプロセスです。Exchange CU は常に “累積的” であり、”前回の CU” 以降にリリースされたすべての修正を含んでいます (詳細は<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/plan-and-deploy/post-installation-tasks/security-best-practices/exchange-server-update-faq?view=exchserver-2019">こちら</a>をご覧ください)。したがって、Exchange SE RTM における唯一の<em>新しい</em>変更点は「3. 製品名の変更と EULA の更新」です。</p>
-<p>Exchange 2019 CU15 と比較して、Exchange SE RTM では以下の変更は<strong>行われません</strong>。</p>
-<ul>
-<li>コードのメジャー バージョンの変更</li>
-<li>機能の追加や削除</li>
-<li>CU15 で既にリリースされている更新以外のバグ修正</li>
-<li>新しいプロダクト キーの追加や必須化</li>
-<li>インストール要件やハードウェア要件の変更</li>
-</ul>
-<p>これらの理由から、Exchange 2019 CU14&#x2F;CU15 サーバーに Exchange SE RTM をインストールすることは、実質的には Exchange 2019 の “CU16” をインストールするのと同じですが、この CU の名前を “Exchange SE RTM” に変更しただけです。</p>
-<h3 id="なぜアップグレードする必要があるのか？その目的とは？"><a href="#なぜアップグレードする必要があるのか？その目的とは？" class="headerlink" title="なぜアップグレードする必要があるのか？その目的とは？"></a>なぜアップグレードする必要があるのか？その目的とは？</h3><p>このアプローチにより、いくつかの点で組織の時間的なプレッシャーを軽減することができると考えています。</p>
-<ul>
-<li>Exchange 2019 CU15 以降に大きな変更がないため、広範なテストや検証を行う必要がありません。</li>
-<li>Exchange <del>2019 CU16</del> SE RTM ビルドにアップグレードすることで、Exchange 2019 の固定ライフサイクル ポリシー (<a target="_blank" rel="noopener" href="https://learn.microsoft.com/lifecycle/products/exchange-server-2019">2025 年 10 月 14 日にサポート終了</a>) から Exchange SE のモダン ライフサイクル ポリシーに切り替わり、2025 年 10 月 14 日以降も製品がサポートされます。</li>
-<li>Exchange SE 用にハードウェアをアップグレードしたい場合でも、まず旧ハードウェア上で Exchange SE にインプレース アップグレードを行い、新しいサポート ライフサイクル パスに移行した後で、サーバー ハードウェアをアップグレードする時間を確保できます。</li>
-<li>Exchange SE の機能追加は CU1 から開始されますが、組織は「低リスク」でサポートされた RTM リリースを利用できるため、CU1 のテストに十分な時間を確保できます。</li>
-</ul>
-<h3 id="終わりに"><a href="#終わりに" class="headerlink" title="終わりに"></a>終わりに</h3><p>Exchange SE RTM に対するアプローチは従来とは異なるものであることを認識していますが、その違いについて十分に説明できていなかったかもしれません。エンジニアリング作業の観点から見ると、Exchange SE RTM は機能追加のない “Exchange 2019 CU16” のリブランド版と言えます。すでに Exchange 2019 向けに 15 回の CU をリリースしており、この移行が非常に低リスクであると高い確信を持っています。</p>
-<p>まとめ :<br><img src="/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/SERTM.jpg"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/" data-id="cml6636aq008n342abyg83bty" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/blog/Getting-started-with-new-outlook-for-windows/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          新しい Outlook for Windows の始め方：従来版との違いを学ぶ
-        
-      </div>
-    </a>
-  
-  
-    <a href="/blog/we-are-hiring-2025May/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">サポート エンジニアとして働く仲間を募集しています！</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/blog/tags/Exchange-Online/page/5/">Prev</a><a class="page-number" href="/blog/tags/Exchange-Online/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/tags/Exchange-Online/page/4/">4</a><a class="page-number" href="/blog/tags/Exchange-Online/page/5/">5</a><span class="page-number current">6</span>
+  </nav>
 
 </section>
         
