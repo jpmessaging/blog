@@ -2,7 +2,7 @@
 title: "Exchange Onlineにおけるローカル移動要求 – なぜサポートされていないのか"
 date: 2026/01/14
 lastupdate: 2026/01/16
-tags: Exchange
+tags: Exchange Online
 ---
 
 ※ この記事は、[Local Move Requests in Exchange Online – Why They’re Not Supported](https://techcommunity.microsoft.com/blog/exchange/local-move-requests-in-exchange-online-%E2%80%93-why-they%E2%80%99re-not-supported/4484222) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。

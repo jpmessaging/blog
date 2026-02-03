@@ -2,7 +2,7 @@
 title: "Exchange Online における ActiveSync デバイスのサポートの更新"
 date: 2025/12/16
 lastupdate: 2025/12/17
-tags: Exchange
+tags: Exchange Online
 ---
 
 ※ この記事は、[Exchange Online ActiveSync Device Support Update](https://techcommunity.microsoft.com/blog/exchange/exchange-online-activesync-device-support-update/4477997) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。

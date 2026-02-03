@@ -1,7 +1,7 @@
 ---
 title: "Exchange Online メールボックス クォータの詳細解説"
 date: 2026/01/28 9:00:00
-tags: Exchange
+tags: Exchange Online
 ---
 
 ※ この記事は、[Demystifying Exchange Online Mailbox Quotas](https://techcommunity.microsoft.com/blog/exchange/demystifying-exchange-online-mailbox-quotas/4486474) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。

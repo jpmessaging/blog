@@ -2,7 +2,7 @@
 title: "すべての Outlook クライアントでモデレーション承認が効率化されました"
 date: 2026/02/03
 lastupdate: 2026/02/03
-tags: Exchange
+tags: Exchange Online
 ---
 
 ※ この記事は、[Streamlined Moderation Approvals, Now in All Outlook Clients](https://techcommunity.microsoft.com/blog/exchange/streamlined-moderation-approvals-now-in-all-outlook-clients/4491618) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。

@@ -1,7 +1,7 @@
 ---
 title: "Exchange Online の ActiveSync における証明書ベースの認証エンド ポイントの変更"
 date: 2025/11/6
-tags: Exchange
+tags: Exchange Online
 ---
 
 ※ この記事は、[Exchange Online ActiveSync Certificate-based Authentication endpoint changes](https://techcommunity.microsoft.com/blog/exchange/exchange-online-activesync-certificate-based-authentication-endpoint-changes/4459760) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
