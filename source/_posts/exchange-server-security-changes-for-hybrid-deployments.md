@@ -1,7 +1,7 @@
 ---
 title: 'ハイブリッド展開における Exchange Server のセキュリティ変更'
 date: 2025-04-22 10:00:00
-lastupdate: 2025-02-03
+lastupdate: 2026-02-03
 tags: Exchange
 --- 
 
