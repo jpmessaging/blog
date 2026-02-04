@@ -1,9 +1,11 @@
 ---
 title: 'ハイブリッド展開における Exchange Server のセキュリティ変更'
 date: 2025-04-22 10:00:00
-lastupdate: 2025-08-12
+lastupdate: 2026-02-03
 tags: Exchange
 --- 
+
+<span style="background-color: yellow; font-weight: bold;">2026/2/3 更新: 最新のタイムラインの反映と、Exchange SE のみが Exchange Online との Graph ベースのリッチ共存機能のアップデート対象であることを明確にしました。</span>
 
 ※ この記事は、[Exchange Server Security Changes for Hybrid Deployments](https://techcommunity.microsoft.com/blog/exchange/exchange-server-security-changes-for-hybrid-deployments/4396833) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
@@ -19,7 +21,7 @@ Exchange ハイブリッド専用アプリケーションを有効化および�
 
 ## 変更点 2: Exchange ハイブリッドにおける EWS 呼び出しの廃止と REST ベースの Microsoft Graph API 呼び出しへの移行
 
-[Exchange Web Services (EWS) の Exchange Online での廃止](https://techcommunity.microsoft.com/blog/exchange/retirement-of-exchange-web-services-in-exchange-online/3924440) が予定されています。Exchange ハイブリッド機能を維持するために、Exchange Server は今年後半に、Exchange Server から Exchange Online への EWS 呼び出しの代替として Microsoft Graph API のサポートを開始ます。この機能は、2025 年第 3 四半期にリリースされる Exchange Server 2019 および Exchange Server 2016 の更新プログラムを通じて提供されます。Microsoft Graph への移行に伴い、Exchange ハイブリッド専用アプリケーションが使用する API 権限が見直され、より細かい Graph API 権限を利用するようになります。このリリースに関する追加情報を含むブログ記事およびドキュメントは、リリース時に公開される予定です。
+[Exchange Web Services (EWS) の Exchange Online での廃止](https://techcommunity.microsoft.com/blog/exchange/retirement-of-exchange-web-services-in-exchange-online/3924440) が予定されています。Exchange ハイブリッド機能を維持するために、Exchange Server は今年後半に、Exchange Server から Exchange Online への EWS 呼び出しの代替として Microsoft Graph API のサポートを開始します。この機能は、2026 年第 2 四半期にリリースされる Exchange Server サブスクリプション版 (SE) の更新プログラムを通じて提供されます。Microsoft Graph への移行に伴い、Exchange ハイブリッド専用アプリケーションが使用する API 権限が見直され、より細かい Graph API 権限を利用するようになります。このリリースに関する追加情報を含むブログ記事およびドキュメントは、リリース時に公開される予定です。
 
 **重要:** Exchange Server ハイブリッド環境で Microsoft Graph を利用するには、**Exchange ハイブリッド専用アプリ** (上記の "変更点 1" を参照) が必要です。現在の共有サービス プリンシパルのアプローチは使用されなくなります。この変更は、<u>**Exchange Server (オンプレミス) での EWS API の利用可能性には影響しません**</u>。Exchange Server から Exchange Online への EWS 呼び出しが REST ベースの Microsoft Graph API 呼び出しに置き換えられます。
 
@@ -27,7 +29,7 @@ Exchange ハイブリッド専用アプリケーションを有効化および�
 
 | **組織で以下の Exchange ハイブリッド機能を使用している場合…** | **実施すべきアクションは…** |
 | --- | --- |
-| オンプレミスのメールボックスを持つユーザーと Exchange Online のメールボックスを持つユーザー間でリッチ共存機能 (特定の機能 : 空き時間情報の参照、メール ヒント、プロフィール写真の共有) が必要な場合 | [ドキュメント](https://aka.ms/ConfigureExchangeHybridApplication-Docs)に記載されている*手順を必ず実施し*、(**2025 年 10 月までに**) Exchange ハイブリッド専用アプリを使用するように切り替えてください。その後、(**利用可能になり次第、2026 年 10 月までに**) ハイブリッド構成を Graph API に切り替えてください。これらの手順を実施しない場合、リッチ共存機能が動作しなくなります。<br><br>すべてのサーバーが更新され、Exchange ハイブリッド専用アプリを使用するようになった後、"[サービス プリンシパル クリーンアップ モード](https://aka.ms/ConfigureExchangeHybridApplication-Docs)" を実行してください。 |
+| オンプレミスのメールボックスを持つユーザーと Exchange Online のメールボックスを持つユーザー間でリッチ共存機能 (特定の機能 : 空き時間情報の参照、メール ヒント、プロフィール写真の共有) が必要な場合 | [ドキュメント](https://aka.ms/ConfigureExchangeHybridApplication-Docs)に記載されている*手順を必ず実施し*、(**2025 年 10 月までに**) Exchange ハイブリッド専用アプリを使用するように切り替えてください。その後、(**Exchange SE で利用可能になり次第、2026 年 10 月までに**) ハイブリッド構成を Graph API に切り替えてください。これらの手順を実施しない場合、リッチ共存機能が動作しなくなります。<br><br>すべてのサーバーが更新され、Exchange ハイブリッド専用アプリを使用するようになった後、"[サービス プリンシパル クリーンアップ モード](https://aka.ms/ConfigureExchangeHybridApplication-Docs)" を実行してください。 |
 | その他のハイブリッド機能 (移行、SMTP リレー、受信者管理など) のみを使用しており、*リッチ共存は不要*な場合 | ハイブリッド構成を強化するために、[提供されているスクリプト](https://aka.ms/ConfigureExchangeHybridApplication)を使用して、共有の「Office 365 Exchange Online」アプリケーションから組織証明書を削除することを*推奨*します。"サービス プリンシパル クリーンアップ モード" の詳細は[ドキュメント](https://aka.ms/ConfigureExchangeHybridApplication-Docs)を参照してください。<br><br>リッチ共存機能が不要な場合、Exchange ハイブリッド専用アプリを作成する必要はありません。 |
 
 ## リッチ共存機能が必要な Exchange ハイブリッド利用者は対応が*必須です*
@@ -40,7 +42,7 @@ Exchange ハイブリッド専用アプリケーションを有効化および�
 
 **ステップ 2** – Exchange ハイブリッドを Graph API 呼び出しに切り替え、Exchange ハイブリッド専用アプリの権限をより細かい Graph 権限モデルに更新する作業を、**2026 年 10 月までに**実施してください。
 
-- 2025 年第 3 四半期に、Exchange Server の Graph API 更新プログラムが利用可能になり次第、リッチ共存を必要とするすべてのお客様 (すでに上記のステップ 1 を実施済みの方も含む) は、Exchange 2016/2019 の更新プログラムをインストールし、Exchange ハイブリッド専用アプリの権限をより細かい Graph API 権限モデルに切り替える必要があります。この作業は、**2026 年 10 月までに**完了する必要があります。詳細な手順については、リリース時に提供されるドキュメントをご参照ください。
+- 2026 年第 2 四半期に、Exchange SE の Graph API 更新プログラムが利用可能になり次第、リッチ共存を必要とするすべてのお客様 (すでに上記のステップ 1 を実施済みの方も含む) は、Exchange SE の更新プログラムをインストールし、Exchange ハイブリッド専用アプリの権限をより細かい Graph API 権限モデルに切り替える必要があります。この作業は、**2026 年 10 月までに**完了する必要があります。詳細な手順については、リリース時に提供されるドキュメントをご参照ください。2026 年 10 月以降は、Exchange SE オンプレミス メールボックス サーバーのみが Exchange Online メールボックスとのリッチ共存機能をサポートしますのでご注意ください。
 
 以下の図は、ハイブリッド環境でリッチ共存を利用する組織が、上記の変更 1 および変更 2 に関連して、いつ何が必要になるかを示しています。
 
@@ -55,7 +57,7 @@ Exchange ハイブリッド専用アプリケーションを有効化および�
 
 リッチ共存機能が不要な場合、Exchange ハイブリッド専用アプリを作成する必要はありません。また、このスクリプトの実行は、オンプレミスの Exchange Server のバージョンに依存しません (Exchange Server の更新プログラムをインストールしていなくても、スクリプトを実行できます)。
 
-## 手順全体の概要
+## ステップ 1 の概要
 
 専用の Exchange ハイブリッド アプリへの移行に必要な手順を視覚的に把握できるよう、以下のフローチャートを作成しました。
 
@@ -73,6 +75,7 @@ Exchange ハイブリッド専用アプリケーションを有効化および�
 
 **主な変更点:**
 
+- 2026/2/3： ステップ 1 のプロセスに関するフローチャートを更新と、Graph の更新は Exchange SE のみに提供されることを明確にしました。
 - 2025/8/11 : 手順全体の概要を示すフローチャートを追加しました。
 - 2025/8/7 : ブログ本文内に ConfigureExchangeHybridApplication.ps1 スクリプトへの直接リンクを追加しました。
 - 2025/8/6 : ハイブリッド構成ウィザード (HCW) が Exchange ハイブリッド専用アプリの作成に対応しました。関連する内容を更新しました。
