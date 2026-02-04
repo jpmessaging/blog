@@ -21,7 +21,7 @@ Exchange ハイブリッド専用アプリケーションを有効化および�
 
 ## 変更点 2: Exchange ハイブリッドにおける EWS 呼び出しの廃止と REST ベースの Microsoft Graph API 呼び出しへの移行
 
-[Exchange Web Services (EWS) の Exchange Online での廃止](https://techcommunity.microsoft.com/blog/exchange/retirement-of-exchange-web-services-in-exchange-online/3924440) が予定されています。Exchange ハイブリッド機能を維持するために、Exchange Server は今年後半に、Exchange Server から Exchange Online への EWS 呼び出しの代替として Microsoft Graph API のサポートを開始ます。この機能は、2026 年第 2 四半期にリリースされる Exchange Server サブスクリプション版 (SE) の更新プログラムを通じて提供されます。Microsoft Graph への移行に伴い、Exchange ハイブリッド専用アプリケーションが使用する API 権限が見直され、より細かい Graph API 権限を利用するようになります。このリリースに関する追加情報を含むブログ記事およびドキュメントは、リリース時に公開される予定です。
+[Exchange Web Services (EWS) の Exchange Online での廃止](https://techcommunity.microsoft.com/blog/exchange/retirement-of-exchange-web-services-in-exchange-online/3924440) が予定されています。Exchange ハイブリッド機能を維持するために、Exchange Server は今年後半に、Exchange Server から Exchange Online への EWS 呼び出しの代替として Microsoft Graph API のサポートを開始します。この機能は、2026 年第 2 四半期にリリースされる Exchange Server サブスクリプション版 (SE) の更新プログラムを通じて提供されます。Microsoft Graph への移行に伴い、Exchange ハイブリッド専用アプリケーションが使用する API 権限が見直され、より細かい Graph API 権限を利用するようになります。このリリースに関する追加情報を含むブログ記事およびドキュメントは、リリース時に公開される予定です。
 
 **重要:** Exchange Server ハイブリッド環境で Microsoft Graph を利用するには、**Exchange ハイブリッド専用アプリ** (上記の "変更点 1" を参照) が必要です。現在の共有サービス プリンシパルのアプローチは使用されなくなります。この変更は、<u>**Exchange Server (オンプレミス) での EWS API の利用可能性には影響しません**</u>。Exchange Server から Exchange Online への EWS 呼び出しが REST ベースの Microsoft Graph API 呼び出しに置き換えられます。
 
