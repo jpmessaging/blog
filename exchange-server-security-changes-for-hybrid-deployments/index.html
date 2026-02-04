@@ -18,12 +18,12 @@
   
   <title>ハイブリッド展開における Exchange Server のセキュリティ変更 | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※ この記事は、Exchange Server Security Changes for Hybrid Deployments の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Microsoft の Secure Future Initiative (SFI)">
+  <meta name="description" content="2026&#x2F;2&#x2F;3 更新: 最新のタイムラインの反映と、Exchange SE のみが Exchange Online との Graph ベースのリッチ共存機能のアップデート対象であることを明確にしました。 ※ この記事は、Exchange Server Security Changes for Hybrid Deployments の抄訳です。最新の情報はリンク先をご確認くださ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ハイブリッド展開における Exchange Server のセキュリティ変更">
 <meta property="og:url" content="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="※ この記事は、Exchange Server Security Changes for Hybrid Deployments の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Microsoft の Secure Future Initiative (SFI)">
+<meta property="og:description" content="2026&#x2F;2&#x2F;3 更新: 最新のタイムラインの反映と、Exchange SE のみが Exchange Online との Graph ベースのリッチ共存機能のアップデート対象であることを明確にしました。 ※ この記事は、Exchange Server Security Changes for Hybrid Deployments の抄訳です。最新の情報はリンク先をご確認くださ">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/DedicatedHybirdApp.jpg">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/dha01.jpg">
@@ -125,19 +125,20 @@
         Last Update:
         <a href="/blog/exchange-server-security-changes-for-hybrid-deployments/" class="article-date-single">    
         
-    <time datetime="2025-08-11T15:00:00.000Z" itemprop="lastupdate">2025-08-12</time>    
+    <time datetime="2026-02-02T15:00:00.000Z" itemprop="lastupdate">2026-02-03</time>    
     
 </a>
       </div>
     
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
-        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/exchange-server-security-changes-for-hybrid-deployments/4396833">Exchange Server Security Changes for Hybrid Deployments</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+        <p><span style="background-color: yellow; font-weight: bold;">2026&#x2F;2&#x2F;3 更新: 最新のタイムラインの反映と、Exchange SE のみが Exchange Online との Graph ベースのリッチ共存機能のアップデート対象であることを明確にしました。</span></p>
+<p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/exchange-server-security-changes-for-hybrid-deployments/4396833">Exchange Server Security Changes for Hybrid Deployments</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
 <p>Microsoft の <a target="_blank" rel="noopener" href="https://www.microsoft.com/trust-center/security/secure-future-initiative">Secure Future Initiative (SFI)</a> の一環として、セキュリティは常に最優先事項です。SFI に沿って、Exchange Server ハイブリッド展開のセキュリティを強化するために、いくつかの変更が実施されます。本ブログ記事では、Exchange Server ハイブリッド展開に特化した現在および今後の変更について説明します。なお、組織で Exchange ハイブリッド構成を使用していない場合、本記事の内容は該当しません。</p>
 <h2 id="変更点-1-Exchange-ハイブリッド専用アプリケーションへの移行"><a href="#変更点-1-Exchange-ハイブリッド専用アプリケーションへの移行" class="headerlink" title="変更点 1: Exchange ハイブリッド専用アプリケーションへの移行"></a>変更点 1: Exchange ハイブリッド専用アプリケーションへの移行</h2><p>Exchange ハイブリッド展開機能 (予定表の空き時間情報の共有、メール ヒント、ユーザーのプロフィール写真の共有など、これを “リッチ共存” と呼びます) を実現にするために、Exchange Server は現在、Exchange Online と共有のアプリケーションのサービス プリンシパルを利用しています。このアプリケーションの名前は <em>Office 365 Exchange Online</em> で、アプリケーション ID は <em>00000002-0000-0ff1-ce00-000000000000</em> です。この構成は、ハイブリッド構成ウィザード (HCW) を初めて実行した際に設定され、Exchange Server と Exchange Online 間の通信を認証し、安全に保つために使用されます。</p>
 <p>2025 年 4 月の更新プログラム (<a href="/blog/released-april-2025-exchange-server-hotfix-updates/">2025 年 4 月の HU リリース</a>) 以降、Exchange Server はテナントの Entra ID 内に用意した Exchange ハイブリッド専用アプリケーションを使用するよう移行を開始します。2025 年 10 月までに、リッチ共存機能を必要とするすべての既存および新規の Exchange Server ハイブリッド展開は、Exchange ハイブリッド専用アプリケーションを<u><strong>使用する必要があります</strong></u>。この期限を過ぎると、Exchange Online サービスは共有サービス プリンシパルの使用を許可しなくなります。</p>
 <p>Exchange ハイブリッド専用アプリケーションを有効化および使用するためには、管理者がいくつかの変更を行う必要があります。詳細については、<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">ドキュメント</a> をご参照ください。</p>
-<h2 id="変更点-2-Exchange-ハイブリッドにおける-EWS-呼び出しの廃止と-REST-ベースの-Microsoft-Graph-API-呼び出しへの移行"><a href="#変更点-2-Exchange-ハイブリッドにおける-EWS-呼び出しの廃止と-REST-ベースの-Microsoft-Graph-API-呼び出しへの移行" class="headerlink" title="変更点 2: Exchange ハイブリッドにおける EWS 呼び出しの廃止と REST ベースの Microsoft Graph API 呼び出しへの移行"></a>変更点 2: Exchange ハイブリッドにおける EWS 呼び出しの廃止と REST ベースの Microsoft Graph API 呼び出しへの移行</h2><p><a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/retirement-of-exchange-web-services-in-exchange-online/3924440">Exchange Web Services (EWS) の Exchange Online での廃止</a> が予定されています。Exchange ハイブリッド機能を維持するために、Exchange Server は今年後半に、Exchange Server から Exchange Online への EWS 呼び出しの代替として Microsoft Graph API のサポートを開始ます。この機能は、2025 年第 3 四半期にリリースされる Exchange Server 2019 および Exchange Server 2016 の更新プログラムを通じて提供されます。Microsoft Graph への移行に伴い、Exchange ハイブリッド専用アプリケーションが使用する API 権限が見直され、より細かい Graph API 権限を利用するようになります。このリリースに関する追加情報を含むブログ記事およびドキュメントは、リリース時に公開される予定です。</p>
+<h2 id="変更点-2-Exchange-ハイブリッドにおける-EWS-呼び出しの廃止と-REST-ベースの-Microsoft-Graph-API-呼び出しへの移行"><a href="#変更点-2-Exchange-ハイブリッドにおける-EWS-呼び出しの廃止と-REST-ベースの-Microsoft-Graph-API-呼び出しへの移行" class="headerlink" title="変更点 2: Exchange ハイブリッドにおける EWS 呼び出しの廃止と REST ベースの Microsoft Graph API 呼び出しへの移行"></a>変更点 2: Exchange ハイブリッドにおける EWS 呼び出しの廃止と REST ベースの Microsoft Graph API 呼び出しへの移行</h2><p><a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/retirement-of-exchange-web-services-in-exchange-online/3924440">Exchange Web Services (EWS) の Exchange Online での廃止</a> が予定されています。Exchange ハイブリッド機能を維持するために、Exchange Server は今年後半に、Exchange Server から Exchange Online への EWS 呼び出しの代替として Microsoft Graph API のサポートを開始します。この機能は、2026 年第 2 四半期にリリースされる Exchange Server サブスクリプション版 (SE) の更新プログラムを通じて提供されます。Microsoft Graph への移行に伴い、Exchange ハイブリッド専用アプリケーションが使用する API 権限が見直され、より細かい Graph API 権限を利用するようになります。このリリースに関する追加情報を含むブログ記事およびドキュメントは、リリース時に公開される予定です。</p>
 <p><strong>重要:</strong> Exchange Server ハイブリッド環境で Microsoft Graph を利用するには、<strong>Exchange ハイブリッド専用アプリ</strong> (上記の “変更点 1” を参照) が必要です。現在の共有サービス プリンシパルのアプローチは使用されなくなります。この変更は、<u><strong>Exchange Server (オンプレミス) での EWS API の利用可能性には影響しません</strong></u>。Exchange Server から Exchange Online への EWS 呼び出しが REST ベースの Microsoft Graph API 呼び出しに置き換えられます。</p>
 <h2 id="誰がいつ対応が必要なのか"><a href="#誰がいつ対応が必要なのか" class="headerlink" title="誰がいつ対応が必要なのか"></a>誰がいつ対応が必要なのか</h2><table>
 <thead>
@@ -148,7 +149,7 @@
 </thead>
 <tbody><tr>
 <td>オンプレミスのメールボックスを持つユーザーと Exchange Online のメールボックスを持つユーザー間でリッチ共存機能 (特定の機能 : 空き時間情報の参照、メール ヒント、プロフィール写真の共有) が必要な場合</td>
-<td><a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">ドキュメント</a>に記載されている<em>手順を必ず実施し</em>、(<strong>2025 年 10 月までに</strong>) Exchange ハイブリッド専用アプリを使用するように切り替えてください。その後、(<strong>利用可能になり次第、2026 年 10 月までに</strong>) ハイブリッド構成を Graph API に切り替えてください。これらの手順を実施しない場合、リッチ共存機能が動作しなくなります。<br><br>すべてのサーバーが更新され、Exchange ハイブリッド専用アプリを使用するようになった後、”<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">サービス プリンシパル クリーンアップ モード</a>“ を実行してください。</td>
+<td><a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">ドキュメント</a>に記載されている<em>手順を必ず実施し</em>、(<strong>2025 年 10 月までに</strong>) Exchange ハイブリッド専用アプリを使用するように切り替えてください。その後、(<strong>Exchange SE で利用可能になり次第、2026 年 10 月までに</strong>) ハイブリッド構成を Graph API に切り替えてください。これらの手順を実施しない場合、リッチ共存機能が動作しなくなります。<br><br>すべてのサーバーが更新され、Exchange ハイブリッド専用アプリを使用するようになった後、”<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">サービス プリンシパル クリーンアップ モード</a>“ を実行してください。</td>
 </tr>
 <tr>
 <td>その他のハイブリッド機能 (移行、SMTP リレー、受信者管理など) のみを使用しており、<em>リッチ共存は不要</em>な場合</td>
@@ -162,7 +163,7 @@
 </ul>
 <p><strong>ステップ 2</strong> – Exchange ハイブリッドを Graph API 呼び出しに切り替え、Exchange ハイブリッド専用アプリの権限をより細かい Graph 権限モデルに更新する作業を、<strong>2026 年 10 月までに</strong>実施してください。</p>
 <ul>
-<li>2025 年第 3 四半期に、Exchange Server の Graph API 更新プログラムが利用可能になり次第、リッチ共存を必要とするすべてのお客様 (すでに上記のステップ 1 を実施済みの方も含む) は、Exchange 2016&#x2F;2019 の更新プログラムをインストールし、Exchange ハイブリッド専用アプリの権限をより細かい Graph API 権限モデルに切り替える必要があります。この作業は、<strong>2026 年 10 月までに</strong>完了する必要があります。詳細な手順については、リリース時に提供されるドキュメントをご参照ください。</li>
+<li>2026 年第 2 四半期に、Exchange SE の Graph API 更新プログラムが利用可能になり次第、リッチ共存を必要とするすべてのお客様 (すでに上記のステップ 1 を実施済みの方も含む) は、Exchange SE の更新プログラムをインストールし、Exchange ハイブリッド専用アプリの権限をより細かい Graph API 権限モデルに切り替える必要があります。この作業は、<strong>2026 年 10 月までに</strong>完了する必要があります。詳細な手順については、リリース時に提供されるドキュメントをご参照ください。2026 年 10 月以降は、Exchange SE オンプレミス メールボックス サーバーのみが Exchange Online メールボックスとのリッチ共存機能をサポートしますのでご注意ください。</li>
 </ul>
 <p>以下の図は、ハイブリッド環境でリッチ共存を利用する組織が、上記の変更 1 および変更 2 に関連して、いつ何が必要になるかを示しています。</p>
 <p><img src="/blog/exchange-server-security-changes-for-hybrid-deployments/DedicatedHybirdApp.jpg"></p>
@@ -171,7 +172,7 @@
 <h2 id="その他の-Exchange-ハイブリッド利用者への推奨事項"><a href="#その他の-Exchange-ハイブリッド利用者への推奨事項" class="headerlink" title="その他の Exchange ハイブリッド利用者への推奨事項"></a>その他の Exchange ハイブリッド利用者への推奨事項</h2><p>リッチ共存機能を利用していない場合でも、組織で過去に Exchange ハイブリッド構成ウィザード (HCW) を実行・完了している、または <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/configure-oauth-authentication-between-exchange-and-exchange-online-organizations-exchange-2013-help">Exchange と Exchange Online 組織間の OAuth 認証を構成する</a>ドキュメントに記載された手順を実施している場合、HCW の実行過程で組織証明書が共有サービス プリンシパルにアップロードされています。</p>
 <p>ハイブリッド構成のセキュリティ強化のため、<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication">提供されているスクリプト</a>を使用して、共有の「Office 365 Exchange Online」アプリケーションから組織証明書を削除することを強く推奨します。詳細は<a target="_blank" rel="noopener" href="https://aka.ms/ConfigureExchangeHybridApplication-Docs">ドキュメント</a>の「サービス プリンシパル Clean-Up モード」をご参照ください。</p>
 <p>リッチ共存機能が不要な場合、Exchange ハイブリッド専用アプリを作成する必要はありません。また、このスクリプトの実行は、オンプレミスの Exchange Server のバージョンに依存しません (Exchange Server の更新プログラムをインストールしていなくても、スクリプトを実行できます)。</p>
-<h2 id="手順全体の概要"><a href="#手順全体の概要" class="headerlink" title="手順全体の概要"></a>手順全体の概要</h2><p>専用の Exchange ハイブリッド アプリへの移行に必要な手順を視覚的に把握できるよう、以下のフローチャートを作成しました。</p>
+<h2 id="ステップ-1-の概要"><a href="#ステップ-1-の概要" class="headerlink" title="ステップ 1 の概要"></a>ステップ 1 の概要</h2><p>専用の Exchange ハイブリッド アプリへの移行に必要な手順を視覚的に把握できるよう、以下のフローチャートを作成しました。</p>
 <p><img src="/blog/exchange-server-security-changes-for-hybrid-deployments/dha01.jpg"></p>
 <p><strong>フローチャート内の各ステップの補足説明:</strong></p>
 <ol>
@@ -182,6 +183,7 @@
 <h2 id="よくあるご質問"><a href="#よくあるご質問" class="headerlink" title="よくあるご質問"></a>よくあるご質問</h2><p>このトピックに関するよくあるご質問 (FAQ) は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app#frequently-asked-questions">公開情報</a>に移動しました。</p>
 <p><strong>主な変更点:</strong></p>
 <ul>
+<li>2026&#x2F;2&#x2F;3： ステップ 1 のプロセスに関するフローチャートを更新と、Graph の更新は Exchange SE のみに提供されることを明確にしました。</li>
 <li>2025&#x2F;8&#x2F;11 : 手順全体の概要を示すフローチャートを追加しました。</li>
 <li>2025&#x2F;8&#x2F;7 : ブログ本文内に ConfigureExchangeHybridApplication.ps1 スクリプトへの直接リンクを追加しました。</li>
 <li>2025&#x2F;8&#x2F;6 : ハイブリッド構成ウィザード (HCW) が Exchange ハイブリッド専用アプリの作成に対応しました。関連する内容を更新しました。</li>
@@ -195,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/" data-id="cml66369m005q342aetzgb9be" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/" data-id="cml7gnhcc005ko02a5ynq0nll" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
