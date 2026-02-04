@@ -7,7 +7,7 @@ tags: Exchange Online
 categories:
 ---
 
-<span style="background-color: yellow; font-weight: bold;">2026/2/3 編集: オンボーディングに関する詳細な手順は、[こちら](https://learn.microsoft.com/en-us/exchange/monitoring/trace-an-email-message/graph-api-message-trace) に纏めました。</span>
+<span style="background-color: yellow; font-weight: bold;">2026/2/3 編集: オンボーディングに関する詳細な手順は、[こちら](https://learn.microsoft.com/exchange/monitoring/trace-an-email-message/graph-api-message-trace) に纏めました。</span>
 
 ※ この記事は、[Message Trace Support Using Graph API is now in Public Preview](https://techcommunity.microsoft.com/blog/exchange/message-trace-support-using-graph-api-is-now-in-public-preview/4488587) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
