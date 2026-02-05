@@ -1,13 +1,15 @@
 ---
 title: Exchange Online のメール中断を回避するため、DigiCert Global Root G2 認証局 (CA) を信頼してください
 date: 2026-02-02
-lastupdate:
+lastupdate: 2026-02-05 11:00
 tags: Exchange Online
 ---
 
 ※ この記事は、[Trust DigiCert Global Root G2 Certificate Authority to Avoid Exchange Online Email Disruption](https://techcommunity.microsoft.com/blog/exchange/trust-digicert-global-root-g2-certificate-authority-to-avoid-exchange-online-ema/4488311) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-組織と Exchange Online 間のメール フローの中断を回避するために、Exchange Online との間でメールを送受信する組織は、**2026 年 4 月 30 日までに**、サーバーとクライアントが **DigiCert Global Root G2 認証局 (Certificate Authority (以降、CA)) およびその下位 CA** を信頼するようにする必要があります。
+<p style="background: #f5ff66ed;"><strong>2026 年 2 月 4 日更新:</strong> 一部のメール プロバイダーが 4 月 15 日以降、DigiCert G1 ルート証明書を信頼しなくなる可能性があるとの通知を受けております。これにより、メール エコシステム全体で広範な影響が生じる可能性があります。この状況に先立って、Exchange Online にて証明書の切り替えを実施できるようにするため、お客様は **2026 年 3 月 15 日まで** (以前は 4 月 30 日まで) に DigiCert Global Root G2 認証局を信頼していただく必要があります。</p>
+
+組織と Exchange Online 間のメール フローの中断を回避するために、Exchange Online との間でメールを送受信する組織は、**2026 年 3 月 15 日までに**、サーバーとクライアントが **DigiCert Global Root G2 認証局 (Certificate Authority (以降、CA)) およびその下位 CA** を信頼するようにする必要があります。
 
 ルート CA と下位 CA のチェーンの包括的な一覧は、[Azure 証明機関の詳細](https://learn.microsoft.com/azure/security/fundamentals/azure-certificate-authority-details?tabs=certificate-authority-chains#root-and-subordinate-certificate-authority-chains) のドキュメントおよび [DigiCert ナレッジベース](https://knowledge.digicert.com/general-information/digicert-trusted-root-authority-certificates#otherroots) で確認できます。
 
@@ -93,7 +95,7 @@ certutil -addstore Root "C:\path\to\m365_root_certs.p7b"
 
 #### 対応しないとどうなるか
 
-DigiCert Global Root G2 ルート証明書をインストールせず、システムが古いルート証明書に依存して検証を行っている場合、2026 年 4 月 30 日以降、メール フローが中断される可能性があります。発生する具体的な問題は、オペレーティング システムとアプリケーションの構成によって異なります。以下にいくつかの例を示します:
+DigiCert Global Root G2 ルート証明書をインストールせず、システムが古いルート証明書に依存して検証を行っている場合、2026 年 3 月 15 日以降、メール フローが中断される可能性があります。発生する具体的な問題は、オペレーティング システムとアプリケーションの構成によって異なります。以下にいくつかの例を示します:
 
 Exchange Online がオンプレミスの Exchange Server に接続できない場合、Exchange Online 管理センターでメッセージ追跡を実行すると、以下のような内容が表示されることがあります:
 
@@ -112,7 +114,7 @@ OpenSSL を使用して接続する場合 (例: Linux オペレーティング �
 
 #### まとめ
 
-このブログ記事に記載されている手順を **2026 年 4 月 30 日までに** 完了することが非常に重要です。これらの更新を実施しない場合、組織と Exchange Online 間のメール フローに重大な中断が発生する可能性があります。
+このブログ記事に記載されている手順を **2026 年 3 月 15 日までに** 完了することが非常に重要です。これらの更新を実施しない場合、組織と Exchange Online 間のメール フローに重大な中断が発生する可能性があります。
 
 必要な証明書がインストールされ、最新の状態であることを確認することで、お客様のシステムと Microsoft 365 間の安全で中断のない通信を維持できます。期限後のメール配信に関する潜在的な問題を回避するために、これらの対応を優先的に実施してください。
 
