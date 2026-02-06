@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange Online EWS：廃止期限が迫っています | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Exchange Online EWS, Your Time is Almost Up の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange Web Services (EWS) は Exchange Online でのサービス終了が">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange Online EWS：廃止期限が迫っています">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Exchange Online EWS, Your Time is Almost Up の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange Web Services (EWS) は Exchange Online でのサービス終了が">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/EWS01.jpg">
+<meta property="article:published_time" content="2026-02-06T03:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-06T03:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/EWS01.jpg">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-exchange-online-ews-your-time-is-almost-up" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/exchange-online-ews-your-time-is-almost-up/" class="article-date">
+  <time datetime="2026-02-06T03:00:00.000Z" itemprop="datePublished">2026-02-06</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange Online EWS：廃止期限が迫っています
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/exchange-online-ews-your-time-is-almost-up/" class="article-date-single">    
+    
+    <time datetime="2026-02-06T03:00:00.000Z" itemprop="dateUpdated">2026-02-06</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361">Exchange Online EWS, Your Time is Almost Up</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p><strong>Exchange Web Services (EWS) は Exchange Online でのサービス終了が近づいています。</strong> この変更については、2018 年に <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/upcoming-changes-to-exchange-web-services-ews-api-for-office-365/608055">Exchange Web Services (EWS) の機能更新を終了する</a> と初めて発表しました。その後 2023 年には、<a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/microsoft365dev/retirement-of-exchange-web-services-in-exchange-online/">EWS が 2026 年 10 月に Exchange Online で無効化される</a>ことを発表しました。</p>
+<p>本日、2026 年 10 月に開始し、2027 年に EWS を完全に停止するまで段階的に実施される、管理者が制御可能な無効化計画について発表します。本記事では、何が起こるのか、いつ起こるのか、そして管理者が <em>今</em> から何をすべきかについて説明します。</p>
+<p>本日の発表および EWS の廃止は <strong>Microsoft 365 および Exchange Online（すべての環境）にのみ適用されます</strong>。<strong>Exchange Server の EWS に変更はありません。</strong></p>
+<h3 id="EWS-が廃止される理由"><a href="#EWS-が廃止される理由" class="headerlink" title="EWS が廃止される理由"></a>EWS が廃止される理由</h3><p>EWS は約 20 年前に構築されたもので、これまでエコシステムに大きく貢献してきましたが、現在求められているセキュリティ、スケール、信頼性の要件にはもはや適合しなくなっています。過去数年で、以下のような状況が進んでいます。</p>
+<ul>
+<li>Microsoft Graph は、EWS の利用シナリオの大部分において<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online#roadmap-for-parity-gaps">ほぼ完全な機能互換</a>を達成しています。</li>
+<li>Microsoft 自身のアプリケーションは、既に EWS から移行済みか、または移行をほぼ完了しています。</li>
+<li>多くのサード パーティ ベンダーも既に移行を完了しているか、積極的に移行を進めています。</li>
+</ul>
+<p>EWS を廃止することで、レガシーな機能の範囲を縮小し、プラットフォームの動作を簡素化するとともに、すべてのユーザーにより一貫したモダンなエクスペリエンスを提供できるようになります。</p>
+<h3 id="EWS-はどのように無効化されますか？"><a href="#EWS-はどのように無効化されますか？" class="headerlink" title="EWS はどのように無効化されますか？"></a>EWS はどのように無効化されますか？</h3><p>EWS は <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/client-developer/exchange-web-services/how-to-control-access-to-ews-in-exchange"><em>EWSEnabled</em> プロパティ</a> を使用して <strong>テナント単位</strong> で無効化されます。このプロパティは <strong>True、False、Null</strong> (現在の既定値) の 3 つの値があります。また、2026 年初頭に提供予定の新機能として、管理者は <strong>AppID 許可リスト</strong> を定義できるようになります。この機能を有効にすると、そのリストに登録されたアプリのみが EWS にアクセスできるようになります。</p>
+<p>テナント内の <em>EWSEnabled</em> プロパティは、2026 年 10 月 1 日（またはその直後）に以下のように変更されます。</p>
+<table>
+<thead>
+<tr>
+<th><strong>EWSEnabled の値</strong></th>
+<th><strong>2026 年 10 月以前</strong></th>
+<th><strong>2026 年 10 月以降</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>True</strong></td>
+<td>すべての EWS が許可</td>
+<td>許可リスト内のアプリのみ許可</td>
+</tr>
+<tr>
+<td><strong>False</strong></td>
+<td>すべての EWS がブロック</td>
+<td>すべての EWS がブロック</td>
+</tr>
+<tr>
+<td><strong>Null</strong></td>
+<td>すべての EWS が許可</td>
+<td>すべての EWS が許可 (許可リストは無視)</td>
+</tr>
+</tbody></table>
+<p>2026 年 10 月 1 日時点で <em>EWSEnabled</em> が引き続き <strong>Null</strong> に設定されているテナントでは、展開の進行に伴い、値が <strong>False</strong> に変更されます。展開完了後、当該テナント内のすべてのアプリケーションに対して EWS がブロックされます。</p>
+<p>EWS をブロックしたままにしておきたい場合は、特に何もせず、そのままにしておくだけです。</p>
+<p>一方、引き続き EWS を利用する必要がある場合は、次の 2 つの選択肢があります。</p>
+<ol>
+<li><em>EWSEnabled</em> を <strong>True</strong> に設定し、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/baseline-security-mode/baseline-security-mode-settings?view=o365-worldwide">ベースライン セキュリティ モード</a>または Exchange Online PowerShell 経由で許可リストを管理する。</li>
+<li><em>EWSEnabled</em> を <strong>Null</strong> に戻すことで、最終的な廃止が行われるまでの間、EWS が制限なしで再度有効化になります。この操作は Exchange Online PowerShell を使用して行う必要があります。</li>
+</ol>
+<p>さらに、<strong>2026 年 8 月末までに</strong>許可リストを事前に設定し、<em>EWSEnabled</em> を <strong>True</strong> に設定したテナントは、10 月 1 日の自動変更（EWSEnabled&#x3D;False）から除外されます。</p>
+<p>この移行期間を支援するため、2026 年 9 月までに許可リストを作成していないお客様に対して、各テナントの実際の利用状況に基づいて、許可リストを事前に自動作成します。なお、2026 年 10 月に EWS がブロックされた後、引き続き EWS が必要であることに気付いた場合でも、管理者は EWSEnabled を <strong>True</strong> に設定することで EWS を再度有効化できます。ただし、この場合はサービスの一時的な中断が生じることに注意してください。</p>
+<h3 id="主要な日程"><a href="#主要な日程" class="headerlink" title="主要な日程"></a>主要な日程</h3><p><strong>準備期間（現在）</strong></p>
+<p>この段階では、EWS は引き続き利用可能ですが、管理者は以下の準備を行うことが推奨されます。</p>
+<ul>
+<li>Microsoft 365 管理センターで <a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/admin/activity-reports/ews-usage?view=o365-worldwide">EWS の使用状況レポート</a> を確認し、必要に応じて公開されているスクリプトの使用を検討してください。</li>
+<li>オプション：2026 年 8 月末までに、許可リストを設定し、<em>EWSEnabled</em> を <strong>True</strong> に設定してください。</li>
+<li>Microsoft Graph へのアプリケーション移行を開始してください。</li>
+</ul>
+<p><strong>EWS を引き続き使用しているテナントに対する初回ブロック – 2026 年 10 月 1 日から開始</strong></p>
+<p>2026 年 8 月までに許可リストや、EWSEnabled&#x3D;True を明示的に設定していない Exchange Online テナントでは、EWS は <strong>既定でブロック</strong> （EWSEnabled&#x3D;False）される予定です。この時点で、以下の状態になります。</p>
+<ul>
+<li>管理者が事前に対応を行われていない場合、EWS のリクエストはブロックされます。</li>
+<li>重要な業務フローに影響が出る場合、管理者は EWSEnabled&#x3D;True に設定することで、一時的に EWS を有効化できます。</li>
+</ul>
+<p><strong>EWS の最終的な停止 – 2027 年 4 月 1 日</strong><br><strong>2027 年 4 月 1 日</strong> から、EWS は <strong>完全かつ恒久的に無効化</strong> されます。</p>
+<ul>
+<li>テナント管理者による <em>EWSEnabled</em> を制御する機能は削除されます。</li>
+</ul>
+<p>以下は、タイムラインの図です。<br><img src="/blog/exchange-online-ews-your-time-is-almost-up/EWS01.jpg"></p>
+<h3 id="継続的な情報提供と監視"><a href="#継続的な情報提供と監視" class="headerlink" title="継続的な情報提供と監視"></a>継続的な情報提供と監視</h3><p>予期しない問題を回避するため、管理者にテナント固有の EWS 使用状況のサマリーとリマインダーを含む <strong>monthly Message Center posts</strong> を配信します。</p>
+<p>また、<strong>一時的な「スクリームテスト」</strong> （短い期間に EWS を一時的にオフにしてからオンに戻すテスト）を実施する場合があります。これにより、最終的なカットオフ前に潜在的な依存関係を明らかにするのに役立ちます。詳細については、今後数週間でお知らせします。</p>
+<h3 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h3><p>今こそ、利用環境を評価し、アプリケーションの開発元と連携しながら、Microsoft Graph への移行計画を立てる適切な時期です。早期の対応により、予期しない問題を回避でき、よりスムーズな移行が実現できます。</p>
+<h3 id="よくあるご質問"><a href="#よくあるご質問" class="headerlink" title="よくあるご質問"></a>よくあるご質問</h3><p><strong>既に EWSApplicationAccessPolicy 設定を使用して EWS ブロックを構成しています。新しい許可リストと既存のリストはどのように連携しますか？</strong><br>新しい AppID 許可リストが優先されます。アプリが EWS にアクセスするためには、両方のチェックにクリアする必要があります。</p>
+<p><strong>EWS を使用しているアプリケーションがたくさんあります。移行にどのくらいの作業が必要か全くわかりません。どうすればよいですか！</strong><br>まず、公開されている使用状況ツールをご利用ください (ワールドワイド テナントは<a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/admin/activity-reports/ews-usage?view=o365-worldwide">こちら</a>)。ほとんどのアプリはごく限られた EWS の機能しか使用していません。最新のツール（AI 活用した移行を含む）を利用することで、想像しているよりも簡単に移行できるケースが多くあります。</p>
+<p><strong>Microsoft Graph API とは機能差分がありますが、EWS から Graph へ本当に移行できるのでしょうか?</strong><br>Microsoft では残っている機能差分を積極的に追跡し、その状況を公開しています。ほとんどの EWS ベースのワークロードは現在移行可能です。最新の機能差分の状況については、このページ <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online#roadmap-for-parity-gaps">Exchange Online での Exchange Web Services の廃止 | Microsoft Learn</a> を確認してください。このドキュメントは常に最新の内容に更新されており、新しい情報が利用可能になり次第、関連する追加情報へのリンクも随時掲載します。</p>
+<p><strong>オンプレミス Exchange やハイブリッド構成の場合はにどうなりますか？</strong><br>EWS はオンプレミスでは廃止されません。ハイブリッド構成については、アプリケーションがどのようにデータへアクセスしているかによって対応が異なります。オンプレミスのメールボックスへのアクセスは EWS を引き続き使用でき、クラウド メールボックスへのアクセスは Microsoft Graph に移行する必要があります。<br>アプリケーションは Autodiscover を利用して、メールボックスの場所 (オンプレミスかクラウドか) を自動的に判別できます。  </p>
+<p>ただし、Exchange Online への Microsoft Graph 経由のアクセスをサポートするのは Exchange SE のみであるため、ハイブリッド環境におけるオンプレミス メールボックスは Exchange SE を<em>使用することが前提となります</em>。詳細は<a href="https://jpmessaging.github.io/blog/exchange-server-security-changes-for-hybrid-deployments/">こちら</a>をご覧ください。</p>
+<p><strong>2027 年 4 月までに準備が間に合いません。延長を受けることはできますか？</strong><br>2027 年 4 月以降の例外措置はありません。</p>
+<p><strong>2026 年 8 月に許可リストを作成せずに EWSEnabled&#x3D;True を設定できますか？</strong><br>はい、設定できますが、管理者が自分のニーズに合わせて許可リストを作成することをお勧めします。2026 年 9 月には、各テナントの使用状況に基づいて、許可リストが自動作成されます。8 月に EWSEnabled&#x3D;True だけを設定し、9 月に許可リストを自動作成される場合、管理者が把握していないアプリケーション（使用状況が確認されている場合）も含まれる可能性があります。2026 年 10 月以降に許可する EWS アプリケーションを正確に制御するためにも、管理者が自ら許可リストを作成することを推奨します。</p>
+<p><strong>2026 年 8 月までに独自の許可リストを作成した場合、2026 年 9 月にすべてのテナントの自動許可リスト作成処理で、その内容は変更されますか？</strong><br>いいえ。独自の許可リストを作成した場合、自動許可リスト作成処理によって既に作成された許可リストが変更されることはありません。作成済みの許可リストは、そのまま維持されます。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/" data-id="cmlaktqnf005ny42advl1gaka" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/streamlined-moderation-approvals-now-in-all-outlook-clients/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">すべての Outlook クライアントでモデレーション承認が効率化されました</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">58</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">52</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/02/">February 2026</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/01/">January 2026</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/exchange-online-ews-your-time-is-almost-up/">Exchange Online EWS：廃止期限が迫っています</a>
+          </li>
+        
+          <li>
+            <a href="/blog/streamlined-moderation-approvals-now-in-all-outlook-clients/">すべての Outlook クライアントでモデレーション承認が効率化されました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/trust-digicert-global-root-g2-certificate-authority-to-avoid-exchange-online-ema/">Exchange Online のメール中断を回避するため、DigiCert Global Root G2 認証局 (CA) を信頼してください</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-online-public-folder-data-and-retention-questions/">Exchange Online のパブリック フォルダーのデータおよび保持に関する質問</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Introduction-to-the-Email-Template-Features-in-New-Outlook-for-Windows/">新しい Outlook for Windows のメール テンプレート機能の紹介</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
