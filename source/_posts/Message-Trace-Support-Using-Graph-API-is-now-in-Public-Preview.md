@@ -2,7 +2,7 @@
 title: >
  Graph API を使用したメッセージ トレースのサポートにおけるパブリック プレビューのご案内
 date: 2026-01-22
-lastupdate: 2026-02-06
+lastupdate: 2026-02-09
 tags: Exchange Online
 categories:
 ---
