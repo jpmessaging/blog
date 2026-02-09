@@ -11,7 +11,7 @@ categories:
 
 ※ この記事は、[Message Trace Support Using Graph API is now in Public Preview](https://techcommunity.microsoft.com/blog/exchange/message-trace-support-using-graph-api-is-now-in-public-preview/4488587) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-Graph API を使用したメッセージ トレースのサポートが正式リリース (GA) となったことをお知らせします。コミュニティからのフィードバックを受け、メッセージ トレース全体のエクスペリエンスを改善するための強化を行っています。伴って、本機能は現在正式リリース (GA) されています。
+Graph API を使用したメッセージ トレースのサポートが正式リリース (GA) となったことをお知らせします。コミュニティからのフィードバックを受けて、メッセージ トレースのエクスペリエンス向上に向けた強化を実施してきましたが、このたび本機能は正式リリース (GA) されました。
 この RESTful Web API を使用すると、Exchange Online 組織全体での電子メールメッセージを追跡できます。
 Graph API を使用した新しいメッセージトレース サポートは、既存の Reporting Webservice API を使用したメッセージ トレースを置き換えるものです。
 詳細については、Graph API ドキュメント [exchangeMessageTrace resource type - Microsoft Graph beta | Microsoft Learn](https://learn.microsoft.com/graph/api/resources/exchangemessagetrace?view=graph-rest-beta) をご参照ください。
