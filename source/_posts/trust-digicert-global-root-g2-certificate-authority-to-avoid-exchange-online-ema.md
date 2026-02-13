@@ -97,7 +97,7 @@ certutil -addstore Root "C:\path\to\m365_root_certs.p7b"
 ごく一部のお客様では、中間証明書についても明示的に検証を行っているケースがあります（これは一般的ではありません）。
 上記で言及した .p7b のバンドルには、中間証明書は含まれていません。
 証明書の信頼関係を手動で管理しており、かつ中間証明書についても検証が必要な場合（これは非常に稀です）は、以下のページで該当する証明書を確認できます。
- [Azure Certificate Authority details | Microsoft Learn](https://learn.microsoft.com/en-us/azure/security/fundamentals/azure-certificate-authority-details?tabs=certificate-authority-chains#root-and-subordinate-certificate-authority-chains).
+ [Azure Certificate Authority details | Microsoft Learn](https://learn.microsoft.com/azure/security/fundamentals/azure-certificate-authority-details?tabs=certificate-authority-chains#root-and-subordinate-certificate-authority-chains).
 
 #### 対応しないとどうなるか
 
