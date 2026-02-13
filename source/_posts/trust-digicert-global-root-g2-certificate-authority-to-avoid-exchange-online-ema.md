@@ -1,7 +1,7 @@
 ---
 title: Exchange Online のメール中断を回避するため、DigiCert Global Root G2 認証局 (CA) を信頼してください
 date: 2026-02-02
-lastupdate: 2026-02-05 11:00
+lastupdate: 2026-02-13
 tags: Exchange Online
 ---
 
@@ -93,6 +93,12 @@ certutil -addstore Root "C:\path\to\m365_root_certs.p7b"
 
 上記の「お使いのマシンに DigiCert Global Root G2 証明書がインストールされているか確認する」セクションで説明した PowerShell コマンドを実行して、インポートが正常に完了したことを確認してください。
 
+##### オプション - 中間証明書も明示的に検証しているお客様向け
+ごく一部のお客様では、中間証明書についても明示的に検証を行っているケースがあります（これは一般的ではありません）。
+上記で言及した .p7b のバンドルには、中間証明書は含まれていません。
+証明書の信頼関係を手動で管理しており、かつ中間証明書についても検証が必要な場合（これは非常に稀です）は、以下のページで該当する証明書を確認できます。
+ [Azure Certificate Authority details | Microsoft Learn](https://learn.microsoft.com/en-us/azure/security/fundamentals/azure-certificate-authority-details?tabs=certificate-authority-chains#root-and-subordinate-certificate-authority-chains).
+
 #### 対応しないとどうなるか
 
 DigiCert Global Root G2 ルート証明書をインストールせず、システムが古いルート証明書に依存して検証を行っている場合、2026 年 3 月 15 日以降、メール フローが中断される可能性があります。発生する具体的な問題は、オペレーティング システムとアプリケーションの構成によって異なります。以下にいくつかの例を示します:
@@ -119,3 +125,7 @@ OpenSSL を使用して接続する場合 (例: Linux オペレーティング �
 必要な証明書がインストールされ、最新の状態であることを確認することで、お客様のシステムと Microsoft 365 間の安全で中断のない通信を維持できます。期限後のメール配信に関する潜在的な問題を回避するために、これらの対応を優先的に実施してください。
 
 **備考** Exchange Online をご利用のお客様には、メッセージ センター (MC) にて MC1224565 として本件に関する投稿が公開されています。
+
+*更新履歴*
+- **2026/2/10:** 中間証明書に関する注記を追加しました (非常に稀なケースです)
+- **2026/2/4:** 業界全体での廃止の進行速度を受けて、期限を 3 月 15 日に変更しました
