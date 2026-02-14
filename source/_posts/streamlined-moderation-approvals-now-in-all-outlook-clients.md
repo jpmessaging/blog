@@ -1,7 +1,7 @@
 ---
 title: "すべての Outlook クライアントでモデレーション承認が効率化されました"
 date: 2026/02/03
-lastupdate: 2026/02/03
+lastupdate: 2026/02/14
 tags: Exchange Online
 ---
 
@@ -33,8 +33,8 @@ tags: Exchange Online
 
 #### これらのアップデートが利用可能となる時期
 
-モデレーション承認用の Actionable Messages アダプティブ カードは、2026 年 2 月下旬から展開を開始し、2026 年 4 月上旬までに完了する見込みです (Worldwide および GCC 環境向け)。GCC High および DoD 環境では Actionable Messages がまだサポートされていないため、これらの環境では当面の間、従来の投票ボタン方式によるモデレーション承認が継続されます。
-承認メッセージの統合も同じく 2 月から 4 月にかけて、すべての環境 (Worldwide、GCC、GCC High、DoD) で展開されます。
+モデレーション承認用の Actionable Messages アダプティブ カードは、2026 年 3 月上旬から展開を開始し、2026 年 4 月下旬までに完了する見込みです (Worldwide および GCC 環境向け)。GCC High および DoD 環境では Actionable Messages がまだサポートされていないため、これらの環境では当面の間、従来の投票ボタン方式によるモデレーション承認が継続されます。
+承認メッセージの統合も同じく 3 月上旬から 4 月下旬にかけて、すべての環境 (Worldwide、GCC、GCC High、DoD) で展開されます。
 
 #### 管理者向けの注意事項
 
