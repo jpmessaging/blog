@@ -6,7 +6,7 @@
   <link href="https://jpmessaging.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2026-02-14T00:00:00.000Z</updated>
+  <updated>2026-02-14T00:41:51.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Multi-Geo In-Region Routing が一般提供 (GA) 開始</title>
+    <link href="https://jpmessaging.github.io/blog/multi-geo-in-region-routing-general-availability/"/>
+    <id>https://jpmessaging.github.io/blog/multi-geo-in-region-routing-general-availability/</id>
+    <published>2026-02-14T00:41:51.000Z</published>
+    <updated>2026-02-14T00:41:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/multi-geo-in-region-routing-general-availability/4494860">Multi-Geo In-Region Routing General Availability</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p><a href="https://learn.microsoft.com/microsoft-365/enterprise/configure-multi-geo-in-region-routing?view=o365-worldwide"><strong>Multi-Geo In-Region Routing</strong></a> の<strong>一般提供 (GA)<strong>が 2025 年 12 月に開始されたことをお知らせします。この新機能は <a href="https://learn.microsoft.com/microsoft-365/enterprise/microsoft-365-multi-geo?view=o365-worldwide">Microsoft 365 Multi-Geo Capabilities add-on (“Multi-Geo”)</a> の価値を拡張し、世界中に分散されたユーザーを持つ Multi-Geo 環境の管理者に対して、</strong>受信方向の匿名メールとハイブリッド メールが Exchange Online テナントに入る場所</strong>を制御できる機能を提供します。</p><h4 id="なぜ-In-Region-Routing-が必要なのか"><a href="#なぜ-In-Region-Routing-が必要なのか" class="headerlink" title="なぜ In-Region Routing が必要なのか?"></a>なぜ In-Region Routing が必要なのか?</h4><p>既定では、Multi-Geo を使用する Microsoft 365 テナントへの<strong>すべての受信方向の匿名メールとハイブリッド メール</strong>は、最初に<strong>テナントのリージョン</strong>で Exchange Online に入り、その後 Microsoft のセキュアな内部ネットワーク内でメール受信者にリレーされます。世界中に分散されたユーザーを持つお客様にとって、このモデルは業務要件を完全には満たさない場合があります。</p><p>Multi-Geo In-Region Routing は、この課題に対処するために構築されました。</p><h4 id="Multi-Geo-In-Region-Routing-で何ができるのか"><a href="#Multi-Geo-In-Region-Routing-で何ができるのか" class="headerlink" title="Multi-Geo In-Region Routing で何ができるのか?"></a>Multi-Geo In-Region Routing で何ができるのか?</h4><p>In-Region Routing を使用すると、以下の受信メールが Exchange Online に入る地理的な場所を制御できます:</p><ul><li><strong>匿名の受信メール</strong></li><li><strong>オンプレミスからのハイブリッド受信メール</strong></li></ul><p>Multi-Geo In-Region Routing は、テナントが適切に構成されている場合、匿名の受信メールとハイブリッド受信メールが受信者ユーザーと同じ地域の Exchange Online に入ることを確実にするのに役立ちます。</p><h4 id="どのように機能するのか-概要"><a href="#どのように機能するのか-概要" class="headerlink" title="どのように機能するのか (概要)"></a>どのように機能するのか (概要)</h4><p>In-Region Routing により、以下のことができます:</p><ul><li><strong>承認済みドメイン</strong>を特定のリージョンに関連付ける</li><li>これらのドメインを同じ地域に位置するユーザーと関連させる</li><li>これらのドメインの受信メールとハイブリッド メールが、受信者のリージョンの Exchange Online に入るようにする</li></ul><h4 id="Multi-Geo-の自然な拡張"><a href="#Multi-Geo-の自然な拡張" class="headerlink" title="Multi-Geo の自然な拡張"></a>Multi-Geo の自然な拡張</h4><p>In-Region Routing は Multi-Geo に含まれる機能であり、既存の Multi-Geo 機能に基づいています。適切に構成されると、In-Region Routing ドメインの受信メールはテナントのプライマリ プロビジョニング リージョンに最初に入るのではなく、受信者のリージョンに直接入るようになります。これは、お客様に Microsoft 365 がグローバル環境でどのように動作するかについて、意味のある透過的なコントロールを提供するための 1 つのステップです。</p><h4 id="始め方"><a href="#始め方" class="headerlink" title="始め方"></a>始め方</h4><p>既に Multi-Geo を使用しているか、または使用を計画している場合は、ドメインとユーザーの位置を確認し、In-Region Routing が規制要件または組織要件を満たすのに役立つかどうかを検討する絶好の機会です。</p><p>詳細: <a href="https://learn.microsoft.com/microsoft-365/enterprise/configure-multi-geo-in-region-routing?view=o365-worldwide">複数地域の In-Region ルーティングを構成する - Microsoft 365 Enterprise | Microsoft Learn</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/multi-geo-in-region-routing-general-availability/4494860&quot;&gt;Multi-Geo In</summary>
+      
+    
+    
+    
+    
+    <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
+    
+  </entry>
   
   <entry>
     <title>Exchange Online PowerShell における -Credential パラメーターの廃止</title>
@@ -429,28 +451,6 @@
       
       
     <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/using-excludefromallholds-to-remove-holds-from-inactive-mailboxes/4476</summary>
-      
-    
-    
-    
-    
-    <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Exchange Online における ActiveSync デバイスのサポートの更新</title>
-    <link href="https://jpmessaging.github.io/blog/exchange-online-activesync-device-support-update/"/>
-    <id>https://jpmessaging.github.io/blog/exchange-online-activesync-device-support-update/</id>
-    <published>2025-12-15T15:00:00.000Z</published>
-    <updated>2025-12-15T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/exchange-online-activesync-device-support-update/4477997">Exchange Online ActiveSync Device Support Update</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p><a href="https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/exchange-activesync/exchange-activesync">Exchange ActiveSync</a> (EAS) デバイスの Exchange Online への接続に関する重要な変更についてお知らせします。<strong>2026 年 3 月 1 日</strong>以降、ActiveSync のバージョンが <em>16.1 未満</em>のデバイスは、弊社のサービスに接続できなくなります。EAS 16.1 は、2016 年 6 月に Exchange Server および Exchange Online の一部としてリリースされました。</p><p>この決定は、できるだけ多くのユーザーがスムーズに移行できるよう、複数のライセンスを持つデバイス ベンダーおよびアプリケーション ベンダーとの広範な協力のもとで検討された結果です。ユーザーおよび組織がデバイスとアプリケーションを最新のサポート対象バージョンに更新していれば、サービスへの影響は最小限に抑えられる見込みです。変更が適用される前に、デバイスおよびアプリケーションが最新の状態であることをご確認ください。</p><p>管理者は、PowerShell を使用して、ActiveSync のバージョン 16.1 未満を使用しているデバイスとアプリのレポートを素早く取得できます。以下は実行例です:</p><pre><code>Get-MobileDevice -ResultSize Unlimited | Where-Object &#123;($_.ClientType -eq &#39;EAS&#39; -or $_.ClientType -match &#39;ActiveSync&#39;) -and $_.ClientVersion -and ([version]$_.ClientVersion -lt [version]&#39;16.1&#39;)&#125; | Sort-Object UserDisplayName | Select-Object UserDisplayName, Identity, DeviceId, DeviceModel | Format-List</code></pre><p>デバイスの更新に関してご質問がある場合やサポートが必要な場合は、お使いのデバイスまたはアプリケーションのベンダーにお問い合わせください。</p><p>なお、このアナウンスは Exchange Online のみが対象であり (Exchange Server は対象外)、なおかつネイティブ メール アプリを使用しているモバイル デバイスのみが対象となります。例えば Exchange Online のメールボックスにアクセスする際の iOS メール アプリ (iOS 10 で EAS 16.1 に対応)、Gmail アプリ、Samsung メール アプリ (これらは現在アプリの更新作業中のため、最新バージョンに更新することで順次 16.1 を使用するようになります) などが該当します。<a href="https://www.microsoft.com/microsoft-365/outlook-mobile-for-android-and-ios">Outlook Mobile</a> を使用して Exchange Online に接続しているデバイスは、EAS プロトコルを使用していないため、この変更の影響を受けません。</p><p>すべてのユーザーに安全で信頼性の高い環境を維持するためのご協力に感謝いたします。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/exchange-online-activesync-device-support-update/4477997&quot;&gt;Exchange Onl</summary>
       
     
     
