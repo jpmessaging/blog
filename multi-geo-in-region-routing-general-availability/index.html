@@ -18,12 +18,12 @@
   
   <title>Multi-Geo In-Region Routing が一般提供 (GA) 開始 | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※ この記事は、Multi-Geo In-Region Routing General Availability の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Multi-Geo In-Region Routing の一般提供 (GA)が 2025 年 12">
+  <meta name="description" content="※ この記事は、Multi-Geo In-Region Routing General Availability の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Multi-Geo In-Region Routing の一般提供 (GA) が 2025 年 12">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Multi-Geo In-Region Routing が一般提供 (GA) 開始">
 <meta property="og:url" content="https://jpmessaging.github.io/blog/multi-geo-in-region-routing-general-availability/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="※ この記事は、Multi-Geo In-Region Routing General Availability の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Multi-Geo In-Region Routing の一般提供 (GA)が 2025 年 12">
+<meta property="og:description" content="※ この記事は、Multi-Geo In-Region Routing General Availability の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Multi-Geo In-Region Routing の一般提供 (GA) が 2025 年 12">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-02-14T00:41:51.000Z">
 <meta property="article:modified_time" content="2026-02-14T00:41:51.000Z">
@@ -130,7 +130,7 @@
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
         <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/multi-geo-in-region-routing-general-availability/4494860">Multi-Geo In-Region Routing General Availability</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/enterprise/configure-multi-geo-in-region-routing?view=o365-worldwide"><strong>Multi-Geo In-Region Routing</strong></a> の<strong>一般提供 (GA)<strong>が 2025 年 12 月に開始されたことをお知らせします。この新機能は <a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/enterprise/microsoft-365-multi-geo?view=o365-worldwide">Microsoft 365 Multi-Geo Capabilities add-on (“Multi-Geo”)</a> の価値を拡張し、世界中に分散されたユーザーを持つ Multi-Geo 環境の管理者に対して、</strong>受信方向の匿名メールとハイブリッド メールが Exchange Online テナントに入る場所</strong>を制御できる機能を提供します。</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/enterprise/configure-multi-geo-in-region-routing?view=o365-worldwide"><strong>Multi-Geo In-Region Routing</strong></a> の<strong>一般提供 (GA)</strong> が 2025 年 12 月に開始されたことをお知らせします。この新機能は <a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/enterprise/microsoft-365-multi-geo?view=o365-worldwide">Microsoft 365 Multi-Geo Capabilities add-on (“Multi-Geo”)</a> の価値を拡張し、世界中に分散されたユーザーを持つ Multi-Geo 環境の管理者に対して、<strong>受信方向の匿名メールとハイブリッド メールが Exchange Online テナントに入る場所</strong>を制御できる機能を提供します。</p>
 <h4 id="なぜ-In-Region-Routing-が必要なのか"><a href="#なぜ-In-Region-Routing-が必要なのか" class="headerlink" title="なぜ In-Region Routing が必要なのか?"></a>なぜ In-Region Routing が必要なのか?</h4><p>既定では、Multi-Geo を使用する Microsoft 365 テナントへの<strong>すべての受信方向の匿名メールとハイブリッド メール</strong>は、最初に<strong>テナントのリージョン</strong>で Exchange Online に入り、その後 Microsoft のセキュアな内部ネットワーク内でメール受信者にリレーされます。世界中に分散されたユーザーを持つお客様にとって、このモデルは業務要件を完全には満たさない場合があります。</p>
 <p>Multi-Geo In-Region Routing は、この課題に対処するために構築されました。</p>
 <h4 id="Multi-Geo-In-Region-Routing-で何ができるのか"><a href="#Multi-Geo-In-Region-Routing-で何ができるのか" class="headerlink" title="Multi-Geo In-Region Routing で何ができるのか?"></a>Multi-Geo In-Region Routing で何ができるのか?</h4><p>In-Region Routing を使用すると、以下の受信メールが Exchange Online に入る地理的な場所を制御できます:</p>
@@ -142,17 +142,17 @@
 <h4 id="どのように機能するのか-概要"><a href="#どのように機能するのか-概要" class="headerlink" title="どのように機能するのか (概要)"></a>どのように機能するのか (概要)</h4><p>In-Region Routing により、以下のことができます:</p>
 <ul>
 <li><strong>承認済みドメイン</strong>を特定のリージョンに関連付ける</li>
-<li>これらのドメインを同じ地域に位置するユーザーと関連させる</li>
+<li>これらのドメインを同じリージョンに位置するユーザーと関連させる</li>
 <li>これらのドメインの受信メールとハイブリッド メールが、受信者のリージョンの Exchange Online に入るようにする</li>
 </ul>
 <h4 id="Multi-Geo-の自然な拡張"><a href="#Multi-Geo-の自然な拡張" class="headerlink" title="Multi-Geo の自然な拡張"></a>Multi-Geo の自然な拡張</h4><p>In-Region Routing は Multi-Geo に含まれる機能であり、既存の Multi-Geo 機能に基づいています。適切に構成されると、In-Region Routing ドメインの受信メールはテナントのプライマリ プロビジョニング リージョンに最初に入るのではなく、受信者のリージョンに直接入るようになります。これは、お客様に Microsoft 365 がグローバル環境でどのように動作するかについて、意味のある透過的なコントロールを提供するための 1 つのステップです。</p>
-<h4 id="始め方"><a href="#始め方" class="headerlink" title="始め方"></a>始め方</h4><p>既に Multi-Geo を使用しているか、または使用を計画している場合は、ドメインとユーザーの位置を確認し、In-Region Routing が規制要件または組織要件を満たすのに役立つかどうかを検討する絶好の機会です。</p>
+<h4 id="始め方"><a href="#始め方" class="headerlink" title="始め方"></a>始め方</h4><p>既に Multi-Geo を使用しているか、または使用を計画している場合は、ドメインとユーザーの関連を確認し、In-Region Routing が規制要件または組織要件を満たすのに役立つかどうかを検討する絶好の機会です。</p>
 <p>詳細: <a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/enterprise/configure-multi-geo-in-region-routing?view=o365-worldwide">複数地域の In-Region ルーティングを構成する - Microsoft 365 Enterprise | Microsoft Learn</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/multi-geo-in-region-routing-general-availability/" data-id="cmllm6vl30073b8nmenwzc3ns" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/multi-geo-in-region-routing-general-availability/" data-id="cmllpcbn700771cnmdk988qrj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
