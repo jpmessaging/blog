@@ -1,7 +1,7 @@
 ---
 title: Exchange Online PowerShell における -Credential パラメーターの廃止
 date: 2026-2-14 9:00:00
-lastupdate: 
+lastupdate: 2026-02-18
 tags: Exchange Online
 ---
 ※ この記事は、[Deprecation of the -Credential Parameter in Exchange Online PowerShell](https://techcommunity.microsoft.com/blog/exchange/deprecation-of-the--credential-parameter-in-exchange-online-powershell/4494584) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
@@ -12,6 +12,8 @@ Exchange Online のセキュリティ強化に向けた継続的な取り組み�
 Microsoft は、すべてのサービスにおいて、より安全で最新の認証方式へ段階的に移行しています。この取り組みの一環として、多要素認証 (MFA) は Microsoft クラウド サービス全体における必須のセキュリティ要件となりつつあります。従来の Resource Owner Password Credentials (ROPC) 認証フローは MFA をサポートしていないため、Microsoft によるセキュリティ基準強化の一環として、廃止に向けた段階に入っています。さらに、Microsoft の各種サービスで使用されている認証ライブラリである Microsoft Authentication Library (MSAL) においても、バージョン 4.74.0 以降、ROPC を非推奨としています。
 
 Exchange Online PowerShell の -Credential パラメーターは ROPC に依存しているため、MFA や条件付きアクセスの要件を満たしていません。MFA の強制適用、先進認証に関する原則、ならびに Microsoft の包括的なセキュリティ基準に対応するため、**2026 年 6 月以降** にリリースされる新しい Exchange Online PowerShell バージョンでは、-Credential パラメーターのサポートが廃止される予定です。
+
+`この変更は Connect-ExchangeOnline と Connect-IppsSession の両方のコマンドレットに適用されます。`
 
 タイムライン上は 2026 年 6 月までですが、期限まで待たずに可能な限り早期に -Credential パラメーターの使用から移行することを強く推奨します。
 
@@ -27,7 +29,10 @@ Exchange Online PowerShell の -Credential パラメーターは ROPC に依存�
 
 #### タイムライン
 - **現在の状態:** *-Credential* パラメーターは現時点でもサポートされており、2026 年 6 月末までにリリースされるすべてのモジュールで引き続き利用可能です。
-- **推奨される対応 (即座に実施):** *Connect-ExchangeOnline コマンドレットを使用して Exchange Online に接続する際に、-Credential パラメーターを使わない方法へ切り替え始めてください。*
+- **推奨される対応 (即座に実施):** *Connect-ExchangeOnline または Connect-IppsSession コマンドレットを使用して Exchange Online に接続する際に、-Credential パラメーターを使わない方法へ切り替え始めてください。*
 - **2026 年 6 月以降:** 2026 年以降にリリースされる Exchange Online PowerShell モジュールの新しいバージョンでは、-Credential パラメーターはサポートされなくなります。
 
 代替認証フローにおいて不足している点やサポートされていないシナリオがありましたら、今後のアップデートで優先的に対応するため、コメント欄でお知らせください。
+
+更新履歴:
+- 2/17/2026: この変更は *Connect-ExchangeOnline* と *Connect-IppsSession* の両方に適用されることを追記しました。
