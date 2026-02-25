@@ -94,7 +94,7 @@ certutil -addstore Root "C:\path\to\m365_root_certs.p7b"
 上記の「お使いのマシンに DigiCert Global Root G2 証明書がインストールされているか確認する」セクションで説明した PowerShell コマンドを実行して、インポートが正常に完了したことを確認してください。
 
 ##### オプション - 中間証明書も明示的に検証しているお客様向け
-ごく一部のお客様では、中間証明書についても明示的に検証を行っているケースがあります（これは一般的ではありません）。
+一部の利用者では、Windows CTL Updater 機能を使用せず、独自の管理ソリューション（例：グループ ポリシー）を用いて、信頼済みおよび信頼されていないルート証明書および中間証明書を管理しているケースがあります。
 上記で言及した .p7b のバンドルには、中間証明書は含まれていません。
 証明書の信頼関係を手動で管理しており、かつ中間証明書についても検証が必要な場合（これは非常に稀です）は、以下のページで該当する証明書を確認できます。
  [Azure Certificate Authority details | Microsoft Learn](https://learn.microsoft.com/azure/security/fundamentals/azure-certificate-authority-details?tabs=certificate-authority-chains#root-and-subordinate-certificate-authority-chains).
