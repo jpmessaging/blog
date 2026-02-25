@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>現場レポート：EWS 廃止前に行う EWS アプリ利用状況の確認と対策 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Notes From the Field: Finding and Remediating EWS App Usage Before Retirement の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 本記事では、現在も Exchange We">
+<meta property="og:type" content="article">
+<meta property="og:title" content="現場レポート：EWS 廃止前に行う EWS アプリ利用状況の確認と対策">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Notes From the Field: Finding and Remediating EWS App Usage Before Retirement の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 本記事では、現在も Exchange We">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-02-24T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-24T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/" class="article-date">
+  <time datetime="2026-02-24T15:00:00.000Z" itemprop="datePublished">2026-02-25</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      現場レポート：EWS 廃止前に行う EWS アプリ利用状況の確認と対策
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/" class="article-date-single">    
+    
+    <time datetime="2026-02-24T15:00:00.000Z" itemprop="dateUpdated">2026-02-25</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/4496469">Notes From the Field: Finding and Remediating EWS App Usage Before Retirement</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>本記事では、現在も Exchange Web Services（EWS）を利用している Azure AD アプリの特定方法を実例ベースで解説します。また、Microsoft Graph への移行を進めるうえで考慮が必要となる、Kiosk&#x2F;Frontline ライセンス変更の影響についてもご紹介します。</p>
+<p>Microsoft は 2026 年 10 月 1 日より Exchange Online において EWS のブロックを開始することを発表しています。EWS に依存している基幹業務アプリケーション、サードパーティ製ツール、または自動化処理が残っている場合、まずは「現在何が EWS を使用しているのか」を把握し、そのうえで Microsoft Graph などのサポートされている代替手段への移行計画を立てます。</p>
+<h3 id="変更内容と、今対応が必要な理由"><a href="#変更内容と、今対応が必要な理由" class="headerlink" title="変更内容と、今対応が必要な理由"></a>変更内容と、今対応が必要な理由</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/retirement-of-exchange-web-services-in-exchange-online/3924440"><strong>Exchange Online における EWS の廃止</strong></a>：Microsoft は <strong>2026 年 10 月 1 日</strong>より Exchange Online において EWS リクエストをブロックする予定です。そのため、EWS を使用した各種連携については、Microsoft Graph への移行が推奨されています。</li>
+<li><a href="https://jpmessaging.github.io/blog/update-to-ews-access-for-kiosk--frontline-worker-licensed-users/"><strong>Kiosk&#x2F;Frontline ライセンス ユーザー向けの EWS アクセス制限</strong></a>：<strong>2026 年 6 月末</strong>より、Microsoft は <strong>EWS へのアクセス権を持たないライセンス</strong> (一部の Kiosk ライセンスや Frontline Worker 向けライセンス) が割り当てられているユーザーに対して EWS へのアクセスをブロックします。この変更により、該当するライセンスを使用しているユーザーでは、10 月の全体的な廃止日より前に EWS ベースの連携が動作しなくなる可能性があります。</li>
+</ul>
+<p>Microsoft Graph への移行を 2026 年 10 月よりも大幅に前倒しで完了する予定であっても、2026 年 6 月末に実施されるライセンス関連のブロックを踏まえ、該当ライセンスが割り当てられたユーザーが EWS を使用しているかどうかを確認する必要があります。そのような確認において有用なのが、<a target="_blank" rel="noopener" href="https://github.com/jmartinmsft/Exchange-App-Usage-Reporting">Exchange-App-Usage-Reporting</a> スクリプトです。このスクリプトを活用することで、EWS の権限を持つアプリを洗い出し、直近のサインイン アクティビティとあわせて把握できるため、優先的に対応すべき対象を効率的に見極めることができます。</p>
+<h3 id="Exchange‑App‑Usage‑Reporting-スクリプトでできること"><a href="#Exchange‑App‑Usage‑Reporting-スクリプトでできること" class="headerlink" title="Exchange‑App‑Usage‑Reporting スクリプトでできること"></a>Exchange‑App‑Usage‑Reporting スクリプトでできること</h3><p>このスクリプトは、次のような実際の運用上の疑問に答えるために設計されています。<em>テナント内で EWS の権限を持つ Azure AD のアプリはどれか、そしてそれらは現在も使用されているのか？</em> 大まかには、次の処理を行います。</p>
+<ol>
+<li>Exchange&#x2F;EWS 関連のアクセス権限を持つアプリケーションを検出します。</li>
+<li>各アプリケーションのサインイン アクティビティを確認し、現在使用されているアプリケーションを特定します。</li>
+<li>テナント内の EWS アクティビティについて監査ログを照会します。</li>
+<li>ソートやアプリ所有者との共有が可能なレポート ファイルを出力します。</li>
+<li>Kiosk または Frontline Worker の特定に役立つユーザー ライセンス レポートを出力します。</li>
+</ol>
+<h4 id="このスクリプトが-Microsoft-365-管理センターの-EWS-使用状況レポートをどのように補完するか"><a href="#このスクリプトが-Microsoft-365-管理センターの-EWS-使用状況レポートをどのように補完するか" class="headerlink" title="このスクリプトが Microsoft 365 管理センターの EWS 使用状況レポートをどのように補完するか"></a>このスクリプトが Microsoft 365 管理センターの EWS 使用状況レポートをどのように補完するか</h4><p>WW (Worldwide) サービスをご使用の場合、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/admin/activity-reports/ews-usage?view=o365-worldwide">Microsoft 365 管理センターの EWS 使用状況レポート</a>は良いスタート ポイントとなります。このレポートでは、テナント全体の EWS アクティビティを集約されており、どの EWS SOAP アクションが呼び出されているかや、時系列でのボリュームを確認できます。これにより、全体的な EWS 依存関係を定量化し、最も負荷の高い EWS ワークロードを特定するのに役立ちます。</p>
+<p>多くのチームが直面する課題は、そのような使用状況をもとに実行可能な対策計画に落とし込むことです（例えば、正確な Entra ID アプリ&#x2F;サービス プリンシパルの特定、それが現在もアクティブに使用されているかどうかの判断、影響を受けるユーザーとメールボックスの特定）。Exchange-App-Usage-Reporting スクリプトは、EWS の使用状況に ID や運用の観点を加えることで、こうしたギャップを解消するために用意されています。</p>
+<ul>
+<li><strong>アプリと所有権の把握</strong>：EWS 関連のアクセス権限を持つ Entra ID アプリ&#x2F;サービス プリンシパルを特定することで、「あるアプリが EWS を呼び出している」から「これが対応すべきアプリ オブジェクトである」という判断へ即座に切り替えることができます。さらに、適切な所有者や担当チームへに引き継ぐことができます。</li>
+<li><strong>最新性と「現在も使用されているか」の判断材料</strong>：アプリをサインイン アクティビティに関連付けるため、現在も実際に認証が行われているアプリと、古くなって廃止を検討してもいいアプリを判別することができます。これにより、対応の優先順位付けが可能になります。</li>
+<li><strong>認証方式と権限モデルの可視化</strong>：使用状況がアプリケーション権限に基づくものか、委任された権限に基づくものかを判別できるようになります。これは、 Microsoft Graph への移行方法を適切に選択するうえで重要であると同時に、最小権限アクセスの設計に役立ちます。</li>
+<li><strong>メールボックス構成に伴うリスク（Kiosk&#x2F;Frontline）</strong>：ユーザー ライセンス レポートより、EWS 依存のワークフローが、早期に EWS アクセス制限の影響 (2026 年 6 月末) を受ける可能性のあるメールボックスに該当するかどうかを特定できます。</li>
+<li><strong>エクスポート可能なアプリ中心の作業リスト</strong>：最後のサインイン日時などでソート&#x2F;共有できる CSV を生成し、エンジニアリング バックログを効果的に推進します。具体的には、所有者の確認、シナリオの確認、EWS 操作と Microsoft Graph エンドポイントへのマッピング、完全移行まで進捗を追跡します。</li>
+</ul>
+<p>実際には、まず管理センターのレポートを使用して<em>何の</em> EWS 操作が、どの規模で発生しているかを把握してから、スクリプトを使用して<em>どの</em>アプリがそれらの操作を行っているのか、<em>誰が</em>そのアプリを所有しているか、<em>そのアプリが現在もアクティブか</em>、そして<em>どの</em>メールボックス&#x2F;ライセンスのユーザーが最初に影響を受ける可能性が高いかを特定します。</p>
+<p>WW (Worldwide) 以外のクラウドを使用しているテナントの場合、管理センターのレポートは使用できないため、スクリプトに大きく依存することになります。</p>
+<h3 id="手順-スクリプトの実行とレポートの生成"><a href="#手順-スクリプトの実行とレポートの生成" class="headerlink" title="手順: スクリプトの実行とレポートの生成"></a>手順: スクリプトの実行とレポートの生成</h3><h4 id="1-コードのダウンロード"><a href="#1-コードのダウンロード" class="headerlink" title="1) コードのダウンロード"></a>1) コードのダウンロード</h4><p>このソリューションのリポジトリは<a target="_blank" rel="noopener" href="https://github.com/jmartinmsft/Exchange-App-Usage-Reporting/archive/refs/heads/main.zip">こちら</a>から取得できます。</p>
+<p>注: このアプリケーションには、以下のアクセス権限が必要です:</p>
+<ul>
+<li><strong>AuditLogsQuery.ReadAll</strong> - EWS アクティビティの監査ログを照会するため</li>
+<li><strong>Application.Read.All</strong> - アプリを特定するため</li>
+<li><strong>AuditLogs.Read.All</strong> - サインイン アクティビティを照会するため</li>
+<li><strong>Directory.Read.All</strong> - ユーザー ライセンス情報を照会するため</li>
+</ul>
+<h4 id="2-アクティブなアプリケーションの取得"><a href="#2-アクティブなアプリケーションの取得" class="headerlink" title="2) アクティブなアプリケーションの取得"></a>2) アクティブなアプリケーションの取得</h4><p>PowerShell セッションを開き、スクリプトをダウンロードしたフォルダーに移動します。実行前に、必要に応じて (例えば、<em>Unblock-File</em> を使用して) ファイルのブロックを解除してください。その後、次のサンプル構文でスクリプトを実行します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\<span class="built_in">Find-EwsUsage</span>.ps1 <span class="literal">-OutputPath</span> C:\Temp\Output <span class="literal">-OAuthCertificate</span> <span class="number">8865</span>BEC624B02FA0DE9586D13186ABC8BE265917 <span class="literal">-CertificateStore</span> CurrentUser <span class="literal">-OAuthClientId</span> <span class="number">7</span>a305061<span class="literal">-1343-49c3-a469-378de4dbd90d</span> <span class="literal">-OAuthTenantId</span> <span class="number">9101</span>fc97<span class="literal">-5be5-4438-a1d7-83e051e52057</span> <span class="literal">-PermissionType</span> Application <span class="literal">-Operation</span> GetEwsActivity</span><br></pre></td></tr></table></figure>
+
+<p>出力結果には、EWS 権限を持つアプリケーションと、関連するサービス プリンシパルの最後のサインイン情報が一覧で表示されます。指定した出力パスに App-SignInActivity-yyyyMMddhhmm という名前の CSV ファイルが作成されます。</p>
+<h4 id="3-アプリケーションのサインイン-アクティビティの取得"><a href="#3-アプリケーションのサインイン-アクティビティの取得" class="headerlink" title="3) アプリケーションのサインイン アクティビティの取得"></a>3) アプリケーションのサインイン アクティビティの取得</h4><p>前の手順での出力結果をもとに、アプリケーションのサインイン アクティビティを取得します（この手順はアプリケーションごとに実行する必要があります）。テナントの規模によっては、StartDate と EndDate を調整し、Interval を 1 時間に設定する必要がある場合もあります。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\<span class="built_in">Find-EwsUsage</span>.ps1 <span class="literal">-OutputPath</span> C:\Temp\Output <span class="literal">-OAuthCertificate</span> <span class="number">8865</span>BEC624B02FA0DE9586D13186ABC8BE265917 <span class="literal">-CertificateStore</span> CurrentUser <span class="literal">-OAuthClientId</span> <span class="number">7</span>a305061<span class="literal">-1343-49c3-a469-378de4dbd90d</span> <span class="literal">-OAuthTenantId</span> <span class="number">9101</span>fc97<span class="literal">-5be5-4438-a1d7-83e051e52057</span> <span class="literal">-PermissionType</span> Application <span class="literal">-Operation</span> GetAppUsage <span class="literal">-QueryType</span> SignInLogs <span class="literal">-Name</span> TJM<span class="literal">-EWS-SoftDelete-Script</span> <span class="literal">-AppId</span> <span class="number">86277</span>a5c<span class="literal">-d649-46fc-8bf6-48e2a684624b</span> <span class="literal">-StartDate</span> (<span class="built_in">Get-Date</span>).AddDays(<span class="literal">-30</span>) <span class="literal">-EndDate</span> (<span class="built_in">Get-Date</span>).AddDays(<span class="literal">-14</span>) <span class="literal">-Interval</span> <span class="number">8</span></span><br></pre></td></tr></table></figure>
+
+<p>出力結果には、指定した出力パスで &lt;AppId&gt;-SignInEvents-yyyyMMddhhmm という名前の CSV ファイルが作成されます。</p>
+<h4 id="4-ユーザー-ライセンス情報の取得（Kiosk-Frontline-の識別）"><a href="#4-ユーザー-ライセンス情報の取得（Kiosk-Frontline-の識別）" class="headerlink" title="4) ユーザー ライセンス情報の取得（Kiosk&#x2F;Frontline の識別）"></a>4) ユーザー ライセンス情報の取得（Kiosk&#x2F;Frontline の識別）</h4><p>6 月に予定されている EWS アクセス制限によって影響を受ける可能性のあるユーザーを特定するため、ユーザー ライセンス レポートを生成することで、影響範囲を把握しやすくなります。このライセンス レポートの生成には、前の手順で得られた出力結果を使用できます。また、各アプリケーションごとの結果を含む複数の CSV ファイルを、1 つのユーザー ライセンス レポートにマージすることも可能です。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\<span class="built_in">Find-EwsUsage</span>.ps1 <span class="literal">-OutputPath</span> C:\Temp\Output <span class="literal">-OAuthCertificate</span> <span class="number">8865</span>BEC624B02FA0DE9586D13186ABC8BE265917 <span class="literal">-CertificateStore</span> CurrentUser <span class="literal">-OAuthClientId</span> <span class="number">7</span>a305061<span class="literal">-1343-49c3-a469-378de4dbd90d</span> <span class="literal">-OAuthTenantId</span> <span class="number">9101</span>fc97<span class="literal">-5be5-4438-a1d7-83e051e52057</span> <span class="literal">-PermissionType</span> Application <span class="literal">-Operation</span> GetUserLicenses <span class="literal">-AppUsageSignInCsv</span> C:\Temp\Output\<span class="number">86277</span>a5c<span class="literal">-d649-46fc-8bf6-48e2a684624b-SignInEvents-20260203122538</span>.csv</span><br></pre></td></tr></table></figure>
+
+<h4 id="出力結果の見方と対応の優先順位付け"><a href="#出力結果の見方と対応の優先順位付け" class="headerlink" title="出力結果の見方と対応の優先順位付け"></a>出力結果の見方と対応の優先順位付け</h4><p>出力ファイルを取得したら、「last sign-in」でソートしてください。最近のアクティビティがあるアプリは、EWS がブロックされた際に本番環境のワークロードへ影響を及ぼす可能性が高いため、最優先で対応すべきです。一方で、サインイン データが存在しないアプリは、休止状態、構成ミス、または既にリタイアされた可能性があります。ただし、これらは「無視してよい」と判断するのではなく「要検証」として扱ってください。</p>
+<ol>
+<li><strong>各アプリの所有者を特定</strong>します（または、そのアプリと紐づく業務システムを特定します）。</li>
+<li><strong>ワークロードを確認</strong>します。メールボックスへのアクセス パターン (読み取り、送信、予定表、連絡先など) と、アプリケーション権限を使用しているか委任された権限を使用しているかを確認します。</li>
+<li><strong>アプリがアクセスするメールボックスの構成を確認</strong>します。特に、2026 年 6 月末に EWS アクセスができなくなる可能性のある Kiosk&#x2F;Frontline ライセンスが割り当てられているメールボックスでないかを確認します。</li>
+<li><strong>移行先を選定します</strong>。Microsoft Graph API の同等機能や、サポートされている Exchange Online 機能、または EWS 依存を解消するためのベンダー側のアップグレードを検討します。</li>
+</ol>
+<h3 id="Kiosk-Frontline-Worker-の-EWS-ブロックに注意（2026-年-6-月末）"><a href="#Kiosk-Frontline-Worker-の-EWS-ブロックに注意（2026-年-6-月末）" class="headerlink" title="Kiosk&#x2F;Frontline Worker の EWS ブロックに注意（2026 年 6 月末）"></a>Kiosk&#x2F;Frontline Worker の EWS ブロックに注意（2026 年 6 月末）</h3><p>推奨される検証プレイブック：</p>
+<ul>
+<li>スクリプト出力結果を利用して、現在も使用されている EWS アプリのショートリストを作成します。</li>
+<li>各アプリについて、どのメールボックスにアクセスしているかを特定します（アプリケーション アクセス ポリシー、RBAC、サービス アカウント、共有メールボックス、またはユーザー層）。</li>
+<li>メールボックスに割り当てられているライセンスを突き合わせ、EWS 権限を含まない可能性のある Kiosk&#x2F;Frontline SKU が含まれていないかを確認します。</li>
+<li>管理されたテスト（可能であれば非本番環境）を実施し、その連携が当該メールボックスに対して EWS に依存しているか、またベンダーから Graph ベースの更新が提供されているかを確認します。</li>
+<li>必要に応じて、特定のユーザーに対して別のライセンスを追加する必要があるかを評価します（例えば、2026 年 10 月の廃止まで EWS を引き続き使用できる Exchange Online Plan 1 または 2 を追加するなど）。</li>
+</ul>
+<h4 id="対策オプション-EWS-依存が見つかった場合の対応策"><a href="#対策オプション-EWS-依存が見つかった場合の対応策" class="headerlink" title="対策オプション (EWS 依存が見つかった場合の対応策)"></a>対策オプション (EWS 依存が見つかった場合の対応策)</h4><ul>
+<li><strong>製品のアップグレードまたは再構成</strong>: 多くのベンダーは既に Microsoft Graph に移行しています。ベンダーと連携し、Graph 移行に関するガイダンスとタイムラインを確認してください。</li>
+<li><strong>カスタム コードの改修</strong>: EWS 操作 (メール、予定表、連絡先) を Microsoft Graph エンドポイントにマッピングし、認証フロー、スロットリング、権限を再テストします。マッピングの詳細については、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/graph/migrate-exchange-web-services-api-mapping">こちら</a>をご覧ください。</li>
+<li><strong>影響範囲の最小化</strong>: どうしても一時的にアプリを継続利用する必要がある場合は、最小権限の原則に基づいて権限を厳密に制限し、必要に応じて RBAC を用いてアクセス可能なメールボックスを限定してください。そのうえで、有効期限を設定した短期的な例外として扱います。</li>
+</ul>
+<h4 id="クイック-チェックリスト"><a href="#クイック-チェックリスト" class="headerlink" title="クイック チェックリスト"></a>クイック チェックリスト</h4><ul>
+<li>Exchange-App-Usage-Reporting を実行し、直近 EWS のサインイン アクティビティがあるアプリを特定します。</li>
+<li>アプリの所有者を特定し、各アプリがアクセスしているメールボックス&#x2F;ワークロードをドキュメント化します。</li>
+<li>2026 年 6 月末に予定されているライセンス関連の EWS ブロックへの影響範囲を評価します (Kiosk&#x2F;Frontline)。</li>
+<li>Microsoft Graph への移行を優先し、エンドツーエンドで機能することを検証します。</li>
+<li>定期的にレポートを再実行し、EWS の使用状況がゼロに向かって減少していることを確認します。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/" data-id="cmm1ck5h90072082a2fjf379e" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/multi-geo-in-region-routing-general-availability/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Multi-Geo In-Region Routing が一般提供 (GA) 開始</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">59</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">55</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/02/">February 2026</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2026/01/">January 2026</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/12/">December 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/11/">November 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/10/">October 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/09/">September 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/08/">August 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/07/">July 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/06/">June 2025</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/05/">May 2025</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/04/">April 2025</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/03/">March 2025</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/02/">February 2025</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2025/01/">January 2025</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/12/">December 2024</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/10/">October 2024</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/09/">September 2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2024/07/">July 2024</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2023/11/">November 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/10/">October 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2022/01/">January 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/10/">October 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/04/">April 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/03/">March 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/02/">February 2021</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2021/01/">January 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/09/">September 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2020/08/">August 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2019/03/">March 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/10/">October 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/08/">August 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/07/">July 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/05/">May 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/12/">December 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/11/">November 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/10/">October 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/09/">September 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/10/">October 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/07/">July 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2016/02/">February 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/11/">November 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/08/">August 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/11/">November 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/04/">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2014/03/">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2013/01/">January 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2012/11/">November 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/">現場レポート：EWS 廃止前に行う EWS アプリ利用状況の確認と対策</a>
+          </li>
+        
+          <li>
+            <a href="/blog/multi-geo-in-region-routing-general-availability/">Multi-Geo In-Region Routing が一般提供 (GA) 開始</a>
+          </li>
+        
+          <li>
+            <a href="/blog/deprecation-of-the--credential-parameter-in-exchange-online-powershell/">Exchange Online PowerShell における -Credential パラメーターの廃止</a>
+          </li>
+        
+          <li>
+            <a href="/blog/released-february-2026-exchange-server-security-updates/">2026 年 2 月の Exchange Server のセキュリティ更新プログラムが公開されました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-online-ews-your-time-is-almost-up/">Exchange Online EWS：廃止期限が迫っています</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
