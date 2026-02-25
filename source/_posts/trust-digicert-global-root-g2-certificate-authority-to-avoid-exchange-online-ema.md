@@ -1,7 +1,7 @@
 ---
 title: Exchange Online のメール中断を回避するため、DigiCert Global Root G2 認証局 (CA) を信頼してください
 date: 2026-02-02
-lastupdate: 2026-02-13
+lastupdate: 2026-02-25
 tags: Exchange Online
 ---
 
@@ -70,12 +70,16 @@ DigiCert Global Root G2 ルート証明書が**インストールされていな
 Get-ChildItem -Path Cert:\LocalMachine\Root\ | Where-Object { $_.Thumbprint -eq "DF3C24F9BFD666761B268073FE06D1CC8D4F82A4" }
 ```
 
-このコマンドで証明書が返された場合 (出力に Thumbprint と Subject が表示されます)、問題ありません。*追加の対応は必要ありません*:
+このコマンド実行で証明書が返される (Thumbprint と Subject が出力される) 場合、問題はありません。*追加の対応は必要ありません*:
 ![必要な証明書がローカルの Windows マシンで既に信頼されていることを示す結果](Cert01.jpg)
 
-結果が返されない場合は、対応が必要です:
+その他に、中間 CA 証明書についても検証を推奨します。以下の PowerShell コマンドを使用して、中間 CA 証明書（DigiCert Global G2 TLS RSA SHA256 2020 CA1）が信頼されているかどうかを確認できます。
+```PowerShell
+Get-ChildItem -Path Cert:\LocalMachine\CA\ | Where-Object { $_.Thumbprint -eq "1B511ABEAD59C6CE207077C0BF0E0043B1382612" }
+```
+このコマンド実行で結果が返されない、且つ、Windows CTL Updater 機能の再有効化をしたくない場合、以下のいずれかの対応（オプション 1 または 2）を実施する必要があります。:
 
-##### **最新の Microsoft 365 ルート証明書チェーン バンドルを手動でダウンロードしてインポートする**
+##### **オプション 1 - 最新の Microsoft 365 ルート証明書チェーン バンドルを手動でダウンロードしてインポートする**
 
 Microsoft は、Microsoft 365 サービスで必要となる証明書を発行する中間 CA の信頼を確保するために、信頼すべきルート証明書のセットを提供しています。
 
@@ -93,7 +97,7 @@ certutil -addstore Root "C:\path\to\m365_root_certs.p7b"
 
 上記の「お使いのマシンに DigiCert Global Root G2 証明書がインストールされているか確認する」セクションで説明した PowerShell コマンドを実行して、インポートが正常に完了したことを確認してください。
 
-##### オプション - 中間証明書も明示的に検証しているお客様向け
+##### **オプション 2 - 中間証明書も明示的に検証しているお客様向け**
 一部の利用者では、Windows CTL Updater 機能を使用せず、独自の管理ソリューション（例：グループ ポリシー）を用いて、信頼済みおよび信頼されていないルート証明書および中間証明書を管理しているケースがあります。
 上記で言及した .p7b のバンドルには、中間証明書は含まれていません。
 証明書の信頼関係を手動で管理しており、かつ中間証明書についても検証が必要な場合（これは非常に稀です）は、以下のページで該当する証明書を確認できます。
