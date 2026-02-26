@@ -126,7 +126,7 @@
         Last Update:
         <a href="/blog/trust-digicert-global-root-g2-certificate-authority-to-avoid-exchange-online-ema/" class="article-date-single">    
         
-    <time datetime="2026-02-12T15:00:00.000Z" itemprop="lastupdate">2026-02-13</time>    
+    <time datetime="2026-02-24T15:00:00.000Z" itemprop="lastupdate">2026-02-25</time>    
     
 </a>
       </div>
@@ -163,9 +163,11 @@
 <h4 id="何をすべきか"><a href="#何をすべきか" class="headerlink" title="何をすべきか"></a>何をすべきか</h4><h5 id="お使いのマシンに-DigiCert-Global-Root-G2-証明書がインストールされているか確認する"><a href="#お使いのマシンに-DigiCert-Global-Root-G2-証明書がインストールされているか確認する" class="headerlink" title="お使いのマシンに DigiCert Global Root G2 証明書がインストールされているか確認する"></a>お使いのマシンに DigiCert Global Root G2 証明書がインストールされているか確認する</h5><p>以下の PowerShell コマンドを使用して、DigiCert ルート証明書が信頼されているかどうかを確認できます:</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ChildItem</span> <span class="literal">-Path</span> Cert:\LocalMachine\Root\ | <span class="built_in">Where-Object</span> &#123; <span class="variable">$_</span>.Thumbprint <span class="operator">-eq</span> <span class="string">&quot;DF3C24F9BFD666761B268073FE06D1CC8D4F82A4&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
 
-<p>このコマンドで証明書が返された場合 (出力に Thumbprint と Subject が表示されます)、問題ありません。<em>追加の対応は必要ありません</em>:<br><img src="/blog/trust-digicert-global-root-g2-certificate-authority-to-avoid-exchange-online-ema/Cert01.jpg" alt="必要な証明書がローカルの Windows マシンで既に信頼されていることを示す結果"></p>
-<p>結果が返されない場合は、対応が必要です:</p>
-<h5 id="最新の-Microsoft-365-ルート証明書チェーン-バンドルを手動でダウンロードしてインポートする"><a href="#最新の-Microsoft-365-ルート証明書チェーン-バンドルを手動でダウンロードしてインポートする" class="headerlink" title="最新の Microsoft 365 ルート証明書チェーン バンドルを手動でダウンロードしてインポートする"></a><strong>最新の Microsoft 365 ルート証明書チェーン バンドルを手動でダウンロードしてインポートする</strong></h5><p>Microsoft は、Microsoft 365 サービスで必要となる証明書を発行する中間 CA の信頼を確保するために、信頼すべきルート証明書のセットを提供しています。</p>
+<p>このコマンド実行で証明書が返される (Thumbprint と Subject が出力される) 場合、問題はありません。<em>追加の対応は必要ありません</em>:<br><img src="/blog/trust-digicert-global-root-g2-certificate-authority-to-avoid-exchange-online-ema/Cert01.jpg" alt="必要な証明書がローカルの Windows マシンで既に信頼されていることを示す結果"></p>
+<p>その他に、中間 CA 証明書についても検証を推奨します。以下の PowerShell コマンドを使用して、中間 CA 証明書（DigiCert Global G2 TLS RSA SHA256 2020 CA1）が信頼されているかどうかを確認できます。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ChildItem</span> <span class="literal">-Path</span> Cert:\LocalMachine\CA\ | <span class="built_in">Where-Object</span> &#123; <span class="variable">$_</span>.Thumbprint <span class="operator">-eq</span> <span class="string">&quot;1B511ABEAD59C6CE207077C0BF0E0043B1382612&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>このコマンド実行で結果が返されない、且つ、Windows CTL Updater 機能の再有効化をしたくない場合、以下のいずれかの対応（オプション 1 または 2）を実施する必要があります。:</p>
+<h5 id="オプション-1-最新の-Microsoft-365-ルート証明書チェーン-バンドルを手動でダウンロードしてインポートする"><a href="#オプション-1-最新の-Microsoft-365-ルート証明書チェーン-バンドルを手動でダウンロードしてインポートする" class="headerlink" title="オプション 1 - 最新の Microsoft 365 ルート証明書チェーン バンドルを手動でダウンロードしてインポートする"></a><strong>オプション 1 - 最新の Microsoft 365 ルート証明書チェーン バンドルを手動でダウンロードしてインポートする</strong></h5><p>Microsoft は、Microsoft 365 サービスで必要となる証明書を発行する中間 CA の信頼を確保するために、信頼すべきルート証明書のセットを提供しています。</p>
 <p>証明書バンドル (<strong>.p7b &#x2F; PKCS #7</strong> ファイル形式) は、以下からダウンロードできます:</p>
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.microsoft.com/download/details.aspx?id=102267">Microsoft 365 Root Certificate Chain Bundle – Worldwide</a><ul>
@@ -178,7 +180,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">certutil -addstore Root &quot;C:\path\to\m365_root_certs.p7b&quot;</span><br></pre></td></tr></table></figure>
 
 <p>上記の「お使いのマシンに DigiCert Global Root G2 証明書がインストールされているか確認する」セクションで説明した PowerShell コマンドを実行して、インポートが正常に完了したことを確認してください。</p>
-<h5 id="オプション-中間証明書も明示的に検証しているお客様向け"><a href="#オプション-中間証明書も明示的に検証しているお客様向け" class="headerlink" title="オプション - 中間証明書も明示的に検証しているお客様向け"></a>オプション - 中間証明書も明示的に検証しているお客様向け</h5><p>ごく一部のお客様では、中間証明書についても明示的に検証を行っているケースがあります（これは一般的ではありません）。<br>上記で言及した .p7b のバンドルには、中間証明書は含まれていません。<br>証明書の信頼関係を手動で管理しており、かつ中間証明書についても検証が必要な場合（これは非常に稀です）は、以下のページで該当する証明書を確認できます。<br> <a target="_blank" rel="noopener" href="https://learn.microsoft.com/azure/security/fundamentals/azure-certificate-authority-details?tabs=certificate-authority-chains#root-and-subordinate-certificate-authority-chains">Azure Certificate Authority details | Microsoft Learn</a>.</p>
+<h5 id="オプション-2-中間証明書も明示的に検証しているお客様向け"><a href="#オプション-2-中間証明書も明示的に検証しているお客様向け" class="headerlink" title="オプション 2 - 中間証明書も明示的に検証しているお客様向け"></a><strong>オプション 2 - 中間証明書も明示的に検証しているお客様向け</strong></h5><p>一部の利用者では、Windows CTL Updater 機能を使用せず、独自の管理ソリューション（例：グループ ポリシー）を用いて、信頼済みおよび信頼されていないルート証明書および中間証明書を管理しているケースがあります。<br>上記で言及した .p7b のバンドルには、中間証明書は含まれていません。<br>証明書の信頼関係を手動で管理しており、かつ中間証明書についても検証が必要な場合（これは非常に稀です）は、以下のページで該当する証明書を確認できます。<br> <a target="_blank" rel="noopener" href="https://learn.microsoft.com/azure/security/fundamentals/azure-certificate-authority-details?tabs=certificate-authority-chains#root-and-subordinate-certificate-authority-chains">Azure Certificate Authority details | Microsoft Learn</a>.</p>
 <h4 id="対応しないとどうなるか"><a href="#対応しないとどうなるか" class="headerlink" title="対応しないとどうなるか"></a>対応しないとどうなるか</h4><p>DigiCert Global Root G2 ルート証明書をインストールせず、システムが古いルート証明書に依存して検証を行っている場合、2026 年 3 月 15 日以降、メール フローが中断される可能性があります。発生する具体的な問題は、オペレーティング システムとアプリケーションの構成によって異なります。以下にいくつかの例を示します:</p>
 <p>Exchange Online がオンプレミスの Exchange Server に接続できない場合、Exchange Online 管理センターでメッセージ追跡を実行すると、以下のような内容が表示されることがあります:</p>
 <blockquote>
@@ -205,7 +207,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/trust-digicert-global-root-g2-certificate-authority-to-avoid-exchange-online-ema/" data-id="cmm1ck5hs0086082agfkx8u1w" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/trust-digicert-global-root-g2-certificate-authority-to-avoid-exchange-online-ema/" data-id="cmm2ppykr0086bk2ae4qdc88j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
