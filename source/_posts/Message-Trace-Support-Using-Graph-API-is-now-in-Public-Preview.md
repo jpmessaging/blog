@@ -2,7 +2,7 @@
 title: >
  Graph API を使用したメッセージ トレースのサポートにおけるパブリック プレビューのご案内
 date: 2026-01-22
-lastupdate: 2026-02-09
+lastupdate: 2026-02-26
 tags: Exchange Online
 categories:
 ---
@@ -31,7 +31,7 @@ Graph API を使用した新しいメッセージトレース サポートは、
 ## 移行ガイダンスおよび廃止スケジュール
 現在、Reporting Webservice を使用したメッセージ トレースを利用している場合は、2026 年 4 月 6 日までに Graph API を使用したメッセージ トレースへ移行してください。
 
-**Reporting Webservice を使用した Message Trace および Message Trace Detail のサポートは、2026 年 4 月 6 日から非推奨 (廃止開始) となります。**
+**Reporting Webservice を使用した Message Trace および Message Trace Detail のサポートは、2026 年 4 月 8 日から非推奨 (廃止開始) となります。**
 
 なお、Exchange Online に新規オンボーディングされるすべての組織では、移行作業の一環として、既定では Reporting Webservice を使用したメッセージ トレースへのアクセスはすでに提供されていません。
 
