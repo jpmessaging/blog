@@ -125,7 +125,7 @@
         Last Update:
         <a href="/blog/Message-Trace-Support-Using-Graph-API-is-now-in-Public-Preview/" class="article-date-single">    
         
-    <time datetime="2026-02-08T15:00:00.000Z" itemprop="lastupdate">2026-02-09</time>    
+    <time datetime="2026-02-25T15:00:00.000Z" itemprop="lastupdate">2026-02-26</time>    
     
 </a>
       </div>
@@ -140,7 +140,7 @@
 <p>新しいサービス プリンシパルの作成後、プロビジョニングが完了するまでに数時間かかる場合があります。<br>この間、401 (Unauthorized) エラーが発生する可能性がありますので、プロビジョニングが完了、及び、反映されるまで数時間お待ちください。<br>関連情報については、以下のページをご参照ください。</p>
 <p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity-platform/retire-service-principal-less-authentication?branch=main">Retirement of service principal-less authentication - Microsoft identity platform | Microsoft Learn</a></p>
 <h2 id="移行ガイダンスおよび廃止スケジュール"><a href="#移行ガイダンスおよび廃止スケジュール" class="headerlink" title="移行ガイダンスおよび廃止スケジュール"></a>移行ガイダンスおよび廃止スケジュール</h2><p>現在、Reporting Webservice を使用したメッセージ トレースを利用している場合は、2026 年 4 月 6 日までに Graph API を使用したメッセージ トレースへ移行してください。</p>
-<p><strong>Reporting Webservice を使用した Message Trace および Message Trace Detail のサポートは、2026 年 4 月 6 日から非推奨 (廃止開始) となります。</strong></p>
+<p><strong>Reporting Webservice を使用した Message Trace および Message Trace Detail のサポートは、2026 年 4 月 8 日から非推奨 (廃止開始) となります。</strong></p>
 <p>なお、Exchange Online に新規オンボーディングされるすべての組織では、移行作業の一環として、既定では Reporting Webservice を使用したメッセージ トレースへのアクセスはすでに提供されていません。</p>
 <h2 id="スロットリング"><a href="#スロットリング" class="headerlink" title="スロットリング"></a>スロットリング</h2><p>Exchange Online リソースの不正利用・悪用のリスクを低減し、すべてのユーザーに対するサービスの可用性を確保しつつ、予測可能なエクスペリエンスを提供するため、一定時間内のリクエスト数に基づくレート制限（スロットリング）を実装します。Message Trace および Message Trace Detail へのすべての呼び出しは同一の数量制限を共有します。<br>1 テナントあたり、5 分間の実行ウィンドウ内で最大 100 件のメッセージ トレース クエリ リクエストが受け入れられます。過去 5 分間のリクエストが 100 件未満の場合、スロットリングは適用されません。スロットリングの閾値を超えて頻繁にクエリを実行するような自動化など使用されている場合、閾値を超えないように自動化の調整をご検討ください。</p>
 <p>なお、クエリ リクエスト数と結果サイズは同じではありません。1 回のクエリ リクエストで、最大 5,000 件の結果を返すことができます。これにより、5 分間の実行ウィンドウ内で取得可能な最大結果数は 500,000 件となります。クエリを分散させることで、1 日あたり最大 1 億 4,400 万件の結果を取得できます。このスロットリング制限は、すべてのテナントに対する公平性とサービスの可用性を確保するためのものです。</p>
@@ -164,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Message-Trace-Support-Using-Graph-API-is-now-in-Public-Preview/" data-id="cmm2ppyiq002xbk2a7cwg8bcw" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Message-Trace-Support-Using-Graph-API-is-now-in-Public-Preview/" data-id="cmm2rqurd002n8s2agtzicy68" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
