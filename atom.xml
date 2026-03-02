@@ -6,7 +6,7 @@
   <link href="https://jpmessaging.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2026-02-24T15:00:00.000Z</updated>
+  <updated>2026-03-01T15:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Outlook におけるメールのネイティブな外部送信者表示機能</title>
+    <link href="https://jpmessaging.github.io/blog/native-external-sender-callouts-on-email-in-outlook/"/>
+    <id>https://jpmessaging.github.io/blog/native-external-sender-callouts-on-email-in-outlook/</id>
+    <published>2026-03-01T15:00:00.000Z</published>
+    <updated>2026-03-01T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/native-external-sender-callouts-on-email-in-outlook/2250098">Native external sender callouts on email in Outlook</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p><strong>翻訳者注：</strong> 英語の原文では一部の Outlook クライアントで展開中とされていますが、現在は対象 Outlook クライアントに展開済みのため、翻訳文では最新の状況を反映した表現としています。</p><h1 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h1><p>一部のお客様では、外部送信者からのメールであることをエンドユーザーに分かりやすく伝えるため、Exchange のトランスポート ルールを使用して、件名の先頭に文言を追加したり、メッセージ本文に注意書きを挿入したりしています。このアプローチにはいくつかの制限があります。例えば、以下のような点です。</p><ul><li>外部ユーザーがスレッドに返信し続けると、件名に重複した [External] タグが表示される可能性があります (一部のお客様は重複を削除するためにカスタマイズされたソリューションを使用しています)。</li><li>件名が変更されると、Outlook の [スレッドとして表示] の機能が機能しなくなり、メッセージが同じスレッドに含まれなくなります。</li><li>変更された件名 (またはメッセージ本文) は、返信または転送時にメッセージの一部として残されるため、スレッドが内部メールになった場合に混乱が生じます。</li><li>トランスポート ルールはエンドユーザーが使用しているクライアント言語を認識できないため、ローカライズに問題が生じる可能性があります。</li><li>件名に追加した文言が多くのスペースを占有してしまい、特に画面の小さいデバイスでは件名をプレビューしづらくなる場合があります。</li></ul><p>上記のフィードバックは認識しており、組織外の送信者からのメールを識別するための、よりネイティブなエクスペリエンスの提供に取り組みました (これは、スパムやフィッシング詐欺といった脅威への対策にも役立ちます。) この機能は、メールに [External] というタグ (クライアント言語設定に基づいてローカライズされます) を表示し、メッセージ閲覧ビューの上部に関連するユーザー インターフェースが表示され、実際の送信者のメール アドレスを確認できるようになります。</p><h1 id="セットアップ方法"><a href="#セットアップ方法" class="headerlink" title="セットアップ方法"></a>セットアップ方法</h1><ol><li>Exchange Online のテナント管理者は、テナント全体の新しいユーザー インターフェースを有効にするため、<a href="https://docs.microsoft.com/powershell/module/exchange/set-externalinoutlook">Set-ExternalInOutlook</a> コマンドレットを実行する必要があります (この機能はすでに提供されています)。また、このコマンドレットを使用して特定のメールアドレスやドメインを許可リストに追加することもできます。</li><li>Outlook on the web は既にこの機能に対応しています。Outlook for Mobile (iOS &amp; Android) および Outlook for Mac でもこの機能を展開しました。具体的なバージョンは以下になります。<ul><li>Outlook on the web: 現在利用可能</li><li>Outlook for Windows: <strong>2023 年 10 月 6 日更新</strong>: <a href="https://learn.microsoft.com/officeupdates/semi-annual-enterprise-channel-preview#version-2308-september-12">半期エンタープライズ チャネル (プレビュー)</a> でも利用可能になりました。Outlook for Windows における [External] タグ表示 (他のクライアントと同様の表示) は、最新チャネルおよび月次エンタープライズ チャネルのバージョン 2211 以降 (ビルド 15831.20190 以上) 、半期エンタープライズ チャネル (プレビュー) や 半期エンタープライズ チャネルのバージョン 2308 以降にリリースされています。<br> 各バージョンのリリース状況については、<a href="https://learn.microsoft.com/officeupdates/update-history-microsoft365-apps-by-date">Microsoft 365 Apps の更新履歴（日付別）</a> をご確認ください。</li><li>Outlook for Mobile (iOS &amp; Android): バージョン 4.2111.0 以降</li><li>新しい Outlook for Mac: バージョン 16.47 以降</li></ul></li></ol><p>現在、外部送信者からのメールに件名の先頭に [External] タグを追加するトランスポート ルールを使用している場合、Outlook の新しいネイティブ機能では、メール アイテムに <em>IsExternalSender</em> という新しい MAPI プロパティが追加されます。現在すべてのクライアント バージョン (上記に記載されているもの) がこの機能に対応しているため、メールが [External] と二重に表示されること (新しいネイティブ機能による表示と、トランスポート ルールによる表示) を避けるため、Outlook のネイティブ外部送信者識別機能をオンにする前に、既存の対象トランスポート ルールをオフにしてください。</p><p>この機能は Microsoft 365 ロードマップ ID 70595 として展開状況を公開していましたが、現在はすでに展開が完了しており、テナント レベルで有効化することが可能です。</p><p>Outlook on the web、Outlook for Mac、および Outlook for Mobile では、メッセージ一覧に <em>External タグ</em>が表示されます。Outlook for Windows と OWA は、閲覧ウィンドウのインフォ バーに送信者のメール アドレスが表示されます。Outlook for Mobile と Outlook for Mac では、メッセージの閲覧ウィンドウに外部タグのみが表示され、実際の送信者のメール アドレスを確認するにはタグをクリックする必要があります。</p><p>Outlook for Windows の閲覧ウィンドウでの外部送信者の表示 (他のクライアントとは若干表示が異なります) :</p><p><img src="/blog/native-external-sender-callouts-on-email-in-outlook/ExternalCalloutsOutlook2.jpg"></p><p><strong>更新 2022 年 11 月 3 日:</strong> Outlook for Windows のメッセージ一覧での新しい External タグ表示 (他のクライアントと同様) :</p><p><img src="/blog/native-external-sender-callouts-on-email-in-outlook/OLupdatedexternal.png"></p><p>Outlook on the web での外部送信者の表示 :</p><p><img src="/blog/native-external-sender-callouts-on-email-in-outlook/NativeOLExternal01.jpg"></p><p>Outlook for iOS での外部送信者のユーザー インターフェース (メッセージ一覧での表示、メール閲覧時の External タグ表示、および External タグをタップした後の送信者メール アドレスの表示) :</p><p><img src="/blog/native-external-sender-callouts-on-email-in-outlook/NativeOLExternal02.jpg"></p><p>PowerShell でこの機能を有効にすると、組織外から受信したメールに External タグが表示されるようになるまで 24 ～ 48 時間かかる場合があります (Outlook クライアントのバージョンが本機能をサポートしている場合)。</p><p>この機能を有効化する際、ユーザーに対して本機能を周知するとともに、必要に応じてトレーニングやドキュメントを更新することをお勧めします。</p><p>ご不明な点やフィードバックがあればお知らせください。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/native-external-sender-callouts-on-email-in-outlook/2250098&quot;&gt;Native ex</summary>
+      
+    
+    
+    
+    
+    <category term="Outlook" scheme="https://jpmessaging.github.io/blog/tags/Outlook/"/>
+    
+  </entry>
   
   <entry>
     <title>現場レポート：EWS 廃止前に行う EWS アプリ利用状況の確認と対策</title>
@@ -412,29 +434,6 @@
     
     
     <category term="Viva Insights" scheme="https://jpmessaging.github.io/blog/tags/Viva-Insights/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ</title>
-    <link href="https://jpmessaging.github.io/blog/Outlook-microsoft365-copilot-chat-pin/"/>
-    <id>https://jpmessaging.github.io/blog/Outlook-microsoft365-copilot-chat-pin/</id>
-    <published>2025-12-22T15:00:00.000Z</published>
-    <updated>2025-12-22T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>こんにちは。日本マイクロソフト Exchange ＆ Outlook サポート チームの山本です。</p><p>本記事では、以前よりお問い合わせをいただくことがある Outlook における Microsoft 365 Copilot Chat (以下、Copilot Chat) のピン留め機能について説明します。</p><h2 id="Microsoft-365-Copilot-Chat-のピン留めについて"><a href="#Microsoft-365-Copilot-Chat-のピン留めについて" class="headerlink" title="Microsoft 365 Copilot Chat のピン留めについて"></a>Microsoft 365 Copilot Chat のピン留めについて</h2><p>現在 Copilot Chat は、Microsoft 365 Copilot ライセンス (以下、Copilot ライセンス) の有無 (※) に関わらず、Web、デスクトップ、モバイルといった各プラットフォーム上の Microsoft 365 の Outlook でピン留めして利用することが可能になっています。</p><p><a href="https://learn.microsoft.com/copilot/microsoft-365/pin-copilot-chat-navbar">Microsoft 365 アプリでMicrosoft 365 Copilot Chatをピン留めする</a></p><p>以前は、Copilot ライセンスが割り当てられたユーザーのみ、Copilot Chat が自動的にナビゲーションバーにピン留めされて利用が可能でした。<br>現在では、Microsoft 365 Copilot ライセンスの有無に関わらず、様々なライセンスを持つ Entra アカウント ユーザーでも Copilot Chat の機能が利用できるようになっています。これに伴い、Copilot ライセンスを未割り当てのユーザーを対象にした Copilot Chat のピン留めを制御する管理者向けの機能が展開されています。<br>この制御に関する設定項目は、Microsoft 365 管理センターの [Copilot] - [設定] - [ユーザー アクセス] - [Microsoft 365 Copilot Chat をピン留めする] にあり、既定値では [Microsoft 365 アプリに Copilot Chat をピン留めします (推奨)] が設定されています。<br>既定値のまま利用されている環境では、Copilot ライセンスが未割り当てのユーザーにおいても各 Microsoft 365 アプリで Copilot Chat が自動で表示され、ピン留めされます。</p><p><img src="/blog/Outlook-microsoft365-copilot-chat-pin/image1.jpg"></p><p>(※) Copilot ライセンスが未割り当てであっても Copilot Chat をご利用いただけるアカウント<br>2025 年 10 月 30 日時点で、以下いずれかのライセンスを持つ Entra アカウント ユーザーでは、Copilot Chat が利用可能です。</p><p>・Microsoft 365 A1&#x2F;A3&#x2F;A5 (学生向け MA3&#x2F;MA5、教員向け MA3&#x2F;MA5、MA3&#x2F;MA5 学生利用特典を含む)<br>・Microsoft 365 Business Basic&#x2F;Business Standard&#x2F;Business Premium<br>・Microsoft 365 E3&#x2F;E5<br>・Microsoft 365 F1&#x2F;F3<br>・Microsoft Teams&#x2F;Teams Enterprise&#x2F;Teams Essentials&#x2F;Teams Rooms<br>・Office 365 A1&#x2F;A1 Plus&#x2F;A3&#x2F;A5<br>・Office 365 E1&#x2F;E1 Plus&#x2F;E3&#x2F;E5<br>・Office 365 F3</p><h2 id="各-Outlook-における-Copilot-Chat-のピン留めの画面イメージ"><a href="#各-Outlook-における-Copilot-Chat-のピン留めの画面イメージ" class="headerlink" title="各 Outlook における Copilot Chat のピン留めの画面イメージ"></a>各 Outlook における Copilot Chat のピン留めの画面イメージ</h2><p>Outlook は様々なプラットフォームで利用可能ですが、Copilot Chat のピン留めが有効な場合の各画面イメージを紹介します。<br>なお、以下の各画面イメージは 2025 年 12 月 1 日時点の情報です。<br>Copilot 機能は日々更新されており、実際にご利用の際は画面表示が本記事と異なる場合がございます。</p><p>・従来の Outlook for Windows</p><p><img src="/blog/Outlook-microsoft365-copilot-chat-pin/image2.jpg"></p><p>・新しい Outlook for Windows</p><p><img src="/blog/Outlook-microsoft365-copilot-chat-pin/image3.jpg"></p><p>・新しい Outlook for Mac</p><p><img src="/blog/Outlook-microsoft365-copilot-chat-pin/image4.jpg"></p><p>・Outlook on the web</p><p><img src="/blog/Outlook-microsoft365-copilot-chat-pin/image5.jpg"></p><p>・Outlook for iOS</p><p><img src="/blog/Outlook-microsoft365-copilot-chat-pin/image6.jpg"></p><p>・Outlook for Android</p><p><img src="/blog/Outlook-microsoft365-copilot-chat-pin/image7.jpg"></p><h3 id="本記事の最後に"><a href="#本記事の最後に" class="headerlink" title="本記事の最後に"></a>本記事の最後に</h3><p>「Microsoft 365 Copilot Chat のピン留めの Outlook での表示イメージ」 では、Copilot Chat のピン留めの概要と具体的にどの Outlook 画面に Copilot Chat がピン留めされるのかを紹介しました。<br><a href="/blog/Outlook-microsoft365-copilot-chat-pin-admin-control/">「Microsoft 365 Copilot Chat のピン留めの制御方法」</a> では、Microsoft 365 Copilot Chat のピン留めを管理者が制御する方法について紹介します。</p><p><strong>本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</strong></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;こんにちは。日本マイクロソフト Exchange ＆ Outlook サポート チームの山本です。&lt;/p&gt;
-&lt;p&gt;本記事では、以前よりお問い合わせをいただくことがある Outlook における Microsoft 365 Copilot Chat (以下、Copilot C</summary>
-      
-    
-    
-    
-    
-    <category term="Copilot" scheme="https://jpmessaging.github.io/blog/tags/Copilot/"/>
     
   </entry>
   
