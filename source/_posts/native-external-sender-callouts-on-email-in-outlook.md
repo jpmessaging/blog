@@ -35,7 +35,7 @@ tags:
 
 この機能は Microsoft 365 ロードマップ ID 70595 として展開状況を公開していましたが、現在はすでに展開が完了しており、テナント レベルで有効化することが可能です。
 
-Outlook on the web、Outlook for Mac、および Outlook for Mobile では、メッセージ一覧に *External タグ*を表示されます。Outlook for Windows と OWA は、閲覧ウィンドウのインフォ バーに送信者のメール アドレスが表示されます。Outlook for Mobile と Outlook for Mac では、メッセージの閲覧ウィンドウに外部タグのみが表示され、実際の送信者のメール アドレスを確認するにはタグをクリックする必要があります。
+Outlook on the web、Outlook for Mac、および Outlook for Mobile では、メッセージ一覧に *External タグ*が表示されます。Outlook for Windows と OWA は、閲覧ウィンドウのインフォ バーに送信者のメール アドレスが表示されます。Outlook for Mobile と Outlook for Mac では、メッセージの閲覧ウィンドウに外部タグのみが表示され、実際の送信者のメール アドレスを確認するにはタグをクリックする必要があります。
 
 Outlook for Windows の閲覧ウィンドウでの外部送信者の表示 (他のクライアントとは若干表示が異なります) :
 
