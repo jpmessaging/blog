@@ -1,13 +1,13 @@
 ---
 title: 'Exchange Online テナントの外部送信メール制限の導入'
 date: 2025-02-26
-lastupdate: 2025-12-23
+lastupdate: 2026-3-2 11:00
 tags: Exchange Online
 ---
 ※ この記事は、[Introducing Exchange Online Tenant Outbound Email Limits](https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-tenant-outbound-email-limits/4372797) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 <div style="margin:1.25em;border-left:.25em solid #4493f8;padding:.5em;">
-2025 年 12 月 19 日更新: GCC の日付を更新しました。
+2026 年 2 月 27 日更新: WW/Commercial テナントの日程を更新しました。
 </div>
 
 クラウド サービス全般に言えることですが、Exchange Online では Exchange Online リソースの不正使用を防ぎ、すべてのユーザーに対して可用性を確保するためにサービスの制限を設けています。例えば、High-Volume Email の機能を除いて、Exchange Online は大量のメール送信をサポートしておらず、これまでは主にメールボックスごとの 1 日あたりの送信制限 (Recipient Rate Limit または RRL として知られています) を使用してこれを制限していました。
@@ -26,7 +26,12 @@ tags: Exchange Online
 | 1 | 25 メール ライセンス以下のテナント | 2025/4/3 |
 | 2 | 200 メール ライセンス以下のテナント | 2025/4/18 |
 | 3 | 500 メール ライセンス以下のテナント | 2025/4/28 |
-| 4 | すべてのテナント | <span style="color:red">一時的に展開を停止しています。</span> |
+| 4 | 501～800 メール ライセンスのテナント | 2026/3/11 |
+| 5 | 801～1,000 メール ライセンスのテナント | 2026/3/18 |
+| 6 | 1,001～1,500 メール ライセンスのテナント | 2026/3/25 |
+| 7 | 1,501～3,000 メール ライセンスのテナント | 2026/4/1 |
+| 8 | 3,001～10,000 メール ライセンスのテナント | 2026/4/8 |
+| 9 | 10,001 メール ライセンス以上のテナント | 2026/4/15 |
 
 **GCC 環境**のテナント:
 
@@ -176,5 +181,6 @@ ObservedValue: 243418
 ※ 将来のアップデートで EAC レポートに表示されるデータを取得するための Graph API の提供が検討されています。
 
 **最近の変更点**
+- 2026/2/27: WW/Commercial テナントの日程を更新しました。
 - 2025/3/31: FAQ「マルチ テナント組織内でのテナント間メッセージ」に関する説明を修正しました。
 - 2025/3/19: FAQ「Exchange Online ジャーナリング メッセージのステータス」に関する説明を明確化しました。
