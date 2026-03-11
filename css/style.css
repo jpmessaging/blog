@@ -626,15 +626,16 @@ a.article-title:hover {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
+  border: 1px solid #d2d2d2;
 }
 .article-entry th {
   font-weight: bold;
-  border-bottom: 3px solid #d2d2d2;
-  padding-bottom: 0.5em;
+  border: 1px solid #d2d2d2;
+  padding: 0.5em 0.75em;
 }
 .article-entry td {
-  border-bottom: 1px solid #d2d2d2;
-  padding: 10px 0;
+  border: 1px solid #d2d2d2;
+  padding: 10px 0.75em;
 }
 .article-entry blockquote {
   font-family: monospace, monospace;
