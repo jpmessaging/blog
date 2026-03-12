@@ -10,7 +10,7 @@ tags:
 
 Microsoft 365 Copilot は、単発の指示に応答するタスク実行型のエクスペリエンスから、業務用アプリに組み込まれたエージェント型エクスペリエンスへシフトしています。Outlook では、Copilot がメールや予定表において、コンテキストを失ったり余計な操作を増やしたりすることなく、ユーザーの要件をそのまま実行へとつなぐことをサポートします。
 
-Copilot in Outlook は Work IQ に基盤に、関連するメール、会議、予定表の利用傾向、ならびにそれらの関係性を活用することで、仕事を効率的に進められるよう支援します。また、変更は Outlook 内で直接行われるため、内容を確認・見直ししながら、簡単に改善を重ねることができます。[**今すぐ Copilot in Outlook を試す**](https://demos.microsoft.com/Microsoft/play/5875/march-moment-agent-apps#/0/1)。
+Copilot in Outlook は Work IQ を基盤として、関連するメール、会議、予定表の利用傾向、ならびにそれらの関係性を活用することで、仕事を効率的に進められるよう支援します。また、変更は Outlook 内で直接行われるため、内容を確認・見直ししながら、簡単に改善を重ねることができます。[**今すぐ Copilot in Outlook を試す**](https://demos.microsoft.com/Microsoft/play/5875/march-moment-agent-apps#/0/1)。
 
 # Copilot と協働して、送信案を送信可能なメールに仕上げる 
 
