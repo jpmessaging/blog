@@ -9,7 +9,7 @@ tags: Exchange Online
 
 <p style="background: #f5ff66ed;"><strong>2026 年 2 月 4 日更新:</strong> 一部のメール プロバイダーが 4 月 15 日以降、DigiCert G1 ルート証明書を信頼しなくなる可能性があるとの通知を受けております。これにより、メール エコシステム全体で広範な影響が生じる可能性があります。この状況に先立って、Exchange Online にて証明書の切り替えを実施できるようにするため、お客様は <strong>2026 年 3 月 15 日まで</strong> (以前は 4 月 30 日まで) に DigiCert Global Root G2 認証局を信頼していただく必要があります。</p>
 
-組織と Exchange Online 間のメール フローの中断を回避するために、Exchange Online との間で <span style="color:red">SMTP 経由で</span>メールを送受信する組織は、**2026 年 3 月 15 日までに**、サーバーとクライアントが **DigiCert Global Root G2 認証局 (Certificate Authority (以降、CA)) およびその下位 CA** を信頼するようにする必要があります。
+組織と Exchange Online 間のメール フローの中断を回避するために、Exchange Online との間で **SMTP 経由で**メールを送受信する組織は、**2026 年 3 月 15 日までに**、サーバーとクライアントが **DigiCert Global Root G2 認証局 (Certificate Authority (以降、CA)) およびその下位 CA** を信頼するようにする必要があります。
 
 ルート CA と下位 CA のチェーンの包括的な一覧は、[Azure 証明機関の詳細](https://learn.microsoft.com/azure/security/fundamentals/azure-certificate-authority-details?tabs=certificate-authority-chains#root-and-subordinate-certificate-authority-chains) のドキュメントおよび [DigiCert ナレッジベース](https://knowledge.digicert.com/general-information/digicert-trusted-root-authority-certificates#otherroots) で確認できます。
 
