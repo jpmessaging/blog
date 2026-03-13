@@ -98,8 +98,8 @@ certutil -addstore Root "C:\path\to\m365_root_certs.p7b"
 上記の「お使いのマシンに DigiCert Global Root G2 証明書がインストールされているか確認する」セクションで説明した PowerShell コマンドを実行して、インポートが正常に完了したことを確認してください。
 
 ##### **オプション 2 - DigiCert Global Root G2 およびその中間 CA 証明書を手動でダウンロードしてインポートする**
-一部の利用者では、Windows CTL Updater 機能を使用せず、独自の管理ソリューション (例 : グループ ポリシー) を用いて、信頼済みおよび信頼されていないルート証明書および中間証明書を管理しているケースがあります。 
-組織で証明書パッケージを管理しており、DigiCert Global Root G2 証明書とその下位認証局チェーンのみを追加する必要がある場合は、[Azure 証明機関の詳細](https://learn.microsoft.com/azure/security/fundamentals/azure-certificate-authority-details?tabs=certificate-authority-chains#root-and-subordinate-certificate-authority-chains) のドキュメントからダウンロードできます。
+一部の利用者では、Windows CTL Updater 機能を使用せず、独自の管理ソリューション (例: グループ ポリシー) を用いて、信頼済みおよび信頼されていないルート証明書および中間証明書を管理しているケースがあります。
+組織で証明書パッケージを管理しており、DigiCert Global Root G2 証明書とその下位認証局チェーンのみを追加する必要がある場合は、[Azure 証明機関の詳細](https://learn.microsoft.com/azure/security/fundamentals/azure-certificate-authority-details?tabs=certificate-authority-chains#root-and-subordinate-certificate-authority-chains#root-and-subordinate-certificate-authority-chains) のドキュメントからダウンロードできます。
 
 .crt ファイルからルート証明書をインポートするには、管理者権限のコマンド プロンプトで以下のコマンドを実行します:
 
