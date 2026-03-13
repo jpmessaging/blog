@@ -109,7 +109,7 @@ certutil -addstore Root "C:\path\to\DigiCertGlobalRootG2.crt"
 
 .crt ファイルから中間証明書をインポートするには、管理者権限のコマンド プロンプトで以下のコマンドを実行します:
 
-```Command
+```command
 certutil -addstore CA "C:\path\to\DigiCertGlobalG2TLSRSASHA2562020CA1-1.crt"
 ```
 
