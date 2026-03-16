@@ -1,1 +1,67 @@
-<%- partial('_partial/archive', {pagination: config.tag, index: true}) %>
+<%
+  var tag = site.tags.findOne({name: page.tag});
+  var allPosts = tag ? tag.posts.toArray() : [];
+
+  var yearMap = {};
+  allPosts.forEach(function(post) {
+    var y = post.date.year();
+    if (!yearMap[y]) yearMap[y] = [];
+    yearMap[y].push(post);
+  });
+
+  var years = Object.keys(yearMap).map(Number).sort(function(a, b) { return b - a; });
+  years.forEach(function(y) {
+    yearMap[y].sort(function(a, b) { return a.date - b.date; });
+  });
+%>
+<% if (years.length > 1) { %>
+  <div class="tag-year-nav-wrap">
+    <span class="tag-year-nav-label">年別にみる:</span>
+    <nav class="tag-year-nav">
+      <% years.forEach(function(year) { %>
+        <a class="tag-year-nav-link" href="#year-<%= year %>" data-year="<%= year %>"><%= year %> 年 (<%= yearMap[year].length %> 件)</a>
+      <% }); %>
+    </nav>
+  </div>
+<% } %>
+<% years.forEach(function(year, yearIndex) { %>
+  <section class="archives-wrap tag-year-section" id="year-<%= year %>">
+    <details<%= yearIndex === 0 ? ' open' : '' %>>
+      <summary class="archive-year-wrap tag-year-summary">
+        <span class="tag-year-chevron"></span>
+        <span class="archive-year"><%= year %></span>
+        <span class="archive-year-total"><%= yearMap[year].length %> 件</span>
+      </summary>
+      <div class="archives">
+        <% yearMap[year].forEach(function(post, i) { %>
+          <%- partial('_partial/archive-post', {post: post, even: i % 2 == 0}) %>
+        <% }); %>
+      </div>
+    </details>
+  </section>
+<% }); %>
+
+<script>
+(function() {
+  var navLinks = document.querySelectorAll('.tag-year-nav-link[data-year]');
+  navLinks.forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var year = this.getAttribute('data-year');
+      var target = document.getElementById('year-' + year);
+      if (!target) return;
+      var details = target.querySelector('details');
+      // Close all other details
+      document.querySelectorAll('.tag-year-section details').forEach(function(d) {
+        if (d !== details) d.removeAttribute('open');
+      });
+      // Open target details
+      if (details) details.setAttribute('open', '');
+      // Scroll after open (next frame to allow layout recalc)
+      requestAnimationFrame(function() {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  });
+})();
+</script>

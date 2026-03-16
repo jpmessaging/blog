@@ -1,0 +1,40 @@
+<%
+  var yearGroups = {};
+  site.posts.each(function(post) {
+    var y = post.date.year();
+    var m = post.date.month() + 1;
+    if (!yearGroups[y]) yearGroups[y] = {};
+    if (!yearGroups[y][m]) yearGroups[y][m] = 0;
+    yearGroups[y][m]++;
+  });
+  var years = Object.keys(yearGroups).map(Number).sort().reverse();
+%>
+<div id="content" class="inner">
+  <% years.forEach(function(year) { %>
+    <%
+      var totalForYear = Object.keys(yearGroups[year]).reduce(function(sum, m) {
+        return sum + yearGroups[year][m];
+      }, 0);
+    %>
+    <section class="archives-wrap archive-year-index-section">
+      <div class="archive-year-wrap">
+        <a href="<%- url_for(config.archive_dir + '/' + year + '/') %>" class="archive-year"><%= year %></a>
+        <span class="archive-year-total"><%= totalForYear %> 件</span>
+      </div>
+      <div class="archive-year-index-months">
+        <%
+          var months = Object.keys(yearGroups[year]).map(Number).sort(function(a, b) { return a - b; });
+          months.forEach(function(month) {
+            var mm = (month < 10 ? '0' + month : month);
+        %>
+          <a class="archive-month-pill" href="<%- url_for(config.archive_dir + '/' + year + '/' + mm + '/') %>">
+            <span class="archive-month-name"><%= month %> 月</span>
+            <% if (theme.show_count) { %>
+              <span class="archive-month-count"><%= yearGroups[year][month] %></span>
+            <% } %>
+          </a>
+        <% }); %>
+      </div>
+    </section>
+  <% }); %>
+</div>

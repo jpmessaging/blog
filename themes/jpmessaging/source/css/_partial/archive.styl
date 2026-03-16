@@ -1,29 +1,137 @@
 .archives-wrap
   margin: block-margin 0
 
-.archives
-  clearfix()
+.tag-year-nav-wrap
+  display: flex
+  align-items: baseline
+  flex-wrap: wrap
+  gap: 8px
+  margin-top: 1.5em
+  margin-bottom: 2em
+
+.tag-year-nav-label
+  font-size: 0.85em
+  color: color-grey
+  white-space: nowrap
+
+.tag-year-nav
+  display: flex
+  flex-wrap: wrap
+  gap: 6px
+
+.tag-year-nav-link
+  padding: 4px 10px
+  border: 1px solid color-border
+  border-radius: 20px
+  background: #fff
+  color: color-link
+  text-decoration: none
+  font-size: 0.85em
+  transition: background 0.15s, border-color 0.15s
+  &:hover
+    background: color-link
+    border-color: color-link
+    color: #fff
+
+.tag-year-section details
+  border: none
+
+.tag-year-summary
+  cursor: pointer
+  list-style: none
+  &::-webkit-details-marker
+    display: none
+  &::marker
+    display: none
+
+.tag-year-chevron
+  display: inline-block
+  width: 0
+  height: 0
+  border-top: 5px solid transparent
+  border-bottom: 5px solid transparent
+  border-left: 7px solid color-grey
+  transition: transform 0.2s
+  flex-shrink: 0
+
+details[open] .tag-year-chevron
+  transform: rotate(90deg)
+
+.archive-year-index-section
+  break-inside: avoid
+  border-top: 2px solid color-border
+  padding-top: 1em
+  &:first-child
+    border-top: none
+    padding-top: 0
 
 .archive-year-wrap
+  display: flex
+  align-items: baseline
+  gap: 10px
   margin-bottom: 1em
+
+.archive-year-total
+  font-size: 0.8em
+  color: color-grey
+  font-weight: normal
+  letter-spacing: 0
+  text-transform: none
+
+.archive-year-index-months
+  display: flex
+  flex-wrap: wrap
+  gap: 6px
+  margin-bottom: 1.5em
+  margin-top: 0.5em
+
+.archive-month-pill
+  display: inline-flex
+  align-items: center
+  gap: 5px
+  padding: 4px 10px
+  border: 1px solid color-border
+  border-radius: 20px
+  background: #fff
+  color: color-link
+  text-decoration: none
+  font-size: 0.85em
+  transition: background 0.15s, border-color 0.15s
+  &:hover
+    background: color-link
+    border-color: color-link
+    color: #fff
+    .archive-month-count
+      background: rgba(255,255,255,0.3)
+      color: #fff
+
+.archive-month-name
+  font-weight: bold
+
+.archive-month-count
+  background: color-background
+  color: color-grey
+  border-radius: 10px
+  padding: 1px 6px
+  font-size: 0.9em
+  line-height: 1.4
+
+.archives
+  display: grid
+  grid-template-columns: 1fr
+  gap: 10px
+  @media mq-tablet
+    grid-template-columns: repeat(2, 1fr)
+  @media mq-normal
+    grid-template-columns: repeat(3, 1fr)
 
 .archive-year
   @extend $block-caption
 
-.archives
-  column-gap: 10px
-  @media mq-tablet
-    column-count: 2
-  @media mq-normal
-    column-count: 3
-
-.archive-article
-  avoid-column-break()
-
 .archive-article-inner
   @extend $block
   padding: 10px
-  margin-bottom: 15px
+  margin-bottom: 0
 
 .archive-article-title
   text-decoration: none
