@@ -3,8 +3,14 @@
     <%- partial('article', {post: post, index: true}) %>
   <% }) %>
 <% } else { %>
+  <%
+    var postList = page.posts.toArray();
+    if (page.month || page.year) {
+      postList = postList.sort(function(a, b) { return a.date - b.date; });
+    }
+  %>
   <% var last; %>
-  <% page.posts.each(function(post, i){ %>
+  <% postList.forEach(function(post, i){ %>
     <% var year = post.date.year(); %>
     <% if (last != year){ %>
       <% if (last != null){ %>
@@ -19,7 +25,7 @@
     <% } %>
     <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
   <% }) %>
-  <% if (page.posts.length){ %>
+  <% if (postList.length){ %>
     </div></section>
   <% } %>
 <% } %>
