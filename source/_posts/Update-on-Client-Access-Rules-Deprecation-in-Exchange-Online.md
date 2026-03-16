@@ -1,11 +1,14 @@
 ---
 title: 'Exchange Online のクライアント アクセス ルール廃止に関する最新情報'
 date: 2024-12-27
-lastupdate:
+lastupdate: 2026-03-13
 tags: 'Exchange Online'
 alias: Update on Client Access Rules Deprecation in Exchange Online/index.html
 ---
 ※ この記事は、[Update on Client Access Rules Deprecation in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/update-on-client-access-rules-deprecation-in-exchange-online/4354809) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
+<p style="background:yellow"><b>2025 年 9 月 12 日更新:</b> 2025 年 9 月をもって、Exchange Online のクライアント アクセス ルールはすべての組織で完全に廃止され、サポートされなくなりました。これにより、2022 年 10 月に開始された段階的な廃止が完了しました。</p>
+
 
 2022 年 9 月に、Exchange Online でのクライアント アクセス ルール（CARs）の廃止を開始することを[発表](https://techcommunity.microsoft.com/t5/exchange-team-blog/deprecation-of-client-access-rules-in-exchange-online/ba-p/3638563)しました。それ以来、アクティブなルールのないテナントではすでに CARs が廃止されています。CARs は 2025 年 9 月 1 日にすべてのテナントで廃止されます。さらに、お客様が期限前に CARs をオフにすることを選択した場合、私たちはそのテナントの CARs を無効にします。スムーズな移行を確保し、継続的アクセス評価（CAE）を備えた条件付きアクセス（CA）が提供する強化されたセキュリティ機能を活用できるように、できるだけ早く CARs から移行することをお勧めします。
 
