@@ -1,7 +1,7 @@
 ---
 title: '意図しないライセンス解除から保護するための Exchange Online ライセンス解除レジリエンシーの導入'
 date: 2024-11-22
-LasuUpdate: 2025/7/17
+lastupdate: 2025/7/17
 tags: 
 - Exchange Online
 ---
