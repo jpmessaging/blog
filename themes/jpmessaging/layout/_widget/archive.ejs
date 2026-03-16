@@ -16,18 +16,18 @@
     var hasMore = recentKeys.length < allKeys.length;
   %>
   <div class="widget-wrap">
-    <h3 class="widget-title"><a href="<%= url_for('/archives') %>"><%= __('archive_a') %></a></h3>
+    <h3 class="widget-title"><a href="<%= url_for(config.archive_dir) %>"><%= __('archive_a') %></a></h3>
     <div class="widget">
       <ul class="archive-list">
         <% recentKeys.forEach(function(k) { %>
           <li class="archive-list-item">
-            <a class="archive-list-link" href="<%= url_for('/archives/' + k + '/') %>"><%= k %></a>
+            <a class="archive-list-link" href="<%= url_for(config.archive_dir + '/' + k + '/') %>"><%= k %></a>
             <% if (theme.show_count) { %><span class="archive-list-count"><%= groups[k] %></span><% } %>
           </li>
         <% }); %>
       </ul>
       <% if (hasMore) { %>
-        <a href="<%= url_for('/archives') %>" class="archive-more-link">もっと見る</a>
+        <a href="<%= url_for(config.archive_dir) %>" class="archive-more-link">もっと見る</a>
       <% } %>
     </div>
   </div>
