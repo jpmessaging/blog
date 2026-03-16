@@ -18,7 +18,7 @@
     %>
     <section class="archives-wrap archive-year-index-section">
       <div class="archive-year-wrap">
-        <a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>
+        <a href="<%- url_for(config.archive_dir + '/' + year + '/') %>" class="archive-year"><%= year %></a>
         <span class="archive-year-total"><%= totalForYear %> 件</span>
       </div>
       <div class="archive-year-index-months">
@@ -27,7 +27,7 @@
           months.forEach(function(month) {
             var mm = (month < 10 ? '0' + month : month);
         %>
-          <a class="archive-month-pill" href="<%- url_for(config.archive_dir + '/' + year + '/' + mm) %>">
+          <a class="archive-month-pill" href="<%- url_for(config.archive_dir + '/' + year + '/' + mm + '/') %>">
             <span class="archive-month-name"><%= month %> 月</span>
             <% if (theme.show_count) { %>
               <span class="archive-month-count"><%= yearGroups[year][month] %></span>
