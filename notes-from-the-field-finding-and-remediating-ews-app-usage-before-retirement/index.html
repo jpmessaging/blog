@@ -121,8 +121,8 @@
       <div class="article-share">
         Last Update:
         <a href="/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/" class="article-date-single">    
-    
-    <time datetime="2026-02-24T15:00:00.000Z" itemprop="dateUpdated">2026-02-25</time>
+        
+    <time datetime="2026-03-15T15:00:00.000Z" itemprop="lastupdate">2026-03-16</time>    
     
 </a>
       </div>
@@ -137,6 +137,7 @@
 <li><a href="https://jpmessaging.github.io/blog/update-to-ews-access-for-kiosk--frontline-worker-licensed-users/"><strong>Kiosk&#x2F;Frontline ライセンス ユーザー向けの EWS アクセス制限</strong></a>：<strong>2026 年 6 月末</strong>より、Microsoft は <strong>EWS へのアクセス権を持たないライセンス</strong> (一部の Kiosk ライセンスや Frontline Worker 向けライセンス) が割り当てられているユーザーに対して EWS へのアクセスをブロックします。この変更により、該当するライセンスを使用しているユーザーでは、10 月の全体的な廃止日より前に EWS ベースの連携が動作しなくなる可能性があります。</li>
 </ul>
 <p>Microsoft Graph への移行を 2026 年 10 月よりも大幅に前倒しで完了する予定であっても、2026 年 6 月末に実施されるライセンス関連のブロックを踏まえ、該当ライセンスが割り当てられたユーザーが EWS を使用しているかどうかを確認する必要があります。そのような確認において有用なのが、<a target="_blank" rel="noopener" href="https://github.com/jmartinmsft/Exchange-App-Usage-Reporting">Exchange-App-Usage-Reporting</a> スクリプトです。このスクリプトを活用することで、EWS の権限を持つアプリを洗い出し、直近のサインイン アクティビティとあわせて把握できるため、優先的に対応すべき対象を効率的に見極めることができます。</p>
+<h4 id="まずはメッセージ-センターを確認"><a href="#まずはメッセージ-センターを確認" class="headerlink" title="まずはメッセージ センターを確認"></a>まずはメッセージ センターを確認</h4><p>最初にできることは、テナントの<a target="_blank" rel="noopener" href="https://go.microsoft.com/fwlink/p/?linkid=2070717">メッセージ センター</a> (全体管理者またはプライバシー閲覧者のロールが必要です) を確認し、受信トレイまたはアーカイブで “Update active Exchange Web Services Applications” を検索することです。該当するメッセージが見つからない場合は、テナント内で EWS が使用されていない可能性が高く、今回の廃止による影響を受けないと考えられます。なお、EWS の使用状況に関するメッセージの送信は 2025 年 12 月下旬からすべてのテナントに対して開始されています。</p>
 <h3 id="Exchange‑App‑Usage‑Reporting-スクリプトでできること"><a href="#Exchange‑App‑Usage‑Reporting-スクリプトでできること" class="headerlink" title="Exchange‑App‑Usage‑Reporting スクリプトでできること"></a>Exchange‑App‑Usage‑Reporting スクリプトでできること</h3><p>このスクリプトは、次のような実際の運用上の疑問に答えるために設計されています。<em>テナント内で EWS の権限を持つ Azure AD のアプリはどれか、そしてそれらは現在も使用されているのか？</em> 大まかには、次の処理を行います。</p>
 <ol>
 <li>Exchange&#x2F;EWS 関連のアクセス権限を持つアプリケーションを検出します。</li>
@@ -164,6 +165,7 @@
 <li><strong>AuditLogs.Read.All</strong> - サインイン アクティビティを照会するため</li>
 <li><strong>Directory.Read.All</strong> - ユーザー ライセンス情報を照会するため</li>
 </ul>
+<p>これらの権限を追加する手順については、<a target="_blank" rel="noopener" href="https://github.com/jmartinmsft/Exchange-App-Usage-Reporting/blob/main/Create%20an%20App%20registration.md">Create an App registration の readme ファイル</a>を参照してください。</p>
 <h4 id="2-アクティブなアプリケーションの取得"><a href="#2-アクティブなアプリケーションの取得" class="headerlink" title="2) アクティブなアプリケーションの取得"></a>2) アクティブなアプリケーションの取得</h4><p>PowerShell セッションを開き、スクリプトをダウンロードしたフォルダーに移動します。実行前に、必要に応じて (例えば、<em>Unblock-File</em> を使用して) ファイルのブロックを解除してください。その後、次のサンプル構文でスクリプトを実行します。</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\<span class="built_in">Find-EwsUsage</span>.ps1 <span class="literal">-OutputPath</span> C:\Temp\Output <span class="literal">-OAuthCertificate</span> <span class="number">8865</span>BEC624B02FA0DE9586D13186ABC8BE265917 <span class="literal">-CertificateStore</span> CurrentUser <span class="literal">-OAuthClientId</span> <span class="number">7</span>a305061<span class="literal">-1343-49c3-a469-378de4dbd90d</span> <span class="literal">-OAuthTenantId</span> <span class="number">9101</span>fc97<span class="literal">-5be5-4438-a1d7-83e051e52057</span> <span class="literal">-PermissionType</span> Application <span class="literal">-Operation</span> GetEwsActivity</span><br></pre></td></tr></table></figure>
 
@@ -202,11 +204,16 @@
 <li>Microsoft Graph への移行を優先し、エンドツーエンドで機能することを検証します。</li>
 <li>定期的にレポートを再実行し、EWS の使用状況がゼロに向かって減少していることを確認します。</li>
 </ul>
+<p><strong>この投稿の変更点:</strong></p>
+<ul>
+<li><strong>2026 年 2 月 26 日 :</strong> Create app registration readme file へのリンクを改善版に差し替えました。</li>
+<li><strong>2026 年 2 月 25 日 :</strong> レポーティング スクリプトのアプリ登録に関する詳細、およびメッセージ センターで EWS 使用状況を確認する方法を追加しました。</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/" data-id="cmmoo77sd007amk2abrzwa03e" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/" data-id="cmmsmdaxs007dxs2a5jgj82kt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
