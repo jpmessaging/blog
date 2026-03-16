@@ -1,7 +1,7 @@
 ---
 title: 現場レポート：EWS 廃止前に行う EWS アプリ利用状況の確認と対策
 date: 2026-2-25
-lastupdate: 2026-3-13
+lastupdate: 2026-3-16
 tags: Exchange Online
 ---
 ※ この記事は、[Notes From the Field: Finding and Remediating EWS App Usage Before Retirement](https://techcommunity.microsoft.com/blog/exchange/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/4496469) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。

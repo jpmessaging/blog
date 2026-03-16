@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Online のクライアント アクセス ルール廃止に関する最新情報'
 date: 2024-12-27
-lastupdate: 2026-03-13
+lastupdate: 2026-03-16
 tags: 'Exchange Online'
 alias: Update on Client Access Rules Deprecation in Exchange Online/index.html
 ---
