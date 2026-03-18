@@ -1,7 +1,7 @@
 ---
 title: Exchange Online EWS：廃止期限が迫っています
-date: 2026-2-6 12:00
-lastupdate: 2026-3-18
+date: 2026/02/06 12:00
+lastupdate: 2026/03/18
 tags: Exchange Online
 ---
 ※ この記事は、[Exchange Online EWS, Your Time is Almost Up](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
