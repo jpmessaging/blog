@@ -1,0 +1,39 @@
+name: Auto Copilot Review on PR
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  copilot-review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Request Copilot review
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr edit "${{ github.event.pull_request.number }}" \
+            --repo "${{ github.repository }}" \
+            --add-reviewer "copilot"
+
+      - name: Post review workflow comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr comment "${{ github.event.pull_request.number }}" \
+            --repo "${{ github.repository }}" \
+            --body "$(cat <<'EOF'
+          🤖 **Copilot をレビュアーに設定しました。**
+
+          Copilot のレビューが完了したら、以下の手順で対応をお願いします:
+
+          1. Copilot の指摘内容を確認する
+          2. 修正すべき箇所は修正する
+          3. 無視してよい指摘は Resolve conversation で閉じる
+          4. 上記がすべて完了したら、人間のレビュアーを設定する
+          EOF
+          )"
