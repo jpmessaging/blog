@@ -75,7 +75,7 @@ Get-ChildItem -Path Cert:\LocalMachine\Root\ | Where-Object { $_.Thumbprint -eq 
 
 ルート証明書に加え、関連する中間証明書が複数あります。
 
-ルート証明書の確認コマンドで結果が返されない場合で、且つ、Windows CTL Updater 機能の再有効化をしたくない場合、以下の対応を実施する必要があります。:
+ルート証明書の確認コマンドで結果が返されない場合で、且つ、Windows CTL Updater 機能の再有効化をしたくない場合、以下の対応を実施する必要があります。
 
 ##### **最新の Microsoft 365 ルート証明書チェーン バンドルを手動でダウンロードしてインポートする**
 
