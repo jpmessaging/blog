@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Outlook アドインでインライン画像を追加する際の添付ファイル ID の動作変更 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Changes to attachment IDs for inline images in Outlook add-ins の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Outlook on the web および新しい Outlook fo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Outlook アドインでインライン画像を追加する際の添付ファイル ID の動作変更">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/changes-to-attachment-ids-for-inline-images-in-outlook-add-ins/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Changes to attachment IDs for inline images in Outlook add-ins の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Outlook on the web および新しい Outlook fo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-19T00:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-19T00:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Outlook">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-changes-to-attachment-ids-for-inline-images-in-outlook-add-ins" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/changes-to-attachment-ids-for-inline-images-in-outlook-add-ins/" class="article-date">
+  <time datetime="2026-03-19T00:00:00.000Z" itemprop="datePublished">2026-03-19</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Outlook アドインでインライン画像を追加する際の添付ファイル ID の動作変更
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/changes-to-attachment-ids-for-inline-images-in-outlook-add-ins/" class="article-date-single">    
+    
+    <time datetime="2026-03-19T00:00:00.000Z" itemprop="dateUpdated">2026-03-19</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/microsoft365dev/changes-to-attachment-ids-for-inline-images-in-outlook-add-ins/">Changes to attachment IDs for inline images in Outlook add-ins</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>Outlook on the web および新しい Outlook for Windows (新しい Outlook) において、メール アイテムの署名や本文にプログラムでインライン画像の添付ファイルを追加する際の動作が更新されます。この変更は、インライン画像を追加したときに返される Exchange Web Services (EWS) ID に依存しているアドインに影響する可能性があります。</p>
+<h2 id="変更内容"><a href="#変更内容" class="headerlink" title="変更内容"></a>変更内容</h2><p>以前は、<code>isInline</code> を true に設定して <code>addFileAttachmentFromBase64Async</code>&#x2F;<code>addFileAttachmentAsync</code> メソッド (<a target="_blank" rel="noopener" href="https://learn.microsoft.com/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-addfileattachmentfrombase64async-member(1)">Message Compose</a>) を使用してメール アイテムの署名や本文にインライン画像を追加すると、呼び出しが完了する前に画像がサーバーにアップロードされていました。その後、各画像に対してコールバック関数で EWS ID が返されていました (例 : <code>AAkALgAAAAAAHYQDEapmEc2byACqAC/EWg0AW4xUByFbp0CroCNphMYEEAAGhqU3LwAAARIAEACS5VsVp3akQa7/BahqVbve</code>)。</p>
+<p>今後は、<code>addFileAttachmentFromBase64Async</code>&#x2F;<code>addFileAttachmentAsync</code> の呼び出しが完了し、画像が署名や本文に追加された後に、インライン画像がサーバーにアップロードされるようになります。<code>addFileAttachmentFromBase64Async</code>&#x2F;<code>addFileAttachmentAsync</code> の呼び出しはネットワーク呼び出しなしですぐに完了するため、EWS ID の代わりにローカルで一時的な添付ファイル ID が生成されます。この添付ファイル ID には “addinId” というプレフィックスが付きます (例 : <code>addinId:31c91015-920a-6fed-f663-970a0f9bc5cd</code>)。ローカルで生成された添付ファイル ID は一時的なもので、添付ファイルがサーバーにアップロードされると最終的に EWS ID が生成されます。</p>
+<p>一時的な添付ファイル ID は、現在の作成セッション中 (作成中のメール アイテムが開いている間) は、<code>getAttachmentsAsync</code> や <code>getAttachmentContentAsync</code> などの他の添付ファイル API で完全にサポートされています。この動作は、添付ファイルがアップロードされて EWS ID が割り当てられた後も有効です。作成セッションが終了すると、一時的な ID は使用できなくなります。</p>
+<p>以前の動作と同様に、すべてのインライン添付ファイルがサーバーにアップロードされるまで、メール アイテムは送信できません。添付ファイルのアップロード中にメッセージを送信しようとすると、アップロードがまだ進行中であることを通知するダイアログが表示されます。</p>
+<h2 id="getAttachmentsAsync-呼び出しへの影響"><a href="#getAttachmentsAsync-呼び出しへの影響" class="headerlink" title="getAttachmentsAsync 呼び出しへの影響"></a>getAttachmentsAsync 呼び出しへの影響</h2><p>インライン添付ファイルをプログラムで挿入した後に <a target="_blank" rel="noopener" href="https://learn.microsoft.com/javascript/api/outlook/office.messagecompose#outlook-office-messagecompose-getattachmentsasync-member(1)">Message Compose</a> モードで <code>getAttachmentsAsync</code> メソッドを呼び出すと、添付ファイルがサーバーにアップロード済みかどうかによって、コールバック関数で返される添付ファイル ID が異なります。</p>
+<ul>
+<li>添付ファイルがまだサーバーにアップロード中の場合、<code>getAttachmentsAsync</code> メソッドは <a target="_blank" rel="noopener" href="https://learn.microsoft.com/javascript/api/outlook/office.attachmentdetailscompose#outlook-office-attachmentdetailscompose-id-member">id</a> プロパティに一時的な添付ファイル ID を返します。また、新しいプロパティ <a target="_blank" rel="noopener" href="https://learn.microsoft.com/javascript/api/outlook/office.attachmentdetailscompose#outlook-office-attachmentdetailscompose-isserviceaccessible-member">isServiceAccessible</a> が false に設定されます。<code>isServiceAccessible</code> プロパティは、添付ファイル ID が Microsoft Graph などの他のサービスで使用できるかどうかを示します。添付ファイルがまだアップロード中の場合に返される <a target="_blank" rel="noopener" href="https://learn.microsoft.com/javascript/api/outlook/office.attachmentdetailscompose">AttachmentDetailsCompose</a> オブジェクトの例は以下の通りです。</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;id&quot;</span><span class="punctuation">:</span><span class="string">&quot;addinId:31c91015-920a-6fed-f663-970a0f9bc5cd&quot;</span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;taskpane.jpg&quot;</span><span class="punctuation">,</span><span class="attr">&quot;contentType&quot;</span><span class="punctuation">:</span><span class="string">&quot;image/png&quot;</span><span class="punctuation">,</span><span class="attr">&quot;size&quot;</span><span class="punctuation">:</span><span class="number">1318</span><span class="punctuation">,</span><span class="attr">&quot;attachmentType&quot;</span><span class="punctuation">:</span><span class="string">&quot;file&quot;</span><span class="punctuation">,</span><span class="attr">&quot;isInline&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;isServiceAccessible&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">false</span></span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>添付ファイルがサーバーにアップロード済みの場合、<code>getAttachmentsAsync</code> メソッドは <code>id</code> プロパティに EWS ID を返し、<code>isServiceAccessible</code> は true に設定されます。添付ファイルがアップロード済みの場合に返される <code>AttachmentDetailsCompose</code> オブジェクトの例は以下の通りです。</li>
+</ul>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span><span class="attr">&quot;id&quot;</span><span class="punctuation">:</span><span class="string">&quot;AAkALgAAAAAAHYQDEapmEc2byACqAC/EWg0AW4xUByFbp0CroCNphMYEEAAGhqU3LwAAARIAEACS5VsVp3akQa7/BahqVbve&quot;</span><span class="punctuation">,</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span><span class="string">&quot;taskpane.jpg&quot;</span><span class="punctuation">,</span><span class="attr">&quot;contentType&quot;</span><span class="punctuation">:</span><span class="string">&quot;image/png&quot;</span><span class="punctuation">,</span><span class="attr">&quot;size&quot;</span><span class="punctuation">:</span><span class="number">1318</span><span class="punctuation">,</span><span class="attr">&quot;attachmentType&quot;</span><span class="punctuation">:</span><span class="string">&quot;file&quot;</span><span class="punctuation">,</span><span class="attr">&quot;isInline&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span><span class="attr">&quot;isServiceAccessible&quot;</span><span class="punctuation">:</span><span class="literal"><span class="keyword">true</span></span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="変更による改善点"><a href="#変更による改善点" class="headerlink" title="変更による改善点"></a>変更による改善点</h2><p>今回の変更は、署名のシナリオを改善するためのものです。インライン添付ファイルの追加を高速かつ安定的にし、署名を適用する前にネットワーク アップロードを待つ必要をなくしています。また、一時的なアップロードの問題が署名の表示を妨げることもなくなります。</p>
+<ul>
+<li><strong>署名の適用が高速化 (体感遅延の低減)</strong>: 各インライン画像のアップロードを順番に待つことなく、すぐに署名を設定できるため、署名がすばやく表示されます。</li>
+<li><strong>信頼性の向上</strong>: インライン画像のアップロードに失敗しても、署名の適用操作全体が失敗することがなくなり、署名は引き続き表示され、作成と送信を続けることができます。</li>
+</ul>
+<h2 id="必要な対応"><a href="#必要な対応" class="headerlink" title="必要な対応"></a>必要な対応</h2><p>Outlook アドインが添付ファイルの EWS ID を使用して Microsoft Graph の呼び出しを行っている場合、Graph の呼び出しを行う前に <code>isServiceAccessible</code> プロパティが true を返すことを確認するようにコードを調整する必要があります。</p>
+<p>Outlook の署名アドインが <code>addFileAttachmentFromBase64Async</code>&#x2F;<code>addFileAttachmentAsync</code> と <a target="_blank" rel="noopener" href="https://learn.microsoft.com/javascript/api/outlook/office.body#outlook-office-body-setsignatureasync-member(1)">setSignatureAsync</a> を一緒に呼び出している場合、変更は不要です。</p>
+<h2 id="タイムライン"><a href="#タイムライン" class="headerlink" title="タイムライン"></a>タイムライン</h2><p>2026 年 3 月 30 日から、インライン添付ファイルの処理方法の変更が本番ユーザーへの展開を開始します。必要に応じて、それまでにアドインへの変更を行ってください。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/changes-to-attachment-ids-for-inline-images-in-outlook-add-ins/" data-id="cmmwujun3004ry82a9mo37cno" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/copilot-in-outlook-new-agentic-experiences-for-email-and-calendar/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Copilot in Outlook：メールと予定表の新しいエージェント体験</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">59</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">56</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/changes-to-attachment-ids-for-inline-images-in-outlook-add-ins/">Outlook アドインでインライン画像を追加する際の添付ファイル ID の動作変更</a>
+          </li>
+        
+          <li>
+            <a href="/blog/copilot-in-outlook-new-agentic-experiences-for-email-and-calendar/">Copilot in Outlook：メールと予定表の新しいエージェント体験</a>
+          </li>
+        
+          <li>
+            <a href="/blog/announcing-smtp-dane--mta-sts-connector-modes-in-exchange-online/">Exchange Online における SMTP DANE および MTA-STS コネクタ モードの発表</a>
+          </li>
+        
+          <li>
+            <a href="/blog/native-external-sender-callouts-on-email-in-outlook/">Outlook におけるメールのネイティブな外部送信者表示機能</a>
+          </li>
+        
+          <li>
+            <a href="/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/">現場レポート：EWS 廃止前に行う EWS アプリ利用状況の確認と対策</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
