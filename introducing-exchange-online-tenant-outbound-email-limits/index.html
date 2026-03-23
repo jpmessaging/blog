@@ -125,7 +125,7 @@
         Last Update:
         <a href="/blog/introducing-exchange-online-tenant-outbound-email-limits/" class="article-date-single">    
         
-    <time datetime="2026-03-02T02:00:00.000Z" itemprop="lastupdate">2026-03-02</time>    
+    <time datetime="2026-03-22T15:00:00.000Z" itemprop="lastupdate">2026-03-23</time>    
     
 </a>
       </div>
@@ -305,7 +305,7 @@
 <p><strong>オンプレミス環境からテナントを経由して外部受信者にリレーされるメッセージは TERRL クォータにカウントされますか？</strong><br>はい。オンプレミスから送信されたものであれ、Exchange Online メールボックスから送信されたものであれ、インターネットから送信されたものであれ、テナントから外部受信者に送信されるすべてのメッセージは、 TERRL クォータにカウントされます。</p>
 <p><strong>ハイブリッド構成でユーザーのオンプレミス メールボックスに送信されたメッセージは TERRL クォータにカウントされますか？</strong><br>メールボックスにテナント内の承認済みドメインが含まれている限り、これらのメッセージは TERRL クォータにカウントされません。</p>
 <p><strong>テナントの設定ですべての Exchange Online 内部のメールは、Exchange Online メールボックスに送信される前に、処理のためにサード パーティのサービスに送信され、その後 Exchange Online に戻ってくる場合、これらのメッセージは TERRL クォータにカウントされますか？</strong><br>いいえ。受信者のドメインがテナント内の承認済みドメインである場合、これらのメッセージは TERRL クォータにカウントされません。たとえそれらが Exchange Online の外にルーティングされてから戻ってきたとしてもです。</p>
-<p><strong>外部受信者にメッセージを送信する際に、署名サービスやオンプレミスで処理されるために一度外部にルーティングされ、その後 Exchange Online に戻ってきて外部受信者に送信される場合、それは二重にカウントされますか？</strong><br>悪意のあるユーザーがオンプレミス システムを利用してスパムを送信するリスクを減らすために、現在これらのメッセージは複数回カウントされています。テレメトリ情報によると、TERRL クォータを超えているテナントはごく少数であるため、この動作がお客様のテナントに問題を引き起こす可能性は低いです。しかし、メッセージを複数回カウントせずにこのようなスプーフィングを防ぐための代替方法を調査中です。</p>
+<p><strong>外部受信者にメッセージを送信する際に、署名サービスやオンプレミスで処理されるために一度外部にルーティングされ、その後 Exchange Online に戻ってきて外部受信者に送信される場合、それは二重にカウントされますか？</strong><br>以前はこれらのメッセージが複数回カウントされていましたが、この問題は修正され、現在はメールが 1 回だけカウントされるようになっています。</p>
 <p><strong>マルチテナント組織内でのテナント間メッセージは外部メッセージとして扱われますか？</strong><br>現時点では、はい。</p>
 <p><strong>1 日に同じ外部受信者に 1,000 通のメッセージを送信した場合、それは 1 人の外部受信者としてカウントされますか、それとも 1,000 人の外部受信者としてカウントされますか？</strong><br>1,000 人としてカウントされます。TERRL は、外部受信者を一意には数えません。</p>
 <p><strong>テナント内の配布グループにメッセージを送信し、その配布グループに 1,000 人の外部受信者が含まれている場合、それは 1 人の外部受信者としてカウントされますか、それとも 1,000 人の外部受信者としてカウントされますか？</strong><br>1,000 人としてカウントされます。外部受信者のカウントは、配布グループ (およびそのネストされたグループ) が個々の受信者に完全に展開された後に行われます。</p>
@@ -346,6 +346,7 @@
 <p>※ 将来のアップデートで EAC レポートに表示されるデータを取得するための Graph API の提供が検討されています。</p>
 <p><strong>最近の変更点</strong></p>
 <ul>
+<li>2026&#x2F;3&#x2F;19: 署名サービスやオンプレミスへのルーティングに関する FAQ を更新しました。</li>
 <li>2026&#x2F;2&#x2F;27: WW&#x2F;Commercial テナントの日程を更新しました。</li>
 <li>2025&#x2F;3&#x2F;31: FAQ「マルチ テナント組織内でのテナント間メッセージ」に関する説明を修正しました。</li>
 <li>2025&#x2F;3&#x2F;19: FAQ「Exchange Online ジャーナリング メッセージのステータス」に関する説明を明確化しました。</li>
@@ -354,7 +355,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/" data-id="cmmwzdxt40070ng2a5o21bh1p" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/" data-id="cmn2mnad5006sx42ab2csfwly" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
