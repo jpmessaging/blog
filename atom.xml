@@ -6,7 +6,7 @@
   <link href="https://jpmessaging.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2026-03-24T00:00:00.000Z</updated>
+  <updated>2026-03-24T09:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>パブリック フォルダーから SharePoint へ ― 共有連絡先管理の新しいかたち</title>
+    <link href="https://jpmessaging.github.io/blog/from-public-folders-to-sharepoint-a-modern-approach-to-shared-contact-management/"/>
+    <id>https://jpmessaging.github.io/blog/from-public-folders-to-sharepoint-a-modern-approach-to-shared-contact-management/</id>
+    <published>2026-03-24T09:00:00.000Z</published>
+    <updated>2026-03-24T09:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/outlook/from-public-folders-to-sharepoint-a-modern-approach-to-shared-contact-management/4504716">From Public Folders to SharePoint: A Modern Approach to Shared Contact Management</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><h2 id="パブリック-フォルダーでできていたことを-SharePoint-で実現し、さらにその先へ-切り替え方法の紹介"><a href="#パブリック-フォルダーでできていたことを-SharePoint-で実現し、さらにその先へ-切り替え方法の紹介" class="headerlink" title="パブリック フォルダーでできていたことを SharePoint で実現し、さらにその先へ - 切り替え方法の紹介"></a>パブリック フォルダーでできていたことを SharePoint で実現し、さらにその先へ - 切り替え方法の紹介</h2><p>これまで長年、パブリック フォルダーの利用はチームや組織で連絡先を共有する定番の方法でした。取引先リストの管理、社員の共有ディレクトリの運用、取引先情報の整理など、さまざまな用途で使われてきました。</p><p>一方で、コラボレーションのあり方が変わるにつれて、共有連絡先の管理にも、よりモダンで統合されたアプローチが求められるようになっています。現在、SharePoint が強力かつシームレスな代替手段を提供しており、共有連絡先を Microsoft 365 の共同作業環境の中心に取り込めます。</p><p>この記事では、なぜ SharePoint の利用が共有連絡先の次のステップなのかを解説し、導入のための手順をステップ バイ ステップで紹介します。</p><h2 id="共有連絡先に-SharePoint-を使う理由"><a href="#共有連絡先に-SharePoint-を使う理由" class="headerlink" title="共有連絡先に SharePoint を使う理由"></a>共有連絡先に SharePoint を使う理由</h2><p>これまではパブリック フォルダーでは、他のコラボレーション ツールとは切り離された形で共有連絡先を管理していました。一方 SharePoint では、共有連絡先リスト、ドキュメント、プロジェクト計画、チームのリソースを 1 つの常にアクセス可能な一元化されたハブにまとめられることができます。<br>パブリック フォルダーを利用してきた組織にとって、SharePoint は次のステージへ進むための最適な選択肢です。さらに、これまで以上に強力な機能も利用できます。</p><ul><li>信頼できる統一された情報管理: どの共有連絡先リストが最新かもう迷う必要はありません。SharePoint では、チーム全員がアクセスでき、安心して利用できる信頼できる統一された管理場所を提供できます。</li><li>高度なコラボレーション: 複数のメンバーがリアルタイム更新、変更履歴の管理、きめ細かい権限設定を活用しながら、同時に共有連絡先を表示、編集、管理できます。</li><li>Microsoft 365 全体との強力な連携: SharePoint の共有連絡先は、Microsoft Teams、Power Automate、その他の Microsoft 365 ツールと自然に連携します。これにより、これまで実現できなかったワークフローが実現可能になります。たとえば、重要な取引先の連絡先が更新された際にチームへ自動通知したり、共有連絡先を Power Apps に同期して外勤営業チーム向けに活用したりすることができます。</li><li>エンタープライズ レベルのセキュリティとコンプライアンス: SharePoint の強固な権限モデル、監査ログ、コンプライアンス機能を備えており、共有連絡先データについても、厳格な組織要件にも対応できます。</li><li>どこからでもアクセス可能: デスクトップ、モバイル、Web のいずれからでも、SharePoint の共有連絡先にいつでも簡単にアクセスできます。</li></ul><p>現在パブリック フォルダーで共有連絡先を運用しているチームにとって、SharePoint への移行はシンプルで、すぐにその効果を実感できます。より高度なコラボレーション、日頃に利用しているツールとの緊密な連携、そして組織の成長に合わせて拡張できるモダンな利用体験が得られます。共有連絡先は閉じた管理場所から、Microsoft 365 の共同作業環境の中心へと移行し、常に最新で、セキュアに、そしてチーム連携を保ったまま活用できるようになります。</p><h2 id="はじめに-SharePoint-で共有連絡先を管理する方法"><a href="#はじめに-SharePoint-で共有連絡先を管理する方法" class="headerlink" title="はじめに: SharePoint で共有連絡先を管理する方法"></a>はじめに: SharePoint で共有連絡先を管理する方法</h2><p>共有連絡先を SharePoint に移行する準備はできましたか。次の手順で、連絡先リストの作成、整理、共有を進めていきましょう。</p><h3 id="ステップ-1-SharePoint-の連絡先リストを作成する"><a href="#ステップ-1-SharePoint-の連絡先リストを作成する" class="headerlink" title="ステップ 1: SharePoint の連絡先リストを作成する"></a>ステップ 1: SharePoint の連絡先リストを作成する</h3><ol><li>共有連絡先を保存したい SharePoint サイト (例: チーム サイトや部門サイト) に移動します。</li><li>左上の [新規] をクリックし、[リスト] を選択します。</li><li>テンプレート一覧から [連絡先] を選択します。名前、メール、電話番号、会社名などの列を含む構成があらかじめ用意されています。</li><li>リストにわかりやすい名前を付けます (例: 「営業チーム連絡先」や「ベンダー ディレクトリ」)。</li><li>[作成] をクリックすると、新しい連絡先リストを利用できます。</li></ol><h3 id="ステップ-2-連絡先を追加して整理する"><a href="#ステップ-2-連絡先を追加して整理する" class="headerlink" title="ステップ 2: 連絡先を追加して整理する"></a>ステップ 2: 連絡先を追加して整理する</h3><p>連絡先リストを登録する方法はいくつかあります。</p><ul><li>手動で追加する: リストのツール バーで [+ 新規] をクリックし、連絡先を 1 件ずつ追加します。詳細を入力して [保存] をクリックします。</li><li>Excel または CSV からインポートする: 既存の連絡先リストがある場合は、リストのツール バーから [インポート] をクリックし、Excel または CSV ファイルを選択します。列の対応付けを行うことで一括インポートできます。パブリック フォルダーから連絡先を移行する場合、この方法が最も迅速で効率的です。</li><li>列をカスタマイズする: チームの運用に合わせて、「担当営業」、「契約更新日」、「地域」などのカスタム列を追加できます。リストのヘッダーにある [+ 列の追加] より設定します。</li></ul><h3 id="ステップ-3-チームに共有する"><a href="#ステップ-3-チームに共有する" class="headerlink" title="ステップ 3: チームに共有する"></a>ステップ 3: チームに共有する</h3><p>連絡先リストの準備ができたら、共有は簡単です。</p><ul><li>権限を設定する: 歯車アイコンをクリックし、[リストの設定]、[アクセス許可] の順に選択して、閲覧、編集、管理の権限を制御します。個人、Microsoft 365 グループ、セキュリティ グループにアクセス権を付与できます。</li><li>直接リンクを共有する: リスト上部の [共有] をクリックし、特定の相手にリンクを送るか、チーム向けの共有リンクをコピーします。</li><li>適切なアクセス レベルを付与する: 役割に応じて、[表示可能] (閲覧のみ)、[編集可能] (連絡先の追加や変更)、[フル コントロール] (権限と設定の管理) を選択します。</li></ul><h3 id="ステップ-4-任意-Microsoft-Teams-にピン留めして簡単にアクセスできるようにする"><a href="#ステップ-4-任意-Microsoft-Teams-にピン留めして簡単にアクセスできるようにする" class="headerlink" title="ステップ 4 (任意): Microsoft Teams にピン留めして簡単にアクセスできるようにする"></a>ステップ 4 (任意): Microsoft Teams にピン留めして簡単にアクセスできるようにする</h3><p>チームが普段使っている Teams から、共有連絡先へすぐアクセスできるようにします。</p><ol><li>Microsoft Teams を開き、チームがコラボレーションしているチャネルに移動します。</li><li>チャネル上部の [+] (タブの追加) ボタンをクリックします。</li><li>アプリ一覧から [SharePoint] を選択し、連絡先リストを指定します。</li><li>共有連絡先が Teams のタブとして表示されます。チャネルのメンバーは Teams から離れることなく、連絡先の閲覧や管理ができるようになります。</li></ol><h3 id="ステップ-5-Power-Automate-で自動化する"><a href="#ステップ-5-Power-Automate-で自動化する" class="headerlink" title="ステップ 5: Power Automate で自動化する"></a>ステップ 5: Power Automate で自動化する</h3><p>自動化によって、共有連絡先をさらに活用します。</p><ul><li>変更通知: 連絡先が追加、更新、削除された際に、メールや Teams でチームへ通知するフローを作成します。</li><li>CRM 同期: SharePoint リストと CRM システム (Dynamics 365、Salesforce など) の間で連絡先を同期するフローを構築することで、プラットフォーム間でも常にデータの整合性を保つことができます。</li><li>定期レポート: 新規または変更された連絡先の概要を、週次または月次で関係者にメール送信するフローを設定します。</li></ul><h3 id="活用のヒント"><a href="#活用のヒント" class="headerlink" title="活用のヒント"></a>活用のヒント</h3><ul><li>カスタム ビューを作成する: SharePoint のビュー機能を使うと、「アクティブな取引先」、「地域別の連絡先」、「最近更新された連絡先」などの絞り込みビューを作成できます。必要な情報をすばやく見つけやすくなります。</li><li>バージョン管理を有効にする: リスト設定でバージョン履歴を有効にすると、連絡先への変更をすべて追跡できます。誰がいつ何を変更したか確認でき、必要に応じて以前のバージョンへ戻せます。</li><li>アラートを設定する: リストのアラートを設定すると、変更があった際にメールで通知を受け取れます。頻繁に確認しなくても、更新状況を把握できる便利な機能です。</li></ul><h2 id="モダンで統一された連絡先管理エクスペリエンス"><a href="#モダンで統一された連絡先管理エクスペリエンス" class="headerlink" title="モダンで統一された連絡先管理エクスペリエンス"></a>モダンで統一された連絡先管理エクスペリエンス</h2><p>これらの大きな進化に加えて、新しい Outlook for Windows の新しい連絡先には、日々の連絡先管理を刷新する機能が用意されています。</p><ul><li>見やすい表形式の一覧表示: すっきりしたカスタマイズ可能なテーブル レイアウトで、連絡先を一覧できます。並べ替え、絞り込み、確認をこれまで以上にすばやく行えます。</li><li>すぐ使えるクイック操作: 連絡先カードを開かなくても、連絡先リストから直接メール、通話、チャットを実行できます。</li><li>複数選択と一括操作: 複数の連絡先を分類、メール送信、管理したい場合は、まとめて選択して一度に操作できます。</li><li>柔軟に整理できるカテゴリ: Outlook 全体で利用できる色分けカテゴリで連絡先を整理できます。「重要な取引先」、「プロジェクト メンバー」、「仕入先」など、運用に合わせてタグ付けできます。</li><li>インポートとエクスポート: CSV ファイルからの取り込みや、必要に応じた連絡先データのエクスポートを簡単に行えます。</li><li>どこでも一貫したエクスペリエンス: 新しい Outlook for Windows、Outlook on the web、Teams のいずれでも、新しい連絡先エクスペリエンスは同じです。モダンで高速、そして安心して利用できます。</li></ul><p> <img src="/blog/from-public-folders-to-sharepoint-a-modern-approach-to-shared-contact-management/clipboard_image-1-1774272540027.png"></p><h2 id="パフォーマンスと信頼性を重視した設計"><a href="#パフォーマンスと信頼性を重視した設計" class="headerlink" title="パフォーマンスと信頼性を重視した設計"></a>パフォーマンスと信頼性を重視した設計</h2><p>Outlook の新しい連絡先は、パフォーマンスを最優先に考えて、ゼロから設計されました。Microsoft 内で数千人規模のユーザーによるテストとフィードバックを重ね、機能が充実しているだけでなく、高速で安定し、信頼できるエクスペリエンスを実現しています。連絡先の件数が多い場合でも、動作は快適です。どの操作も、すぐに反応する、ストレスのない使い心地になるよう設計されています。</p><h2 id="今すぐ使ってみましょう"><a href="#今すぐ使ってみましょう" class="headerlink" title="今すぐ使ってみましょう"></a>今すぐ使ってみましょう</h2><p>新しい連絡先エクスペリエンスは、現在、新しい Outlook for Windows と Outlook on the web で Microsoft 365 のすべてのユーザーに展開中です。試すには、次の手順を実行します。</p><ol><li>新しい Outlook for Windows を開き、左側のナビゲーション バーにある [連絡先] アイコンをクリックします。</li><li>名前、役職、場所、キーワードなどで相手を検索します。</li><li>新しいテーブル表示で連絡先を確認し、クイック操作を試します。</li></ol><p>Outlook の新しい連絡先により、つながり方やコラボレーションの方法がどう変わるか、とても楽しみにしています。これは始まりにすぎません。今後もさらに多くの改善を予定しており、順次にお知らせしていきます。</p><p>ぜひフィードバックをお寄せください。Outlook で [ヘルプ] &gt; [フィードバック] を選ぶと、直接フィードバックを送信するか、Microsoft Tech Community でのディスカッションへの参加も歓迎します。</p><p>─────────────────────────────────────────────────────────<br>People in Outlook チームは、世界最高の連絡先管理エクスペリエンスの実現に取り組んでいます。これからさらに進化していきます。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/outlook/from-public-folders-to-sharepoint-a-modern-approach-to-shared-contact-m</summary>
+      
+    
+    
+    
+    
+    <category term="Outlook" scheme="https://jpmessaging.github.io/blog/tags/Outlook/"/>
+    
+  </entry>
   
   <entry>
     <title>Microsoft Exchange 30 周年 : 30 年間の歩みを振り返る</title>
@@ -428,29 +450,6 @@
       
       
     <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/demystifying-exchange-online-mailbox-quotas/4486474&quot;&gt;Demystifying Exch</summary>
-      
-    
-    
-    
-    
-    <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Graph API を使用したメッセージ トレースのサポートにおけるパブリック プレビューのご案内
-</title>
-    <link href="https://jpmessaging.github.io/blog/Message-Trace-Support-Using-Graph-API-is-now-in-Public-Preview/"/>
-    <id>https://jpmessaging.github.io/blog/Message-Trace-Support-Using-Graph-API-is-now-in-Public-Preview/</id>
-    <published>2026-01-21T15:00:00.000Z</published>
-    <updated>2026-01-21T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><span style="background-color: yellow; font-weight: bold;">2026&#x2F;2&#x2F;6 編集: 本機能は正式リリース (GA: Generally Available) されました。オンボーディングに関する詳細な手順は、<a href="https://learn.microsoft.com/exchange/monitoring/trace-an-email-message/graph-api-message-trace">こちら</a> に纏めました。</span></p><p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/message-trace-support-using-graph-api-is-now-in-public-preview/4488587">Message Trace Support Using Graph API is now in Public Preview</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>Graph API を使用したメッセージ トレースのサポートが正式リリース (GA) となったことをお知らせします。コミュニティからのフィードバックを受けて、メッセージ トレースのエクスペリエンス向上に向けた強化を実施してきましたが、このたび本機能は正式リリース (GA) されました。<br>この RESTful Web API を使用すると、Exchange Online 組織全体での電子メールメッセージを追跡できます。<br>Graph API を使用した新しいメッセージトレース サポートは、既存の Reporting Webservice API を使用したメッセージ トレースを置き換えるものです。<br>詳細については、Graph API ドキュメント <a href="https://learn.microsoft.com/graph/api/resources/exchangemessagetrace?view=graph-rest-beta">exchangeMessageTrace resource type - Microsoft Graph beta | Microsoft Learn</a> をご参照ください。</p><h2 id="オンボーディング"><a href="#オンボーディング" class="headerlink" title="オンボーディング"></a>オンボーディング</h2><p><a href="https://review.learn.microsoft.com/entra/identity-platform/retire-service-principal-less-authentication?branch=main">サービス プリンシパルを使用しない認証の廃止</a>に伴い、本機能を利用するには追加の対応が必要となります。詳細については、以下のオンボーディング ドキュメントをご参照ください。</p><p><a href="https://learn.microsoft.com/exchange/monitoring/trace-an-email-message/graph-api-message-trace">Graph-based message trace API onboarding guide | Microsoft Learn</a></p><p>新しいサービス プリンシパルの作成後、プロビジョニングが完了するまでに数時間かかる場合があります。<br>この間、401 (Unauthorized) エラーが発生する可能性がありますので、プロビジョニングが完了、及び、反映されるまで数時間お待ちください。<br>関連情報については、以下のページをご参照ください。</p><p><a href="https://learn.microsoft.com/entra/identity-platform/retire-service-principal-less-authentication?branch=main">Retirement of service principal-less authentication - Microsoft identity platform | Microsoft Learn</a></p><h2 id="移行ガイダンスおよび廃止スケジュール"><a href="#移行ガイダンスおよび廃止スケジュール" class="headerlink" title="移行ガイダンスおよび廃止スケジュール"></a>移行ガイダンスおよび廃止スケジュール</h2><p>現在、Reporting Webservice を使用したメッセージ トレースを利用している場合は、2026 年 4 月 6 日までに Graph API を使用したメッセージ トレースへ移行してください。</p><p><strong>Reporting Webservice を使用した Message Trace および Message Trace Detail のサポートは、2026 年 4 月 8 日から非推奨 (廃止開始) となります。</strong></p><p>なお、Exchange Online に新規オンボーディングされるすべての組織では、移行作業の一環として、既定では Reporting Webservice を使用したメッセージ トレースへのアクセスはすでに提供されていません。</p><h2 id="スロットリング"><a href="#スロットリング" class="headerlink" title="スロットリング"></a>スロットリング</h2><p>Exchange Online リソースの不正利用・悪用のリスクを低減し、すべてのユーザーに対するサービスの可用性を確保しつつ、予測可能なエクスペリエンスを提供するため、一定時間内のリクエスト数に基づくレート制限（スロットリング）を実装します。Message Trace および Message Trace Detail へのすべての呼び出しは同一の数量制限を共有します。<br>1 テナントあたり、5 分間の実行ウィンドウ内で最大 100 件のメッセージ トレース クエリ リクエストが受け入れられます。過去 5 分間のリクエストが 100 件未満の場合、スロットリングは適用されません。スロットリングの閾値を超えて頻繁にクエリを実行するような自動化など使用されている場合、閾値を超えないように自動化の調整をご検討ください。</p><p>なお、クエリ リクエスト数と結果サイズは同じではありません。1 回のクエリ リクエストで、最大 5,000 件の結果を返すことができます。これにより、5 分間の実行ウィンドウ内で取得可能な最大結果数は 500,000 件となります。クエリを分散させることで、1 日あたり最大 1 億 4,400 万件の結果を取得できます。このスロットリング制限は、すべてのテナントに対する公平性とサービスの可用性を確保するためのものです。</p><table><thead><tr><th><strong>Cmdlet</strong></th><th><strong>テナントレベルの制限</strong></th></tr></thead><tbody><tr><td><a href="https://learn.microsoft.com/powershell/module/exchange/get-messagetracev2?view=exchange-ps">Get-MessageTraceV2</a></td><td>5 分あたり 100 リクエスト</td></tr><tr><td><a href="https://learn.microsoft.com/powershell/module/exchange/get-messagetracedetailv2?view=exchange-ps">Get-MessageTraceDetailV2</a></td><td>5 分あたり 100 リクエスト</td></tr></tbody></table>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;span style=&quot;background-color: yellow; font-weight: bold;&quot;&gt;2026&amp;#x2F;2&amp;#x2F;6 編集: 本機能は正式リリース (GA: Generally Available) されました。オンボーディングに関する</summary>
       
     
     
