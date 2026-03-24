@@ -39,6 +39,28 @@
   </entry>
   
   <entry>
+    <title>Outlook の新しいユーザー ディレクトリ検索エクスペリエンス - これまで以上にスマートで、速く、つながりやすく</title>
+    <link href="https://jpmessaging.github.io/blog/the-new-people-directory-search-experience-in-outlook-smarter-faster-and-more-co/"/>
+    <id>https://jpmessaging.github.io/blog/the-new-people-directory-search-experience-in-outlook-smarter-faster-and-more-co/</id>
+    <published>2026-03-23T03:00:00.000Z</published>
+    <updated>2026-03-23T03:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/outlook/the-new-people-directory-search-experience-in-outlook-smarter-faster-and-more-co/4504712">The New People Directory Search Experience in Outlook: Smarter, Faster, and More Connected Than Ever</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>Outlook 内で、最も重要な人々を見つけ、整理し、つながる方法を再設計しました。</p><p>連絡先の管理は、常に仕事の中心的な部分でした。しかし私たちの働き方は劇的に変化しました。本日は、Outlook に完全に再設計された People (ユーザー) エクスペリエンスを発表します。これにより、連絡先をこれまでより速くスマートに見つけ、整理し、つながることができます。世界中の同僚に連絡を取る場合でも、最も重要なビジネス関係を管理する場合でも、新しい Outlook の People は数分ではなく数秒でそれを実現するよう設計されています。</p><h2 id="瞬時に誰でも見つかるユーザー-ディレクトリ検索"><a href="#瞬時に誰でも見つかるユーザー-ディレクトリ検索" class="headerlink" title="瞬時に誰でも見つかるユーザー ディレクトリ検索"></a>瞬時に誰でも見つかるユーザー ディレクトリ検索</h2><p>皆さんのお声はしっかりと届いています。複雑な組織ツリーや深くネストされたディレクトリ階層をたどって 1 人の連絡先を見つけるには時間がかかりすぎる、というご指摘です。そこで、より優れたエクスペリエンスを実現しました。</p><p>Outlook の新しい People には、すべての連絡先を瞬時に手元に置く、強力でインテリジェントな検索エクスペリエンスが搭載されています。名前、場所、役職、部署、または自分で追加したメモを入力するだけで、People がすぐに適切な人物を表示します。組織図の階層をたどったり、アルファベット順のリストをスクロールしたりする必要はもうありません。入力して、見つけて、つながるだけです。</p><p>この機能を支える要素は次のとおりです。</p><ul><li><strong>高速なキーワード検索</strong> - 名前、メール アドレス、役職、場所、部署、さらには自分のメモやタグを横断して検索できます。わずか数回のキー入力で十分です。</li><li><strong>スマート候補</strong> - 入力する際に、People はコミュニケーション パターンと組織のコンテキストに基づいて、最も関連性の高い候補をインテリジェントに表示します。</li><li><strong>1 回の検索で、すべての連絡先ソースを横断</strong> - 組織のディレクトリ内の人物も個人の連絡先もリンクされたアカウントの連絡先も、検索によってすべてが 1 つの統合された結果セットにまとめられます。</li><li><strong>即座にアクション</strong> - 探していた人物を見つけたら、検索結果から直接メールを送ったり、電話をかけたり、Teams チャットを開始したりできます。余分なクリックは不要です。</li></ul><p>これが、再設計された連絡先の発見方法です。以前は階層ツリーを何度もクリックしながら探し回る必要があったことが、今では 1 回のスムーズな操作で完結します。自分の周りにいるあらゆる人と、最速でつながるための手段です。</p><p><img src="/blog/the-new-people-directory-search-experience-in-outlook-smarter-faster-and-more-co/image-1.png" alt="Outlook の People でインテリジェント検索を使って瞬時に誰でも見つける"></p><h2 id="モダンで統合された連絡先管理エクスペリエンス"><a href="#モダンで統合された連絡先管理エクスペリエンス" class="headerlink" title="モダンで統合された連絡先管理エクスペリエンス"></a>モダンで統合された連絡先管理エクスペリエンス</h2><p>これらの主要な革新に加えて、新しい Outlook の People は、毎日の連絡先管理方法を完全にリフレッシュします。</p><ul><li><strong>モダンなマルチ列テーブル ビュー</strong> - クリーンでカスタマイズ可能なテーブル レイアウトですべての連絡先を一目で確認できます。これまでより速く連絡先を並べ替え、フィルター処理し、一覧を素早く見渡すことができます。</li><li><strong>すぐに使えるクイック アクション</strong> - 連絡先リストから直接、任意の連絡先にメールを送ったり、電話をかけたり、チャットしたりできます。最初に連絡先カードを開く必要はありません。</li><li><strong>複数選択と一括操作</strong> - 複数の連絡先を一度に分類、メール送信、または管理する必要がある場合、すべてを選択して 1 ステップでアクションを実行できます。</li><li><strong>柔軟な整理のためのカテゴリ</strong> - Outlook 全体で機能する色分けされたカテゴリで連絡先を整理できます。「主要クライアント」「プロジェクト チーム」「ベンダー」など、ワークフローに合ったタグを連絡先に付けられます。</li><li><strong>インポートとエクスポート</strong> - CSV ファイルから連絡先を簡単に取り込んだり、必要なときに連絡先データをエクスポートしたりできます。</li><li><strong>どこでも一貫したエクスペリエンス</strong> - デスクトップの Outlook でも、Web の Outlook でも、Teams でも、People エクスペリエンスは同じです。モダンで、速く、信頼性が高いです。</li></ul><p><img src="/blog/the-new-people-directory-search-experience-in-outlook-smarter-faster-and-more-co/image-2.png" alt="モダンなテーブル レイアウトで統合された連絡先管理エクスペリエンスを実現する新しい People エクスペリエンス"></p><h2 id="パフォーマンスと信頼性のために構築"><a href="#パフォーマンスと信頼性のために構築" class="headerlink" title="パフォーマンスと信頼性のために構築"></a>パフォーマンスと信頼性のために構築</h2><p>新しい Outlook の People は、パフォーマンスを核心に据えて一から構築されました。Microsoft 内部の何千人ものユーザーからの広範なテストとフィードバックを経て、機能が豊富なだけでなく、大規模な連絡先リストでも高速で安定した信頼性の高いエクスペリエンスを提供します。あらゆる操作が遅延なく動作し、即座に応答するよう設計されています。</p><h2 id="今すぐ始める"><a href="#今すぐ始める" class="headerlink" title="今すぐ始める"></a>今すぐ始める</h2><p>新しい People エクスペリエンスは、現在、新しい Outlook for Windows (新しい Outlook) で利用可能であり、すべての Microsoft 365 ユーザー向けに Web 上の Outlook にも展開中です。利用を開始するには:</p><ol><li>新しい Outlook を開き、左側のナビゲーション レールにある People アイコンをクリックします。</li><li>名前、役職、場所、またはキーワードで誰かを検索し始めます。</li><li>新しいテーブル ビューで連絡先を探索し、クイック アクションを試してみてください。</li></ol><p>新しい Outlook の People が、つながり方やコラボレーションの方法にもたらす変化を、私たちは非常に楽しみにしています。これは、まだ始まりに過ぎません。まもなく共有できるイノベーションがさらに多くあります。</p><p>ぜひフィードバックをお聞かせください! Outlook 内で [ヘルプ] &gt; [フィードバック] を選択して直接フィードバックを共有するか、Microsoft Tech Community での会話に参加してください。</p><p>Outlook の People チームは、世界最高の連絡先管理エクスペリエンスの構築に取り組んでいます。そして、私たちはまだ始まったばかりです。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/outlook/the-new-people-directory-search-experience-in-outlook-smarter-faster-an</summary>
+      
+    
+    
+    
+    
+    <category term="New Outlook" scheme="https://jpmessaging.github.io/blog/tags/New-Outlook/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Outlook アドインでインライン画像を追加する際の添付ファイル ID の動作変更</title>
     <link href="https://jpmessaging.github.io/blog/changes-to-attachment-ids-for-inline-images-in-outlook-add-ins/"/>
     <id>https://jpmessaging.github.io/blog/changes-to-attachment-ids-for-inline-images-in-outlook-add-ins/</id>
@@ -429,28 +451,6 @@
       
       
     <summary type="html">&lt;p&gt;&lt;span style=&quot;background-color: yellow; font-weight: bold;&quot;&gt;2026&amp;#x2F;2&amp;#x2F;6 編集: 本機能は正式リリース (GA: Generally Available) されました。オンボーディングに関する</summary>
-      
-    
-    
-    
-    
-    <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Exchange Onlineにおけるローカル移動要求 – なぜサポートされていないのか</title>
-    <link href="https://jpmessaging.github.io/blog/local-move-requests-in-exchange-online-%E2%80%93-why-they%E2%80%99re-not-supported/"/>
-    <id>https://jpmessaging.github.io/blog/local-move-requests-in-exchange-online-%E2%80%93-why-they%E2%80%99re-not-supported/</id>
-    <published>2026-01-13T15:00:00.000Z</published>
-    <updated>2026-01-13T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/exchange/local-move-requests-in-exchange-online-%E2%80%93-why-they%E2%80%99re-not-supported/4484222">Local Move Requests in Exchange Online – Why They’re Not Supported</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>Exchange Online では、管理者が New-MoveRequest コマンドレットを使用して、同じテナントまたはデータセンター内でメールボックスを移動することを検討する場合があります。過去の経緯によりこのコマンドは存在していますが、<strong>Microsoft はローカル移動要求をサポートしていません</strong>。この記事では、その理由、リスク、および代わりに使用すべき方法について説明します。</p><p>Microsoft は過去に<a href="https://techcommunity.microsoft.com/blog/exchange/disabling-new-moverequest-for-local-mailbox-moves/1214776">ローカル移動要求を無効化する</a>と述べていましたが、実際には無効化していません。特定の状況下では問題解決に<em>役立つ場合がある</em>ことは認識していますが、<strong>ローカル移動要求の使用はサポート対象外であり、推奨もしていません</strong>。<u>使用する場合は自己責任において行ってください。</u></p><h4 id="ローカル移動要求が問題となる理由"><a href="#ローカル移動要求が問題となる理由" class="headerlink" title="ローカル移動要求が問題となる理由"></a>ローカル移動要求が問題となる理由</h4><p>ローカル移動要求は、もともとオンプレミスの Exchange Server 2010 におけるデータベース間の移動、および Exchange ハイブリッド環境でのオンボーディング &#x2F; オフボーディング シナリオ (Exchange Server と Exchange Online 間でのメールボックスの移動) のためのリモート移動要求として設計されました。その後、同じ New-MoveRequest コマンドを使用して 2 つの異なるテナント間でメールボックスを移行する機能 (クロス テナント移行) や、同一テナント内の異なる地域にメールボックスを持つマルチ Geo 環境向けの機能が追加されました。Microsoft 365 環境では、メールボックスの配置と負荷分散はサービスによって自動的に処理されます。テナント内で手動移動を強制すると、いくつかの問題が発生します。</p><ul><li><p><strong>サポート対象外</strong>: Microsoft サポートは、ローカル移動のトラブルシューティングや処理の迅速化を行うことができません。これらの要求は低優先度のバックグラウンド タスクとして扱われ、完了までに数週間かかる場合があります。詳細については、<a href="https://techcommunity.microsoft.com/blog/exchange/resource-based-throttling-and-prioritization-in-exchange-online-migrations/608020">Resource Based Throttling and Prioritization in Exchange Online Migrations | Microsoft Community Hub</a> を参照してください。管理者がデータセンター内の任意のターゲット サーバーを指定して移動を開始した場合、そのターゲット サーバーが過負荷状態にあるか、あるいは近くメンテナンスが予定されているかを事前に把握することはできません。また、大規模なメールボックス移動によってサーバーに過剰な負荷をかけてしまう可能性があり、その場合は自動負荷分散が状況を検出して修正するまで待つ必要があります。管理者によって開始されたローカル移動はサポートされていないため、完了までに要する時間の目安は提供されていません。一方、Exchange Online による自動的かつ負荷分散された移動については、所要時間の推定値が提供されています: <a href="https://learn.microsoft.com/exchange/mailbox-migration/office-365-migration-best-practices#duration-estimates-for-mailbox-migration-in-exchange-online">Microsoft 365 and Office 365 migration performance and best practices | Microsoft Learn</a></p></li><li><p><strong>関連付けのないデータとなるリスク</strong>: 移動要求は、プライマリ メールボックスとメイン アーカイブ メールボックスの両方に使用できます。ローカル移動要求を使用してデータセンター内でプライマリ シャードやメイン アーカイブ シャードを移動できることは事実ですが、利用には十分な注意が必要です。ローカル移動の完了時にユーザー情報を更新する処理は、プライマリ シャードとメイン アーカイブ シャードを指すユーザーのプロパティ<strong>のみ</strong>を認識しています。もし何らかの方法で MailboxLocation ベースのシャード (ComponentShared や AuxArchive シャードなど) に対して New-MoveRequest を実行した場合、完了処理では MailboxLocation ベースのシャードのデータベースを更新<strong>しない</strong>だけでなく、プライマリ シャードの Database プロパティがリセットされ、プライマリ シャードがダイヤルトーン (関連付けのない) 状態になる可能性があります。この点について十分にご注意ください。</p></li><li><p><strong>手動移動は自動化に置き換えられています</strong>: Exchange Online はインテリジェントな負荷分散と自動修復プロセスを使用しています。そのため、手動によるローカル移動要求は不要であり、多くの場合はかえって逆効果となります。</p></li></ul><h4 id="よくある誤解"><a href="#よくある誤解" class="headerlink" title="よくある誤解"></a>よくある誤解</h4><ul><li><p><strong>ローカル移動ですべてのメールボックスの問題とデータ破損が「修復」される</strong>: 基本的なレベルでは、移動要求はメールボックスをあるデータベースから別のデータベースに移動するだけであり、明示的な修復は行われません。しかし、メールボックス移動では、サービスがターゲット メールボックス内のすべてのアイテムを再作成するため、ソースに何らかの問題があった場合、一部の不良データがそのまま残ってしまう<em>可能性は十分に考えられます</em>。ただし、メールボックス移動を使用して問題をトラブルシューティングする状況は、ベスト プラクティスというよりも例外的なケースであることに注意してください。なぜなら、メールボックスが抱えている特定の問題に対して何の効果もない可能性があり、場合によっては、問題の根本原因を追跡することが不可能になる可能性もあるためです。</p></li><li><p><strong>ローカル移動によってメールボックスのパフォーマンスが向上する</strong>: そうではありません。メールボックスのパフォーマンスは、手動での再配置ではなく、サービス レベルの最適化に依存します。手動で移動した場合、(たとえ成功したとしても) より多くのリソースの負荷を受けるサーバーにメールボックスが配置される可能性もあります。</p></li></ul><h4 id="ローカル移動の代わりに検討すべき対処方法"><a href="#ローカル移動の代わりに検討すべき対処方法" class="headerlink" title="ローカル移動の代わりに検討すべき対処方法"></a>ローカル移動の代わりに検討すべき対処方法</h4><p>メールボックスの問題に遭遇した場合、またはデータを再作成する必要がある場合は、<strong>サポートされている方法</strong>を実施してください。</p><ul><li><p><strong>根本原因を調査する</strong>: Microsoft サポートにケースを起票いただき、問題を適切に調査および解決してください。エンジニアリング チームがメールボックスの移動を選択する場合もありますが、このプロセスは十分に検討された上で正当な理由に基づいて実施され、また監視されています。</p></li><li><p><strong>サービス側の自動処理に任せる</strong>: Exchange Online は、メールボックスの配置を継続的に監視し、再バランス化を行っています。手動での介入が必要になることはほとんどありません。</p></li></ul><h4 id="実施すべきことと避けるべきこと"><a href="#実施すべきことと避けるべきこと" class="headerlink" title="実施すべきことと避けるべきこと"></a>実施すべきことと避けるべきこと</h4><p><strong>実施すべきこと:</strong></p><ul><li>メールボックスの問題に対する根本原因の調査。</li><li>最適なパフォーマンスを得るために、サービスの自動負荷分散を信頼。</li></ul><p><strong>避けるべきこと:</strong></p><ul><li>Exchange Online 内でローカル移動要求の開始。</li><li>ローカル移動要求を使用してシャード レベルの移動や拡張されたアーカイブの移動。</li><li>ローカル移動要求について、サポートによる迅速化やトラブルシューティングへの期待。</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/exchange/local-move-requests-in-exchange-online-%E2%80%93-why-they%E2%80%99re-n</summary>
       
     
     
