@@ -2,7 +2,7 @@
 title: Outlook の新しいユーザー ディレクトリ検索エクスペリエンス - これまで以上にスマートで、速く、つながりやすく
 date: 2026-03-23 12:00:00
 lastupdate: 
-tags: Outlook
+tags: New Outlook
 ---
 
 ※ この記事は、[The New People Directory Search Experience in Outlook: Smarter, Faster, and More Connected Than Ever](https://techcommunity.microsoft.com/blog/outlook/the-new-people-directory-search-experience-in-outlook-smarter-faster-and-more-co/4504712) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
