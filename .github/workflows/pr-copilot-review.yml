@@ -12,23 +12,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Request Copilot review
-        env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
-        run: |
-          gh api "repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/requested_reviewers" \
-            --method POST \
-            -f 'reviewers[]=copilot-pull-request-reviewer'
-
       - name: Post review workflow comment
-        if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh pr comment "${{ github.event.pull_request.number }}" \
             --repo "${{ github.repository }}" \
             --body "$(cat <<'EOF'
-          🤖 **Copilot をレビュアーに設定しました。**
+          🤖 **Copilot が自動でレビューを行います。**
 
           Copilot のレビューが完了したら、以下の手順で対応をお願いします:
 
