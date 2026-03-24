@@ -21,6 +21,7 @@ jobs:
             -f 'reviewers[]=copilot-pull-request-reviewer'
 
       - name: Post review workflow comment
+        if: always()
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
