@@ -16,16 +16,19 @@
 
 
   
-  <title>Archives: 2025/5 | Japan Exchange &amp; Outlook Support Blog</title>
+  <title>Graph API でメールの機密プロパティを変更するアプリに上位のアクセス許可が必要になります | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:url" content="https://jpmessaging.github.io/blog/archives/2025/05/index.html">
+  <meta name="description" content="※ この記事は、Upcoming Breaking Changes to Modifying Sensitive Email Properties via Graph API の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 下書き以外のメール メッセージの機密プ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Graph API でメールの機密プロパティを変更するアプリに上位のアクセス許可が必要になります">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/upcoming-breaking-changes-to-modifying-sensitive-email-properties-via-graph-api/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです">
+<meta property="og:description" content="※ この記事は、Upcoming Breaking Changes to Modifying Sensitive Email Properties via Graph API の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 下書き以外のメール メッセージの機密プ">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-03-24T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-24T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
@@ -96,195 +99,67 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2025" class="archive-year">2025</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/introducing-more-control-over-direct-send-in-exchange-online/" class="archive-article-date">
-  <time datetime="2025-04-30T15:00:00.000Z" itemprop="datePublished">5 月 1 日</time>
+        <section id="main"><article id="post-upcoming-breaking-changes-to-modifying-sensitive-email-properties-via-graph-api" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/upcoming-breaking-changes-to-modifying-sensitive-email-properties-via-graph-api/" class="article-date">
+  <time datetime="2026-03-24T15:00:00.000Z" itemprop="datePublished">2026-03-25</time>
 </a>
-      
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/introducing-more-control-over-direct-send-in-exchange-online/">Exchange Online におけるダイレクト送信の制御機能強化の導入</a>
+    <h1 class="article-title" itemprop="name">
+      Graph API でメールの機密プロパティを変更するアプリに上位のアクセス許可が必要になります
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/upcoming-breaking-changes-to-modifying-sensitive-email-properties-via-graph-api/" class="article-date-single">    
     
+    <time datetime="2026-03-24T15:00:00.000Z" itemprop="dateUpdated">2026-03-25</time>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/we-are-hiring-2025May/" class="archive-article-date">
-  <time datetime="2025-05-02T06:00:00.000Z" itemprop="datePublished">5 月 2 日</time>
 </a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/we-are-hiring-2025May/">サポート エンジニアとして働く仲間を募集しています！</a>
-    </h1>
-  
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/upcoming-breaking-changes-to-modifying-sensitive-email-properties-via-graph-api/4505227">Upcoming Breaking Changes to Modifying Sensitive Email Properties via Graph API</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>下書き以外のメール メッセージの機密プロパティ (sensitive properties) を変更するアプリケーションに影響する重要な更新が実装されます。機密プロパティには、件名、本文、受信者のほか、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/graph/api/message-update?view=graph-rest-1.0&tabs=http">Graph API のメッセージ更新メソッド</a>で変更できる多くのプロパティが含まれます。</p>
+<h4 id="受信済みメール-メッセージの不変性"><a href="#受信済みメール-メッセージの不変性" class="headerlink" title="受信済みメール メッセージの不変性"></a>受信済みメール メッセージの不変性</h4><p>メール メッセージは受信された後、既読状態やフラグなどの管理関連プロパティを除き、変更されるべきではないという基本的な前提があります。アドレス一覧、件名、本文などの重要な要素は、新しい下書きメッセージを作成しない限り変更されるべきではありません。このルールの例外は、疑わしいメールの特定やその他の特権操作など、特にセキュリティ分野における特殊なユース ケースです。</p>
+<h4 id="機密プロパティの変更に必要なアクセス許可"><a href="#機密プロパティの変更に必要なアクセス許可" class="headerlink" title="機密プロパティの変更に必要なアクセス許可"></a>機密プロパティの変更に必要なアクセス許可</h4><p>標準的な管理操作におけるメール メッセージの不変性を維持するため、上位のアクセス許可を持たないアプリケーションが下書き以外のメッセージの機密プロパティを変更することを制限します。具体的には、シナリオに応じて <a target="_blank" rel="noopener" href="https://learn.microsoft.com/graph/permissions-reference#mail-advancedreadwrite">Mail-Advanced.ReadWrite</a>、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/graph/permissions-reference#mail-advancedreadwriteall">Mail-Advanced.ReadWrite.All</a>、または <a target="_blank" rel="noopener" href="https://learn.microsoft.com/graph/permissions-reference#mail-advancedreadwriteshared">Mail-Advanced.ReadWrite.Shared</a> のいずれかのアクセス許可が必要になります。これらのアクセス許可にはすべてテナント管理者の同意が必要です。</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/graph/api/message-update?view=graph-rest-1.0&tabs=http">ドキュメント ページ</a>では、isDraft &#x3D; true の場合にのみ更新可能なプロパティを機密プロパティとして定義しています。制限が適用された後は、下書き以外のメッセージでこれらのプロパティを更新するには Mail-Advanced.ReadWrite アクセス許可が必要になります。下書きメッセージは引き続き現在の Mail.ReadWrite アクセス許可で更新できます。</p>
+<h4 id="タイムラインと推奨事項"><a href="#タイムラインと推奨事項" class="headerlink" title="タイムラインと推奨事項"></a>タイムラインと推奨事項</h4><p>必要なアクセス許可はすでに利用可能です。サービスでの新しい制限の適用 (Graph API によるメールの機密プロパティの更新のブロック) は 2026 年 12 月 31 日に開始されます。これらのプロパティを変更する Graph API アプリケーションを開発している場合は、できるだけ早くアプリケーションを更新して必要な上位のアクセス許可を要求することを強くお勧めします。これにより、スムーズな移行が実現し、利用者への潜在的な中断を最小限に抑えることができます。</p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/" class="archive-article-date">
-  <time datetime="2025-05-02T07:00:00.000Z" itemprop="datePublished">5 月 2 日</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/">Exchange 2019 から Exchange SE への &#34;インプレース アップグレード&#34; が低リスクである理由</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/Getting-started-with-new-outlook-for-windows/" class="archive-article-date">
-  <time datetime="2025-05-02T08:00:00.000Z" itemprop="datePublished">5 月 2 日</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/upcoming-breaking-changes-to-modifying-sensitive-email-properties-via-graph-api/" data-id="cmn5be2oo008oeg2a5es77d1k" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/Getting-started-with-new-outlook-for-windows/">新しい Outlook for Windows の始め方：従来版との違いを学ぶ</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/important-update-to-the-get-federationinformation-cmdlet-in-exchange-online/" class="archive-article-date">
-  <time datetime="2025-05-07T08:00:00.000Z" itemprop="datePublished">5 月 7 日</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/important-update-to-the-get-federationinformation-cmdlet-in-exchange-online/">Exchange Online の Get-FederationInformation コマンドレットに関する重要なお知らせ</a>
-    </h1>
-  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/from-public-folders-to-sharepoint-a-modern-approach-to-shared-contact-management/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">パブリック フォルダーから SharePoint へ ― 共有連絡先管理の新しいかたち</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/high-volume-email-continued-support-for-basic-authentication-other-important-up/" class="archive-article-date">
-  <time datetime="2025-05-08T06:00:00.000Z" itemprop="datePublished">5 月 8 日</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/high-volume-email-continued-support-for-basic-authentication-other-important-up/">High Volume Email (HVE) に関する基本認証の継続サポートとその他重要な更新情報</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/introducing-exchange-web-services-ews-usage-reports-in-microsoft-365-admin-cente/" class="archive-article-date">
-  <time datetime="2025-05-08T07:00:00.000Z" itemprop="datePublished">5 月 8 日</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/introducing-exchange-web-services-ews-usage-reports-in-microsoft-365-admin-cente/">Microsoft 365 管理センターでの Exchange Web Services (EWS) 利用状況レポートの導入</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/give-us-feedback-on-exchange-online-cmdlet-changes-and-rest-api-availability-for/" class="archive-article-date">
-  <time datetime="2025-05-12T15:00:00.000Z" itemprop="datePublished">5 月 13 日</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/give-us-feedback-on-exchange-online-cmdlet-changes-and-rest-api-availability-for/">Exchange Online コマンドレットの変更と管理シナリオでの REST API の導入に関するフィードバックをお寄せください</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/blog/get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them/" class="archive-article-date">
-  <time datetime="2025-05-22T15:00:00.000Z" itemprop="datePublished">5 月 23 日</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them/">レガシー Exchange Online トークンおよびそれを利用するアドインのステータス確認について</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
 
 </section>
         
