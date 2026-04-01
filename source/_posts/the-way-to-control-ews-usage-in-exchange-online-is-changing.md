@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Online で EWS の利用を制限する方法が変わります'
-date: 2025-02-25
-lastupdate: 2026-04-01
+date: 2025/02/25
+lastupdate: 2026/04/01
 tags: Exchange Online
 --- 
 
