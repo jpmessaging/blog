@@ -1,7 +1,7 @@
 ---
 title: High Volume Email (HVE) に関する基本認証の継続サポートとその他重要な更新情報
-date: 2025-05-08 15:00:00
-lastupdate: 2026-04-01
+date: 2025/05/08 15:00:00
+lastupdate: 2026/04/01
 tags: Exchange Online
 ---
 
