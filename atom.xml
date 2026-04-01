@@ -6,7 +6,7 @@
   <link href="https://jpmessaging.github.io/blog/atom.xml" rel="self"/>
   
   <link href="https://jpmessaging.github.io/blog/"/>
-  <updated>2026-03-24T15:00:00.000Z</updated>
+  <updated>2026-03-31T15:00:00.000Z</updated>
   <id>https://jpmessaging.github.io/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Exchange Online で High Volume Email が利用可能になりました</title>
+    <link href="https://jpmessaging.github.io/blog/high-volume-email-is-now-available-in-exchange-online/"/>
+    <id>https://jpmessaging.github.io/blog/high-volume-email-is-now-available-in-exchange-online/</id>
+    <published>2026-03-31T15:00:00.000Z</published>
+    <updated>2026-03-31T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>※ この記事は、<a href="https://techcommunity.microsoft.com/blog/microsoft_365blog/high-volume-email-is-now-available-in-exchange-online/4505302">High Volume Email Is Now Available in Exchange Online</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p><p>信頼性の高いメールは、組織が従業員に向けて大規模に情報を届ける手段として重要な役割を担っています。特に、給与通知、セキュリティに関する注意喚起、IT サービスのアラートなど、業務上かつ時間的制約のあるメッセージにおいては不可欠です。一方で、こうしたメッセージを配信するために、多くの組織ではオンプレミスの Exchange Server を維持したり、サードパーティの SMTP リレー サービスに依存したり、あるいは本来その用途を想定していないユーザー メールボックスを使用したりと、何らかのトレードオフを受け入れる必要がありました。</p><p>この状況が、これから変わります。High Volume Email (HVE) が Exchange Online で一般提供 (GA) となり、アプリケーションやデバイスが大量の内部メールを信頼性と安全性を保ちながら大規模に送信できるようになりました。これは、ユーザー メールボックスや Exchange Online のサービス正常性に影響を与えないように設計された、用途特化型かつテナント ネイティブな仕組みです。</p><h3 id="High-Volume-Email-HVE-が必要とされる理由"><a href="#High-Volume-Email-HVE-が必要とされる理由" class="headerlink" title="High Volume Email (HVE) が必要とされる理由"></a>High Volume Email (HVE) が必要とされる理由</h3><p>Exchange Online は、人と人とのコミュニケーションに最適化されています。組み込みの制限や保護機能は意図して設けられており、人が利用するワークフローにおける信頼性、信頼性の高い配信、そしてサービス正常性の維持に役立っています。しかし、こうした保護は一方で、内部メールを自動で大量送信するシナリオには必ずしも適していません。</p><p>High Volume Email は、このニーズに対応するために設計されました。</p><p>HVE は、アプリケーションから利用者へのメッセージ送信向けに構築された Exchange Online ネイティブの機能です。ユーザー メールボックスや共有メールボックスではなく、専用の HVE アカウントを使用することで、自動送信トラフィックを人のコミュニケーションと明確に分離できます。Exchange Online 内のメール フローでは、メッセージは Microsoft のインフラストラクチャ内にとどまり、Exchange Online の既存のセキュリティ、コンプライアンス、ポリシーの境界に従います。</p><p>環境のモダナイズを進めている組織にとっては、これにより大量のシステム メールのためにレガシーなインフラストラクチャや非サポートの回避策を維持する必要がなくなります。重要なアプリケーション ワークフローを、信頼性やガバナンスを損なうことなく Microsoft 365 に完全移行できます。</p><h3 id="一般的な利用シナリオ"><a href="#一般的な利用シナリオ" class="headerlink" title="一般的な利用シナリオ"></a>一般的な利用シナリオ</h3><p>High Volume Email は、マーケティング キャンペーンではなく、トランザクション メッセージや運用メッセージ向けに設計されています。キャンペーン管理機能、テンプレート、エンゲージメント追跡機能は含まれていません。その代わり、組織が日々依存している、高い信頼性と安定性が求められるユース ケースを支えます。</p><p>主なシナリオは次のとおりです。</p><ul><li>給与システムや人事システムからの通知</li><li>IT 監視やサービス アラート</li><li>業務アプリケーションや基幹業務アプリケーションからのメッセージ送信</li><li>プリンターやスキャナーなど、デバイス起点のワークフロー</li><li>セキュリティおよびコンプライアンスに関する通知</li></ul><p>このようなシナリオ向けに専用サービスを提供することで、High Volume Email は、ユーザー メールボックスに関連するサービス正常性の問題や受信者レート制限を気にせず、大量の内部メール送信を可能にします。</p><h3 id="一般提供と価格"><a href="#一般提供と価格" class="headerlink" title="一般提供と価格"></a>一般提供と価格</h3><p>High Volume Email は、内部受信者向けメール送信機能として、Exchange Online で一般提供 (GA) となりました。2026 年 6 月 1 日からは、展開後のメール受信者数に基づく従量課金が開始されます。価格は Microsoft commerce を通じて、受信者 100 万件あたり 42 ドルです (受信者 1 件あたり 0.000042 ドル相当)。</p><p>この価格モデルは意図的に設計されたものであり、利用量とサービス保護を整合させることで、大量の自動メール送信シナリオにおける公平性と信頼性の維持に役立ちます。</p><h3 id="利用開始方法"><a href="#利用開始方法" class="headerlink" title="利用開始方法"></a>利用開始方法</h3><p>High Volume Email の利用開始は簡単です。管理者は Exchange 管理センターの [メール フロー] で High Volume Email を確認し、そのまま構成できます。詳細は、<a href="https://learn.microsoft.com/exchange/mail-flow-best-practices/high-volume-mails-m365">こちらのドキュメント</a> をご覧ください。</p><p>HVE はテナント ネイティブであり、Exchange Online に組み込まれているため、新たなインフラストラクチャやサードパーティへの依存を追加せずに導入できます。これにより、アプリケーション アーキテクチャのモダナイズや、レガシーなメール システムの廃止を進めやすくなります。</p><h3 id="重要なメール-ワークフローを-Microsoft-365-に完全移行する"><a href="#重要なメール-ワークフローを-Microsoft-365-に完全移行する" class="headerlink" title="重要なメール ワークフローを Microsoft 365 に完全移行する"></a>重要なメール ワークフローを Microsoft 365 に完全移行する</h3><p>High Volume Email は、現代の組織の運用に合わせて設計された、大量のシステム メールを送信するためのスケーラブルで安全かつガバナンスの効いた手段として、Exchange Online に長らく求められていた機能を提供します。</p><p>自動メッセージ送信を人のコミュニケーションから切り分けることで、High Volume Email はサービス正常性を守り、ガバナンスを強化し、インフラストラクチャを簡素化します。そのうえで、重要なコミュニケーションを Microsoft 365 内にとどめることができます。</p><p>レガシーな SMTP リレーを廃止したい場合、サードパーティ サービスへの依存を減らしたい場合、または従業員向けのアプリケーション通知の仕組みをモダナイズしたい場合は、Exchange 管理センターで High Volume Email をご確認ください。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;※ この記事は、&lt;a href=&quot;https://techcommunity.microsoft.com/blog/microsoft_365blog/high-volume-email-is-now-available-in-exchange-online/4505302</summary>
+      
+    
+    
+    
+    
+    <category term="Exchange Online" scheme="https://jpmessaging.github.io/blog/tags/Exchange-Online/"/>
+    
+  </entry>
   
   <entry>
     <title>Graph API でメールの機密プロパティを変更するアプリに上位のアクセス許可が必要になります</title>
@@ -428,28 +450,6 @@
       
       
     <summary type="html">&lt;p&gt;こんにちは。日本マイクロソフト Exchange &amp;amp; Outlook サポート チームの御正 (ミショウ) です。&lt;br&gt;本記事では新しい Outlook for Windows (2024 年の 8 月から一般公開されました Outlook を示します。以後、新し</summary>
-      
-    
-    
-    
-    
-    <category term="New Outlook" scheme="https://jpmessaging.github.io/blog/tags/New-Outlook/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>新しい Outlook for Windows におけるキーボード ショートカットの設定と活用ガイド</title>
-    <link href="https://jpmessaging.github.io/blog/Configuration-and-Usage-Guide-for-Keyboard-Shortcuts-in-New-Outlook-for-Windows/"/>
-    <id>https://jpmessaging.github.io/blog/Configuration-and-Usage-Guide-for-Keyboard-Shortcuts-in-New-Outlook-for-Windows/</id>
-    <published>2026-01-28T01:00:00.000Z</published>
-    <updated>2026-01-28T01:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの杉山です。<br>本記事では、新しい Outlook for Windows (以下、新しい Outlook) をより効率的に使いこなすためのキーボード ショートカットに関する Tips をご紹介します。<br>キーボード ショートカットの設定と便利なショートカット キーを活用してみてください！  </p><h2 id="新しい-Outlook-のキーボード-ショートカットの設定方法"><a href="#新しい-Outlook-のキーボード-ショートカットの設定方法" class="headerlink" title="新しい Outlook のキーボード ショートカットの設定方法"></a>新しい Outlook のキーボード ショートカットの設定方法</h2><p>従来の Outlook for Windows (以下、従来の Outlook) と Outlook on the web では利用可能なショートカット キーは異なっていたため、2 つのクライアントを使用する場合には、誤ったショートカット キーを入力してしまうことがありました。<br>一方、新しい Outlook では従来の Outlook と Outlook on the web のどちらのショートカット キーを使用するかを選ぶことができるようになっています。<br>この設定により、以前に使用していたクライアントに合わせたショートカット キーを新しい Outlook でも使用することができます。  </p><p>新しい Outlook では [設定] - [全般] - [アクセシビリティ] の [キーボード ショートカット] より、以下の項目を選択できます。  </p><ul><li>Outlook for Windows (従来の Outlook を指します)  </li><li>Outlook for Web (Outlook on the web を指します)   </li><li>キーボード ショートカットを無効にする</li></ul><p><img src="/blog/Configuration-and-Usage-Guide-for-Keyboard-Shortcuts-in-New-Outlook-for-Windows/KeyboardShortcuts.png"></p><div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em"><div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px"><path fill="#ff7518" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>注意</div>既定では Outlook for Windows が設定されており、多くのショートカット キーは従来の Outlook と同じですが、いくつか違うショートカット キーもございますのでご注意ください。 </div><h2 id="便利なショートカット-キー"><a href="#便利なショートカット-キー" class="headerlink" title="便利なショートカット キー"></a>便利なショートカット キー</h2><p>新しい Outlook のショートカット キーより、Outlook for Windows と Outlook for Web の設定にてそれぞれ利用可能な便利なショートカット キーの一部をご紹介します。  </p><h3 id="Outlook-for-Windows-の設定を使用している場合"><a href="#Outlook-for-Windows-の設定を使用している場合" class="headerlink" title="Outlook for Windows の設定を使用している場合"></a>Outlook for Windows の設定を使用している場合</h3><table><thead><tr><th>操作内容</th><th>ショートカット キー</th></tr></thead><tbody><tr><td>新しいメール メッセージを作成する</td><td>Ctrl+N &#x2F; Ctrl+Shift+M</td></tr><tr><td>このメッセージに返信する</td><td>Ctrl+R</td></tr><tr><td>このメッセージの全員に返信する</td><td>Ctrl+Shift+R</td></tr><tr><td>このメッセージを転送する</td><td>Ctrl+F</td></tr><tr><td>[メール] に移動する</td><td>Ctrl+1</td></tr><tr><td>[予定表] に移動する</td><td>Ctrl+2</td></tr><tr><td>このメッセージ内のテキストを検索する</td><td>Ctrl+Shift+F</td></tr></tbody></table><h3 id="Outlook-for-Web-の設定を使用している場合"><a href="#Outlook-for-Web-の設定を使用している場合" class="headerlink" title="Outlook for Web の設定を使用している場合"></a>Outlook for Web の設定を使用している場合</h3><table><thead><tr><th>操作内容</th><th>ショートカット キー</th></tr></thead><tbody><tr><td>新しいメール メッセージを作成する</td><td>N</td></tr><tr><td>このメッセージに返信する</td><td>R &#x2F; Ctrl+R</td></tr><tr><td>このメッセージの全員に返信する</td><td>Shift+R &#x2F; Ctrl+Shift+R</td></tr><tr><td>このメッセージを転送する</td><td>Shift+F &#x2F; Ctrl+Shift+F</td></tr><tr><td>[メール] に移動する</td><td>Ctrl+Shift+1</td></tr><tr><td>[予定表] に移動する</td><td>Ctrl+Shift+2</td></tr><tr><td>このメッセージ内のテキストを検索する</td><td>Ctrl+F</td></tr></tbody></table><p>Outlook for Windows と Outlook for Web の設定ではショートカット キーが異なるため、以前に使用しているクライアントに合わせた設定に変更してご利用ください。<br>使用可能なショートカット キーは<a href="https://support.microsoft.com/office/3cdeb221-7ae5-4c1d-8c1d-9e63216c1efd">こちら</a>の公開情報を参照いただくか、? (疑問符) キーを入力し、キーボード ショートカットを開いて確認ください。<br>※ 設定ウィンドウではなく、メイン ウィンドウにて ? を入力します。</p><p>? (疑問符) キーを入力し、キーボード ショートカットを開いた画面例<br><img src="/blog/Configuration-and-Usage-Guide-for-Keyboard-Shortcuts-in-New-Outlook-for-Windows/Shortcuts.png"></p><p><strong>本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</strong></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;こんにちは。日本マイクロソフト Exchange &amp;amp; Outlook サポート チームの杉山です。&lt;br&gt;本記事では、新しい Outlook for Windows (以下、新しい Outlook) をより効率的に使いこなすためのキーボード ショートカットに関する </summary>
       
     
     
