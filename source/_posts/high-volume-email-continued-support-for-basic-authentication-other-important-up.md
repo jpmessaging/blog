@@ -7,7 +7,7 @@ tags: Exchange Online
 
 ※ この記事は、[High Volume Email: Continued support for Basic Authentication & other important updates](https://techcommunity.microsoft.com/blog/exchange/high-volume-email-continued-support-for-basic-authentication--other-important-up/4411197) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #66FF99">この機能の一般提供 (GA) 開始日は<strong>2026 年 3 月</strong>に変更されました。</p>
+<span style="background: #66FF99"><strong>2026/3/31 編集:</strong> High Volume Email は現在、一般提供 (GA) されています。詳細については、[High Volume Email Is Now Available in Exchange Online](https://techcommunity.microsoft.com/blog/microsoft_365blog/high-volume-email-is-now-available-in-exchange-online/4505302) をご参照ください。</span>
 
 Microsoft 365 の High Volume Email (HVE) は、内部受信者に対して大量のメールを送信する機能を提供し、受信者数の制限がありません。HVE のパブリック プレビューは [2024 年 4 月 1 日](https://techcommunity.microsoft.com/t5/exchange-team-blog/public-preview-high-volume-email-for-microsoft-365/ba-p/4102271) にリリースされ、2026 年 3 月の一般提供開始を目指しています。
 

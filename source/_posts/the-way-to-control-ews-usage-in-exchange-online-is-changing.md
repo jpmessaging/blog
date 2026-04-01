@@ -1,11 +1,13 @@
 ---
 title: 'Exchange Online で EWS の利用を制限する方法が変わります'
 date: 2025-02-25
-lastupdate: 2026-03-27
+lastupdate: 2026-04-01
 tags: Exchange Online
 --- 
 
 ※ この記事は、[The way to control EWS usage in Exchange Online is changing](https://techcommunity.microsoft.com/blog/exchange/the-way-to-control-ews-usage-in-exchange-online-is-changing/4383083) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
+<p style="background: #66FF99"><strong>2026/3/31 編集:</strong> 現在、この変更は展開完了されています。EWS アプリケーションでアクセスの問題が発生する場合、テナント レベルおよびメールボックス レベルの EWS 設定をご確認ください。</p>
 
 Exchange Web Services (EWS) のセキュリティと制御メカニズムを強化するため、Exchange Online のテナント全体の EWSEnabled スイッチの動作に重要な変更を発表します。この変更により、組織内での EWS アクセス管理のためのより堅牢なフレームワークが提供され、柔軟性とセキュリティの両方が確保されます。この変更は、[2026 年 10 月から EWS を無効にする計画](https://techcommunity.microsoft.com/blog/exchange/retirement-of-exchange-web-services-in-exchange-online/3924440)の一環として必要なものです。
 
