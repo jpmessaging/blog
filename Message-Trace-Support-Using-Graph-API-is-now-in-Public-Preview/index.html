@@ -19,13 +19,13 @@
   <title>Graph API を使用したメッセージ トレースのサポートにおけるパブリック プレビューのご案内
  | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2026&#x2F;2&#x2F;6 編集: 本機能は正式リリース (GA: Generally Available) されました。オンボーディングに関する詳細な手順は、こちら に纏めました。 ※ この記事は、Message Trace Support Using Graph API is now in Public Preview の抄訳です。最新の情報はリンク先をご確認ください。この記事は M">
+  <meta name="description" content="2026&#x2F;2&#x2F;6 編集: 本機能はマルチテナント (WW) 環境で正式リリース (GA: Generally Available) されました。オンボーディングに関する詳細な手順は、こちら に纏めました。 ※ この記事は、Message Trace Support Using Graph API is now in Public Preview の抄訳です。最新の情報はリンク先">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Graph API を使用したメッセージ トレースのサポートにおけるパブリック プレビューのご案内
 ">
 <meta property="og:url" content="https://jpmessaging.github.io/blog/Message-Trace-Support-Using-Graph-API-is-now-in-Public-Preview/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="2026&#x2F;2&#x2F;6 編集: 本機能は正式リリース (GA: Generally Available) されました。オンボーディングに関する詳細な手順は、こちら に纏めました。 ※ この記事は、Message Trace Support Using Graph API is now in Public Preview の抄訳です。最新の情報はリンク先をご確認ください。この記事は M">
+<meta property="og:description" content="2026&#x2F;2&#x2F;6 編集: 本機能はマルチテナント (WW) 環境で正式リリース (GA: Generally Available) されました。オンボーディングに関する詳細な手順は、こちら に纏めました。 ※ この記事は、Message Trace Support Using Graph API is now in Public Preview の抄訳です。最新の情報はリンク先">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-01-21T15:00:00.000Z">
 <meta property="article:modified_time" content="2026-01-21T15:00:00.000Z">
@@ -125,14 +125,14 @@
         Last Update:
         <a href="/blog/Message-Trace-Support-Using-Graph-API-is-now-in-Public-Preview/" class="article-date-single">    
         
-    <time datetime="2026-02-25T15:00:00.000Z" itemprop="lastupdate">2026-02-26</time>    
+    <time datetime="2026-04-15T15:00:00.000Z" itemprop="lastupdate">2026-04-16</time>    
     
 </a>
       </div>
     
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
-        <p><span style="background-color: yellow; font-weight: bold;">2026&#x2F;2&#x2F;6 編集: 本機能は正式リリース (GA: Generally Available) されました。オンボーディングに関する詳細な手順は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/monitoring/trace-an-email-message/graph-api-message-trace">こちら</a> に纏めました。</span></p>
+        <p><span style="background-color: yellow; font-weight: bold;">2026&#x2F;2&#x2F;6 編集: 本機能はマルチテナント (WW) 環境で正式リリース (GA: Generally Available) されました。オンボーディングに関する詳細な手順は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/monitoring/trace-an-email-message/graph-api-message-trace">こちら</a> に纏めました。</span></p>
 <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/message-trace-support-using-graph-api-is-now-in-public-preview/4488587">Message Trace Support Using Graph API is now in Public Preview</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
 <p>Graph API を使用したメッセージ トレースのサポートが正式リリース (GA) となったことをお知らせします。コミュニティからのフィードバックを受けて、メッセージ トレースのエクスペリエンス向上に向けた強化を実施してきましたが、このたび本機能は正式リリース (GA) されました。<br>この RESTful Web API を使用すると、Exchange Online 組織全体での電子メールメッセージを追跡できます。<br>Graph API を使用した新しいメッセージトレース サポートは、既存の Reporting Webservice API を使用したメッセージ トレースを置き換えるものです。<br>詳細については、Graph API ドキュメント <a target="_blank" rel="noopener" href="https://learn.microsoft.com/graph/api/resources/exchangemessagetrace?view=graph-rest-beta">exchangeMessageTrace resource type - Microsoft Graph beta | Microsoft Learn</a> をご参照ください。</p>
 <h2 id="オンボーディング"><a href="#オンボーディング" class="headerlink" title="オンボーディング"></a>オンボーディング</h2><p><a target="_blank" rel="noopener" href="https://review.learn.microsoft.com/entra/identity-platform/retire-service-principal-less-authentication?branch=main">サービス プリンシパルを使用しない認証の廃止</a>に伴い、本機能を利用するには追加の対応が必要となります。詳細については、以下のオンボーディング ドキュメントをご参照ください。</p>
@@ -140,7 +140,7 @@
 <p>新しいサービス プリンシパルの作成後、プロビジョニングが完了するまでに数時間かかる場合があります。<br>この間、401 (Unauthorized) エラーが発生する可能性がありますので、プロビジョニングが完了、及び、反映されるまで数時間お待ちください。<br>関連情報については、以下のページをご参照ください。</p>
 <p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity-platform/retire-service-principal-less-authentication?branch=main">Retirement of service principal-less authentication - Microsoft identity platform | Microsoft Learn</a></p>
 <h2 id="移行ガイダンスおよび廃止スケジュール"><a href="#移行ガイダンスおよび廃止スケジュール" class="headerlink" title="移行ガイダンスおよび廃止スケジュール"></a>移行ガイダンスおよび廃止スケジュール</h2><p>現在、Reporting Webservice を使用したメッセージ トレースを利用している場合は、2026 年 4 月 6 日までに Graph API を使用したメッセージ トレースへ移行してください。</p>
-<p><strong>Reporting Webservice を使用した Message Trace および Message Trace Detail のサポートは、2026 年 4 月 8 日から非推奨 (廃止開始) となります。</strong></p>
+<p><strong>Reporting Webservice を使用した Message Trace および Message Trace Detail のサポートは、マルチテナント (WW) 環境を対象に、2026 年 4 月 8 日から非推奨 (廃止開始) となります。その他のクラウド環境では、廃止スケジュールが異なります。</strong></p>
 <p>なお、Exchange Online に新規オンボーディングされるすべての組織では、移行作業の一環として、既定では Reporting Webservice を使用したメッセージ トレースへのアクセスはすでに提供されていません。</p>
 <h2 id="スロットリング"><a href="#スロットリング" class="headerlink" title="スロットリング"></a>スロットリング</h2><p>Exchange Online リソースの不正利用・悪用のリスクを低減し、すべてのユーザーに対するサービスの可用性を確保しつつ、予測可能なエクスペリエンスを提供するため、一定時間内のリクエスト数に基づくレート制限（スロットリング）を実装します。Message Trace および Message Trace Detail へのすべての呼び出しは同一の数量制限を共有します。<br>1 テナントあたり、5 分間の実行ウィンドウ内で最大 100 件のメッセージ トレース クエリ リクエストが受け入れられます。過去 5 分間のリクエストが 100 件未満の場合、スロットリングは適用されません。スロットリングの閾値を超えて頻繁にクエリを実行するような自動化など使用されている場合、閾値を超えないように自動化の調整をご検討ください。</p>
 <p>なお、クエリ リクエスト数と結果サイズは同じではありません。1 回のクエリ リクエストで、最大 5,000 件の結果を返すことができます。これにより、5 分間の実行ウィンドウ内で取得可能な最大結果数は 500,000 件となります。クエリを分散させることで、1 日あたり最大 1 億 4,400 万件の結果を取得できます。このスロットリング制限は、すべてのテナントに対する公平性とサービスの可用性を確保するためのものです。</p>
@@ -164,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Message-Trace-Support-Using-Graph-API-is-now-in-Public-Preview/" data-id="cmo109jgs002wn82agnl5egux" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Message-Trace-Support-Using-Graph-API-is-now-in-Public-Preview/" data-id="cmo12n9e6002ni82ab7uuf31o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
@@ -206,7 +206,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">60</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">58</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">58</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -217,6 +217,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/announcing-period-2-exchange-20162019-extended-security-update-esu-program/">Exchange Server 2016/2019 向け ESU プログラム 第 2 期 提供開始のお知らせ</a>
+          </li>
         
           <li>
             <a href="/blog/high-volume-email-is-now-available-in-exchange-online/">Exchange Online で High Volume Email が利用可能になりました</a>
@@ -234,10 +238,6 @@
             <a href="/blog/celebrating-30-years-of-microsoft-exchange/">Microsoft Exchange 30 周年 : 30 年間の歩みを振り返る</a>
           </li>
         
-          <li>
-            <a href="/blog/the-new-people-directory-search-experience-in-outlook-smarter-faster-and-more-co/">Outlook の新しいユーザー ディレクトリ検索エクスペリエンス - これまで以上にスマートで、速く、つながりやすく</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -252,7 +252,7 @@
         
           <li class="archive-list-item">
             <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
-            <span class="archive-list-count">1</span>
+            <span class="archive-list-count">2</span>
           </li>
         
           <li class="archive-list-item">
