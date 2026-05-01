@@ -98,6 +98,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Database-Becomes-FailedAndSuspended-Due-to-NTFS-FAL-Size-Limit" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Database-Becomes-FailedAndSuspended-Due-to-NTFS-FAL-Size-Limit/" class="article-date">
+  <time datetime="2016-12-13T15:00:00.000Z" itemprop="datePublished">2016-12-14</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/Database-Becomes-FailedAndSuspended-Due-to-NTFS-FAL-Size-Limit/">NTFS の FAL サイズ制限に抵触してデータベースが FailedAndSuspended になる
+</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Database-Becomes-FailedAndSuspended-Due-to-NTFS-FAL-Size-Limit/" class="article-date-single">    
+    
+    <time datetime="2016-12-13T15:00:00.000Z" itemprop="dateUpdated">2016-12-14</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        Exchange Serverをご利用のお客様より、最近お問い合わせが増加傾向にある NTFS の FAL サイズ制限について事象と対処策についてご紹介します。
+事象概要NTFS では File Attribute List (FAL) と呼ばれるファイル毎のリストにてデータの実態がディスク上のどこに格納されているか等の情報を管理しています。この、FAL にはサイズ制限があり、使い続けている以上サイズが小さくなることはありません。このため、長期にわたり運用されている環境や、非常に大きなデータベース ファイルを運用されている場合、フラグメントの進行とともに この FAL のサイズが大きくなり、最終的にサイズ制限に抵触することがあります。この場合、NTFS としてデータベースへの書き込みができなくなるため、Exchange Server (主にメールボックス サーバー) では結果としてデータベ...
+        <p class="article-more-link">
+          <a href="/blog/Database-Becomes-FailedAndSuspended-Due-to-NTFS-FAL-Size-Limit/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Database-Becomes-FailedAndSuspended-Due-to-NTFS-FAL-Size-Limit/" data-id="cmomb7z3o001fxc2adxwe7q1o" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-About-Strings-in-PowerShell" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/About-Strings-in-PowerShell/" class="article-date">
@@ -138,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/About-Strings-in-PowerShell/" data-id="cmol695nn00169c2ag7p9ck3s" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/About-Strings-in-PowerShell/" data-id="cmomb7z2y000oxc2agcq73l2u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -195,7 +246,7 @@ MSExchangeFrontEndTransport (Microsoft Exchange フロントエンド トラン�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/About-Mail-Flow-in-Exchange-2013/" data-id="cmol695mv000c9c2a7z83auu7" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/About-Mail-Flow-in-Exchange-2013/" data-id="cmomb7z2s000hxc2a8qvz7z64" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -246,7 +297,7 @@ MSExchangeFrontEndTransport (Microsoft Exchange フロントエンド トラン�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/About-Authentication-Cache-in-Exchange-Online-and-Outlook/" data-id="cmol695mc00039c2a8km4ccd9" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/About-Authentication-Cache-in-Exchange-Online-and-Outlook/" data-id="cmomb7z2h0007xc2af9n9cjma" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
@@ -300,7 +351,7 @@ MSExchangeFrontEndTransport (Microsoft Exchange フロントエンド トラン�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/How-to-Handle-Disk-Space-Issues-When-Transaction-Logs-Are-Not-Deleted/" data-id="cmol695o400219c2ad2e38e1q" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/How-to-Handle-Disk-Space-Issues-When-Transaction-Logs-Are-Not-Deleted/" data-id="cmomb7z430024xc2abkor24mx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -354,7 +405,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Understanding-Message-Tracking-in-Exchange-Online-Part-1-Retrieval/" data-id="cmol695p300469c2a81668u5a" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Understanding-Message-Tracking-in-Exchange-Online-Part-1-Retrieval/" data-id="cmomb7z500044xc2a6kooauas" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
@@ -404,7 +455,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Forcefully-Uninstalling-Exchange-2013/" data-id="cmol695ob002r9c2aea72dgm9" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Forcefully-Uninstalling-Exchange-2013/" data-id="cmomb7z410020xc2abab72ekc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -458,7 +509,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Reflecting-on-Edge-Servers-Episode-2/" data-id="cmol695p200449c2ac6g20c0g" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Reflecting-on-Edge-Servers-Episode-2/" data-id="cmomb7z4p003oxc2a3qdc2b2t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -510,7 +561,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Implementing-Exchange-Using-Active-Directory-Sites/" data-id="cmol695o500259c2afba08u6j" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Implementing-Exchange-Using-Active-Directory-Sites/" data-id="cmomb7z47002exc2afwuqasq4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -562,60 +613,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Reflecting-on-Edge-Servers-Episode-1/" data-id="cmol695ot003o9c2a3iy802gj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Considerations-When-Belonging-to-a-Large-Number-of-Groups" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/Considerations-When-Belonging-to-a-Large-Number-of-Groups/" class="article-date">
-  <time datetime="2015-10-07T15:00:00.000Z" itemprop="datePublished">2015-10-08</time>
-</a>
-    <!--  -->
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header-single">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/Considerations-When-Belonging-to-a-Large-Number-of-Groups/">大量のグループに所属する場合の注意点
-</a>
-    </h1>
-  
-
-      </header>
-      <div class="article-share">
-        Last Update:
-        <a href="/blog/Considerations-When-Belonging-to-a-Large-Number-of-Groups/" class="article-date-single">    
-    
-    <time datetime="2015-10-07T15:00:00.000Z" itemprop="dateUpdated">2015-10-08</time>
-    
-</a>
-      </div>
-    
-    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
-      
-        こんにちは、Exchange サポート チームの竹本です。
-今回は、多くのセキュリティ グループに所属するユーザーに発生する可能性のある事象についてご紹介します。なお、本事象はオンプレミスの Exchange サーバー、クラウド サービスの Exchange Online 双方で発生しうるものとなります。
-事象についてまず Active Directory では、ユーザーが所属可能なグループ数の一つの基準として 1015 個といった制限があります。これは SID の制限値に起因しており、1015 個以上のグループのメンバーであるユーザーには Kerberos のセキュリティ トークンが正常に発行されない場合がある、といった事象になります。
-　Title : Users who are members of more than 1,015 groups may fail logon auth...
-        <p class="article-more-link">
-          <a href="/blog/Considerations-When-Belonging-to-a-Large-Number-of-Groups/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Considerations-When-Belonging-to-a-Large-Number-of-Groups/" data-id="cmol695np00189c2aef38f8pz" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Reflecting-on-Edge-Servers-Episode-1/" data-id="cmomb7z4p003mxc2a8hwrf5wj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -645,7 +643,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
   <div class="widget-wrap">
     <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">61</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">62</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -656,6 +654,10 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/deprecating-legacy-tls-and-endpoints-for-pop-and-imap-in-exchange-online/">Exchange Online における POP / IMAP のレガシー TLS とエンドポイント廃止のお知らせ</a>
+          </li>
         
           <li>
             <a href="/blog/copilot-in-outlook-new-agentic-experiences-for-email-and-calendar2/">Copilot in Outlook: メールと予定表の新しいエージェント体験 Part 2</a>
@@ -673,10 +675,6 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
             <a href="/blog/change-optics-report-released-into-public-preview-to-showcase-messages-impacted/">将来の変更影響を事前に把握できる「変更可視化レポート」がパブリック プレビューで登場</a>
           </li>
         
-          <li>
-            <a href="/blog/announcing-period-2-exchange-20162019-extended-security-update-esu-program/">Exchange Server 2016/2019 向け ESU プログラム 第 2 期 提供開始のお知らせ</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -688,6 +686,11 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
     <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
     <div class="widget">
       <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">1</span>
+          </li>
         
           <li class="archive-list-item">
             <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
