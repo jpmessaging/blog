@@ -16,22 +16,20 @@
 
 
   
-  <title>Exchange SE ハイブリッドのオンプレミス リッチ共存を Graph API に移行する方法 | Japan Exchange &amp; Outlook Support Blog</title>
+  <title>クラウド管理のリモート メールボックス向けの書き戻しがパブリック プレビューになりました | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="※ この記事は、Update Your Exchange SE Hybrid On-premises Rich Coexistence to Graph の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 約 1 年前に、ハイブリッド展開における Exchange">
+  <meta name="description" content="※ この記事は、Writeback for Cloud-Managed Remote Mailboxes: Now in Public Preview の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 前回の記事では、クラウド管理のリモート メールボックスのパブリ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Exchange SE ハイブリッドのオンプレミス リッチ共存を Graph API に移行する方法">
-<meta property="og:url" content="https://jpmessaging.github.io/blog/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/index.html">
+<meta property="og:title" content="クラウド管理のリモート メールボックス向けの書き戻しがパブリック プレビューになりました">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="※ この記事は、Update Your Exchange SE Hybrid On-premises Rich Coexistence to Graph の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 約 1 年前に、ハイブリッド展開における Exchange">
+<meta property="og:description" content="※ この記事は、Writeback for Cloud-Managed Remote Mailboxes: Now in Public Preview の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 前回の記事では、クラウド管理のリモート メールボックスのパブリ">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://jpmessaging.github.io/blog/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/stage2-timeline.jpg">
-<meta property="article:published_time" content="2026-05-08T01:00:00.000Z">
-<meta property="article:modified_time" content="2026-05-08T01:00:00.000Z">
+<meta property="article:published_time" content="2026-05-17T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-17T15:00:00.000Z">
 <meta property="article:author" content="jpmessaging">
 <meta property="article:tag" content="Exchange">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jpmessaging.github.io/blog/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/stage2-timeline.jpg">
   
     <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
   
@@ -101,10 +99,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/blog/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/" class="article-date">
-  <time datetime="2026-05-08T01:00:00.000Z" itemprop="datePublished">2026-05-08</time>
+    <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/" class="article-date">
+  <time datetime="2026-05-17T15:00:00.000Z" itemprop="datePublished">2026-05-18</time>
 </a>
     <!--  -->
   </div>
@@ -115,44 +113,60 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Exchange SE ハイブリッドのオンプレミス リッチ共存を Graph API に移行する方法
+      クラウド管理のリモート メールボックス向けの書き戻しがパブリック プレビューになりました
     </h1>
   
 
       </header>
       <div class="article-share">
         Last Update:
-        <a href="/blog/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/" class="article-date-single">    
-        
-    <time datetime="2026-05-14T15:00:00.000Z" itemprop="lastupdate">2026-05-15</time>    
+        <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/" class="article-date-single">    
+    
+    <time datetime="2026-05-17T15:00:00.000Z" itemprop="dateUpdated">2026-05-18</time>
     
 </a>
       </div>
     
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
-        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/4517520">Update Your Exchange SE Hybrid On-premises Rich Coexistence to Graph</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
-<p>約 1 年前に、<a href="/blog/exchange-server-security-changes-for-hybrid-deployments/">ハイブリッド展開における Exchange Server のセキュリティ変更</a> を案内しました。この変更は、一部のメールボックスをオンプレミスでホストしていて、オンプレミス ユーザーが Exchange Online ユーザーとのリッチ共存機能 (空き時間情報の参照、メール ヒント、プロフィール写真の共有) を必要とする Exchange ハイブリッド環境に影響するものです。</p>
-<p>この変更は、次の 2 段階で計画されていました。</p>
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/4520138">Writeback for Cloud-Managed Remote Mailboxes: Now in Public Preview</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>前回の記事では、<a href="/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/">クラウド管理のリモート メールボックスのパブリック プレビュー</a>と<a href="/blog/cloud-managed-remote-mailboxes-now-generally-available/">クラウド管理のリモート メールボックスの一般提供</a>をご紹介しました。これは、組織内の “最後の Exchange Server” を廃止するための重要な一歩です。コミュニティからの反響は大きく、寄せられたフィードバックは今後のロードマップにも反映されています。</p>
+<p>今回は、この取り組みに関する 2 つの新しいマイルストーンをお知らせします。</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management#how-to-enable-exchange-attribute-writeback"><strong>クラウド管理のリモート メールボックス向けの書き戻し</strong></a>が<strong>パブリック プレビュー</strong>になりました。</li>
+<li>最後の Exchange Server への依存がもう残っていない組織向けに、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/decommission-last-exchange-server"><strong>SOA をクラウドへ移した後に最後の Exchange Server を廃止する</strong></a>ガイドを Microsoft Learn で公開しました。</li>
+</ol>
+<h3 id="クラウド管理のリモート-メールボックス向けの書き戻し-パブリック-プレビュー"><a href="#クラウド管理のリモート-メールボックス向けの書き戻し-パブリック-プレビュー" class="headerlink" title="クラウド管理のリモート メールボックス向けの書き戻し: パブリック プレビュー"></a>クラウド管理のリモート メールボックス向けの書き戻し: パブリック プレビュー</h3><p>ディレクトリ同期されたメールボックスで IsExchangeCloudManaged を True に設定すると、Exchange 属性の Source of Authority (SOA) は Exchange Online に移ります。氏名や部署などの ID 属性の SOA は引き続きオンプレミスの Active Directory に残りますが、proxy addresses、アドレス帳への表示 &#x2F; 非表示、カスタム属性などの Exchange 関連属性はクラウドで編集できるようになります。</p>
+<p>これまでは、Exchange 属性の SOA をクラウドへ移しても、その属性はクラウド側で編集できるだけで、オンプレミス AD には戻りませんでした。これは、proxyAddresses やカスタム属性などをオンプレミス AD から直接参照する基幹業務アプリケーションを使っている組織にとって課題でした。SOA がクラウドに移ると、オンプレミス AD 側にあるこれらの属性は、クラウド側の値とずれていく可能性があったためです。</p>
+<p><strong>そのギャップを埋めるのが Writeback (書き戻し) です。</strong> 書き戻しを有効にすると、Exchange Online で対象の Exchange 属性に加えた変更が、Microsoft Entra Cloud Sync を通じてオンプレミスの Active Directory に自動的に書き戻されます。これにより、オンプレミス AD の情報を最新の状態に保ちつつ、Exchange 属性の SOA をクラウドへ移した後も基幹業務アプリケーションを継続して利用できます。</p>
+<h4 id="動作の仕組み"><a href="#動作の仕組み" class="headerlink" title="動作の仕組み"></a>動作の仕組み</h4><p>書き戻しでは、Exchange Online からオンプレミス AD への転送に <strong>Microsoft Entra Cloud Sync</strong> を利用します。すでに Microsoft Entra Connect Sync を利用している場合でも、アンインストールや置き換えは<strong>不要</strong>です。Cloud Sync は Connect Sync と並行して動作し、Connect Sync はこれまで通りディレクトリ同期を担当し、Cloud Sync は Exchange 属性の書き戻しだけを担当します。既存のメールボックスやユーザー、同期構成に影響はありません。</p>
+<p>Cloud Sync のプロビジョニング エージェントのインストール、書き戻し用の同期ジョブの構成、往復同期の確認手順は、次のドキュメントにまとまっています : <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management">ハイブリッド環境でのリモート メールボックスの Exchange 属性のクラウド ベースの管理</a></p>
+<h4 id="パブリック-プレビュー中の制限と-GA-の予定"><a href="#パブリック-プレビュー中の制限と-GA-の予定" class="headerlink" title="パブリック プレビュー中の制限と GA の予定"></a>パブリック プレビュー中の制限と GA の予定</h4><p>パブリック プレビュー期間中、書き戻しは <strong>200,000 未満のクラウド管理メールボックス</strong>を持つテナントをサポートします。この上限は、現在 <strong>2026 年 6 月末</strong>を予定している一般提供 (GA) のタイミングで引き上げる予定です。</p>
+<p>どの属性が AD に書き戻され、どの属性が書き戻されないかを含む完全な一覧は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management#identity-exchange-attributes-and-writeback">ID、Exchange 属性、および書き戻し</a>で確認できます。</p>
+<h3 id="新しいドキュメント-最後の-Exchange-Server-を廃止する"><a href="#新しいドキュメント-最後の-Exchange-Server-を廃止する" class="headerlink" title="新しいドキュメント: 最後の Exchange Server を廃止する"></a>新しいドキュメント: 最後の Exchange Server を廃止する</h3><p>メールボックスがクラウド管理となり、必要であれば書き戻しも準備できたら、次に気になるのは “では、最後の Exchange Server をどうやって実際に廃止するのか” です。</p>
+<p>この手順を最初から最後まで説明する新しいガイドとして、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/decommission-last-exchange-server">SOA をクラウドへ移した後に最後の Exchange Server を廃止する</a>を公開しました。</p>
+<p>このガイドでは、次の内容を扱っています。</p>
 <ul>
-<li>ステージ 1: Exchange ハイブリッド専用アプリへの移行。これは 2025 年 10 月に完了しました。オンプレミスでメールボックスをホストしている Exchange ハイブリッド環境では、オンプレミス ユーザーのリッチ共存機能を維持するために、Exchange ハイブリッド専用アプリの作成が必要になっています。</li>
-<li>ステージ 2: Exchange ハイブリッドにおける EWS 呼び出しの廃止と、REST ベースの Microsoft Graph API 呼び出しへの切り替え。現在はこの段階にあります。なお、リッチ共存のすべてのシナリオがまだ完全にサポートされているわけではなく、すべてのクラウド環境で Graph API を使ったハイブリッド呼び出しを利用できるわけでもありません。詳細は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app#configure-graph-api-permissions">ドキュメント</a> をご確認ください。</li>
+<li><strong>前提条件 :</strong> すべてのメールボックスとパブリック フォルダーが Exchange Online に移行済みであること、すべてのディレクトリ同期メールボックスがクラウド管理になっていること、DNS とメール ルーティングが Exchange Online を向いていること、SMTP リレーの依存関係を移行済みであることを確認します。</li>
+<li><strong>削除前の確認 :</strong> 環境が変わっている可能性もあるため、作業を始める直前に前提条件をあらためて確認します。</li>
+<li><strong>ハイブリッド構成のクリーンアップ (Exchange 稼働中) :</strong> Hybrid Configuration オブジェクト、HCW が作成した IntraOrganizationConnector、ハイブリッド コネクタ、組織の関係、フェデレーション信頼と証明書、OAuth サービス プリンシパル資格情報、Hybrid Agent (モダン ハイブリッドのみ) を削除します。</li>
+<li><strong>最後の Exchange Server のアンインストール :</strong> 最終的なアンインストール前チェックを行い、<code>Setup /m:Uninstall</code> を実行します。</li>
+<li><strong>Exchange Online 側のハイブリッド クリーンアップ (アンインストール後) :</strong> オンプレミス側のアンインストールでは削除されない、クラウド側の孤立したハイブリッド オブジェクトを削除します。</li>
 </ul>
-<p>Exchange Online における Exchange Web Services (EWS) の廃止は最終段階に近づいています。詳細は、<a href="/blog/exchange-online-ews-your-time-is-almost-up/">Exchange Online EWS：廃止期限が迫っています</a>をご確認ください。このため、リッチ共存機能を必要とするすべての組織は、ステージ 1 をすでに完了している場合も含めて、オンプレミス環境に Exchange Server Subscription Edition (Exchange SE) の更新プログラムをインストールし、Exchange ハイブリッド専用アプリの権限を、より細かい Graph API の権限モデルへ切り替える必要があります。この対応は、2026 年 10 月までに完了する必要があります (この時点で EWS は既定で無効化されます)。遅くとも、Exchange Online で EWS が恒久的に無効化される 2027 年 4 月までには完了が必要です。</p>
-<p>次の図は、ハイブリッド セキュリティ強化のタイムラインにおけるステージ 2 を示しています。</p>
-<p><img src="/blog/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/stage2-timeline.jpg"></p>
-<h4 id="Graph-API-をハイブリッド-ワークフローで使い始める-Exchange-ハイブリッド利用組織が実施すべきこと"><a href="#Graph-API-をハイブリッド-ワークフローで使い始める-Exchange-ハイブリッド利用組織が実施すべきこと" class="headerlink" title="Graph API をハイブリッド ワークフローで使い始める Exchange ハイブリッド利用組織が実施すべきこと"></a>Graph API をハイブリッド ワークフローで使い始める Exchange ハイブリッド利用組織が実施すべきこと</h4><p>ステップ 1: オンプレミスの Exchange SE サーバーに、2026 年 5 月の Hotfix Update (またはそれ以降) をインストールします。</p>
+<p>これまで、最後の Exchange Server の削除手順が最初から最後まで明確に文書化されていないことを理由に作業を保留していた場合は、まさにそのためのドキュメントです。</p>
+<h3 id="始めるには"><a href="#始めるには" class="headerlink" title="始めるには"></a>始めるには</h3><p>書き戻しのパブリック プレビュー開始を待っていたなら、今が着手のタイミングです。</p>
 <ul>
-<li>関連リンク : <a href="/blog/released-may-2026-exchange-server-hotfix-update/">2026 年 5 月の Exchange Server の Hotfix 更新プログラムが公開されました</a></li>
+<li>書き戻しの設定手順と属性一覧について、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management">更新されたドキュメント</a>を確認する。</li>
+<li>エンドツーエンドのアンインストール手順について、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/decommission-last-exchange-server">新しい廃止ガイド</a>を読む。</li>
+<li>書き戻しの 200k 制限が導入の妨げになっている場合は、<a target="_blank" rel="noopener" href="https://forms.cloud.microsoft/r/tAv0KeZ4RK">こちらのフォーム</a>から連絡する。GA のタイミングで上限を引き上げる予定ですが、どの規模であれば導入できるのか把握したいとしています。</li>
+<li>コメント欄で経験や提案を共有する。これまでのリリースもフィードバックに支えられており、今回も同じようにお客様の声を求めています。</li>
 </ul>
-<p>ステップ 2: すべてのオンプレミス Exchange SE サーバーに更新プログラムのインストールが完了したら、サポートされているシナリオで Graph API ベースのハイブリッド ワークフローを有効化するため、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app">ドキュメント</a> に記載された手順を実施します。</p>
-<p><strong>注:</strong> <a target="_blank" rel="noopener" href="https://learn.microsoft.com/troubleshoot/exchange/administration/exchange-2019-2016-end-of-support">Exchange 2016 と Exchange 2019 はサポートが終了しています</a>。これらのバージョン向けに、Graph API を利用するハイブリッド呼び出しのための更新プログラムは提供されません (<a href="/blog/announcing-period-2-exchange-20162019-extended-security-update-esu-program/">Exchange 2016&#x2F;2019 の ESU</a> として提供される更新プログラムにも、この機能は含まれません)。引き続き Exchange 2016 または Exchange 2019 サーバーでオンプレミスのメールボックスをホストしている場合、2026 年 10 月以降もテナントで EWS の利用を許可し続ける必要があり、2027 年 4 月までにすべてのサーバーを Exchange SE にアップグレードする必要があります (この時点で Exchange Online の EWS は無効化されます)。サポート対象外のバージョンでは、リッチ共存機能は 2027 年 4 月に恒久的に動作しなくなります。できるだけ早く、サポート対象外のオンプレミス環境をアップグレードすることを強く推奨します。サポート対象外のバージョンを運用し続けることは、環境を危険にさらす可能性があります。</p>
-<p>Exchange ハイブリッド専用アプリの作成と利用に関する FAQ は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app#frequently-asked-questions">機能ドキュメント</a> をご確認ください。</p>
+<p>“AD を同期しているから” という理由だけで Exchange Server を維持する時代は、終わりに近づいています。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/" data-id="cmpanjcqo009lzs2a0eeh3flb" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/" data-id="cmpanjcqs009vzs2a8o2b7it7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -163,19 +177,10 @@
     
 <nav id="article-nav">
   
-    <a href="/blog/announcing-general-availability-of-the-mailbox-import-and-export-microsoft-graph-apis/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          メールボックスのインポート / エクスポート用 Microsoft Graph API の一般提供開始
-        
-      </div>
-    </a>
   
-  
-    <a href="/blog/deprecating-legacy-tls-and-endpoints-for-pop-and-imap-in-exchange-online/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/blog/addressing-exchange-server-may-2026-vulnerability-cve-2026-42897/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Exchange Online における POP / IMAP のレガシー TLS とエンドポイント廃止のお知らせ</div>
+      <div class="article-nav-title">Exchange Server の 2026 年 5 月の脆弱性 CVE-2026-42897 への対処</div>
     </a>
   
 </nav>

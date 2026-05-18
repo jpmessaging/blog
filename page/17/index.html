@@ -98,6 +98,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-How-to-Handle-Disk-Space-Issues-When-Transaction-Logs-Are-Not-Deleted" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/How-to-Handle-Disk-Space-Issues-When-Transaction-Logs-Are-Not-Deleted/" class="article-date">
+  <time datetime="2016-06-29T15:00:00.000Z" itemprop="datePublished">2016-06-30</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/How-to-Handle-Disk-Space-Issues-When-Transaction-Logs-Are-Not-Deleted/">トランザクション ログが削除されずにディスク領域が圧迫されたときの対処方法
+</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/How-to-Handle-Disk-Space-Issues-When-Transaction-Logs-Are-Not-Deleted/" class="article-date-single">    
+    
+    <time datetime="2016-06-29T15:00:00.000Z" itemprop="dateUpdated">2016-06-30</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        Exchange Server ではデータベースへの変更が行われる際に、まず初めにトランザクション ログにその変更内容が記録され、その後、その内容がデータベースへ書き込まれます。このため、例えばあるタイミングで採取したバックアップ ファイルと、それ以降のトランザクション ログがあれば、トランザクション ログをバックアップしたデータベース ファイルに反映させることで、最新の状態にすることが可能です。
+トランザクション ログはデータベースの更新があるたびに記録されるため、一般的に多くのログが出力されます。日々 Exchange Server をご利用いただく中で、トランザクション ログによるディスクの空き容量が圧迫されることを防止するため、一般的には以下のいずれかを実行し、古いトランザクション ログを削除いただいているかと存じます。
+
+バックアップを採取する。
+データベースの循環ログを有効にす...
+        <p class="article-more-link">
+          <a href="/blog/How-to-Handle-Disk-Space-Issues-When-Transaction-Logs-Are-Not-Deleted/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/How-to-Handle-Disk-Space-Issues-When-Transaction-Logs-Are-Not-Deleted/" data-id="cmpanjco2002rzs2ab20dftlw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Understanding-Message-Tracking-in-Exchange-Online-Part-1-Retrieval" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/blog/Understanding-Message-Tracking-in-Exchange-Online-Part-1-Retrieval/" class="article-date">
@@ -140,7 +194,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Understanding-Message-Tracking-in-Exchange-Online-Part-1-Retrieval/" data-id="cmp6eg0sj0043102a3w481x5f" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Understanding-Message-Tracking-in-Exchange-Online-Part-1-Retrieval/" data-id="cmpanjcoi0040zs2agjji996r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
@@ -190,7 +244,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Forcefully-Uninstalling-Exchange-2013/" data-id="cmp6eg0ri001y102a1icc5zey" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Forcefully-Uninstalling-Exchange-2013/" data-id="cmpanjcnu001xzs2ad8i6d7nd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -244,7 +298,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Reflecting-on-Edge-Servers-Episode-2/" data-id="cmp6eg0sc003p102a9pw31tl9" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Reflecting-on-Edge-Servers-Episode-2/" data-id="cmpanjcob003kzs2a8l9e5q1z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -296,7 +350,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Implementing-Exchange-Using-Active-Directory-Sites/" data-id="cmp6eg0rq002c102a2iv93k22" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Implementing-Exchange-Using-Active-Directory-Sites/" data-id="cmpanjcnx0029zs2a9kmrhwrt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -348,7 +402,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Reflecting-on-Edge-Servers-Episode-1/" data-id="cmp6eg0sa003l102a0a580t32" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Reflecting-on-Edge-Servers-Episode-1/" data-id="cmpanjcoe003qzs2a1kqs63u9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -401,7 +455,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Considerations-When-Belonging-to-a-Large-Number-of-Groups/" data-id="cmp6eg0qm0015102aeyoa66zv" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/Considerations-When-Belonging-to-a-Large-Number-of-Groups/" data-id="cmpanjcnd0017zs2achnna8c0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -453,7 +507,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/About-Export-CliXml/" data-id="cmp6eg0po0005102acp5s3f2g" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/About-Export-CliXml/" data-id="cmpanjcmd0006zs2ah8xrb2qq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -506,7 +560,7 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/cachedmode-onlinemode-merit-demerit/" data-id="cmp6eg0sx0053102afc277n2x" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/cachedmode-onlinemode-merit-demerit/" data-id="cmpanjcow0050zs2a4uecfz5a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
@@ -556,64 +610,10 @@ Exchange Server サポートからのお願い弊社サポートにメッセー�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/What-to-Do-When-Items-Suddenly-Disappear/" data-id="cmp6eg0sn004d102abdmj6vtr" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/What-to-Do-When-Items-Suddenly-Disappear/" data-id="cmpanjcon0048zs2a1zm07ftg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Autodiscover-in-Hybrid-Environments" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/blog/Autodiscover-in-Hybrid-Environments/" class="article-date">
-  <time datetime="2014-11-09T15:00:00.000Z" itemprop="datePublished">2014-11-10</time>
-</a>
-    <!--  -->
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header-single">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/Autodiscover-in-Hybrid-Environments/">ハイブリッド環境での Autodiscover
-</a>
-    </h1>
-  
-
-      </header>
-      <div class="article-share">
-        Last Update:
-        <a href="/blog/Autodiscover-in-Hybrid-Environments/" class="article-date-single">    
-    
-    <time datetime="2014-11-09T15:00:00.000Z" itemprop="dateUpdated">2014-11-10</time>
-    
-</a>
-      </div>
-    
-    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
-      
-        こんにちは。Exchange サポートの高橋です。Exchange Online への移行のため、Exchange のハイブリッド環境に関するお問い合わせが増えております。Exchange チームとしては、これまでにも Autodiscover についてご紹介してきましたが、今回はハイブリッド環境での Autodiscover の動作についてご案内します。
-まず、基本的な Autodiscover の動作については、以下を振り返っていただければと思います。
-Autodiscover を振り返る エピソード 1Autodiscover を振り返る エピソード 2
-上記ブログでもご紹介のとおり、Outlook クライアントが Autodiscover 接続を行う際、以下の順序で接続が試みられます。
-　(1) AD に登録された SCP (ServiceConnectionPoint) に設定さ...
-        <p class="article-more-link">
-          <a href="/blog/Autodiscover-in-Hybrid-Environments/#more">Read More</a>
-        </p>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/Autodiscover-in-Hybrid-Environments/" data-id="cmp6eg0ql0012102aemn97gvw" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a></li></ul>
 
     </footer>
   </div>
@@ -640,7 +640,7 @@ Autodiscover を振り返る エピソード 1Autodiscover を振り返る エ�
   <div class="widget-wrap">
     <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">64</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">64</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">65</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">64</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -651,6 +651,10 @@ Autodiscover を振り返る エピソード 1Autodiscover を振り返る エ�
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/">クラウド管理のリモート メールボックス向けの書き戻しがパブリック プレビューになりました</a>
+          </li>
         
           <li>
             <a href="/blog/addressing-exchange-server-may-2026-vulnerability-cve-2026-42897/">Exchange Server の 2026 年 5 月の脆弱性 CVE-2026-42897 への対処</a>
@@ -668,10 +672,6 @@ Autodiscover を振り返る エピソード 1Autodiscover を振り返る エ�
             <a href="/blog/announcing-general-availability-of-the-mailbox-import-and-export-microsoft-graph-apis/">メールボックスのインポート / エクスポート用 Microsoft Graph API の一般提供開始</a>
           </li>
         
-          <li>
-            <a href="/blog/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/">Exchange SE ハイブリッドのオンプレミス リッチ共存を Graph API に移行する方法</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -686,7 +686,7 @@ Autodiscover を振り返る エピソード 1Autodiscover を振り返る エ�
         
           <li class="archive-list-item">
             <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
-            <span class="archive-list-count">6</span>
+            <span class="archive-list-count">7</span>
           </li>
         
           <li class="archive-list-item">
