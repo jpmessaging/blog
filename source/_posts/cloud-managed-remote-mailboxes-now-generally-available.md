@@ -1,7 +1,7 @@
 ---
 title: 'クラウド管理のリモート メールボックス: 一般提供が開始されました!'
 date: 2025-10-16
-lastupdate: 2025-11-20
+lastupdate: 2026/05/18
 tags: 
 - Exchange
 ---
@@ -29,7 +29,8 @@ tags:
 この組織単位の設定を使用することで、すべての新しいディレクトリ同期済みのメールボックスがクラウド ユーザー (Exchange 属性なし) として同期され、既定でクラウド管理されるようになります。これにより、メールボックスごとの設定が不要となり、導入の加速が期待されます。この機能は今月末にプライベート プレビューとして提供され、来月に一般提供 (GA) が予定されています。
 
 2. **Exchange 属性の書き戻し**  
-Microsoft Entra Cloud Sync を通じてクラウドからオンプレミスの Active Directory へ重要な Exchange 属性 (ドキュメントで言及されている属性) を書き戻すことができるようになります。この機能は、オンプレミス AD でこれらの重要な属性に依存する LOB アプリを運用している組織でも、クラウド管理に移行した後もシームレスに動作できることを目的としています。この機能は 11 月にプライベート プレビューが提供され、来年初めに一般提供が予定されています。
+更新: [この機能は現在利用可能です](/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/)。  
+Microsoft Entra Cloud Sync を通じて、クラウドからオンプレミスの Active Directory へ重要な Exchange 属性 (ドキュメントで言及されている属性) の書き戻しをオプトインで利用できるようになります。この機能は、オンプレミス AD でこれらの重要な属性に依存する LOB アプリを運用している組織でも、クラウド管理に移行した後もシームレスに動作できることを目的としています。
 
 上記のいずれかの機能について、プライベート プレビューや早期アクセスへの参加をご希望の場合は、以下のフォームからご連絡ください。
  [https://forms.office.com/r/6wJJexJAZm](https://forms.office.com/r/6wJJexJAZm)
@@ -48,4 +49,4 @@ Microsoft Entra Cloud Sync を通じてクラウドからオンプレミスの A
 
 GA (一般提供) の開始を待っていた方は、今こそ移行を始める最適なタイミングです。
 
-この機能が、皆様の最後の Exchange Server の廃止にどのように役立つか、私たちはとても楽しみにしています。ご意見やご感想がありましたら、ぜひ [Cloud-Managed Remote Mailboxes: Now Generally Available!](https://techcommunity.microsoft.com/blog/exchange/cloud-managed-remote-mailboxes-now-generally-available/4461705) のコメント欄でお知らせください。
+この機能が、皆様の最後の Exchange Server の廃止にどのように役立つか、私たちはとても楽しみにしています。いつもどおり、皆様からのフィードバックは大変貴重です。ぜひコメント欄で経験やご提案をお聞かせください。
