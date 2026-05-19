@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>将来の変更影響を事前に把握できる「変更可視化レポート」がパブリック プレビューで登場 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Change Optics Report released into Public Preview to showcase messages impacted by future changes の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 変">
+<meta property="og:type" content="article">
+<meta property="og:title" content="将来の変更影響を事前に把握できる「変更可視化レポート」がパブリック プレビューで登場">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/change-optics-report-released-into-public-preview-to-showcase-messages-impacted/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Change Optics Report released into Public Preview to showcase messages impacted by future changes の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 変">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/change-optics-report-released-into-public-preview-to-showcase-messages-impacted/COR01.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/change-optics-report-released-into-public-preview-to-showcase-messages-impacted/COR02.jpg">
+<meta property="article:published_time" content="2026-04-21T08:00:00.000Z">
+<meta property="article:modified_time" content="2026-04-21T08:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/change-optics-report-released-into-public-preview-to-showcase-messages-impacted/COR01.jpg">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-change-optics-report-released-into-public-preview-to-showcase-messages-impacted" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/change-optics-report-released-into-public-preview-to-showcase-messages-impacted/" class="article-date">
+  <time datetime="2026-04-21T08:00:00.000Z" itemprop="datePublished">2026-04-21</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      将来の変更影響を事前に把握できる「変更可視化レポート」がパブリック プレビューで登場
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/change-optics-report-released-into-public-preview-to-showcase-messages-impacted/" class="article-date-single">    
+    
+    <time datetime="2026-04-21T08:00:00.000Z" itemprop="dateUpdated">2026-04-21</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/change-optics-report-released-into-public-preview-to-showcase-messages-impacted-/4513047">Change Optics Report released into Public Preview to showcase messages impacted by future changes</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>変更管理は、サービスの改善を進めるうえで非常に重要な要素です。これらの改善は、ときに利用者に影響を及ぼす可能性があります。そのため、サービス変更をアナウンスされた際に、「どのメッセージが影響を受ける可能性があるのか」を事前に把握できるようにすることが重要です。このような背景から、変更可視化レポート (Change Optics Report) のパブリック プレビューを公開しました。このレポートは、今後のサービス変更により影響を受ける可能性のあるメッセージを確認するための中核的なレポートとなります。</p>
+<p>Exchange Online では、機能改善や問題対応を進める過程において、特定のメッセージの送信や配信に影響を与える可能性のある変更が行われることがあります。今回公開されたこのレポート機能は、そのような変更が発生した際、影響の有無を確認するための参照先として利用できます。このレポートでは、変更への対応準備を行う管理者にとって重要な複数のシナリオが提示されており、将来的に影響を受ける可能性のある特徴を持つ <strong>サンプル</strong> メッセージを確認することができます。</p>
+<p>これらのサンプル メッセージにより、管理者は今後の変更によってどの部分に対応が必要となるかを特定し、サービス変更による業務への影響 (障害) を未然に防ぐための調査をすることができます。このレポートを活用することで、関連する変更が適用される前に、対象となるメッセージを削減し、リスクが解消されるまでの進捗を把握することができます。</p>
+<h4 id="初期シナリオ"><a href="#初期シナリオ" class="headerlink" title="初期シナリオ"></a>初期シナリオ</h4><p>このレポートには、公開時点で 2 つの代表的なシナリオがあらかじめ含まれています。</p>
+<ul>
+<li><p><strong>OMC</strong> は、onmicrosoft.com ドメインを使って外部に送信されているメール通信を指します。これは、現在も onmicrosoft.com の利用が残っている大規模組織を対象としており、今後この通信に対して送信制限 (throttling) が適用される前に、利用状況を見直して対応する必要があります。詳細は <a href="/blog/limiting-onmicrosoft-domain-usage-for-sending-emails/">onmicrosoft ドメインのメール送信利用制限について</a> をご覧ください。</p>
+</li>
+<li><p><strong>DRS</strong> は、組織テナントで受信されている Direct Send 通信を指します。Reject Direct Send 設定の利用を検討している場合、事前に正当な通信をすべて特定し、適切に対応しておくために有用です。詳細は <a href="/blog/introducing-more-control-over-direct-send-in-exchange-online/">Exchange Online におけるダイレクト送信の制御機能強化の導入</a> をご覧ください。</p>
+</li>
+</ul>
+<h4 id="レポートの利用方法"><a href="#レポートの利用方法" class="headerlink" title="レポートの利用方法"></a>レポートの利用方法</h4><p>このレポートは、Exchange 管理センター (<a target="_blank" rel="noopener" href="https://admin.cloud.microsoft/exchange">https://admin.cloud.microsoft/exchange</a>) の <strong>レポート &gt; メール フロー &gt; 変更可視化レポート</strong> から確認できます。</p>
+<p>変更可視化レポート： Exchange Online 構成の変更を時系列で確認できます。日付範囲やシナリオ種類でフィルターして、特定の変更を絞り込んで確認することができます。</p>
+<p>レポートは、要約ページと詳細ページで構成されています。</p>
+<h5 id="要約ページ"><a href="#要約ページ" class="headerlink" title="要約ページ"></a>要約ページ</h5><p>要約ページでは、シナリオごとに検出されたメッセージ数の推移をまとめた概要チャートが表示されます。<br><img src="/blog/change-optics-report-released-into-public-preview-to-showcase-messages-impacted/COR01.jpg"></p>
+<h5 id="詳細ページ"><a href="#詳細ページ" class="headerlink" title="詳細ページ"></a>詳細ページ</h5><p>詳細ページでは、シナリオごとのサンプル メッセージを確認できます。調査に必要な主要なメッセージのプロパティを参照でき、csv ファイルとしてエクスポートすることが可能です。さらに、メッセージに関する追加情報が必要な場合は、Message Trace を使用して取得することができます。</p>
+<p>確認したいシナリオは、ドロップダウン メニューから選択できます。<br><img src="/blog/change-optics-report-released-into-public-preview-to-showcase-messages-impacted/COR02.jpg"></p>
+<p>英語原文のコメント欄にて、ご意見・ご感想をお寄せください。本レポート機能が一般提供（GA）となりましたら、本ブログを更新のうえお知らせいたします。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/change-optics-report-released-into-public-preview-to-showcase-messages-impacted/" data-id="cmpai7ohb005fb0uufarwdjc4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/implementing-inbound-smtp-dane-with-dnssec-for-exchange-online-mail-flow/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Exchange Online メール フローの受信 SMTP DANE with DNSSEC の実装
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/announcing-period-2-exchange-20162019-extended-security-update-esu-program/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange Server 2016/2019 向け ESU プログラム 第 2 期 提供開始のお知らせ</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">65</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">64</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/">クラウド管理のリモート メールボックス向けの書き戻しがパブリック プレビューになりました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/addressing-exchange-server-may-2026-vulnerability-cve-2026-42897/">Exchange Server の 2026 年 5 月の脆弱性 CVE-2026-42897 への対処</a>
+          </li>
+        
+          <li>
+            <a href="/blog/released-may-2026-exchange-server-hotfix-update/">2026 年 5 月の Exchange Server の Hotfix 更新プログラムが公開されました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/">Exchange ActiveSync における直接の証明書ベース認証 (CBA) を 2026 年末までに廃止</a>
+          </li>
+        
+          <li>
+            <a href="/blog/announcing-general-availability-of-the-mailbox-import-and-export-microsoft-graph-apis/">メールボックスのインポート / エクスポート用 Microsoft Graph API の一般提供開始</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

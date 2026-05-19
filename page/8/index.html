@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/page/8/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="jpmessaging">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-introducing-messagetracev2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/introducing-messagetracev2/" class="article-date">
+  <time datetime="2025-06-22T15:00:00.000Z" itemprop="datePublished">2025-06-23</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/introducing-messagetracev2/">MessageTraceV2 の紹介
+</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/introducing-messagetracev2/" class="article-date-single">    
+    
+    <time datetime="2025-06-22T15:00:00.000Z" itemprop="dateUpdated">2025-06-23</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        こんにちは。Exchange &#x2F; Outlook サポートの柳本です。以前よりこちらの記事で、HistoricalSearch と呼ばれる Exchange Online で提供されている中で最も詳細なメッセージ追跡ログを紹介していました。今回は新たに MessageTraceV2 と呼ばれる種類のメッセージ追跡ログが追加されましたのでご紹介いたします。  
+MessageTraceV2 とはMessageTraceV2 とは、従来の MessageTrace (以降 MessageTraceV1) に改良を加えたメッセージ追跡ログです。MessageTraceV2 はここしばらくパブリック プレビュー版でご提供していましたが、こちらの記事でもアナウンスがあった通り一般提供が開始されました。
+MessageTraceV2 は Exchange 管理センターと PowerShell...
+        <p class="article-more-link">
+          <a href="/blog/introducing-messagetracev2/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/introducing-messagetracev2/" data-id="cmpai7ohn007ob0uu17a1b1g8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/" class="article-date">
+  <time datetime="2025-06-09T02:00:00.000Z" itemprop="datePublished">2025-06-09</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/">ディレクトリ ベースのエッジ ブロックがパブリック フォルダーと動的配布グループで利用可能になりました</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/" class="article-date-single">    
+    
+    <time datetime="2025-06-09T02:00:00.000Z" itemprop="dateUpdated">2025-06-09</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、Directory Based Edge Blocking Now Available for Public Folders &amp; Dynamic Distribution Groups の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+メールが有効なパブリック フォルダー (MEPF) および動的配布グループ (DDG) に対して、ディレクトリ ベースのエッジ ブロック (DBEB) 機能が利用可能になったことをお知らせします。これにより、DBEB を有効にすることで、組織内に存在しない MEPF や DDG 宛ての外部からのメールを Exchange Online Protection (EOP) レベルで拒否できるようになりまし...
+        <p class="article-more-link">
+          <a href="/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/directory-based-edge-blocking-now-available-for-public-folders--dynamic-distribu/" data-id="cmpai7ohe005xb0uu12c12x4x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-tls-certificates-in-exchange-hybrid---common-issues--how-to-fix-them" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/tls-certificates-in-exchange-hybrid---common-issues--how-to-fix-them/" class="article-date">
+  <time datetime="2025-06-09T01:00:00.000Z" itemprop="datePublished">2025-06-09</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/tls-certificates-in-exchange-hybrid---common-issues--how-to-fix-them/">Exchange ハイブリッド環境における TLS 証明書 - よくある問題とその解決方法</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/tls-certificates-in-exchange-hybrid---common-issues--how-to-fix-them/" class="article-date-single">    
+    
+    <time datetime="2025-06-09T01:00:00.000Z" itemprop="dateUpdated">2025-06-09</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、TLS Certificates in Exchange Hybrid - Common Issues &amp; How to Fix them の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+ハイブリッド メール フローの概要Exchange Server (オンプレミス) と Exchange Online 間のハイブリッド構成では、同一ドメイン (例 : Contoso.com) の名前空間を利用し、両環境間で安全なメール ルーティングを実現します。オンプレミス環境内のサーバー間通信には自己署名証明書でも十分ですが、ハイブリッド構成を行う場合は、信頼されたサード パーティ認証局 (CA) から購入した証明書を使用し、適切に構成する...
+        <p class="article-more-link">
+          <a href="/blog/tls-certificates-in-exchange-hybrid---common-issues--how-to-fix-them/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/tls-certificates-in-exchange-hybrid---common-issues--how-to-fix-them/" data-id="cmpai7oi0009kb0uu7hnf48nv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/" class="article-date">
+  <time datetime="2025-06-03T15:00:00.000Z" itemprop="datePublished">2025-06-04</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/">Exchange Online の新しいメッセージ追跡の一般提供 (GA) を発表</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/" class="article-date-single">    
+        
+    <time datetime="2026-02-25T15:00:00.000Z" itemprop="lastupdate">2026-02-26</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、Announcing General Availability (GA) of the New Message Trace in Exchange Online の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+更新 2026 年 1 月 22 日: Graph API を使用した新しいメッセージ追跡が一般公開 (GA) されました。Reporting Web サービスを使用した従来のメッセージ追跡の廃止は 2026 年 4 月 8 日  に予定されています。
+
+本日、Exchange Online の Exchange 管理センター (EAC) における新しいメッセージ追跡の一般提供 (GA) を、ワールド ワイド (WW) のお客様向け...
+        <p class="article-more-link">
+          <a href="/blog/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/announcing-general-availability-ga-of-the-new-message-trace-in-exchange-online/" data-id="cmpai7oh8004zb0uu0ok270jn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them/" class="article-date">
+  <time datetime="2025-05-22T15:00:00.000Z" itemprop="datePublished">2025-05-23</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them/">レガシー Exchange Online トークンおよびそれを利用するアドインのステータス確認について</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them/" class="article-date-single">    
+        
+    <time datetime="2025-05-28T15:00:00.000Z" itemprop="lastupdate">2025-05-29</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、Get the status of legacy Exchange Online tokens and add-ins that use them の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+組織内でのレガシー トークン利用状況の確認方法以前のブログ記事でもお伝えした通り、Exchange Online ではまもなく Outlook アドインが私たちのサービスへの認証に利用していた Exchange レガシー トークンを廃止します。今後、Exchange Online で利用する Outlook アドインは Nested App Authentication (NAA) を使用する必要があります。この変更は Exchange Onli...
+        <p class="article-more-link">
+          <a href="/blog/get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/get-the-status-of-legacy-exchange-online-tokens-and-add-ins-that-use-them/" data-id="cmpai7ohj006yb0uu28l8exx6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-give-us-feedback-on-exchange-online-cmdlet-changes-and-rest-api-availability-for" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/give-us-feedback-on-exchange-online-cmdlet-changes-and-rest-api-availability-for/" class="article-date">
+  <time datetime="2025-05-12T15:00:00.000Z" itemprop="datePublished">2025-05-13</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/give-us-feedback-on-exchange-online-cmdlet-changes-and-rest-api-availability-for/">Exchange Online コマンドレットの変更と管理シナリオでの REST API の導入に関するフィードバックをお寄せください</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/give-us-feedback-on-exchange-online-cmdlet-changes-and-rest-api-availability-for/" class="article-date-single">    
+    
+    <time datetime="2025-05-12T15:00:00.000Z" itemprop="dateUpdated">2025-05-13</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、Give us feedback on Exchange Online Cmdlet changes and Rest API availability for Admin Scenarios の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+新しいバージョンの Exchange Online PowerShell モジュールを計画するにあたり、簡素化およびパフォーマンス強化を行い、Exchange Online 管理エクスペリエンスを近代化したいと考えています。私たちの目標には、メールボックス管理の合理化、コマンドレットのパフォーマンスの向上、最新の自動化ソリューションと AI エージェントの要求を満たすための RESTful API の...
+        <p class="article-more-link">
+          <a href="/blog/give-us-feedback-on-exchange-online-cmdlet-changes-and-rest-api-availability-for/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/give-us-feedback-on-exchange-online-cmdlet-changes-and-rest-api-availability-for/" data-id="cmpai7ohi006wb0uub2fh7xpw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-introducing-exchange-web-services-ews-usage-reports-in-microsoft-365-admin-cente" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/introducing-exchange-web-services-ews-usage-reports-in-microsoft-365-admin-cente/" class="article-date">
+  <time datetime="2025-05-08T07:00:00.000Z" itemprop="datePublished">2025-05-08</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/introducing-exchange-web-services-ews-usage-reports-in-microsoft-365-admin-cente/">Microsoft 365 管理センターでの Exchange Web Services (EWS) 利用状況レポートの導入</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/introducing-exchange-web-services-ews-usage-reports-in-microsoft-365-admin-cente/" class="article-date-single">    
+    
+    <time datetime="2025-05-08T07:00:00.000Z" itemprop="dateUpdated">2025-05-08</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、Introducing Exchange Web Services (EWS) Usage Reports in Microsoft 365 Admin Center の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+私たちは、Microsoft 365 管理センターにおける Exchange Web Services (EWS) 利用状況レポートのリリースを発表できることを大変嬉しく思います。この新機能は、EWS 依存を解消する取り組みを支援するために設計されており、管理者の監視業務を簡素化し、強化することを目的としています。EWS の廃止に向けた管理者の取り組みを支援するための実用的なインサイトとツールを提供するという、私たちのコミット...
+        <p class="article-more-link">
+          <a href="/blog/introducing-exchange-web-services-ews-usage-reports-in-microsoft-365-admin-cente/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/introducing-exchange-web-services-ews-usage-reports-in-microsoft-365-admin-cente/" data-id="cmpai7oho007qb0uu2u4n6229" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-high-volume-email-continued-support-for-basic-authentication-other-important-up" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/high-volume-email-continued-support-for-basic-authentication-other-important-up/" class="article-date">
+  <time datetime="2025-05-08T06:00:00.000Z" itemprop="datePublished">2025-05-08</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/high-volume-email-continued-support-for-basic-authentication-other-important-up/">High Volume Email (HVE) に関する基本認証の継続サポートとその他重要な更新情報</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/high-volume-email-continued-support-for-basic-authentication-other-important-up/" class="article-date-single">    
+        
+    <time datetime="2026-03-31T15:00:00.000Z" itemprop="lastupdate">2026-04-01</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、High Volume Email: Continued support for Basic Authentication &amp; other important updates の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+2026&#x2F;3&#x2F;31 編集: High Volume Email は現在、一般提供 (GA) されています。詳細については、High Volume Email Is Now Available in Exchange Online をご参照ください。
+Microsoft 365 の High Volume Email (HVE) は、内部受信者に対して大量のメールを送信する機能を提供し、受信者...
+        <p class="article-more-link">
+          <a href="/blog/high-volume-email-continued-support-for-basic-authentication-other-important-up/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/high-volume-email-continued-support-for-basic-authentication-other-important-up/" data-id="cmpai7ohj0070b0uug97n4s1u" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-important-update-to-the-get-federationinformation-cmdlet-in-exchange-online" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/important-update-to-the-get-federationinformation-cmdlet-in-exchange-online/" class="article-date">
+  <time datetime="2025-05-07T08:00:00.000Z" itemprop="datePublished">2025-05-07</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/important-update-to-the-get-federationinformation-cmdlet-in-exchange-online/">Exchange Online の Get-FederationInformation コマンドレットに関する重要なお知らせ</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/important-update-to-the-get-federationinformation-cmdlet-in-exchange-online/" class="article-date-single">    
+    
+    <time datetime="2025-05-07T08:00:00.000Z" itemprop="dateUpdated">2025-05-07</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        ※ この記事は、Important Update to the Get-FederationInformation Cmdlet in Exchange Online の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+Microsoft では、お客様のセキュリティとプライバシーを最優先に考えています。この取り組みの一環として、Microsoft Exchange Online の Get-FederationInformation コマンドレットに重要な更新を行います。この変更は、認可されていないユーザーによるドメイン名の露出を制限することで、テナント情報のセキュリティを強化することを目的としています。本記事では、この変更の内容、背景にある理由、およびお客...
+        <p class="article-more-link">
+          <a href="/blog/important-update-to-the-get-federationinformation-cmdlet-in-exchange-online/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/important-update-to-the-get-federationinformation-cmdlet-in-exchange-online/" data-id="cmpai7ohl007ab0uudpxe7x5k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Getting-started-with-new-outlook-for-windows" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Getting-started-with-new-outlook-for-windows/" class="article-date">
+  <time datetime="2025-05-02T08:00:00.000Z" itemprop="datePublished">2025-05-02</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/Getting-started-with-new-outlook-for-windows/">新しい Outlook for Windows の始め方：従来版との違いを学ぶ</a>
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Getting-started-with-new-outlook-for-windows/" class="article-date-single">    
+    
+    <time datetime="2025-05-02T08:00:00.000Z" itemprop="dateUpdated">2025-05-02</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの杉山です。本記事では 2024 年 8 月 1 日に一般提供 (General Availability, GA) された新しい Outlook for Windows (以下、新しい Outlook) の概要や始め方、お問い合わせいただくことも増えている従来の Outlook for Windows (以下、従来の Outlook) との違いについてご紹介します。まだ新しい Outlook をご利用いただいていない方はこの記事をきっかけにお試しください！  
+目次1. 新しい Outlook の概要を知ろう！2. 従来の Outlook との機能を比較しよう！3. 新しい Outlook と従来の Outlook を並行稼働しよう！4. フィードバックを活用しよう！5. Appendix: リ...
+        <p class="article-more-link">
+          <a href="/blog/Getting-started-with-new-outlook-for-windows/#more">Read More</a>
+        </p>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Getting-started-with-new-outlook-for-windows/" data-id="cmpai7ogq0029b0uu1q5phgnj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/blog/page/7/">Prev</a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/6/">6</a><a class="page-number" href="/blog/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/blog/page/9/">9</a><a class="page-number" href="/blog/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/18/">18</a><a class="extend next" rel="next" href="/blog/page/9/">Next</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">65</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">64</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/">クラウド管理のリモート メールボックス向けの書き戻しがパブリック プレビューになりました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/addressing-exchange-server-may-2026-vulnerability-cve-2026-42897/">Exchange Server の 2026 年 5 月の脆弱性 CVE-2026-42897 への対処</a>
+          </li>
+        
+          <li>
+            <a href="/blog/released-may-2026-exchange-server-hotfix-update/">2026 年 5 月の Exchange Server の Hotfix 更新プログラムが公開されました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/">Exchange ActiveSync における直接の証明書ベース認証 (CBA) を 2026 年末までに廃止</a>
+          </li>
+        
+          <li>
+            <a href="/blog/announcing-general-availability-of-the-mailbox-import-and-export-microsoft-graph-apis/">メールボックスのインポート / エクスポート用 Microsoft Graph API の一般提供開始</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

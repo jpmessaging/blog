@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange ActiveSync における直接の証明書ベース認証 (CBA) を 2026 年末までに廃止 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Retirement of Direct Exchange ActiveSync Certificate-Based Authentication by End of 2026 の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。  Exchange">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange ActiveSync における直接の証明書ベース認証 (CBA) を 2026 年末までに廃止">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Retirement of Direct Exchange ActiveSync Certificate-Based Authentication by End of 2026 の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。  Exchange">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/cba01.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/cba02.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/cba03.jpg">
+<meta property="article:published_time" content="2026-05-11T01:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-11T01:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/cba01.jpg">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/" class="article-date">
+  <time datetime="2026-05-11T01:00:00.000Z" itemprop="datePublished">2026-05-11</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange ActiveSync における直接の証明書ベース認証 (CBA) を 2026 年末までに廃止
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/" class="article-date-single">    
+    
+    <time datetime="2026-05-11T01:00:00.000Z" itemprop="dateUpdated">2026-05-11</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end/4517896">Retirement of Direct Exchange ActiveSync Certificate-Based Authentication by End of 2026</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<hr>
+<p><strong>Exchange ActiveSync (EAS) の証明書ベースの認証 (CBA) を Exchange Online に直接行う方式</strong>の廃止を発表します。<strong>2026 年末</strong>までに、<strong>直接的な CBA 接続のサポートを終了</strong>します。その日以降、<strong>CBA を使用する EAS クライアントは Microsoft Entra ID を介して認証を行う必要があります</strong>。クライアント証明書を直接 Exchange Online に送信することはできなくなります。</p>
+<p>即時適用として、新しいテナントがレガシー フローを使用できないようにブロックを展開し、最初から Entra ID フローのメリットを享受できるようにします。</p>
+<p><strong>重要:</strong> この変更は、<strong>Outlook Mobile やオンプレミスの Exchange Server など、他の Exchange Online の認証シナリオには影響しません</strong>。この変更は、Exchange Online に対して CBA を使用する Exchange ActiveSync (EAS) クライアント (ネイティブの組み込みモバイル メール アプリなど) に固有のものです。この廃止は、Exchange Online におけるレガシー認証パターンの排除によるセキュリティ強化の継続的な取り組みの一環です。</p>
+<h4 id="なぜ直接-EAS-CBA-を廃止するのか？"><a href="#なぜ直接-EAS-CBA-を廃止するのか？" class="headerlink" title="なぜ直接 EAS CBA を廃止するのか？"></a>なぜ直接 EAS CBA を廃止するのか？</h4><p>EAS の証明書ベースの認証は、組織がパスワードなしでモバイル デバイスのアクセスを許可するための方法として導入されました。クライアント証明書を使用して、高度にセキュアなパスワードレスのサインイン体験を提供します。CBA では、各ユーザーはテナントのルート証明機関によって検証された証明書を持ち、その証明書の公開キーを使用した TLS ハンドシェイクによって認証を行います。つまり、秘密キーやパスワードがネットワーク上で送信されることはなく、基本認証よりも安全な代替手段を提供します。この構成に関するこれまでのガイダンスは<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/certificate-based-authentication-cba-for-exchange-online/605173">こちら</a>にあります。</p>
+<p>しかし、<strong>現在の Exchange への直接的な EAS CBA の実装はレガシー認証方式と見なされています</strong>。現在のフローでは、ユーザー証明書は MDM 構成中にモバイル デバイスにプッシュされます。ユーザーが EAS に接続してメールを同期する際、Exchange が証明書を受信し、後続のすべての処理と検証を自ら行います。</p>
+<p>この設計には重大な懸念があります。クライアント自体が標準の OAuth アクセス トークンを取得しないため、<strong>最新の認証プラクティスから逸脱</strong>しています。また、Exchange は内部的な高権限メカニズムに依存してデータにアクセスします。さらに、Microsoft Entra ID はクライアントと Exchange Online 間の直接的な証明書ベースの認証を「レガシー認証」の一形態として分類しており、レガシー認証をブロックする条件付きアクセス ポリシーによってブロックされます。これにより、管理者はレガシー認証をすべてブロックするか、CBA を含めてすべて許可するかの二択を迫られることになります。</p>
+<p><strong>新しいモデルでは、他のクライアント アプリと同様に、EAS クライアントが Microsoft Entra ID に対して直接証明書ベースの認証を行うことが求められます</strong>。提案されるセキュアなフローは次のとおりです。<br>クライアントは検証のために証明書を Microsoft Entra ID に送信し、Microsoft Entra ID が証明書を検証して OAuth アクセス トークンをクライアントに返します。<br>その後、クライアントはこの OAuth トークンを Exchange Online に提示して認証を行います。<br>証明書認証を完全に Microsoft Entra ID に移行することで、<strong>管理者は特定のプロトコルに対する例外なく、すべてのクライアント アクセスに対して最新のセキュリティ制御とポリシーを統一的に適用できます</strong>。</p>
+<p>この変更は、<strong>Exchange Online の認証スタックを最新化する継続的な取り組み</strong>の一環でもあります。過去数年間で基本認証などの旧式の認証方式を段階的に廃止し、最近では専用の ActiveSync CBA エンドポイント (マルチテナント向けの outlook-cba.office365.com、DoD 向けの outlook-dod-cba.office365.us、GCC-High 向けの outlook-cba.office365.us) を導入しました。これにより TLS 1.3 のサポートを追加し、セキュリティと信頼性を強化しています。Entra ベースの CBA を要求することは、この取り組みにおける次の論理的なステップであり、レガシー認証の排除における最後の残りのギャップの 1 つを解消するものです。</p>
+<p><img src="/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/cba01.jpg"></p>
+<h4 id="影響を受けるかどうかの確認方法"><a href="#影響を受けるかどうかの確認方法" class="headerlink" title="影響を受けるかどうかの確認方法"></a>影響を受けるかどうかの確認方法</h4><p>Exchange ActiveSync CBA を使用しているか Entra ベースの CBA を使用しているか不明な場合、確認する方法がいくつかあります。</p>
+<p>まず、モバイル デバイス管理 (MDM) 構成を管理している担当者に確認してください。認証タイプが OAuth ではなく Certificate に設定されている場合、この構成を使用している可能性があります。</p>
+<p>もう 1 つの方法は、Entra のサインイン イベント ログを確認することです。Exchange CBA を使用するリクエストは、クライアント アプリが「Exchange ActiveSync」として表示され、認証の詳細に証明書が使用されていることが示されます。以下は、Entra のサインイン ログ レポートでのフローの表示例です。</p>
+<p><img src="/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/cba02.jpg"></p>
+<p>認証方法として「Certificate」が表示されます。</p>
+<p><img src="/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/cba03.jpg"></p>
+<p>今後 1 週間以内に、Exchange CBA を使用しているテナントに対してこの変更に関するメッセージ センター投稿を送信する予定です。投稿が送信された後、この記事を更新します。</p>
+<p>CBA 認証は意図的に構成する必要があるものであり、組織で構成していない場合、この廃止の影響は受けません。</p>
+<h4 id="Entra-ベースの-CBA-への移行方法"><a href="#Entra-ベースの-CBA-への移行方法" class="headerlink" title="Entra ベースの CBA への移行方法"></a>Entra ベースの CBA への移行方法</h4><p>Exchange ActiveSync で CBA を使用してモバイル デバイスのセキュリティを強化してきた組織があることを理解しています。スムーズな移行を確保するため、管理者は <strong>2026 年末の期限</strong>よりも十分前に、デバイスを新しい Entra ID ベースの CBA 方式に移行する計画を<strong>今すぐ</strong>開始することをお勧めします。Entra CBA と EAS CBA の PKI および CA のセットアップは基本的に同じであるため、移行は簡素化されるはずです。以下は、移行を成功させるための主要な手順と考慮事項です。</p>
+<ul>
+<li><strong>Microsoft Entra CBA をテナントで有効にする:</strong> 証明機関 (CA) が Microsoft Entra ID で構成されていることを確認します。少なくとも 1 つの CA と中間 CA が構成されている必要があり、各ユーザーは信頼された PKI から発行された証明書にアクセスできる必要があります。また、各 CA にはインターネットに公開された URL から参照可能な証明書失効リスト (CRL) が必要です。Microsoft は <a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity/authentication/how-to-certificate-based-authentication">ドキュメント</a>で Entra CBA のセットアップに関する詳細なガイダンスを提供しています。</li>
+<li><strong>ユーザー証明書の準備:</strong> 各ユーザーのクライアント証明書に正しい ID 情報が含まれていることを確認します。<strong>Exchange ActiveSync クライアントでは、証明書にユーザーの Exchange Online でのルーティング可能なメール アドレスが含まれている必要があります</strong>。Subject Alternative Name (SAN) フィールドの Principal Name または RFC822 Name の値に含まれている必要があります。Microsoft Entra ID は RFC822 Name の値をディレクトリのプロキシ アドレス属性にマッピングします。詳細は<a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity/authentication/certificate-based-authentication-federation-get-started">こちら</a>を参照してください。現在の証明書が直接 EAS CBA に使用されていた場合、この要件を既に満たしている可能性が高いですが、証明書の SAN にユーザーのメール アドレスが含まれていることを確認してください。</li>
+<li><strong>デバイス構成の更新:</strong> モバイル デバイスが Entra ID に対して証明書認証を行う方法を計画します。多くの場合、デバイスのメール プロファイルや MDM&#x2F;Intune デバイス構成プロファイルの更新が必要になる場合があります。新しいフローでは、変更をサポートするためにサードパーティのクライアント ベンダーとの連携が必要になる場合があります。クライアント証明書を使用した Entra (Azure AD) 認証の有効化に関する具体的な手順については、モバイル デバイスまたはメール アプリのベンダーにお問い合わせください。この機能が構成されると、ユーザーはサインイン時にパスワードを入力する代わりに、証明書の選択プロンプトが表示されます。</li>
+<li><strong>テストと監視:</strong> 広範な展開の前に、パイロット グループのデバイスとユーザーで新しい Entra CBA ログイン フローをテストすることをお勧めします。Entra ID のサインイン ログと Exchange ActiveSync デバイス レポートを監視して、レガシー CBA 方式を引き続き使用しているデバイスを特定してください。古い方式を使用しているユーザーに積極的に連絡し、更新された構成への移行を支援してください。</li>
+<li><strong>廃止のタイムライン:</strong> 計画にあたっては <strong>2026 年末の期限</strong>を念頭に置いてください。サービスの中断を避けるため、この日付よりも十分前に移行を完了することをお勧めします。その間、直接影響を受けるテナントにはメッセージ センターを通じて詳細を共有し、移行をサポートするためにドキュメントを必要に応じて更新します。</li>
+</ul>
+<h4 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h4><p>直接 Exchange ActiveSync CBA を引き続き使用しているお客様には、<strong>Entra ベースの CBA への移行計画を今すぐ開始することを強くお勧めします</strong>。Microsoft Entra の方式は、証明書ベースで<strong>フィッシング耐性があり、パスワード不要</strong>という点で同等かそれ以上のセキュリティを提供するうえ、最新の認証エコシステムやセキュリティ制御との統合がはるかに優れています。この変更は、すべての Exchange Online 接続が最新のセキュリティ標準に準拠することを確保し、不必要な昇格された権限を持つ内部的な高権限トークンへの依存を排除することで、組織のデータを保護するのに役立ちます。</p>
+<p>認証インフラストラクチャへの変更が困難であることを理解しているため、この移行のために 2026 年末まで長い猶予期間を設定しています。この期間を通じてガイダンスとサポートを引き続き提供します。<strong>これらのセキュリティ改善の導入にご協力いただきありがとうございます</strong>。共に、すべてのお客様にとって、より安全でセキュアな Exchange Online エクスペリエンスを実現しましょう。ご質問や Entra CBA のセットアップに関するサポートが必要な場合は、Microsoft サポート (Entra &#x2F; Identity) またはアカウント チームにお問い合わせください。この移行をできるだけスムーズに進められるよう、サポートいたします。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/" data-id="cmpai7ohy0092b0uu0bb81kn1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/released-may-2026-exchange-server-hotfix-update/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          2026 年 5 月の Exchange Server の Hotfix 更新プログラムが公開されました
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/announcing-general-availability-of-the-mailbox-import-and-export-microsoft-graph-apis/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">メールボックスのインポート / エクスポート用 Microsoft Graph API の一般提供開始</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">65</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">64</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/">クラウド管理のリモート メールボックス向けの書き戻しがパブリック プレビューになりました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/addressing-exchange-server-may-2026-vulnerability-cve-2026-42897/">Exchange Server の 2026 年 5 月の脆弱性 CVE-2026-42897 への対処</a>
+          </li>
+        
+          <li>
+            <a href="/blog/released-may-2026-exchange-server-hotfix-update/">2026 年 5 月の Exchange Server の Hotfix 更新プログラムが公開されました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/">Exchange ActiveSync における直接の証明書ベース認証 (CBA) を 2026 年末までに廃止</a>
+          </li>
+        
+          <li>
+            <a href="/blog/announcing-general-availability-of-the-mailbox-import-and-export-microsoft-graph-apis/">メールボックスのインポート / エクスポート用 Microsoft Graph API の一般提供開始</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
