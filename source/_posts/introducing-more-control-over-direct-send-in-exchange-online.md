@@ -1,14 +1,14 @@
 ---
 title: 'Exchange Online におけるダイレクト送信の制御機能強化の導入'
 date: 2025/5/1
-lastupdate: 2026/2/5 10:00
+lastupdate: 2026/5/22
 tags:
 - Exchange Online
 ---
 
 ※ この記事は、[Introducing more control over Direct Send in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/introducing-more-control-over-direct-send-in-exchange-online/4408790) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #66FF99"><b>2025 年 8 月 12 日更新:</b> よくある質問 (FAQ) を記事に追加しました。また、ダイレクト送信機能についてさらに詳しく解説した新しい記事 <a href="/blog/direct-send-vs-sending-directly-to-an-exchange-online-tenant/">ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い</a>も公開していますので、あわせてご参照ください。</p>
+<p style="background: #66FF99"><b>2026 年 5 月 20 日更新:</b> Exchange 管理センター (EAC) の変更可視化レポート (Change Optics Report) に関する注記を追加しました。ダイレクト送信機能への理解を深めるため、新しい記事 <a href="/blog/direct-send-vs-sending-directly-to-an-exchange-online-tenant/">ダイレクト送信と Exchange Online テナントへ直接メールを送ることの違い</a> も公開していますので、あわせてご参照ください。</p>
 
 <div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
 <div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
@@ -55,7 +55,9 @@ Set-OrganizationConfig -RejectDirectSend $true
 
 また、[Exchange Online Feedback Portal](https://feedbackportal.microsoft.com/feedback/forum/84b411cc-50d1-ec11-a7b5-0022481f35a4) を使用して、他の顧客が投票できる機能リクエストを送信することも可能です。この方法は、私たちが機能に関する意思決定を行う際の参考になります。
 
-**現在、管理者がダイレクト送信トラフィックの概要を把握し、どのトラフィックが影響を受けるかを確認できるレポート機能の提供に取り組んでいます。**これにより、管理者は正当なトラフィックを特定して対応し、この機能を自信を持って有効化できるようになります。この取り組みに関する進捗は、元の記事で随時更新していきます。この機能の一般提供 (GA) の具体的な日程は、いただいたフィードバックに基づいて決定されるため、現時点では未定です。GA の発表については、別途お知らせいたします。
+**現在、管理者がダイレクト送信トラフィックの概要を把握し、どのトラフィックが影響を受けるかを確認できるレポート機能の提供に取り組んでいます。** これにより、管理者は正当なトラフィックを特定して対応し、この機能を自信を持って有効化できるようになります。この取り組みに関する進捗は、元の記事で随時更新していきます。この機能の一般提供 (GA) の具体的な日程は、いただいたフィードバックに基づいて決定されるため、現時点では未定です。GA の発表については、別途お知らせいたします。
+
+**更新:** Exchange 管理センター (EAC) で、変更可視化レポート (Change Optics Report) がパブリック プレビューとして公開されました。このレポートでは、DRS シナリオとしてダイレクト送信トラフィックを確認できます。ここに表示されるサンプル メッセージを使うことで、ダイレクト送信トラフィックを特定し、Reject Direct Send 設定を利用する前に必要なパートナー コネクタを作成できます。詳細は、[将来の変更影響を事前に把握できる「変更可視化レポート」がパブリック プレビューで登場](/blog/change-optics-report-released-into-public-preview-to-showcase-messages-impacted/) をご覧ください。
 
 将来的には、この機能を新しいテナントに対してデフォルトで有効化する予定です。これは、組織をデフォルトでより安全にするための取り組みの一環です。また、この計画には、新しいテナントがこの機能を無効化できないようにすることも含まれています。これにより、認証されていないダイレクト送信のトラフィックの使用を抑制することを目指しています。
 
@@ -105,13 +107,14 @@ Get-MessageTracev2 -MessageId "your message ID here" | Get-MessageTraceDetailv2 
 (検疫以外のアクションも選択可能です)
 
 **RejectDirectSend パラメーターを設定するために必要な権限は何ですか？**  
-RejectDirectSend パラメーターの設定には、Exchange Online の "Organization Configuration" ロールが割り当てられている管理者権限が必要です。通常、このロールは "Organization Management" ロール グループに含まれています。
+RejectDirectSend パラメーターの設定には、Exchange Online の "Organization Configuration" ロールが割り当てられている管理者権限が必要です。
 
 **RejectDirectSend は承認済みドメインのサブドメインである P1 送信ドメインアドレスにどのような影響を与えますか？**  
 RejectDirectSend は、承認済みドメインで「すべてのサブドメインのメールを受信する」が有効になっている (MatchSubDomains=TRUE) 場合、その承認済みドメインのサブドメインである P1 アドレスからのメールに影響します。
 
 **この投稿の変更点:**
 
+- 2026 年 5 月 20 日: Exchange 管理センター (EAC) の変更可視化レポート (Change Optics Report) に関する注記を追加しました。
 - 2026 年 2 月 4 日: Azure Communication Services (ACS) に関連する既知の問題が解決されたため、削除しました。
 - 2025 年 10 月 6 日: ACS トラフィックを「信頼済み」として扱う方法について詳細を追記しました。
 - 2025 年 8 月 29 日: 承認済みドメインのサブドメインに関する FAQ を追加しました。
