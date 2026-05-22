@@ -169,7 +169,7 @@ Edge Transport をインストールすると、[この記事](https://learn.mic
 - アプリケーションが Basic 認証または統合 Windows 認証を使い、送信元 SMTP アドレスとして contoso.com を使用して、任意の受信者へ送信する場合 (例 ： [app1@contoso.com] から [john@contoso.com] と [adele@fabrikam.com] へ送信):
 
 1. **ExchangeUsers** のアクセス許可グループで新しい受信コネクタを作成し、認証方式として **BasicAuth** および/または **Integrated** を設定したうえで、アプリケーションの IP アドレスまたは IP アドレス範囲を **RemoteIPRanges** に追加します。
-```
+```powershell
 New-ReceiveConnector -Name "BasicAuth" -AuthMechanism BasicAuth -RemoteIPRanges "192.168.0.1" -PermissionGroups ExchangeUsers -Custom -Bindings 0.0.0.0:25
 ```
 
