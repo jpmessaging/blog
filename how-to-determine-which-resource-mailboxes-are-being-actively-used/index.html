@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>どのリソース メールボックスが実際に使われているかを把握する方法 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、How to determine which Resource Mailboxes are being actively used の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 今回は、何度か質問を受けたテーマを短く取り上げます。組織でリソース">
+<meta property="og:type" content="article">
+<meta property="og:title" content="どのリソース メールボックスが実際に使われているかを把握する方法">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/how-to-determine-which-resource-mailboxes-are-being-actively-used/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、How to determine which Resource Mailboxes are being actively used の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 今回は、何度か質問を受けたテーマを短く取り上げます。組織でリソース">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-05-22T00:00:00.000Z">
+<meta property="article:modified_time" content="2026-05-22T00:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-how-to-determine-which-resource-mailboxes-are-being-actively-used" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/how-to-determine-which-resource-mailboxes-are-being-actively-used/" class="article-date">
+  <time datetime="2026-05-22T00:00:00.000Z" itemprop="datePublished">2026-05-22</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      どのリソース メールボックスが実際に使われているかを把握する方法
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/how-to-determine-which-resource-mailboxes-are-being-actively-used/" class="article-date-single">    
+    
+    <time datetime="2026-05-22T00:00:00.000Z" itemprop="dateUpdated">2026-05-22</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/how-to-determine-which-resource-mailboxes-are-being-actively-used/4521577">How to determine which Resource Mailboxes are being actively used</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>今回は、何度か質問を受けたテーマを短く取り上げます。組織でリソース メールボックスを作成したものの、実際にどのメールボックスが使われているのか把握したい、というケースを考えてみてください。もっともな要望です。</p>
+<p>ここでいうリソース メールボックスには、会議室メールボックス、設備メールボックス、Workspace が含まれます。残念ながら、本記事執筆時点では、リソース メールボックスの実際の利用状況を把握できるネイティブ レポートはありません。そこで、その状況を把握するためのいくつかの方法を紹介します。環境に合うものを選んでください。</p>
+<h3 id="オプション-1-Get-CalendarViewDiagnostics-を使う"><a href="#オプション-1-Get-CalendarViewDiagnostics-を使う" class="headerlink" title="オプション 1: Get-CalendarViewDiagnostics を使う"></a>オプション 1: Get-CalendarViewDiagnostics を使う</h3><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/troubleshoot/exchange/calendars/cdl/get-meeting-id#use-exchange-online-powershell">Get the ID of a meeting - Exchange | Microsoft Learn</a></p>
+<p>この方法では、指定したメールボックスの予定表を確認し、指定した期間内に予定表に存在するすべての会議の情報を出力できます。</p>
+<p>次の例では、過去 6 か月から未来 6 か月までの予定表上の会議一覧を取得します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-CalendarViewDiagnostics</span> resource@contoso.com <span class="literal">-WindowStartUtc</span> (<span class="built_in">Get-Date</span>).AddMonths(<span class="literal">-6</span>) <span class="literal">-WindowEndUtc</span> (<span class="built_in">Get-Date</span>).AddMonths(<span class="number">6</span>)</span><br></pre></td></tr></table></figure>
+
+<p>この方法は高速に結果を返し、対象も予定表に限定されます。一方で、会議の件名は公開されているプロパティではないため、取得できません。</p>
+<p>ただし、どの会議室に予定が入っているか、あるいは全体件数だけを把握したいのであれば、この方法は非常に有効です。</p>
+<p>この方法の利点は、Exchange Online PowerShell に豊富なフィルター機能があることです。たとえば、会議室メールボックスだけ、あるいは設備メールボックスだけを対象に簡単に絞り込めます。</p>
+<p>例:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$roommailboxes</span> = <span class="built_in">Get-Mailbox</span> <span class="literal">-ResultSize</span> Unlimited <span class="literal">-RecipientTypeDetails</span> RoomMailbox</span><br><span class="line"><span class="variable">$roommailboxes</span> | <span class="keyword">ForEach</span> &#123; <span class="built_in">Write-Host</span> <span class="string">&quot;Processing Mailbox <span class="variable">$</span>(<span class="variable">$_</span>.Displayname)&quot;</span> ; <span class="built_in">Get-CalendarViewDiagnostics</span> <span class="variable">$_</span> <span class="literal">-WindowStartUtc</span> (<span class="built_in">Get-Date</span>).AddMonths(<span class="literal">-6</span>) <span class="literal">-WindowEndUtc</span> (<span class="built_in">Get-Date</span>).AddMonths(<span class="number">6</span>) &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="オプション-2-Graph-を使って予定表イベントの詳細を取得する"><a href="#オプション-2-Graph-を使って予定表イベントの詳細を取得する" class="headerlink" title="オプション 2: Graph を使って予定表イベントの詳細を取得する"></a>オプション 2: Graph を使って予定表イベントの詳細を取得する</h3><div style="margin:1.25em;border-left:4px solid #f85149;padding:.5em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#f85149">
+<svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true" style="margin-right:8px">
+<path fill="#f85149" d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>
+訳者注
+</div>
+Microsoft Graph PowerShell SDK はオープン ソースで開発され MIT ライセンスにより配布されているライブラリです。</br >
+サポートの提供が限定的となり、本ブログ執筆時点で Calendar に関してはサポートを提供しておりません。
+</div>
+
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/graph/api/calendar-list-calendarview?view=graph-rest-1.0&tabs=powershell">List calendarView - Microsoft Graph v1.0 | Microsoft Learn</a></p>
+<p>リンク先の記事の下部に、要求例が掲載されています。これを PowerShell で使うには、Microsoft.Graph.Calendar モジュールと、適切な Graph 権限を追加した Microsoft Entra ID のアプリ登録が必要です。</p>
+<p>利用できる権限の種類は、委任された権限またはアプリケーション権限です。</p>
+<ul>
+<li>委任された権限では、ユーザー アカウントを使って Graph API にアクセスするため、サインインが求められます。</li>
+<li>アプリケーション権限は、サインイン画面を使えない非対話型のアプリケーションやスクリプト向けです。</li>
+</ul>
+<p>アプリケーション権限を使う例を示します。</p>
+<ol>
+<li>Microsoft Entra ID でアプリ登録を作成します。</li>
+<li>Graph のアプリケーション権限 <code>Calendars.Read</code> を追加します。これにより、アプリケーションはすべてのメールボックスの予定表データを読み取れます。</li>
+<li>認証用のクライアント シークレットを作成するか、証明書をアップロードします。証明書を使う場合は、自己署名証明書でもかまいません。</li>
+<li>PowerShell を起動して Graph モジュールをインポートします。</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Import-Module</span> Microsoft.Graph</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>証明書を使って PowerShell から Graph に接続します。</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Connect-MgGraph</span> <span class="literal">-ClientId</span> &lt;App ID&gt; <span class="literal">-TenantId</span> &lt;your tenant ID&gt; <span class="literal">-CertificateThumbprint</span> &lt;cert thumbprint&gt;</span><br></pre></td></tr></table></figure>
+
+<p>または、クライアント シークレットを使って接続します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Connect-MgGraph</span> <span class="literal">-ClientSecretCredential</span> <span class="literal">-TenantId</span> &lt;your tenant ID&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>指定した期間の予定表アイテムを一覧表示し、開催者、件名、開始時刻、終了時刻などのプロパティを表示します。ここでも、Get-CalendarViewDiagnostics と同じく、過去 6 か月から未来 6 か月までを対象にしています。</li>
+</ol>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-MgUserCalendarView</span> <span class="literal">-UserId</span> resource@contoso.com <span class="literal">-StartDateTime</span> (<span class="built_in">Get-Date</span>).AddMonths(<span class="literal">-6</span>) <span class="literal">-EndDateTime</span> (<span class="built_in">Get-Date</span>).AddMonths(<span class="number">6</span>) | <span class="built_in">select</span> <span class="selector-tag">@</span>&#123;n=<span class="string">&#x27;Organizer&#x27;</span>;e=&#123;<span class="variable">$_</span>.Organizer.EmailAddress.Name&#125;&#125;, subject, <span class="selector-tag">@</span>&#123;n=<span class="string">&#x27;StartTime&#x27;</span>;e=&#123;<span class="variable">$_</span>.Start.DateTime&#125;&#125;,<span class="selector-tag">@</span>&#123;n=<span class="string">&#x27;EndTime&#x27;</span>;e=&#123;<span class="variable">$_</span>.End.DateTime&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Graph にもフィルター機能はありますが、個人的には Exchange Online PowerShell ほど簡単ではありません。Exchange Online PowerShell と Graph PowerShell の両方に同じセッションで接続できるのであれば、両者を組み合わせて、変数に格納したメールボックス一覧に対して実行できます。</p>
+<p>例:</p>
+<p>まず、Exchange Online PowerShell でメールボックス一覧を取得します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$roommailboxes</span> = <span class="built_in">Get-Mailbox</span> <span class="literal">-ResultSize</span> Unlimited <span class="literal">-RecipientTypeDetails</span> RoomMailbox</span><br></pre></td></tr></table></figure>
+
+<p>次に、Graph PowerShell を使って予定表イベントを取得します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$roommailboxes</span> | <span class="keyword">foreach</span> &#123;<span class="built_in">Write-Host</span> <span class="string">&quot;Processing Mailbox <span class="variable">$</span>(<span class="variable">$_</span>.DisplayName)&quot;</span>; <span class="built_in">Get-MgUserCalendarView</span> <span class="literal">-UserId</span> <span class="variable">$_</span>.PrimarySmtpAddress <span class="literal">-StartDateTime</span> (<span class="built_in">Get-Date</span>).AddMonths(<span class="literal">-6</span>) <span class="literal">-EndDateTime</span> (<span class="built_in">Get-Date</span>).AddMonths(<span class="number">6</span>) | <span class="built_in">select</span> <span class="selector-tag">@</span>&#123;n=<span class="string">&#x27;Organizer&#x27;</span>;e=&#123;<span class="variable">$_</span>.Organizer.EmailAddress.Name&#125;&#125;, subject, <span class="selector-tag">@</span>&#123;n=<span class="string">&#x27;StartTime&#x27;</span>;e=&#123;<span class="variable">$_</span>.Start.DateTime&#125;&#125;,<span class="selector-tag">@</span>&#123;n=<span class="string">&#x27;EndTime&#x27;</span>;e=&#123;<span class="variable">$_</span>.End.DateTime&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上の例で示したもの以外にも、利用できるプロパティはあります。どのプロパティを表示したいかは、ご自身で判断する必要があります。開催者や開始、終了時刻のように Type プロパティとして返るものもあるため、上の例のように式を組み立てて処理する必要があります。Graph は、PowerShell 以外にも HTTP、C#、Java など多くの言語から利用できます。</p>
+<p>Graph を使う方法では、特定のメールボックス群だけにアクセスを制限することもできます。たとえば、リソース メールボックスのみに限定するといったことが可能です。</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/permissions-exo/application-rbac">Role Based Access Control for Applications in Exchange Online | Microsoft Learn</a></p>
+<p>これにより、Microsoft Entra ID のアプリが、どのメールボックスから予定表の詳細を取得できるかを制御できます。</p>
+<p>設定するには、まず管理スコープを構成し、受信者フィルターを使って対象のメールボックス一覧を定義します。その後、Microsoft Entra ID 側の Graph 権限を削除し、Exchange Online 側で RBAC (<code>New-ManagementRoleAssignment</code>) を使って権限を付与します。</p>
+<h3 id="オプション-3-Get-MailboxFolderStatistics-を使う"><a href="#オプション-3-Get-MailboxFolderStatistics-を使う" class="headerlink" title="オプション 3: Get-MailboxFolderStatistics を使う"></a>オプション 3: Get-MailboxFolderStatistics を使う</h3><p>非常にシンプルにリソース メールボックスの利用状況を把握したいだけであれば、Get-MailboxFolderStatistics で十分な場合があります。<code>IncludeOldestAndNewestItems</code> と <code>FolderScope</code> を組み合わせることで、予定表フォルダーを対象にできます。</p>
+<p>例:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-MailboxFolderStatistics</span> resource@contoso.com <span class="literal">-IncludeOldestAndNewestItems</span> <span class="literal">-FolderScope</span> Calendar</span><br></pre></td></tr></table></figure>
+
+<p>Get-CalendarViewDiagnostics と同様に、複数の受信者に対して一括実行できます。</p>
+<p>例:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$roommailboxes</span> | <span class="keyword">Foreach</span> &#123; <span class="built_in">Get-MailboxFolderStatistics</span> <span class="variable">$_</span> <span class="literal">-IncludeOldestAndNewestItems</span> <span class="literal">-FolderScope</span> Calendar&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="この用途で-Get-CalendarDiagnosticObjects-は使わないでください"><a href="#この用途で-Get-CalendarDiagnosticObjects-は使わないでください" class="headerlink" title="この用途で Get-CalendarDiagnosticObjects は使わないでください"></a>この用途で Get-CalendarDiagnosticObjects は使わないでください</h3><p>最後に、Calendar Diagnostic Logs と Get-CalendarDiagnosticObjects コマンドレットを使おうとするケースを見かけます。<strong>この方法は使わないでください。</strong></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/troubleshoot/exchange/calendars/cdl/get-calendar-diagnostic-logs">Get Calendar diagnostic logs for Exchange Online mailboxes - Exchange | Microsoft Learn</a></p>
+<p>たしかに会議の詳細を取得すること自体はできますが、これは大量の予定表イベントを一括収集する目的で設計されたものではありません。もともとは、個別の会議に関する問題をトラブルシューティングするための仕組みです。Calendar Diagnostic Log のデータには、予定表だけでなく、受信トレイ、送信済みアイテム、削除済みアイテム、さらに Calendar Logging などの回復可能なアイテム フォルダーを含む、予定表関連の情報が格納されるほかのフォルダーのデータも含まれます。単一の会議を照会するだけでも、1,000 件を超えるログが返ることがあります。そのため、多数の会議を対象にメールボックスへ一括実行すると、失敗したり、タイムアウトしたり、エラーが発生したりする可能性があります。この方法を使って問題が発生し、実際その可能性はかなり高いのですが、サポートへ問い合わせても、案内するのは結局ここで紹介した別の方法になります。</p>
+<p>まとめると、どのリソース メールボックスが実際に使われているかを把握できるネイティブ レポートはありませんが、利用できる方法はいくつかあります。既に Exchange Online PowerShell に接続しているのであれば、Get-CalendarViewDiagnostics が最も簡単な選択肢かもしれません。Get-CalendarViewDiagnostics で公開されている以上のプロパティが必要な場合や、別の言語を使うカスタム アプリケーションで利用したい場合は、Graph を使う方法を推奨します。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/how-to-determine-which-resource-mailboxes-are-being-actively-used/" data-id="cmpkk3tbd006sug2adbeebvvw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">クラウド管理のリモート メールボックス向けの書き戻しがパブリック プレビューになりました</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">65</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">65</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/how-to-determine-which-resource-mailboxes-are-being-actively-used/">どのリソース メールボックスが実際に使われているかを把握する方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/">クラウド管理のリモート メールボックス向けの書き戻しがパブリック プレビューになりました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/addressing-exchange-server-may-2026-vulnerability-cve-2026-42897/">Exchange Server の 2026 年 5 月の脆弱性 CVE-2026-42897 への対処</a>
+          </li>
+        
+          <li>
+            <a href="/blog/released-may-2026-exchange-server-hotfix-update/">2026 年 5 月の Exchange Server の Hotfix 更新プログラムが公開されました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/retirement-of-direct-exchange-activesync-certificate-based-authentication-by-end-of-2026/">Exchange ActiveSync における直接の証明書ベース認証 (CBA) を 2026 年末までに廃止</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
