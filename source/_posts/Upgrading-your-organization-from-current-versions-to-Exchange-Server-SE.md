@@ -44,7 +44,7 @@ Exchange Server 2016 および Exchange Server 2019 から Exchange Server Subsc
 | Exchange Server 2019 CU15 | 2025 年上半期 [リリースされました](/blog/released-2025-h1-cumulative-update-for-exchange-server/) | Exchange Server 2019 の最終 CU：Exchange Server SE RTM と同等のコード (Exchange Server SE RTM 前にリリースされた SU および HU を除く) です。| Exchange Server 2013 との共存はできません (CU15 のセットアップによってブロックされます)。|
 | Exchange Server SE RTM | [リリースされました](/blog/exchange-server-subscription-edition-se-is-now-available/) | Exchange Server 2019 CU14 または CU15 からのインプレース アップグレードを可能にします。 Exchange Server 2019 CU15 + CU15 以降にリリースされた SU および HU と同等のコード (新機能やその他のコード変更はありません) です。| Exchange Server 2013 との共存はできません (RTM のセットアップによってブロックされます)。|
 | Exchange Server SE CU1 | 2026 年下半期 | Exchange Server SE の最初の機能更新です。| 変更はありません。引き続き Exchange Server 2016, 2019 との共存が可能です。 |
-| Exchange Server SE CU2 | 2027 年上半期 | Exchange Server SE の開発プロセスの継続的な更新です。| Exchange Server 2013、Exchange Server 2016、Exchange Server 2019 との共存はできません（CU2 のセットアップによりインストールがブロックされます）。|
+| Exchange Server SE CU2 | 2027 年上半期 | Exchange Server SE の開発プロセスの継続的な更新です。| Exchange Server 2013、Exchange Server 2016、Exchange Server 2019 との共存はできません (CU2 のセットアップによりインストールがブロックされます)。|
 
 ## Exchange Server のバージョンごとのサポート状況
 
