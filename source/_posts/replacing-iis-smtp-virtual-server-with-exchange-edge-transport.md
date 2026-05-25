@@ -4,7 +4,7 @@ date: 2026/05/25 11:00
 tags:
 - Exchange
 ---
-※ この記事は、[Replacing the IIS SMTP Virtual Server with Exchange Edge Transport](https://techcommunity.microsoft.com/blog/exchange/replacing-iis-smtp-virtual-server-with-exchange-edge-transport/4517517) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+※ この記事は、[Replacing the IIS SMTP Virtual Server with Exchange Edge Transport](https://techcommunity.microsoft.com/blog/exchange/replacing-iis-smtp-virtual-server-with-exchange-edge-transport/4521241) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 長い年月がたった今でも、サポートが終了している IIS 6.0 の SMTP 仮想サーバー機能を使い続けている環境が見られます。このコンポーネントがどれほど古いかというと、[IIS に組み込まれていた SMTP 仮想サーバー スタックは Windows Server 2003 の時代のもの](https://learn.microsoft.com/iis/application-frameworks/install-and-configure-php-on-iis/configure-smtp-e-mail-in-iis-7-and-above)です。この記事では、IIS SMTP の利用を終了し、サポートされている Microsoft のソリューションへ移行するための実践的な選択肢を紹介します (IIS SMTP 仮想サーバーはすでに長らくサポート対象外です)。
 
