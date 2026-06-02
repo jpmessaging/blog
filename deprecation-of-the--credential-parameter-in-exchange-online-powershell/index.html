@@ -122,7 +122,7 @@
         Last Update:
         <a href="/blog/deprecation-of-the--credential-parameter-in-exchange-online-powershell/" class="article-date-single">    
         
-    <time datetime="2026-03-18T15:00:00.000Z" itemprop="lastupdate">2026-03-19</time>    
+    <time datetime="2026-06-01T15:00:00.000Z" itemprop="lastupdate">2026-06-02</time>    
     
 </a>
       </div>
@@ -132,9 +132,9 @@
         <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/deprecation-of-the--credential-parameter-in-exchange-online-powershell/4494584">Deprecation of the -Credential Parameter in Exchange Online PowerShell</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
 <p>Exchange Online のセキュリティ強化に向けた継続的な取り組みの一環として、Exchange Online PowerShell モジュールに対する重要な変更についてお知らせします。</p>
 <h4 id="変更内容と理由"><a href="#変更内容と理由" class="headerlink" title="変更内容と理由"></a>変更内容と理由</h4><p>Microsoft は、すべてのサービスにおいて、より安全で最新の認証方式へ段階的に移行しています。この取り組みの一環として、多要素認証 (MFA) は Microsoft クラウド サービス全体における必須のセキュリティ要件となりつつあります。従来の Resource Owner Password Credentials (ROPC) 認証フローは MFA をサポートしていないため、Microsoft によるセキュリティ基準強化の一環として、廃止に向けた段階に入っています。さらに、Microsoft の各種サービスで使用されている認証ライブラリである Microsoft Authentication Library (MSAL) においても、バージョン 4.74.0 以降、ROPC を非推奨としています。</p>
-<p>Exchange Online PowerShell の -Credential パラメーターは ROPC に依存しているため、MFA や条件付きアクセスの要件を満たしていません。MFA の強制適用、先進認証に関する原則、ならびに Microsoft の包括的なセキュリティ基準に対応するため、<strong>2026 年 6 月以降</strong> にリリースされる新しい Exchange Online PowerShell バージョンでは、-Credential パラメーターのサポートが廃止される予定です。</p>
+<p>Exchange Online PowerShell の -Credential パラメーターは ROPC に依存しているため、MFA や条件付きアクセスの要件を満たしていません。MFA の強制適用、先進認証に関する原則、ならびに Microsoft の包括的なセキュリティ基準に対応するため、<strong>2026 年 7 月以降</strong> にリリースされる新しい Exchange Online PowerShell バージョンでは、-Credential パラメーターのサポートが廃止される予定です。</p>
 <p><code>この変更は Connect-ExchangeOnline と Connect-IppsSession の両方のコマンドレットに適用されます。</code></p>
-<p>タイムライン上は 2026 年 6 月までですが、期限まで待たずに可能な限り早期に -Credential パラメーターの使用から移行することを強く推奨します。</p>
+<p>タイムライン上は 2026 年 7 月からとなりますが、期限まで待たずに可能な限り早期に -Credential パラメーターの使用から移行することを強く推奨します。</p>
 <h4 id="Credential-パラメーターの代替方法"><a href="#Credential-パラメーターの代替方法" class="headerlink" title="-Credential パラメーターの代替方法"></a>-Credential パラメーターの代替方法</h4><p>以下はシナリオ別に利用可能な -Credential パラメーターの代替方法を示します。</p>
 <table>
 <thead>
@@ -165,13 +165,14 @@
 </tr>
 </tbody></table>
 <h4 id="タイムライン"><a href="#タイムライン" class="headerlink" title="タイムライン"></a>タイムライン</h4><ul>
-<li><strong>現在の状態:</strong> <em>-Credential</em> パラメーターは現時点でもサポートされており、2026 年 6 月末までにリリースされるすべてのモジュールで引き続き利用可能です。</li>
+<li><strong>現在の状態:</strong> <em>-Credential</em> パラメーターは現時点でもサポートされており、2026 年 7 月までにリリースされるすべてのモジュールで引き続き利用可能です。</li>
 <li><strong>推奨される対応 (即座に実施):</strong> <em>Connect-ExchangeOnline または Connect-IppsSession コマンドレットを使用して Exchange Online に接続する際に、-Credential パラメーターを使わない方法へ切り替え始めてください。</em></li>
-<li><strong>2026 年 6 月以降:</strong> 2026 年以降にリリースされる Exchange Online PowerShell モジュールの新しいバージョンでは、-Credential パラメーターはサポートされなくなります。</li>
+<li><strong>2026 年 7 月以降:</strong> 新たにリリースされる Exchange Online PowerShell モジュールの新しいバージョンでは、-Credential パラメーターはサポートされなくなります。</li>
 </ul>
 <p>代替認証フローにおいて不足している点やサポートされていないシナリオがありましたら、今後のアップデートで優先的に対応するため、コメント欄でお知らせください。</p>
 <p>更新履歴:</p>
 <ul>
+<li>6&#x2F;1&#x2F;2026: MC1248389 に合わせて、タイムラインの記載を変更しました。</li>
 <li>3&#x2F;18&#x2F;2026: アプリ専用認証の説明から「シークレットベース」の記載を削除しました。シークレットベースは推奨されるパスではないためです。</li>
 <li>2&#x2F;17&#x2F;2026: この変更は <em>Connect-ExchangeOnline</em> と <em>Connect-IppsSession</em> の両方に適用されることを追記しました。</li>
 </ul>
@@ -179,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/deprecation-of-the--credential-parameter-in-exchange-online-powershell/" data-id="cmpuhmk5o005mk42a6kccb1a2" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/deprecation-of-the--credential-parameter-in-exchange-online-powershell/" data-id="cmpw3trk8005cng2ahp6568kw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
