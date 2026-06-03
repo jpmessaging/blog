@@ -9,7 +9,7 @@ tags: Copilot
  
 こんにちは。日本マイクロソフト Exchange & Outlook サポート チームの相場 (アイバ) です。
  
-本記事では、会議予約の際に利用できる Copilot の機能である「会議室の (Rebook)」 と 「再スケジュール (Reschedule)」 について説明します。
+本記事では、会議予約の際に利用できる Copilot の機能である「会議室の再予約 (Rebook)」と「再スケジュール (Reschedule)」について説明します。
 <br>
  
 ## 会議室の再予約 (Rebook) と再スケジュール (Reschedule) について
