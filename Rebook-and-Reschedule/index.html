@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Copilot が会議室や会議時間を自動で変更？会議室の再予約と再スケジュール機能のご紹介 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ 本記事は 2026 年 6 月 3 日時点の情報をもとに作成しています。掲載内容は今後更新される可能性があります。また、本記事で紹介する再スケジュール (Reschedule) の機能は、2026 年 6 月 3 日時点では展開中の機能です。ご利用いただけるようになるまで、今しばらくお待ちください。 こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チーム">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Copilot が会議室や会議時間を自動で変更？会議室の再予約と再スケジュール機能のご紹介">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ 本記事は 2026 年 6 月 3 日時点の情報をもとに作成しています。掲載内容は今後更新される可能性があります。また、本記事で紹介する再スケジュール (Reschedule) の機能は、2026 年 6 月 3 日時点では展開中の機能です。ご利用いただけるようになるまで、今しばらくお待ちください。 こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チーム">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/image01.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/image02.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/image03.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/image04.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/image05.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/image06.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/image07.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/image08.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/image09.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/image10.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/image11.png">
+<meta property="article:published_time" content="2026-06-02T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-02T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Copilot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/image01.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Rebook-and-Reschedule" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/Rebook-and-Reschedule/" class="article-date">
+  <time datetime="2026-06-02T15:00:00.000Z" itemprop="datePublished">2026-06-03</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Copilot が会議室や会議時間を自動で変更？会議室の再予約と再スケジュール機能のご紹介
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/Rebook-and-Reschedule/" class="article-date-single">    
+    
+    <time datetime="2026-06-02T15:00:00.000Z" itemprop="dateUpdated">2026-06-03</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ 本記事は 2026 年 6 月 3 日時点の情報をもとに作成しています。掲載内容は今後更新される可能性があります。<br>また、本記事で紹介する再スケジュール (Reschedule) の機能は、2026 年 6 月 3 日時点では展開中の機能です。ご利用いただけるようになるまで、今しばらくお待ちください。</p>
+<p>こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの相場 (アイバ) です。</p>
+<p>本記事では、会議予約の際に利用できる Copilot の機能である「会議室の再予約 (Rebook)」と「再スケジュール (Reschedule)」について説明します。<br><br></p>
+<h2 id="会議室の再予約-Rebook-と再スケジュール-Reschedule-について"><a href="#会議室の再予約-Rebook-と再スケジュール-Reschedule-について" class="headerlink" title="会議室の再予約 (Rebook) と再スケジュール (Reschedule) について"></a>会議室の再予約 (Rebook) と再スケジュール (Reschedule) について</h2><h3 id="会議室の再予約-Rebook-とは"><a href="#会議室の再予約-Rebook-とは" class="headerlink" title="会議室の再予約 (Rebook) とは"></a>会議室の再予約 (Rebook) とは</h3><p>会議室の予約ができなかった場合に自動的に別の会議室を Copilot が予約する機能です。<br>Microsoft 365 Copilot ライセンス (以下、Copilot ライセンス) を持つユーザーが新しい Outlook や Outlook on the web で利用できます。<br><br></p>
+<h3 id="再スケジュール-Reschedule-とは"><a href="#再スケジュール-Reschedule-とは" class="headerlink" title="再スケジュール (Reschedule) とは"></a>再スケジュール (Reschedule) とは</h3><p>予定の登録後、開催者の予定表に時間帯が重複する別の予定が登録された場合、Copilot が自動的に別の時間帯へ予定を移動する機能です。<br>Copilot ライセンスを持つユーザーが新しい Outlook や Outlook on the web で利用できます。</p>
+<br>
+ 
+<p>以降では、それぞれの動作について詳しく説明します。<br><br></p>
+<h2 id="会議室の再予約-Rebook-の動作"><a href="#会議室の再予約-Rebook-の動作" class="headerlink" title="会議室の再予約 (Rebook) の動作"></a>会議室の再予約 (Rebook) の動作</h2><h3 id="設定方法"><a href="#設定方法" class="headerlink" title="設定方法"></a>設定方法</h3><p>会議の作成画面で [拒否された会議室を再予約する] (または [拒否された会議室の再予約]) のチェックを ON にした上で会議室の予約を行います。(既定では本設定は OFF の状態です)<br>なお、本設定は以下の 2 か所にありますので、いずれかのチェックを ON にします。</p>
+<img src="image01.png" width="700">
+<br>
+<img src="image02.png" width="700">
+
+<p>※ 画面右の「Places Finder」の画面は会議室を指定する項目で [すべてのルームを参照する] をクリックすることで表示されます。<br><img src="image03.png" width="700"></p>
+<h3 id="設定後の動作"><a href="#設定後の動作" class="headerlink" title="設定後の動作"></a>設定後の動作</h3><p>予約しようとした会議室で既に同じ時間帯に別の予約が入っているなどの理由で予約ができなかった場合、会議の開催者は以下のような会議室予約の辞退メールを受け取ります。</p>
+<img src="image04.png" width="700">
+ 
+<p>その後、Copilot によって同じ時間帯に別の会議室の予約が行われ、以下の通知が開催者に送信されます。</p>
+<img src="image05.png" width="700">
+ 
+<br> 
+
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px"><path fill="#ff7518" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>
+注意
+</div>
+現時点では、会議室の場所などを考慮した予約ではなく、Copilot により予約可能と判断された会議室が予約されます。
+
+<p>もし他の会議室を自動で予約しないようにしたい場合は、 [拒否された会議室を再予約する] のチェックは OFF にした状態で会議室の予約を行う必要があります。<br>なお、[拒否された会議室を再予約する] の設定は既定で OFF の状態ですが、会議室を追加したタイミングで自動的に ON となる場合がありますので、この場合は会議室を追加した後に [拒否された会議室を再予約する] のチェックを OFF にしてください。</p>
+</div>
+
+
+<br>
+
+<h2 id="再スケジュール-Reschedule-の動作"><a href="#再スケジュール-Reschedule-の動作" class="headerlink" title="再スケジュール (Reschedule) の動作"></a>再スケジュール (Reschedule) の動作</h2><h3 id="設定方法-1"><a href="#設定方法-1" class="headerlink" title="設定方法"></a>設定方法</h3><p>まず会議の作成画面にて [競合が発生した場合は、Copilot にこのイベントの再スケジュールを任せます。] のチェックを ON にします。</p>
+<img src="image06.png" width="700">
+ 
+<p>続けて、右に表示されている [受け入れ可能な時間] をクリックして、予定の移動を受け入れる期間を指定します。</p>
+<img src="image07.png" width="700">
+ 
+ 
+<h3 id="設定後の動作-1"><a href="#設定後の動作-1" class="headerlink" title="設定後の動作"></a>設定後の動作</h3><p>同じ時間帯に別の予定が登録されると自動的に再スケジュールを有効にした予定が別の時間に移動します。</p>
+<p><video controls autoplay muted playsinline loop disablepictureinpicture controlslist="nodownload" src="movie01.mp4" width="700"></video></p>
+<p>会議の再スケジュールが行われた場合、Copilot により再スケジュールが行われたことを示す以下のメールを会議の開催者は受け取ります。</p>
+<img src="image08.png" width="700">
+ 
+<p>※ 再スケジュールが発生したことは画面右上の通知からも確認することができます。<br><img src="/blog/Rebook-and-Reschedule/image09.png"></p>
+<p>また、会議の参加者に対しても会議の時間が変更されたことを示すメールが送信されます。</p>
+<img src="image10.png" width="700">
+ 
+<br>
+
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px"><path fill="#ff7518" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>
+注意
+</div>
+再スケジュールの機能は個人の予定または 1:1 の会議でのみ利用することができます。
+会議の参加者に 2 名以上を指定した時点で [競合が発生した場合は、Copilot にこのイベントの再スケジュールを任せます。] の設定はグレーアウトされ、利用することができませんのでご注意ください。
+
+<img src="image11.png" width="700">
+</div>
+ 
+ 
+<br>
+ 
+<p><strong>本情報の内容（添付文書、リンク先などを含む）は、作成日時点でのものであり、予告なく変更される場合があります。</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/Rebook-and-Reschedule/" data-id="cmpxn8d8t0036ls2ahdtpfy8q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/replacing-iis-smtp-virtual-server-with-exchange-edge-transport/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">IIS SMTP 仮想サーバーから Exchange Edge Transport への移行</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">65</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/Rebook-and-Reschedule/">Copilot が会議室や会議時間を自動で変更？会議室の再予約と再スケジュール機能のご紹介</a>
+          </li>
+        
+          <li>
+            <a href="/blog/replacing-iis-smtp-virtual-server-with-exchange-edge-transport/">IIS SMTP 仮想サーバーから Exchange Edge Transport への移行</a>
+          </li>
+        
+          <li>
+            <a href="/blog/how-to-determine-which-resource-mailboxes-are-being-actively-used/">どのリソース メールボックスが実際に使われているかを把握する方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/">クラウド管理のリモート メールボックス向けの書き戻しがパブリック プレビューになりました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/addressing-exchange-server-may-2026-vulnerability-cve-2026-42897/">Exchange Server の 2026 年 5 月の脆弱性 CVE-2026-42897 への対処</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">1</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
