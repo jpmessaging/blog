@@ -1,6 +1,6 @@
 ---
 title: "新しい Outlook for Windows で生産性を高める 15 の機能"
-date: 2026/06/05 11:00
+date: 2026-06-05 11:00
 tags:
 - New Outlook
 ---
