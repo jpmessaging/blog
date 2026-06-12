@@ -65,6 +65,28 @@
   h1, h2, h3, h4, h5, h6
     line-height: line-height-title
     margin: line-height-title 0
+    .headerlink
+      display: inline-block
+      margin-left: 0.35em
+      color: color-grey
+      font-size: 0.75em
+      line-height: 1
+      opacity: 0.45
+      vertical-align: middle
+      text-decoration: none
+      transition: opacity 0.2s, color 0.2s
+      &:before
+        content: "🔗"
+      &:hover, &:focus
+        color: color-link
+        opacity: 1
+        text-decoration: none
+    &:hover
+      .headerlink
+        opacity: 1
+    .headerlink.copied
+      opacity: 1
+      color: color-link
   a
     color: color-link
     text-decoration: none
@@ -196,6 +218,25 @@
     content: "\f064"
     font-family: font-icon
     padding-right: 6px
+
+.copy-toast
+  position: fixed
+  left: 50%
+  bottom: 24px
+  transform: translateX(-50%) translateY(8px)
+  opacity: 0
+  pointer-events: none
+  padding: 10px 14px
+  border-radius: 4px
+  background: rgba(0, 0, 0, 0.82)
+  color: #fff
+  font-size: 14px
+  line-height: 1.4
+  z-index: 9999
+  transition: opacity 0.2s, transform 0.2s
+  &.show
+    opacity: 1
+    transform: translateX(-50%) translateY(0)
 
 .article-github-issue-link
   cursor: pointer
