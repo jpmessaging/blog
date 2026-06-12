@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>EWS 通知を Microsoft Graph に移行する際の考慮点 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="※ この記事は、Migrating EWS notifications to Microsoft Graph の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 プッシュ、プル、ストリーミングの各通知タイプをサポートする Exchange Web Services">
+<meta property="og:type" content="article">
+<meta property="og:title" content="EWS 通知を Microsoft Graph に移行する際の考慮点">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/migrating-ews-notifications-to-microsoft-graph/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Migrating EWS notifications to Microsoft Graph の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 プッシュ、プル、ストリーミングの各通知タイプをサポートする Exchange Web Services">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-06-12T01:00:00.000Z">
+<meta property="article:modified_time" content="2026-06-12T01:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-migrating-ews-notifications-to-microsoft-graph" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/migrating-ews-notifications-to-microsoft-graph/" class="article-date">
+  <time datetime="2026-06-12T01:00:00.000Z" itemprop="datePublished">2026-06-12</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      EWS 通知を Microsoft Graph に移行する際の考慮点
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/migrating-ews-notifications-to-microsoft-graph/" class="article-date-single">    
+    
+    <time datetime="2026-06-12T01:00:00.000Z" itemprop="dateUpdated">2026-06-12</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/microsoft365dev/migrating-ews-notifications-to-microsoft-graph/">Migrating EWS notifications to Microsoft Graph</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>プッシュ、プル、ストリーミングの各通知タイプをサポートする Exchange Web Services (EWS) の通知フレームワークから Microsoft Graph のサブスクリプション モデルへ移行することは、統合され、ステートレスで、イベント ドリブンなフレームワークへ移行することを意味します。このフレームワークは Exchange データ以外もサポートします。Microsoft Graph では Webhook によって通知が簡素化されますが、EWS のプッシュ、プル、長時間接続という複数のモデルを置き換えるには、アーキテクチャの再設計が必要です。</p>
+<p>アプリケーションを移行するには、待機時間を短縮する <strong>リッチ通知 (rich notifications)</strong> や、安定したアイテム追跡を実現する <strong>不変 ID (immutable IDs)</strong> など、Microsoft Graph のモダンな機能を組み込むことができます。移行を成功させるには、単純にイベントを待ち受けるだけではなく、ほぼリアルタイムの変更通知と、整合性を取るための <strong>デルタ クエリ (delta queries)</strong> を組み合わせるハイブリッド戦略が必要です。また、クラウド ネイティブ環境における厳格な同時実行数と可用性のしきい値にも対応する必要があります。</p>
+<h2 id="EWS-通知"><a href="#EWS-通知" class="headerlink" title="EWS 通知"></a>EWS 通知</h2><p>アプリケーションでは、EWS 通知として 3 種類の通知を使用できます。それぞれ、待機時間、スケーラビリティ、接続管理の面で異なるトレードオフがあります。</p>
+<ul>
+<li><strong>プッシュ通知</strong>: イベントが発生するたびに、Exchange がアプリケーションでホストされているリスナー エンドポイントへ HTTP&#x2F;HTTPS 要求を送信します。</li>
+<li><strong>プル通知</strong>: アプリケーションが定期的に Exchange を呼び出し、新しいイベントがあるかどうかを確認します。</li>
+<li><strong>ストリーミング通知</strong>: Exchange への長時間接続 (HTTP GET 経由) を確立し、イベントが発生したときにサーバーからクライアントへイベントをプッシュできるようにします。これにより、公開エンドポイントは不要になります。</li>
+</ul>
+<h2 id="Microsoft-Graph-変更通知"><a href="#Microsoft-Graph-変更通知" class="headerlink" title="Microsoft Graph 変更通知"></a>Microsoft Graph 変更通知</h2><p>Microsoft Graph の変更通知は 1 種類のみで、Webhook によって配信されます。これは、サブスクライブしたイベントが発生したときに、アプリケーションでホストされているリスナー エンドポイントへ送信される HTTP POST 要求です。このモデルでは、常時ポーリングを行わずに、ほぼリアルタイムの更新を実現できます。</p>
+<p>より高度なシナリオでは、Microsoft Graph は Azure Event Hubs を通じた変更通知の配信もサポートしています。このオプションはエンタープライズ グレードのアプリケーションにより適しており、特に高スループットや分散処理の環境で、セキュリティ、スケーラビリティ、信頼性を高められます。</p>
+<h2 id="Microsoft-Graph-リッチ通知-rich-notifications"><a href="#Microsoft-Graph-リッチ通知-rich-notifications" class="headerlink" title="Microsoft Graph リッチ通知 (rich notifications)"></a>Microsoft Graph リッチ通知 (rich notifications)</h2><p>Microsoft Graph リッチ通知を使用すると、変更通知に、そのイベントを発生させたアイテムに関する関連データを含めることができます。リアルタイム通知のシナリオでは、アイテムが届いてからクライアントに通知されるまでの待機時間を短縮でき、新しいメッセージの件名や送信者などの主要な詳細へすぐにアクセスできます。</p>
+<p>リッチ通知は、従来の EWS 通知と比べて、特定のユース ケースを簡素化します。リアルタイム通知が主な要件であるアプリケーションでは、リッチ通知によって、アイテム データを取得するための後続の呼び出しを減らせます。</p>
+<h2 id="Microsoft-Graph-におけるプル通知と変更追跡"><a href="#Microsoft-Graph-におけるプル通知と変更追跡" class="headerlink" title="Microsoft Graph におけるプル通知と変更追跡"></a>Microsoft Graph におけるプル通知と変更追跡</h2><p>EWS では、前回の通知以降の変更を取得するために、通知は <code>GetEvents</code> 操作に依存していました。プッシュ通知とプル通知では、サブスクリプション マーカーとして機能するウォーターマークを利用できました。Microsoft Graph では、同等の機能がデルタ クエリによって提供されます。</p>
+<p>デルタ クエリを使用すると、アプリケーションは前回のクエリ以降に追加、更新、削除されたデータだけを要求して変更を追跡できます。接続を維持したり、イベントをポーリングしたりする代わりに、Microsoft Graph から返された <code>delta token</code> をアプリケーションで保存し、後続の要求でそれを使用して前回の続きから処理できます。</p>
+<p>Microsoft Graph は、以下のリソース タイプに対するデルタ クエリをサポートしています。</p>
+<ul>
+<li><strong>フォルダー</strong>: 個別のメール、連絡先、予定表フォルダー。</li>
+<li><strong>アイテム コレクション</strong>: メッセージ、連絡先、イベント、to do (タスク)。</li>
+</ul>
+<p>予定表データについては、定期的なシリーズが 1 つのマスター イベントとして表される展開されていない定期的なデータを公開するイベント コレクションと、指定した時間範囲内の各回が個別のイベントとして展開される予定表ビューの両方で、デルタ クエリがサポートされます。</p>
+<h2 id="不変-ID-Immutable-IDs"><a href="#不変-ID-Immutable-IDs" class="headerlink" title="不変 ID (Immutable IDs)"></a>不変 ID (Immutable IDs)</h2><p>Microsoft Graph では、メールボックス アイテムの<strong>不変 ID</strong> が導入されています。これは EWS には直接対応するものがない機能です。不変 ID は、メッセージ、連絡先、イベントなどのアイテムに対する安定した一意の識別子であり、メールボックス内でそのアイテムが存在している間は一定に保たれます。</p>
+<p>EWS や Microsoft Graph の <code>itemId</code> 値は、アイテムがフォルダー間で移動されると変わりますが、不変 ID は変わりません。そのため、アプリケーションが ID を外部に保存している場合でも、メールボックス内でフォルダー移動が発生しても同じアイテムを参照し続けることができます。</p>
+<p>不変 ID により、EWS と比べてアプリケーション設計を簡素化できます。EWS では、開発者がアイテム移動操作の後に外部保存されたアイテム識別子を追跡し、更新しなければならないことがよくありました。これは通知でよくあるユース ケースです。不変 ID では、その追加の追跡ロジックが不要になります。その結果、コードはより堅牢になり、保守しやすくなります。</p>
+<p>ただし、メールボックス間やメールボックスからアーカイブ ストアへの移動など、メールボックスの境界をまたいでアイテムが移動される場合、不変 ID は無効になります。これは、アイテムに新しい ID が割り当てられるためです。メールボックスとアーカイブ間で移動されるアイテムをアプリケーションで追跡する必要がある場合は、代わりにカスタム拡張プロパティの使用を検討してください。</p>
+<h2 id="EWS-と-Microsoft-Graph-のサブスクリプションの違い"><a href="#EWS-と-Microsoft-Graph-のサブスクリプションの違い" class="headerlink" title="EWS と Microsoft Graph のサブスクリプションの違い"></a>EWS と Microsoft Graph のサブスクリプションの違い</h2><p>EWS では、通常、特定のメールボックス フォルダー、またはメールボックス内のすべてのフォルダーに対してサブスクリプションを作成します。</p>
+<p>Microsoft Graph では、受信トレイや予定表などの特定のフォルダー タイプ、または <code>messages</code>、<code>contacts</code>、<code>events</code> などのリソース コレクションに対して変更通知サブスクリプションを作成できます。ただし、このモデルは EWS より制約があります。サポートされるフォルダー タイプは少なく、すべてのメールボックス フォルダーに対して同じ粒度を提供するものではありません。</p>
+<p>たとえば、メールボックス内のすべてのメール フォルダーを EWS 通知でサブスクライブしている EWS アプリケーションを考えてみます。このアプリケーションでは、新しいメールが届いたことに加えて、メールが処理済みフォルダーへ移動されたことも検出する必要があります。Microsoft Graph では、代わりに <code>/messages</code> コレクションをサブスクライブして、メールボックス全体の通知を受け取ります。</p>
+<p>移動を追跡するために、アプリケーションは作成イベントと削除イベントを監視し、<code>parentFolderId</code> を確認してアイテムの場所を判断します。標準のアイテム ID はメッセージがフォルダー間で移動されると変わるため、アプリケーションは不変 ID を使用して、メールボックス全体でアイテムの同一性を関連付けます。その後、アプリケーションはデルタ クエリを使用してこれらの変更の整合性を取り、新しく受信したメッセージと移動されたメッセージを区別できるようにします。</p>
+<h2 id="カスタム-フォルダーのギャップ"><a href="#カスタム-フォルダーのギャップ" class="headerlink" title="カスタム フォルダーのギャップ"></a>カスタム フォルダーのギャップ</h2><p>Microsoft Graph サブスクリプションは、すべてのメールボックス フォルダーで機能するわけではありません。カスタム フォルダーや、従来のクライアント機能に関連付けられることが多いフォルダーには、Microsoft Graph の <code>messages</code>、<code>contacts</code>、<code>events</code>、<code>to do</code> エンドポイントからアクセスできません。カスタム フォルダーについては、Exchange の外部で代替ソリューションを見つけるか、Webhook を利用できる <code>messages</code> などのサポート対象エンドポイントへコンテンツを移行できます。</p>
+<h2 id="ストリーミング-サブスクリプションのギャップ"><a href="#ストリーミング-サブスクリプションのギャップ" class="headerlink" title="ストリーミング サブスクリプションのギャップ"></a>ストリーミング サブスクリプションのギャップ</h2><p>Microsoft Graph は EWS のストリーミング サブスクリプション モデルに相当する機能を提供していないため、ストリーミング通知を使用しているアプリケーションでは、通常、アーキテクチャの再設計が必要です。長時間接続を維持する代わりに、Microsoft Graph は Webhook ベースの通知に依存します。この通知には、公開アクセス可能なエンドポイントが必要です。</p>
+<p>一般的なアプローチは、Microsoft Azure や同等のクラウド プロバイダーなど、安全な公開エンドポイントを公開できる高可用性プラットフォームでアプリケーションをホストすることです。このホスティングにより、信頼性、スケーラビリティ、受信通知の適切な処理を確保できます。モバイルやデスクトップなど、デバイス ベースの通知アプリケーションでは、簡略化された通知を以下のようなモバイル プッシュ サービスに転送するバックエンド処理レイヤーを使用できます。</p>
+<ul>
+<li>Apple Push Notification service (APNs) for iOS</li>
+<li>Firebase Cloud Messaging (FCM) for Android</li>
+</ul>
+<p>より大量の通知を扱うシナリオやエンタープライズ シナリオでは、Azure Event Hubs によって、多数の通知を取り込んで処理するための、よりスケーラブルで回復性の高いパターンを利用できます。</p>
+<p>ストリーミング サブスクリプションから移行することで、永続的な接続を維持することに伴うセキュリティと運用上のリスクも軽減されます。このアプローチにより、より堅牢でクラウドに適したアーキテクチャになります。</p>
+<h2 id="イベント-タイプの違い"><a href="#イベント-タイプの違い" class="headerlink" title="イベント タイプの違い"></a>イベント タイプの違い</h2><p>EWS は Microsoft Graph よりも細かいイベント タイプを提供します。移行時にはこの違いを考慮してください。</p>
+<h3 id="アイテムの作成と新しいメールの到着"><a href="#アイテムの作成と新しいメールの到着" class="headerlink" title="アイテムの作成と新しいメールの到着"></a>アイテムの作成と新しいメールの到着</h3><ul>
+<li><strong>EWS</strong>: NewMail (受信トレイ固有) または Created (その他のフォルダー)。</li>
+<li><strong>Microsoft Graph</strong>: Created (メッセージ、連絡先、イベントで統一)。</li>
+</ul>
+<p>Microsoft Graph は専用の <strong>NewMail</strong> イベントを公開しません。新しいアイテムは単に <code>created</code> として表されます。つまり、<code>created</code> イベントは、新しく配信されたメールを表す場合もあれば、フォルダーへコピーまたは移動されたアイテムを表す場合もあります。</p>
+<p>アプリケーションが <strong>NewMail</strong> 固有の動作に依存している場合は、<code>receivedDateTime</code> や <code>createdDateTime</code> などのメッセージ プロパティを使用して、そのメッセージが配信されたものなのか、単に移動またはコピーされたものなのかを推測する必要があります。</p>
+<p>✏️ 変更と更新</p>
+<ul>
+<li><strong>EWS</strong>: Modified</li>
+<li><strong>Microsoft Graph</strong>: Updated</li>
+</ul>
+<p>これらの操作は機能的に同じです。</p>
+<p>🗑️ 削除とライフサイクル</p>
+<ul>
+<li><strong>EWS</strong>: Deleted、Moved、Copied</li>
+<li><strong>Microsoft Graph</strong>: Deleted</li>
+</ul>
+<p>Microsoft Graph は、明示的な <code>moved</code> または <code>copied</code> イベント タイプを公開しません。これらの操作を区別することが重要なシナリオでは、アプリケーションはフォルダー間のイベントを関連付け、<code>immutableId</code> を使用して意図を推測する必要があります。</p>
+<p>たとえば、メッセージが受信トレイからカスタム フォルダーへ移動されると、Microsoft Graph は受信トレイで <code>delete</code> イベントを、移動先フォルダーで <code>create</code> イベントを生成します。<code>immutableId</code> は同じままであるため、これら 2 つのイベントを関連付けて、操作が移動であると識別できます。</p>
+<p>一方、コピー操作では、移動先フォルダーで新しい <code>immutableId</code> を持つ <code>create</code> イベントが発生し、元のフォルダーには対応する削除イベントは発生しません。</p>
+<p>これは、移動とコピーの操作が明示的に公開されていた EWS からの変化です。Microsoft Graph では、開発者はイベント パターンと識別子を使用して基になる操作を判断する、より解釈的なアプローチを採用する必要があります。</p>
+<h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>サブスクリプションを扱う場合、<code>clientState</code> 値は、GET 要求を使用して特定のサブスクリプションを取得したときにのみ返されます。サブスクリプションを列挙するときには含まれません。この場合、<code>clientState</code> プロパティは常に null です。</p>
+<h2 id="スロットリング"><a href="#スロットリング" class="headerlink" title="スロットリング"></a>スロットリング</h2><p>EWS と Microsoft Graph では異なるスロットリング モデルが使用されており、サブスクリプションはその違いが重要になる領域の 1 つです。Microsoft Graph では、Exchange によってメールボックスごとに 4 つの同時接続という厳格な制限が適用されます。この制限は、サブスクリプション処理によってトリガーされる要求を含む、すべてのアクティブな要求に適用されます。アプリケーションが大きなアイテムを処理したり、大量のイベントを扱ったりする場合、この制限を超えてスロットリングが発生する可能性があります。</p>
+<p>よくある落とし穴は、各通知を独立した作業単位として扱い、それを処理するために並列要求を作成することです。負荷がかかった状態では、同時接続数の制限を超え、待機時間が増え、スロットリングが繰り返される可能性があります。その結果、全体のスループットは向上するどころか低下します。</p>
+<p>これらの制約の中で効率的に動作するには、より制御された処理モデルを採用してください。受信イベントをキューに入れ、並列バーストではなく管理されたパイプラインで処理します。同じアイテムに対する複数の作成通知や更新通知など、近いタイミングで発生したイベントをまとめる重複排除ロジックを実装し、冗長な処理を避けてください。</p>
+<p>さらに、メールボックスに対して同時に行われる要求が常に 4 つ以下になるように、クライアント側の同時実行制御 (たとえば、制限付きワーカー プールやセマフォ) を適用します。回復性とスループットをさらに高めるには、バックオフを伴う再試行ロジックを組み込み、アイテム全体の取得を繰り返すよりも、デルタ クエリなどの軽量な操作を優先してください。</p>
+<h2 id="Webhook-エンドポイントのパフォーマンスとスロットリングのしきい値"><a href="#Webhook-エンドポイントのパフォーマンスとスロットリングのしきい値" class="headerlink" title="Webhook エンドポイントのパフォーマンスとスロットリングのしきい値"></a>Webhook エンドポイントのパフォーマンスとスロットリングのしきい値</h2><p>Microsoft Graph Webhook と EWS プッシュ通知のもう 1 つの重要な違いは、通知エンドポイントのパフォーマンスと可用性がどのように適用されるかです。Microsoft Graph は Webhook の応答性を積極的に監視し、しきい値を超えた場合にバック プレッシャーを適用します。</p>
+<p>10 分間のウィンドウ内で、10 秒を超える応答が 10% を超えると、<code>slow state</code> がトリガーされます。この状態になると、Microsoft Graph はすべての新しい通知について、配信前に約 10 秒の遅延を挿入します。リアルタイム通知のシナリオでは、これにより目に見える待機時間が発生し、通知が利用者の期待と同期しなくなる可能性があります。</p>
+<p>より深刻な <code>drop state</code> は、同じ 10 分間のウィンドウ内で、10 秒を超える応答が 15% を超えるとトリガーされます。この場合、Microsoft Graph は最大 10 分間、エンドポイントへの新しい通知の配信を一時的に停止します。この期間中に生成された通知は、エンドポイントの回復後に再送されないため、イベントの取りこぼしにつながる可能性があります。</p>
+<p>Microsoft Graph Webhook は、リスニング エンドポイントに対して、EWS のプッシュ通知やストリーミング通知よりも厳しいパフォーマンス要件を課します。アプリケーションは受信をすばやく確認応答し、回復性と復旧のためのロジックを組み込む必要があります。通知の取りこぼしや遅延に対応するには、データの一貫性を維持するために、<strong>デルタ クエリ</strong>を使用した整合性確認プロセスが必要です。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/migrating-ews-notifications-to-microsoft-graph/" data-id="cmqacrdsh007ndo2a69rpf49r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/released-june-2026-exchange-server-security-updates/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2026 年 6 月の Exchange Server のセキュリティ更新プログラムが公開されました</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">67</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/migrating-ews-notifications-to-microsoft-graph/">EWS 通知を Microsoft Graph に移行する際の考慮点</a>
+          </li>
+        
+          <li>
+            <a href="/blog/released-june-2026-exchange-server-security-updates/">2026 年 6 月の Exchange Server のセキュリティ更新プログラムが公開されました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/15-productivity-features-in-the-new-outlook-for-windows/">新しい Outlook for Windows で生産性を高める 15 の機能</a>
+          </li>
+        
+          <li>
+            <a href="/blog/Rebook-and-Reschedule/">Copilot が会議室や会議時間を自動で変更？会議室の再予約と再スケジュール機能のご紹介</a>
+          </li>
+        
+          <li>
+            <a href="/blog/replacing-iis-smtp-virtual-server-with-exchange-edge-transport/">IIS SMTP 仮想サーバーから Exchange Edge Transport への移行</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
