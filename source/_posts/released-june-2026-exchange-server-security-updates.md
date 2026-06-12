@@ -1,13 +1,11 @@
 ---
 title: "2026 年 6 月の Exchange Server のセキュリティ更新プログラムが公開されました"
 date: 2026/6/10
-lastupdate: 2026/6/10
+lastupdate: 2026/6/12
 tags:
 - Exchange
 ---
 ※ この記事は、[Released: June 2026 Exchange Server Security Updates](https://techcommunity.microsoft.com/blog/exchange/released-june-2026-exchange-server-security-updates/4524491) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
-
-<p style="background: #ffff99"><b>注:</b> ドキュメント公開を担当するチームから、learn.microsoft.com ドメインのドキュメントで最新バージョンが表示されない問題があると連絡を受けています。この問題は対応中です。</p>
 
 Microsoft は、以下の製品に存在する脆弱性に対応するセキュリティ更新プログラム (SU) をリリースしました。
 
@@ -92,4 +90,6 @@ Exchange 2016 および 2019 は現在[サポートが終了](/blog/support-for-
 
 <p style="background: #f0f0f0">本記事公開時点では、関連するドキュメントが完全には利用できない場合があります。</p>
 
-今後、記事内容に更新があった場合は、こちらに追記します。
+**この記事の重要な更新:**
+
+- 2026 年 6 月 11 日: ドキュメント公開に関する問題のバナーを削除しました (現在は解決済み)
