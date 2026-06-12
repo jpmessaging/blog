@@ -121,8 +121,8 @@
     textarea.select();
 
     try {
-      document.execCommand('copy');
-      return Promise.resolve();
+       var ok = document.execCommand('copy');
+       return ok ? Promise.resolve() : Promise.reject(new Error('copy failed'));
     } catch (err) {
       return Promise.reject(err);
     } finally {
