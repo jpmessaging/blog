@@ -599,6 +599,66 @@ a.article-title:hover {
   line-height: 1.1em;
   margin: 1.1em 0;
 }
+.article-entry h1 .headerlink,
+.article-entry h2 .headerlink,
+.article-entry h3 .headerlink,
+.article-entry h4 .headerlink,
+.article-entry h5 .headerlink,
+.article-entry h6 .headerlink {
+  display: inline-block;
+  margin-left: 0.35em;
+  color: #737373;
+  font-size: 0.75em;
+  line-height: 1;
+  opacity: 0.45;
+  vertical-align: middle;
+  text-decoration: none;
+  -webkit-transition: opacity 0.2s, color 0.2s;
+  -moz-transition: opacity 0.2s, color 0.2s;
+  -ms-transition: opacity 0.2s, color 0.2s;
+  transition: opacity 0.2s, color 0.2s;
+}
+.article-entry h1 .headerlink:before,
+.article-entry h2 .headerlink:before,
+.article-entry h3 .headerlink:before,
+.article-entry h4 .headerlink:before,
+.article-entry h5 .headerlink:before,
+.article-entry h6 .headerlink:before {
+  content: "🔗";
+}
+.article-entry h1 .headerlink:hover,
+.article-entry h2 .headerlink:hover,
+.article-entry h3 .headerlink:hover,
+.article-entry h4 .headerlink:hover,
+.article-entry h5 .headerlink:hover,
+.article-entry h6 .headerlink:hover,
+.article-entry h1 .headerlink:focus,
+.article-entry h2 .headerlink:focus,
+.article-entry h3 .headerlink:focus,
+.article-entry h4 .headerlink:focus,
+.article-entry h5 .headerlink:focus,
+.article-entry h6 .headerlink:focus {
+  color: #0065b3;
+  opacity: 1;
+  text-decoration: none;
+}
+.article-entry h1:hover .headerlink,
+.article-entry h2:hover .headerlink,
+.article-entry h3:hover .headerlink,
+.article-entry h4:hover .headerlink,
+.article-entry h5:hover .headerlink,
+.article-entry h6:hover .headerlink {
+  opacity: 1;
+}
+.article-entry h1 .headerlink.copied,
+.article-entry h2 .headerlink.copied,
+.article-entry h3 .headerlink.copied,
+.article-entry h4 .headerlink.copied,
+.article-entry h5 .headerlink.copied,
+.article-entry h6 .headerlink.copied {
+  opacity: 1;
+  color: #0065b3;
+}
 .article-entry a {
   color: #0065b3;
   text-decoration: none;
@@ -757,6 +817,35 @@ a.article-title:hover {
   content: "\f064";
   font-family: FontAwesome;
   padding-right: 6px;
+}
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  -webkit-transform: translateX(-50%) translateY(8px);
+  -moz-transform: translateX(-50%) translateY(8px);
+  -ms-transform: translateX(-50%) translateY(8px);
+  transform: translateX(-50%) translateY(8px);
+  opacity: 0;
+  pointer-events: none;
+  padding: 10px 14px;
+  border-radius: 4px;
+  background: rgba(0,0,0,0.82);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.4;
+  z-index: 9999;
+  -webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+  -moz-transition: opacity 0.2s, -moz-transform 0.2s;
+  -ms-transition: opacity 0.2s, -ms-transform 0.2s;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.copy-toast.show {
+  opacity: 1;
+  -webkit-transform: translateX(-50%) translateY(0);
+  -moz-transform: translateX(-50%) translateY(0);
+  -ms-transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(0);
 }
 .article-github-issue-link {
   cursor: pointer;
