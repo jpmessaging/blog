@@ -106,6 +106,70 @@
     $('.fancybox').fancybox();
   }
 
+  // Heading anchor copy
+  var copyText = function(text){
+    if (navigator.clipboard && window.isSecureContext){
+      return navigator.clipboard.writeText(text);
+    }
+
+    var textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.setAttribute('readonly', 'readonly');
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-9999px';
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    try {
+       var ok = document.execCommand('copy');
+       return ok ? Promise.resolve() : Promise.reject(new Error('copy failed'));
+    } catch (err) {
+      return Promise.reject(err);
+    } finally {
+      document.body.removeChild(textarea);
+    }
+  };
+
+  var showCopyToast = function(message){
+    var $toast = $('.copy-toast');
+
+    if (!$toast.length){
+      $toast = $('<div class="copy-toast" role="status" aria-live="polite"></div>');
+      $('body').append($toast);
+    }
+
+    $toast.text(message).addClass('show');
+
+    clearTimeout($toast.data('timer'));
+    $toast.data('timer', setTimeout(function(){
+      $toast.removeClass('show');
+    }, 1600));
+  };
+
+  $('.article-entry .headerlink').attr('aria-label', 'このリンクをコピー').attr('title', 'このリンクをコピー').each(function(){
+    $(this).appendTo($(this).parent());
+  });
+
+  $('.article-entry').on('click', '.headerlink', function(e){
+    e.preventDefault();
+
+    var link = this;
+    var url = window.location.origin + window.location.pathname + link.getAttribute('href');
+
+    copyText(url).then(function(){
+      var $link = $(link);
+
+      $link.addClass('copied');
+      showCopyToast('リンクをコピーしました');
+
+      setTimeout(function(){
+        $link.removeClass('copied');
+      }, 1200);
+    }).catch(function(){
+      showCopyToast('リンクをコピーできませんでした');
+    });
+  });
+
   // Mobile nav
   var $container = $('#container'),
     isMobileNavAnim = false,
