@@ -1,10 +1,19 @@
 ---
 title: 現場レポート：EWS 廃止前に行う EWS アプリ利用状況の確認と対策
 date: 2026-2-25
-lastupdate: 2026-3-16
+lastupdate: 2026-6-15
 tags: Exchange Online
 ---
 ※ この記事は、[Notes From the Field: Finding and Remediating EWS App Usage Before Retirement](https://techcommunity.microsoft.com/blog/exchange/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/4496469) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px"><path fill="#ff7518" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>
+訳者注
+</div>
+本記事では Kiosk ライセンスでの EWS の利用が 6 月末に終了すると記載しておりますが、以下のブログから 10 月 1 日の終了に変更になっております。翻訳元の記事が更新されたら本記事も更新します。<br>
+<a target="_blank" rel="noopener" href="https://jpmessaging.github.io/blog/update-to-ews-access-for-kiosk--frontline-worker-licensed-users/">キオスクおよびフロントライン ワーカー ライセンス ユーザー向けの EWS アクセスに関する更新</a>
+</div>
 
 本記事では、現在も Exchange Web Services（EWS）を利用している Azure AD アプリの特定方法を実例ベースで解説します。また、Microsoft Graph への移行を進めるうえで考慮が必要となる、Kiosk/Frontline ライセンス変更の影響についてもご紹介します。
 
