@@ -1,6 +1,7 @@
 ---
 title: "どのリソース メールボックスが実際に使われているかを把握する方法"
 date: 2026/05/22 09:00
+lastupdate: 2026/06/17 11:00
 tags:
 - Exchange Online
 ---
@@ -132,7 +133,7 @@ $roommailboxes | Foreach { Get-MailboxFolderStatistics $_ -IncludeOldestAndNewes
 
 ### この用途で Get-CalendarDiagnosticObjects は使わないでください
 
-最後に、Calendar Diagnostic Logs と Get-CalendarDiagnosticObjects コマンドレットを使おうとするケースを見かけます。**この方法は使わないでください。**
+最後に、Calendar Diagnostic Logs と Get-CalendarDiagnosticObjects コマンドレットを使おうとするケースを見かけます。*この方法は使わないでください。*
 
 [Get Calendar diagnostic logs for Exchange Online mailboxes - Exchange | Microsoft Learn](https://learn.microsoft.com/troubleshoot/exchange/calendars/cdl/get-calendar-diagnostic-logs)
 
