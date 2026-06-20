@@ -34,6 +34,15 @@ EWSAllowedAppIDs はテナント レベルの許可リストです。Exchange On
 
 #### EWSAllowedAppIDs が EWS の最終段階にどう関係するか
 
+<div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
+<div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
+<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" style="margin-right:8px"><path fill="#ff7518" d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>
+訳者注
+</div>
+EWSEnabled はテナント レベルとユーザー レベルの設定があり、本記事ではテナント レベルの EWSEnabled について記載しております。ユーザー レベルで EWSEnabled が False の場合は、テナント レベルの EWSEnabled の設定に関係なくそのユーザーは EWS は利用できません。詳細は<a target="_blank" rel="noopener" href="/blog/the-way-to-control-ews-usage-in-exchange-online-is-changing/">こちらの記事</a>をご確認ください。
+</div>
+
+
 以前に、Exchange Online で EWS の段階的な無効化を 2026 年 10 月に開始すると[お知らせしました](/blog/exchange-online-ews-your-time-is-almost-up/)。
 
 EWSAllowedAppIDs が重要な理由を理解するには、この日付の前後で Exchange Online の動作がどのように変わるかを見るとわかりやすくなります。廃止モデルでは、既存の組織レベル設定 `EWSEnabled` と、新しい EWSAllowedAppIDs 許可リストを組み合わせて使用します。(`EWSEnabled` スイッチの動作と設定方法については、[こちら](/blog/exchange-online-ews-your-time-is-almost-up/) をご確認ください)
