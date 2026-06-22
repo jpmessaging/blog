@@ -243,8 +243,8 @@
 <h3 id="受信コネクタ"><a href="#受信コネクタ" class="headerlink" title="受信コネクタ"></a>受信コネクタ</h3><p>Edge Transport をインストールすると、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow/connectors/receive-connectors#default-receive-connectors-in-the-transport-service-on-edge-transport-servers">この記事</a> で説明されている通り、受信コネクタが自動的に作成されます。</p>
 <p>要件に合わせて受信コネクタをカスタマイズするには、アプリケーションがメール リレーのために IIS SMTP をどのように使用していたかを理解する必要があります。ここでは、承認済みドメインが contoso.com のみであると仮定します。</p>
 <ul>
-<li>アプリケーションが、認証なしで contoso.com 宛てに送信している場合 (例 : [<a href="mailto:&#97;&#112;&#112;&#49;&#64;&#99;&#111;&#110;&#x74;&#111;&#115;&#x6f;&#46;&#99;&#111;&#x6d;">&#97;&#112;&#112;&#49;&#64;&#99;&#111;&#110;&#x74;&#111;&#115;&#x6f;&#46;&#99;&#111;&#x6d;</a>] から [<a href="mailto:&#106;&#111;&#x68;&#110;&#64;&#99;&#x6f;&#110;&#116;&#111;&#115;&#111;&#x2e;&#99;&#111;&#109;">&#106;&#111;&#x68;&#110;&#64;&#99;&#x6f;&#110;&#116;&#111;&#115;&#111;&#x2e;&#99;&#111;&#109;</a>] への送信): 既定のコネクタを使用でき、新しいコネクタの作成は不要です。</li>
-<li>アプリケーションが Basic 認証または統合 Windows 認証を使い、送信元 SMTP アドレスとして contoso.com を使用して、任意の受信者へ送信する場合 (例 ： [<a href="mailto:&#97;&#112;&#x70;&#x31;&#x40;&#x63;&#x6f;&#110;&#116;&#111;&#x73;&#111;&#x2e;&#x63;&#111;&#109;">&#97;&#112;&#x70;&#x31;&#x40;&#x63;&#x6f;&#110;&#116;&#111;&#x73;&#111;&#x2e;&#x63;&#111;&#109;</a>] から [<a href="mailto:&#106;&#111;&#x68;&#110;&#64;&#x63;&#111;&#110;&#116;&#x6f;&#115;&#x6f;&#46;&#x63;&#x6f;&#109;">&#106;&#111;&#x68;&#110;&#64;&#x63;&#111;&#110;&#116;&#x6f;&#115;&#x6f;&#46;&#x63;&#x6f;&#109;</a>] と [<a href="mailto:&#x61;&#x64;&#101;&#108;&#101;&#64;&#102;&#x61;&#x62;&#114;&#105;&#107;&#97;&#109;&#x2e;&#99;&#x6f;&#109;">&#x61;&#x64;&#101;&#108;&#101;&#64;&#102;&#x61;&#x62;&#114;&#105;&#107;&#97;&#109;&#x2e;&#99;&#x6f;&#109;</a>] へ送信):</li>
+<li>アプリケーションが、認証なしで contoso.com 宛てに送信している場合 (例 : [<a href="mailto:&#97;&#112;&#x70;&#x31;&#64;&#x63;&#x6f;&#x6e;&#116;&#111;&#115;&#x6f;&#x2e;&#99;&#111;&#109;">&#97;&#112;&#x70;&#x31;&#64;&#x63;&#x6f;&#x6e;&#116;&#111;&#115;&#x6f;&#x2e;&#99;&#111;&#109;</a>] から [<a href="mailto:&#x6a;&#111;&#104;&#x6e;&#64;&#99;&#x6f;&#x6e;&#x74;&#x6f;&#x73;&#111;&#x2e;&#99;&#x6f;&#109;">&#x6a;&#111;&#104;&#x6e;&#64;&#99;&#x6f;&#x6e;&#x74;&#x6f;&#x73;&#111;&#x2e;&#99;&#x6f;&#109;</a>] への送信): 既定のコネクタを使用でき、新しいコネクタの作成は不要です。</li>
+<li>アプリケーションが Basic 認証または統合 Windows 認証を使い、送信元 SMTP アドレスとして contoso.com を使用して、任意の受信者へ送信する場合 (例 ： [<a href="mailto:&#97;&#112;&#x70;&#x31;&#64;&#x63;&#111;&#110;&#x74;&#111;&#115;&#111;&#46;&#x63;&#111;&#x6d;">&#97;&#112;&#x70;&#x31;&#64;&#x63;&#111;&#110;&#x74;&#111;&#115;&#111;&#46;&#x63;&#111;&#x6d;</a>] から [<a href="mailto:&#x6a;&#111;&#104;&#110;&#x40;&#99;&#111;&#x6e;&#x74;&#x6f;&#x73;&#111;&#x2e;&#x63;&#111;&#109;">&#x6a;&#111;&#104;&#110;&#x40;&#99;&#111;&#x6e;&#x74;&#x6f;&#x73;&#111;&#x2e;&#x63;&#111;&#109;</a>] と [<a href="mailto:&#97;&#100;&#x65;&#108;&#101;&#64;&#x66;&#x61;&#x62;&#114;&#x69;&#x6b;&#x61;&#x6d;&#x2e;&#99;&#111;&#109;">&#97;&#100;&#x65;&#108;&#101;&#64;&#x66;&#x61;&#x62;&#114;&#x69;&#x6b;&#x61;&#x6d;&#x2e;&#99;&#111;&#109;</a>] へ送信):</li>
 </ul>
 <ol>
 <li><p><strong>ExchangeUsers</strong> のアクセス許可グループで新しい受信コネクタを作成し、認証方式として <strong>BasicAuth</strong> および&#x2F;または <strong>Integrated</strong> を設定したうえで、アプリケーションの IP アドレスまたは IP アドレス範囲を <strong>RemoteIPRanges</strong> に追加します。</p>
@@ -311,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/replacing-iis-smtp-virtual-server-with-exchange-edge-transport/" data-id="cmqhpsc1e008ypo2a0m3w99sl" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/replacing-iis-smtp-virtual-server-with-exchange-edge-transport/" data-id="cmqomaqx7008sok2aegxxal0s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -353,7 +353,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">67</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">67</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">67</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">16</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -364,6 +364,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/">EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える</a>
+          </li>
         
           <li>
             <a href="/blog/migrating-ews-notifications-to-microsoft-graph/">EWS 通知を Microsoft Graph に移行する際の考慮点</a>
@@ -381,10 +385,6 @@
             <a href="/blog/Rebook-and-Reschedule/">Copilot が会議室や会議時間を自動で変更？会議室の再予約と再スケジュール機能のご紹介</a>
           </li>
         
-          <li>
-            <a href="/blog/replacing-iis-smtp-virtual-server-with-exchange-edge-transport/">IIS SMTP 仮想サーバーから Exchange Edge Transport への移行</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -399,7 +399,7 @@
         
           <li class="archive-list-item">
             <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
-            <span class="archive-list-count">4</span>
+            <span class="archive-list-count">5</span>
           </li>
         
           <li class="archive-list-item">
