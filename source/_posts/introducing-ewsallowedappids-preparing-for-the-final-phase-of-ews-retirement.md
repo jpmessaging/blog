@@ -1,7 +1,7 @@
 ---
 title: EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える
 date: 2026/06/22 10:00
-lastupdate:2026/06/30
+lastupdate: 2026/06/30
 tags:
 - Exchange Online
 ---
