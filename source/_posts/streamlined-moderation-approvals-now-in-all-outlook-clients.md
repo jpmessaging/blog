@@ -1,12 +1,13 @@
 ---
 title: "すべての Outlook クライアントでモデレーション承認が効率化されました"
 date: 2026/02/03
-lastupdate: 2026/02/14
+lastupdate: 2026/06/30
 tags: Exchange Online
 ---
 
 ※ この記事は、[Streamlined Moderation Approvals, Now in All Outlook Clients](https://techcommunity.microsoft.com/blog/exchange/streamlined-moderation-approvals-now-in-all-outlook-clients/4491618) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
+<p style="background: #f5ff66ed;"><strong>リマインダー (2026 年 6 月 29 日):</strong> 本ブログ記事で元々お知らせしていたとおり、7 月末にモデレーション承認のデュアルモード (従来の投票ボタン + アダプティブ カード) を廃止する予定です。</p>
 
 #### はじめに
 
