@@ -1,6 +1,6 @@
 ---
 title: "Outlook のテンプレート運用における MSG・OFT・テンプレート機能の比較"
-date: 2026/07/01 16:23
+date: 2026/07/02 16:23
 tags:
 - Outlook
 - New Outlook
