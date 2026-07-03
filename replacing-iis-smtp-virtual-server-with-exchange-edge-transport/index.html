@@ -18,6 +18,7 @@
   
   <title>IIS SMTP 仮想サーバーから Exchange Edge Transport への移行 | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
   <meta name="description" content="※ この記事は、Replacing the IIS SMTP Virtual Server with Exchange Edge Transport の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 長い年月がたった今でも、サポートが終了している IIS 6.0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="IIS SMTP 仮想サーバーから Exchange Edge Transport への移行">
@@ -243,8 +244,8 @@
 <h3 id="受信コネクタ"><a href="#受信コネクタ" class="headerlink" title="受信コネクタ"></a>受信コネクタ</h3><p>Edge Transport をインストールすると、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/mail-flow/connectors/receive-connectors#default-receive-connectors-in-the-transport-service-on-edge-transport-servers">この記事</a> で説明されている通り、受信コネクタが自動的に作成されます。</p>
 <p>要件に合わせて受信コネクタをカスタマイズするには、アプリケーションがメール リレーのために IIS SMTP をどのように使用していたかを理解する必要があります。ここでは、承認済みドメインが contoso.com のみであると仮定します。</p>
 <ul>
-<li>アプリケーションが、認証なしで contoso.com 宛てに送信している場合 (例 : [<a href="mailto:&#x61;&#112;&#112;&#49;&#x40;&#99;&#111;&#x6e;&#x74;&#111;&#x73;&#111;&#x2e;&#x63;&#x6f;&#x6d;">&#x61;&#112;&#112;&#49;&#x40;&#99;&#111;&#x6e;&#x74;&#111;&#x73;&#111;&#x2e;&#x63;&#x6f;&#x6d;</a>] から [<a href="mailto:&#x6a;&#111;&#x68;&#110;&#64;&#x63;&#x6f;&#110;&#116;&#111;&#115;&#111;&#x2e;&#x63;&#111;&#109;">&#x6a;&#111;&#x68;&#110;&#64;&#x63;&#x6f;&#110;&#116;&#111;&#115;&#111;&#x2e;&#x63;&#111;&#109;</a>] への送信): 既定のコネクタを使用でき、新しいコネクタの作成は不要です。</li>
-<li>アプリケーションが Basic 認証または統合 Windows 認証を使い、送信元 SMTP アドレスとして contoso.com を使用して、任意の受信者へ送信する場合 (例 ： [<a href="mailto:&#x61;&#112;&#112;&#49;&#x40;&#99;&#111;&#x6e;&#116;&#x6f;&#115;&#111;&#46;&#99;&#111;&#x6d;">&#x61;&#112;&#112;&#49;&#x40;&#99;&#111;&#x6e;&#116;&#x6f;&#115;&#111;&#46;&#99;&#111;&#x6d;</a>] から [<a href="mailto:&#x6a;&#x6f;&#x68;&#x6e;&#x40;&#x63;&#111;&#x6e;&#116;&#x6f;&#x73;&#111;&#x2e;&#x63;&#111;&#109;">&#x6a;&#x6f;&#x68;&#x6e;&#x40;&#x63;&#111;&#x6e;&#116;&#x6f;&#x73;&#111;&#x2e;&#x63;&#111;&#109;</a>] と [<a href="mailto:&#x61;&#100;&#101;&#x6c;&#x65;&#x40;&#x66;&#x61;&#x62;&#x72;&#x69;&#107;&#x61;&#x6d;&#46;&#x63;&#x6f;&#109;">&#x61;&#100;&#101;&#x6c;&#x65;&#x40;&#x66;&#x61;&#x62;&#x72;&#x69;&#107;&#x61;&#x6d;&#46;&#x63;&#x6f;&#109;</a>] へ送信):</li>
+<li>アプリケーションが、認証なしで contoso.com 宛てに送信している場合 (例 : [<a href="mailto:&#x61;&#112;&#112;&#x31;&#x40;&#99;&#x6f;&#110;&#116;&#111;&#x73;&#111;&#46;&#99;&#x6f;&#x6d;">&#x61;&#112;&#112;&#x31;&#x40;&#99;&#x6f;&#110;&#116;&#111;&#x73;&#111;&#46;&#99;&#x6f;&#x6d;</a>] から [<a href="mailto:&#x6a;&#x6f;&#104;&#110;&#x40;&#x63;&#111;&#x6e;&#116;&#x6f;&#115;&#111;&#46;&#99;&#111;&#109;">&#x6a;&#x6f;&#104;&#110;&#x40;&#x63;&#111;&#x6e;&#116;&#x6f;&#115;&#111;&#46;&#99;&#111;&#109;</a>] への送信): 既定のコネクタを使用でき、新しいコネクタの作成は不要です。</li>
+<li>アプリケーションが Basic 認証または統合 Windows 認証を使い、送信元 SMTP アドレスとして contoso.com を使用して、任意の受信者へ送信する場合 (例 ： [<a href="mailto:&#x61;&#x70;&#x70;&#49;&#64;&#99;&#111;&#110;&#x74;&#111;&#x73;&#111;&#46;&#99;&#x6f;&#109;">&#x61;&#x70;&#x70;&#49;&#64;&#99;&#111;&#110;&#x74;&#111;&#x73;&#111;&#46;&#99;&#x6f;&#109;</a>] から [<a href="mailto:&#x6a;&#x6f;&#104;&#x6e;&#x40;&#99;&#x6f;&#x6e;&#x74;&#111;&#115;&#x6f;&#46;&#x63;&#111;&#x6d;">&#x6a;&#x6f;&#104;&#x6e;&#x40;&#99;&#x6f;&#x6e;&#x74;&#111;&#115;&#x6f;&#46;&#x63;&#111;&#x6d;</a>] と [<a href="mailto:&#x61;&#x64;&#101;&#x6c;&#101;&#x40;&#102;&#x61;&#x62;&#x72;&#105;&#x6b;&#97;&#x6d;&#x2e;&#99;&#111;&#x6d;">&#x61;&#x64;&#101;&#x6c;&#101;&#x40;&#102;&#x61;&#x62;&#x72;&#105;&#x6b;&#97;&#x6d;&#x2e;&#99;&#111;&#x6d;</a>] へ送信):</li>
 </ul>
 <ol>
 <li><p><strong>ExchangeUsers</strong> のアクセス許可グループで新しい受信コネクタを作成し、認証方式として <strong>BasicAuth</strong> および&#x2F;または <strong>Integrated</strong> を設定したうえで、アプリケーションの IP アドレスまたは IP アドレス範囲を <strong>RemoteIPRanges</strong> に追加します。</p>
@@ -311,7 +312,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/replacing-iis-smtp-virtual-server-with-exchange-edge-transport/" data-id="cmr39ddmg008unc2a2ycfh6uf" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/replacing-iis-smtp-virtual-server-with-exchange-edge-transport/" data-id="cmr49q7ix0093yk2a3ob13nji" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
@@ -353,7 +354,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">67</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">68</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">66</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">68</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
