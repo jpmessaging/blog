@@ -1,7 +1,8 @@
 ---
 title: "Outlook アドイン API 要件セット 1.16 が利用可能になりました"
 date: 2026/07/7
-tags: Microsoft 365 Developer 
+tags:
+- Microsoft 365 Developer
 ---
 
 ※ この記事は、[Mailbox requirement set 1.16 now available for Outlook add-ins](https://devblogs.microsoft.com/microsoft365dev/mailbox-requirement-set-1-16-now-available-for-outlook-add-ins/) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
