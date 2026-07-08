@@ -14,15 +14,15 @@
 ```yaml
 ---
 title: "記事タイトル"
-date: YYYY/MM/DD HH:mm
-lastupdate: YYYY/MM/DD
+date: YYYY-MM-DD HH:mm
+lastupdate: YYYY-MM-DD
 tags:
 - タグ名
 ---
 ```
 
 - `title`: 日本語タイトル。コロンを含む場合はダブルクォートで囲む
-- `date`: 公開日時
+- `date`: 公開日時。形式は `YYYY-MM-DD HH:mm`（例: `2026-07-08 11:00`）。時刻を含めることで同日に複数の記事がある場合の並び順が正確になるため、時刻も含めることを推奨する。時刻が不明な場合は `YYYY-MM-DD` の日付のみでも可。
 - `lastupdate`: 更新日 (更新がない場合は空欄、もしくは lastupdate フィールド自体を省略)
 - `tags`: Exchange, Exchange Online, Outlook, New Outlook など
 - ファイル名は英語のケバブケース (例: `released-february-2026-exchange-server-security-updates.md`)
