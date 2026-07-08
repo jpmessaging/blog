@@ -1,6 +1,6 @@
 ---
 title: "Outlook アドイン API 要件セット 1.16 が利用可能になりました"
-date: 2026/07/7
+date: 2026/07/08
 tags:
 - Microsoft 365 Developer
 ---
