@@ -1,6 +1,6 @@
 ---
 title: "Exchange Server における OWA Light 廃止のお知らせ"
-date: 2026/07/09
+date: 2026-07-09
 tags:
 - Exchange
 ---
