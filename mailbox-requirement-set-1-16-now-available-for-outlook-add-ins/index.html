@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Outlook アドイン API 要件セット 1.16 が利用可能になりました | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="※ この記事は、Mailbox requirement set 1.16 now available for Outlook add-ins の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Outlook アドイン向け Outlook アドイン API 要件セッ">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Outlook アドイン API 要件セット 1.16 が利用可能になりました">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/mailbox-requirement-set-1-16-now-available-for-outlook-add-ins/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Mailbox requirement set 1.16 now available for Outlook add-ins の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Outlook アドイン向け Outlook アドイン API 要件セッ">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-07-07T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-07T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Microsoft 365 Developer">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-mailbox-requirement-set-1-16-now-available-for-outlook-add-ins" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/mailbox-requirement-set-1-16-now-available-for-outlook-add-ins/" class="article-date">
+  <time datetime="2026-07-07T15:00:00.000Z" itemprop="datePublished">2026-07-08</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Outlook アドイン API 要件セット 1.16 が利用可能になりました
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/mailbox-requirement-set-1-16-now-available-for-outlook-add-ins/" class="article-date-single">    
+    
+    <time datetime="2026-07-07T15:00:00.000Z" itemprop="dateUpdated">2026-07-08</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/microsoft365dev/mailbox-requirement-set-1-16-now-available-for-outlook-add-ins/">Mailbox requirement set 1.16 now available for Outlook add-ins</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>Outlook アドイン向け <a target="_blank" rel="noopener" href="https://learn.microsoft.com/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-16">Outlook アドイン API 要件セット 1.16</a> が一般提供になりました。今回のリリースは、メッセージと情報のセキュリティ強化に注力するとともに、COM&#x2F;VSTO アドインと Web アドインの機能ギャップを埋めるための継続的な取り組みを反映しています。</p>
+<p>Mailbox 1.16 では、以下の API とプラットフォームの更新が導入されています。</p>
+<ul>
+<li>イベント ベースのワークフローで、保護されたメッセージや添付ファイルを復号できる。</li>
+<li>組織内で Exchange Web Services (EWS) トークンがサポートされているかどうかを確認できる。</li>
+<li>メール アイテム内のインライン添付ファイルを簡単に識別できる。</li>
+<li>メール アイテムから、従来より多くの受信者情報を取得できる。</li>
+<li>SessionData の保存容量が拡張され、セッション中により多くのデータを保持できる。</li>
+</ul>
+<h2 id="メッセージの復号を簡単に実装"><a href="#メッセージの復号を簡単に実装" class="headerlink" title="メッセージの復号を簡単に実装"></a>メッセージの復号を簡単に実装</h2><p>Outlook アドイン API 要件セット 1.16 では、新たに <a target="_blank" rel="noopener" href="https://learn.microsoft.com/office/dev/add-ins/outlook/encryption-decryption">OnMessageDecrypt</a> イベントが追加されました。これにより、ユーザーが保護されたメッセージを開いたときに、Outlook アドインは自動的に復号できます。イベント ベースのワークフローは、暗号化されたメッセージの識別、メッセージの復号、復号後コンテンツの表示、必要に応じたエラー通知の表示までを処理します。このワークフローが処理に必要な一連の操作を担うため、開発者はアドイン内では組織のセキュリティ要件を満たす暗号化および復号化プロトコルの定義と実装に集中できます。</p>
+<p>アドインでの復号機能を実装する方法について詳しくは、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/office/dev/add-ins/outlook/encryption-decryption">暗号化 Outlook アドインを作成する</a> を参照してください。また、復号アドインのサンプルを実際に試す場合は、<a target="_blank" rel="noopener" href="https://github.com/OfficeDev/Office-Add-in-samples/tree/main/Samples/outlook-encrypt-decrypt-messages">Outlook でメッセージを暗号化および復号するサンプル</a> をご利用ください。</p>
+<h2 id="組織内での-EWS-トークン対応状況を確認"><a href="#組織内での-EWS-トークン対応状況を確認" class="headerlink" title="組織内での EWS トークン対応状況を確認"></a>組織内での EWS トークン対応状況を確認</h2><p>Exchange Online 環境では EWS トークンは既に無効化されていますが、一部の組織では引き続きオンプレミス環境を運用しています。<a target="_blank" rel="noopener" href="https://learn.microsoft.com/javascript/api/outlook/office.diagnostics#outlook-office-diagnostics-ews-member">Office.context.mailbox.diagnostics.ews.getTokenStatusAsync</a> API の導入により、アドインは組織内で EWS コールバック トークンがサポートされているかどうかを判定できるようになりました。これにより、利用可能な環境では推奨される認証方式を使用しながら、必要に応じて従来環境との互換性も維持することができます。</p>
+<h2 id="データ損失防止とコンテンツ処理ワークフローを強化"><a href="#データ損失防止とコンテンツ処理ワークフローを強化" class="headerlink" title="データ損失防止とコンテンツ処理ワークフローを強化"></a>データ損失防止とコンテンツ処理ワークフローを強化</h2><p>Mailbox 1.16 では、データ損失防止とコンテンツ処理のシナリオをサポートするために、既存 API も強化されています。</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/javascript/api/requirement-sets/outlook/outlook-requirement-set-1-16#api-list">contentId</a> プロパティによって添付ファイル API が拡張され、コンテンツ検査やレンダリングのワークフローで、メール アイテム内のインライン添付ファイルを簡単に識別できるようになります。</li>
+<li>Recipients API の <a target="_blank" rel="noopener" href="https://learn.microsoft.com/javascript/api/outlook/office.recipients#outlook-office-recipients-getasync-member%281%29">getAsync</a> メソッドは、メール アイテム内の任意の受信者フィールドから最大 1,000 件の受信者を返せるようになりました。この上限の拡張により、データ損失防止ソリューションは、より多くの受信者を 1 回の処理で評価できるようになります。</li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/javascript/api/outlook/office.sessiondata">SessionData</a> オブジェクトは、アドインごとに最大 2,621,440 文字までサポートするようになりました。これにより、アドインは一つのセッション内で、より多くのデータをシームレスに保存および取得できるようになります。</li>
+</ul>
+<p>ぜひ Outlook アドインで新しい Mailbox 1.16 の新機能をご活用ください。Happy coding!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/mailbox-requirement-set-1-16-now-available-for-outlook-add-ins/" data-id="cmrim6rew007uo02a9zyr7o8r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/upcoming-retirement-of-owa-light-in-exchange-server/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Exchange Server における OWA Light 廃止のお知らせ
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/outlook-template-comparison-msg-oft-and-template-features/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Outlook のテンプレート運用における MSG・OFT・テンプレート機能の比較</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">67</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">69</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/cross-tenant-message-recall-in-exchange-online/">Exchange Online のクロステナント間のメッセージの取り消し</a>
+          </li>
+        
+          <li>
+            <a href="/blog/upcoming-retirement-of-owa-light-in-exchange-server/">Exchange Server における OWA Light 廃止のお知らせ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/mailbox-requirement-set-1-16-now-available-for-outlook-add-ins/">Outlook アドイン API 要件セット 1.16 が利用可能になりました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/outlook-template-comparison-msg-oft-and-template-features/">Outlook のテンプレート運用における MSG・OFT・テンプレート機能の比較</a>
+          </li>
+        
+          <li>
+            <a href="/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/">EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/07/">2026/07</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
