@@ -54,7 +54,7 @@ Exchange Server 2016 および 2019 は[サポートが終了](/blog/support-for
 
 *既に第 2 期 ESU を購入済みで*、最新のセキュリティ更新プログラムへのアクセスに関する情報が必要な場合は、[ExchangeandSfBServerESUInquiry@service.microsoft.com](mailto:ExchangeandSfBServerESUInquiry@service.microsoft.com?subject=We%20purchased%20Exchange%20ESU%20need%20access) にメールを送信してお問い合わせください。
 
-### このリリースに関する既知の問題点
+### このリリースの既知の問題
 
 - [Wrapper messages appear in shared mailbox in hybrid environments after installing the June 2026 Security Update | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/hotfix/2026/5105719)
 
