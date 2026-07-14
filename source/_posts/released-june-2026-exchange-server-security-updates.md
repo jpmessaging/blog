@@ -1,7 +1,7 @@
 ---
 title: "2026 年 6 月の Exchange Server のセキュリティ更新プログラムが公開されました"
 date: 2026/6/10
-lastupdate: 2026/6/16
+lastupdate: 2026/7/13
 tags:
 - Exchange
 ---
@@ -54,6 +54,10 @@ Exchange Server 2016 および 2019 は[サポートが終了](/blog/support-for
 
 *既に第 2 期 ESU を購入済みで*、最新のセキュリティ更新プログラムへのアクセスに関する情報が必要な場合は、[ExchangeandSfBServerESUInquiry@service.microsoft.com](mailto:ExchangeandSfBServerESUInquiry@service.microsoft.com?subject=We%20purchased%20Exchange%20ESU%20need%20access) にメールを送信してお問い合わせください。
 
+### このリリースの既知の問題
+
+- [Wrapper messages appear in shared mailbox in hybrid environments after installing the June 2026 Security Update | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/hotfix/2026/5105719)
+
 ### 更新プログラムのインストール
 
 利用可能な更新パスは以下の通りです。
@@ -92,5 +96,6 @@ Exchange 2016 および 2019 は現在[サポートが終了](/blog/support-for-
 
 **この記事の重要な更新:**
 
+- 2026 年 7 月 13 日: 既知の問題セクションを追加しました
 - 2026 年 6 月 15 日: 緩和策のブロックに関する説明を明確化しました
 - 2026 年 6 月 11 日: ドキュメント公開に関する問題のバナーを削除しました (現在は解決済み)
