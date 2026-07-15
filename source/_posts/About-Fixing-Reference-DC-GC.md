@@ -5,7 +5,7 @@ date: 2013-01-07
 tags: Exchange
 alias: 参照 DC-GC の固定について/index.html
 ---
-Exchange サーバーでは、Exchange サーバーが参照可能なドメイン コントローラとグローバル カタログ サーバー (以下 DC/GC) について、Get/Set-ExchangeServer を用いて確認と設定をすることができます。
+Exchange サーバーが参照可能なドメイン コントローラとグローバル カタログ サーバー (以下 DC/GC) について、Get/Set-ExchangeServer を用いて確認と設定をすることができます。
 
 ```
 [PS] C:\>Get-ExchangeServer EX-1-A -Status | fl current*, static*
