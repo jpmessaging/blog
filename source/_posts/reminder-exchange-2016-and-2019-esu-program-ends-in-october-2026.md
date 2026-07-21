@@ -15,9 +15,9 @@ tags:
 
 Exchange Server 2016 または 2019 を本番環境で引き続き利用している場合は、以下の情報を確認してください。
 
-- [現行バージョンから Exchange Server SE へのアップグレード](/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/)  
-オンプレミス Exchange を継続利用する予定の場合に、Exchange Server SE への移行手順を説明しています。
-- [Exchange 2019 から Exchange SE への "インプレース アップグレード" が低リスクである理由](/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/)  
-Exchange 2019 CU14/CU15 から Exchange SE RTM へのインプレース アップグレードが、大きな技術的変更を伴わず、リスクの低い移行である理由について説明しています。 
+- [現行バージョンから Exchange Server SE へのアップグレード](/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/)
+  オンプレミス Exchange を継続利用する予定の場合に、Exchange Server SE への移行手順を説明しています。
+- [Exchange 2019 から Exchange SE への "インプレース アップグレード" が低リスクである理由](/blog/why-in-place-upgrade-from-exchange-2019-to-exchange-se-is-low-risk/)
+  Exchange 2019 CU14/CU15 から Exchange SE RTM へのインプレース アップグレードが、大きな技術的変更を伴わず、リスクの低い移行である理由について説明しています。
 
 また、[Exchange licensing FAQs](https://www.microsoft.com/en-us/microsoft-365/exchange/microsoft-exchange-licensing-faq-email-for-business) の "What is Exchange Server Subscription Edition (SE) and how is it licensed?" セクションも確認してください。Exchange Server 2019 と Exchange Server SE のライセンス要件は同じです。
