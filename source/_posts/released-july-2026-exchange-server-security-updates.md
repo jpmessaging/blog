@@ -1,6 +1,7 @@
 ---
 title: "2026 年 7 月の Exchange Server のセキュリティ更新プログラムが公開されました"
 date: 2026-07-15 15:00:00
+lastupdate: 2026-07-27
 tags:
 - Exchange
 ---
@@ -35,9 +36,6 @@ Microsoft は、以下の製品に存在する脆弱性に対応するセキュ�
 2026 年 7 月の更新プログラムをインストールしても、既に適用済みの CVE-2026-42897 緩和策は自動的には削除されません。そのため、7 月の SU をインストールした後は、適用方法に応じて以下の対応を実施してください。
 
 **Exchange Emergency Mitigation (EM) Service を使用して緩和策を適用していた場合:**
-
-注: 2026 年 7 月の更新プログラムを、CVE-2026-42897 の緩和策が不要なビルドとして扱うための EM Service 側の変更は、現在展開中であり、展開完了予定日は 2026 年 7 月 16 日です。
-この更新が完了するまでは、EM Service により緩和策が再適用されます。
 
 - [緩和策 M2.1.0 の IIS ルールを削除](https://learn.microsoft.com/Exchange/plan-and-deploy/post-installation-tasks/security-best-practices/exchange-emergency-mitigation-service#rollback-procedures-for-released-mitigations) します。
 
