@@ -7,17 +7,17 @@ tags:
 
 ※ この記事は、[Writeback for Cloud-Managed Remote Mailboxes: Now Generally Available](https://techcommunity.microsoft.com/blog/exchange/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/4543507) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-5 月に、[クラウド管理のリモート メールボックス向けの書き戻しのパブリック プレビュー](/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/)を発表しました。それ以来、多くの組織でこの機能が有効化され、さまざまなフィードバックが寄せられました。このたび、クラウド管理のリモート メールボックス向けの書き戻しが一般提供 (GA) になりました。
+5 月に、[クラウド管理のリモート メールボックス向けの書き戻しのパブリック プレビュー](/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/)を発表しました。それ以来、多くのお客様がこの機能を有効にし、フィードバックを寄せてくださいました。このたび、クラウド管理のリモート メールボックス向けの書き戻しが一般提供 (GA) になりました。
 
-書き戻しは、Worldwide、GCCH、DoD、21Vianet の各環境で利用でき、テナントあたり最大 600,000 個のクラウド管理メールボックスをサポートします。
+書き戻しは、WW、GCCH、DoD、21Vianet の各環境で利用でき、テナントあたり最大 600,000 個のクラウド管理メールボックスをサポートします。
 
-### 概要
+### 簡単なおさらい
 
 クラウド管理のリモート メールボックスでは、ディレクトリ同期されたメールボックスの `IsExchangeCloudManaged` を `true` に設定することで、Exchange 属性の Source of Authority (SOA) を Exchange Online に移行できます。
 
 ユーザー ID は引き続きオンプレミスの Active Directory から同期されますが、Exchange 属性は Exchange Online で編集できるようになります。管理者は、Exchange Online PowerShell、Exchange 管理センター、Microsoft 365 管理センターからこれらのプロパティを更新できます。
 
-書き戻しはこの機能を拡張し、Exchange Online で変更された重要な Exchange 属性を、Microsoft Entra Cloud Sync を通じてオンプレミスの Active Directory に同期します。これにより、オンプレミスの基幹業務アプリケーションが Active Directory の Exchange 属性を引き続き参照する組織でも、クラウド管理へ移行できます。
+書き戻しはこの機能を拡張し、Exchange 属性に対する重要な一連の変更を、Microsoft Entra Cloud Sync を通じて Exchange Online からオンプレミスの Active Directory に同期します。これは、オンプレミスの基幹業務アプリケーションが Active Directory から Exchange 属性を引き続き読み取る組織に役立ちます。
 
 Microsoft Entra Connect Sync をすでに使用している場合でも、アンインストールや置き換えは必要ありません。Cloud Sync は Connect Sync と並行して動作します。
 
@@ -51,9 +51,9 @@ Microsoft Entra Connect Sync をすでに使用している場合でも、アン
 
 ### 既存のパブリック プレビュー構成では 1 つの更新が必要
 
-2026 年 8 月 3 日以降に作成された Exchange 属性の書き戻し構成では、`mail` 属性の書き戻しが既定で有効になります。新しく作成する構成で追加の操作は必要ありません。
+2026 年 8 月 3 日以降に作成された Exchange 属性の書き戻し構成では、`mail` 属性の書き戻しが既定で有効になります。新たに作成された構成では、追加の操作は必要ありません。
 
-2026 年 8 月 3 日より前に作成された構成では、`mail` 属性の書き戻しは自動的に有効になりません。パブリック プレビュー期間中に書き戻しを有効にした場合は、次の手順を実行してください。
+2026 年 8 月 3 日より前に作成された構成は、`mail` 属性を書き戻すように自動更新されません。パブリック プレビュー期間中に書き戻しを有効にした場合は、次の手順を実行してください。
 
 1. Microsoft Entra 管理センターで、Exchange Online 属性の書き戻し構成を開きます。
 2. **[属性マッピング]** を選択し、**[既定のマッピングに戻す]** を選択します。
@@ -84,8 +84,6 @@ Exchange 属性の SOA は、Exchange Online メールボックスを持つユ�
 - [書き戻し属性の完全な一覧](https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management#identity-exchange-attributes-and-writeback)を確認する。
 - [最後の Exchange Server の廃止ガイド](https://learn.microsoft.com/exchange/hybrid-deployment/decommission-last-exchange-server)を読む。
 
-パブリック プレビューに参加し、フィードバックをお寄せくださった皆さまに感謝します。いただいたフィードバックをもとに、一般提供では `mail` 属性の書き戻しを追加しました。
+パブリック プレビューに参加し、フィードバックをお寄せくださった皆さまに感謝します。皆さまのご意見を受けて、一般提供では `mail` 属性の書き戻しを追加しました。
 
-一般提供版を利用した感想も、ぜひお聞かせください。
-
-Exchange Online Management and Exchange Hybrid teams
+一般提供版を利用した感想を伺えることを楽しみにしています。
