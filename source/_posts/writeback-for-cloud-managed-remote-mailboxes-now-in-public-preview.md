@@ -8,7 +8,7 @@ tags:
 
 ※ この記事は、[Writeback for Cloud-Managed Remote Mailboxes: Now in Public Preview](https://techcommunity.microsoft.com/blog/exchange/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/4520138) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #99ffa7ff;"><b>更新 (2026 年 8 月 3 日):</b> [クラウド管理のリモート メールボックス向けの書き戻しが一般提供になりました](https://techcommunity.microsoft.com/blog/exchange/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/4543507)。</p>
+<p style="background: #99ffa7ff;"><b>更新 (2026 年 8 月 3 日):</b> [クラウド管理のリモート メールボックス向けの書き戻しが一般提供になりました](/blog/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/)。</p>
 
 前回の記事では、[クラウド管理のリモート メールボックスのパブリック プレビュー](/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/)と[クラウド管理のリモート メールボックスの一般提供](/blog/cloud-managed-remote-mailboxes-now-generally-available/)をご紹介しました。これは、組織内の "最後の Exchange Server" を廃止するための重要な一歩です。コミュニティからの反響は非常に大きく、寄せられたフィードバックは今後のロードマップにも反映されています。
 
@@ -33,7 +33,7 @@ Cloud Sync のプロビジョニング エージェントのインストール�
 
 #### パブリック プレビュー中の制限と GA の予定
 
-パブリック プレビュー期間中、書き戻しは **200,000 未満のクラウド管理メールボックス**を持つテナントをサポートします。この上限は一般提供 (GA) のタイミングで引き上げます。一般提供はすでに開始されており、詳細は[クラウド管理のリモート メールボックス向けの書き戻しの一般提供開始](https://techcommunity.microsoft.com/blog/exchange/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/4543507)をご確認ください。
+パブリック プレビュー期間中、書き戻しは **200,000 未満のクラウド管理メールボックス**を持つテナントをサポートします。この上限は一般提供 (GA) のタイミングで引き上げます。一般提供はすでに開始されており、詳細は[クラウド管理のリモート メールボックス向けの書き戻しの一般提供開始](/blog/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/)をご確認ください。
 
 どの属性が AD に書き戻され、どの属性が書き戻されないかを含む完全な一覧は、[ID、Exchange 属性、および書き戻し](https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management#identity-exchange-attributes-and-writeback)で確認できます。
 
