@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>クラウド管理のリモート メールボックス向けの書き戻しが一般提供になりました | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="※ この記事は、Writeback for Cloud-Managed Remote Mailboxes: Now Generally Available の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 5 月に、クラウド管理のリモート メールボックス向けの書き">
+<meta property="og:type" content="article">
+<meta property="og:title" content="クラウド管理のリモート メールボックス向けの書き戻しが一般提供になりました">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Writeback for Cloud-Managed Remote Mailboxes: Now Generally Available の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 5 月に、クラウド管理のリモート メールボックス向けの書き">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-03T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-03T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-writeback-for-cloud-managed-remote-mailboxes-now-generally-available" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/" class="article-date">
+  <time datetime="2026-08-03T15:00:00.000Z" itemprop="datePublished">2026-08-04</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      クラウド管理のリモート メールボックス向けの書き戻しが一般提供になりました
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/" class="article-date-single">    
+    
+    <time datetime="2026-08-03T15:00:00.000Z" itemprop="dateUpdated">2026-08-04</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/4543507">Writeback for Cloud-Managed Remote Mailboxes: Now Generally Available</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>5 月に、<a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/">クラウド管理のリモート メールボックス向けの書き戻しのパブリック プレビュー</a>を発表しました。それ以来、多くのお客様がこの機能を有効にし、フィードバックを寄せてくださいました。このたび、クラウド管理のリモート メールボックス向けの書き戻しが一般提供 (GA) になりました。</p>
+<p>書き戻しは、WW、GCCH、DoD、21Vianet の各環境で利用でき、テナントあたり最大 600,000 個のクラウド管理メールボックスをサポートします。</p>
+<h3 id="簡単なおさらい"><a href="#簡単なおさらい" class="headerlink" title="簡単なおさらい"></a>簡単なおさらい</h3><p>クラウド管理のリモート メールボックスでは、ディレクトリ同期されたメールボックスの <code>IsExchangeCloudManaged</code> を <code>true</code> に設定することで、Exchange 属性の Source of Authority (SOA) を Exchange Online に移行できます。</p>
+<p>ユーザー ID は引き続きオンプレミスの Active Directory から同期されますが、Exchange 属性は Exchange Online で編集できるようになります。管理者は、Exchange Online PowerShell、Exchange 管理センター、Microsoft 365 管理センターからこれらのプロパティを更新できます。</p>
+<p>書き戻しはこの機能を拡張し、Exchange 属性に対する重要な一連の変更を、Microsoft Entra Cloud Sync を通じて Exchange Online からオンプレミスの Active Directory に同期します。これは、オンプレミスの基幹業務アプリケーションが Active Directory から Exchange 属性を引き続き読み取る組織に役立ちます。</p>
+<p>Microsoft Entra Connect Sync をすでに使用している場合でも、アンインストールや置き換えは必要ありません。Cloud Sync は Connect Sync と並行して動作します。</p>
+<ul>
+<li>Connect Sync は、これまでどおりディレクトリ ID と属性を同期します。</li>
+<li>Cloud Sync は、Exchange 属性の書き戻しを処理します。</li>
+</ul>
+<h3 id="一般提供での変更点"><a href="#一般提供での変更点" class="headerlink" title="一般提供での変更点"></a>一般提供での変更点</h3><h4 id="最大-600-000-個のクラウド管理メールボックスをサポート"><a href="#最大-600-000-個のクラウド管理メールボックスをサポート" class="headerlink" title="最大 600,000 個のクラウド管理メールボックスをサポート"></a>最大 600,000 個のクラウド管理メールボックスをサポート</h4><p>パブリック プレビュー期間中、書き戻しはクラウド管理メールボックスが 200,000 個未満のテナントをサポートしていました。一般提供では、テナントあたり 600,000 個のクラウド管理メールボックスまでサポートします。</p>
+<p>この上限の引き上げにより、大規模な組織でも、オンプレミスの Active Directory で必要な Exchange 属性の値を最新の状態に保ちながら、Exchange 属性をクラウドで管理できるようになります。</p>
+<h4 id="mail-属性の書き戻し"><a href="#mail-属性の書き戻し" class="headerlink" title="mail 属性の書き戻し"></a><code>mail</code> 属性の書き戻し</h4><p>パブリック プレビュー期間中に最も多く寄せられた要望の 1 つが、オンプレミスの Active Directory への <code>mail</code> 属性の書き戻しでした。</p>
+<p>このフィードバックを受け、一般提供では、サポートされる書き戻し対象に <code>mail</code> 属性を追加しました。Exchange Online で <code>WindowsEmailAddress</code> に加えた変更を、Active Directory の対応する <code>mail</code> 属性へ書き戻せるようになりました。</p>
+<p>書き戻しでは、次の属性を含む 24 個の属性がサポートされるようになりました。</p>
+<ul>
+<li><code>extensionAttribute1</code> から <code>extensionAttribute15</code></li>
+<li><code>msExchExtensionCustomAttribute1</code> から <code>msExchExtensionCustomAttribute5</code></li>
+<li><code>msExchRecipientDisplayType</code></li>
+<li><code>msExchRecipientTypeDetails</code></li>
+<li><code>proxyAddresses</code></li>
+<li><code>mail</code></li>
+</ul>
+<p>属性の完全な一覧は、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management#identity-exchange-attributes-and-writeback">ID、Exchange 属性、および書き戻し</a>をご確認ください。</p>
+<h3 id="既存のパブリック-プレビュー構成では-1-つの更新が必要"><a href="#既存のパブリック-プレビュー構成では-1-つの更新が必要" class="headerlink" title="既存のパブリック プレビュー構成では 1 つの更新が必要"></a>既存のパブリック プレビュー構成では 1 つの更新が必要</h3><p>2026 年 8 月 3 日以降に作成された Exchange 属性の書き戻し構成では、<code>mail</code> 属性の書き戻しが既定で有効になります。新たに作成された構成では、追加の操作は必要ありません。</p>
+<p>2026 年 8 月 3 日より前に作成された構成は、<code>mail</code> 属性を書き戻すように自動更新されません。パブリック プレビュー期間中に書き戻しを有効にした場合は、次の手順を実行してください。</p>
+<ol>
+<li>Microsoft Entra 管理センターで、Exchange Online 属性の書き戻し構成を開きます。</li>
+<li><strong>[属性マッピング]</strong> を選択し、**[既定のマッピングに戻す]** を選択します。</li>
+<li>同期ジョブが再起動すると、<code>mail</code> 属性の書き戻しが有効になります。</li>
+</ol>
+<p>詳しい手順は、ドキュメントの<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management#frequently-asked-questions">よく寄せられる質問</a>をご確認ください。</p>
+<h3 id="テナント全体の-SOA-に関する重要な注意事項"><a href="#テナント全体の-SOA-に関する重要な注意事項" class="headerlink" title="テナント全体の SOA に関する重要な注意事項"></a>テナント全体の SOA に関する重要な注意事項</h3><p>テナント全体の Exchange 属性 SOA は、Exchange Online へのメールボックス移行が完了し、オンプレミスで Exchange メールボックス、メールが有効なユーザー、リモート メールボックスを作成しなくなった組織を対象としています。</p>
+<p>オンプレミスのメールボックス移行や受信者の作成を続けている間は、テナント全体の SOA を有効にしないでください。有効にすると、新しく同期された Exchange 受信者が、Exchange Online で必要な <code>MailUser</code> を持たない ID のみのユーザーとして Microsoft Entra ID に表示される場合があります。その結果、メールボックスのオンボーディングと移行がブロックされます。</p>
+<p>テナント全体の SOA を有効にする前に、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management">ハイブリッド環境でのリモート メールボックスの Exchange 属性のクラウド ベースの管理</a>に記載されている前提条件とガイダンスをご確認ください。</p>
+<h3 id="最後の-Exchange-Server-の廃止に向けて"><a href="#最後の-Exchange-Server-の廃止に向けて" class="headerlink" title="最後の Exchange Server の廃止に向けて"></a>最後の Exchange Server の廃止に向けて</h3><p>Exchange 属性のクラウド管理と書き戻しを利用すると、ID の管理に Active Directory を引き続き使用しながら、受信者管理におけるオンプレミスの Exchange Server への依存を解消できます。</p>
+<p>サーバーを廃止する準備ができたら、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/decommission-last-exchange-server">SOA をクラウドへ移した後に最後の Exchange Server を廃止する</a>の手順に従ってください。このガイドでは、前提条件、ハイブリッド構成のクリーンアップ、Exchange Server のアンインストール、アンインストール後の Exchange Online のクリーンアップについて説明しています。</p>
+<p>Exchange 属性の SOA は、Exchange Online メールボックスを持つユーザー オブジェクトに適用されます。メールが有効なグループやメール連絡先をクラウドから管理する場合は、グループ SOA または連絡先 SOA の移行を使用してください。</p>
+<h3 id="始めるには"><a href="#始めるには" class="headerlink" title="始めるには"></a>始めるには</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management">ハイブリッド環境でのリモート メールボックスの Exchange 属性のクラウド ベースの管理</a>を確認する。</li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management#how-to-enable-exchange-attribute-writeback">Exchange 属性の書き戻しを有効にする方法</a>に従って構成する。</li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/enable-exchange-attributes-cloud-management#identity-exchange-attributes-and-writeback">書き戻し属性の完全な一覧</a>を確認する。</li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/hybrid-deployment/decommission-last-exchange-server">最後の Exchange Server の廃止ガイド</a>を読む。</li>
+</ul>
+<p>パブリック プレビューに参加し、フィードバックをお寄せくださった皆さまに感謝します。皆さまのご意見を受けて、一般提供では <code>mail</code> 属性の書き戻しを追加しました。</p>
+<p>一般提供版を利用した感想を伺えることを楽しみにしています。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/" data-id="cmse0o1nv00bbeg2acrt45bow" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/reminder-exchange-2016-and-2019-esu-program-ends-in-october-2026/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">リマインダー: Exchange Server 2016/2019 の ESU プログラムが 2026 年 10 月に終了</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">70</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">69</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/">クラウド管理のリモート メールボックス向けの書き戻しが一般提供になりました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/reminder-exchange-2016-and-2019-esu-program-ends-in-october-2026/">リマインダー: Exchange Server 2016/2019 の ESU プログラムが 2026 年 10 月に終了</a>
+          </li>
+        
+          <li>
+            <a href="/blog/released-july-2026-exchange-server-security-updates/">2026 年 7 月の Exchange Server のセキュリティ更新プログラムが公開されました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/cross-tenant-message-recall-in-exchange-online/">Exchange Online のクロステナント間のメッセージの取り消し</a>
+          </li>
+        
+          <li>
+            <a href="/blog/upcoming-retirement-of-owa-light-in-exchange-server/">Exchange Server における OWA Light 廃止のお知らせ</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/08/">2026/08</a>
+            <span class="archive-list-count">1</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/07/">2026/07</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
