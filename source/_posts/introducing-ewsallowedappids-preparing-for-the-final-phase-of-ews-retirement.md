@@ -1,7 +1,7 @@
 ---
 title: EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える
-date: 2026/06/22 10:00
-lastupdate: 2026/06/30
+date: 2026-06-22 10:00
+lastupdate: 2026-08-05
 tags:
 - Exchange Online
 ---
@@ -10,7 +10,7 @@ tags:
 
 Exchange Online における Exchange Web Services (EWS) の廃止は、最終フェーズに入りつつあります。過去数年にわたり、Microsoft は製品チーム、独立系ソフトウェア ベンダー (ISV)、エコシステム全体のお客様と協力し、ワークロードを Microsoft Graph やその他のモダン API へ移行してきました。多くの移行は完了しており、その他の移行も順調に進んでいます。
 
-Exchange Online で EWS の段階的な無効化が 2026 年 10 月に近づく中、管理者が制御しやすく、予測しやすい形で準備を進められるようにするため、新しい機能 **EWSAllowedAppIDs** を導入します。これは、[Exchange Online EWS: 廃止期限が迫っています](/blog/exchange-online-ews-your-time-is-almost-up/) でお知らせした許可リスト機能です。
+Exchange Online で EWS の段階的な無効化が始まる 2026 年 10 月が近づく中、管理者が制御しやすく、予測しやすい形で準備を進められるようにするため、新しい機能 **EWSAllowedAppIDs** を導入します。これは、[Exchange Online EWS: 廃止期限が迫っています](/blog/exchange-online-ews-your-time-is-almost-up/) でお知らせした許可リスト機能です。
 
 EWSAllowedAppIDs は、管理者が残っている依存関係を把握し、承認済みアプリケーションだけに EWS アクセスを制限し、廃止の適用が始まる際の中断リスクを減らすための実用的な手段になります。
 
@@ -24,7 +24,7 @@ EWSAllowedAppIDs はテナント レベルの許可リストです。Exchange On
 
 この機能は、広範で制限のない EWS アクセスから、廃止期間中に厳密に範囲を絞った意図的な利用へ移行する最終段階を支援するために設計されています。
 
-注: Exchange で長年提供されてきた EWSAllowList 機能は、*User Agent* に基づくもので、*App ID ではありません*。両方を併用できますが、呼び出し元アプリケーションの異なる側面に対して動作します。
+注: Exchange で長年提供されてきた EWSAllowList 機能は、*App ID* ではなく *User Agent* に基づきます。なお、EWS だけでなく REST/Graph にも適用されます。両方を併用できますが、それぞれ呼び出し元アプリケーションの異なる情報を基準に動作します。
 
 管理者は、この機能を使用して次のことができます。
 
@@ -111,7 +111,7 @@ EWSAllowedAppIDs は 2026 年 10 月だけを目的とした機能だと考え�
 - まだ EWS を必要としているベンダーに連絡する
 - Microsoft Graph API への移行を始める
 - 例外が本当に必要なアプリケーションを検証する
-- 将来のサポート エスカレーションや停止を減らす
+- 将来のサポート エスカレーションやサービス停止を減らす
 
 段階的な無効化の影響を受け始めてから対応する管理者は、修復に使える時間がかなり短くなり、中断が発生する可能性も大幅に高くなります。
 
@@ -125,7 +125,7 @@ Exchange Online 管理者には、今すぐ次の作業を始めることを強�
 
 #### 許可リストを作成する
 
-EWS を引き続き必要とすることがわかっているアプリケーションだけを含む EWSAllowedAppIDs 許可リストを作成します。これには、Office や Power Query for Excel などの Microsoft ファーストパーティ クライアント アプリが含まれます。使用状況レポートにアプリケーションが表示され、引き続き使用する場合は、そのアプリケーションをリストに追加する必要があります。 
+EWS を引き続き必要とすることがわかっているアプリケーションだけを含む EWSAllowedAppIDs 許可リストを作成します。これには、Office や Power Query for Excel など、Microsoft のファースト パーティ製クライアント アプリが含まれます。使用状況レポートにアプリケーションが表示され、引き続き使用する場合は、そのアプリケーションをリストに追加する必要があります。
 
 管理者が許可したいアプリケーションを既に把握している場合は、1 つ以上の App ID を指定して、新しい許可リストを直接作成できます。
 
@@ -144,6 +144,8 @@ Get-OrganizationConfig -RetrieveEwsOperationAccessPolicy | Format-List EwsAllowe
 ```
 
 <p style="background: #F0F0F0"><code>RetrieveEwsOperationAccessPolicy</code> の使用はパフォーマンス上の理由で必要です。このリストは、管理者が明示的に要求した場合にのみ取得するようにしています。</p>
+
+<p style="background: #F0F0F0">このリストへの変更が反映されるまでに、最大 24 時間かかる場合があります。パフォーマンス上の理由から、サーバーはメモリ内のキャッシュを 24 時間ごとにのみ更新します。</p>
 
 <p style="background: #F0F0F0">このプロパティを設定すると、リスト全体の値が書き込まれる点に注意してください。プロパティに既に App ID が含まれている場合、新しいコマンドに含めない限り、それらは置き換えられます。この点については次の例も参照してください。</p>
 
@@ -189,7 +191,7 @@ Set-OrganizationConfig -EwsAllowedAppIDs ($updated -join ",")
 
 EWS は、約 20 年にわたって Exchange エコシステムを支えてきました。
 
-しかし、セキュリティ、信頼性、コンプライアンス、スケールに関する現在の要件には、よりモダンな API プラットフォームが必要です。Microsoft Graph は、Exchange Online の多くの連携シナリオにおける長期的な戦略プラットフォームです。
+しかし、セキュリティ、信頼性、コンプライアンス、スケーラビリティに関する現在の要件を満たすには、よりモダンな API プラットフォームが必要です。Microsoft Graph は、Exchange Online の大半の連携シナリオにおける長期的な戦略プラットフォームです。
 
 EWSAllowedAppIDs は、EWS からの迅速な移行を促しながらも、最終的な移行を管理しやすく予測しやすいものにするために設計されています。
 
