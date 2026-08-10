@@ -1,7 +1,7 @@
 ---
 title: EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える
 date: 2026-06-22 10:00
-lastupdate: 2026-08-07
+lastupdate: 2026-08-10
 tags:
 - Exchange Online
 ---
@@ -71,7 +71,7 @@ EWSAllowedAppIDs が重要な理由を理解するには、この日付の前後
 | EWSEnabled の値 | 許可リストの状態 | 動作 |
 | --- | --- | --- |
 | `Null` | 無視 | すべての EWS を許可 (ただし、Microsoft による段階的ロールアウトの一環として、いずれテナントの `EWSEnabled` は `False` に設定されます) |
-| `True` | 空 | 組織の関係を除くすべての EWS トラフィックをブロック (MC1447678 でお知らせしたとおり) |
+| `True` | 空 | <span style="color:red">すべての EWS トラフィックをブロック</span>（MC1447678 で案内されている組織の関係を除きます。詳細は [クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行](/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/) をご確認ください） |
 | `True` | 設定済み | リストに含まれるアプリケーションのみ許可 |
 | `False` | 任意 | すべての EWS トラフィックをブロック |
 
@@ -202,5 +202,5 @@ EWSAllowedAppIDs は、EWS からの迅速な移行を促しながらも、最�
 全体計画、機能差分の対応状況、関連リソースへのリンクに関する最新情報は、[**Exchange Online における Exchange Web Services の廃止**](https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online) のページをご確認ください。
 
 この記事の更新履歴:
-
+- 2026/08/07: MC1447678 の組織の関係に関するお知らせに関連して、ブログ記事 [クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行](/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/) へのリンクを追加しました。
 - 2026/08/06: 組織の関係について追記しました。組織の関係に関連する EWS トラフィックは、許可リストの状態に関係なくブロックされません (MC1447678 関連)。
