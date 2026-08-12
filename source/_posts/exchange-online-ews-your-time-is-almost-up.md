@@ -1,7 +1,7 @@
 ---
 title: "Exchange Online EWS: 廃止期限が迫っています"
 date: 2026-02-06 12:00
-lastupdate: 2026-07-22
+lastupdate: 2026-08-12
 tags: Exchange Online
 ---
 ※ この記事は、[Exchange Online EWS, Your Time is Almost Up](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
@@ -30,7 +30,7 @@ EWS は [*EWSEnabled* プロパティ](https://learn.microsoft.com/exchange/clie
 
 | **EWSEnabled の値** | **2026 年 10 月以前** | **2026 年 10 月以降** |
 | --- | --- | --- |
-| **True** | ・ 許可リストがない場合、すべての EWS が許可<br>・ 許可リストが構成されている場合、リストに含まれるアプリのみ許可 | 許可リスト内のアプリのみ許可 |
+| **True** | ・ 許可リストがない場合、すべての EWS が許可<br>・ 許可リストが構成されている場合、リストに含まれるアプリのみ許可 | ・ 許可リスト内のアプリのみ許可<br>・ [クロステナントの組織の関係における EWS トラフィック](/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/)は許可 |
 | **False** | すべての EWS がブロック | すべての EWS がブロック |
 | **Null** | すべての EWS が許可 | すべての EWS が許可 (許可リストは無視) |
 
@@ -116,7 +116,8 @@ EWS はオンプレミスでは廃止されません。ハイブリッド構成�
 いいえ。独自の許可リストを作成した場合、自動許可リスト作成処理によって既に作成された許可リストが変更されることはありません。作成済みの許可リストは、そのまま維持されます。
 
 変更履歴:
-- **2026/7/22**: 本投稿の表にある [2026 年 10 月以前] の部分に EWSEnabled=True かつ許可リストが定義されている場合は、許可リストに登録されたアプリのみが EWS を利用できることを明確に記載しました。
+- **2026/8/11**: 本投稿の表に、クロステナントの組織の関係における EWS トラフィックは許可されることを追記しました
+- **2026/7/21**: 本投稿の表にある [2026 年 10 月以前] の部分に EWSEnabled=True かつ許可リストが定義されている場合は、許可リストに登録されたアプリのみが EWS を利用できることを明確に記載しました。
 - **2026/6/19**: [EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える](/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/)の情報を反映しました
 - **2026/3/17**: [現場レポート: EWS 廃止前に行う EWS アプリ利用状況の確認と対策](/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/)へのリンクを追加しました
 - **2026/2/9**: 今のうちに EWSEnabled を True に設定することで、将来の「スクリーム テスト」から除外されることを示すメモを追加しました
