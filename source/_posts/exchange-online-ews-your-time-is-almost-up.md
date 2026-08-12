@@ -116,7 +116,7 @@ EWS はオンプレミスでは廃止されません。ハイブリッド構成�
 いいえ。独自の許可リストを作成した場合、自動許可リスト作成処理によって既に作成された許可リストが変更されることはありません。作成済みの許可リストは、そのまま維持されます。
 
 変更履歴:
-- **2026/8/11**: 本投稿の表に、クロステナントの組織の関係における EWS トラフィックは許可されることを追記しました
+- **2026/8/11**: 本投稿の表に、クロステナントの組織の関係における EWS トラフィックは許可されることを追記しました。
 - **2026/7/21**: 本投稿の表にある [2026 年 10 月以前] の部分に EWSEnabled=True かつ許可リストが定義されている場合は、許可リストに登録されたアプリのみが EWS を利用できることを明確に記載しました。
 - **2026/6/19**: [EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える](/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/)の情報を反映しました
 - **2026/3/17**: [現場レポート: EWS 廃止前に行う EWS アプリ利用状況の確認と対策](/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/)へのリンクを追加しました
