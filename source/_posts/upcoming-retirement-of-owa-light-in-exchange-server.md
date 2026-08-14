@@ -1,11 +1,14 @@
 ---
 title: "Exchange Server における OWA Light 廃止のお知らせ"
 date: 2026-07-09
+lastupdate: 2026-08-14
 tags:
 - Exchange
 ---
 
 ※ この記事は、[Upcoming retirement of OWA Light in Exchange Server](https://techcommunity.microsoft.com/blog/exchange/upcoming-retirement-of-owa-light-in-exchange-server/4534943) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
+<p style="background: #66FF99;"><b>2026 年 8 月 13 日更新:</b> 本機能の廃止対応は完了しました。詳細は <a href="blog/released-august-2026-exchange-server-security-updates/">2026 年 8 月の Exchange Server のセキュリティ更新プログラムが公開されました </a>をご確認ください。2026 年 8 月の Exchange セキュリティ更新プログラムにアクセスできないお客様は、以下の手順に従って OWA Light を無効化していただくことをお勧めします。</p>
 
 Exchange Server の今後のアップデートで、OWA Light を廃止・無効化する計画をお知らせします。OWA Light は、ブラウザーのサポート状況、ネットワーク帯域、アクセシビリティ技術が現在とは大きく異なっていた Web の黎明期に作られました。今後は、ブラウザー間の互換性、アクセシビリティ、セキュリティを重視した最新の Outlook on the web の機能向上に投資していきます。
 
@@ -33,7 +36,7 @@ OWA Light を今すぐブロックするには、OWA メールボックスポリ
 ```PowerShell
 Set-OwaMailboxPolicy -OwaLightEnabled $false
 ```
-OwaMailboxPolicy がすべてのメールボックスに割り当てられていることを確認してください。OwaMailboxPolicy の割り当てには `Set-CasMailbox -OwaMailboxPolicy <Name>` コマンドレットを使用します。
+OwaMailboxPolicy がすべてのメールボックスに割り当てられていることを確認してください。OwaMailboxPolicy の割り当てには `Set-CasMailbox -OwaMailboxPolicy` コマンドレットを使用します。
 
 さらに、OWA ログオン ページの OWA Light 選択メニューを無効にします。以下のコマンドを実行してください。
 ```PowerShell
