@@ -125,7 +125,7 @@
         Last Update:
         <a href="/blog/exchange-online-ews-your-time-is-almost-up/" class="article-date-single">    
         
-    <time datetime="2026-08-11T15:00:00.000Z" itemprop="lastupdate">2026-08-12</time>    
+    <time datetime="2026-08-16T15:00:00.000Z" itemprop="lastupdate">2026-08-17</time>    
     
 </a>
       </div>
@@ -143,7 +143,7 @@
 <li>多くのサードパーティ ベンダーも既に移行を完了しているか、積極的に移行を進めています。</li>
 </ul>
 <p>EWS を廃止することで、レガシーな機能の範囲を縮小し、プラットフォームの動作を簡素化するとともに、すべてのユーザーにより一貫したモダンなエクスペリエンスを提供できるようになります。</p>
-<h3 id="EWS-はどのように無効化されますか？"><a href="#EWS-はどのように無効化されますか？" class="headerlink" title="EWS はどのように無効化されますか？"></a>EWS はどのように無効化されますか？</h3><p>EWS は <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/client-developer/exchange-web-services/how-to-control-access-to-ews-in-exchange"><em>EWSEnabled</em> プロパティ</a>を使用して <strong>テナント単位</strong> で無効化されます。このプロパティは <strong>True、False、Null</strong> (現在の既定値) の 3 つの値をサポートしています。新しい機能により、管理者は <strong>AppID 許可リスト</strong> を定義できます。詳細は <a href="/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/">EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える</a>を確認してください。この機能を有効にすると、そのリストに登録されたアプリだけが EWS にアクセスできます。</p>
+<h3 id="EWS-はどのように無効化されますか？"><a href="#EWS-はどのように無効化されますか？" class="headerlink" title="EWS はどのように無効化されますか？"></a>EWS はどのように無効化されますか？</h3><p>EWS は <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/client-developer/exchange-web-services/how-to-control-access-to-ews-in-exchange"><em>EWSEnabled</em> プロパティ</a>を使用して <strong>テナント単位</strong> で無効化されます。このプロパティは <strong>True、False、Null</strong> (現在の既定値) の 3 つの値をサポートしています。新しい機能により、管理者は <strong>AppID 許可リスト</strong> を定義できるようになります。詳細は <a href="/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/">EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える</a>を確認してください。この機能を有効にすると、そのリストに登録されたアプリだけが EWS にアクセスできます。</p>
 <p>テナント内の <em>EWSEnabled</em> プロパティは、2026 年 10 月 1 日 (またはその直後) に以下のように変更されます。</p>
 <table>
 <thead>
@@ -176,7 +176,7 @@
 <li><em>EWSEnabled</em> を <strong>True</strong> に設定し、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/baseline-security-mode/baseline-security-mode-settings?view=o365-worldwide">ベースライン セキュリティ モード</a>または Exchange Online PowerShell 経由で許可リストを管理する。</li>
 <li><em>EWSEnabled</em> を <strong>Null</strong> に戻すことで、最終的な廃止が行われるまでの間、EWS が制限なしで再度有効になります。この操作は Exchange Online PowerShell を使用して行う必要があります。</li>
 </ol>
-<p>さらに、<span style="color:#3a987f;"><strong>2026 年 8 月末までに</strong></span>許可リストを事前に設定し、<em>EWSEnabled</em> を <strong>True</strong> に設定したテナントは、10 月 1 日の自動変更 (EWSEnabled&#x3D;False) から除外されます。</p>
+<p>さらに、<span style="color:#3a987f;"><strong>2026 年 8 月末までに</strong></span>許可リストを事前に設定し、<em>EWSEnabled</em> を <strong>True</strong> に設定した場合、<u>テナントは 10 月 1 日の自動変更 (EWSEnabled&#x3D;False) から除外されます</u>。</p>
 <p>この移行期間を支援するため、2026 年 9 月より前に許可リストを作成していないお客様に対して、各テナントの実際の利用状況に基づいて、許可リストを事前に自動作成します。なお、2026 年 10 月に EWS がブロックされた後、引き続き EWS が必要であることに気付いた場合でも、管理者は EWSEnabled を <strong>True</strong> に設定することで EWS を再度有効化できます。ただし、この場合はサービスの一時的な中断が生じることに注意してください。</p>
 <div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
 <div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
@@ -194,9 +194,9 @@ EWSEnabled はテナント レベルとユーザー レベルの設定があり�
 <li>Microsoft Graph へのアプリケーション移行を開始してください。</li>
 </ul>
 <p><strong>EWS を引き続き使用しているテナントに対する初回ブロック – 2026 年 10 月 1 日から開始</strong></p>
-<p>2026 年 8 月までに、許可リストと EWSEnabled&#x3D;True の設定により EWS を有効なままにすることを明示的に選択していない Exchange Online テナントでは、EWS は <strong>既定でブロック</strong> (EWSEnabled&#x3D;False) される予定です。この時点で、以下の状態になります。</p>
+<p>2026 年 8 月に許可リストを構成し、EWSEnabled&#x3D;True に設定することで EWS を有効なままにすることを明示的に選択していない Exchange Online テナントでは、EWS は <strong>既定でブロック</strong> (EWSEnabled&#x3D;False) されます。この時点で、以下の状態になります。</p>
 <ul>
-<li>管理者が事前に対応を行われていない場合、EWS のリクエストはブロックされます。</li>
+<li>管理者による事前の対応がない場合、EWS のリクエストはブロックされます。</li>
 <li>重要な業務フローに影響が出る場合、管理者は EWSEnabled&#x3D;True に設定することで、一時的に EWS を有効化できます。</li>
 </ul>
 <p><strong>EWS の最終的な停止 – 2027 年 4 月 1 日</strong><br><strong>2027 年 4 月 1 日</strong> から、EWS は <strong>完全かつ恒久的に無効化</strong> されます。</p>
@@ -204,20 +204,23 @@ EWSEnabled はテナント レベルとユーザー レベルの設定があり�
 <li>テナント管理者が <em>EWSEnabled</em> を制御する機能は削除されます。</li>
 </ul>
 <p>以下は、タイムラインの図です。<br><img src="/blog/exchange-online-ews-your-time-is-almost-up/EWS01.jpg"></p>
-<h3 id="継続的な情報提供と監視"><a href="#継続的な情報提供と監視" class="headerlink" title="継続的な情報提供と監視"></a>継続的な情報提供と監視</h3><p>管理者が状況を把握し、予期しない問題を回避できるように、テナント固有の EWS 使用状況のサマリーとリマインダーを含む <strong>monthly Message Center post</strong> を配信します。</p>
+<h3 id="継続的な情報提供と監視"><a href="#継続的な情報提供と監視" class="headerlink" title="継続的な情報提供と監視"></a>継続的な情報提供と監視</h3><p>管理者が状況を把握し、予期しない問題を回避できるように、テナント固有の EWS 使用状況の概要とリマインダーを含む<strong>メッセージ センター投稿を毎月配信します</strong>。</p>
 <p>また、<strong>一時的な「スクリーム テスト」</strong> (短い期間に EWS を一時的にオフにしてからオンに戻すテスト) を実施する場合があります。これにより、最終的なカットオフ前に潜在的な依存関係を明らかにするのに役立ちます。詳細については、今後数週間でお知らせします。今のうちに EWSEnabled を True に設定すれば、実施される可能性のある「スクリーム テスト」の影響を受けることはありません。</p>
-<h3 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h3><p>今こそ、利用環境を評価し、アプリケーションの開発元と連携しながら、Microsoft Graph への移行計画を立てる適切な時期です。早期の対応により、予期しない問題を回避でき、よりスムーズな移行が実現できます。</p>
+<h3 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h3><p>今こそ、利用環境を評価し、アプリケーションの担当者と話し合いながら、Microsoft Graph への移行計画を立てる適切な時期です。早期に対応すれば、直前になって予期しない問題が判明する事態を避け、可能な限りスムーズに移行できます。</p>
 <h3 id="よくあるご質問"><a href="#よくあるご質問" class="headerlink" title="よくあるご質問"></a>よくあるご質問</h3><p><strong>既に EWSApplicationAccessPolicy 設定を使用して EWS ブロックを構成しています。新しい許可リストと既存のリストはどのように連携しますか？</strong><br>新しい <a href="/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/">AppID 許可リスト</a>が優先されます。アプリが EWS にアクセスするためには、両方のチェックを通過する必要があります。</p>
 <p><strong>EWS を使用しているアプリケーションがたくさんあります。移行にどのくらいの作業が必要か全くわかりません。どうすればよいですか！</strong><br>まず、公開されている使用状況ツールを確認してください (ワールドワイド テナントは<a target="_blank" rel="noopener" href="https://learn.microsoft.com/microsoft-365/admin/activity-reports/ews-usage?view=o365-worldwide">こちら</a>、政府機関およびソブリン クラウドは<a target="_blank" rel="noopener" href="https://aka.ms/ewsToolsBlog">こちら</a>)。ほとんどのアプリはごく限られた EWS の機能しか使用していません。最新のツール (AI を活用した移行を含む) を利用することで、想像しているよりも簡単に移行できるケースが多くあります。</p>
 <p><strong>Microsoft Graph API とは機能差分がありますが、EWS から Graph へ本当に移行できるのでしょうか?</strong><br>Microsoft では残っている機能差分を積極的に追跡し、その状況を公開しています。ほとんどの EWS ベースのワークロードは現在移行可能です。最新の機能差分の状況については、このページ <a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online#roadmap-for-parity-gaps">Exchange Online での Exchange Web Services の廃止 | Microsoft Learn</a> を確認してください。このドキュメントは常に最新の内容に更新されており、新しい情報が利用可能になり次第、関連する追加情報へのリンクも随時掲載します。</p>
 <p><strong>オンプレミス Exchange やハイブリッド構成の場合はどうなりますか？</strong><br>EWS はオンプレミスでは廃止されません。ハイブリッド構成については、アプリケーションがどのようにデータへアクセスしているかによって対応が異なります。オンプレミスのメールボックスへのアクセスは EWS を引き続き使用でき、クラウド メールボックスへのアクセスは Microsoft Graph に移行する必要があります。<br>アプリケーションは Autodiscover を利用して、メールボックスの場所 (オンプレミスかクラウドか) を自動的に判別できます。  </p>
 <p>ただし、Exchange Online への Microsoft Graph 経由のアクセスをサポートするのは Exchange SE のみであるため、ハイブリッド環境におけるオンプレミス メールボックスは Exchange SE を<em>使用することが前提となります</em>。詳細は<a href="/blog/exchange-server-security-changes-for-hybrid-deployments/">こちら</a>をご覧ください。</p>
-<p><strong>2027 年 4 月までに準備が間に合いません。延長を受けることはできますか？</strong><br>2027 年 4 月以降の<strong>例外措置はありません</strong>。</p>
-<p><strong>2026 年 8 月に許可リストを作成せずに EWSEnabled&#x3D;True を設定できますか？</strong><br>はい、設定できますが、管理者が自分のニーズに合わせて許可リストを作成することをお勧めします。2026 年 9 月には、各テナントの使用状況に基づいて、許可リストが自動作成されます。8 月に EWSEnabled&#x3D;True だけを設定し、9 月に許可リストを自動作成される場合、管理者が把握していないアプリケーション (使用状況が確認されている場合) も含まれる可能性があります。2026 年 10 月以降に許可する EWS アプリケーションを正確に制御するためにも、管理者が自ら許可リストを作成することを推奨します。</p>
+<p><strong>2027 年 4 月までに準備が間に合いません。延長を受けることはできますか？</strong><br><em><strong>2027 年 4 月以降の例外措置はありません</strong></em>。</p>
+<p><strong>2026 年 8 月に許可リストを作成せずに EWSEnabled&#x3D;True を設定できますか？</strong><br>はい、設定できますが、管理者が自分のニーズに合わせて許可リストを作成することをお勧めします。2026 年 9 月には、各テナントの使用状況に基づいて、許可リストが自動作成されます。8 月に EWSEnabled&#x3D;True だけを設定し、9 月に Microsoft による許可リストの自動作成を利用する場合、管理者が把握していないアプリケーション (使用状況が確認されている場合) も含まれる可能性があります。2026 年 10 月以降に許可する EWS アプリケーションを正確に制御するためにも、管理者が自ら許可リストを作成することを推奨します。</p>
 <p><strong>2026 年 8 月より前に独自の許可リストを作成した場合、2026 年 9 月にすべてのテナントの自動許可リスト作成処理で、その内容は変更されますか？</strong><br>いいえ。独自の許可リストを作成した場合、自動許可リスト作成処理によって既に作成された許可リストが変更されることはありません。作成済みの許可リストは、そのまま維持されます。</p>
-<p>変更履歴:</p>
+<p><strong>10 月より前であれば、いつでも EWSEnabled&#x3D;True に設定できますか。また、Microsoft は 10 月になってもこの設定を維持し、False に変更しないのでしょうか？</strong><br>EWSEnabled を True に設定した時点が、Null の値を False に変更する処理の開始前であれば、True の設定は維持されます。</p>
+<p><strong>Microsoft が 9 月にテナントの許可リストを自動作成した場合、管理者はその後 PowerShell を使用してリストを上書きしたり、項目を追加したりできますか？</strong><br>はい。管理者は許可リストの内容を変更できます。</p>
+<p><em>変更履歴:</em></p>
 <ul>
-<li><strong>2026&#x2F;8&#x2F;11</strong>: 本投稿の表に、クロステナントの組織の関係における EWS トラフィックは許可されることを追記しました。</li>
+<li><strong>2026&#x2F;8&#x2F;14</strong>: FAQ に 2 組の質問と回答を追加しました。</li>
+<li><strong>2026&#x2F;8&#x2F;11</strong>: 本投稿の表に、クロステナントの組織の関係における EWS トラフィックに関する説明を追記しました。</li>
 <li><strong>2026&#x2F;7&#x2F;21</strong>: 本投稿の表にある [2026 年 10 月以前] の部分に EWSEnabled&#x3D;True かつ許可リストが定義されている場合は、許可リストに登録されたアプリのみが EWS を利用できることを明確に記載しました。</li>
 <li><strong>2026&#x2F;6&#x2F;19</strong>: <a href="/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/">EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える</a>の情報を反映しました</li>
 <li><strong>2026&#x2F;3&#x2F;17</strong>: <a href="/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/">現場レポート: EWS 廃止前に行う EWS アプリ利用状況の確認と対策</a>へのリンクを追加しました</li>
@@ -227,7 +230,7 @@ EWSEnabled はテナント レベルとユーザー レベルの設定があり�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/" data-id="cmssop4y6006fsw2a9yn015ni" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/" data-id="cmswom5bj006k482a35k83nnz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>

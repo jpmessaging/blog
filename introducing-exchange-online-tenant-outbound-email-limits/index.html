@@ -19,12 +19,12 @@
   <title>Exchange Online テナントの外部送信メール制限の導入 | Japan Exchange &amp; Outlook Support Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="※ この記事は、Introducing Exchange Online Tenant Outbound Email Limits の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。  2026 年 4 月 7 日更新: 最も大きいテナント グループの日程を更新しまし">
+  <meta name="description" content="※ この記事は、Introducing Exchange Online Tenant Outbound Email Limits の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 2026 年 8 月 13 日更新: 不正使用に対する保護をさらに強化し、Excha">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Exchange Online テナントの外部送信メール制限の導入">
 <meta property="og:url" content="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/index.html">
 <meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
-<meta property="og:description" content="※ この記事は、Introducing Exchange Online Tenant Outbound Email Limits の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。  2026 年 4 月 7 日更新: 最も大きいテナント グループの日程を更新しまし">
+<meta property="og:description" content="※ この記事は、Introducing Exchange Online Tenant Outbound Email Limits の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 2026 年 8 月 13 日更新: 不正使用に対する保護をさらに強化し、Excha">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/TERRL01.jpg">
 <meta property="og:image" content="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/TERRL02.jpg">
@@ -126,7 +126,7 @@
         Last Update:
         <a href="/blog/introducing-exchange-online-tenant-outbound-email-limits/" class="article-date-single">    
         
-    <time datetime="2026-04-22T15:00:00.000Z" itemprop="lastupdate">2026-04-23</time>    
+    <time datetime="2026-08-16T15:00:00.000Z" itemprop="lastupdate">2026-08-17</time>    
     
 </a>
       </div>
@@ -134,90 +134,50 @@
     <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
       
         <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-tenant-outbound-email-limits/4372797">Introducing Exchange Online Tenant Outbound Email Limits</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
-<div style="margin:1.25em;border-left:.25em solid #4493f8;padding:.5em;">
-2026 年 4 月 7 日更新: 最も大きいテナント グループの日程を更新しました。
-</div>
+<p style="background: #FFFF99; padding: .5em; margin: 1em 0 1em 0;"><strong>2026 年 8 月 13 日更新: </strong>不正使用に対する保護をさらに強化し、Exchange Online リソースの公正な利用を確保するため、一部のテナントに対するテナント外部受信者レート制限 (TERRL) クォータの計算方法を更新します。これらの変更は 2026 年 9 月 14 日からロールアウトを開始します。また、<em>GCC、GCCH、DoD、および 21Vianet 環境への TERRL のロールアウトは延期されました。</em></p>
 
 <p>クラウド サービス全般に言えることですが、Exchange Online では Exchange Online リソースの不正使用を防ぎ、すべてのユーザーに対して可用性を確保するためにサービスの制限を設けています。例えば、High-Volume Email の機能を除いて、Exchange Online は大量のメール送信をサポートしておらず、これまでは主にメールボックスごとの 1 日あたりの送信制限 (Recipient Rate Limit または RRL として知られています) を使用してこれを制限していました。</p>
 <p>今後、購入したメール ライセンスの数もしくは試用版ライセンスのみをご利用かどうかに基づいて計算される新しい<strong>テナント レベルの外部送信メール制限</strong> (Tenant External Recipient Rate Limit または TERRL としても言います) を導入します。試用版ライセンスのみおよび 1 シートのみのテナントに対する強制適用はすでに有効になっています。</p>
 <p>3 月には、少数のライセンスを持つテナントから開始し、4 月末までにすべてのマルチテナント標準テナントを段階的に含める形で、Exchange Online マルチテナント標準環境のすべてのテナントに対して適用を有効にしていきます。</p>
 <p><strong>TERRL のロールアウト スケジュール</strong></p>
-<p><strong>WW 環境</strong>のテナント:</p>
-<table>
-<thead>
-<tr>
-<th><strong>フェーズ</strong></th>
-<th><strong>テナント グループへの有効化</strong></th>
-<th><strong>ロールアウト開始日</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>25 メール ライセンス以下のテナント</td>
-<td>2025&#x2F;4&#x2F;3</td>
-</tr>
-<tr>
-<td>2</td>
-<td>200 メール ライセンス以下のテナント</td>
-<td>2025&#x2F;4&#x2F;18</td>
-</tr>
-<tr>
-<td>3</td>
-<td>500 メール ライセンス以下のテナント</td>
-<td>2025&#x2F;4&#x2F;28</td>
-</tr>
-<tr>
-<td>4</td>
-<td>501～800 メール ライセンスのテナント</td>
-<td>2026&#x2F;3&#x2F;11</td>
-</tr>
-<tr>
-<td>5</td>
-<td>801～1,000 メール ライセンスのテナント</td>
-<td>2026&#x2F;3&#x2F;18</td>
-</tr>
-<tr>
-<td>6</td>
-<td>1,001～1,500 メール ライセンスのテナント</td>
-<td>2026&#x2F;3&#x2F;25</td>
-</tr>
-<tr>
-<td>7</td>
-<td>1,501～3,000 メール ライセンスのテナント</td>
-<td>2026&#x2F;4&#x2F;1</td>
-</tr>
-<tr>
-<td>8</td>
-<td>3,001～10,000 メール ライセンスのテナント</td>
-<td>2026&#x2F;4&#x2F;8</td>
-</tr>
-<tr>
-<td>9</td>
-<td>10,001 メール ライセンス以上のテナント</td>
-<td>2026&#x2F;4&#x2F;22</td>
-</tr>
-</tbody></table>
-<p><strong>GCC 環境</strong>のテナント:</p>
-<table>
-  <tr>
-    <td>EAC レポートの有効化</td>
-    <td>2026/6/30</td>
-   </tr>
-  <tr>
-    <td>強制の有効化</td>
-    <td>2026/9/1</td>
-  </tr>
-</table>
-
-<p>GCC 環境のお客様は、2026 年 7 月までレポートにアクセスしようとすると、レポートが空白であったり、まったく表示されなかったりするなど、一貫性のない体験をする可能性がありますのでご注意ください。</p>
-<p>今年後半には、GCCH、DoD、および Gallatin 環境にも TERRL を展開する予定です。</p>
-<p>サービスのテレメトリ情報に基づくと、ほとんどの Exchange Online ユーザーには影響がありません。新しいレポート (<strong>テナント外部受信者レポート</strong>) が 2 月下旬までに (GCC テナントの場合は 7 月までに) Exchange 管理センター (EAC) に提供され、テナントの制限が表示されます。組織が制限を超えて外部受信者にメールを送信する必要がある場合は、外部受信者へのバルク メールまたは高ボリュームのメール送信のために <a target="_blank" rel="noopener" href="https://learn.microsoft.com/azure/communication-services/concepts/email/email-overview">Azure Communication Services email</a> の使用をお勧めします。</p>
+<p>テナント外部受信者レート制限は、<strong>WW 環境のテナントに対して完全に実装されています</strong>。</p>
+<p>TERRL は GCC、GCCH、DoD、および 21Vianet 環境へのロールアウトが延期されています。日程が確定した後にお知らせします。</p>
+<p>サービスのテレメトリ情報に基づくと、ほとんどの Exchange Online ユーザーには影響がありません。組織が制限を超えて外部受信者にメールを送信する必要がある場合は、外部受信者へのバルク メールまたは高ボリュームのメール送信のために <a target="_blank" rel="noopener" href="https://learn.microsoft.com/azure/communication-services/concepts/email/email-overview">Azure Communication Services email</a> を使用するか、送信量に見合う追加ライセンスを購入することをお勧めします。</p>
 <h2 id="詳細情報"><a href="#詳細情報" class="headerlink" title="詳細情報"></a>詳細情報</h2><p>テナント外部受信者レート制限 (TERRL) は、健全な状態にあるテナントが 1 日 (24 時間のスライディング ウィンドウ) に送信できる外部受信者の最大数です。外部受信者とは、テナント内の承認済みドメイン<strong>ではない</strong>メール ドメインを持つ受信者のことです。TERRL はすべてのテナントに対して基本的な送信制限を設定しますが、疑わしい送信行動、スパムの送信、不正行為、支払いの遅延などの要因により、現在および将来的に追加の制限が発生する可能性もあります。</p>
 <p>以下は新しいテナント外部受信者レート制限の最大値です。</p>
 <ul>
-<li><p><strong>試用版テナント</strong>: ライセンス数に関係なく、1 日あたりの外部受信者数は 5,000 に制限されます。</p>
-</li>
-<li><p><strong>非試用版テナント</strong>: 1 日あたりの外部送信制限は、テナントが購入したメール ライセンス数 (Exchange Online または Exchange Online Protection ライセンス数) に基づいています。ライセンス数が増えると、1 日に送信できる外部受信者数も増加しますが、ライセンスごとの増加率は減少します。2 月下旬までには、EAC のレポート &gt; メール フローのセクションの<strong>テナント外部受信者レポート</strong>でテナントの TERRL を確認できるようになります。また、以下の式を使用してテナントの TERRL を算出することもできます。</p>
+<li><strong>試用版テナント</strong>: ライセンス数に関係なく、1 日あたりの外部受信者の合計数は 500 に制限されます。</li>
+<li><strong>新しいテナントのクォータ</strong>: 新しく作成されたテナントでは、初期オンボーディング期間中、計算された TERRL クォータが一時的に引き下げられます。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>テナントの経過日数</strong></th>
+<th><strong>適用されるクォータ</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>31 日未満</td>
+<td>標準の計算済みクォータの 10 % (標準クォータの計算方法は以下を参照)</td>
+</tr>
+<tr>
+<td>31 日以上 60 日以下</td>
+<td>標準の計算済みクォータの 25 %</td>
+</tr>
+<tr>
+<td>60 日超</td>
+<td>標準の計算済みクォータの 100 %</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>無償の EDU ライセンスがあるテナントのクォータ計算式</strong>: 無償の Education ライセンス (Microsoft 365 A1 など) があるテナントでは、購入済みメール ライセンスと無償 EDU ライセンスの両方を考慮するようにクォータの計算方法を更新します。</li>
+</ul>
+<p>以下の式を使用します。</p>
+<pre><code>500 * (購入済みメール ライセンス数 ^ 0.7 + 無償 EDU ライセンス数 ^ 0.3) + 9500
+</code></pre>
+<p>更新後の計算方法では、無償 EDU ライセンスもクォータに反映されますが、購入済みメール ライセンスよりも重み付けが小さくなります。</p>
+<ul>
+<li><p><strong>その他すべてのテナントに対する標準の計算済みクォータ</strong>: 1 日あたりの外部送信制限は、テナントのメール ライセンス数 (Exchange Online または Exchange Online Protection を含むライセンス) に基づいています。ライセンス数が増えると、1 日に送信できる外部受信者数も増加しますが、ライセンスごとの増加率は減少します。</p>
 <p>  500 * (試用版ではないメール ライセンス数 ^ 0.7) + 9500</p>
 </li>
 </ul>
@@ -225,7 +185,7 @@
 <table>
 <thead>
 <tr>
-<th><strong>試用版ではないメール ライセンス数</strong></th>
+<th><strong>試用版ライセンスおよび EDU ライセンスを除くメール ライセンス数</strong></th>
 <th><strong>TERRL</strong></th>
 </tr>
 </thead>
@@ -274,7 +234,7 @@
 <li>メッセージ 2 : 4,000 人の外部受信者に対して午後 3:00 に送信</li>
 </ul>
 <p><img src="/blog/introducing-exchange-online-tenant-outbound-email-limits/TERRL01.jpg" alt="TERRL 24 時間「スライディング ウィンドウ」のイラスト"></p>
-<p>管理者が送信メールの量を追跡して計画を立てられるようにするために、2 月下旬から Exchange 管理センターの EAC &gt; レポート (Reports) &gt; メール フロー (Mail flow) &gt; <strong>テナント外部受信者レート (Tenant Outbound External Recipients Rate)</strong> に新しいレポートが追加されます。このレポートでは、現在の外部受信者の数、テナントの日次クォータ、クォータの使用量、および制限を超えた場合にブロックされた受信者の数が表示されます。また、制限の適用が有効か無効かも表示されます。例えば、500 よりも多くのメール ライセンスを持つテナントの場合、5 月 1 日までは「無効」と表示されますが、5 月 1 日から 500 よりも多くのライセンスを持つテナントに対して制限の適用が開始されます。</p>
+<p>管理者が送信メールの量を計画および追跡できるようにするため、Exchange 管理センター (EAC) のレポート (Reports) &gt; メール フロー (Mail flow) &gt; <strong>テナント外部受信者レート (Tenant Outbound External Recipients Rate)</strong> に新しいレポートがあります。このレポートでは、現在の外部受信者の数、テナントの日次クォータ、クォータの使用量、および制限を超えた場合にブロックされた受信者の数が表示されます。また、制限の適用が有効か無効かも表示されます。</p>
 <p><img src="/blog/introducing-exchange-online-tenant-outbound-email-limits/TERRL02.jpg" alt="EAC のサンプル レポート"></p>
 <h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><p><strong>外部受信者とは何ですか？</strong><br>テナント内の承認済みドメインではないドメインを持つ受信者は、外部受信者と見なされ、これらの受信者に送信されたメッセージは TERRL クォータにカウントされます (以下に記載されている例外を除く)。これには、他の Microsoft 365 テナントの受信者に送信されたメッセージも含まれます。</p>
 <div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
@@ -342,6 +302,7 @@
 <p>※ 将来のアップデートで EAC レポートに表示されるデータを取得するための Graph API の提供が検討されています。</p>
 <p><strong>最近の変更点</strong></p>
 <ul>
+<li>2026&#x2F;8&#x2F;13: 記事を大幅に更新し、制限の更新や一部のクラウド環境へのロールアウトの延期などを反映しました。</li>
 <li>2026&#x2F;3&#x2F;26: GCC 環境の日程を更新しました。</li>
 <li>2026&#x2F;3&#x2F;19: 署名サービスやオンプレミスへのルーティングに関する FAQ を更新しました。</li>
 <li>2026&#x2F;2&#x2F;27: WW&#x2F;Commercial テナントの日程を更新しました。</li>
@@ -352,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/" data-id="cmssop4yn007lsw2a7grfbysj" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/introducing-exchange-online-tenant-outbound-email-limits/" data-id="cmswom5c4007k482a5an9aumi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
