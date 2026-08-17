@@ -1,9 +1,11 @@
 ---
 title: "リマインダー: Exchange Server 2016/2019 の ESU プログラムが 2026 年 10 月に終了"
 date: 2026-07-21 13:00:00
+lastupdate: 2026-08-17
 tags:
 - Exchange
 ---
+![](Designer.png)
 ※ この記事は、[Reminder: Exchange 2016 and 2019 ESU Program Ends in October 2026](https://techcommunity.microsoft.com/blog/exchange/reminder-exchange-2016-and-2019-esu-program-ends-in-october-2026/4539033) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 ここ数週間、2026 年 10 月以降も Exchange Server 2016/2019 の ESU プログラムが延長される可能性について、いくつか質問をいただいています。
