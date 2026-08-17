@@ -1,7 +1,7 @@
 ---
 title: "Exchange Online EWS: 廃止期限が迫っています"
 date: 2026-02-06 12:00
-lastupdate: 2026-08-12
+lastupdate: 2026-08-17
 tags: Exchange Online
 ---
 ※ この記事は、[Exchange Online EWS, Your Time is Almost Up](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
@@ -24,7 +24,7 @@ EWS を廃止することで、レガシーな機能の範囲を縮小し、プ�
 
 ### EWS はどのように無効化されますか？
 
-EWS は [*EWSEnabled* プロパティ](https://learn.microsoft.com/exchange/client-developer/exchange-web-services/how-to-control-access-to-ews-in-exchange)を使用して **テナント単位** で無効化されます。このプロパティは **True、False、Null** (現在の既定値) の 3 つの値をサポートしています。新しい機能により、管理者は **AppID 許可リスト** を定義できます。詳細は [EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える](/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/)を確認してください。この機能を有効にすると、そのリストに登録されたアプリだけが EWS にアクセスできます。
+EWS は [*EWSEnabled* プロパティ](https://learn.microsoft.com/exchange/client-developer/exchange-web-services/how-to-control-access-to-ews-in-exchange)を使用して **テナント単位** で無効化されます。このプロパティは **True、False、Null** (現在の既定値) の 3 つの値をサポートしています。新しい機能により、管理者は **AppID 許可リスト** を定義できるようになります。詳細は [EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える](/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/)を確認してください。この機能を有効にすると、そのリストに登録されたアプリだけが EWS にアクセスできます。
 
 テナント内の *EWSEnabled* プロパティは、2026 年 10 月 1 日 (またはその直後) に以下のように変更されます。
 
@@ -43,7 +43,7 @@ EWS をブロックしたままにしておきたい場合は、特に何もせ�
 1. *EWSEnabled* を **True** に設定し、[ベースライン セキュリティ モード](https://learn.microsoft.com/microsoft-365/baseline-security-mode/baseline-security-mode-settings?view=o365-worldwide)または Exchange Online PowerShell 経由で許可リストを管理する。
 2. *EWSEnabled* を **Null** に戻すことで、最終的な廃止が行われるまでの間、EWS が制限なしで再度有効になります。この操作は Exchange Online PowerShell を使用して行う必要があります。
 
-さらに、<span style="color:#3a987f;">**2026 年 8 月末までに**</span>許可リストを事前に設定し、*EWSEnabled* を **True** に設定したテナントは、10 月 1 日の自動変更 (EWSEnabled=False) から除外されます。
+さらに、<span style="color:#3a987f;">**2026 年 8 月末までに**</span>許可リストを事前に設定し、*EWSEnabled* を **True** に設定した場合、<u>テナントは 10 月 1 日の自動変更 (EWSEnabled=False) から除外されます</u>。
 
 この移行期間を支援するため、2026 年 9 月より前に許可リストを作成していないお客様に対して、各テナントの実際の利用状況に基づいて、許可リストを事前に自動作成します。なお、2026 年 10 月に EWS がブロックされた後、引き続き EWS が必要であることに気付いた場合でも、管理者は EWSEnabled を **True** に設定することで EWS を再度有効化できます。ただし、この場合はサービスの一時的な中断が生じることに注意してください。
 
@@ -67,9 +67,9 @@ EWSEnabled はテナント レベルとユーザー レベルの設定があり�
 
 **EWS を引き続き使用しているテナントに対する初回ブロック – 2026 年 10 月 1 日から開始**
 
-2026 年 8 月までに、許可リストと EWSEnabled=True の設定により EWS を有効なままにすることを明示的に選択していない Exchange Online テナントでは、EWS は **既定でブロック** (EWSEnabled=False) される予定です。この時点で、以下の状態になります。
+2026 年 8 月に許可リストを構成し、EWSEnabled=True に設定することで EWS を有効なままにすることを明示的に選択していない Exchange Online テナントでは、EWS は **既定でブロック** (EWSEnabled=False) されます。この時点で、以下の状態になります。
 
-- 管理者が事前に対応を行われていない場合、EWS のリクエストはブロックされます。
+- 管理者による事前の対応がない場合、EWS のリクエストはブロックされます。
 - 重要な業務フローに影響が出る場合、管理者は EWSEnabled=True に設定することで、一時的に EWS を有効化できます。
 
 **EWS の最終的な停止 – 2027 年 4 月 1 日**  
@@ -81,13 +81,13 @@ EWSEnabled はテナント レベルとユーザー レベルの設定があり�
 
 ### 継続的な情報提供と監視
 
-管理者が状況を把握し、予期しない問題を回避できるように、テナント固有の EWS 使用状況のサマリーとリマインダーを含む **monthly Message Center post** を配信します。
+管理者が状況を把握し、予期しない問題を回避できるように、テナント固有の EWS 使用状況の概要とリマインダーを含む**メッセージ センター投稿を毎月配信します**。
 
 また、**一時的な「スクリーム テスト」** (短い期間に EWS を一時的にオフにしてからオンに戻すテスト) を実施する場合があります。これにより、最終的なカットオフ前に潜在的な依存関係を明らかにするのに役立ちます。詳細については、今後数週間でお知らせします。今のうちに EWSEnabled を True に設定すれば、実施される可能性のある「スクリーム テスト」の影響を受けることはありません。
 
 ### まとめ
 
-今こそ、利用環境を評価し、アプリケーションの開発元と連携しながら、Microsoft Graph への移行計画を立てる適切な時期です。早期の対応により、予期しない問題を回避でき、よりスムーズな移行が実現できます。
+今こそ、利用環境を評価し、アプリケーションの担当者と話し合いながら、Microsoft Graph への移行計画を立てる適切な時期です。早期に対応すれば、直前になって予期しない問題が判明する事態を避け、可能な限りスムーズに移行できます。
 
 ### よくあるご質問
 
@@ -107,16 +107,23 @@ EWS はオンプレミスでは廃止されません。ハイブリッド構成�
 ただし、Exchange Online への Microsoft Graph 経由のアクセスをサポートするのは Exchange SE のみであるため、ハイブリッド環境におけるオンプレミス メールボックスは Exchange SE を*使用することが前提となります*。詳細は[こちら](/blog/exchange-server-security-changes-for-hybrid-deployments/)をご覧ください。
 
 **2027 年 4 月までに準備が間に合いません。延長を受けることはできますか？**  
-2027 年 4 月以降の**例外措置はありません**。
+***2027 年 4 月以降の例外措置はありません***。
 
 **2026 年 8 月に許可リストを作成せずに EWSEnabled=True を設定できますか？**  
-はい、設定できますが、管理者が自分のニーズに合わせて許可リストを作成することをお勧めします。2026 年 9 月には、各テナントの使用状況に基づいて、許可リストが自動作成されます。8 月に EWSEnabled=True だけを設定し、9 月に許可リストを自動作成される場合、管理者が把握していないアプリケーション (使用状況が確認されている場合) も含まれる可能性があります。2026 年 10 月以降に許可する EWS アプリケーションを正確に制御するためにも、管理者が自ら許可リストを作成することを推奨します。
+はい、設定できますが、管理者が自分のニーズに合わせて許可リストを作成することをお勧めします。2026 年 9 月には、各テナントの使用状況に基づいて、許可リストが自動作成されます。8 月に EWSEnabled=True だけを設定し、9 月に Microsoft による許可リストの自動作成を利用する場合、管理者が把握していないアプリケーション (使用状況が確認されている場合) も含まれる可能性があります。2026 年 10 月以降に許可する EWS アプリケーションを正確に制御するためにも、管理者が自ら許可リストを作成することを推奨します。
 
 **2026 年 8 月より前に独自の許可リストを作成した場合、2026 年 9 月にすべてのテナントの自動許可リスト作成処理で、その内容は変更されますか？**  
 いいえ。独自の許可リストを作成した場合、自動許可リスト作成処理によって既に作成された許可リストが変更されることはありません。作成済みの許可リストは、そのまま維持されます。
 
-変更履歴:
-- **2026/8/11**: 本投稿の表に、クロステナントの組織の関係における EWS トラフィックは許可されることを追記しました。
+**10 月より前であれば、いつでも EWSEnabled=True に設定できますか。また、Microsoft は 10 月になってもこの設定を維持し、False に変更しないのでしょうか？**  
+EWSEnabled を True に設定した時点が、Null の値を False に変更する処理の開始前であれば、True の設定は維持されます。
+
+**Microsoft が 9 月にテナントの許可リストを自動作成した場合、管理者はその後 PowerShell を使用してリストを上書きしたり、項目を追加したりできますか？**  
+はい。管理者は許可リストの内容を変更できます。
+
+*変更履歴:*
+- **2026/8/14**: FAQ に 2 組の質問と回答を追加しました。
+- **2026/8/11**: 本投稿の表に、クロステナントの組織の関係における EWS トラフィックに関する説明を追記しました。
 - **2026/7/21**: 本投稿の表にある [2026 年 10 月以前] の部分に EWSEnabled=True かつ許可リストが定義されている場合は、許可リストに登録されたアプリのみが EWS を利用できることを明確に記載しました。
 - **2026/6/19**: [EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える](/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/)の情報を反映しました
 - **2026/3/17**: [現場レポート: EWS 廃止前に行う EWS アプリ利用状況の確認と対策](/blog/notes-from-the-field-finding-and-remediating-ews-app-usage-before-retirement/)へのリンクを追加しました
