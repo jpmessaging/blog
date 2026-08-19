@@ -1,6 +1,7 @@
 ---
 title: クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行
 date: 2026-08-10 15:00:00 
+lastupdate: 2026-08-19
 tags:
 - Exchange Online
 ---
@@ -112,6 +113,9 @@ Get-SharingPolicy | Format-List Name, Domains, Enabled, Default
 **共有ポリシーのドメインにワイルドカードを指定しています。移行は必要ですか。**  
 はい。`CalendarSharingFreeBusy` アクセス レベルが `Simple`、`Detail`、`Reviewer` のいずれかであれば、移行が必要です。
 
+**既定の共有ポリシーにワイルドカード ドメイン (`{*:0}`) を定義していますが、外部との予定表共有を禁止するため `Enabled: False` に設定しています。このポリシーを移行する必要はありますか。**  
+対応は必要ありません。Microsoft 365 クロステナント アクセス ポリシーを構成しない場合の動作は、既定の共有ポリシーを無効にしている場合と同じです。
+
 **同じ提携先テナントに複数のドメインが存在する場合、それぞれに対して設定が必要ですか。**  
 提携先の複数のドメインが同一の Microsoft 365 テナント ID に属している場合は、そのテナント ID に対して 1 つの Microsoft 365 クロステナント アクセス ポリシーを設定するだけで対応できます。
 そのテナント ID に関連付けられているすべてのドメインが、そのポリシーの対象となります。
@@ -120,4 +124,9 @@ Get-SharingPolicy | Format-List Name, Domains, Enabled, Default
 この変更の影響は受けません。Exchange Online のユーザーは、これまでどおり可用性アドレス空間の構成を利用して、引き続き Google Workspace ユーザーの予定表情報を参照できます。Google Workspace のユーザーも、これまでどおり Microsoft Graph API を利用して Exchange Online ユーザーの予定表情報を参照できます。ただし、Google Workspace から Exchange Online への接続には、従来の EWS 接続方式ではなく Microsoft Graph API を使用するよう設定してください。詳しくは「[Allow Google Calendar users to see Exchange availability](https://knowledge.workspace.google.com/admin/sync/allow-calendar-users-to-see-exchange-availability)」を参照してください。
 
 **商用クラウド (一般的な Microsoft 365 テナント) と 21Vianet クラウドの間で空き時間情報を共有するために可用性アドレス空間を設定している場合はどうなりますか。**  
-この変更の影響を受けるため、Microsoft 365 クロステナント アクセス ポリシーへ設定を移行してください。
+`AccessMethod` に `OrgWideFBToken` を使用する可用性アドレス空間の構成は Exchange Web Services に依存していないため、EWS の廃止前に移行する必要はありません。追加のセキュリティ機能と、より細かな構成オプションを利用できる Microsoft 365 クロステナント アクセス ポリシーへの移行を検討してください。
+
+*更新履歴*
+
+- **2026/8/18**: 21Vianet クラウドとの可用性アドレス空間による共有に関する FAQ を更新しました。
+- **2026/8/10**: 無効に設定された既定の共有ポリシーは移行不要であることを明確にする FAQ を追加しました。
