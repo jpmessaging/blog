@@ -1,15 +1,15 @@
 ---
 title: Exchange Online のメール中断を回避するため、DigiCert Global Root G2 認証局 (CA) を信頼してください
 date: 2026-02-02
-lastupdate: 2026-03-19
+lastupdate: 2026-08-19
 tags: Exchange Online
 ---
 
 ※ この記事は、[Trust DigiCert Global Root G2 Certificate Authority to Avoid Exchange Online Email Disruption](https://techcommunity.microsoft.com/blog/exchange/trust-digicert-global-root-g2-certificate-authority-to-avoid-exchange-online-ema/4488311) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #f5ff66ed;"><strong>2026 年 3 月 16 日更新:</strong> パートナー チームと連携し、以前公開されたバンドルに中間証明書が含まれていなかったことが判明したため、Worldwide (WWMT) および GCC High / DoD (ITAR) 向けの Microsoft 365 ルート証明書チェーン バンドルを再公開しました。証明書バンドルのインストールが必要だった組織は、新しい中間証明書を取得するために更新されたバンドル (3/16 リリース) を再ダウンロードし、できるだけ早く (2026 年 3 月 22 日までに) 証明書の信頼手順を再度実行する必要があります。更新された DigiCert Global Root G2 チェーンとその中間証明書を信頼しない場合、プロバイダーが DigiCert G1 ルートの信頼を停止し始めた時点で、メール フローが中断する可能性があります。</p>
+<p style="background: #f5ff66ed;"><strong>2026 年 8 月 18 日更新: </strong>一部の Microsoft サービスが現在も DigiCert Global Root G1 証明書を信頼している理由と、それが問題になるかどうかについて、一部のお客様からお問い合わせがありました。いくつかの点を明確にします。<br>&nbsp; &nbsp;- この記事では、G1 証明書の信頼を削除することではなく、DigiCert G2 証明書を信頼対象に追加することについて説明しています。お客様のサーバーが新しい DigiCert G2 証明書を必要な時期までに信頼できるようにすることが目的です。<br>&nbsp; &nbsp;- ブラウザー ベンダーによる G1 証明書の信頼停止は、G1 証明書を今後信頼すべきではない、または使用すべきではないという意味ではありません。詳細については、<a href="https://www.ssl.com/article/why-browsers-are-distrusting-older-root-certificate-authorities/">Why Browsers Are Distrusting Older Root CAs - SSL.com</a> を参照してください。<br>&nbsp; &nbsp;- DigiCert G1 証明書は発行元によって失効されていないため、Web ブラウザーを使用しないシナリオでは引き続き使用できます。Microsoft は G1 証明書の使用を段階的に終了しますが、その間も、発行元によって失効されない限り G1 証明書を安全に使用できます。<br>&nbsp; &nbsp;- Exchange Online が DigiCert Global Root G1 証明書を提示することで Exchange Online との間のメール フローに問題が発生している場合は、クライアントまたはサーバーで DigiCert Global Root G1 証明書が引き続き信頼されていることを確認してください。</p>
 
-組織と Exchange Online 間のメール フローの中断を回避するために、Exchange Online との間で **SMTP 経由で**メールを送受信する組織は、**2026 年 3 月 22 日までに**、サーバーとクライアントが **DigiCert Global Root G2 認証局 (Certificate Authority (以降、CA)) およびその下位 CA** を信頼するようにする必要があります。
+組織と Exchange Online 間のメール フローの中断を回避するために、Exchange Online との間で **SMTP 経由で**メールを送受信する組織は、サーバーとクライアントが **DigiCert Global Root G2 認証局 (Certificate Authority (以降、CA)) およびその下位 CA** を信頼するようにする必要があります。
 
 ルート CA と下位 CA のチェーンの包括的な一覧は、[Azure 証明機関の詳細](https://learn.microsoft.com/azure/security/fundamentals/azure-certificate-authority-details?tabs=certificate-authority-chains#root-and-subordinate-certificate-authority-chains) のドキュメントおよび [DigiCert ナレッジベース](https://knowledge.digicert.com/general-information/digicert-trusted-root-authority-certificates#otherroots) で確認できます。
 
@@ -128,13 +128,13 @@ OpenSSL を使用して接続する場合 (例: Linux オペレーティング �
 
 #### まとめ
 
-このブログ記事に記載されている手順を **2026 年 3 月 22 日までに** 完了することが非常に重要です。これらの更新を実施しない場合、組織と Exchange Online 間のメール フローに重大な中断が発生する可能性があります。
-
 必要な証明書がインストールされ、最新の状態であることを確認することで、お客様のシステムと Microsoft 365 間の安全で中断のない通信を維持できます。期限後のメール配信に関する潜在的な問題を回避するために、これらの対応を優先的に実施してください。
 
 **備考** Exchange Online をご利用のお客様には、メッセージ センター (MC) にて MC1224565 として本件に関する投稿が公開されています。
 
 *更新履歴*
+
+- **2026/8/18:** DigiCert G1 証明書は引き続き有効であり、失効していないことを説明する注記を追加しました
 - **2026/3/18:** 適切な証明書ストア (ルート証明書ストアと中間証明書ストア) にそれぞれインポートするスクリプト サンプルを追加しました
 - **2026/3/17:** 手順から単一の古い中間証明書への言及を削除しました。新しい証明書バンドルには複数の必要な中間証明書が含まれています
 - **2026/3/16:** 新しい中間証明書が証明書バンドルに含まれるようになったため、オプション 2 (中間証明書の手動ダウンロード) を削除しました

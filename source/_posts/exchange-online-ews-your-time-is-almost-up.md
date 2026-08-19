@@ -1,7 +1,7 @@
 ---
 title: "Exchange Online EWS: 廃止期限が迫っています"
 date: 2026-02-06 12:00
-lastupdate: 2026-08-17
+lastupdate: 2026-08-19
 tags: Exchange Online
 ---
 ※ この記事は、[Exchange Online EWS, Your Time is Almost Up](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
@@ -32,7 +32,7 @@ EWS は [*EWSEnabled* プロパティ](https://learn.microsoft.com/exchange/clie
 | --- | --- | --- |
 | **True** | ・ 許可リストがない場合、すべての EWS が許可<br>・ 許可リストが構成されている場合、リストに含まれるアプリのみ許可 | ・ 許可リスト内のアプリのみ許可<br>・ [クロステナントの組織の関係における EWS トラフィック](/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/)は許可 |
 | **False** | すべての EWS がブロック | すべての EWS がブロック |
-| **Null** | すべての EWS が許可 | すべての EWS が許可 (許可リストは無視) |
+| **Null** | すべての EWS が許可 | ・ 2026 年 10 月から **Null** が **False** に変更<br>・ その後 **Null** に戻した場合、すべての EWS が許可 (許可リストは無視) |
 
 2026 年 10 月 1 日時点で *EWSEnabled* が引き続き **Null** に設定されているテナントでは、展開の進行に伴い、値が **False** に変更されます。その時点で、当該テナント内のすべてのアプリケーションに対して EWS がブロックされます。
 
@@ -122,6 +122,8 @@ EWSEnabled を True に設定した時点が、Null の値を False に変更す
 はい。管理者は許可リストの内容を変更できます。
 
 *変更履歴:*
+
+- **2026/8/18**: 2026 年 10 月以降の EWSEnabled が Null の場合の動作について、表の説明を明確化しました。
 - **2026/8/14**: FAQ に 2 組の質問と回答を追加しました。
 - **2026/8/11**: 本投稿の表に、クロステナントの組織の関係における EWS トラフィックに関する説明を追記しました。
 - **2026/7/21**: 本投稿の表にある [2026 年 10 月以前] の部分に EWSEnabled=True かつ許可リストが定義されている場合は、許可リストに登録されたアプリのみが EWS を利用できることを明確に記載しました。
