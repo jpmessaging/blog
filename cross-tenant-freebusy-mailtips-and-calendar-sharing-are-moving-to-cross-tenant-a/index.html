@@ -122,8 +122,8 @@
       <div class="article-share">
         Last Update:
         <a href="/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/" class="article-date-single">    
-    
-    <time datetime="2026-08-10T06:00:00.000Z" itemprop="dateUpdated">2026-08-10</time>
+        
+    <time datetime="2026-08-18T15:00:00.000Z" itemprop="lastupdate">2026-08-19</time>    
     
 </a>
       </div>
@@ -209,14 +209,20 @@
 <p><strong>自組織だけが新しいモデルへ移行したが、共有先の組織が設定しなかった場合はどうなりますか。</strong><br>双方向に共有する場合は、両方の組織で Microsoft 365 クロステナント アクセス ポリシーを設定し、従来の共有設定を無効にする必要があります。これらの対応が完了すると、双方向の共有が機能します。<br>一方で、一方向の共有の場合は、リソース テナント (空き時間情報、予定表、メール ヒントの情報を持つメールボックスが存在するテナント) だけが Microsoft 365 クロステナント アクセス ポリシーを設定する必要があります。設定後、ホーム テナント (共有情報を参照するユーザーが存在するテナント) のユーザーは共有情報にアクセスできるようになります。なお、新しい方式で共有を利用するためには、双方の組織で従来の共有設定を無効化する必要があります。従来の共有設定が有効なままだと、共有要求が新しいクロステナント アクセス ポリシーを経由して処理されません。</p>
 <p><strong>自組織では EWS の延長を設定していても、共有先組織では延長を設定しておらず、EWS の廃止開始までに移行を完了できなかった場合はどうなりますか。</strong><br>共有先組織で EWS が無効化されると、自組織のユーザーは共有先組織から共有された情報にアクセスできなくなります。一方、共有先組織のユーザーは、引き続き自組織から共有された情報にアクセスできます。</p>
 <p><strong>共有ポリシーのドメインにワイルドカードを指定しています。移行は必要ですか。</strong><br>はい。<code>CalendarSharingFreeBusy</code> アクセス レベルが <code>Simple</code>、<code>Detail</code>、<code>Reviewer</code> のいずれかであれば、移行が必要です。</p>
+<p><strong>既定の共有ポリシーにワイルドカード ドメイン (<code>&#123;*:0&#125;</code>) を定義していますが、外部との予定表共有を禁止するため <code>Enabled: False</code> に設定しています。このポリシーを移行する必要はありますか。</strong><br>対応は必要ありません。Microsoft 365 クロステナント アクセス ポリシーを構成しない場合の動作は、既定の共有ポリシーを無効にしている場合と同じです。</p>
 <p><strong>同じ提携先テナントに複数のドメインが存在する場合、それぞれに対して設定が必要ですか。</strong><br>提携先の複数のドメインが同一の Microsoft 365 テナント ID に属している場合は、そのテナント ID に対して 1 つの Microsoft 365 クロステナント アクセス ポリシーを設定するだけで対応できます。<br>そのテナント ID に関連付けられているすべてのドメインが、そのポリシーの対象となります。</p>
 <p><strong>Google Workspace との Google&#x2F;Exchange カレンダー連携のために可用性アドレス空間を設定している場合はどうなりますか。</strong><br>この変更の影響は受けません。Exchange Online のユーザーは、これまでどおり可用性アドレス空間の構成を利用して、引き続き Google Workspace ユーザーの予定表情報を参照できます。Google Workspace のユーザーも、これまでどおり Microsoft Graph API を利用して Exchange Online ユーザーの予定表情報を参照できます。ただし、Google Workspace から Exchange Online への接続には、従来の EWS 接続方式ではなく Microsoft Graph API を使用するよう設定してください。詳しくは「<a target="_blank" rel="noopener" href="https://knowledge.workspace.google.com/admin/sync/allow-calendar-users-to-see-exchange-availability">Allow Google Calendar users to see Exchange availability</a>」を参照してください。</p>
-<p><strong>商用クラウド (一般的な Microsoft 365 テナント) と 21Vianet クラウドの間で空き時間情報を共有するために可用性アドレス空間を設定している場合はどうなりますか。</strong><br>この変更の影響を受けるため、Microsoft 365 クロステナント アクセス ポリシーへ設定を移行してください。</p>
+<p><strong>商用クラウド (一般的な Microsoft 365 テナント) と 21Vianet クラウドの間で空き時間情報を共有するために可用性アドレス空間を設定している場合はどうなりますか。</strong><br><code>AccessMethod</code> に <code>OrgWideFBToken</code> を使用する可用性アドレス空間の構成は Exchange Web Services に依存していないため、EWS の廃止前に移行する必要はありません。追加のセキュリティ機能と、より細かな構成オプションを利用できる Microsoft 365 クロステナント アクセス ポリシーへの移行を検討してください。</p>
+<p><em>更新履歴</em></p>
+<ul>
+<li><strong>2026&#x2F;8&#x2F;18</strong>: 21Vianet クラウドとの可用性アドレス空間による共有に関する FAQ を更新しました。</li>
+<li><strong>2026&#x2F;8&#x2F;10</strong>: 無効に設定された既定の共有ポリシーは移行不要であることを明確にする FAQ を追加しました。</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/" data-id="cmswom5ba005n482ahe2tc9kb" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/" data-id="cmszplw0t005ovg2aho6n05xo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
