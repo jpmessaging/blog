@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Online の新しいメッセージ追跡の一般提供 (GA) を発表'
 date: 2025-06-04
-lastupdate: 2026-8-19
+lastupdate: 2026-08-19
 tags: 'Exchange Online'
 ---
 
