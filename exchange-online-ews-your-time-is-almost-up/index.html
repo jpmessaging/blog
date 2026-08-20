@@ -125,7 +125,7 @@
         Last Update:
         <a href="/blog/exchange-online-ews-your-time-is-almost-up/" class="article-date-single">    
         
-    <time datetime="2026-08-18T15:00:00.000Z" itemprop="lastupdate">2026-08-19</time>    
+    <time datetime="2026-08-19T15:00:00.000Z" itemprop="lastupdate">2026-08-20</time>    
     
 </a>
       </div>
@@ -155,8 +155,8 @@
 </thead>
 <tbody><tr>
 <td><strong>True</strong></td>
-<td>・ 許可リストがない場合、すべての EWS が許可<br>・ 許可リストが構成されている場合、リストに含まれるアプリのみ許可</td>
-<td>・ 許可リスト内のアプリのみ許可<br>・ <a href="/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/">クロステナントの組織の関係における EWS トラフィック</a>は許可</td>
+<td>・ AppID 許可リストがない場合、すべての EWS が許可<br>・ AppID 許可リストが構成されている場合、リストに含まれるアプリのみ許可</td>
+<td>・ AppID 許可リスト内のアプリのみ許可<br>・ <a href="/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/">クロステナントの組織の関係における EWS トラフィック</a>は許可</td>
 </tr>
 <tr>
 <td><strong>False</strong></td>
@@ -166,7 +166,7 @@
 <tr>
 <td><strong>Null</strong></td>
 <td>すべての EWS が許可</td>
-<td>・ 2026 年 10 月から <strong>Null</strong> が <strong>False</strong> に変更<br>・ その後 <strong>Null</strong> に戻した場合、すべての EWS が許可 (許可リストは無視)</td>
+<td>・ 2026 年 10 月から <strong>Null</strong> が <strong>False</strong> に変更<br>・ その後 <strong>Null</strong> に戻した場合、すべての EWS が許可 (AppID 許可リストは無視)</td>
 </tr>
 </tbody></table>
 <p>2026 年 10 月 1 日時点で <em>EWSEnabled</em> が引き続き <strong>Null</strong> に設定されているテナントでは、展開の進行に伴い、値が <strong>False</strong> に変更されます。その時点で、当該テナント内のすべてのアプリケーションに対して EWS がブロックされます。</p>
@@ -219,6 +219,7 @@ EWSEnabled はテナント レベルとユーザー レベルの設定があり�
 <p><strong>Microsoft が 9 月にテナントの許可リストを自動作成した場合、管理者はその後 PowerShell を使用してリストを上書きしたり、項目を追加したりできますか？</strong><br>はい。管理者は許可リストの内容を変更できます。</p>
 <p><em>変更履歴:</em></p>
 <ul>
+<li><strong>2026&#x2F;8&#x2F;19</strong>: 表内の許可リストが <a href="/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/">EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える</a> で説明している AppID 許可リストを指すことを明確化しました。</li>
 <li><strong>2026&#x2F;8&#x2F;18</strong>: 2026 年 10 月以降の EWSEnabled が Null の場合の動作について、表の説明を明確化しました。</li>
 <li><strong>2026&#x2F;8&#x2F;14</strong>: FAQ に 2 組の質問と回答を追加しました。</li>
 <li><strong>2026&#x2F;8&#x2F;11</strong>: 本投稿の表に、クロステナントの組織の関係における EWS トラフィックに関する説明を追記しました。</li>
@@ -231,7 +232,7 @@ EWSEnabled はテナント レベルとユーザー レベルの設定があり�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/" data-id="cmszplw18006fvg2aez282tkq" class="article-share-link">Share</a>
+      <a data-url="https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/" data-id="cmt0xb6q7006f7k2a25w80coq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
@@ -273,7 +274,7 @@ EWSEnabled はテナント レベルとユーザー レベルの設定があり�
   <div class="widget-wrap">
     <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">70</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">71</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -284,6 +285,10 @@ EWSEnabled はテナント レベルとユーザー レベルの設定があり�
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/blog/understanding-the-new-100-gb-mailbox-entitlement-for-microsoft-365-business-suit/">Microsoft 365 Business スイートのメールボックス容量が最大 100 GB になる仕組み</a>
+          </li>
         
           <li>
             <a href="/blog/where-is-exchange-se-cu1-anyway/">Exchange SE CU1 の行方は？</a>
@@ -301,10 +306,6 @@ EWSEnabled はテナント レベルとユーザー レベルの設定があり�
             <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/">クラウド管理のリモート メールボックス向けの書き戻しが一般提供になりました</a>
           </li>
         
-          <li>
-            <a href="/blog/reminder-exchange-2016-and-2019-esu-program-ends-in-october-2026/">リマインダー: Exchange Server 2016/2019 の ESU プログラムが 2026 年 10 月に終了</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -319,7 +320,7 @@ EWSEnabled はテナント レベルとユーザー レベルの設定があり�
         
           <li class="archive-list-item">
             <a class="archive-list-link" href="/blog/archives/2026/08/">2026/08</a>
-            <span class="archive-list-count">4</span>
+            <span class="archive-list-count">5</span>
           </li>
         
           <li class="archive-list-item">

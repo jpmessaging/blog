@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Microsoft 365 Business スイートのメールボックス容量が最大 100 GB になる仕組み | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="※ この記事は、Understanding the new 100 GB mailbox entitlement for Microsoft 365 Business suites の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Microsoft 365 Bu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Microsoft 365 Business スイートのメールボックス容量が最大 100 GB になる仕組み">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/understanding-the-new-100-gb-mailbox-entitlement-for-microsoft-365-business-suit/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Understanding the new 100 GB mailbox entitlement for Microsoft 365 Business suites の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Microsoft 365 Bu">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/understanding-the-new-100-gb-mailbox-entitlement-for-microsoft-365-business-suit/microsoft-365-admin-center-license-and-add-on.png">
+<meta property="article:published_time" content="2026-08-19T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-19T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/understanding-the-new-100-gb-mailbox-entitlement-for-microsoft-365-business-suit/microsoft-365-admin-center-license-and-add-on.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-understanding-the-new-100-gb-mailbox-entitlement-for-microsoft-365-business-suit" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/understanding-the-new-100-gb-mailbox-entitlement-for-microsoft-365-business-suit/" class="article-date">
+  <time datetime="2026-08-19T15:00:00.000Z" itemprop="datePublished">2026-08-20</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Microsoft 365 Business スイートのメールボックス容量が最大 100 GB になる仕組み
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/understanding-the-new-100-gb-mailbox-entitlement-for-microsoft-365-business-suit/" class="article-date-single">    
+    
+    <time datetime="2026-08-19T15:00:00.000Z" itemprop="dateUpdated">2026-08-20</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/understanding-the-new-100-gb-mailbox-entitlement-for-microsoft-365-business-suit/4548243">Understanding the new 100 GB mailbox entitlement for Microsoft 365 Business suites</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>Microsoft 365 Business Basic、Business Standard、Business Premium では、対象ユーザーが利用できるプライマリ メール ストレージが 50 GB 追加されました。これにより、サポートされるプライマリ メールボックスの容量は 50 GB から最大 100 GB になります。この記事では、Exchange Online の管理者向けに、このメールボックス容量の増加がどのように提供されるかを説明します。ここではメールボックスの容量だけを取り上げます。</p>
+<h2 id="Business-スイートの変更点"><a href="#Business-スイートの変更点" class="headerlink" title="Business スイートの変更点"></a>Business スイートの変更点</h2><p>Microsoft は、2026 年の Microsoft 365 パッケージ更新の一環として、Microsoft 365 Business Basic、Business Standard、Business Premium のメール ストレージを 50 GB 追加することを<a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/licensing/news/2026-M365-Packaging-Pricing-Updates">発表しました</a>。パッケージの変更は 2026 年 6 月から 9 月にかけて展開され、テナントで変更が利用可能になる前に、メッセージ センターを通じて事前に通知されます。</p>
+<p>ストレージの追加により、対象となる Business スイート ユーザーの有効なプライマリ メールボックス容量は 50 GB から 100 GB に変わります。対象となる法人向け製品スイートは次のとおりです。</p>
+<ul>
+<li>Microsoft 365 Business Basic</li>
+<li>Microsoft 365 Business Standard</li>
+<li>Microsoft 365 Business Premium</li>
+</ul>
+<p>展開後、該当するライセンスが割り当てられているすべてのユーザーに、新しいサービス プランと、それに対応するメールボックス クォータの増加が適用されます。</p>
+<p>このメールボックス容量の増加は、上記のスイート ライセンスだけに適用される点に注意してください。スタンドアロンの Exchange Online Plan 1 など、メールボックスの最大容量が引き続き 50 GB となるライセンスもあります。</p>
+<h2 id="サポートされるクォータ"><a href="#サポートされるクォータ" class="headerlink" title="サポートされるクォータ"></a>サポートされるクォータ</h2><p>追加のストレージにより、対象となる Business スイートでは、有効なクォータの上限が 100 GB になります。</p>
+<ul>
+<li>適用される Exchange メールボックス プランのうち、Business スイートのプランが最上位であるユーザーは、ストレージ アドオンがある場合、有効なクォータが 100 GB になります。</li>
+<li>100 GB のメールボックスを提供する Enterprise ライセンスまたはスタンドアロンの Exchange ライセンスも割り当てられているユーザーは、引き続き 100 GB を利用できます。</li>
+<li>複数の Exchange サービス プランを含む複数のライセンスが割り当てられている場合 (これは<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/introducing-support-for-concurrent-exchange-online-license-assignments/3721098">同時ライセンス</a>と呼ばれます)、1 つの製品が提供する最大クォータが適用されます。製品をまたいでクォータが加算されることはありません。例えば、Business スイートのいずれかと、Exchange Online Plan 2 を含む別の Enterprise ライセンスが割り当てられているユーザーが利用できる容量は、引き続き 100 GB です。Business スイートのクォータ増加は、基本のメールボックス容量だけに適用されます。アーカイブ機能は提供されません。</li>
+</ul>
+<h2 id="追加クォータの実装方法"><a href="#追加クォータの実装方法" class="headerlink" title="追加クォータの実装方法"></a>追加クォータの実装方法</h2><p>Business スイートでは、次のサービス プランの組み合わせによってストレージの合計容量が提供されます。</p>
+<ul>
+<li>Business スイートの Exchange プランは BPOS_S_STANDARD で表され、50 GB のストレージが付与されます。</li>
+<li>追加の権利は EXCHANGE_STORAGE_50GB サービス プランで表されます。このプランによって 50 GB が追加され、合計クォータは 100 GB になります。</li>
+</ul>
+<p>ユーザーが 100 GB の全容量を利用するには、両方のプランが有効になっている必要があります。</p>
+<p>Microsoft 365 管理センターでは、次のように「標準」のライセンスとアドオンが表示されます。</p>
+<p><img src="/blog/understanding-the-new-100-gb-mailbox-entitlement-for-microsoft-365-business-suit/microsoft-365-admin-center-license-and-add-on.png"></p>
+<h2 id="カスタム-メールボックス-クォータの維持"><a href="#カスタム-メールボックス-クォータの維持" class="headerlink" title="カスタム メールボックス クォータの維持"></a>カスタム メールボックス クォータの維持</h2><p>管理者がカスタム メールボックス クォータを設定している場合、ストレージを追加する処理によってその設定が上書きされることはありません。同様に、アドオンを削除しても、後から管理者が設定したカスタム値に代わる値は設定されません。これにより、テナントのメールボックスを管理するために意図して設定した値が保護されます。</p>
+<p>例えば、管理者が Business スイート ユーザーのメールボックスを、元の既定値である 50 GB から 20 GB に変更していた場合、追加のサービス プランが割り当てられた後も、そのユーザーのクォータは 20 GB のままです。</p>
+<h2 id="ユーザーのライセンスとサービス-プランの確認"><a href="#ユーザーのライセンスとサービス-プランの確認" class="headerlink" title="ユーザーのライセンスとサービス プランの確認"></a>ユーザーのライセンスとサービス プランの確認</h2><p>Microsoft 365 管理センターで [ユーザー] &gt; [アクティブなユーザー] を開き、ユーザーを選択して [ライセンスとアプリ] を確認します。対象となる Microsoft 365 Business スイートがユーザーに割り当てられ、それに含まれるサービスが有効になっていることを確認してください。[課金情報] &gt; [ライセンス] ページでは、製品が直接割り当てられたか、グループ ベースのライセンスによって割り当てられたかも確認できます。</p>
+<p>Microsoft Graph PowerShell では、サービス プランをさらに詳しく確認できます。次の例では、割り当てられたライセンスの詳細を取得し、ストレージのサービス プランを検索します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$licenses</span> = <span class="built_in">Get-MgUserLicenseDetail</span> <span class="literal">-UserId</span> user@contoso.com</span><br><span class="line"><span class="variable">$licenses</span>.ServicePlans | <span class="built_in">Where-Object</span> ServicePlanName <span class="operator">-eq</span> <span class="string">&quot;EXCHANGE_STORAGE_50GB&quot;</span> | <span class="built_in">Select-Object</span> ServicePlanName, ProvisioningStatus</span><br></pre></td></tr></table></figure>
+
+<h2 id="有効な-Exchange-メールボックス-クォータの確認"><a href="#有効な-Exchange-メールボックス-クォータの確認" class="headerlink" title="有効な Exchange メールボックス クォータの確認"></a>有効な Exchange メールボックス クォータの確認</h2><p>Exchange Online PowerShell では、Exchange がメールボックスに対して提示するクォータ値を確認できます。次に例を示します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-Mailbox</span> <span class="literal">-Identity</span> user@contoso.com | <span class="built_in">Format-List</span> IssueWarningQuota, ProhibitSendQuota, ProhibitSendReceiveQuota, UseDatabaseQuotaDefaults</span><br></pre></td></tr></table></figure>
+
+<p>追加のストレージ サービス プランがあり、カスタム クォータが設定されていない対象の Business スイート ユーザーでは、有効なメールボックス クォータの上限が 100 GB になります。</p>
+<h2 id="一般的なライセンスとクォータのシナリオ"><a href="#一般的なライセンスとクォータのシナリオ" class="headerlink" title="一般的なライセンスとクォータのシナリオ"></a>一般的なライセンスとクォータのシナリオ</h2><ul>
+<li>Business スイートと 50 GB のストレージ アドオン : ユーザーの有効なプライマリ メールボックス容量の上限は 100 GB です。</li>
+<li>Business スイートのみで 50 GB のストレージ アドオンがない場合 : 追加のサービス プランがプロビジョニングされるまで、Business メールボックスの基本クォータが引き続き適用されます。サービス プランは自動的にプロビジョニングされる予定です。</li>
+<li>Business スイートと、既に 100 GB を付与する Enterprise プランまたはスタンドアロン プラン : Exchange ではクォータを加算せず、適用される最上位の権利が使用されるため、有効な上限は 100 GB のままです。</li>
+<li>Business スイートと、下位の Exchange 機能 (F3 ライセンスなど) : Business プランが最上位の機能となるため、アドオンによって有効な上限を 100 GB に増やすことができます。</li>
+<li>カスタム クォータ : 管理者が設定した値が引き続き適用され、50 GB を自動的に追加する処理によって置き換えられることはありません。</li>
+<li>50 GB のアドオンを明示的に削除した場合 : 既定のプラン クォータを使用するメールボックスでは、Exchange によって該当するプランの既定値に戻されます。管理者が設定したカスタム値は、そのまま維持されます。</li>
+</ul>
+<h2 id="展開とライセンスの反映"><a href="#展開とライセンスの反映" class="headerlink" title="展開とライセンスの反映"></a>展開とライセンスの反映</h2><p>追加のストレージはライセンス データによって表されるため、Exchange がより大きな有効クォータを返すには、サービス プランが割り当てられ、処理されている必要があります。大規模なサービス プランの展開やバックフィル処理の間は、同じ組織内でも、すべてのユーザーに変更が同時に反映されるとは限りません。一部のユーザーにはメールボックス容量の 50 GB 追加が反映され、ほかのユーザーには反映されていない場合があります。対象となる Business スイート ライセンスが割り当てられていれば、この状態は自動的に解消される見込みです。</p>
+<p>Microsoft サポートから明示的に案内された場合を除き、クォータを強制的に更新する目的だけで Exchange ライセンスを削除して再割り当て<em>しないでください</em>。<strong>製品ライセンスを削除すると、そのサービスにアクセスできなくなり、該当するデータ保持ライフサイクルが開始されます。</strong> 通常のライセンス割り当てプロセスを引き続き使用してください。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/understanding-the-new-100-gb-mailbox-entitlement-for-microsoft-365-business-suit/" data-id="cmt0xb6rf00a47k2a6y129df0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/where-is-exchange-se-cu1-anyway/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange SE CU1 の行方は？</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">72</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">71</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/understanding-the-new-100-gb-mailbox-entitlement-for-microsoft-365-business-suit/">Microsoft 365 Business スイートのメールボックス容量が最大 100 GB になる仕組み</a>
+          </li>
+        
+          <li>
+            <a href="/blog/where-is-exchange-se-cu1-anyway/">Exchange SE CU1 の行方は？</a>
+          </li>
+        
+          <li>
+            <a href="/blog/released-august-2026-exchange-server-security-updates/">2026 年 8 月の Exchange Server のセキュリティ更新プログラムが公開されました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/">クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行</a>
+          </li>
+        
+          <li>
+            <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/">クラウド管理のリモート メールボックス向けの書き戻しが一般提供になりました</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/08/">2026/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/07/">2026/07</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
