@@ -1,7 +1,7 @@
 ---
 title: "Exchange Online EWS: 廃止期限が迫っています"
 date: 2026-02-06 12:00
-lastupdate: 2026-08-20
+lastupdate: 2026-08-25
 tags: Exchange Online
 ---
 ※ この記事は、[Exchange Online EWS, Your Time is Almost Up](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
@@ -30,7 +30,7 @@ EWS は [*EWSEnabled* プロパティ](https://learn.microsoft.com/exchange/clie
 
 | **EWSEnabled の値** | **2026 年 10 月以前** | **2026 年 10 月以降** |
 | --- | --- | --- |
-| **True** | ・ AppID 許可リストがない場合、すべての EWS が許可<br>・ AppID 許可リストが構成されている場合、リストに含まれるアプリのみ許可 | ・ AppID 許可リスト内のアプリのみ許可<br>・ [クロステナントの組織の関係における EWS トラフィック](/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/)は許可 |
+| **True** | ・ AppID 許可リストがない場合、すべての EWS が許可<br>・ AppID 許可リストに AppID が登録されている場合、リストに含まれるアプリのみ許可<br>・ AppID 許可リストが構成されていても、エントリがない場合はすべての EWS が許可 | ・ AppID 許可リスト内のアプリのみ許可<br>・ AppID 許可リストが構成されていても、エントリがない場合はすべての EWS がブロック<br>・ いずれの場合も、[クロステナントの組織の関係における EWS トラフィック](/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/)は許可 |
 | **False** | すべての EWS がブロック | すべての EWS がブロック |
 | **Null** | すべての EWS が許可 | ・ 2026 年 10 月から **Null** が **False** に変更<br>・ その後 **Null** に戻した場合、すべての EWS が許可 (AppID 許可リストは無視) |
 
@@ -123,6 +123,7 @@ EWSEnabled を True に設定した時点が、Null の値を False に変更す
 
 *変更履歴:*
 
+- **2026/8/24**: 表内の許可リストが [EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える](/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/) で説明している AppID 許可リストを指すことを明確化しました。
 - **2026/8/19**: 表内の許可リストが [EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える](/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/) で説明している AppID 許可リストを指すことを明確化しました。
 - **2026/8/18**: 2026 年 10 月以降の EWSEnabled が Null の場合の動作について、表の説明を明確化しました。
 - **2026/8/14**: FAQ に 2 組の質問と回答を追加しました。
