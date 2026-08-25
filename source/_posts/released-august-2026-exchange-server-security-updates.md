@@ -1,6 +1,7 @@
 ---
 title: "2026 年 8 月の Exchange Server のセキュリティ更新プログラムが公開されました"
 date: 2026-08-12
+lastupdate: 2026-08-25
 tags:
 - Exchange
 ---
@@ -41,6 +42,7 @@ Exchange Server 2016 および 2019 は[サポートが終了](/blog/support-for
 ### このリリースの既知の問題
 
 - [Wrapper messages appear in shared mailbox inbox in hybrid environments | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/hotfix/2026/5105719) - 今後の更新プログラムで対応予定です。
+- 複数の Exchange Server で構成され、受信 MRS 接続をプロキシするフロントエンド サーバーと、メールボックスをホストするバックエンド サーバーが異なる環境で、バックエンド サーバーには 2026 年 8 月の SU がインストールされているものの、フロントエンド サーバーが以前のバージョンのままである場合、MRS 移行が `TooManyTransientFailureRetriesPermanentException` エラーで失敗することがあります。この問題は、`Test-MigrationServerAvailability` を含むすべての MRS 要求で発生する可能性があります。フロントエンド サーバーに 2026 年 8 月の SU をインストールすると、この問題は解決する見込みです。
 
 ### 更新プログラムのインストール
 
@@ -70,4 +72,6 @@ Exchange Server 2016 および 2019 は現在[サポートが終了](/blog/suppo
 
 <p style="background: #f0f0f0">本記事公開時点では、関連するドキュメントが完全には利用できない場合があります。</p>
 
-この記事は今後更新される可能性があります。更新があればここに記載します。
+**この記事の重要な更新:**
+
+- 2026 年 8 月 24 日: すべてのサーバーに 2026 年 8 月の更新プログラムがまだ適用されていない場合に MRS 移行で発生する可能性がある既知の問題を追加しました。
