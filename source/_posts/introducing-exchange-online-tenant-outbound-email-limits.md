@@ -1,7 +1,7 @@
 ---
 title: 'Exchange Online テナントの外部送信メール制限の導入'
 date: 2025-02-26
-lastupdate: 2026-08-17
+lastupdate: 2026-08-26
 tags: Exchange Online
 ---
 ※ この記事は、[Introducing Exchange Online Tenant Outbound Email Limits](https://techcommunity.microsoft.com/blog/exchange/introducing-exchange-online-tenant-outbound-email-limits/4372797) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
@@ -21,7 +21,7 @@ tags: Exchange Online
 
 TERRL は GCC、GCCH、DoD、および 21Vianet 環境へのロールアウトが延期されています。日程が確定した後にお知らせします。
 
-サービスのテレメトリ情報に基づくと、ほとんどの Exchange Online ユーザーには影響がありません。組織が制限を超えて外部受信者にメールを送信する必要がある場合は、外部受信者へのバルク メールまたは高ボリュームのメール送信のために [Azure Communication Services email](https://learn.microsoft.com/azure/communication-services/concepts/email/email-overview) を使用するか、送信量に見合う追加ライセンスを購入することをお勧めします。
+サービスのテレメトリ情報に基づくと、ほとんどの Exchange Online ユーザーには影響がありません。組織が制限を超える数の外部受信者にメールを送信する必要がある場合は、専用の大量メール送信ソリューションを使用するか、送信量に見合う追加の Exchange Online ライセンスを購入することをお勧めします。
 
 ## 詳細情報
 
