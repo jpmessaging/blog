@@ -11,7 +11,7 @@ tags:
 
 Exchange Server の空き時間情報に関するほとんどのシナリオは変わりません。2 つの Exchange Server 組織 (完全なオンプレミス環境) 間の空き時間情報共有では、引き続きフェデレーション / DAuth と組織の関係を使用します。Exchange ハイブリッド組織では、専用の [Exchange ハイブリッド アプリ](https://learn.microsoft.com/exchange/hybrid-deployment/deploy-dedicated-hybrid-app) を通じて OAuth と IntraOrganizationConnector を使用することで、Exchange Server と同じ組織の Exchange Online テナントとの間で空き時間情報を引き続き共有できます。モダン ハイブリッド フローでは、EWS が Graph に置き換わります。
 
-新たな経路が必要になるのは、EWS に依存する組織の関係を介して、<strong><span style="color:#169179;">Exchange Server 組織が別組織の Exchange Online テナントから空き時間情報またはメール ヒントを取得する</span></strong>シナリオです。Exchange Server から外部の Exchange Online へのこのシナリオでは、[Microsoft 365 クロステナント アクセス ポリシー](https://learn.microsoft.com/exchange/sharing/migrate-to-m365-xtap) の利用を検討しています。このポリシーは、Microsoft 365 テナント間で空き時間情報、予定表、メール ヒントを共有するための標準にもなりつつあります。
+新たな仕組みが必要になるのは、EWS に依存する組織の関係を介して、<strong><span style="color:#169179;">Exchange Server 組織が別組織の Exchange Online テナントから空き時間情報またはメール ヒントを取得する</span></strong>シナリオです。Exchange Server から外部の Exchange Online へのこのシナリオでは、[Microsoft 365 クロステナント アクセス ポリシー](https://learn.microsoft.com/exchange/sharing/migrate-to-m365-xtap) の利用を検討しています。このポリシーは、Microsoft 365 テナント間で空き時間情報、予定表、メール ヒントを共有するための標準的な方法として利用が進んでいます。
 
 方針を確定する前に、お客様やパートナーの皆さま、特に既存の Microsoft 365 テナントを持たずに Exchange Server を運用している組織からのフィードバックを募集します。
 
