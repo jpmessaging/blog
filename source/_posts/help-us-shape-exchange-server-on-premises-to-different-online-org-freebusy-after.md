@@ -2,7 +2,7 @@
 title: EWS 廃止後の Exchange Server から別組織の Exchange Online への空き時間情報共有に関するご意見を募集
 date: 2026-08-26
 tags:
-- Exchange Server
+- Exchange
 - Exchange Online
 ---
 ※ この記事は、[Help us shape Exchange Server on-premises to different online org Free/Busy after EWS retirement](https://techcommunity.microsoft.com/blog/exchange/help-us-shape-exchange-server-on-premises-to-different-online-org-freebusy-after/4549691) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
