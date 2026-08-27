@@ -1,6 +1,6 @@
 ---
 title: GitHub Copilot を使って EWS アプリを Microsoft Graph に移行してみた
-date: 2026-08-26
+date: 2026-08-27
 tags:
 - Exchange Online
 - Microsoft 365 Developer
@@ -115,7 +115,7 @@ $response = Invoke-RestMethod -Method Get -Uri $messagesUri -Headers @{
 } -ErrorAction Stop
 ```
 
-検証環境では、生成されたコードのまま実行すると、EWS 版と Graph 版の受信日時に 9 時間の差がありました。日時の扱いを次のように 1 行調整したところ、同じ結果になりました。
+検証環境では、生成されたコードのまま実行すると、EWS 版と Microsoft Graph 版の受信日時に 9 時間の差がありました。日時の扱いを次のように 1 行調整したところ、同じ結果になりました。
 
 ```powershell
 ReceivedDateTime = ([datetimeoffset]$_.receivedDateTime).UtcDateTime
@@ -161,7 +161,7 @@ Microsoft Graph 版でも、受信トレイの最新 10 件が `ReceivedDateTime
 
 変換前後を並べると、違いは次のようになります。
 
-| 項目 | EWS 版 | Graph 版 |
+| 項目 | EWS 版 | Microsoft Graph 版 |
 |---|---|---|
 | スクリプトのパラメーター | Tenant ID、Client ID、Client Secret、Mailbox | 同じ |
 | 取得するメール | 受信トレイの最新 10 件 | 同じ |
