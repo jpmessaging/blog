@@ -15,6 +15,7 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.repository == 'jpmessaging/blog'
     runs-on: ubuntu-latest
 
     steps:
