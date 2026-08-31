@@ -1,7 +1,7 @@
 ---
 title: クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行
 date: 2026-08-10 15:00:00 
-lastupdate: 2026-08-19
+lastupdate: 2026-08-31
 tags:
 - Exchange Online
 ---
@@ -61,16 +61,22 @@ Get-SharingPolicy | Format-List Name, Domains, Enabled, Default
 
 最後の確認には注意点があります。`Anonymous:` で始まるルールは、インターネット上に公開した URL を利用して予定表を匿名ユーザーへ共有するための設定を表します。この `Anonymous:` で始まるルールに対しても `CalendarSharingFreeBusy` アクセス レベルが `Simple`、`Detail`、`Reviewer` のいずれかに設定されている場合は、この変更の影響を受けます。
 
+`AccessMethod` が `OrgWideFBToken` に設定された可用性アドレス空間を使用して、Microsoft 365 でホストされている別の組織と空き時間情報を共有している場合、この構成は Exchange Web Services に依存していないため、EWS の廃止による影響を受けません。ただし、追加のセキュリティ機能と、より細かな構成オプションを利用できる Microsoft 365 クロステナント アクセス ポリシーへの移行を検討してください。可用性アドレス空間の構成は、次のコマンドで確認できます。
+
+```powershell
+Get-AvailabilityAddressSpace | Format-List ForestName, AccessMethod
+```
+
 ### クロステナント アクセス ポリシーの展開スケジュール
 
 この機能は 2026 年 9 月から順次利用可能になります。そのため、利用中の環境への展開が完了すると、移行作業を開始できます。展開スケジュールは次のとおりです。
 
 | **環境** | **展開開始** | **完了予定** |
 | --- | --- | --- |
-| **Worldwide** | 2026 年 8 月 | 2026 年 9 月 1 日 |
-| **GCC** | 2026 年 8 月中旬 | 2026 年 9 月中旬 |
-| **GCC High** | 2026 年 9 月上旬 | 2026 年 9 月末 |
-| **DoD** | 2026 年 9 月上旬 | 2026 年 9 月末 |
+| **Worldwide** | 2026 年 8 月 | 2026 年 9 月 15 日 |
+| **GCC** | 2026 年 9 月上旬 | 2026 年 9 月 30 日 |
+| **GCC High** | 2026 年 9 月上旬 | 2026 年 9 月 30 日 |
+| **DoD** | 2026 年 9 月上旬 | 2026 年 10 月 30 日 |
 
 ### 何も対応しなかった場合の影響
 
@@ -124,9 +130,10 @@ Get-SharingPolicy | Format-List Name, Domains, Enabled, Default
 この変更の影響は受けません。Exchange Online のユーザーは、これまでどおり可用性アドレス空間の構成を利用して、引き続き Google Workspace ユーザーの予定表情報を参照できます。Google Workspace のユーザーも、これまでどおり Microsoft Graph API を利用して Exchange Online ユーザーの予定表情報を参照できます。ただし、Google Workspace から Exchange Online への接続には、従来の EWS 接続方式ではなく Microsoft Graph API を使用するよう設定してください。詳しくは「[Allow Google Calendar users to see Exchange availability](https://knowledge.workspace.google.com/admin/sync/allow-calendar-users-to-see-exchange-availability)」を参照してください。
 
 **商用クラウド (一般的な Microsoft 365 テナント) と 21Vianet クラウドの間で空き時間情報を共有するために可用性アドレス空間を設定している場合はどうなりますか。**  
-`AccessMethod` に `OrgWideFBToken` を使用する可用性アドレス空間の構成は Exchange Web Services に依存していないため、EWS の廃止前に移行する必要はありません。追加のセキュリティ機能と、より細かな構成オプションを利用できる Microsoft 365 クロステナント アクセス ポリシーへの移行を検討してください。
+`AccessMethod` に `OrgWideFBToken` を使用する可用性アドレス空間の構成は Exchange Web Services に依存していないため、EWS の廃止による影響を受けません。ただし、追加のセキュリティ機能と、より細かな構成オプションを利用できる Microsoft 365 クロステナント アクセス ポリシーへの移行を検討してください。
 
 *更新履歴*
 
+- **2026/8/28**: 展開スケジュールの変更や複数の補足など、記事のさまざまな箇所を更新しました。
 - **2026/8/18**: 21Vianet クラウドとの可用性アドレス空間による共有に関する FAQ を更新しました。
 - **2026/8/10**: 無効に設定された既定の共有ポリシーは移行不要であることを明確にする FAQ を追加しました。
