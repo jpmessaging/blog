@@ -1,7 +1,7 @@
 ---
 title: "2026 年 8 月の Exchange Server のセキュリティ更新プログラムが公開されました"
 date: 2026-08-12
-lastupdate: 2026-08-26
+lastupdate: 2026-08-31
 tags:
 - Exchange
 ---
@@ -43,7 +43,8 @@ Exchange Server 2016 および 2019 は[サポートが終了](/blog/support-for
 
 - [Wrapper messages appear in shared mailbox inbox in hybrid environments | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/hotfix/2026/5105719) - 今後の更新プログラムで対応予定です。
 - 複数の Exchange Server で構成され、受信 MRS 接続をプロキシするフロントエンド サーバーと、メールボックスをホストするバックエンド サーバーが異なる環境で、バックエンド サーバーには 2026 年 8 月の SU がインストールされているものの、フロントエンド サーバーが以前のバージョンのままである場合、MRS 移行が `TooManyTransientFailureRetriesPermanentException` エラーで失敗することがあります。この問題は、`Test-MigrationServerAvailability` を含むすべての MRS 要求で発生する可能性があります。フロントエンド サーバーに 2026 年 8 月の SU をインストールすると、この問題は解決する見込みです。
-- 2026 年 8 月の SU をインストールすると、匿名で公開された Exchange カレンダーの購読内容が更新されなくなります。購読に使用しているアプリケーションではサーバー エラーが報告され、URL は HTTP 500 エラーを返します。同じ公開カレンダーの URL を Web ブラウザーで開くと、通常どおりカレンダーが表示されます。回避策として、購読時に `.ics` リンクへ `?layout=premium` を追加してください (URL の末尾は `calendar.ics?layout=premium` のようになります)。
+- [予定表アプリケーションで公開済みの予定表 (.ics) を開くと HTTP 500 エラーが返される | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/update/2026/5126672)
+- [Graph API のみを使用する Exchange ハイブリッド展開で、委任されたメールボックスの空き時間情報の取得に失敗する | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/update/2026/5127092)
 
 ### 更新プログラムのインストール
 
@@ -75,5 +76,7 @@ Exchange Server 2016 および 2019 は現在[サポートが終了](/blog/suppo
 
 **この記事の重要な更新:**
 
+- 2026 年 8 月 28 日: 匿名の予定表公開に関する既知の問題を説明する KB 記事へのリンクを追加しました。
+- 2026 年 8 月 28 日: 特定のハイブリッド シナリオで空き時間情報の取得に失敗する既知の問題を追加しました。
 - 2026 年 8 月 25 日: 2026 年 8 月の SU のインストール後に匿名で公開されたカレンダーが更新されなくなる既知の問題と、その回避策を追加しました。
 - 2026 年 8 月 24 日: すべてのサーバーに 2026 年 8 月の更新プログラムがまだ適用されていない場合に MRS 移行で発生する可能性がある既知の問題を追加しました。
