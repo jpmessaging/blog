@@ -1,7 +1,7 @@
 ---
 title: "Exchange Online での ObjectGuid、SamAccountName、DistinguishedName の利用方法をお聞かせください"
 date: 2026-08-31
-lastupdate: 2026-09-02
+lastupdate: 2026-09-03
 tags:
 - Exchange Online
 ---

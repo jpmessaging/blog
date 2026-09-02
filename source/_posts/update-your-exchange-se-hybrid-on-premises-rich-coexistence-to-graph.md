@@ -1,7 +1,7 @@
 ---
 title: "Exchange SE ハイブリッドのオンプレミス リッチ共存を Graph API に移行する方法"
 date: 2026-05-08 10:00
-lastupdate: 2026-09-02
+lastupdate: 2026-09-03
 tags:
 - Exchange
 ---
