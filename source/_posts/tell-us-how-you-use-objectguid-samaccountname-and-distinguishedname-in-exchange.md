@@ -1,12 +1,13 @@
 ---
 title: "Exchange Online での ObjectGuid、SamAccountName、DistinguishedName の利用方法をお聞かせください"
 date: 2026-08-31
+lastupdate: 2026-09-02
 tags:
 - Exchange Online
 ---
 ※ この記事は、[Tell us how you use ObjectGuid, SamAccountName, and DistinguishedName in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/tell-us-how-you-use-objectguid-samaccountname-and-distinguishedname-in-exchange-/4550939) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-Exchange Online では、複数年にわたってディレクトリの最新化を進めています。その一環として、以前から使用されている識別子プロパティである ObjectGuid、SamAccountName、DistinguishedName の今後について検討しています。
+Exchange Online では、複数年にわたってディレクトリの最新化を進めています。その一環として、以前から使用されている識別子プロパティである ObjectGuid (多くの方には Guid というプロパティ名で知られています)、SamAccountName、DistinguishedName の今後について検討しています。
 
 現在、Exchange Online では複数のプロパティを使用して同じオブジェクトを識別できます。この仕組みによって柔軟性と互換性が確保されてきた一方で、一部の識別子は以前の設計方針に基づいており、自動化、統合、管理ワークフローを構築および保守するお客様にとって複雑さが増す要因となる場合があります。
 
