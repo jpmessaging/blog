@@ -4,6 +4,8 @@ layout: archived
 alias: 
 - Outlook からの Web サービスへのアクセスについて/index.html
 - About-Accessing-Web-Services-from-Outlook/index.html
+- Understanding-Message-Tracking-in-Exchange-Online-Part-1-Retrieval/index.html
+- よくわかる Exchange Online のメッセージ追跡 ～ Part 1 取得編 ～/index.html
 ---
 
 アクセスされた記事は公開を終了しました。
