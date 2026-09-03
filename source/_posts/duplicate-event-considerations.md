@@ -26,7 +26,7 @@ tags:
 といった場面では、毎回一から予定を作成する必要がないため、とても便利です。
 
 「イベントを複製 (Duplicate Event)」は Outlook on the web / 新しい Outlook / Teams のカレンダーで予定を右クリックすると表示されます。
-![](DuplicateEvent_1.png)
+![](DuplicateEvent.png)
 
 
 ### 従来の Outlook for Windows の「会議のコピー」とは別の機能です
