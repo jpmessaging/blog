@@ -28,6 +28,6 @@ tags:
 
 最後に、「Exchange Online でのスロットリングとブロックを回避できる最も古いバージョン」が常に[提供されている最新バージョン](https://learn.microsoft.com/exchange/new-features/build-numbers-and-release-dates)よりも古いからといって、最新のセキュリティ更新プログラムより前のバージョンを「安全に使用できる」と見なしているわけではありません。最新バージョンより古いバージョンには、そのバージョン以降に修正、リリース、発表されたすべての脆弱性が残っています。特に今年は Exchange Server のセキュリティ更新プログラムを多数リリースしており、[今後もしばらくはこの状況が続く可能性があります](/blog/where-is-exchange-se-cu1-anyway/)。
 
-セキュリティを取り巻く状況が急速に変化する中、*古いバージョンの Exchange Server で組織の業務メールを運用することが安全だと考えるべきではありません*。[Exchange Server 更新プログラムに関する FAQ](https://learn.microsoft.com/exchange/plan-and-deploy/post-installation-tasks/security-best-practices/exchange-server-update-faq)も参照してください。
+セキュリティを取り巻く状況が急速に変化する中、*古いバージョンの Exchange Server で組織の業務メールを運用することが安全だと考えるべきではありません*。[Exchange Server 更新プログラムに関する FAQ](https://learn.microsoft.com/exchange/plan-and-deploy/post-installation-tasks/security-best-practices/exchange-server-update-faq) も参照してください。
 
 追加情報: [古いオンプレミス Exchange Server に対するスロットリングとブロックを一時停止する方法](https://techcommunity.microsoft.com/blog/exchange/how-to-pause-throttling-and-blocking-of-out-of-date-on-premises-exchange-servers/4007169)
