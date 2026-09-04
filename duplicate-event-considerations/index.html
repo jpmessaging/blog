@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>「イベントを複製 (Duplicate Event)」を利用する際の注意点 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="※ 本記事は 2026 年 9 月 3 日時点の情報をもとに作成しています。掲載内容は今後更新される可能性があります。 こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの小須田 (コスダ) です。今回は、新しい Outlook for Windows (以下、新しい Outlook) や Outlook on the web で利用できる「イベントを複">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「イベントを複製 (Duplicate Event)」を利用する際の注意点">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/duplicate-event-considerations/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ 本記事は 2026 年 9 月 3 日時点の情報をもとに作成しています。掲載内容は今後更新される可能性があります。 こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの小須田 (コスダ) です。今回は、新しい Outlook for Windows (以下、新しい Outlook) や Outlook on the web で利用できる「イベントを複">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/duplicate-event-considerations/DuplicateEvent.png">
+<meta property="article:published_time" content="2026-09-02T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-09-02T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="New Outlook">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/duplicate-event-considerations/DuplicateEvent.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-duplicate-event-considerations" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/duplicate-event-considerations/" class="article-date">
+  <time datetime="2026-09-02T15:00:00.000Z" itemprop="datePublished">2026-09-03</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      「イベントを複製 (Duplicate Event)」を利用する際の注意点
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/duplicate-event-considerations/" class="article-date-single">    
+    
+    <time datetime="2026-09-02T15:00:00.000Z" itemprop="dateUpdated">2026-09-03</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ 本記事は 2026 年 9 月 3 日時点の情報をもとに作成しています。掲載内容は今後更新される可能性があります。</p>
+<p>こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの小須田 (コスダ) です。<br>今回は、新しい Outlook for Windows (以下、新しい Outlook) や Outlook on the web で利用できる「イベントを複製 (Duplicate Event)」についてご紹介します。</p>
+<p>既存の同じ会議をもう一度開催したい…  そんなときに便利なのが「イベントを複製」です。<br>一方で、Teams 会議が設定されている予定を複製する場合には、注意が必要です。<br>本記事では、「イベントを複製」はどのような機能なのか、利用する際にどの様な注意が必要なのか、そしてどのような場面で利用するとよいのかを解説します。</p>
+<p>本記事は管理者向けの内容ではなく、ユーザー向けの機能の紹介になります。<br>特に管理者にて設定が必要な箇所等を記載しているわけではございませんが、社内に機能の紹介等をするときには参考になるかと思います。</p>
+<h2 id="「イベントを複製-Duplicate-Event-」とは？"><a href="#「イベントを複製-Duplicate-Event-」とは？" class="headerlink" title="「イベントを複製 (Duplicate Event)」とは？"></a>「イベントを複製 (Duplicate Event)」とは？</h2><p>新しい Outlook および Outlook on the web では、既存の予定を基に新しい予定を作成できる 「イベントを複製 (Duplicate Event)」 機能を利用できます。<br>この機能を使うと、複製元のイベントに設定されている件名や場所、参加者などの情報を再利用しながら、新しい予定を作成できます。<br>たとえば、</p>
+<ul>
+<li>同じメンバーで、もう一度ミーティングを開催したい</li>
+<li>不定期に開催しているミーティングの次回予定を作りたい<br>といった場面では、毎回一から予定を作成する必要がないため、とても便利です。</li>
+</ul>
+<p>「イベントを複製 (Duplicate Event)」は Outlook on the web &#x2F; 新しい Outlook &#x2F; Teams のカレンダーで予定を右クリックすると表示されます。<br><img src="/blog/duplicate-event-considerations/DuplicateEvent.png"></p>
+<h3 id="従来の-Outlook-for-Windows-の「会議のコピー」とは別の機能です"><a href="#従来の-Outlook-for-Windows-の「会議のコピー」とは別の機能です" class="headerlink" title="従来の Outlook for Windows の「会議のコピー」とは別の機能です"></a>従来の Outlook for Windows の「会議のコピー」とは別の機能です</h3><p>ここで、一つ注意していただきたいポイントがあります。<br>「イベントを複製 (Duplicate Event)」は、従来の Outlook for Windows (以下、従来の Outlook) で行っていた会議のコピー ＆ ペーストとは異なる機能です。</p>
+<p>現在、弊社では以下の公開情報でご案内しているとおり、従来の Outlook における会議のコピー ＆ ペーストをサポートしていません。<br>公開情報:<a target="_blank" rel="noopener" href="https://support.microsoft.com/ja-jp/support/known-issues/outlook-blocks-copying-meetings-with-copying-meetings-is-not-supported">Outlook では、”会議のコピーはサポートされていません” で会議のコピーがブロックされます。 | Microsoft Support</a></p>
+<p>そのため、<br>「従来の Outlook では会議のコピーがサポートされていないなら、新しい Outlook や Outlook on the web の “イベントを複製” で会議を複製することもサポートされていないのでは？」<br>と思われるかもしれません。<br>しかし、これは別の話です。</p>
+<p>「イベントを複製 (Duplicate Event)」は、新しい Outlook や Outlook on the web で、既存のイベントの情報を再利用しながら新しいイベントを作成するために開発された機能です。<br>従来の Outlook における会議のコピー ＆ ペーストとは仕組みが異なるため、「イベントを複製 (Duplicate Event)」による会議の複製はサポートされています。</p>
+<p>ただし、使い方によっては注意が必要です。</p>
+<h2 id="利用時の注意点"><a href="#利用時の注意点" class="headerlink" title="利用時の注意点"></a>利用時の注意点</h2><p>特に注意していただきたいのが、Teams 会議が設定されたイベントを複製する場合です。<br>Teams 会議が設定されたイベントを「イベントを複製 (Duplicate Event)」で複製すると、<strong>Teams 会議の URL は複製元のものが引き継がれます</strong>。<br>ここで重要なのは、Teams 会議の URL は単なる「参加するためのリンク」ではないという点です。<br>Teams 会議には、その会議に紐づくチャットやファイルなどの情報があります。<br>そのため、複製したあとに出席者を変更して別の会議として利用すると、Teams 会議の情報が引き継がれることで意図しない状態になる可能性があります。</p>
+<p>たとえば、次のようなケースを考えてみます。</p>
+<p>開催者 A さんは、 B さんが参加する Teams 会議を開催したとします。<br>A さんは同じ趣旨の会議を C さんとも行いたかったので、B さんとの会議を「イベントを複製」で複製し、出席者を C さんに変更して C さんとも別の会議をセッティングしました。</p>
+<p>複製後のイベントでは出席者を変更できますが、<strong>Teams 会議の URL は元の会議と同じものが引き継がれます</strong>。<br>その結果、たとえば次のようなことが起きてしまいます。</p>
+<ul>
+<li>Teams 会議側の参加者情報が元の会議のまま (B さん) となる</li>
+<li>複製後の A さんと C さんで話すはずの Teams 会議に B さんが参加できてしまう</li>
+<li>複製後の Teams 会議のチャットにて C さんが書き込みやファイルの共有を行うと、B さんにも見られてしまう。</li>
+</ul>
+<p>つまり、「Outlook 上では別の会議を作ったつもりでも、同じ Teams 会議を利用している」という状態になってしまいます。<br>これは、単なる参加者の混乱だけでなく、意図しない相手に会議のチャットやファイルなどが共有されることにつながる可能性があります。<br>そのため、参加者が異なる別の会議を作成する目的で「イベントを複製」を利用する場合は、十分にご注意ください。</p>
+<h3 id="どのようなシナリオに適している？"><a href="#どのようなシナリオに適している？" class="headerlink" title="どのようなシナリオに適している？"></a>どのようなシナリオに適している？</h3><p>では、「イベントを複製」はどのように利用するとよいのでしょうか。<br>ポイントはシンプルで、「同じ趣旨の会議で、参加者も同じ」場合に利用するのがおすすめです。<br>たとえば、次のようなケースです。</p>
+<p><strong>◎ イベントの複製に適しているケース</strong></p>
+<ul>
+<li>同じメンバーで前回の会議の続きを行う</li>
+<li>同じメンバーで、次回の打ち合わせを設定する</li>
+</ul>
+<p>このようなシナリオでは、会議作成の手間を削減できるほか、Teams 会議が引き継がれることのメリットを活かせます。</p>
+<h2 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h2><p>「イベントを複製 (Duplicate Event)」は、既存のイベントの情報を活用して新しいイベントを作成できる便利な機能です。<br>Classic Outlook における会議のコピー ＆ ペーストとは異なる機能であり、<strong>新しい Outlook および Outlook on the web の「イベントを複製」による会議の複製はサポートされています</strong>。<br>一方で、<strong>Teams 会議が設定されたイベントを複製する場合は注意が必要です</strong>。</p>
+<p>Teams 会議の URL は複製元のイベントから引き継がれるため、参加者が異なる別の会議を作成する目的で利用すると、意図しない参加者が会議にアクセスできたり、チャットやファイルなどが共有されたりする可能性があります。<br>そのため、「イベントを複製」は、前回の続きの会議を設定する目的でご利用いただくと、混乱を避けて機能のメリットを活かすことができます。</p>
+<p>ぜひ、今回ご紹介したポイントを参考に「イベントを複製 (Duplicate Event)」をご活用ください。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/duplicate-event-considerations/" data-id="cmtm8fyo70064wc4x7v2q16h7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/exchange-20162019-throttling-and-blocking-up-to-the-final-public-update-baseline/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Exchange Server 2016/2019: 最終公開更新プログラムを基準としたスロットリングとブロック
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/tell-us-how-you-use-objectguid-samaccountname-and-distinguishedname-in-exchange/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange Online での ObjectGuid、SamAccountName、DistinguishedName の利用方法をお聞かせください</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">74</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">76</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/exchange-20162019-throttling-and-blocking-up-to-the-final-public-update-baseline/">Exchange Server 2016/2019: 最終公開更新プログラムを基準としたスロットリングとブロック</a>
+          </li>
+        
+          <li>
+            <a href="/blog/duplicate-event-considerations/">「イベントを複製 (Duplicate Event)」を利用する際の注意点</a>
+          </li>
+        
+          <li>
+            <a href="/blog/tell-us-how-you-use-objectguid-samaccountname-and-distinguishedname-in-exchange/">Exchange Online での ObjectGuid、SamAccountName、DistinguishedName の利用方法をお聞かせください</a>
+          </li>
+        
+          <li>
+            <a href="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/">GitHub Copilot を使って EWS アプリを Microsoft Graph に移行してみた</a>
+          </li>
+        
+          <li>
+            <a href="/blog/help-us-shape-exchange-server-on-premises-to-different-online-org-freebusy-after/">EWS 廃止後の Exchange Server から別組織の Exchange Online への空き時間情報共有に関するご意見を募集</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/09/">2026/09</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/08/">2026/08</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/07/">2026/07</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

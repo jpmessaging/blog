@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="※ この記事は、Cross-tenant Free&#x2F;Busy, MailTips, and Calendar Sharing are moving to Cross-Tenant Access Policy の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています">
+<meta property="og:type" content="article">
+<meta property="og:title" content="クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Cross-tenant Free&#x2F;Busy, MailTips, and Calendar Sharing are moving to Cross-Tenant Access Policy の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-10T06:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-10T06:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/" class="article-date">
+  <time datetime="2026-08-10T06:00:00.000Z" itemprop="datePublished">2026-08-10</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/" class="article-date-single">    
+        
+    <time datetime="2026-08-31T00:00:00.000Z" itemprop="lastupdate">2026-08-31</time>    
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/4545169">Cross-tenant Free&#x2F;Busy, MailTips, and Calendar Sharing are moving to Cross-Tenant Access Policy</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>他の Microsoft 365 組織との間で空き時間情報、メール ヒント、予定表を共有している場合は、今後予定されている変更について確認し、事前に対応を計画する必要があります。一方、このような組織間共有をご利用でない場合は、最初の 2 つのセクションをご確認いただくだけで十分です。この記事では、<a href="https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/">Exchange Online EWS: 廃止期限が迫っています</a> に伴って何が変わるのか、従来の仕組みが新しい Microsoft 365 クロステナント アクセス ポリシーのモデルにどのように置き換わるのか、利用中のテナントが影響を受けるかを確認する方法、そして必要な対応について説明します。正式なお知らせはメッセージ センターの <a target="_blank" rel="noopener" href="https://admin.cloud.microsoft/?ref=MessageCenter/:/messages/MC1446796"><strong>MC1446796</strong></a> に掲載されていますが、本記事ではその内容をより分かりやすく補足し、MC1446796 の投稿だけでは伝えきれなかった背景も含めて説明します。</p>
+<h3 id="この変更の影響を受ける組織"><a href="#この変更の影響を受ける組織" class="headerlink" title="この変更の影響を受ける組織"></a>この変更の影響を受ける組織</h3><p><strong>他の Microsoft 365 組織との間で、空き時間情報、予定表、メール ヒントを共有している場合にのみ影響を受けます。</strong></p>
+<p>この変更は、クロステナントまたは組織間の共同作業に影響します。具体的には、自組織 (組織 A) のユーザーと、提携先の Microsoft 365 テナント (組織 B) のユーザーが、お互いの空き時間情報、共有予定表、メール ヒント (不在通知など) を参照できる機能が対象です。子会社、パートナー企業、取引先、最近買収した会社との間でこれらの共有関係を構成している場合は、この変更内容を確認し、期限までに必要な対応を実施する必要があります。対応しないと、これらの機能を利用できなくなります。</p>
+<p>なお、組織間共有は既定では設定されていません。テナント管理者が明示的に設定している場合にのみ利用されています。</p>
+<p><strong>影響を受けないシナリオ:</strong></p>
+<ul>
+<li>同一組織内で空き時間情報、予定表、メール ヒントを共有している場合。</li>
+<li>Exchange ハイブリッド構成で、オンプレミス環境のユーザーと Exchange Online のユーザーの間で空き時間情報、予定表、メール ヒントを共有している場合。<br>このシナリオでは、<a href="https://jpmessaging.github.io/blog/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/">Exchange SE ハイブリッドのオンプレミス リッチ共存を Graph API に移行する方法</a> に従い、ハイブリッド専用アプリへの対応を進めてください。</li>
+<li>オンプレミスの Exchange Server を利用する別の組織との間で空き時間情報、予定表、メール ヒントを共有している場合。<br>このシナリオについては現時点で直ちに影響はありませんが、今後変更が予定されているため、詳細は今後のメッセージ センターのお知らせをご確認ください。なお、共有先のパートナー組織が Exchange Online とオンプレミス Exchange の両方を利用している場合は、Exchange Online 側との共有は影響を受けます。</li>
+</ul>
+<p>詳細については、後述の「共有設定を確認する方法」セクションを参照してください。</p>
+<h3 id="変更内容とその背景"><a href="#変更内容とその背景" class="headerlink" title="変更内容とその背景"></a>変更内容とその背景</h3><p>Exchange Web Services (EWS) の廃止は、2026 年 10 月 1 日より開始されます。現在、テナント間での空き時間情報、メール ヒント、予定表共有などの組織間共有機能が内部で EWS を利用して動作しています。Exchange Online で EWS が廃止されるため、これらのクロステナント間のリクエストを処理する仕組みも別の方式へ移行する必要があります。</p>
+<p>移行先となるのが、Microsoft 365 クロステナント アクセス ポリシーです。この新しい仕組みは 2026 年 9 月から利用可能となる予定で、従来の EWS ベースの方式に代わるものです。ユーザーにとって利用体験は変わりません。例えば、他テナントのユーザーの予定表の空き時間情報を確認するといった機能は、これまでと同様に利用できます。ただし、その通信経路は従来の EWS ではなく、Microsoft Entra ID によって管理される最新の仕組みに変更されます。この変更は、従来のプロトコルを廃止し、高い権限を必要とするアクセス方式の削減を進める Microsoft の取り組みの一環です。</p>
+<h3 id="新しいモデルの仕組み"><a href="#新しいモデルの仕組み" class="headerlink" title="新しいモデルの仕組み"></a>新しいモデルの仕組み</h3><p>現在、テナント間の共有は Exchange Online の次の 3 つの構成によって実現されています。</p>
+<ul>
+<li>組織の関係: 他の Microsoft 365 テナントとの間で、空き時間情報やメール ヒントを共有するために使用されます。</li>
+<li>可用性アドレス空間: 他の Microsoft 365 テナントとの間で空き時間情報を共有するために使用されます。具体的には、<code>AccessMethod</code> が <code>OrgWideFBToken</code> に設定されているものが対象です。</li>
+<li>共有ポリシー: 他の Microsoft 365 組織の受信者へ招待を送信して予定表を共有する場合や、インターネット URL を使用して予定表を匿名で公開する場合に使用されます。</li>
+</ul>
+<p>これらの構成では、これまで EWS を使用して共有先テナントから空き時間情報やメール ヒントを取得していました。今後は、この信頼関係およびデータ共有の仕組みが、Microsoft 365 クロステナント アクセス ポリシーに置き換わります。ただし、どの組織と連携するか、またどの情報を共有するかについては、これまでと変わらず管理者が決定できます。変更されるのは、共有データをやり取りする仕組みのみです。そのため、移行にあたっては、現在の構成を把握し、それに対応するクロステナント アクセス ポリシーを構成して、共有が引き続き機能することを確認したうえで、不要になった従来の構成を削除します。</p>
+<h3 id="現在の共有設定を確認する方法"><a href="#現在の共有設定を確認する方法" class="headerlink" title="現在の共有設定を確認する方法"></a>現在の共有設定を確認する方法</h3><p>MC1446796 はすべてのテナント管理者を対象に配信されていますが、実際には多くの環境で対応は不要です。そのため、移行を計画する前に、まず自社テナントが今回の変更の対象となるかを確認してください。確認するには、Exchange Online PowerShell に接続し、以下の 3 つのコマンドを実行します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-OrganizationRelationship</span> | <span class="built_in">Format-List</span> Name, DomainNames, Enabled, FreeBusyAccessEnabled, FreeBusyAccessLevel, FreeBusyAccessScope, MailTipsAccessEnabled, MailTipsAccessLevel, MailTipsAccessScope</span><br></pre></td></tr></table></figure>
+<p>コマンドの実行結果で <code>Enabled: True</code> と表示され、かつ <code>FreeBusyAccessEnabled: True</code> または <code>MailTipsAccessEnabled: True</code> のいずれかが表示されており、共有先の外部組織が Microsoft 365 を利用している場合は影響を受けます。それ以外の場合、対応は必要ありません。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-AvailabilityAddressSpace</span> | <span class="built_in">Format-List</span> ForestName, AccessMethod</span><br></pre></td></tr></table></figure>
+<p>コマンドの実行結果で <code>AccessMethod: OrgWideFBToken</code> と表示され、かつ共有先の外部組織が Microsoft 365 を利用している場合は影響を受けます。それ以外の場合、対応は必要ありません。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-SharingPolicy</span> | <span class="built_in">Format-List</span> Name, Domains, Enabled, Default</span><br></pre></td></tr></table></figure>
+<p>コマンドの実行結果で <code>Enabled: True</code> と表示され、かつ <code>Domains</code> プロパティに <code>CalendarSharingFreeBusy</code> アクセス レベル (<code>Simple</code>、<code>Detail</code>、<code>Reviewer</code> のいずれか) のルールが 1 つ以上含まれている場合、さらに共有先の外部組織が Microsoft 365 を利用しており、そのポリシーが 1 つ以上のメールボックスに割り当てられている場合は影響を受けます。それ以外の場合、対応は必要ありません。</p>
+<p>最後の確認には注意点があります。<code>Anonymous:</code> で始まるルールは、インターネット上に公開した URL を利用して予定表を匿名ユーザーへ共有するための設定を表します。この <code>Anonymous:</code> で始まるルールに対しても <code>CalendarSharingFreeBusy</code> アクセス レベルが <code>Simple</code>、<code>Detail</code>、<code>Reviewer</code> のいずれかに設定されている場合は、この変更の影響を受けます。</p>
+<p><code>AccessMethod</code> が <code>OrgWideFBToken</code> に設定された可用性アドレス空間を使用して、Microsoft 365 でホストされている別の組織と空き時間情報を共有している場合、この構成は Exchange Web Services に依存していないため、EWS の廃止による影響を受けません。ただし、追加のセキュリティ機能と、より細かな構成オプションを利用できる Microsoft 365 クロステナント アクセス ポリシーへの移行を検討してください。可用性アドレス空間の構成は、次のコマンドで確認できます。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-AvailabilityAddressSpace</span> | <span class="built_in">Format-List</span> ForestName, AccessMethod</span><br></pre></td></tr></table></figure>
+
+<h3 id="クロステナント-アクセス-ポリシーの展開スケジュール"><a href="#クロステナント-アクセス-ポリシーの展開スケジュール" class="headerlink" title="クロステナント アクセス ポリシーの展開スケジュール"></a>クロステナント アクセス ポリシーの展開スケジュール</h3><p>この機能は 2026 年 9 月から順次利用可能になります。そのため、利用中の環境への展開が完了すると、移行作業を開始できます。展開スケジュールは次のとおりです。</p>
+<table>
+<thead>
+<tr>
+<th><strong>環境</strong></th>
+<th><strong>展開開始</strong></th>
+<th><strong>完了予定</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Worldwide</strong></td>
+<td>2026 年 8 月</td>
+<td>2026 年 9 月 15 日</td>
+</tr>
+<tr>
+<td><strong>GCC</strong></td>
+<td>2026 年 9 月上旬</td>
+<td>2026 年 9 月 30 日</td>
+</tr>
+<tr>
+<td><strong>GCC High</strong></td>
+<td>2026 年 9 月上旬</td>
+<td>2026 年 9 月 30 日</td>
+</tr>
+<tr>
+<td><strong>DoD</strong></td>
+<td>2026 年 9 月上旬</td>
+<td>2026 年 10 月 30 日</td>
+</tr>
+</tbody></table>
+<h3 id="何も対応しなかった場合の影響"><a href="#何も対応しなかった場合の影響" class="headerlink" title="何も対応しなかった場合の影響"></a>何も対応しなかった場合の影響</h3><p>2026 年 10 月 1 日以降、これまでご案内しているとおり、Exchange Online では EWS の無効化が段階的に開始されます。利用中のテナントが無効化の対象になると、EWS に依存しているクロステナントの空き時間情報、メール ヒント、予定表共有は機能しなくなります。提携先組織のユーザーは、利用中のテナントから共有された空き時間情報、メール ヒント、予定表を確認できなくなる可能性があります。また、利用中のテナントのユーザーも、提携先組織の空き時間情報、メール ヒント、共有された予定表を確認できなくなる可能性があります。対象となる環境で何も対応しなかった場合、このような影響が発生します。</p>
+<h3 id="10-月までに準備できない場合の猶予期間"><a href="#10-月までに準備できない場合の猶予期間" class="headerlink" title="10 月までに準備できない場合の猶予期間"></a>10 月までに準備できない場合の猶予期間</h3><p>今回のお知らせから展開開始までの期間が短く、多数の提携先テナントとの複雑な組織間共有を構成している組織にとって、数週間で現状分析、検証、移行を完了することは簡単ではありません。</p>
+<p>そのため、移行までの猶予期間が用意されています。以前の記事「<a href="https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/">Exchange Online EWS: 廃止期限が迫っています</a>」で案内したとおり <strong>EWSEnabled</strong> を <strong>True</strong> に設定すると、既存の組織間共有を引き続き利用できます。この設定を有効にすることで、新しい仕組みへの移行準備や検証を進めている間も、従来の EWS ベースの共有機能を継続して利用できます。この延長措置は、EWS が完全に廃止される 2027 年 4 月 1 日まで利用できます。この日付が新しい仕組みへの移行完了の最終期限です。</p>
+<p>また、従来の共有方式は AppID に依存しておらず、OAuth も使用していないため、従来の共有方式を継続する目的で<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/4529471">テナントの許可リスト</a> に AppID を指定する必要はありません。<em><code>EWSEnabled</code> を <code>True</code> に設定すると、テナントの許可リストの設定状況にかかわらず、本記事で説明しているクロステナント間の空き時間情報、メール ヒント、予定表の共有を 2027 年 4 月まで引き続き利用できます。</em></p>
+<h3 id="必要な対応"><a href="#必要な対応" class="headerlink" title="必要な対応"></a>必要な対応</h3><ol>
+<li>影響の対象かどうかを確認します。前述の確認を実行し、該当する設定がなければ特に対応は不要です。</li>
+<li>利用中のテナントに Microsoft 365 クロステナント アクセス ポリシーの機能が展開された後、EWS の廃止による影響を受ける前に移行を完了できるよう計画します。詳しい手順は移行ガイドを確認してください。</li>
+<li>現在の共有設定を把握し、新しい Microsoft 365 クロステナント アクセス ポリシーを設定します。共有が機能することを確認した後、不要になった従来の共有設定を削除します。</li>
+<li>2026 年 10 月 1 日までに移行を完了できない場合は、<code>EWSEnabled</code> を <code>True</code> に設定して従来の共有を維持し、遅くとも 2027 年 4 月 1 日までに移行を完了します。</li>
+</ol>
+<h3 id="関連情報"><a href="#関連情報" class="headerlink" title="関連情報"></a>関連情報</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://admin.cloud.microsoft/?ref=MessageCenter/:/messages/MC1446796">メッセージ センターの MC1446796 - EWS 廃止前の Free&#x2F;Busy、MailTips、カレンダー共有の移行</a>: 利用中のテナントに送信された正式なお知らせです。</li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/sharing/migrate-to-m365-xtap">空き時間情報、予定表、およびメール ヒントを共有するための Microsoft 365 クロステナント アクセス ポリシーに移行する</a>: 移行ガイドです。</li>
+<li><a href="https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/">Exchange Online EWS: 廃止期限が迫っています</a>: 移行中に <code>EWSEnabled</code> を使用して EWS を継続する方法を説明しています。</li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/exchange/clients-and-mobile-in-exchange-online/deprecation-of-ews-exchange-online">Exchange Online での Exchange Web サービスの廃止</a></li>
+</ul>
+<h2 id="よく寄せられる質問"><a href="#よく寄せられる質問" class="headerlink" title="よく寄せられる質問"></a>よく寄せられる質問</h2><p><strong>10 月の期限までに移行を完了できません。テナントの <code>EWSEnabled</code> を <code>True</code> に設定するほかに、<a href="https://jpmessaging.github.io/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/">テナントの EWS 許可リスト</a>へ AppID を追加する必要はありますか。</strong><br>他の組織との共有に使用している現在の設定を維持するには、<code>EWSEnabled</code> を <code>True</code> に設定するだけで十分です。テナントの <code>EWSAllowedAppIDs</code> に AppID を追加する必要はありません。ただし、組織間で双方向の情報共有を継続するためには、利用中の Microsoft 365 組織と共有先の Microsoft 365 組織の両方で、<code>EWSEnabled</code> を <code>True</code> に設定する必要があります。</p>
+<p><strong>自組織だけが新しいモデルへ移行したが、共有先の組織が設定しなかった場合はどうなりますか。</strong><br>双方向に共有する場合は、両方の組織で Microsoft 365 クロステナント アクセス ポリシーを設定し、従来の共有設定を無効にする必要があります。これらの対応が完了すると、双方向の共有が機能します。<br>一方で、一方向の共有の場合は、リソース テナント (空き時間情報、予定表、メール ヒントの情報を持つメールボックスが存在するテナント) だけが Microsoft 365 クロステナント アクセス ポリシーを設定する必要があります。設定後、ホーム テナント (共有情報を参照するユーザーが存在するテナント) のユーザーは共有情報にアクセスできるようになります。なお、新しい方式で共有を利用するためには、双方の組織で従来の共有設定を無効化する必要があります。従来の共有設定が有効なままだと、共有要求が新しいクロステナント アクセス ポリシーを経由して処理されません。</p>
+<p><strong>自組織では EWS の延長を設定していても、共有先組織では延長を設定しておらず、EWS の廃止開始までに移行を完了できなかった場合はどうなりますか。</strong><br>共有先組織で EWS が無効化されると、自組織のユーザーは共有先組織から共有された情報にアクセスできなくなります。一方、共有先組織のユーザーは、引き続き自組織から共有された情報にアクセスできます。</p>
+<p><strong>共有ポリシーのドメインにワイルドカードを指定しています。移行は必要ですか。</strong><br>はい。<code>CalendarSharingFreeBusy</code> アクセス レベルが <code>Simple</code>、<code>Detail</code>、<code>Reviewer</code> のいずれかであれば、移行が必要です。</p>
+<p><strong>既定の共有ポリシーにワイルドカード ドメイン (<code>&#123;*:0&#125;</code>) を定義していますが、外部との予定表共有を禁止するため <code>Enabled: False</code> に設定しています。このポリシーを移行する必要はありますか。</strong><br>対応は必要ありません。Microsoft 365 クロステナント アクセス ポリシーを構成しない場合の動作は、既定の共有ポリシーを無効にしている場合と同じです。</p>
+<p><strong>同じ提携先テナントに複数のドメインが存在する場合、それぞれに対して設定が必要ですか。</strong><br>提携先の複数のドメインが同一の Microsoft 365 テナント ID に属している場合は、そのテナント ID に対して 1 つの Microsoft 365 クロステナント アクセス ポリシーを設定するだけで対応できます。<br>そのテナント ID に関連付けられているすべてのドメインが、そのポリシーの対象となります。</p>
+<p><strong>Google Workspace との Google&#x2F;Exchange カレンダー連携のために可用性アドレス空間を設定している場合はどうなりますか。</strong><br>この変更の影響は受けません。Exchange Online のユーザーは、これまでどおり可用性アドレス空間の構成を利用して、引き続き Google Workspace ユーザーの予定表情報を参照できます。Google Workspace のユーザーも、これまでどおり Microsoft Graph API を利用して Exchange Online ユーザーの予定表情報を参照できます。ただし、Google Workspace から Exchange Online への接続には、従来の EWS 接続方式ではなく Microsoft Graph API を使用するよう設定してください。詳しくは「<a target="_blank" rel="noopener" href="https://knowledge.workspace.google.com/admin/sync/allow-calendar-users-to-see-exchange-availability">Allow Google Calendar users to see Exchange availability</a>」を参照してください。</p>
+<p><strong>商用クラウド (一般的な Microsoft 365 テナント) と 21Vianet クラウドの間で空き時間情報を共有するために可用性アドレス空間を設定している場合はどうなりますか。</strong><br><code>AccessMethod</code> に <code>OrgWideFBToken</code> を使用する可用性アドレス空間の構成は Exchange Web Services に依存していないため、EWS の廃止による影響を受けません。ただし、追加のセキュリティ機能と、より細かな構成オプションを利用できる Microsoft 365 クロステナント アクセス ポリシーへの移行を検討してください。</p>
+<p><em>更新履歴</em></p>
+<ul>
+<li><strong>2026&#x2F;8&#x2F;28</strong>: 展開スケジュールの変更や複数の補足など、記事のさまざまな箇所を更新しました。</li>
+<li><strong>2026&#x2F;8&#x2F;18</strong>: 21Vianet クラウドとの可用性アドレス空間による共有に関する FAQ を更新しました。</li>
+<li><strong>2026&#x2F;8&#x2F;10</strong>: 無効に設定された既定の共有ポリシーは移行不要であることを明確にする FAQ を追加しました。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/" data-id="cmtm8fyo1005lwc4xhukm73gg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/released-august-2026-exchange-server-security-updates/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          2026 年 8 月の Exchange Server のセキュリティ更新プログラムが公開されました
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">クラウド管理のリモート メールボックス向けの書き戻しが一般提供になりました</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">74</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">76</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/exchange-20162019-throttling-and-blocking-up-to-the-final-public-update-baseline/">Exchange Server 2016/2019: 最終公開更新プログラムを基準としたスロットリングとブロック</a>
+          </li>
+        
+          <li>
+            <a href="/blog/duplicate-event-considerations/">「イベントを複製 (Duplicate Event)」を利用する際の注意点</a>
+          </li>
+        
+          <li>
+            <a href="/blog/tell-us-how-you-use-objectguid-samaccountname-and-distinguishedname-in-exchange/">Exchange Online での ObjectGuid、SamAccountName、DistinguishedName の利用方法をお聞かせください</a>
+          </li>
+        
+          <li>
+            <a href="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/">GitHub Copilot を使って EWS アプリを Microsoft Graph に移行してみた</a>
+          </li>
+        
+          <li>
+            <a href="/blog/help-us-shape-exchange-server-on-premises-to-different-online-org-freebusy-after/">EWS 廃止後の Exchange Server から別組織の Exchange Online への空き時間情報共有に関するご意見を募集</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/09/">2026/09</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/08/">2026/08</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/07/">2026/07</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

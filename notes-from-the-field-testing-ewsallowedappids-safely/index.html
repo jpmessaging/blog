@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>現場からのメモ: EWSAllowedAppIDs を安全にテストする方法 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="※ この記事は、Notes from the field: testing EWSAllowedAppIDs safely の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange Online における Exchange Web Services (E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="現場からのメモ: EWSAllowedAppIDs を安全にテストする方法">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/notes-from-the-field-testing-ewsallowedappids-safely/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Notes from the field: testing EWSAllowedAppIDs safely の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange Online における Exchange Web Services (E">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-23T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-23T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-notes-from-the-field-testing-ewsallowedappids-safely" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/notes-from-the-field-testing-ewsallowedappids-safely/" class="article-date">
+  <time datetime="2026-08-23T15:00:00.000Z" itemprop="datePublished">2026-08-24</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      現場からのメモ: EWSAllowedAppIDs を安全にテストする方法
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/notes-from-the-field-testing-ewsallowedappids-safely/" class="article-date-single">    
+    
+    <time datetime="2026-08-23T15:00:00.000Z" itemprop="dateUpdated">2026-08-24</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/notes-from-the-field-testing-ewsallowedappids-safely/4548568">Notes from the field: testing EWSAllowedAppIDs safely</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>Exchange Online における Exchange Web Services (EWS) 廃止の最終フェーズに向けて準備を進める管理者から、同じ実務上の質問が多く寄せられています。「EWSAllowedAppIDs に依存する本番運用を始める前に、正しく機能していることを実証するにはどうすればよいか」という質問です。このフィールド ガイドでは、条件を管理した許可テストと拒否テストの手順、テスト結果が意味すること、そして管理者とのやり取りですでに見受けられる、紛らわしい名称に起因する重要な落とし穴について説明します。</p>
+<h3 id="現場からのメモ"><a href="#現場からのメモ" class="headerlink" title="現場からのメモ"></a>現場からのメモ</h3><p>最もよくある混乱は、PowerShell の構文に関するものではありません。異なるレイヤーで動作する、名前のよく似た 2 つの制御に関するものです。EWSAllowedAppIDs は、EWS 向けの新しいアプリケーション ID 制御です。以前からある EWSAllowList と EWSBlockList は EwsApplicationAccessPolicy に関連付けられたユーザー エージェント制御であり、EWS と REST の両方のトラフィックに影響する可能性があります。</p>
+<h3 id="テスト前に-2-つの制御を理解する"><a href="#テスト前に-2-つの制御を理解する" class="headerlink" title="テスト前に 2 つの制御を理解する"></a>テスト前に 2 つの制御を理解する</h3><p>EWSAllowedAppIDs は、テナント レベルのアプリケーション (クライアント) ID リストです。EWS が有効で、リストに 1 つ以上のアプリケーション ID が含まれている場合、リストに登録されたアプリケーションだけが EWS にアクセスできます。廃止への移行期間中にアプリケーションの EWS アクセスをテストする場合は、この制御を検証します。</p>
+<p>EWSAllowList と EWSBlockList は、以前からあるユーザー エージェント ベースの制御です。その名前にかかわらず、基になるアクセス ポリシーは EWS だけに限定されず、REST 要求にも影響する可能性があります。これらの設定をすでに使用している組織では、EWS の廃止後も REST のアクセス制御にこれらの設定が必要になることがあります。</p>
+<p>これらの制御は個別に評価されます。実際には、EWS 要求はアプリケーション ID 制御を通過した後、該当するユーザー エージェント制御も通過する必要があります。そのため、App ID のテストが成功しても、別のユーザー エージェント ポリシーが正しく構成されていることの証明にはなりません。</p>
+<h3 id="テストで実証できること"><a href="#テストで実証できること" class="headerlink" title="テストで実証できること"></a>テストで実証できること</h3><p>次の条件をすべて満たす場合に限り、変更前と変更後を比較する適切なテストによって EWSAllowedAppIDs の動作を実証できます。</p>
+<ul>
+<li>アプリケーションが OAuth トークンを取得できる。</li>
+<li>アプリケーションに EWS のアプリケーション権限があり、テナント全体の管理者の同意が付与されている。</li>
+<li>テスト時に <code>EWSEnabled</code> が <code>True</code> に設定されている。</li>
+<li>テスト用メールボックスの受信トレイに 1 つ以上のアイテムがある。</li>
+<li>許可時のテストでは App ID がリストにあり、拒否時のテストではリストにない。</li>
+<li>許可リストを変更するたびに、24 時間以上経過している。</li>
+</ul>
+<h3 id="始める前に"><a href="#始める前に" class="headerlink" title="始める前に"></a>始める前に</h3><p>可能であれば、テスト用テナントでこの手順を実行してください。リストからアプリケーションを削除すると、構成変更の反映後に、本番ワークロードが EWS にアクセスできなくなる可能性があります。</p>
+<p>次のものを準備します。</p>
+<ul>
+<li>受信トレイに 1 つ以上のアイテムがあるテスト用メールボックス。</li>
+<li>メールボックスと同じテナントにあるアプリの登録。</li>
+<li>テナント全体の管理者の同意が付与された EWS のアプリケーション権限。</li>
+<li>アプリケーション認証用のクライアント シークレットまたは証明書。クライアント シークレットはパスワードとして扱い、共有スクリプトやソース管理リポジトリには保存しないでください。</li>
+<li>Exchange Online PowerShell へのアクセス権と、<code>Get-OrganizationConfig</code> および <code>Set-OrganizationConfig</code> を実行する権限。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/David-Barrett-MS/PowerShell-EWS-Scripts/blob/master/Legacy/Test-EWSAppAccess.ps1">Test-EWSAppAccess.ps1</a> スクリプト。実際のアプリでテストする場合を除き、このテスト スクリプトを使用できます。スクリプトのドキュメントは、<a target="_blank" rel="noopener" href="https://github.com/David-Barrett-MS/PowerShell-EWS-Scripts/wiki/Testing-EWS-App-Access">Testing EWS App Access</a> で確認できます。</li>
+</ul>
+<p>開始する前に、テナント ID、アプリケーション (クライアント) ID、テスト用メールボックスの SMTP アドレス、選択した認証情報を記録します。</p>
+<h3 id="テスト-1-アプリが許可されているときにアクセスできることを確認する"><a href="#テスト-1-アプリが許可されているときにアクセスできることを確認する" class="headerlink" title="テスト 1: アプリが許可されているときにアクセスできることを確認する"></a>テスト 1: アプリが許可されているときにアクセスできることを確認する</h3><ul>
+<li>Exchange Online PowerShell に接続します。</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Connect-ExchangeOnline</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>現在の EWS の状態を確認し、既存の App ID リスト全体を記録します。</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-OrganizationConfig</span> | <span class="built_in">Format-List</span> EWSEnabled</span><br><span class="line"><span class="built_in">Get-OrganizationConfig</span> <span class="literal">-RetrieveEwsOperationAccessPolicy</span> | <span class="built_in">Format-List</span> EwsAllowedAppIDs</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>条件を管理したテストを行うため、<code>EWSEnabled</code> を <code>$null</code> に設定します。この状態ではすべての EWS アクセスが許可され、App ID 許可リストは無視されます。</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-OrganizationConfig</span> <span class="literal">-EWSEnabled</span> <span class="variable">$null</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>既存のエントリを上書きせずに、テスト用 App ID を追加します。<code>EwsAllowedAppIDs</code> を設定するコマンドはリスト全体を書き込むため、現在の値を保持してください。</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$current</span> = (<span class="built_in">Get-OrganizationConfig</span> <span class="literal">-RetrieveEwsOperationAccessPolicy</span>).EwsAllowedAppIDs</span><br><span class="line"><span class="variable">$updated</span> = <span class="selector-tag">@</span>(<span class="variable">$current</span> <span class="operator">-split</span> <span class="string">&quot;,&quot;</span> | <span class="built_in">ForEach-Object</span> &#123; <span class="variable">$_</span>.Trim() &#125; | <span class="built_in">Where-Object</span> &#123; <span class="variable">$_</span> &#125;; <span class="variable">$appId</span>) | <span class="built_in">Select-Object</span> <span class="literal">-Unique</span></span><br><span class="line"><span class="built_in">Set-OrganizationConfig</span> <span class="literal">-EwsAllowedAppIDs</span> (<span class="variable">$updated</span> <span class="operator">-join</span> <span class="string">&quot;,&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>App ID が書き込まれたことを確認します。</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-OrganizationConfig</span> <span class="literal">-RetrieveEwsOperationAccessPolicy</span> | <span class="built_in">Format-List</span> EwsAllowedAppIDs</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>変更が反映されるまで待ちます。Exchange Online の構成キャッシュにより、最大 24 時間かかることがあります。</li>
+<li><code>EWSEnabled</code> を <code>True</code> に設定します。</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-OrganizationConfig</span> <span class="literal">-EWSEnabled</span> <span class="variable">$true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>変更が有効になるまで 1 時間待ちます。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/David-Barrett-MS/PowerShell-EWS-Scripts/blob/master/Legacy/Test-EWSAppAccess.ps1">Test-EWSAppAccess.ps1</a> をダウンロードし、アプリケーション認証を指定して実行します。アプリケーション権限を使用する場合は、<code>Mailbox</code> パラメーターが必要です。</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\<span class="built_in">Test-EWSAppAccess</span>.ps1 <span class="literal">-AppId</span> <span class="variable">$appId</span> <span class="literal">-TenantId</span> <span class="variable">$tenantId</span> <span class="literal">-Mailbox</span> <span class="variable">$mailbox</span> <span class="literal">-SecretKey</span> <span class="variable">$secretKey</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>テストが成功した場合は、アプリケーションがメールボックスにアクセスできたことを示す次のメッセージが表示されます。</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Application &lt;appid&gt; successfully accessed mailbox &lt;mailbox&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>$LASTEXITCODE</code> が <code>0</code> であることを確認し、変更記録とともに出力を保存します。</li>
+</ul>
+<h3 id="テスト-2-アプリを削除し、アクセスがブロックされることを確認する"><a href="#テスト-2-アプリを削除し、アクセスがブロックされることを確認する" class="headerlink" title="テスト 2: アプリを削除し、アクセスがブロックされることを確認する"></a>テスト 2: アプリを削除し、アクセスがブロックされることを確認する</h3><ul>
+<li>他のすべてのエントリを保持したまま、テスト用 App ID だけを削除します。</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$current</span> = (<span class="built_in">Get-OrganizationConfig</span> <span class="literal">-RetrieveEwsOperationAccessPolicy</span>).EwsAllowedAppIDs</span><br><span class="line"><span class="variable">$updated</span> = <span class="variable">$current</span> <span class="operator">-split</span> <span class="string">&quot;,&quot;</span> | <span class="built_in">ForEach-Object</span> &#123; <span class="variable">$_</span>.Trim() &#125; | <span class="built_in">Where-Object</span> &#123; <span class="variable">$_</span> <span class="operator">-and</span> <span class="variable">$_</span> <span class="operator">-ne</span> <span class="variable">$appId</span> &#125;</span><br><span class="line"><span class="built_in">Set-OrganizationConfig</span> <span class="literal">-EwsAllowedAppIDs</span> (<span class="variable">$updated</span> <span class="operator">-join</span> <span class="string">&quot;,&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>App ID がリストから削除されたことを確認します。</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-OrganizationConfig</span> <span class="literal">-RetrieveEwsOperationAccessPolicy</span> | <span class="built_in">Format-List</span> EwsAllowedAppIDs</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>再テストするまで 24 時間以上待ちます。すぐにテストして成功した場合は、Exchange Online サーバーに以前の構成がキャッシュされているだけの可能性があります。</li>
+<li>同じ <code>Test-EWSAppAccess.ps1</code> コマンドをもう一度実行します。</li>
+<li>変更が反映された後は、テストが失敗することが期待されます。</li>
+</ul>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Application &lt;appid&gt; failed to access mailbox &lt;mailbox&gt;</span><br></pre></td></tr></table></figure>
+
+<p>プロセスの終了コードが <code>1</code> であることを確認します。最初のテストも失敗した場合は、許可リストが原因だと判断する前に、認証、権限、同意、メールボックスへのアクセス、スクリプトの依存関係をトラブルシューティングします。</p>
+<ul>
+<li>他のすべてのエントリを保持した完全なリストにテスト用 App ID を追加し直し、構成を確認します。変更が反映されるまで待ってから、アクセス成功のテストをもう一度実行します。</li>
+</ul>
+<p>本番環境のテナントで、App ID 許可リストが意図せず空になったり、不完全な状態になったりしないようにしてください。</p>
+<h3 id="App-ID-によるブロック後に-EWS-を最も早く再有効化する方法"><a href="#App-ID-によるブロック後に-EWS-を最も早く再有効化する方法" class="headerlink" title="App ID によるブロック後に EWS を最も早く再有効化する方法"></a>App ID によるブロック後に EWS を最も早く再有効化する方法</h3><p>テナントでこの手順をテストしていて、<code>EWSEnabled = True</code> に設定し、EWSAllowedAppIDs に値を設定した後、期待した結果にならず、変更をできるだけ早く元に戻してテナントの EWS を再有効化する必要があるとします。</p>
+<ul>
+<li>EWSAllowedAppIDs の変更がテナント全体に反映されるまでには、約 24 時間かかります。</li>
+<li><code>EWSEnabled</code> の変更には約 1 時間かかります。</li>
+<li><code>EWSEnabled</code> が <code>Null</code> に設定されている場合、EWSAllowedAppIDs (許可リスト) は無視されます。</li>
+</ul>
+<p>したがって、制限なしで EWS を最も早く再有効化するには、<code>EWSEnabled</code> を <code>Null</code> に戻します。1 時間後、EWS の制限が解除されます。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-OrganizationConfig</span> <span class="literal">-EWSEnabled</span> <span class="variable">$null</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="EWSEditor-も利用可能"><a href="#EWSEditor-も利用可能" class="headerlink" title="EWSEditor も利用可能"></a>EWSEditor も利用可能</h3><p>対話形式の EWS API エクスプローラーを使用したい管理者や開発者は、<a target="_blank" rel="noopener" href="https://github.com/dseph/EwsEditor">EWSEditor</a> も利用できます。検証対象と同じアプリケーション ID を使って、テスト用メールボックスに対して実際の EWS 呼び出しを行う場合に役立ちます。</p>
+<p>その場合も、正しく構成された OAuth アプリケーション、EWS の権限と同意、状態を管理できるテスト用メールボックス、記録したベースライン、EWSAllowedAppIDs の変更が反映されるまでの十分な時間が必要です。</p>
+<h3 id="避けるべき一般的な落とし穴"><a href="#避けるべき一般的な落とし穴" class="headerlink" title="避けるべき一般的な落とし穴"></a>避けるべき一般的な落とし穴</h3><ul>
+<li>App ID を削除した直後に拒否時のテストを実行する。</li>
+<li>既存の App ID を保持せず、リスト全体を置き換える。</li>
+<li>テスト スクリプトが受信トレイの最初のアイテムを読み取るにもかかわらず、受信トレイが空の状態でテストする。</li>
+<li>OAuth、権限、同意、資格情報のエラーを、EWSAllowedAppIDs によって要求がブロックされた証拠と見なす。</li>
+<li>ユーザー エージェント ベースの EWSAllowList または EWSBlockList と、新しい App ID ベースの EWSAllowedAppIDs 制御を混同する。</li>
+<li>REST を使用しているものの EWS を呼び出さないワークロードの App ID を追加する。</li>
+</ul>
+<h3 id="管理者向けガイダンスを-1-段落でまとめると"><a href="#管理者向けガイダンスを-1-段落でまとめると" class="headerlink" title="管理者向けガイダンスを 1 段落でまとめると"></a>管理者向けガイダンスを 1 段落でまとめると</h3><p>アプリケーションが EWS を呼び出し、廃止への移行期間中に一時的なアクセスを必要とする場合は、テスト用テナントで EWSAllowedAppIDs を使ってアプリケーション ID を検証します。テナントで EwsApplicationAccessPolicy をすでに使用している場合は、EWSAllowList または EWSBlockList を個別に評価してください。これらのユーザー エージェント設定は REST にも影響する可能性があります。名前が似ていても、これらの制御は置き換えて使用できません。</p>
+<p>ルールはシンプルです。新しい EWS のアプリケーション ID ゲートには EWSAllowedAppIDs を使用し、以前からあるユーザー エージェント ポリシーにのみ EWSAllowList または EWSBlockList を使用します。各レイヤーを個別にテストしてください。</p>
+<p>この違いが重要なのは、「EWS」で始まる設定はすべて EWS 廃止の例外プロセスに含まれると考える管理者が、すでに見受けられるためです。実際には含まれません。このように誤解すると、不要な構成変更を行ったり、もともと EWS を使用していない REST ワークロードを中断したりする可能性があります。</p>
+<h3 id="参考資料"><a href="#参考資料" class="headerlink" title="参考資料"></a>参考資料</h3><ul>
+<li>Testing EWS App Access、PowerShell-EWS-Scripts Wiki: <a target="_blank" rel="noopener" href="https://github.com/David-Barrett-MS/PowerShell-EWS-Scripts/wiki/Testing-EWS-App-Access">https://github.com/David-Barrett-MS/PowerShell-EWS-Scripts/wiki/Testing-EWS-App-Access</a></li>
+<li>EWSEditor プロジェクト: <a target="_blank" rel="noopener" href="https://github.com/dseph/EwsEditor">https://github.com/dseph/EwsEditor</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/notes-from-the-field-testing-ewsallowedappids-safely/" data-id="cmtm8fyos008swc4x50y6h4y6" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/help-us-shape-exchange-server-on-premises-to-different-online-org-freebusy-after/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          EWS 廃止後の Exchange Server から別組織の Exchange Online への空き時間情報共有に関するご意見を募集
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/understanding-the-new-100-gb-mailbox-entitlement-for-microsoft-365-business-suit/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Microsoft 365 Business スイートのメールボックス容量が最大 100 GB になる仕組み</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">74</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">76</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/exchange-20162019-throttling-and-blocking-up-to-the-final-public-update-baseline/">Exchange Server 2016/2019: 最終公開更新プログラムを基準としたスロットリングとブロック</a>
+          </li>
+        
+          <li>
+            <a href="/blog/duplicate-event-considerations/">「イベントを複製 (Duplicate Event)」を利用する際の注意点</a>
+          </li>
+        
+          <li>
+            <a href="/blog/tell-us-how-you-use-objectguid-samaccountname-and-distinguishedname-in-exchange/">Exchange Online での ObjectGuid、SamAccountName、DistinguishedName の利用方法をお聞かせください</a>
+          </li>
+        
+          <li>
+            <a href="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/">GitHub Copilot を使って EWS アプリを Microsoft Graph に移行してみた</a>
+          </li>
+        
+          <li>
+            <a href="/blog/help-us-shape-exchange-server-on-premises-to-different-online-org-freebusy-after/">EWS 廃止後の Exchange Server から別組織の Exchange Online への空き時間情報共有に関するご意見を募集</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/09/">2026/09</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/08/">2026/08</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/07/">2026/07</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

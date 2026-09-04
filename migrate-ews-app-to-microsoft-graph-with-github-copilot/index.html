@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>GitHub Copilot を使って EWS アプリを Microsoft Graph に移行してみた | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの山内です。Exchange Online EWS: 廃止期限が迫っています では、ほとんどのアプリは限られた EWS の機能しか使用しておらず、AI を活用した移行などの最新ツールを使うことで、想像しているよりも簡単に移行できるケースが多いと紹介しました。 とはいえ、実際の EWS アプリを AI に渡">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GitHub Copilot を使って EWS アプリを Microsoft Graph に移行してみた">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの山内です。Exchange Online EWS: 廃止期限が迫っています では、ほとんどのアプリは限られた EWS の機能しか使用しておらず、AI を活用した移行などの最新ツールを使うことで、想像しているよりも簡単に移行できるケースが多いと紹介しました。 とはいえ、実際の EWS アプリを AI に渡">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/ews-result.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/copilot-conversion.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/entra-graph-permission.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/entra-revoke-ews-permission.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/graph-result.png">
+<meta property="article:published_time" content="2026-08-26T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-08-26T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta property="article:tag" content="Microsoft 365 Developer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/ews-result.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-migrate-ews-app-to-microsoft-graph-with-github-copilot" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/" class="article-date">
+  <time datetime="2026-08-26T15:00:00.000Z" itemprop="datePublished">2026-08-27</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      GitHub Copilot を使って EWS アプリを Microsoft Graph に移行してみた
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/" class="article-date-single">    
+    
+    <time datetime="2026-08-26T15:00:00.000Z" itemprop="dateUpdated">2026-08-27</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>こんにちは。日本マイクロソフト Exchange &amp; Outlook サポート チームの山内です。<br><a href="/blog/exchange-online-ews-your-time-is-almost-up/">Exchange Online EWS: 廃止期限が迫っています</a> では、ほとんどのアプリは限られた EWS の機能しか使用しておらず、AI を活用した移行などの最新ツールを使うことで、想像しているよりも簡単に移行できるケースが多いと紹介しました。</p>
+<p>とはいえ、実際の EWS アプリを AI に渡すと、どこまで Microsoft Graph へ移行できるのでしょうか。移行前と同じ動作を保てるのか、コード以外に何を変更し、人は何を確認する必要があるのかも気になるところです。</p>
+<p>そこで今回は、読者も手元で検証しやすいように、受信トレイのメールを取得する小さな PowerShell スクリプトを GitHub Copilot で Microsoft Graph 版へ変換し、実際に動かしてみます。ここで紹介する進め方は、C# など他の言語で作られた EWS アプリにも応用できます。変換前後の結果を比べながら、AI を活用した移行がどの程度手軽に進められるのかを確認します。</p>
+<h3 id="想定読者と本記事の位置付け"><a href="#想定読者と本記事の位置付け" class="headerlink" title="想定読者と本記事の位置付け"></a>想定読者と本記事の位置付け</h3><p>本記事は、EWS を利用したアプリケーションおよび AI を使用したアプリケーションの開発経験があり、Microsoft Graph への移行を検討しているアプリケーション開発者を対象としています。</p>
+<p>本記事は、Exchange Online の管理者を対象とした記事ではありません。また、アプリケーション開発の経験がない管理者が、本記事を参考に AI を使って自力で Microsoft Graph への移行を行うことを推奨するものでもありません。<br>AI は移行作業を支援するためのツールであり、生成されたコードをそのまま利用できるとは限りません。必ず、AI の出力を技術的にレビューし、必要に応じて修正できるアプリケーション開発者が、移行作業と動作確認を行ってください。</p>
+<p>本記事では、Visual Studio Code で GitHub Copilot を利用できるように構成されている環境を前提としています。</p>
+<h3 id="今回変換する-EWS-コード"><a href="#今回変換する-EWS-コード" class="headerlink" title="今回変換する EWS コード"></a>今回変換する EWS コード</h3><p>変換元は、EWS の <code>FindItem</code> を使って、指定したメールボックスの受信トレイから最新 10 件を取得するスクリプトです。表示する項目は次の 3 つだけです。</p>
+<ul>
+<li>受信日時</li>
+<li>差出人の表示名</li>
+<li>件名</li>
+</ul>
+<p>スクリプト全体はこちらから確認できます。</p>
+<a href="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/Get-EwsInboxMessages.ps1" title="Get-EwsInboxMessages.ps1">Get-EwsInboxMessages.ps1</a>
+
+<p>このスクリプトでは、OAuth 2.0 のクライアント資格情報フローで EWS 用のアクセス トークンを取得し、SOAP リクエストを <code>https://outlook.office365.com/EWS/Exchange.asmx</code> へ送信しています。</p>
+<h3 id="まず-EWS-版を動かしてみる"><a href="#まず-EWS-版を動かしてみる" class="headerlink" title="まず EWS 版を動かしてみる"></a>まず EWS 版を動かしてみる</h3><p>Client Secret はコードに書かず、実行時に SecureString として入力します。実際の値へ置き換えるのは Tenant ID、Client ID、メールボックスの 3 か所です。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$clientSecret</span> = <span class="built_in">Read-Host</span> <span class="string">&quot;Client Secret&quot;</span> <span class="literal">-AsSecureString</span></span><br><span class="line"></span><br><span class="line">.\<span class="built_in">Get-EwsInboxMessages</span>.ps1 `</span><br><span class="line">    <span class="literal">-TenantId</span> <span class="string">&#x27;&lt;tenant-id&gt;&#x27;</span> `</span><br><span class="line">    <span class="literal">-ClientId</span> <span class="string">&#x27;&lt;client-id&gt;&#x27;</span> `</span><br><span class="line">    <span class="literal">-ClientSecret</span> <span class="variable">$clientSecret</span> `</span><br><span class="line">    <span class="literal">-Mailbox</span> <span class="string">&#x27;user@contoso.com&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>受信トレイの最新 10 件が、<code>ReceivedDateTime</code>、<code>From</code>、<code>Subject</code> の 3 列で表示されます。この結果を、変換後の動作を確認するための基準にします。</p>
+<p><img src="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/ews-result.png" alt="EWS 版で受信トレイの最新 10 件を取得した結果"></p>
+<h3 id="Copilot-に変換を依頼する"><a href="#Copilot-に変換を依頼する" class="headerlink" title="Copilot に変換を依頼する"></a>Copilot に変換を依頼する</h3><p><code>Get-EwsInboxMessages.ps1</code> を <code>Get-GraphInboxMessages.ps1</code> という名前でコピーし、コピーしたファイルを Visual Studio Code で開きます。その状態で GitHub Copilot Chat に次のプロンプトを渡します。</p>
+<p>実際のアプリでは、使っている EWS の操作や入出力をすべて把握し、プロンプトに列挙することが難しい場合があります。そこで、具体的な API や処理内容は指定せず、まずコードから現在の動作を読み取るように依頼します。また、EWS と Microsoft Graph は必ずしも 1 対 1 で対応しないため、単一の API 呼び出しではなく、必要に応じて周辺のコードも変更しながらアプリ全体の動作を保つように依頼します。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">このワークスペースにある EWS を使用したアプリケーションを分析し、Microsoft Graph を使用する実装へ移行してください。</span><br><span class="line"></span><br><span class="line">移行にあたって、次の作業を行ってください。</span><br><span class="line"></span><br><span class="line">- コード全体を確認し、使用している EWS の操作、認証方式、入力、出力、エラー処理、外部から見た動作を特定する</span><br><span class="line">- EWS の各操作に対応する Microsoft Graph v1.0 の API と、機能や動作の差を確認する</span><br><span class="line">- 現在の言語、実行環境、認証方式、公開されているパラメーターや戻り値をできる限り維持する</span><br><span class="line">- 1 対 1 で置き換えられる Graph API がない場合も、複数の Graph API、取得後の処理、呼び出し側などを変更することで、アプリケーション全体として現在の動作を維持できるか検討する</span><br><span class="line">- アプリケーション全体の動作を維持するために必要であれば、EWS を呼び出している箇所だけでなく、その前後のコードも含めた変更を提案し、整合するように編集する</span><br><span class="line">- 既存のエラー処理と秘密情報の扱いを維持し、実環境の値をコードへ埋め込まない</span><br><span class="line">- 移行後の処理に必要な最小の Microsoft Graph のアクセス許可を、委任されたアクセス許可かアプリケーションのアクセス許可かを含めて示す</span><br><span class="line">- Microsoft Entra ID で変更が必要な設定を示す</span><br><span class="line">- 現在の動作を維持できない箇所は、変換不能と判断する前に、Microsoft Graph との機能差、データ モデル、アクセス許可、認証方式などの理由を特定する</span><br><span class="line">- その箇所を変換できるようになる条件と、考えられる代替方法、代替方法を採用した場合の動作の違いを示す</span><br><span class="line">- コードから動作を判断できない箇所は推測で実装せず、不足している情報と確認方法を示す</span><br><span class="line">- 現在の動作を維持した移行を完了した後に、Microsoft Graph の機能を活用して効率化できる処理や、見直せる要件と実装がないか分析する</span><br><span class="line">- 改善候補は互換性を維持するための変更と分け、期待できる効果、動作への影響、採用前に人が確認すべき要件とともに提案する。確認を得るまでは改善候補をコードへ反映しない</span><br><span class="line"></span><br><span class="line">書き換え後に、特定した現在の動作、EWS と Microsoft Graph の対応関係、変更した箇所、必要なアクセス許可、維持できない動作とその理由、変換可能になる条件、移行後に人が確認すべき項目を簡潔に説明してください。さらに、互換性を維持するための変更とは別に、Microsoft Graph を前提とした改善候補を示してください。</span><br></pre></td></tr></table></figure>
+
+<p>1 対 1 で対応する Graph API がないことだけで、アプリ全体を移行できないとは限りません。複数の API やアプリ側の処理で同じ結果を実現できる場合があります。それでも動作を維持できない場合は、理由と変換可能になる条件を示してもらうことで、要件の見直しや代替方法を判断できます。</p>
+<p>プロンプトはテキスト ファイルでもダウンロードできます。</p>
+<a href="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/copilot-prompt.txt" title="copilot-prompt.txt">copilot-prompt.txt</a>
+
+<p><img src="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/copilot-conversion.png" alt="GitHub Copilot が EWS 版を Microsoft Graph 版へ変換した画面"></p>
+<h3 id="生成されたコードを確認する"><a href="#生成されたコードを確認する" class="headerlink" title="生成されたコードを確認する"></a>生成されたコードを確認する</h3><p>生成 AI の性質上、GitHub Copilot の生成結果は常に同じになるとは限らず、使用するモデル、対象のコード、プロンプトを実行したときのコンテキストなどによって変わります。以下は、今回のスクリプトに対する生成結果を人が確認した一例です。コードは 1 回の依頼で Microsoft Graph 版へ変換されましたが、EWS 版と実行結果を比較したところ、受信日時に 9 時間の差が見つかりました。同じプロンプトを使っても、必ず同じコードが生成されるわけではないため、生成後のレビューと動作確認は必要です。</p>
+<p>変換後のスクリプト全体はこちらです。</p>
+<a href="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/Get-GraphInboxMessages.ps1" title="Get-GraphInboxMessages.ps1">Get-GraphInboxMessages.ps1</a>
+
+<p>主な変更は 3 か所だったことがわかります。</p>
+<ol>
+<li>アクセス トークンの対象を <code>https://outlook.office365.com/.default</code> から <code>https://graph.microsoft.com/.default</code> へ変更する。</li>
+<li>SOAP の <code>FindItem</code> を、Microsoft Graph の <code>/users/&#123;mailbox&#125;/mailFolders/inbox/messages</code> への GET リクエストへ変更する。</li>
+<li>XML の EWS 応答ではなく、JSON の <code>value</code> から受信日時、差出人、件名を取り出す。</li>
+</ol>
+<p>Microsoft Graph へのリクエスト部分は、次のようにかなり短くなりました。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$mailboxPath</span> = [<span class="type">System.Uri</span>]::EscapeDataString(<span class="variable">$Mailbox</span>)</span><br><span class="line"><span class="variable">$messagesUri</span> = <span class="string">&quot;https://graph.microsoft.com/v1.0/users/<span class="variable">$mailboxPath</span>/mailFolders/inbox/messages?`$select=receivedDateTime,from,subject&amp;`$orderby=receivedDateTime desc&amp;`$top=10&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="variable">$response</span> = <span class="built_in">Invoke-RestMethod</span> <span class="literal">-Method</span> Get <span class="literal">-Uri</span> <span class="variable">$messagesUri</span> <span class="literal">-Headers</span> <span class="selector-tag">@</span>&#123;</span><br><span class="line">    Authorization = <span class="string">&quot;Bearer <span class="variable">$</span>(<span class="variable">$tokenResponse</span>.access_token)&quot;</span></span><br><span class="line">&#125; <span class="literal">-ErrorAction</span> Stop</span><br></pre></td></tr></table></figure>
+
+<p>検証環境では、生成されたコードのまま実行すると、EWS 版と Microsoft Graph 版の受信日時に 9 時間の差がありました。日時の扱いを次のように 1 行調整したところ、同じ結果になりました。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ReceivedDateTime = ([<span class="built_in">datetime</span><span class="type">offset</span>]<span class="variable">$_</span>.receivedDateTime).UtcDateTime</span><br></pre></td></tr></table></figure>
+
+<p>パラメーターと出力プロパティ名は EWS 版から変えていません。API の内側は SOAP から REST へ変わりましたが、スクリプトを呼び出す側への影響は抑えられています。</p>
+<h3 id="Microsoft-Entra-ID-のアクセス許可を変更する"><a href="#Microsoft-Entra-ID-のアクセス許可を変更する" class="headerlink" title="Microsoft Entra ID のアクセス許可を変更する"></a>Microsoft Entra ID のアクセス許可を変更する</h3><p>GitHub Copilot の応答に、必要な権限として Microsoft Graph のアプリケーション権限 Mail.ReadBasic.All と書かれており、技術的に確認しても Mail.ReadBasic.All のアクセス許可が妥当となるので、以下の通りアクセス許可を変更します。<br>より複雑なアプリなどでアクセス許可を設定する場合は、アプリによって複数のアクセス許可が必要な場合など、今回のアクセス許可と異なる場合があります。</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://entra.microsoft.com/">Microsoft Entra 管理センター</a> で対象のアプリ登録を開き、[API permissions] から Microsoft Graph のアプリケーション権限 <code>Mail.ReadBasic.All</code> を追加します。</li>
+<li>追加したアクセス許可に管理者の同意を付与します。</li>
+<li>[App registrations] の構成済みアクセス許可から、Office 365 Exchange Online の <code>full_access_as_app</code> を削除します。</li>
+<li>同じ [API permissions] 画面下部の、テナントに付与されたその他のアクセス許可の一覧で、<code>full_access_as_app</code> のメニューから [管理者の同意を取り消す] を選びます。</li>
+</ol>
+<p><img src="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/entra-graph-permission.png" alt="Microsoft Graph の Mail.ReadBasic.All に管理者の同意を付与した状態"></p>
+<p><img src="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/entra-revoke-ews-permission.png" alt="EWS の full_access_as_app に対する管理者の同意を取り消す操作"></p>
+<p>[App registrations] からアクセス許可を削除する操作は、アプリが今後要求するアクセス許可の構成を変更するものです。削除後も、既に付与された EWS のアプリケーション権限は同じ [API permissions] 画面下部に表示されます。EWS の権限を確実に外すため、そのメニューから管理者の同意も取り消します。</p>
+<p>今回のスクリプトが取得するのは基本的なメール プロパティだけなので、<code>Mail.ReadBasic.All</code> を使います。本文、添付ファイル、拡張プロパティなどを取得するアプリでは要件が異なるため、実際に使っているデータに合わせて権限を選びます。</p>
+<h3 id="Microsoft-Graph-版を-EWS-版と同じ条件で動かしてみる"><a href="#Microsoft-Graph-版を-EWS-版と同じ条件で動かしてみる" class="headerlink" title="Microsoft Graph 版を EWS 版と同じ条件で動かしてみる"></a>Microsoft Graph 版を EWS 版と同じ条件で動かしてみる</h3><p>権限の変更が反映されたら、EWS 版と同じパラメーターで Microsoft Graph 版を実行します。今回の例では変わるのはスクリプトのファイル名だけでした。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$clientSecret</span> = <span class="built_in">Read-Host</span> <span class="string">&quot;Client Secret&quot;</span> <span class="literal">-AsSecureString</span></span><br><span class="line"></span><br><span class="line">.\<span class="built_in">Get-GraphInboxMessages</span>.ps1 `</span><br><span class="line">    <span class="literal">-TenantId</span> <span class="string">&#x27;&lt;tenant-id&gt;&#x27;</span> `</span><br><span class="line">    <span class="literal">-ClientId</span> <span class="string">&#x27;&lt;client-id&gt;&#x27;</span> `</span><br><span class="line">    <span class="literal">-ClientSecret</span> <span class="variable">$clientSecret</span> `</span><br><span class="line">    <span class="literal">-Mailbox</span> <span class="string">&#x27;user@contoso.com&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>Microsoft Graph 版でも、受信トレイの最新 10 件が <code>ReceivedDateTime</code>、<code>From</code>、<code>Subject</code> の 3 列で表示されます。</p>
+<p><img src="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/graph-result.png" alt="Microsoft Graph 版で受信トレイの最新 10 件を取得した結果"></p>
+<p>変換前後を並べると、違いは次のようになります。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>EWS 版</th>
+<th>Microsoft Graph 版</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>スクリプトのパラメーター</td>
+<td>Tenant ID、Client ID、Client Secret、Mailbox</td>
+<td>同じ</td>
+</tr>
+<tr>
+<td>取得するメール</td>
+<td>受信トレイの最新 10 件</td>
+<td>同じ</td>
+</tr>
+<tr>
+<td>表示する項目</td>
+<td>受信日時、差出人表示名、件名</td>
+<td>同じ</td>
+</tr>
+<tr>
+<td>トークンの対象</td>
+<td>Office 365 Exchange Online</td>
+<td>Microsoft Graph</td>
+</tr>
+<tr>
+<td>API</td>
+<td>EWS の <code>FindItem</code></td>
+<td>Microsoft Graph の List messages</td>
+</tr>
+<tr>
+<td>要求と応答</td>
+<td>SOAP &#x2F; XML</td>
+<td>REST &#x2F; JSON</td>
+</tr>
+<tr>
+<td>アプリケーション権限</td>
+<td><code>full_access_as_app</code></td>
+<td><code>Mail.ReadBasic.All</code></td>
+</tr>
+</tbody></table>
+<p>内部で使う API やデータ形式は変わっています。一方、スクリプトの入力と出力を維持したため、利用者から見た動作はほとんど変わりません。</p>
+<h3 id="Copilot-に任せる部分と人が確認する部分"><a href="#Copilot-に任せる部分と人が確認する部分" class="headerlink" title="Copilot に任せる部分と人が確認する部分"></a>Copilot に任せる部分と人が確認する部分</h3><p>今回のような小さな EWS 呼び出しでは、コード変換の多くを Copilot に任せられます。ただし、生成されたコードをそのまま本番で使うのではなく、権限と動作は人が確認します。</p>
+<table>
+<thead>
+<tr>
+<th>Copilot に任せた部分</th>
+<th>人が確認すべき部分</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>トークンの対象リソースと API エンドポイントの変更</td>
+<td>EWS の操作に対応する Microsoft Graph API があること</td>
+</tr>
+<tr>
+<td>SOAP リクエストから REST リクエストへの変更</td>
+<td>取得するデータに対して権限が過剰でないこと</td>
+</tr>
+<tr>
+<td>XML から JSON への応答処理の変更</td>
+<td>管理者の同意と EWS 権限の失効が完了していること</td>
+</tr>
+<tr>
+<td>1 対 1 で対応しない処理の代替案と周辺コードの変更</td>
+<td>代替方法による動作の違いを許容できること</td>
+</tr>
+<tr>
+<td>既存のパラメーターと出力形式の維持</td>
+<td>変換前後の件数、並び順、表示内容が同等であること</td>
+</tr>
+<tr>
+<td>JSON から出力オブジェクトへの変換</td>
+<td>日時のタイム ゾーンや型が変換前後で一致していること</td>
+</tr>
+<tr>
+<td>エラー処理を含むコードのたたき台の作成</td>
+<td>コードや画面に秘密情報が残っていないこと</td>
+</tr>
+</tbody></table>
+<p>コードのたたき台を短時間で作れることは、Microsoft Graph への移行を始めるうえで大きな助けになります。人が確認すべきポイントを先に押さえておけば、既存の EWS コードを 1 つずつ Microsoft Graph 版へ置き換えていく流れもイメージしやすくなります。</p>
+<h3 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h3><p>EWS の <code>FindItem</code> を使う PowerShell スクリプトを GitHub Copilot に渡し、Microsoft Graph の List messages を使うコードへ変換しました。API の呼び出し方は変わりましたが、パラメーターと出力を維持することで、変換前後の動作はほぼ同じにできました。</p>
+<p>今回は読者が手元で簡単に検証できるように PowerShell を使いましたが、この進め方は PowerShell に限定されません。C# など他の言語で作られた EWS アプリでも、Copilot に既存コードを分析させ、EWS の処理を対応する Graph API へ置き換え、権限と変換前後の動作を確認するという同じ流れで移行を進められます。言語によってコードや利用するライブラリは異なりますが、この記事で紹介したプロンプトと確認のポイントは共通して利用できます。</p>
+<p>すべてを Copilot に任せるのではなく、API の機能対応、最小権限、管理者の同意、実際の出力を人が確認することがポイントです。既存アプリの小さな EWS 呼び出しを 1 つ選び、同じように変換前後を比べてみると、Microsoft Graph への移行を具体的に始められます。</p>
+<p>まずは変換前と同じ動作を確認することが大切ですが、移行は既存の実装や要件を見直すよい機会でもあります。この見直しも、既存コードを Copilot に分析してもらい、改善候補と影響を整理しながら一緒に進めることができます。取得するデータ、処理の流れや頻度、必要な権限が現在も最適かを確認し、認証方法、対象メールボックスの制限、ページング、スロットリング、再試行、監視などを Microsoft Graph を前提に検討すれば、想像しているよりも取り組みやすくなります。</p>
+<p>Copilot の提案をそのまま採用するのではなく、業務要件や運用への影響は人が判断する必要があります。それでも、EWS への依存を解消するだけでなく、これからも運用しやすいアプリへ発展させるための最初の一歩を、Copilot と一緒に踏み出すことができます。</p>
+<h3 id="参考資料"><a href="#参考資料" class="headerlink" title="参考資料"></a>参考資料</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/graph/migrate-exchange-web-services-overview">EWS アプリを Microsoft Graph に移行する</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/graph/api/user-list-messages">List messages</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity-platform/v2-oauth2-client-creds-grant-flow">Microsoft identity platform と OAuth 2.0 クライアント資格情報フロー</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/graph/permissions-reference#mailreadbasicall">Microsoft Graph のアクセス許可リファレンス: Mail.ReadBasic.All</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.microsoft.com/entra/identity/enterprise-apps/manage-application-permissions">エンタープライズ アプリケーションに付与されたアクセス許可を確認して失効する</a></li>
+</ul>
+<h4 id="免責事項"><a href="#免責事項" class="headerlink" title="免責事項"></a>免責事項</h4><p style="background: #F0F0F0;">
+本サンプル コードは、あくまでも説明のためのサンプルとして提供されるものであり、製品の実運用環境で使用されることを前提に提供されるものではありません。
+本サンプル コードおよびそれに関連するあらゆる情報は、「現状のまま」で提供されるものであり、商品性や特定の目的への適合性に関する黙示の保証も含め、明示・黙示を問わずいかなる保証も付されるものではありません。
+マイクロソフトは、お客様に対し、本サンプル コードを使用および改変するための非排他的かつ無償の権利ならびに本サンプル コードをオブジェクト コードの形式で複製および頒布するための非排他的かつ無償の権利を許諾します。
+但し、お客様は、(1) 本サンプル コードが組み込まれたお客様のソフトウェア製品のマーケティングのためにマイクロソフトの会社名、ロゴまたは商標を用いないこと、(2) 本サンプル コードが組み込まれたお客様のソフトウェア製品に有効な著作権表示をすること、および (3) 本サンプル コードの使用または頒布から生じるあらゆる損害 (弁護士費用を含む) に関する請求または訴訟について、マイクロソフトおよびマイクロソフトの取引業者に対し補償し、損害を与えないことに同意するものとします。 </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/" data-id="cmtm8fyol0086wc4x41l67c49" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/tell-us-how-you-use-objectguid-samaccountname-and-distinguishedname-in-exchange/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Exchange Online での ObjectGuid、SamAccountName、DistinguishedName の利用方法をお聞かせください
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/help-us-shape-exchange-server-on-premises-to-different-online-org-freebusy-after/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">EWS 廃止後の Exchange Server から別組織の Exchange Online への空き時間情報共有に関するご意見を募集</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">74</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">76</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/exchange-20162019-throttling-and-blocking-up-to-the-final-public-update-baseline/">Exchange Server 2016/2019: 最終公開更新プログラムを基準としたスロットリングとブロック</a>
+          </li>
+        
+          <li>
+            <a href="/blog/duplicate-event-considerations/">「イベントを複製 (Duplicate Event)」を利用する際の注意点</a>
+          </li>
+        
+          <li>
+            <a href="/blog/tell-us-how-you-use-objectguid-samaccountname-and-distinguishedname-in-exchange/">Exchange Online での ObjectGuid、SamAccountName、DistinguishedName の利用方法をお聞かせください</a>
+          </li>
+        
+          <li>
+            <a href="/blog/migrate-ews-app-to-microsoft-graph-with-github-copilot/">GitHub Copilot を使って EWS アプリを Microsoft Graph に移行してみた</a>
+          </li>
+        
+          <li>
+            <a href="/blog/help-us-shape-exchange-server-on-premises-to-different-online-org-freebusy-after/">EWS 廃止後の Exchange Server から別組織の Exchange Online への空き時間情報共有に関するご意見を募集</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/09/">2026/09</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/08/">2026/08</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/07/">2026/07</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
