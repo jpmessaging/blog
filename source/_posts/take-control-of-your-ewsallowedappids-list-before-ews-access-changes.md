@@ -5,7 +5,7 @@ tags: Exchange Online
 ---
 ※ この記事は、[Take control of your EWSAllowedAppIDs list before EWS access changes](https://techcommunity.microsoft.com/blog/exchange/take-control-of-your-ewsallowedappids-list-before-ews-access-changes/4553534) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-Exchange Web Services (EWS) 廃止の最終段階に向けた準備を進める中で、EWS の AppID 許可リストを定義するために利用できる [EWSAllowedAppIDs](https://techcommunity.microsoft.com/blog/exchange/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/4529471) 設定の適用方法を見直しています。私たちの目標は、各テナントの管理者が許可リストを管理できる状態を維持しながら、予期しないサービス中断を防ぐことができるようにすることです。
+Exchange Web Services (EWS) の廃止に向けた最終段階の一環として、EWS の AppID 許可リストを作成するために利用できる [EWSAllowedAppIDs](https://techcommunity.microsoft.com/blog/exchange/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/4529471) 設定の適用方法を見直しています。私たちの目標は、各テナントの管理者が許可リストを管理できる状態を維持しながら、予期しないサービス中断を防ぐことができるようにすることです。
 
 <p style="background: #f5ff66ed;"><strong>すべてのお客様に対して、EWS の利用状況を確認し、EWSAllowedAppIDs をご自身で構成していただくことを強く推奨します。管理者がすでに EWSAllowedAppIDs を構成している場合、Microsoft がそのリストを上書きしたり変更したりすることはありません。お客様が管理するリストが引き続き有効な設定として優先されます。</strong></p>
 
