@@ -1,7 +1,7 @@
 ---
 title: EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える
 date: 2026-06-22 10:00
-lastupdate: 2026-09-03
+lastupdate: 2026-09-07
 tags:
 - Exchange Online
 ---
@@ -95,7 +95,7 @@ EWSAllowedAppIDs が重要な理由を理解するには、この日付の前後
 
 推奨される流れは次の通りです。
 
-1. EWSAllowedAppIDs の App ID 許可リストを構成または検証する (9 月に、App ID 許可リストを構成していないテナントについては Microsoft がリストを設定するとお伝えしています。詳細は、[こちら](/blog/exchange-online-ews-your-time-is-almost-up/) をご確認ください。ただし、リストの内容が正しいことを確認する責任は管理者にあります)。
+1. EWSAllowedAppIDs の App ID 許可リストを構成または検証する (App ID 許可リストを構成していないテナントについては Microsoft がリストを設定するとお伝えしています。詳細は、[こちら](/blog/exchange-online-ews-your-time-is-almost-up/) をご確認ください。ただし、リストの内容が正しいことを確認する責任は管理者にあります)。
 2. `EWSEnabled=True` を設定する
 
 この作業を事前に完了している組織では、より広範な廃止ロールアウト中に中断が発生する可能性を大きく減らせます。
@@ -205,25 +205,22 @@ EWSAllowedAppIDs は、EWS からの迅速な移行を促しながらも、最�
 
 **独自の App ID 許可リストを作成せずに、2026 年 8 月中に `EWSEnabled=True` を設定できますか?**
 
-はい。ただし、要件に正確に合った内容にするため、テナント管理者自身が App ID 許可リストを作成することが望ましいと考えています。2026 年 9 月には、各テナントの利用状況に基づいて Microsoft が App ID 許可リストを自動的に設定します。8 月中に `EWSEnabled=True` だけを設定し、App ID 許可リストの設定を Microsoft に任せた場合、利用状況が確認されたアプリケーションのうち、管理者が把握していなかったものもリストに含まれる可能性があります。2026 年 10 月以降に EWS の利用を許可するアプリケーションを正確に制御するため、管理者が独自の App ID 許可リストを作成することを推奨します。
+はい。ただし、要件に正確に合った内容にするため、テナント管理者自身が App ID 許可リストを作成することが望ましいと考えています。各テナントの利用状況に基づいて Microsoft が App ID 許可リストを自動的に設定します。8 月中に `EWSEnabled=True` だけを設定し、App ID 許可リストの設定を Microsoft に任せた場合、利用状況が確認されたアプリケーションのうち、管理者が把握していなかったものもリストに含まれる可能性があります。2026 年 10 月以降に EWS の利用を許可するアプリケーションを正確に制御するため、管理者が独自の App ID 許可リストを作成することを推奨します。詳細は、[EWS アクセス変更に備えて、EWSAllowedAppIDs リストを適切に管理しましょう](/blog/take-control-of-your-ewsallowedappids-list-before-ews-access-changes/) をご覧ください。
 
-**2026 年 8 月より前に独自の App ID 許可リストを作成した場合、Microsoft は 2026 年 9 月に行う全テナント向けの自動処理でそのリストを変更しますか?**
+**独自の App ID 許可リストを作成した場合、Microsoft は App ID の許可リストの自動設定時にその内容を変更しますか?**
 
 いいえ。独自の App ID 許可リストを作成した場合、自動処理によって作成済みの App ID 許可リストが変更されることはありません。リストの内容はそのまま維持されます。
 
-**Microsoft が 9 月にテナントの App ID 許可リストを自動設定した場合、その後、管理者は PowerShell を使用してリストを手動で上書きしたり、項目を追加したりできますか?**
+**Microsoft がテナントの App ID 許可リストを自動設定した場合、その後、管理者は PowerShell を使用してリストを手動で上書きしたり、項目を追加したりできますか?**
 
 はい。管理者は App ID 許可リストの内容を変更できます。
-
-**App ID 許可リスト (`EWSAllowedAppIDs`) に項目を追加した場合、Microsoft は 2026 年 9 月にそのリストを上書きまたは変更しますか?**
-
-管理者が `EWSAllowedAppIDs` プロパティを変更して App ID 許可リストに何らかの変更を加えた場合、Microsoft がそのテナントのプロパティを変更することはありません。Microsoft が `EWSAllowedAppIDs` を変更するのは、テナント管理者がこのプロパティをまだ変更していない場合だけです。
 
 **EWSAllowList 設定はどうなりますか? アプリケーション ID をこの設定に追加する必要がありますか?**
 
 EWSAllowList および EWSBlockList 設定は、以前から提供されている [EwsApplicationAccessPolicy](https://learn.microsoft.com/exchange/client-developer/exchange-web-services/how-to-control-access-to-ews-in-exchange) 機能に関連するものであり、Exchange Online における EWS の廃止とは関係ありません。EwsApplicationAccessPolicy は従来の EWS アプリケーション アクセス制御機能で、App ID ではなく User Agent を使用します。EwsApplicationAccessPolicy を変更すると、クライアント アプリケーションが Exchange Online に接続する際に通過する必要がある追加の「ゲート」が設けられます。アプリケーションは、前述の App ID 許可リストを通過した後にのみ、このゲートを通過できます。そのため、EWSAllowedAppIDs と EwsApplicationAccessPolicy を併用する場合、要求の App ID と正しい User Agent の両方が、それぞれの判定条件を満たす必要があります。いずれかを満たさない場合、EWS がブロックされ、要求は拒否されます。
 
 **この記事の更新履歴:**
+- 2026/9/4: FAQ および本文を更新し、まだ AppID の許可リストを作成していないテナントに対して Microsoft が AppID の許可リストを作成するタイミングについて、公開済みの情報に合わせて内容を修正しました。詳細は、[EWS アクセス変更に備えて、EWSAllowedAppIDs リストを適切に管理しましょう](/blog/take-control-of-your-ewsallowedappids-list-before-ews-access-changes/) をご覧ください。
 - 2026/09/01: App ID 許可リストおよび `EWSAllowedAppIDs` プロパティに関する FAQ を追加しました。
 - 2026/09/01: すべての「許可リスト」という表記を「App ID 許可リスト」に変更し、Application ID を使用する許可リストであることを明確にしました。これは、EwsApplicationAccessPolicy とその EWSAllowList 設定で使用される User Agent 文字列と区別するためです。
 - 2026/08/14: App ID 許可リストの表を更新し、`EWSEnabled=True` かつ App ID 許可リストが設定済みの場合の動作を明記しました。
