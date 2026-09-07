@@ -11,7 +11,7 @@ Exchange Web Services (EWS) の廃止に向けた最終段階の一環として�
 
 ### ロールアウト中に何が起こるのか
 
-2026 年 10 月 1 日から、Microsoft は [以前のブログ記事](/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/) で説明した新しい動作を順次有効にします。今回のロジック変更により、`EWSEnabled` が `True` に設定されている場合、EWS を利用するためには許可された AppID リストが必要になります。適用のタイミングは、各テナントの環境にロールアウトされるタイミングによって異なります。
+2026 年 10 月 1 日から、Microsoft は [以前のブログ記事](/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/) で説明した新しい動作を順次有効にします。今回の動作変更により、`EWSEnabled` が `True` に設定されている場合、EWS を利用するためには許可された AppID リストが必要になります。適用のタイミングは、各テナントの環境にロールアウトされるタイミングによって異なります。
 
 組織の設定値に応じて、次の処理が行われます。
 
