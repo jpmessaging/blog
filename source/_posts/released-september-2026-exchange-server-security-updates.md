@@ -34,7 +34,7 @@ Exchange Server 2016 および 2019 は[サポートが終了](/blog/support-for
 
 ### このリリースの既知の問題
 
-- [予定表アプリケーションで公開済みの予定表 (.ics) を開くと HTTP 500 エラーが返される | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/update/2026/5126672) - 今後の更新プログラムで解決される予定です。
+- [予定表アプリケーションで公開済みの予定表 (.ics) を開くと HTTP 500 エラーが返される | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/update/2026/5126672) - 今後の更新プログラムで修正予定です。
 
 ### このリリースで解決された問題
 
