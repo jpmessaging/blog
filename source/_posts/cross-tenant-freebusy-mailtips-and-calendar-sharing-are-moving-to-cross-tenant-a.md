@@ -1,7 +1,7 @@
 ---
 title: クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行
-date: 2026-08-10 15:00:00 
-lastupdate: 2026-08-31
+date: 2026-08-10 15:00:00
+lastupdate: 2026-09-08
 tags:
 - Exchange Online
 ---
@@ -50,10 +50,7 @@ MC1446796 はすべてのテナント管理者を対象に配信されていま�
 Get-OrganizationRelationship | Format-List Name, DomainNames, Enabled, FreeBusyAccessEnabled, FreeBusyAccessLevel, FreeBusyAccessScope, MailTipsAccessEnabled, MailTipsAccessLevel, MailTipsAccessScope
 ```
 コマンドの実行結果で `Enabled: True` と表示され、かつ `FreeBusyAccessEnabled: True` または `MailTipsAccessEnabled: True` のいずれかが表示されており、共有先の外部組織が Microsoft 365 を利用している場合は影響を受けます。それ以外の場合、対応は必要ありません。
-```powershell
-Get-AvailabilityAddressSpace | Format-List ForestName, AccessMethod
-```
-コマンドの実行結果で `AccessMethod: OrgWideFBToken` と表示され、かつ共有先の外部組織が Microsoft 365 を利用している場合は影響を受けます。それ以外の場合、対応は必要ありません。
+
 ```powershell
 Get-SharingPolicy | Format-List Name, Domains, Enabled, Default
 ```
@@ -133,7 +130,7 @@ Get-AvailabilityAddressSpace | Format-List ForestName, AccessMethod
 `AccessMethod` に `OrgWideFBToken` を使用する可用性アドレス空間の構成は Exchange Web Services に依存していないため、EWS の廃止による影響を受けません。ただし、追加のセキュリティ機能と、より細かな構成オプションを利用できる Microsoft 365 クロステナント アクセス ポリシーへの移行を検討してください。
 
 *更新履歴*
-
+- **2026/9/3**: 記事内の重複するセクションを削除しました。
 - **2026/8/28**: 展開スケジュールの変更や複数の補足など、記事のさまざまな箇所を更新しました。
 - **2026/8/18**: 21Vianet クラウドとの可用性アドレス空間による共有に関する FAQ を更新しました。
 - **2026/8/10**: 無効に設定された既定の共有ポリシーは移行不要であることを明確にする FAQ を追加しました。
