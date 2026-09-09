@@ -22,7 +22,7 @@ tags:
 | Outlook for Mac | Microsoft 365 の Outlook for Mac ビルド 16.106 以降<br>macOS Sequoia 以降 | 2025 年 12 月以降のセキュリティ更新プログラムを適用した Exchange Server Subscription Edition を使用し、`ADFSAuthorizedURLs` を構成します。 |
 | Outlook for iOS | サポート対象となる最新バージョンの Outlook for iOS および iOS | Exchange と AD FS の構成手順に従います。 |
 | Outlook for Android | サポート対象となる最新バージョンの Outlook for Android および Android OS | 公開されている Exchange と AD FS の構成手順に従って構成します。 |
-| iOS および macOS の標準のメール アプリ | iOS 17.6.1 以降<br>macOS Sequoia 以降 | 公開されている手順に従い、AD FS の Outlook アプリケーション グループでネイティブ クライアント アプリケーションとアクセス許可を構成します。 |
+| iOS および macOS の標準のメール アプリ | iOS 17.6.1 以降<br>macOS Sequoia 以降 | 公開されている手順に従い、AD FS の Outlook Application Group でネイティブ クライアント アプリケーションとアクセス許可を構成します。 |
 
 ### ドキュメントの更新
 
