@@ -1,0 +1,73 @@
+name: Validate translated posts
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - 'source/_posts/**'
+      - '.github/copilot-instructions.md'
+      - '.github/workflows/validate-translated-posts.yml'
+      - 'scripts/validate-translated-posts.js'
+      - 'test/validate-translated-posts.test.js'
+      - 'package.json'
+      - 'package-lock.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: translated-post-validation-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  hexo-build:
+    name: Hexo build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pull request head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Clean generated files
+        run: npm run clean
+
+      - name: Build site
+        run: npm run build
+
+  translated-posts:
+    name: Changed translated posts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pull request history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run validator tests
+        run: npm run test:translation-validation
+
+      - name: Validate changed translated posts
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: npm run validate:translations -- --base "$BASE_SHA" --head "$HEAD_SHA"

@@ -6,7 +6,9 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "deploy": "hexo deploy",
-    "server": "hexo server"
+    "server": "hexo server",
+    "test:translation-validation": "node --test test/validate-translated-posts.test.js",
+    "validate:translations": "node scripts/validate-translated-posts.js"
   },
   "hexo": {
     "version": "7.3.0"
@@ -24,5 +26,8 @@
     "hexo-renderer-marked": "^7.0.1",
     "hexo-renderer-stylus": "^3.0.1",
     "hexo-server": "^3.0.0"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
   }
 }
