@@ -143,7 +143,12 @@ function validateFrontMatter(file, frontMatter, errors) {
       '`YYYY-MM-DD` または `YYYY-MM-DD HH:mm` で指定してください。'
     );
   }
-  if (Object.hasOwn(data, 'lastupdate') && !isRealDate(data.lastupdate, false)) {
+  if (
+    Object.hasOwn(data, 'lastupdate') &&
+    data.lastupdate !== null &&
+    data.lastupdate !== '' &&
+    !isRealDate(data.lastupdate, false)
+  ) {
     addError(
       errors,
       file,

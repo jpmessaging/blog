@@ -125,6 +125,30 @@ test('validates required front matter fields and exact dates', () => {
   assert.match(messages(result).join('\n'), /tags/);
 });
 
+test('accepts lastupdate with an empty YAML value', () => {
+  for (const [name, content] of [
+    ['without-space', article({ lastupdate: '' }).replace('lastupdate: \n', 'lastupdate:\n')],
+    ['with-space', article({ lastupdate: '' })]
+  ]) {
+    const site = fixture();
+    const file = site.write(`source/_posts/empty-lastupdate-${name}.md`, content);
+
+    assert.deepEqual(validateFile(file, site.root).errors, []);
+  }
+});
+
+test('rejects a non-empty lastupdate with an invalid format', () => {
+  const site = fixture();
+  const file = site.write(
+    'source/_posts/invalid-lastupdate.md',
+    article({ lastupdate: '2026/09/11' })
+  );
+  const result = validateFile(file, site.root);
+
+  assert.equal(result.errors.length, 1);
+  assert.match(result.errors[0].message, /lastupdate/);
+});
+
 test('requires the complete note immediately after front matter', () => {
   const site = fixture();
   const file = site.write(
