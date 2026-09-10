@@ -1,7 +1,7 @@
 ---
 title: "2026 年 8 月の Exchange Server のセキュリティ更新プログラムが公開されました"
 date: 2026-08-12
-lastupdate: 2026-08-31
+lastupdate: 2026-09-10
 tags:
 - Exchange
 ---
@@ -44,7 +44,7 @@ Exchange Server 2016 および 2019 は[サポートが終了](/blog/support-for
 - [Wrapper messages appear in shared mailbox inbox in hybrid environments | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/hotfix/2026/5105719) - 今後の更新プログラムで対応予定です。
 - 複数の Exchange Server で構成され、受信 MRS 接続をプロキシするフロントエンド サーバーと、メールボックスをホストするバックエンド サーバーが異なる環境で、バックエンド サーバーには 2026 年 8 月の SU がインストールされているものの、フロントエンド サーバーが以前のバージョンのままである場合、MRS 移行が `TooManyTransientFailureRetriesPermanentException` エラーで失敗することがあります。この問題は、`Test-MigrationServerAvailability` を含むすべての MRS 要求で発生する可能性があります。フロントエンド サーバーに 2026 年 8 月の SU をインストールすると、この問題は解決する見込みです。
 - [予定表アプリケーションで公開済みの予定表 (.ics) を開くと HTTP 500 エラーが返される | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/update/2026/5126672)
-- [Graph API のみを使用する Exchange ハイブリッド展開で、委任されたメールボックスの空き時間情報の取得に失敗する | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/update/2026/5127092)
+- [Microsoft Graph を使用したハイブリッドの空き時間情報で要求元のタイム ゾーンが失われる | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/update/2026/5125804)
 
 ### 更新プログラムのインストール
 

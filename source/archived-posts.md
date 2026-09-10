@@ -8,6 +8,8 @@ alias:
 - Exchange Online と Outlook の認証キャッシュについて/index.html
 - Understanding-Message-Tracking-in-Exchange-Online-Part-1-Retrieval/index.html
 - よくわかる Exchange Online のメッセージ追跡 ～ Part 1 取得編 ～/index.html
+- About-Mail-Flow-in-Exchange-2013/index.html
+- Exchange 2013 のメール フローについて/index.html
 ---
 
 アクセスされた記事は公開を終了しました。
