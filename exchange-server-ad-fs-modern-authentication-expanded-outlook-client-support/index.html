@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange Server の AD FS 先進認証: Outlook クライアントのサポートを拡大 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="※ この記事は、Exchange Server AD FS Modern Authentication: Expanded Outlook client support の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange Server の AD F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange Server の AD FS 先進認証: Outlook クライアントのサポートを拡大">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/exchange-server-ad-fs-modern-authentication-expanded-outlook-client-support/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Exchange Server AD FS Modern Authentication: Expanded Outlook client support の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange Server の AD F">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-08T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-09-08T15:00:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-exchange-server-ad-fs-modern-authentication-expanded-outlook-client-support" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/exchange-server-ad-fs-modern-authentication-expanded-outlook-client-support/" class="article-date">
+  <time datetime="2026-09-08T15:00:00.000Z" itemprop="datePublished">2026-09-09</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange Server の AD FS 先進認証: Outlook クライアントのサポートを拡大
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/exchange-server-ad-fs-modern-authentication-expanded-outlook-client-support/" class="article-date-single">    
+    
+    <time datetime="2026-09-08T15:00:00.000Z" itemprop="dateUpdated">2026-09-09</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/exchange-server-ad-fs-modern-authentication-expanded-outlook-client-support/4554410">Exchange Server AD FS Modern Authentication: Expanded Outlook client support</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p><strong>Exchange Server の AD FS 先進認証において、Outlook クライアントのサポートが拡大しました。</strong></p>
+<p><a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/update-on-exchange-server-adfs-modern-authentication-support/4338563">以前のお知らせ</a> では、Outlook for Windows と Outlook for Mac に加え、iOS および macOS の標準メール アプリのサポートについてご案内しました。今回、さらに Outlook for iOS と Outlook for Android もサポート対象となりました。</p>
+<p>これにより、サポート対象となるオンプレミスのみの Exchange Server 環境では、Outlook for iOS と Outlook for Android から AD FS 先進認証を使用してメールボックスにアクセスできるようになります。</p>
+<p><strong>対象となる環境:</strong> AD FS 先進認証は、Microsoft Entra ID や Exchange ハイブリッド構成を使用していない、オンプレミスのみの Exchange 組織を対象としています。Exchange ハイブリッド組織では、引き続き Microsoft Entra ID を使用したハイブリッド先進認証 (HMA) を使用してください。</p>
+<h1 id="サポート対象クライアントの一覧"><a href="#サポート対象クライアントの一覧" class="headerlink" title="サポート対象クライアントの一覧"></a>サポート対象クライアントの一覧</h1><table>
+<thead>
+<tr>
+<th><strong>クライアント</strong></th>
+<th><strong>サポート対象のリリースまたは OS</strong></th>
+<th><strong>管理者が行う作業</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Outlook for Windows</td>
+<td>サポート対象の Microsoft 365 Apps 各チャネルおよび永続ライセンス版<br>Windows 11 バージョン 22H2 以降</td>
+<td>必要な Windows 更新プログラムをインストールし、AD FS サービスの URL を信頼済みサイトとして構成したうえで、Outlook でオンプレミス Exchange の先進認証を有効にします。</td>
+</tr>
+<tr>
+<td>Outlook for Mac</td>
+<td>Microsoft 365 の Outlook for Mac ビルド 16.106 以降<br>macOS Sequoia 以降</td>
+<td>2025 年 12 月以降のセキュリティ更新プログラムを適用した Exchange Server Subscription Edition を使用し、<code>ADFSAuthorizedURLs</code> を構成します。</td>
+</tr>
+<tr>
+<td>Outlook for iOS</td>
+<td>サポート対象となる最新バージョンの Outlook for iOS および iOS</td>
+<td>Exchange と AD FS の構成手順に従います。</td>
+</tr>
+<tr>
+<td>Outlook for Android</td>
+<td>サポート対象となる最新バージョンの Outlook for Android および Android OS</td>
+<td>公開されている Exchange と AD FS の構成手順に従って構成します。</td>
+</tr>
+<tr>
+<td>iOS および macOS の標準のメール アプリ</td>
+<td>iOS 17.6.1 以降<br>macOS Sequoia 以降</td>
+<td>公開されている手順に従い、AD FS の Outlook Application Group でネイティブ クライアント アプリケーションとアクセス許可を構成します。</td>
+</tr>
+</tbody></table>
+<h3 id="ドキュメントの更新"><a href="#ドキュメントの更新" class="headerlink" title="ドキュメントの更新"></a>ドキュメントの更新</h3><p>サポート対象クライアントに関する要件をより確認しやすくするため、展開ドキュメントを更新しました。</p>
+<ul>
+<li>サポート対象クライアントおよび OS の要件を一覧で確認できる、新しいサマリーを追加しました。</li>
+<li>Outlook for Windows については、Outlook のビルド要件、Windows の更新プログラム要件、レジストリ設定、および AD FS の信頼済みドメイン要件を、Windows クライアント向けの項目としてまとめました。</li>
+<li>Outlook for Mac については、<code>ADFSAuthorizedURLs</code> の Terminal 構成手順、複数名前空間を使用する場合の構成例、および同等の Mobile Device Management (MDM) 設定を要件として追加しました。</li>
+</ul>
+<h3 id="関連情報"><a href="#関連情報" class="headerlink" title="関連情報"></a>関連情報</h3><p>前提条件と構成手順の詳細は、<a target="_blank" rel="noopener" href="https://aka.ms/ExchangeADFSModernAuth">オンプレミスの Exchange Server でモダン認証を有効にする</a> を参照してください。</p>
+<p>以前のクライアント サポート拡大に関する背景については、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/update-on-exchange-server-adfs-modern-authentication-support/4338563">Update on Exchange Server ADFS Modern Authentication support</a> を参照してください。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/exchange-server-ad-fs-modern-authentication-expanded-outlook-client-support/" data-id="cmtvqx6x9006rty42795866ja" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/released-september-2026-exchange-server-security-updates/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2026 年 9 月の Exchange Server のセキュリティ更新プログラムが公開されました</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">75</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">76</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/exchange-server-ad-fs-modern-authentication-expanded-outlook-client-support/">Exchange Server の AD FS 先進認証: Outlook クライアントのサポートを拡大</a>
+          </li>
+        
+          <li>
+            <a href="/blog/released-september-2026-exchange-server-security-updates/">2026 年 9 月の Exchange Server のセキュリティ更新プログラムが公開されました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/take-control-of-your-ewsallowedappids-list-before-ews-access-changes/">EWS アクセス変更に備えて、EWSAllowedAppIDs リストを適切に管理しましょう</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-20162019-throttling-and-blocking-up-to-the-final-public-update-baseline/">Exchange Server 2016/2019: 最終公開更新プログラムを基準としたスロットリングとブロック</a>
+          </li>
+        
+          <li>
+            <a href="/blog/duplicate-event-considerations/">「イベントを複製 (Duplicate Event)」を利用する際の注意点</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/09/">2026/09</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/08/">2026/08</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/07/">2026/07</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
