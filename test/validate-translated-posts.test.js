@@ -149,6 +149,52 @@ test('rejects a non-empty lastupdate with an invalid format', () => {
   assert.match(result.errors[0].message, /lastupdate/);
 });
 
+test('accepts date with seconds for compatibility with existing articles', () => {
+  const site = fixture();
+  const file = site.write(
+    'source/_posts/date-with-seconds.md',
+    article({ date: '2026-09-11 11:00:30' })
+  );
+
+  assert.deepEqual(validateFile(file, site.root).errors, []);
+});
+
+test('rejects date with invalid seconds', () => {
+  const site = fixture();
+  const file = site.write(
+    'source/_posts/invalid-date-seconds.md',
+    article({ date: '2026-09-11 11:00:60' })
+  );
+  const result = validateFile(file, site.root);
+
+  assert.equal(result.errors.length, 1);
+  assert.match(result.errors[0].message, /date/);
+});
+
+test('rejects date with slash separators', () => {
+  const site = fixture();
+  const file = site.write(
+    'source/_posts/slash-date.md',
+    article({ date: '2026/09/11 11:00' })
+  );
+  const result = validateFile(file, site.root);
+
+  assert.equal(result.errors.length, 1);
+  assert.match(result.errors[0].message, /date/);
+});
+
+test('rejects lastupdate with a time', () => {
+  const site = fixture();
+  const file = site.write(
+    'source/_posts/timed-lastupdate.md',
+    article({ lastupdate: '2026-09-11 11:00' })
+  );
+  const result = validateFile(file, site.root);
+
+  assert.equal(result.errors.length, 1);
+  assert.match(result.errors[0].message, /lastupdate/);
+});
+
 test('requires the complete note immediately after front matter', () => {
   const site = fixture();
   const file = site.write(

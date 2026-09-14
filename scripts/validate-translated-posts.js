@@ -14,7 +14,7 @@ const TRANSLATION_NOTE_PATTERN =
 const TRANSLATION_SOURCE_PATTERN =
   /^※ この記事は、\[([^\]\r\n]+)\]\((https?:\/\/[^\s<>\r\n]+)\) の抄訳です。/;
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
-const DATETIME_PATTERN = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/;
+const DATETIME_PATTERN = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}(?::\d{2})?$/;
 const FILE_NAME_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*\.md$/;
 const HALF_WIDTH_KATAKANA_PATTERN = /[\uFF61-\uFF9F]/u;
 const FULL_WIDTH_PUNCTUATION_PATTERN = /[（）：]/u;
@@ -118,8 +118,8 @@ function isRealDate(value, allowTime) {
   }
 
   if (timePart) {
-    const [hour, minute] = timePart.split(':').map(Number);
-    return hour <= 23 && minute <= 59;
+    const [hour, minute, second = 0] = timePart.split(':').map(Number);
+    return hour <= 23 && minute <= 59 && second <= 59;
   }
   return true;
 }
@@ -140,7 +140,7 @@ function validateFrontMatter(file, frontMatter, errors) {
       file,
       2,
       '`date` の形式が正しくありません。',
-      '`YYYY-MM-DD` または `YYYY-MM-DD HH:mm` で指定してください。'
+      '`YYYY-MM-DD`、`YYYY-MM-DD HH:mm`、または既存記事互換の `YYYY-MM-DD HH:mm:ss` で指定してください。'
     );
   }
   if (
