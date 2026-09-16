@@ -1,6 +1,7 @@
 ---
 title: "Exchange Online のクロステナント間のメッセージの取り消し"
 date: 2026-07-13 11:00
+lastupdate: 2026-09-16
 tags: 
 - Exchange Online
 ---
@@ -46,6 +47,12 @@ Set-CrossTenantRecallConfiguration -CrossTenantRecallEnabled [$true | $false]
 ```PowerShell
 Set-CrossTenantRecallConfiguration -AllowedSenderTenantIds @{Add="<tenantId 1>","<tenantId 2>"}; {Remove="<tenantId 1>","<tenantId 2>"} 
 ```
+
+取り消し要求を送信するテナントのテナント ID を確認するには、送信元テナントの管理者が以下のコマンドを実行します。
+```PowerShell
+Get-ConnectionInformation | fl *tenantid*
+```
+
 ### 送信者と受信者に見える動作
 
 許可リストに登録されたテナントの送信者がメッセージを取り消すと、受信側テナントの受信者には同一テナント内取り消しと同様に取り消しが反映されます。受信側テナントで受信者向けのメッセージの取り消し通知が有効化されている場合、クロステナントのメッセージの取り消しにも同じ通知が適用されます。送信側テナントが受信側の許可リストに登録されていない場合は、送信者には「組織間では取り消せない」旨の通知が返されます。
