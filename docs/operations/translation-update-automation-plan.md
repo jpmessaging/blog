@@ -81,7 +81,7 @@ Blog チームは英語記事の更新内容を TechCommunity 上のグラフィ
 
 監視対象の英語記事数が多く `Test-BlogArticleUpdate` の全件実行には時間がかかるため、新しい zip の「生成」と「アップロード」を独立した関数に分離します。これにより、本番のクロール処理を実行せずに、新しい zip の生成・アップロードだけを単体でテストできます。
 
-また、Issue 作成や Copilot cloud agent の動作確認を効率的に行うため、実際のクロールを行わずに 1 記事分のテスト用 zip を作成できる関数も用意します。この関数には、TechCommunity から取得した実際の変更履歴 (更新前後の本文) を渡すことで、実際の記事更新に近いテストデータを生成します。記事 ID は実在の監視対象記事の ID を指定でき (Copilot cloud agent は実際の英語記事本文をインターネットから取得するため、実在記事に対するテストが必要)、省略時はダミー ID を使用します。
+また、Issue 作成や Copilot cloud agent の動作確認を効率的に行うため、実際のクロールを行わずにテスト用の diff zip を作成・アップロードできる関数も用意します。従来処理 (`Add-BlogMonitorResult`) がアップロードする zip は `$ReportFolder` をそのまま `Compress-Archive` したものであり、展開すれば #3 の入力形式 (Result.csv + 更新記事ごとの `<ID>-CacheArticle.html`/`<ID>-CurrentArticle.html`) とそのまま一致します。そのため、実際に更新が検知された日の従来 zip を保存しておき、それを展開するだけでテストデータとして再利用できます。記事 ID は実在の監視対象記事のものになるため、Copilot cloud agent が実際の英語記事本文をインターネットから取得して動作確認する際にも使えます。
 
 ## 第 1 段階の実装ステップ
 
@@ -94,14 +94,15 @@ Blog チームは英語記事の更新内容を TechCommunity 上のグラフィ
 | 3 | diff zip 生成関数の実装 | `Test-BlogArticleUpdate` が作る `$ReportFolder` (Result.csv + 記事ごとの `<ID>-CacheArticle.html`/`<ID>-CurrentArticle.html` ペア) を読み取り、更新があった記事ごとに `Compare-BlogArticleText` で diff テキストを生成し、diff テキストのみを含む新しい zip を組み立てる関数。SPO へのアップロードは含めない | `BlogArticleDiff.psm1` (`Export-BlogArticleDiffReport` を追加) | ✅ 完了 (未コミット、小間さんが手動でコミット予定) |
 | 4 | diff zip アップロード関数の実装 | #3 で作った zip を SPO フォルダー `.../BlogMonitor/ReportsV2` へアップロードするだけの関数 (`Add-BlogArticleDiffMonitorResult` 案) | `SpoManagement.psm1` | ✅ 完了 (未コミット、小間さんが手動でコミット予定) |
 | 5 | `Test-BlogArticleUpdate` への追記 | 既存処理 (CSV 作成、従来 zip 作成・アップロード、フォルダー削除判定) を一切変更せず、フォルダー削除前に #3→#4 の呼び出しを追加する。失敗しても従来処理に影響しないよう try/catch で保護する | `BlogManagement.psm1` | ✅ 完了 (未コミット、小間さんが手動でコミット予定) |
-| 6 | 単体記事テストデータ生成関数の実装 | 実在の監視対象記事 ID (省略時はダミー ID) と、TechCommunity から取得した更新前後の本文を渡すと、#3 が読める形の `$ReportFolder` をその場で作る関数 (`New-BlogArticleDiffTestReport` 案) | `BlogArticleDiff.psm1` | ⬜ 未着手 |
-| 7 | Teams 通知 (アダプティブ カード) | 新フォルダーの zip を検知し、更新記事の一覧を表示する。記事ごとに「更新不要」/「Issue 作成」ボタンを用意する | Power Automate | ⬜ 未着手 (要設計) |
-| 8 | Issue 自動作成 | 「Issue 作成」ボタン押下で、対象記事の diff テキストを本文に含めた GitHub Issue を作成する。英語記事 URL から対応する `source/_posts/*.md` を特定するロジックが必要 | Power Automate + GitHub API | ⬜ 未着手 (要設計、日本語記事とのマッピング方法は要検討) |
-| 9 | 更新対応専用 custom agent の作成 | 新規記事翻訳の `translate-blog-post.agent.md` に相当する、既存記事の更新対応専用の agent を新規作成する。人間が対話的に使う `.github/prompts` は作成しない (Issue に割り当てて cloud agent が実行する用途のみ) | `.github/agents/` (このリポジトリ) | ⬜ 未着手 |
-| 10 | Issue への手動割り当て | Blog チームが Issue で更新対応専用の custom agent を選択し、Copilot cloud agent を手動で割り当てる | GitHub (人手作業、変更なし) | - |
-| 11 | agent による修正・PR 作成 | agent が Issue 本文の diff を手掛かりに抄訳記事を修正し、Draft PR を作成する | Copilot cloud agent | ⬜ 未着手 (#9 の agent 定義に依存) |
-| 12 | レビュー・マージ・公開 | 既存のレビュー・マージ・GitHub Pages 公開フロー (変更なし) | このリポジトリ | - |
-| 13 | 運用ドキュメントの整備 | 稼働後、この計画書を実運用ドキュメントとして書き直すか、`translation-automation.md` と統合する | `docs/operations/` | ⬜ 未着手 |
+| 6 | 単体記事テストデータ生成関数の実装 | 従来処理でアップロードされた実際の zip (`$ReportFolder` をまるごと `Compress-Archive` したもの) を展開し、`Result.csv` の存在などを検証したうえで展開先フォルダーのパスを返すだけの薄いラッパー関数 (`New-BlogArticleDiffTestReport` 案)。戻り値は #3 の `-ReportFolder` にそのまま渡せる | `BlogArticleDiff.psm1` | ⬜ 未着手 |
+| 7 | テスト用一気通貫アップロード関数の実装 | #6 → #3 (`Export-BlogArticleDiffReport`) → #4 (`Add-BlogArticleDiffMonitorResult`) を順に呼び出し、既存 zip から diff zip を生成して `ReportsV2` へアップロードするまでを 1 コマンドで行うテスト専用関数 (`Invoke-BlogArticleDiffTestUpload` 案)。展開フォルダーと diff zip は既定で削除し、`-KeepExtractedFolder`/`-KeepDiffZip` で保持可能にする。アップロード先は常に `ReportsV2` のみで、本番 `Reports` フォルダーには一切触れない | `BlogArticleDiff.psm1` | ⬜ 未着手 |
+| 8 | Teams 通知 (アダプティブ カード) | 新フォルダーの zip を検知し、更新記事の一覧を表示する。記事ごとに「更新不要」/「Issue 作成」ボタンを用意する | Power Automate | ⬜ 未着手 (要設計) |
+| 9 | Issue 自動作成 | 「Issue 作成」ボタン押下で、対象記事の diff テキストを本文に含めた GitHub Issue を作成する。英語記事 URL から対応する `source/_posts/*.md` を特定するロジックが必要 | Power Automate + GitHub API | ⬜ 未着手 (要設計、日本語記事とのマッピング方法は要検討) |
+| 10 | 更新対応専用 custom agent の作成 | 新規記事翻訳の `translate-blog-post.agent.md` に相当する、既存記事の更新対応専用の agent を新規作成する。人間が対話的に使う `.github/prompts` は作成しない (Issue に割り当てて cloud agent が実行する用途のみ) | `.github/agents/` (このリポジトリ) | ⬜ 未着手 |
+| 11 | Issue への手動割り当て | Blog チームが Issue で更新対応専用の custom agent を選択し、Copilot cloud agent を手動で割り当てる | GitHub (人手作業、変更なし) | - |
+| 12 | agent による修正・PR 作成 | agent が Issue 本文の diff を手掛かりに抄訳記事を修正し、Draft PR を作成する | Copilot cloud agent | ⬜ 未着手 (#10 の agent 定義に依存) |
+| 13 | レビュー・マージ・公開 | 既存のレビュー・マージ・GitHub Pages 公開フロー (変更なし) | このリポジトリ | - |
+| 14 | 運用ドキュメントの整備 | 稼働後、この計画書を実運用ドキュメントとして書き直すか、`translation-automation.md` と統合する | `docs/operations/` | ⬜ 未着手 |
 
 ## 未確定・今後検討する事項
 
@@ -116,7 +117,7 @@ Blog チームは英語記事の更新内容を TechCommunity 上のグラフィ
 
 この文書自体の更新 (状態列 ✅/⬜ の更新を含む) は、必ず親セッションで行います。子セッションでこの文書を更新することは禁止します。子セッションは実装が完了したらその旨を親セッションに報告し、親セッションがこの文書へ反映します。
 
-PowerShell モジュール側の変更 (#1〜#6) は `ExchangeOutlookCaseMonitor` リポジトリ側の作業であり、このリポジトリ (`jpmessaging/blog`) の PR にはなりません。custom agent の作成 (#9) 以降は、このリポジトリでの変更となります。
+PowerShell モジュール側の変更 (#1〜#7) は `ExchangeOutlookCaseMonitor` リポジトリ側の作業であり、このリポジトリ (`jpmessaging/blog`) の PR にはなりません。custom agent の作成 (#10) 以降は、このリポジトリでの変更となります。
 
 ### `ExchangeOutlookCaseMonitor` リポジトリでのコミットの扱い
 
