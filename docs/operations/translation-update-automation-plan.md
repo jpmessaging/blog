@@ -92,7 +92,7 @@ Blog チームは英語記事の更新内容を TechCommunity 上のグラフィ
 | 1 | 正規化・diff 生成関数の作成 | HTML をブロック要素単位でテキストに正規化する `Get-BlogArticleTextBlock` と、正規化済みテキストを比較して読みやすい diff テキストを生成する `Compare-BlogArticleText` を実装する | `PowerShell Module\vNext\BlogArticleDiff.psm1` (新規ファイル) | ✅ 完了・単体動作確認済み |
 | 2 | モジュール登録 | マニフェストの `NestedModules` に `BlogArticleDiff.psm1` を、`FunctionsToExport` に新関数を追加する | `PowerShell Module\vNext\ExchangeOutlookCaseMonitor.psd1` | ✅ 完了 |
 | 3 | diff zip 生成関数の実装 | `Test-BlogArticleUpdate` が作る `$ReportFolder` (Result.csv + 記事ごとの `<ID>-CacheArticle.html`/`<ID>-CurrentArticle.html` ペア) を読み取り、更新があった記事ごとに `Compare-BlogArticleText` で diff テキストを生成し、diff テキストのみを含む新しい zip を組み立てる関数。SPO へのアップロードは含めない | `BlogArticleDiff.psm1` (`Export-BlogArticleDiffReport` を追加) | ✅ 完了 (未コミット、小間さんが手動でコミット予定) |
-| 4 | diff zip アップロード関数の実装 | #3 で作った zip を SPO フォルダー `.../BlogMonitor/ReportsV2` へアップロードするだけの関数 (`Add-BlogArticleDiffMonitorResult` 案) | `SpoManagement.psm1` | ⬜ 未着手 |
+| 4 | diff zip アップロード関数の実装 | #3 で作った zip を SPO フォルダー `.../BlogMonitor/ReportsV2` へアップロードするだけの関数 (`Add-BlogArticleDiffMonitorResult` 案) | `SpoManagement.psm1` | ✅ 完了 (未コミット、小間さんが手動でコミット予定) |
 | 5 | `Test-BlogArticleUpdate` への追記 | 既存処理 (CSV 作成、従来 zip 作成・アップロード、フォルダー削除判定) を一切変更せず、フォルダー削除前に #3→#4 の呼び出しを追加する。失敗しても従来処理に影響しないよう try/catch で保護する | `BlogManagement.psm1` | ⬜ 未着手 |
 | 6 | 単体記事テストデータ生成関数の実装 | 実在の監視対象記事 ID (省略時はダミー ID) と、TechCommunity から取得した更新前後の本文を渡すと、#3 が読める形の `$ReportFolder` をその場で作る関数 (`New-BlogArticleDiffTestReport` 案) | `BlogArticleDiff.psm1` | ⬜ 未着手 |
 | 7 | Teams 通知 (アダプティブ カード) | 新フォルダーの zip を検知し、更新記事の一覧を表示する。記事ごとに「更新不要」/「Issue 作成」ボタンを用意する | Power Automate | ⬜ 未着手 (要設計) |
