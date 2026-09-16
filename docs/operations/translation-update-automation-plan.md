@@ -96,19 +96,57 @@ Blog チームは英語記事の更新内容を TechCommunity 上のグラフィ
 | 5 | `Test-BlogArticleUpdate` への追記 | 既存処理 (CSV 作成、従来 zip 作成・アップロード、フォルダー削除判定) を一切変更せず、フォルダー削除前に #3→#4 の呼び出しを追加する。失敗しても従来処理に影響しないよう try/catch で保護する | `BlogManagement.psm1` | ✅ 完了 (未コミット、小間さんが手動でコミット予定) |
 | 6 | 単体記事テストデータ生成関数の実装 | 従来処理でアップロードされた実際の zip (`$ReportFolder` をまるごと `Compress-Archive` したもの) を展開し、`Result.csv` の存在などを検証したうえで展開先フォルダーのパスを返すだけの薄いラッパー関数 (`New-BlogArticleDiffTestReport` 案)。戻り値は #3 の `-ReportFolder` にそのまま渡せる | `BlogArticleDiff.psm1` | ✅ 完了 |
 | 7 | テスト用一気通貫アップロード関数の実装 | #6 → #3 (`Export-BlogArticleDiffReport`) → #4 (`Add-BlogArticleDiffMonitorResult`) を順に呼び出し、既存 zip から diff zip を生成して `ReportsV2` へアップロードするまでを 1 コマンドで行うテスト専用関数 (`Invoke-BlogArticleDiffTestUpload` 案)。展開フォルダーと diff zip は既定で削除し、`-KeepExtractedFolder`/`-KeepDiffZip` で保持可能にする。アップロード先は常に `ReportsV2` のみで、本番 `Reports` フォルダーには一切触れない | `BlogArticleDiff.psm1` | ✅ 完了 |
-| 8 | Teams 通知 (アダプティブ カード) | 新フォルダーの zip を検知し、更新記事の一覧を表示する。記事ごとに「更新不要」/「Issue 作成」ボタンを用意する | Power Automate | ⬜ 未着手 (要設計) |
-| 9 | Issue 自動作成 | 「Issue 作成」ボタン押下で、対象記事の diff テキストを本文に含めた GitHub Issue を作成する。英語記事 URL から対応する `source/_posts/*.md` を特定するロジックが必要 | Power Automate + GitHub API | ⬜ 未着手 (要設計、日本語記事とのマッピング方法は要検討) |
-| 10 | 更新対応専用 custom agent の作成 | 新規記事翻訳の `translate-blog-post.agent.md` に相当する、既存記事の更新対応専用の agent を新規作成する。人間が対話的に使う `.github/prompts` は作成しない (Issue に割り当てて cloud agent が実行する用途のみ) | `.github/agents/` (このリポジトリ) | ⬜ 未着手 |
+| 8 | Teams 通知 (アダプティブ カード) | 新フォルダーの zip を検知し、更新記事の一覧を表示する。記事ごとに「更新不要」/「Issue 作成」ボタンを用意する | Power Automate | ⬜ 未着手 (フローの詳細設計は小間さんが手動で行うため Copilot 側の作業なし) |
+| 9 | Issue 自動作成 | 「Issue 作成」ボタン押下で、対象記事の diff テキストを本文に含めた GitHub Issue を作成する。タイトル・本文フォーマットは下記「Issue タイトル・本文フォーマット」の通り確定済み | Power Automate + GitHub API (標準コネクタ) | ⬜ 未着手 (フォーマットは確定済み。フロー自体は小間さんが手動で作成) |
+| 10 | 更新対応専用 custom agent の作成 | 新規記事翻訳の `translate-blog-post.agent.md` に相当する、既存記事の更新対応専用の agent を新規作成する。人間が対話的に使う `.github/prompts` は作成しない (Issue に割り当てて cloud agent が実行する用途のみ)。設計内容は下記「`update-translated-blog-post` agent の設計」の通り確定済み | `.github/agents/update-translated-blog-post.agent.md` (このリポジトリ) | 🔄 設計完了・子セッションで実装中 |
 | 11 | Issue への手動割り当て | Blog チームが Issue で更新対応専用の custom agent を選択し、Copilot cloud agent を手動で割り当てる | GitHub (人手作業、変更なし) | - |
 | 12 | agent による修正・PR 作成 | agent が Issue 本文の diff を手掛かりに抄訳記事を修正し、Draft PR を作成する | Copilot cloud agent | ⬜ 未着手 (#10 の agent 定義に依存) |
 | 13 | レビュー・マージ・公開 | 既存のレビュー・マージ・GitHub Pages 公開フロー (変更なし) | このリポジトリ | - |
 | 14 | 運用ドキュメントの整備 | 稼働後、この計画書を実運用ドキュメントとして書き直すか、`translation-automation.md` と統合する | `docs/operations/` | ⬜ 未着手 |
 
+## Issue タイトル・本文フォーマット (#9)
+
+Power Automate の GitHub 標準コネクタは Issue 作成時にタイトルと本文しか指定できません (ラベル等は指定不可)。また、PowerShell からアップロードされる zip には日本語記事のファイル名や原文タイトルは含まれず、CSV にある原文 URL と diff テキストファイルのみが使える情報です。そのため、日本語記事の特定は custom agent 側の責務としました。
+
+```
+タイトル: [更新検知] <原文 URL>
+
+本文:
+## 更新対象
+- 原文 URL: <英語記事の URL>
+
+## 原文の変更箇所 (自動生成された diff。ヒントであり全てではない)
+<diff テキストをそのまま貼り付け>
+
+## 作業内容
+この Issue が GitHub Copilot cloud agent に割り当てられた場合は、次の手順で対応してください。
+1. 原文 URL のスラッグから日本語記事のファイル名を推測し、見つからない場合は抄訳記事冒頭の注釈内の URL を検索して対象記事を特定する
+2. 原文を取得し、diff をヒントとしつつ原文全体と日本語記事全体を広く比較して変更箇所を洗い出す (diff に現れない変更も見落とさない)
+3. リポジトリの `.github/copilot-instructions.md` と `.github/agents/update-translated-blog-post.agent.md` に従う
+4. 修正が完了し、Hexo のビルドが成功することを確認したうえで、Draft PR を作成する
+```
+
+日本語記事の特定に前提とした 2 つの重要な事情:
+
+- 英語記事の front matter (フロントマター) には原文 URL は保持していません。日本語記事のファイル名は原文 URL のスラッグを基に作成されているため、そこから逆算して探します。
+- ブログの URL は微修正やリダイレクトが起こり得るため、抄訳記事冒頭の注釈に書かれた原文 URL と Issue タイトルの原文 URL が完全一致しない場合を考慮する必要があります。
+
+また、diff には変更があった行しか含まれないため (特に原文への追加はこの制約の影響を受けやすい)、agent には「diff はヒントであり全てではない」ことを明示し、原文取得を必須としたうえでアグレッシブに変更箇所を探すよう指示しています。
+
+## `update-translated-blog-post` agent の設計 (#10)
+
+新規記事翻訳用の `.github/agents/translate-blog-post.agent.md` を土台としつつ、更新対応特有の判断 (対象記事の特定、diff の位置づけ、修正範囲の限定) を追加する形で設計しました。設計時の主な論点と結論は次の通りです。
+
+- **修正の粒度**: 変更検出そのものは原文全体と広く比較するが、実際に加える修正は特定した変更箇所へのピンポイント修正に限定する (変更と無関係な既存の文章・構成は変更しない)。
+- **修正不要と判断した場合の扱い**: 記事は修正せず、判断内容と根拠を Issue にコメントして終了する。PR は作成せず、Issue はオープンのまま残す (agent はクローズしない)。ステップ 8 の Teams カードで人間が既に「更新不要」記事を弾いている前提のため、Issue 化された時点では基本的に修正が必要なはずだが、agent が調べた結果影響なしと判断した場合のフォールバックとして採用した。
+- **front matter**: `lastupdate` は実際に更新した日付で更新し、`date` は変更しない。原文本文中に更新日時の記載があれば翻訳して本文にも反映する。
+- **ビルド確認・PR 作成**: 新規翻訳 agent と同様に `npm ci`/`npm run clean`/`npm run build` を必須とし、Draft PR に `Closes #<Issue 番号>` を付与する。
+
+agent 定義の全文は `.github/agents/update-translated-blog-post.agent.md` を参照してください。
+
 ## 未確定・今後検討する事項
 
-- 英語記事 URL から対応する日本語記事 (`source/_posts/*.md`) を特定するロジック (front matter に原文 URL を保持しているため、それを突き合わせる想定)
-- Power Automate 側のアダプティブ カードの具体的なレイアウトとボタン設計
-- 更新対応専用 custom agent のプロンプト設計 (diff テキストの扱い方、修正範囲の判断基準など)
+- Power Automate 側のアダプティブ カードの具体的なレイアウトとボタン設計 (#8。細部は小間さんが手動で作成するため Copilot 側での検討は行わない)
 - 第 2 段階 (Issue 作成・Copilot 割り当てまでの自動化) は、新規記事翻訳フローの見直しタイミングに合わせて着手する
 
 ## 子セッションでの作業の進め方
