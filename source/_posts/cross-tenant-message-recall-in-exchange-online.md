@@ -1,7 +1,7 @@
 ---
 title: "Exchange Online のクロステナント間のメッセージの取り消し"
 date: 2026-07-13 11:00
-lastupdate: 2026-09-16 13:00
+lastupdate: 2026-09-16
 tags: 
 - Exchange Online
 ---
