@@ -1,7 +1,6 @@
 ---
 title: "Microsoft Graph PowerShell をより安心して利用するために: PowerShell 7.x 以降に注力します"
 date: 2026-09-17 10:06
-lastupdate: 2026-09-17
 tags:
 - Microsoft Graph
 ---
@@ -23,4 +22,4 @@ Microsoft Graph PowerShell は、最も信頼性が高く、機能豊富で、�
 
 まだ Windows PowerShell 5.1 を使用している場合は、PowerShell 7.x への移行を今から計画してください。これは今後推奨される唯一のメンテナンス対象プラットフォームであり、上記で説明したより信頼性の高い体験を提供します。
 
-この移行を進めるにあたり、お客様のご協力とご理解に感謝するとともに、Microsoft Graph PowerShell の将来への投資を継続していきます。
+この移行を進めるにあたり、皆さまのご協力とご理解に感謝するとともに、Microsoft Graph PowerShell の将来への投資を継続していきます。
