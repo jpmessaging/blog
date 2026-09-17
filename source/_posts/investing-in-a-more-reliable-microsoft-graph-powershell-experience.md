@@ -1,6 +1,7 @@
 ---
-title: "Microsoft Graph PowerShell をより安心して利用するために: PowerShell 7.x への移行について"
+title: "Microsoft Graph PowerShell をより安心して利用するために: PowerShell 7.x 以降に注力します"
 date: 2026-09-17 10:06
+lastupdate: 2026-09-17
 tags:
 - Microsoft Graph
 ---
@@ -13,17 +14,10 @@ Microsoft Graph PowerShell は、最も信頼性が高く、機能豊富で、�
 
 ここでいう retirement (廃止) とは、互換性ではなくメンテナンスに関するものです。廃止期間中も v2.x モジュールは引き続き Windows PowerShell 5.1 との互換性を宣言し、ほとんどの場合、既存の環境で現在と同様に機能し続けます。変わるのはエンジニアリングの投入先です。新機能、バグ修正、検証は PowerShell 7.x を対象とし、Windows PowerShell 5.x 固有の問題は今後積極的な調査や修正の対象にはなりません。
 
-## 移行にあたって押さえておきたいポイント
-
-- Windows PowerShell 5.x 向けのメンテナンスは、今後およそ 12 か月かけて縮小されます。以降は 5.x での互換性が保証されなくなります。
-- これは段階的な移行です。今すぐ Windows PowerShell 5.1 上の v2.x モジュールが動作しなくなるわけではありません。
-- 2026 暦年の第 4 四半期にリリース予定の v3.x モジュールは、Windows PowerShell 5.x を明示的にサポートせず、PowerShell 7.x のみをサポートします。
-- Windows PowerShell 5.x を利用している場合は、PowerShell 7.x への移行を計画してください。
-
 ## タイムライン
 
-- 現在からおよそ今後 12 か月間 (廃止期間)。v2.x モジュールは Windows PowerShell 5.1 との互換性を維持し、必要に応じてセキュリティ修正を受け取ります。PowerShell 5.x 互換性のためのメンテナンスは縮小していき、積極的な開発、検証、投資は PowerShell 7.x 以降へと移行します。これにより、移行を計画し、支障なく完了させるための時間が確保されます。
-- 2026 暦年の第 4 四半期に、Microsoft Graph PowerShell の新しいメジャー バージョンがリリースされます。v3.0.0 のリリース後は、セキュリティ修正が必要な場合を除き、v2 の新しいバージョンは公開されません。v3.x モジュールは Windows PowerShell 5.x を明示的にはサポートせず、PowerShell 7.x のみをサポートします。
+- **現在からおよそ今後 12 か月間 (廃止期間)**。v2.x モジュールは Windows PowerShell 5.1 との互換性を維持し、必要に応じてセキュリティ修正を受け取ります。PowerShell 5.x 互換性のためのメンテナンスは縮小していき、積極的な開発、検証、投資は PowerShell 7.x 以降へと移行します。これにより、移行を計画し、支障なく完了させるための時間が確保されます。
+- **2026 暦年の第 4 四半期**に、Microsoft Graph PowerShell の新しいメジャー バージョンがリリースされます。v3.0.0 のリリース後は、セキュリティ修正が必要な場合を除き、v2 の新しいバージョンは公開されません。v3.x モジュールは Windows PowerShell 5.x を明示的にはサポートせず、PowerShell 7.x のみをサポートします。
 
 ## PowerShell 7.x への移行
 
