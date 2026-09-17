@@ -1,13 +1,13 @@
 ---
 title: クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行
 date: 2026-08-10 15:00
-lastupdate: 2026-09-14
+lastupdate: 2026-09-17
 tags:
 - Exchange Online
 ---
 ※ この記事は、[Cross-tenant Free/Busy, MailTips, and Calendar Sharing are moving to Cross-Tenant Access Policy](https://techcommunity.microsoft.com/blog/exchange/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/4545169) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #f5ff66ed;">このブログ記事で説明している機能は、まだ完全には利用できる状態ではありません。利用可能予定日については、以下の<strong>クロステナント アクセス ポリシーの展開スケジュール</strong>表をご確認ください。</p>
+<p style="background: #f5ff66ed;">2026/9/16 更新: このブログ記事で説明している機能は、まだ完全には利用できる状態ではありません。利用可能予定日については、以下の<strong>クロステナント アクセス ポリシーの展開スケジュール</strong>表をご確認ください。</p>
 
 他の Microsoft 365 組織との間で空き時間情報、メール ヒント、予定表を共有している場合は、今後予定されている変更について確認し、事前に対応を計画する必要があります。一方、このような組織間共有をご利用でない場合は、最初の 2 つのセクションをご確認いただくだけで十分です。この記事では、[Exchange Online EWS: 廃止期限が迫っています](https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/) に伴って何が変わるのか、従来の仕組みが新しい Microsoft 365 クロステナント アクセス ポリシーのモデルにどのように置き換わるのか、利用中のテナントが影響を受けるかを確認する方法、そして必要な対応について説明します。正式なお知らせはメッセージ センターの [**MC1446796**](https://admin.cloud.microsoft/?ref=MessageCenter/:/messages/MC1446796) に掲載されていますが、本記事ではその内容をより分かりやすく補足し、MC1446796 の投稿だけでは伝えきれなかった背景も含めて説明します。
 
@@ -68,14 +68,16 @@ Get-AvailabilityAddressSpace | Format-List ForestName, AccessMethod
 
 ### クロステナント アクセス ポリシーの展開スケジュール
 
-この機能は 2026 年 9 月から順次利用可能になります。そのため、利用中の環境への展開が完了すると、移行作業を開始できます。展開スケジュールは次のとおりです。
+この機能は 2026 年 9 月から順次利用可能になります。そのため、利用中の環境への展開が完了すると、移行作業を開始できます。利用中のテナントと提携先テナントがホストされている環境で展開が完了するまで、移行は待ってください。展開スケジュールは次のとおりです。
+
+空き時間情報共有の場合:
 
 | **環境** | **展開開始** | **完了予定** |
 | --- | --- | --- |
-| **Worldwide** | 2026 年 8 月 | 2026 年 9 月 15 日 |
-| **GCC** | 2026 年 9 月上旬 | 2026 年 9 月 30 日 |
-| **GCC High** | 2026 年 9 月上旬 | 2026 年 9 月 30 日 |
-| **DoD** | 2026 年 9 月上旬 | 2026 年 10 月 30 日 |
+| **Worldwide** | 2026 年 8 月 | 2026 年 9 月 22 日 |
+| **GCC** | 2026 年 9 月 | 展開一時停止中 |
+| **GCC High** | 2026 年 9 月 | 展開一時停止中 |
+| **DoD** | 2026 年 9 月 | 展開一時停止中 |
 
 ### 何も対応しなかった場合の影響
 
@@ -131,7 +133,11 @@ Get-AvailabilityAddressSpace | Format-List ForestName, AccessMethod
 **商用クラウド (一般的な Microsoft 365 テナント) と 21Vianet クラウドの間で空き時間情報を共有するために可用性アドレス空間を設定している場合はどうなりますか。**  
 `AccessMethod` に `OrgWideFBToken` を使用する可用性アドレス空間の構成は Exchange Web Services に依存していないため、EWS の廃止による影響を受けません。ただし、追加のセキュリティ機能と、より細かな構成オプションを利用できる Microsoft 365 クロステナント アクセス ポリシーへの移行を検討してください。
 
+**Microsoft 365 クロステナント アクセス ポリシーの管理には、Microsoft Graph のベータ エンドポイントや Graph PowerShell SDK のベータ モジュールが必要ですか。**  
+いいえ。Microsoft 365 クロステナント アクセス ポリシー管理 API は Microsoft Graph v1.0 で利用できるようになっており、ベータ版ではない Microsoft Graph PowerShell SDK モジュールを使用して構成できます。
+
 *更新履歴*
+- **2026/9/16**: Free/Busy 共有の利用可能時期が後ろ倒しになったことを反映するため、表を更新しました。ベータ エンドポイントや PowerShell モジュールが不要になったことを示す FAQ を追加しました。
 - **2026/9/11**: ブログ記事にバナーを追加しました。
 - **2026/9/3**: 記事内の重複するセクションを削除しました。
 - **2026/8/28**: 展開スケジュールの変更や複数の補足など、記事のさまざまな箇所を更新しました。
