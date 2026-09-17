@@ -1,5 +1,5 @@
 ---
-title: "Microsoft Graph PowerShell をより安心して利用するために: PowerShell 7.x 以降に注力します"
+title: "Microsoft Graph PowerShell をより安定して利用するための PowerShell 7.x への移行"
 date: 2026-09-17 10:06
 tags:
 - Microsoft Graph
