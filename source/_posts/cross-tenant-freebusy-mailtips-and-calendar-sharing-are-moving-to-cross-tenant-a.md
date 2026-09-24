@@ -1,7 +1,7 @@
 ---
 title: クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行
 date: 2026-08-10 15:00
-lastupdate: 2026-09-17
+lastupdate: 2026-09-24
 tags:
 - Exchange Online
 ---
@@ -74,7 +74,7 @@ Get-AvailabilityAddressSpace | Format-List ForestName, AccessMethod
 
 | **環境** | **展開開始** | **完了予定** |
 | --- | --- | --- |
-| **Worldwide** | 2026 年 8 月 | 2026 年 9 月 22 日 |
+| **Worldwide** | 2026 年 8 月 | 2026 年 9 月 23 日 |
 | **GCC** | 2026 年 9 月 | 展開一時停止中 |
 | **GCC High** | 2026 年 9 月 | 展開一時停止中 |
 | **DoD** | 2026 年 9 月 | 展開一時停止中 |
