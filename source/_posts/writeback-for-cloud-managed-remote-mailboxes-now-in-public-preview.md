@@ -8,7 +8,7 @@ tags:
 
 ※ この記事は、[Writeback for Cloud-Managed Remote Mailboxes: Now in Public Preview](https://techcommunity.microsoft.com/blog/exchange/writeback-for-cloud-managed-remote-mailboxes-now-in-public-preview/4520138) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #99ffa7ff;"><b>更新 (2026 年 8 月 3 日):</b> [クラウド管理のリモート メールボックス向けの書き戻しが一般提供になりました](/blog/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/)。</p>
+<p style="background: #99ffa7ff;"><b>更新 (2026 年 8 月 3 日):</b> <a href="/blog/writeback-for-cloud-managed-remote-mailboxes-now-generally-available/">クラウド管理のリモート メールボックス向けの書き戻しが一般提供になりました</a>。</p>
 
 前回の記事では、[クラウド管理のリモート メールボックスのパブリック プレビュー](/blog/introducing-cloud-managed-remote-mailboxes-a-step-to-last-exchange-server-retire/)と[クラウド管理のリモート メールボックスの一般提供](/blog/cloud-managed-remote-mailboxes-now-generally-available/)をご紹介しました。これは、組織内の "最後の Exchange Server" を廃止するための重要な一歩です。コミュニティからの反響は非常に大きく、寄せられたフィードバックは今後のロードマップにも反映されています。
 
