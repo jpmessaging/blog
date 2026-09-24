@@ -1,7 +1,7 @@
 ---
 title: EWSAllowedAppIDs で Exchange Online の EWS 廃止最終フェーズに備える
 date: 2026-06-22 10:00
-lastupdate: 2026-09-07
+lastupdate: 2026-09-24
 tags:
 - Exchange Online
 ---
@@ -219,7 +219,12 @@ EWSAllowedAppIDs は、EWS からの迅速な移行を促しながらも、最�
 
 EWSAllowList および EWSBlockList 設定は、以前から提供されている [EwsApplicationAccessPolicy](https://learn.microsoft.com/exchange/client-developer/exchange-web-services/how-to-control-access-to-ews-in-exchange) 機能に関連するものであり、Exchange Online における EWS の廃止とは関係ありません。EwsApplicationAccessPolicy は従来の EWS アプリケーション アクセス制御機能で、App ID ではなく User Agent を使用します。EwsApplicationAccessPolicy を変更すると、クライアント アプリケーションが Exchange Online に接続する際に通過する必要がある追加の「ゲート」が設けられます。アプリケーションは、前述の App ID 許可リストを通過した後にのみ、このゲートを通過できます。そのため、EWSAllowedAppIDs と EwsApplicationAccessPolicy を併用する場合、要求の App ID と正しい User Agent の両方が、それぞれの判定条件を満たす必要があります。いずれかを満たさない場合、EWS がブロックされ、要求は拒否されます。
 
+**オンプレミスの Exchange やハイブリッド シナリオはどうなりますか?**
+
+オンプレミスでは EWS は廃止されません。ハイブリッド シナリオでは、アプリケーションがどのようにデータへアクセスするかによって状況が異なります。オンプレミスのメールボックスは引き続き EWS を使用できますが、クラウドのメールボックスは Graph によるアクセスへ移行する必要があります。Autodiscover により、アプリケーションはメールボックスの場所を自動的に判別できます。ただし、Exchange Online へのリッチ共存の呼び出しで Graph をサポートするのは、[2026 年 5 月の更新プログラム](/blog/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/) 以降の Exchange SE のみです。そのため、ハイブリッド環境では、2027 年 4 月以降にオンプレミスのメールボックスをホストするには Exchange SE が必要です。なお、2026 年 10 月から 2027 年 4 月までの間は、Exchange Online テナントで EWS を有効にし、専用のハイブリッド アプリを EWSAllowedAppIDs に追加することで、EWS を使用したリッチ共存を引き続き動作させるという選択肢もあります。
+
 **この記事の更新履歴:**
+- 2026/09/22: EWSAllowedAppIDs が Exchange のハイブリッド シナリオに与える影響について、FAQ を 1 件追加しました。
 - 2026/9/4: FAQ および本文を更新し、まだ AppID の許可リストを作成していないテナントに対して Microsoft が AppID の許可リストを作成するタイミングについて、公開済みの情報に合わせて内容を修正しました。詳細は、[EWS アクセス変更に備えて、EWSAllowedAppIDs リストを適切に管理しましょう](/blog/take-control-of-your-ewsallowedappids-list-before-ews-access-changes/) をご覧ください。
 - 2026/09/01: App ID 許可リストおよび `EWSAllowedAppIDs` プロパティに関する FAQ を追加しました。
 - 2026/09/01: すべての「許可リスト」という表記を「App ID 許可リスト」に変更し、Application ID を使用する許可リストであることを明確にしました。これは、EwsApplicationAccessPolicy とその EWSAllowList 設定で使用される User Agent 文字列と区別するためです。
