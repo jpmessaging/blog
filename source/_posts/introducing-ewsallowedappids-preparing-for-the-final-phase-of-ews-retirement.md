@@ -224,7 +224,7 @@ EWSAllowList および EWSBlockList 設定は、以前から提供されてい�
 オンプレミスでは EWS は廃止されません。ハイブリッド シナリオでは、アプリケーションがどのようにデータへアクセスするかによって状況が異なります。オンプレミスのメールボックスは引き続き EWS を使用できますが、クラウドのメールボックスは Graph によるアクセスへ移行する必要があります。Autodiscover により、アプリケーションはメールボックスの場所を自動的に判別できます。ただし、Exchange Online へのリッチ共存の呼び出しで Graph をサポートするのは、[2026 年 5 月の更新プログラム](/blog/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/) 以降の Exchange SE のみです。そのため、ハイブリッド環境では、2027 年 4 月以降にオンプレミスのメールボックスをホストするには Exchange SE が必要です。なお、2026 年 10 月から 2027 年 4 月までの間は、Exchange Online テナントで EWS を有効にし、専用のハイブリッド アプリを EWSAllowedAppIDs に追加することで、EWS を使用したリッチ共存を引き続き動作させるという選択肢もあります。
 
 **この記事の更新履歴:**
-- 2026/09/22: EWSAllowedAppIDs が Exchange のハイブリッド シナリオに与える影響について、FAQ を 1 組追加しました。
+- 2026/09/22: EWSAllowedAppIDs が Exchange のハイブリッド シナリオに与える影響について、FAQ を 1 件追加しました。
 - 2026/9/4: FAQ および本文を更新し、まだ AppID の許可リストを作成していないテナントに対して Microsoft が AppID の許可リストを作成するタイミングについて、公開済みの情報に合わせて内容を修正しました。詳細は、[EWS アクセス変更に備えて、EWSAllowedAppIDs リストを適切に管理しましょう](/blog/take-control-of-your-ewsallowedappids-list-before-ews-access-changes/) をご覧ください。
 - 2026/09/01: App ID 許可リストおよび `EWSAllowedAppIDs` プロパティに関する FAQ を追加しました。
 - 2026/09/01: すべての「許可リスト」という表記を「App ID 許可リスト」に変更し、Application ID を使用する許可リストであることを明確にしました。これは、EwsApplicationAccessPolicy とその EWSAllowList 設定で使用される User Agent 文字列と区別するためです。
