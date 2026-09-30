@@ -15,7 +15,7 @@ const TRANSLATION_SOURCE_PATTERN =
   /^※ この記事は、\[([^\]\r\n]+)\]\((https?:\/\/[^\s<>\r\n]+)\) の抄訳です。/;
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
 const DATETIME_PATTERN = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}(?::\d{2})?$/;
-const FILE_NAME_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*\.md$/;
+const FILE_NAME_PATTERN = /^[a-z0-9]+(?:-+[a-z0-9]+)*\.md$/;
 const HALF_WIDTH_KATAKANA_PATTERN = /[\uFF61-\uFF9F]/u;
 const FULL_WIDTH_PUNCTUATION_PATTERN = /[（）：]/u;
 const LOCALE_SEGMENT_PATTERN = /^\/[a-z]{2}-[a-z]{2}(?:\/|$)/i;
@@ -157,13 +157,18 @@ function validateFrontMatter(file, frontMatter, errors) {
       '`YYYY-MM-DD` で指定するか、フィールドを削除してください。'
     );
   }
-  if (!Array.isArray(data.tags) || data.tags.length === 0 || data.tags.some((tag) => typeof tag !== 'string' || tag.trim() === '')) {
+  const tagsAreValid =
+    (typeof data.tags === 'string' && data.tags.trim() !== '') ||
+    (Array.isArray(data.tags) &&
+      data.tags.length > 0 &&
+      data.tags.every((tag) => typeof tag === 'string' && tag.trim() !== ''));
+  if (!tagsAreValid) {
     addError(
       errors,
       file,
       2,
-      '`tags` は空でない配列にする必要があります。',
-      '`tags:` の下に 1 つ以上のタグを `- タグ名` 形式で追加してください。'
+      '`tags` は空でない文字列または配列にする必要があります。',
+      '単一タグは `tags: タグ名`、複数タグは `tags:` の下に `- タグ名` 形式で追加してください。'
     );
   }
 }

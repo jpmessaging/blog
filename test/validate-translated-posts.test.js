@@ -71,6 +71,25 @@ test('accepts a valid translated article and its local image', () => {
   assert.deepEqual(validateFile(file, site.root), { checked: true, errors: [] });
 });
 
+test('accepts repeated hyphens in a URL-derived filename and a single scalar tag', () => {
+  const site = fixture();
+  const file = site.write(
+    'source/_posts/update-to-ews-access-for-kiosk--frontline-worker-licensed-users.md',
+    article({ tags: 'Exchange Online' })
+  );
+
+  assert.deepEqual(validateFile(file, site.root), { checked: true, errors: [] });
+});
+
+test('rejects filenames with leading or trailing hyphens and unsupported characters', () => {
+  for (const name of ['-leading-hyphen.md', 'trailing-hyphen-.md', 'invalid_name.md']) {
+    const site = fixture();
+    const file = site.write(`source/_posts/${name}`, article());
+
+    assert.match(messages(validateFile(file, site.root)).join('\n'), /ファイル名/);
+  }
+});
+
 test('skips an ordinary Japanese article', () => {
   const site = fixture();
   const file = site.write(
@@ -123,6 +142,16 @@ test('validates required front matter fields and exact dates', () => {
   assert.match(messages(result).join('\n'), /date/);
   assert.match(messages(result).join('\n'), /lastupdate/);
   assert.match(messages(result).join('\n'), /tags/);
+});
+
+test('rejects an empty scalar tag', () => {
+  const site = fixture();
+  const file = site.write(
+    'source/_posts/empty-scalar-tag.md',
+    article({ tags: '""' })
+  );
+
+  assert.match(messages(validateFile(file, site.root)).join('\n'), /tags/);
 });
 
 test('accepts lastupdate with an empty YAML value', () => {
