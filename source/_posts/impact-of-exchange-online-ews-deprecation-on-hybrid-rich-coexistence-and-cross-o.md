@@ -8,8 +8,6 @@ tags:
 
 ※ この記事は、[Impact of Exchange Online EWS Deprecation on Hybrid Rich Coexistence and Cross-org Sharing](https://techcommunity.microsoft.com/blog/exchange/impact-of-exchange-online-ews-deprecation-on-hybrid-rich-coexistence-and-cross-o/4561161) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-間もなく実施される Exchange Online の EWS 廃止が、ハイブリッド環境のお客様や異なる組織間の共有シナリオにどのような影響を与えるかについて説明します。
-
 [Exchange Online EWS: 廃止期限が迫っています](/blog/exchange-online-ews-your-time-is-almost-up/) で述べた通り、Exchange Online の Exchange Web Services (EWS) に対する変更は間近に迫っています。EWS はオンプレミスでは廃止されませんが、オンプレミスの Exchange を利用している組織に影響する 2 つの特定のシナリオを取り上げ、2026 年 10 月から 2027 年 4 月にかけて Exchange Online の EWS 変更が始まった際にビジネスへの影響が出ないようにする方法を説明します。
 
 ### シナリオ 1: オンプレミスと Exchange Online の両方でメールボックスをホストしているハイブリッド環境のお客様
@@ -39,7 +37,7 @@ tags:
 
 その他のパターン:
 
-- 2 つの Exchange Online 組織が組織間関係を使用して空き時間情報などを共有している場合 (オンプレミスは関与しません) は、[クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行](/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/) をご確認ください。
-- 2 つのオンプレミスの Exchange 組織が互いに組織間関係を使用している場合 (Exchange Online は関与しません)。現時点で対応は不要です。
+- 2 つの Exchange Online 組織が Organization Relationship の設定を使用して空き時間情報などを共有している場合 (オンプレミスは関与しません) は、[クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行](/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/) をご確認ください。
+- 2 つのオンプレミスの Exchange 組織が互いに Organization Relationship の設定を使用している場合 (Exchange Online は関与しません)。現時点で対応は不要です。
 
 The Exchange Team
