@@ -8,7 +8,7 @@ tags:
 
 ※ この記事は、[EWS Deprecation Is Here – What This Means To You](https://techcommunity.microsoft.com/blog/exchange/ews-deprecation-is-here-%E2%80%93-what-this-means-to-you/4561431) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-Exchange Online の EWS 廃止は 2026 年 10 月 1 日から始まりました。これは数年前から準備されてきた複数段階のプロセスです。重要な情報が多く含まれており、新しい情報があればこの記事を更新します。
+Exchange Online の EWS 廃止は今日から始まります。これは数年前から準備されてきた複数段階のプロセスです。この記事には重要な情報が多く含まれており、新しい情報があればこの記事を更新します。
 
 [事前に発表したとおり](/blog/exchange-online-ews-your-time-is-almost-up/)、2026 年 10 月上旬から、`EWSEnabled` を `True` にするだけではテナントで EWS を引き続き使えなくなります。EWS へのアクセスを許可するアプリを指定する `EWSAllowedAppIDs` (App ID 許可リスト) も必要になります。
 
@@ -18,9 +18,9 @@ Exchange Online の EWS 廃止は 2026 年 10 月 1 日から始まりました�
 
 | 日付 | 変更内容 | 影響 |
 |---|---|---|
-| 10 月 2 日の終日 (太平洋時間) | Microsoft が `EWSEnabled = True` で `EWSAllowedAppIDs` がないテナントの一覧を記録します。 | この日以降に `EWSEnabled = True` にするテナント管理者は、自身で `EWSAllowedAppIDs` を設定する必要があります。 |
-| 10 月 8 ～ 9 日の終日 (太平洋時間) | 10 月 2 日に一覧へ記録されたテナントについて、過去 60 日間に使われた EWS の App ID を `EWSAllowedAppIDs` に登録します。 | Microsoft が対象テナントの許可リストを作成します。 |
-| 10 月 10 日以降 | WW クラウドのすべてのテナントで、`EWSEnabled = True` の場合に `EWSAllowedAppIDs` を必須にするクラウド設定を有効にします。 | この日以降、WW クラウドでテナントの EWS が有効 (`EWSEnabled = True`) であれば、App ID 許可リストが必要です。 |
+| 10 月 2 日の終わり (太平洋時間) | Microsoft が `EWSEnabled = True` で `EWSAllowedAppIDs` がないテナントの一覧を記録します。 | この日以降に `EWSEnabled = True` にするテナント管理者は、自身で `EWSAllowedAppIDs` を設定する必要があります。 |
+| 10 月 8 日 ～ 9 日の終わり (太平洋時間) | 10 月 2 日に一覧へ記録されたテナントについて、過去 60 日間に使われた EWS の App ID を `EWSAllowedAppIDs` に登録します。 |  |
+| 10 月 10 日以降 | WW クラウドのすべてのテナントで、`EWSEnabled = True` の場合に `EWSAllowedAppIDs` を必須にするクラウド設定を有効にします。 | この日以降、WW クラウドでテナントの EWS が有効 (`EWSEnabled = True`) にするには、App ID 許可リストが必要です。 |
 
 この変更は、まず WW クラウドで行われます。他のクラウドのテナントには、後日 Message Center を通じて個別の案内とスケジュールが通知されます。
 
@@ -50,6 +50,3 @@ Exchange Online の EWS 廃止は 2026 年 10 月 1 日から始まりました�
 - Exchange Server / Exchange ハイブリッド: [Exchange Online の EWS 廃止がハイブリッドのリッチ共存と組織間の共有に与える影響](/blog/impact-of-exchange-online-ews-deprecation-on-hybrid-rich-coexistence-and-cross-o/)をご確認ください。
 
 The Exchange Team
-
-更新日: 2026 年 10 月 1 日  
-バージョン: 7.0
