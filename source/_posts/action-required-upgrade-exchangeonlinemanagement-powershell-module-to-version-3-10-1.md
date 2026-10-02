@@ -3,13 +3,13 @@ title: ExchangeOnlineManagement PowerShell モジュールをバージョン 3.1
 date: 2026-10-02 17:31
 tags:
   - Exchange Online
-  - PowerShell
 ---
 ※ この記事は、[Action Required: Upgrade ExchangeOnlineManagement PowerShell Module to Version 3.10.1 or Newer](https://techcommunity.microsoft.com/blog/exchange/action-required-upgrade-exchangeonlinemanagement-powershell-module-to-version-3-/4561418) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-Exchange Online PowerShell の認証を強化する機能が、ExchangeOnlineManagement モジュール バージョン 3.10.1 以降に導入されました。認証フローを強化し、新たな脅威から保護する機能です。3.10.1 より前のバージョンを使用している場合は、3.10.1 以降にアップグレードしてください。古いバージョンでは、今後必要となる認証要件に対応できない可能性があります。
+Exchange Online PowerShell の認証を強化する機能が、ExchangeOnlineManagement モジュール バージョン 3.10.1 以降に導入されました。認証フローを強化し、新たな脅威から保護する機能です。
 
-すでに 3.10.1 以降を使用している場合、追加の対応は必要ありません。引き続きモジュールを最新の状態にしてください。
+1. ExchangeOnlineManagement 3.10.1 より前のバージョンを使用している場合は、3.10.1 以降にアップグレードしてください。Exchange Online の認証では、これらのバージョンで利用できるセキュリティ強化機能への依存が高まっていきます。古いモジュール バージョンでは、今後の認証要件に対応できない可能性があります。
+2. すでに 3.10.1 以降を使用している場合、モジュールを最新の状態に保つ以外に追加の対応は必要ありません。
 
 最新のセキュリティ、信頼性、パフォーマンスの向上を利用し、今後 PowerShell の接続に関する問題が発生するのを防ぐため、できるだけ早くアップグレードすることを推奨します。
 
