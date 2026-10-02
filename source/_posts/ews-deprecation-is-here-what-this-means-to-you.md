@@ -43,7 +43,7 @@ Exchange Online の EWS 廃止は 2026 年 10 月 1 日から始まりました�
 
 各アプリケーションに関する最新情報は次のとおりです。
 
-- Outlook for Windows: 最新ビルド (2026 年 8 月のビルド `16.0.20430.20092` 以降) を使用してください。EWS を無効にしたときに問題が発生する場合は、管理者が強制した構成が原因の可能性があります ([例](https://support.microsoft.com/support/known-issues/how-to-revert-the-outlook-desktop-webview-based-room-finder-to-the-legacy-room-finder))。影響がないことを確認するため、テナントで Office クライアントの App ID による EWS のブロックをテストすることをお勧めします。Microsoft 社内では 1 年以上前に EWS を無効にしています。
+- 従来の Outlook for Windows: 最新ビルド (2026 年 8 月のビルド `16.0.20430.20092` 以降) を使用してください。EWS を無効にしたときに問題が発生する場合は、管理者が強制した構成が原因の可能性があります ([例](https://support.microsoft.com/support/known-issues/how-to-revert-the-outlook-desktop-webview-based-room-finder-to-the-legacy-room-finder))。影響がないことを確認するため、テナントで Office クライアントの App ID による EWS のブロックをテストすることをお勧めします。Microsoft 社内では 1 年以上前に EWS を無効にしています。
 - Outlook for Mac: 最新ビルドに更新し、新しい Outlook for Mac に切り替えてください。すでに新しい Outlook for Mac を使っている場合、この変更の影響はありません。従来の Outlook for Mac を引き続き使う場合は、`Microsoft Office` App ID が `EWSAllowedAppIDs` に含まれていることを確認してください。
 - Excel Power Query: [こちら](https://aka.ms/xlewsretirement)をご確認ください。
 - Power BI: 近日中に最新情報が案内される予定です。
