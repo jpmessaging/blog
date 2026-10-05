@@ -1,6 +1,7 @@
 ---
 title: "2026 年 9 月の Exchange Server のセキュリティ更新プログラムが公開されました"
 date: 2026-09-09
+lastupdate: 2026-09-24
 tags:
 - Exchange
 ---
@@ -34,11 +35,12 @@ Exchange Server 2016 および 2019 は[サポートが終了](/blog/support-for
 
 ### このリリースの既知の問題
 
-- [予定表アプリケーションで公開済みの予定表 (.ics) を開くと HTTP 500 エラーが返される | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/update/2026/5126672) - 今後の更新プログラムで修正予定です。
+- [公開済みの予定表 (.ics) を予定表アプリケーションで開くと HTTP 500 エラーが返される | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/update/2026/5126672) - 今後の更新プログラムで修正予定です。
+- [韓国語の WordBreaker ルール ファイルが見つからず ContentEngine でデッドロックが発生する | Microsoft Support](https://support.microsoft.com/en-us/servicing/exchange/server/update/2026/5130098) - 韓国語のメールを利用する環境に影響する問題で、今後の更新プログラムで対応予定です。
 
 ### このリリースで解決された問題
 
-- [2026 年 6 月のセキュリティ更新プログラムをインストールした後、ハイブリッド環境の共有メールボックスにラッパー メッセージが表示される | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/hotfix/2026/5105719)
+- [ハイブリッド環境の共有メールボックスの受信トレイにラッパー メッセージが表示される | Microsoft Support](https://support.microsoft.com/en-us/servicing/exchange/server/hotfix/2026/5105719)
 - [Microsoft Graph を使用したハイブリッドの空き時間情報で要求元のタイム ゾーンが失われる | Microsoft Support](https://support.microsoft.com/servicing/exchange/server/update/2026/5125804)
 
 ### 更新プログラムのインストール
@@ -72,7 +74,7 @@ Exchange Server 2016 および 2019 は現在[サポートが終了](/blog/suppo
 <p style="background: #f0f0f0">本記事公開時点では、関連するドキュメントが完全には利用できない場合があります。</p>
 
 **この記事の更新:**
-
-- 2026 年 9 月 8 日: 対応した問題の 1 つを、Graph 経由の空き時間情報におけるタイム ゾーンの問題に修正しました。
+- **2026 年 9 月 24 日:** 新しい既知の問題 (韓国語のメールが存在する場合のコンテンツ インデックスの問題) を追加しました。
+- **2026 年 9 月 8 日**: 対応した問題の 1 つを、Graph 経由の空き時間情報におけるタイム ゾーンの問題に修正しました。
 
 この記事は今後更新される可能性があります。更新があった場合は、こちらに記載します。
