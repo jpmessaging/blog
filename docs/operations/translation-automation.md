@@ -57,20 +57,18 @@ Power Automate は、既存の RSS 監視と重複排除を行い、本当に新
 
 GitHub Issue コネクタではラベルを指定しません。Issue の状態は、Open または Closed、Copilot の割り当て、関連する Draft PR によって判断します。
 
-作成する Issue の例:
+Issue 本文のテンプレートは Power Automate のフローで管理します。この文書には本文の全文を複製せず、Agent が読み取る項目と運用上の要件だけを記載します。最新の文面はフローを確認してください。
 
-```markdown
-## 翻訳対象
+Issue 本文には次の情報を含めます。
 
-- 原文タイトル: <英語記事のタイトル>
-- 原文 URL: <英語記事の URL>
+| 項目 | 要件 |
+|---|---|
+| 翻訳対象 | `## 翻訳対象` の配下に `原文タイトル` と `原文 URL` を記載する。Agent が対象を一意に特定できるようにする |
+| 担当者への案内 | 本文と画像・動画アセットの権利を確認し、翻訳・掲載、埋め込み、コピーによる再掲載に問題がない場合に限り、`translate-blog-post` custom agent を明示的に選択して Copilot を割り当てるよう案内する |
+| Agent への依頼 | `.github/copilot-instructions.md` と `.github/agents/translate-blog-post.agent.md` に従い、抄訳記事と必要なアセットを作成し、指定された検証を実施して Draft PR を作成するよう依頼する |
+| 権利確認の前提 | Agent の割り当て前に、Blog チーム担当者が本文の翻訳・掲載とアセットの埋め込み・コピーによる再掲載について必要な権限を確認し、権利上の問題がないことを確認済みである旨を記載する |
 
-## 作業内容
-
-この Issue が GitHub Copilot cloud agent に割り当てられた場合は、原文 URL の記事について日本語の抄訳記事を作成してください。
-
-リポジトリの `.github/copilot-instructions.md` と、`.github/agents/translate-blog-post.agent.md` に従ってください。記事および必要な画像を作成し、Hexo のビルドが成功することを確認したうえで、Draft PR を作成してください。
-```
+本文の文言や見出し構成を変更しても、上記の要件と運用が変わらない限り、この文書の更新は不要です。ただし、Agent が読み取る `## 翻訳対象`、`原文タイトル`、`原文 URL` の形式や運用上の要件を変更する場合は、関連する Agent 定義とこの文書を見直してください。
 
 Issue のタイトルは次の形式にします。
 
@@ -80,7 +78,9 @@ Issue のタイトルは次の形式にします。
 
 ### GitHub Copilot cloud agent
 
-翻訳することを決めたら、Issue で `translate-blog-post` custom agent を明示的に選択して、GitHub Copilot cloud agent を割り当てます。
+翻訳することを決めたら、Blog チーム担当者が記事本文と画像・動画アセットの権利を Microsoft が保有していること、および本文の日本語抄訳と本ブログへの掲載、アセットの埋め込みとコピーによる再掲載のいずれにも必要な権限があり、権利上の問題がないことを確認します。アセットは、Agent が利用する方法を限定しないため、埋め込みとコピーによる再掲載の両方を確認対象にします。
+
+確認が完了した後に限り、Issue で `translate-blog-post` custom agent を明示的に選択して、GitHub Copilot cloud agent を割り当てます。Issue は自動では Agent に割り当てません。本文の「確認済み」という記述は、この手動割り当て時点の状態を表します。
 
 Issue 本文に custom agent のファイル パスを記載しても、その custom agent が必ず自動選択されるとは限りません。割り当て時の agent 選択を省略しないでください。
 
@@ -177,9 +177,9 @@ PR を `master` へマージすると、既存の GitHub Actions が Hexo サイ
 ## 通常の運用手順
 
 1. Power Automate から翻訳候補 Issue が作成されたことを確認する
-2. 原文を確認し、翻訳するかどうかを Blog チームで判断する
+2. 原文を確認し、翻訳するかどうかを Blog チームで判断する。翻訳する場合は、本文の翻訳・掲載と画像・動画アセットの埋め込み・コピーによる再掲載について、上記の権利確認を行う
 3. 翻訳しない場合は Issue を Close する
-4. 翻訳する場合は、`translate-blog-post` custom agent を選択して Copilot を割り当てる
+4. 翻訳すると判断し、権利確認が完了した場合に限り、`translate-blog-post` custom agent を明示的に選択して Copilot を割り当てる
 5. Copilot が作成した Draft PR と変更ファイルを確認する
 6. Workflows awaiting approval と表示された場合は、変更内容を確認してから workflow の実行を承認する
 7. `Hexo build` と `Changed translated posts` の結果を確認する
