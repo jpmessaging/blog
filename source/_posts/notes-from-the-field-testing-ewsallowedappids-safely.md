@@ -1,6 +1,7 @@
 ---
 title: "現場からのメモ: EWSAllowedAppIDs を安全にテストする方法"
 date: 2026-08-24
+lastupdate: 2026-10-05
 tags:
 - Exchange Online
 ---
@@ -89,7 +90,7 @@ Get-OrganizationConfig -RetrieveEwsOperationAccessPolicy | Format-List EwsAllowe
 Set-OrganizationConfig -EWSEnabled $true
 ```
 
-- 変更が有効になるまで 1 時間待ちます。
+- 変更が有効になるまで、1 時間未満 (最大 4 時間かかる場合があります) 待ちます。
 - [Test-EWSAppAccess.ps1](https://github.com/David-Barrett-MS/PowerShell-EWS-Scripts/blob/master/Legacy/Test-EWSAppAccess.ps1) をダウンロードし、アプリケーション認証を指定して実行します。アプリケーション権限を使用する場合は、`Mailbox` パラメーターが必要です。
 
 ```powershell
