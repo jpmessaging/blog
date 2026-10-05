@@ -83,14 +83,14 @@ Set-OrganizationConfig -EwsAllowedAppIDs ($updated -join ",")
 Get-OrganizationConfig -RetrieveEwsOperationAccessPolicy | Format-List EwsAllowedAppIDs
 ```
 
-- 変更が反映されるまで待ちます。Exchange Online の構成キャッシュにより、最大 24 時間かかることがあります。
+- 変更が反映されるまで待ちます。Exchange Online の構成キャッシュにより、<span style="color:red">最大 24 時間</span>かかることがあります。
 - `EWSEnabled` を `True` に設定します。
 
 ```powershell
 Set-OrganizationConfig -EWSEnabled $true
 ```
 
-- 変更が有効になるまで、1 時間未満 (最大 4 時間かかる場合があります) 待ちます。
+- 変更が反映されるまで、<span style="color:red">通常は 1 時間以内ですが、最大で 4 時間ほどかかる場合があります。</span>
 - [Test-EWSAppAccess.ps1](https://github.com/David-Barrett-MS/PowerShell-EWS-Scripts/blob/master/Legacy/Test-EWSAppAccess.ps1) をダウンロードし、アプリケーション認証を指定して実行します。アプリケーション権限を使用する場合は、`Mailbox` パラメーターが必要です。
 
 ```powershell
