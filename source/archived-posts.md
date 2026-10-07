@@ -10,6 +10,8 @@ alias:
 - よくわかる Exchange Online のメッセージ追跡 ～ Part 1 取得編 ～/index.html
 - About-Mail-Flow-in-Exchange-2013/index.html
 - Exchange 2013 のメール フローについて/index.html
+- Retention-Period-for-Safety-Net-in-Exchange-2013-2016/index.html
+- Exchange 2013-2016 のセーフティネットの保存期間/index.html
 ---
 
 アクセスされた記事は公開を終了しました。
