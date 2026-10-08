@@ -4,15 +4,16 @@
 
 この文書では、英語ブログの新規記事を検出してから、日本語の抄訳記事を GitHub Pages で公開するまでの自動化構成と運用手順を説明します。
 
-この仕組みでは、定型的な作業を Power Automate、GitHub Copilot cloud agent、GitHub Actions で自動化します。一方で、翻訳対象の選定、翻訳内容の確認、ローカル プレビュー、PR の承認は Blog チームのメンバーが行います。
+この仕組みでは、定型的な作業を Power Automate、GitHub Copilot cloud agent、GitHub Actions で自動化します。Power Automate は新規記事を検出すると Blog チームに Adaptive Card を送り、抄訳版を作成すると決めた場合にだけ Issue を作成します。翻訳対象の選定、翻訳内容の確認、ローカル プレビュー、PR の承認は Blog チームのメンバーが行います。
 
 ## 自動化の範囲
 
 | 工程 | 担当 | 自動化 |
 |---|---|---|
 | 英語ブログの新規記事の検出 | Power Automate | 自動 |
-| 翻訳候補 Issue の作成 | Power Automate | 自動 |
-| 翻訳するかどうかの判断 | Blog チーム | 手動 |
+| Adaptive Card の送信 | Power Automate | 自動 |
+| 抄訳版を作成するかどうかの判断 | Blog チーム | 手動 |
+| 翻訳候補 Issue の作成 | Power Automate | Blog チームが作成を選んだ場合に自動 |
 | 抄訳記事と必要なアセットの作成 | GitHub Copilot cloud agent | 半自動 |
 | Draft PR の作成 | GitHub Copilot cloud agent | 自動 |
 | Hexo ビルドと機械的な記事検証 | GitHub Actions | 自動 |
@@ -28,11 +29,11 @@
 ```mermaid
 flowchart TD
     A[監視対象ブログの RSS] --> B[Power Automate で新規記事を検出]
-    B --> C[翻訳候補 Issue を作成]
-    C --> D[Blog チームへ通知]
-    D --> E{翻訳するか}
-    E -->|翻訳しない| F[Issue を Close]
-    E -->|翻訳する| G[translate-blog-post custom agent を選択して Copilot を割り当て]
+    B --> C[Blog チームへ Adaptive Card を送信]
+    C --> D{抄訳版を作成するか}
+    D -->|作成しない| E[Issue を作成せず終了]
+    D -->|作成する| F[翻訳候補 Issue を作成]
+    F --> G[権利を確認し translate-blog-post custom agent を選択して Copilot を割り当て]
     G --> H[原文、本文リンク、必要な画像を取得]
     H --> I[日本語の抄訳記事を作成]
     I --> J[npm ci / clean / build]
@@ -45,7 +46,7 @@ flowchart TD
     N --> P
     O --> P
     P --> Q[Blog チームがローカル プレビューと内容を確認]
-    Q --> R[別のメンバーが承認してマージ]
+    Q --> R[確認したメンバーが承認してマージ]
     R --> S[GitHub Pages へ公開]
 ```
 
@@ -53,9 +54,11 @@ flowchart TD
 
 ### Power Automate
 
-Power Automate は、既存の RSS 監視と重複排除を行い、本当に新しい記事だけを GitHub Issue として登録します。
+Power Automate は、既存の RSS 監視と重複排除を行い、新しい記事を検出したら Blog チームへ Adaptive Card を送信します。Blog チームが抄訳版を作成すると決めた場合にだけ、翻訳候補 Issue を作成します。作成しない場合は Issue を作成せず、その記事の処理を終了します。
 
 GitHub Issue コネクタではラベルを指定しません。Issue の状態は、Open または Closed、Copilot の割り当て、関連する Draft PR によって判断します。
+
+Adaptive Card で原文を確認し、抄訳版を作成するかどうかを選択します。肯定した場合は、Power Automate が翻訳候補 Issue を作成します。否定した場合は Issue は作成されません。
 
 Issue 本文のテンプレートは Power Automate のフローで管理します。この文書には本文の全文を複製せず、Agent が読み取る項目と運用上の要件だけを記載します。最新の文面はフローを確認してください。
 
@@ -176,19 +179,20 @@ PR を `master` へマージすると、既存の GitHub Actions が Hexo サイ
 
 ## 通常の運用手順
 
-1. Power Automate から翻訳候補 Issue が作成されたことを確認する
-2. 原文を確認し、翻訳するかどうかを Blog チームで判断する。翻訳する場合は、本文の翻訳・掲載と画像・動画アセットの埋め込み・コピーによる再掲載について、上記の権利確認を行う
-3. 翻訳しない場合は Issue を Close する
-4. 翻訳すると判断し、権利確認が完了した場合に限り、`translate-blog-post` custom agent を明示的に選択して Copilot を割り当てる
-5. Copilot が作成した Draft PR と変更ファイルを確認する
-6. Workflows awaiting approval と表示された場合は、変更内容を確認してから workflow の実行を承認する
-7. `Hexo build` と `Changed translated posts` の結果を確認する
-8. Copilot の PR レビューを確認し、必要な指摘へ対応する
-9. PR のブランチをローカルに取得し、Hexo のプレビューを表示する
-10. 原文との意味の一致、日本語、製品名、画像、リンク、表示を確認する
-11. 別の Blog チーム メンバーがレビューする
-12. Draft を解除し、承認後に PR をマージする
-13. GitHub Pages への公開結果を確認する
+1. Teams に新規記事の Adaptive Card が投稿されたことを確認する
+2. 原文を確認し、Adaptive Card で抄訳版を作成するかどうかを選択する
+3. 作成しない場合は何も操作する必要はありません。Issue は作成されません
+4. 作成すると判断した場合は、Power Automate が作成した翻訳候補 Issue を確認する
+5. Issue の担当者への案内に従い、本文の翻訳・掲載と画像・動画アセットの埋め込み・コピーによる再掲載について、上記の権利確認を行う
+6. 権利上の問題がないことを確認した場合に限り、`translate-blog-post` custom agent を明示的に選択して Copilot を割り当てる
+7. Copilot が作成した Draft PR と変更ファイルを確認する
+8. Workflows awaiting approval と表示された場合は、変更内容を確認してから workflow の実行を承認する
+9. `Hexo build` と `Changed translated posts` の結果を確認する
+10. Copilot の PR レビューを確認し、必要な指摘へ対応する
+11. PR のブランチをローカルに取得し、Hexo のプレビューを表示する
+12. 原文との意味の一致、日本語、製品名、画像、リンク、表示を確認する
+13. Blog チーム メンバーがレビューし、Draft を解除して承認後に PR をマージする
+14. GitHub Pages への公開結果を確認する
 
 ## セキュリティ
 
