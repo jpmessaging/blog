@@ -39,7 +39,7 @@ tags:
 
 | クライアント | 操作 |
 | --- | --- |
-| Outlook on the web | Settings → Compose & Reply に移動し、エイリアスを表示して選択します。 |
+| Outlook on the web (Ootw) | Settings → Compose & Reply に移動し、エイリアスを表示して選択します。 |
 | Outlook デスクトップ (Windows/Mac) | From フィールドのドロップダウンから選ぶか、エイリアスを手動で入力します。 |
 | Outlook for Mobile | From フィールドをタップして、利用可能なエイリアスから選択します。 |
 
