@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange Online の EWS 廃止がハイブリッドのリッチ共存と組織間の共有に与える影響 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="※ この記事は、Impact of Exchange Online EWS Deprecation on Hybrid Rich Coexistence and Cross-org Sharing の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange Online の EWS 廃止がハイブリッドのリッチ共存と組織間の共有に与える影響">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/impact-of-exchange-online-ews-deprecation-on-hybrid-rich-coexistence-and-cross-o/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Impact of Exchange Online EWS Deprecation on Hybrid Rich Coexistence and Cross-org Sharing の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 Exchange">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-10-01T04:43:00.000Z">
+<meta property="article:modified_time" content="2026-10-01T04:43:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-impact-of-exchange-online-ews-deprecation-on-hybrid-rich-coexistence-and-cross-o" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/impact-of-exchange-online-ews-deprecation-on-hybrid-rich-coexistence-and-cross-o/" class="article-date">
+  <time datetime="2026-10-01T04:43:00.000Z" itemprop="datePublished">2026-10-01</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange Online の EWS 廃止がハイブリッドのリッチ共存と組織間の共有に与える影響
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/impact-of-exchange-online-ews-deprecation-on-hybrid-rich-coexistence-and-cross-o/" class="article-date-single">    
+    
+    <time datetime="2026-10-01T04:43:00.000Z" itemprop="dateUpdated">2026-10-01</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/impact-of-exchange-online-ews-deprecation-on-hybrid-rich-coexistence-and-cross-o/4561161">Impact of Exchange Online EWS Deprecation on Hybrid Rich Coexistence and Cross-org Sharing</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p><a href="/blog/exchange-online-ews-your-time-is-almost-up/">Exchange Online EWS: 廃止期限が迫っています</a> で述べた通り、Exchange Online の Exchange Web Services (EWS) に対する変更は間近に迫っています。EWS はオンプレミスでは廃止されませんが、オンプレミスの Exchange を利用している組織に影響する 2 つの特定のシナリオを取り上げ、2026 年 10 月から 2027 年 4 月にかけて Exchange Online の EWS 変更が始まった際にビジネスへの影響が出ないようにする方法を説明します。</p>
+<h3 id="シナリオ-1-オンプレミスと-Exchange-Online-の両方でメールボックスをホストしているハイブリッド環境のお客様"><a href="#シナリオ-1-オンプレミスと-Exchange-Online-の両方でメールボックスをホストしているハイブリッド環境のお客様" class="headerlink" title="シナリオ 1: オンプレミスと Exchange Online の両方でメールボックスをホストしているハイブリッド環境のお客様"></a>シナリオ 1: オンプレミスと Exchange Online の両方でメールボックスをホストしているハイブリッド環境のお客様</h3><p><a href="/blog/exchange-server-security-changes-for-hybrid-deployments/">ハイブリッド展開における Exchange Server のセキュリティ変更</a> で案内した通り、オンプレミスの Exchange を利用しているお客様は、リッチ共存シナリオ (オンプレミスの Exchange ユーザーが Exchange Online ユーザーとやり取りする際の空き時間情報やメール ヒントなどの参照) で Graph の呼び出しを利用できるようにするため、少なくとも 2026 年 5 月 (またはそれ以降) の Exchange Server Subscription Edition (Exchange SE) 向け更新プログラムへのアップグレードが必要です。この機能で Graph を使用できるのは Exchange SE のみです。必要な更新プログラムの案内は、<a href="/blog/update-your-exchange-se-hybrid-on-premises-rich-coexistence-to-graph/">Exchange SE ハイブリッドのオンプレミス リッチ共存を Graph API に移行する方法</a> をご確認ください。</p>
+<p><strong>問題点:</strong> <a target="_blank" rel="noopener" href="https://learn.microsoft.com/Exchange/hybrid-deployment/deploy-dedicated-hybrid-app#configure-graph-api-permissions">ドキュメント</a> に記載の通り、オンプレミスのメールボックスが Exchange Online にアーカイブ メールボックスを持つシナリオは、<em>まだ完全にはサポートされていません</em>。この機能は今後数か月のうちに有効化される見込みです。</p>
+<p><strong>対応方法:</strong> オンプレミスのメールボックスに Exchange Online のオンライン アーカイブを使用している場合、現時点では引き続き Exchange Online テナントで EWS 機能を使用してください。具体的には、以下の対応が必要です。</p>
+<ul>
+<li>オンプレミスの Exchange SE サーバーから EWS の権限を削除して Graph に完全に切り替えることは、<em>まだ</em> 行わない。</li>
+<li>テナントの <a href="/blog/exchange-online-ews-your-time-is-almost-up/">EWSEnabled 設定が TRUE に設定されている</a> ことを確認する。</li>
+<li>Exchange ハイブリッド専用アプリを、<a href="/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/">テナントの EWSAllowedAppIDs (App ID 許可リスト)</a> に追加する。</li>
+</ul>
+<p>影響を受けない組織:</p>
+<ul>
+<li>ハイブリッド環境ではあるものの、オンプレミスでメールボックスをホストしていない組織。</li>
+<li>オンプレミスにメールボックスはあるものの、それらのメールボックスでオンライン アーカイブを使用していない組織。</li>
+</ul>
+<h3 id="シナリオ-2-別の-Exchange-Online-組織とリッチ共存を行っているオンプレミスの-Exchange-組織"><a href="#シナリオ-2-別の-Exchange-Online-組織とリッチ共存を行っているオンプレミスの-Exchange-組織" class="headerlink" title="シナリオ 2: 別の Exchange Online 組織とリッチ共存を行っているオンプレミスの Exchange 組織"></a>シナリオ 2: 別の Exchange Online 組織とリッチ共存を行っているオンプレミスの Exchange 組織</h3><p>これは、純粋にオンプレミスの組織 (ここでは Contoso とします) が、空き時間情報、メール ヒント、ユーザーの写真、予定表の共有情報をやり取りするために、別の Exchange Online 組織 (Fabrikam) と組織間関係を結んでいる状況です。</p>
+<p><strong>問題点:</strong> このような組織間関係は、オンプレミスの Contoso のサーバーが Fabrikam の Exchange Online テナントに対して EWS で通信することに依存しています。そのため、オンプレミスから EWS を使用しない解決策が提供されるまでは、Fabrikam のテナントで EWS を有効 (EWSEnabled &#x3D; True) にしておく必要があります。</p>
+<p><strong>対応方法:</strong> Exchange Online 組織側 (この例では Fabrikam) は、<a href="/blog/exchange-online-ews-your-time-is-almost-up/">テナントの EWSEnabled 設定が TRUE に設定されている</a> ことを確認する必要があります。</p>
+<p>その他のパターン:</p>
+<ul>
+<li>2 つの Exchange Online 組織が Organization Relationship の設定を使用して空き時間情報などを共有している場合 (オンプレミスは関与しません) は、<a href="/blog/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/">クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行</a> をご確認ください。</li>
+<li>2 つのオンプレミスの Exchange 組織が互いに Organization Relationship の設定を使用している場合 (Exchange Online は関与しません)。現時点で対応は不要です。</li>
+</ul>
+<p>The Exchange Team</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/impact-of-exchange-online-ews-deprecation-on-hybrid-rich-coexistence-and-cross-o/" data-id="cmv0a6qhc007fph4cf8zvhx8b" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/ews-deprecation-is-here-what-this-means-to-you/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Exchange Online の EWS 廃止が始まりました: 今後の変更と対応
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/investing-in-a-more-reliable-microsoft-graph-powershell-experience/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Microsoft Graph PowerShell をより安定して利用するための PowerShell 7.x への移行</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">77</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">80</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-Graph/" rel="tag">Microsoft Graph</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/sending-from-email-aliases-general-availability/">Exchange Online でエイリアスからのメール送信が一般提供開始</a>
+          </li>
+        
+          <li>
+            <a href="/blog/released-september-2026-v2-exchange-server-security-updates/">2026 年 9 月の Exchange Server V2 セキュリティ更新プログラムが公開されました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/action-required-upgrade-exchangeonlinemanagement-powershell-module-to-version-3-10-1/">ExchangeOnlineManagement PowerShell モジュールをバージョン 3.10.1 以降にアップグレードしてください</a>
+          </li>
+        
+          <li>
+            <a href="/blog/ews-deprecation-is-here-what-this-means-to-you/">Exchange Online の EWS 廃止が始まりました: 今後の変更と対応</a>
+          </li>
+        
+          <li>
+            <a href="/blog/impact-of-exchange-online-ews-deprecation-on-hybrid-rich-coexistence-and-cross-o/">Exchange Online の EWS 廃止がハイブリッドのリッチ共存と組織間の共有に与える影響</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/10/">2026/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/09/">2026/09</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/08/">2026/08</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/07/">2026/07</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
