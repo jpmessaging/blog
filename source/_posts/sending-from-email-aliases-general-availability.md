@@ -1,6 +1,7 @@
 ---
 title: "Exchange Online でエイリアスからのメール送信が一般提供開始"
 date: 2026-10-08 09:24
+lastupdate: 2026-10-09
 tags:
 - Exchange Online
 ---
@@ -35,11 +36,13 @@ tags:
 - ユーザーのエイリアスは Microsoft 365 管理センターで管理します。
 - ドメインからの送信を禁止する場合は、Microsoft 365 管理センターでそのドメインを「受信のみ (Receive Only)」に設定します。
 
+この変更がテナントに反映されるまでに最大 60 分かかることがあります。
+
 ## ユーザー エクスペリエンス
 
 | クライアント | 操作 |
 | --- | --- |
-| Outlook on the web (Ootw) | Settings → Compose & Reply に移動し、エイリアスを表示して選択します。 |
+| Outlook on the web (Ootw) | Settings → Compose に移動し、エイリアスを表示して選択します。 |
 | Outlook デスクトップ (Windows/Mac) | From フィールドのドロップダウンから選ぶか、エイリアスを手動で入力します。 |
 | Outlook for Mobile | From フィールドをタップして、利用可能なエイリアスから選択します。 |
 
@@ -79,3 +82,5 @@ GA 後に取り組み、提供する予定の機能については、今後の�
 - 今後の機能強化に関する発表をご確認ください。
 
 Exchange Online チーム
+
+2026 年 10 月 8 日更新 (バージョン 3.0)
