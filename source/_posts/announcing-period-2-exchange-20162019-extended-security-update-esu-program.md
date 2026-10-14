@@ -1,6 +1,6 @@
 ---
 title: "Exchange Server 2016/2019 向け ESU プログラム 第 2 期 提供開始のお知らせ"
-date: 2026/04/16 00:00
+date: 2026-04-16 00:00
 lastupdate: 2026-10-14
 tags:
 - Exchange
@@ -28,8 +28,8 @@ Exchange Server 2016 と Exchange Server 2019 は、[2025 年 10 月にサポー
 ## これが意味すること
 
 - ESU は、Exchange Server 2016/2019 における<i>[サポート ライフサイクル](https://learn.microsoft.com/lifecycle/) の延長ではありません</i>。これらのサーバーは引き続きサポート対象外となるため、サポート ケースを起票することはできません。(ESU 期間中に、ESU 契約組織向けに提供された更新プログラムに起因する事象のみがサポート対象です。)
-- 第 2 期 ESU は、2026 年 10 月末までに Exchange SE への移行完了が難しい組織向けに、Critical および Important のセキュリティ更新 ([Microsoft Security Response Center (MSRC) の重大度定義](https://www.microsoft.com/msrc/security-update-severity-rating-system) に基づく) を提供しうる仕組みです。リリース必要なセキュリティ更新プログラム（SU）がある場合のみ、ESU 契約組織に<i>限定して</i>提供されます。
-- 第 2 期期間中に、必ずしもセキュリティ更新プログラム（SU）がリリースされるとは限りません。Exchange Server SU は [毎月必ず公開されるものではなく](https://learn.microsoft.com/exchange/new-features/build-numbers-and-release-dates)、Critical/Important な変更がある場合に公開されます。提供の有無は、毎月の Patch Tuesday に ESU 参加組織へ通知されます。
+- 第 2 期 ESU は、2026 年 10 月末までに Exchange SE への移行完了が難しい組織向けに、Critical および Important のセキュリティ更新 ([Microsoft Security Response Center (MSRC) の重大度定義](https://www.microsoft.com/msrc/security-update-severity-rating-system) に基づく) を提供しうる仕組みです。リリース必要なセキュリティ更新プログラム (SU) がある場合のみ、ESU 契約組織に<i>限定して</i>提供されます。
+- 第 2 期期間中に、必ずしもセキュリティ更新プログラム (SU) がリリースされるとは限りません。Exchange Server SU は [毎月必ず公開されるものではなく](https://learn.microsoft.com/exchange/new-features/build-numbers-and-release-dates)、Critical/Important な変更がある場合に公開されます。提供の有無は、毎月の Patch Tuesday に ESU 参加組織へ通知されます。
 - 第 2 期 Exchange ESU の有効期限は 2026 年 10 月末です。
 
 ## 第 2 期 Exchange ESU の対象
@@ -62,7 +62,7 @@ Exchange ESU は各組織が Microsoft のアカウント チーム経由で明�
 
 ### Q. ESU を購入したのに更新の取得方法が分かりません。
 
-<i>ESU 購入済み</i>で最新のセキュリティ更新プログラム（SU）の入手手順が不明な場合は、ExchangeandSfBServerESUInquiry@service.microsoft.com へ連絡してください。必要に応じてアカウント チームを CC に含めて良いです。
+<i>ESU 購入済み</i>で最新のセキュリティ更新プログラム (SU) の入手手順が不明な場合は、ExchangeandSfBServerESUInquiry@service.microsoft.com へ連絡してください。必要に応じてアカウント チームを CC に含めて良いです。
 
 引き続き、第 2 期 ESU の利用よりも Exchange SE への移行を優先することが推奨されています。やむを得ず第 2 期 ESU が必要な場合は、Microsoft のアカウント チームへお問い合わせください。
 
