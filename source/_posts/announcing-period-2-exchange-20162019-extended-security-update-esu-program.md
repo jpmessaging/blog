@@ -1,12 +1,14 @@
 ---
 title: "Exchange Server 2016/2019 向け ESU プログラム 第 2 期 提供開始のお知らせ"
-date: 2026/04/16 00:00
-lastupdate:
+date: 2026-04-16 00:00
+lastupdate: 2026-10-14
 tags:
 - Exchange
 ---
 
 ※ この記事は、[Announcing Period 2 Exchange 2016/2019 Extended Security Update (ESU) program](https://techcommunity.microsoft.com/blog/exchange/announcing-period-2-exchange-20162019-extended-security-update-esu-program/4511603) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
+<p style="background: #99ffa7ff;"><strong>更新 (2026 年 10 月 13 日):</strong> <a href="https://jpmessaging.github.io/blog/released-october-2026-exchange-server-security-updates/">Exchange Server の 2026 年 10 月のセキュリティ更新プログラム</a>をリリースしました。<em>Exchange 2016/2019 向け ESU プログラムでの更新プログラム提供は今回が最後です。</em>Exchange 2016/2019 向けの更新プログラムは今後リリースされません。<br>今後:<br>&nbsp;&nbsp;- 更新プログラムは Exchange Subscription Edition (SE) のみを対象にリリースされます。<br>&nbsp;&nbsp;- Microsoft の更新プログラムのお知らせや MSRC が公開する CVE で、Exchange 2016 と 2019 への言及はなくなります。<em>ただし、これらのバージョンが今後のセキュリティ問題の影響を受けなくなるわけではありません。</em>Exchange 2016 と 2019 の脆弱性テストも終了します。<br>&nbsp;&nbsp;- 第 2 期 ESU は限られた期間、引き続き購入できますが、2026 年 10 月のリリースまでのセキュリティ更新プログラムのみが対象です。</p>
 
 Exchange Server 2016 と Exchange Server 2019 は、[2025 年 10 月にサポートが終了](https://techcommunity.microsoft.com/blog/exchange/t-6-months-exchange-server-2016-and-exchange-server-2019-end-of-support/4403017)しました。
 一方で、Exchange Subscription Edition (SE) への移行完了に向けて、追加の時間を必要とする組織が存在するため、2025 年 10 月 ～ 2026 年 4 月 (第 1 期) の期間において [Extended Security Update (ESU) プログラム](/blog/announcing-exchange-2016--2019-extended-security-update-program/) に加入されている組織があります。
@@ -26,8 +28,8 @@ Exchange Server 2016 と Exchange Server 2019 は、[2025 年 10 月にサポー
 ## これが意味すること
 
 - ESU は、Exchange Server 2016/2019 における<i>[サポート ライフサイクル](https://learn.microsoft.com/lifecycle/) の延長ではありません</i>。これらのサーバーは引き続きサポート対象外となるため、サポート ケースを起票することはできません。(ESU 期間中に、ESU 契約組織向けに提供された更新プログラムに起因する事象のみがサポート対象です。)
-- 第 2 期 ESU は、2026 年 10 月末までに Exchange SE への移行完了が難しい組織向けに、Critical および Important のセキュリティ更新 ([Microsoft Security Response Center (MSRC) の重大度定義](https://www.microsoft.com/msrc/security-update-severity-rating-system) に基づく) を提供しうる仕組みです。リリース必要なセキュリティ更新プログラム（SU）がある場合のみ、ESU 契約組織に<i>限定して</i>提供されます。
-- 第 2 期期間中に、必ずしもセキュリティ更新プログラム（SU）がリリースされるとは限りません。Exchange Server SU は [毎月必ず公開されるものではなく](https://learn.microsoft.com/exchange/new-features/build-numbers-and-release-dates)、Critical/Important な変更がある場合に公開されます。提供の有無は、毎月の Patch Tuesday に ESU 参加組織へ通知されます。
+- 第 2 期 ESU は、2026 年 10 月末までに Exchange SE への移行完了が難しい組織向けに、Critical および Important のセキュリティ更新 ([Microsoft Security Response Center (MSRC) の重大度定義](https://www.microsoft.com/msrc/security-update-severity-rating-system) に基づく) を提供しうる仕組みです。リリース必要なセキュリティ更新プログラム (SU) がある場合のみ、ESU 契約組織に<i>限定して</i>提供されます。
+- 第 2 期期間中に、必ずしもセキュリティ更新プログラム (SU) がリリースされるとは限りません。Exchange Server SU は [毎月必ず公開されるものではなく](https://learn.microsoft.com/exchange/new-features/build-numbers-and-release-dates)、Critical/Important な変更がある場合に公開されます。提供の有無は、毎月の Patch Tuesday に ESU 参加組織へ通知されます。
 - 第 2 期 Exchange ESU の有効期限は 2026 年 10 月末です。
 
 ## 第 2 期 Exchange ESU の対象
@@ -60,7 +62,7 @@ Exchange ESU は各組織が Microsoft のアカウント チーム経由で明�
 
 ### Q. ESU を購入したのに更新の取得方法が分かりません。
 
-<i>ESU 購入済み</i>で最新のセキュリティ更新プログラム（SU）の入手手順が不明な場合は、ExchangeandSfBServerESUInquiry@service.microsoft.com へ連絡してください。必要に応じてアカウント チームを CC に含めて良いです。
+<i>ESU 購入済み</i>で最新のセキュリティ更新プログラム (SU) の入手手順が不明な場合は、ExchangeandSfBServerESUInquiry@service.microsoft.com へ連絡してください。必要に応じてアカウント チームを CC に含めて良いです。
 
 引き続き、第 2 期 ESU の利用よりも Exchange SE への移行を優先することが推奨されています。やむを得ず第 2 期 ESU が必要な場合は、Microsoft のアカウント チームへお問い合わせください。
 
