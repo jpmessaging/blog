@@ -168,9 +168,9 @@ Set-OrganizationConfig -EWSEnabled $null
 
 アプリケーションが EWS を呼び出し、廃止への移行期間中に一時的なアクセスを必要とする場合は、テスト用テナントで EWSAllowedAppIDs を使ってアプリケーション ID を検証します。テナントで EwsApplicationAccessPolicy をすでに使用している場合は、EWSAllowList または EWSBlockList を個別に評価してください。これらのユーザー エージェント設定は REST にも影響する可能性があります。名前が似ていても、これらの制御は置き換えて使用できません。
 
-ルールはシンプルです。新しい EWS のアプリケーション ID ゲートには EWSAllowedAppIDs を使用し、以前からあるユーザー エージェント ポリシーにのみ EWSAllowList または EWSBlockList を使用します。各レイヤーを個別にテストしてください。
-
 この違いが重要なのは、「EWS」で始まる設定はすべて EWS 廃止の例外プロセスに含まれると考える管理者が、すでに見受けられるためです。実際には含まれません。このように誤解すると、不要な構成変更を行ったり、もともと EWS を使用していない REST ワークロードを中断したりする可能性があります。
+
+**ルールはシンプルです。新しい EWS のアプリケーション ID ゲートには EWSAllowedAppIDs を使用し、以前からあるユーザー エージェント ポリシーにのみ EWSAllowList または EWSBlockList を使用します。各レイヤーを個別にテストしてください。**
 
 **最後に、EWSEnabled が Null の間に EWSAllowedAppIDs パラメーターを設定し、EWSEnabled を True に変更する前に 24 時間待ちます。**
 
