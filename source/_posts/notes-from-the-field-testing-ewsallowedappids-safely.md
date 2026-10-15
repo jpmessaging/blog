@@ -1,7 +1,7 @@
 ---
 title: "現場からのメモ: EWSAllowedAppIDs を安全にテストする方法"
 date: 2026-08-24
-lastupdate: 2026-10-05
+lastupdate: 2026-10-15
 tags:
 - Exchange Online
 ---
@@ -171,6 +171,8 @@ Set-OrganizationConfig -EWSEnabled $null
 ルールはシンプルです。新しい EWS のアプリケーション ID ゲートには EWSAllowedAppIDs を使用し、以前からあるユーザー エージェント ポリシーにのみ EWSAllowList または EWSBlockList を使用します。各レイヤーを個別にテストしてください。
 
 この違いが重要なのは、「EWS」で始まる設定はすべて EWS 廃止の例外プロセスに含まれると考える管理者が、すでに見受けられるためです。実際には含まれません。このように誤解すると、不要な構成変更を行ったり、もともと EWS を使用していない REST ワークロードを中断したりする可能性があります。
+
+**最後に、EWSEnabled が Null の間に EWSAllowedAppIDs パラメーターを設定し、EWSEnabled を True に変更する前に 24 時間待ちます。**
 
 ### 参考資料
 
