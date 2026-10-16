@@ -1,6 +1,7 @@
 ---
 title: "Exchange Online の EWS 廃止が始まりました: 今後の変更と対応"
 date: 2026-10-02 12:00
+lastupdate: 2026-10-16
 tags:
 - Exchange
 - Exchange Online
@@ -14,27 +15,26 @@ Exchange Online の EWS 廃止は今日から始まります。これは数年�
 
 ### 今後の変更
 
-`EWSEnabled = True` に設定済みで、`EWSAllowedAppIDs` をまだ作成していないマルチテナント (WW) クラウドのテナントでは、次の変更が行われます。
+#### マルチテナント (WW) クラウドのテナント
 
-| 日付 | 変更内容 | 影響 |
+| EWSEnabled の状態 | EWSAllowedAppIDs の状態 | 時期 |
 |---|---|---|
-| 10 月 2 日の終わり (太平洋時間) | Microsoft が `EWSEnabled = True` で `EWSAllowedAppIDs` がないテナントの一覧を記録します。 | この日以降に `EWSEnabled = True` にするテナント管理者は、自身で `EWSAllowedAppIDs` を設定する必要があります。 |
-| 10 月 8 日 ～ 9 日の終わり (太平洋時間) | 10 月 2 日に一覧へ記録されたテナントについて、過去 60 日間に使われた EWS の App ID を `EWSAllowedAppIDs` に登録します。 |  |
-| 10 月 10 日以降 | WW クラウドのすべてのテナントで、`EWSEnabled = True` の場合に `EWSAllowedAppIDs` を必須にするクラウド設定を有効にします。 | この日以降、WW クラウドでテナントの EWS が有効 (`EWSEnabled = True`) にするには、App ID 許可リストが必要です。 |
+| True | Null | 該当するすべてのテナントに対し、10 月 10 日から 11 日にかけて `EWSAllowedAppIDs` を登録しました。<br><br><span style="color:red">10 月 11 日以降に `EWSEnabled = True` に設定するテナント管理者は、自身で `EWSAllowedAppIDs` を設定する必要があります。 </span>|
+| Null | Null | テナントには変更の 7 日前に Message Center で通知されます。その後、過去 60 日間の利用状況に基づいて `EWSAllowedAppIDs` が設定され、`EWSEnabled` が `False` に設定されます。 |
+| False | (Any) | テナント管理者がすでに EWS を無効にしているため、Microsoft は変更を加えません。 |
 
-この変更は、まず WW クラウドで行われます。他のクラウドのテナントには、後日 Message Center を通じて個別の案内とスケジュールが通知されます。
+<p style="background: #ffff99">マルチテナント WW クラウドでは、<code>EWSEnabled = True</code> の場合に <code>EWSAllowedAppIDs</code> の設定が<strong>必須</strong>になりました。</p>
 
-この変更後、第 2 段階として、`EWSEnabled` が未設定 (`Null`) のままで、`EWSAllowedAppIDs` も作成していない WW クラウドのテナントでは EWS が無効になります。
+#### ソブリン クラウド環境のテナント
 
-- 対象に選ばれたテナントには、Message Center で 7 日前に通知されます。
-- Microsoft が `EWSEnabled` を `False` にした後に EWS が必要になった場合は、`EWSEnabled` を `True` に戻す必要があります。Microsoft は、設定を `False` にする直前に過去 60 日間の利用状況に基づいて `EWSAllowedAppIDs` を登録します。
+詳細なスケジュールは後日お知らせします。
 
 ### その他の重要な情報
 
 #### EWS 関連設定の変更
 
-- `EWSAllowedAppIDs` の変更が反映されるまで、24 時間かかります。
-- `EWSEnabled` の変更が反映されるまで、約 1 時間かかります。
+- <span style="color:red">`EWSAllowedAppIDs` の変更が反映されるまで、**24 時間**かかります。</span>
+- <span style="color:red">`EWSEnabled` の変更が反映されるまで、通常は **1 時間未満** (最長 4 時間) かかります。</span>
 - `EWSAllowList` プロパティは EWS 廃止とは関係ありません。設定や変更は不要です。詳細は[こちらの記事](/blog/notes-from-the-field-testing-ewsallowedappids-safely/)をご確認ください。
 
 #### Microsoft アプリケーションによる EWS の使用
@@ -48,5 +48,10 @@ Exchange Online の EWS 廃止は今日から始まります。これは数年�
 - Excel Power Query: [こちら](https://aka.ms/xlewsretirement)をご確認ください。
 - Power BI: 近日中に最新情報が案内される予定です。
 - Exchange Server / Exchange ハイブリッド: [Exchange Online の EWS 廃止がハイブリッドのリッチ共存と組織間の共有に与える影響](/blog/impact-of-exchange-online-ews-deprecation-on-hybrid-rich-coexistence-and-cross-o/)をご確認ください。
+
+**この記事の更新履歴:**
+
+- 2026 年 10 月 15 日: WW テナント向けの次のステップを表に追加し、読みやすさを高めるため情報を再構成しました。
+- 2026 年 10 月 2 日: これまでに数件の事例が確認されたことを踏まえ、`EWSEnabled` の設定が反映されるまでの時間にばらつきがあることを追記しました。
 
 The Exchange Team
