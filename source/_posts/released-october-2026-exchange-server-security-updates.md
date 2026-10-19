@@ -7,7 +7,7 @@ tags:
 ---
 ※ この記事は、[Released: October 2026 Exchange Server Security Updates](https://techcommunity.microsoft.com/blog/exchange/released-october-2026-exchange-server-security-updates/4563014) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #FFFF99; padding: .5em; margin: 1em 0 1em 0;"><strong>2026 年 10 月 15 日更新:</strong> 2026 年 10 月の Windows Server の更新プログラム (KB5126646 (Windows Server 2025)、KB5126655 (Windows Server 2022)、KB5126651 (Windows Server 2019)、KB5126868 (Windows Server 2016)) をインストールすると、Exchange Server の OWA でエラー <em>MapiExceptionMdbOffline: Unable to make connection to the server. (hr=0x80004005, ec=1142)</em> が発生し、OWA が利用できなくなる場合があるとの報告を受けています。アプリケーション ログにイベント ID 1006 が記録されるほか、メール キューが増加する場合があります。この問題は、2026 年 10 月の Exchange の更新プログラムをインストールしていなくても発生します。Windows のパートナーと連携して調査を進めています。</p>
+<p style="background: #FFFF99; padding: .5em; margin: 1em 0 1em 0;"><strong>2026 年 10 月 16 日更新:</strong> 2026 年 10 月の Windows Server 更新プログラムのインストールおよび Exchange Server への影響の可能性に関する詳細については、<a href="/blog/exchange-servers-may-become-unstable-after-installation-of-october-2026-windows-updates/">2026 年 10 月の Windows 更新プログラム適用後、Exchange サーバーが不安定になる可能性があります</a> をご参照ください。</p>
 
 Microsoft は、以下の製品に存在する脆弱性に対応するセキュリティ更新プログラム (SU) をリリースしました。
 
@@ -80,6 +80,7 @@ Exchange Server 2016 および 2019 は[サポートが終了](/blog/support-for
 本記事の公開時点では、関連ドキュメントが完全には公開されていない場合があります。
 
 この記事の更新内容:
+- **2026 年 10 月 16 日:** Exchange サーバーがこの問題の影響を受けた場合に実施できる対処方法を説明する記事へのリンクをバナーに追加しました: [2026 年 10 月の Windows 更新プログラム適用後、Exchange サーバーが不安定になる可能性があります](/blog/exchange-servers-may-become-unstable-after-installation-of-october-2026-windows-updates/)。
 
 - **2026 年 10 月 15 日:** 2026 年 10 月の Windows Server の更新プログラムにより Exchange Server で問題が発生する可能性があること (2026 年 10 月の Exchange SU のインストールは不要) を知らせるバナーを追加しました。
 
