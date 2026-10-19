@@ -1,12 +1,12 @@
 ---
-title: "2026 年 10 月の Windows 更新プログラム適用後、Exchange サーバーが不安定になる可能性"
+title: "2026 年 10 月の Windows 更新プログラム適用後、Exchange サーバーが不安定になる可能性があります"
 date: 2026-10-19 08:59
 tags:
 - Exchange Server
 ---
 ※ この記事は、[Exchange servers may become unstable after installation of October 2026 Windows updates](https://techcommunity.microsoft.com/blog/exchange/exchange-servers-may-become-unstable-after-installation-of-october-2026-windows-/4565382) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-2026 年 10 月 13 日 (Microsoft の「Patch Tuesday」のリリース サイクル) 以降、一部の 10 月の更新プログラムをインストールすると Exchange Server が不安定になる問題が発生したとの報告を受けています。
+2026 年 10 月 13 日 (Microsoft の「Patch Tuesday」のリリース サイクル) 以降、Windows の 10 月更新プログラムをインストールした後、一部のお客様から Exchange Server が不安定になる問題が発生したとの報告を受けています。
 
 発生する症状はさまざまですが、次のようなものがあります。
 
@@ -18,16 +18,16 @@ tags:
 
 ## 発生している問題と対処方法
 
-報告されている問題は、[2026 年 10 月の Exchange Server セキュリティ更新プログラム](/blog/released-october-2026-exchange-server-security-updates/) のインストールに関連するものではありません。2026 年 10 月の Exchange 更新プログラムに関連する「既知の問題」でもありません。影響を受けるバージョンの Windows で実行されている Exchange は、どのバージョンでも影響を受ける可能性があります。
+報告されている問題は、[2026 年 10 月の Exchange Server セキュリティ更新プログラム](/blog/released-october-2026-exchange-server-security-updates/) のインストールに関連するものではありません。2026 年 10 月の Exchange 更新プログラムに関連する「既知の問題」でもありません。影響を受ける Windows のバージョンで実行されている Exchange は、どの Exchange バージョンでも影響を受ける可能性があります。
 
 次の Windows Server 更新プログラムを適用すると、一定時間経過後に前述の Exchange Server の問題が発生することがあります。
 
-- [KB5126646](https://support.microsoft.com/en-us/servicing/os/windows-server/2026/10/kb5126646-windows-server-2025-security-update) (Windows Server 2025)
-- [KB5126655](https://support.microsoft.com/en-us/servicing/os/windows-server/2026/10/kb5126655-windows-server-2022-security-update) (Windows Server 2022)
-- [KB5126651](https://support.microsoft.com/en-us/servicing/os/windows-10/2026/10/kb5126651-windows-10-1809-security-update) (Windows Server 2019)
-- [KB5126868](https://support.microsoft.com/en-us/servicing/os/windows-10/2026/10/kb5126868-windows-10-1607-security-update) (Windows Server 2016)
+- [KB5126646](https://support.microsoft.com/servicing/os/windows-server/2026/10/kb5126646-windows-server-2025-security-update) (Windows Server 2025)
+- [KB5126655](https://support.microsoft.com/servicing/os/windows-server/2026/10/kb5126655-windows-server-2022-security-update) (Windows Server 2022)
+- [KB5126651](https://support.microsoft.com/servicing/os/windows-10/2026/10/kb5126651-windows-10-1809-security-update) (Windows Server 2019)
+- [KB5126868](https://support.microsoft.com/servicing/os/windows-10/2026/10/kb5126868-windows-10-1607-security-update) (Windows Server 2016)
 
-すべての Exchange サーバーで、これらの更新プログラムのインストールによる影響が同じように発生するわけではありません。影響の度合いや問題が発生するまでの時間は、Exchange サーバーの負荷によって異なります。問題が発生しないサーバーもあります。
+<span style="background-color: #ffff99;">すべての Exchange サーバーで、これらの更新プログラムのインストールによる影響が同じように発生するわけではありません。影響の度合いや問題が発生するまでの時間は、Exchange サーバーの負荷によって異なります。問題が発生しないサーバーもあります。</span>
 
 ### 推奨事項
 
@@ -43,4 +43,4 @@ tags:
 
 詳細については、[Exchange Server で OWA にサインインできない、またはメールを送信できない場合](https://learn.microsoft.com/windows/release-health/status-windows-server-2025#5047msgdesc) (Windows Server の既知の問題と通知) をご確認ください。
 
-Exchange チーム
+The Exchange Team
