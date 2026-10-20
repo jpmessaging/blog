@@ -70,6 +70,6 @@ Exchange Online に新たな変更が導入される際、管理者が準備で�
 
 今後も、将来のサービス変更による影響を軽減するために管理者が早期に把握できることが役立つ新しいシナリオに合わせて、変更を可視化する枠組みを拡張していきます。
 
-いつものように、下のコメント欄でご意見をお聞かせください。
+いつものように、[英語原文](https://techcommunity.microsoft.com/blog/exchange/the-change-optics-report-is-now-generally-available-in-exchange-online/4565858) のコメント欄でご意見をお聞かせください。
 
 Exchange Online メッセージング チーム
