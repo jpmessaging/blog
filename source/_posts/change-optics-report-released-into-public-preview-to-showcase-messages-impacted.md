@@ -1,10 +1,13 @@
 ---
 title: "将来の変更影響を事前に把握できる「変更可視化レポート」がパブリック プレビューで登場"
 date: 2026/04/21 17:00
+lastupdate: 2026-10-20
 tags:
 - Exchange Online
 ---
 ※ この記事は、[Change Optics Report released into Public Preview to showcase messages impacted by future changes](https://techcommunity.microsoft.com/blog/exchange/change-optics-report-released-into-public-preview-to-showcase-messages-impacted-/4513047) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
+<p style="background: #66FF99; padding: .5em; margin: 1em 0 1em 0;"><strong>2026 年 10 月 19 日更新:</strong> 変更可視化レポートが Exchange Online で一般提供 (GA) になりました。詳細は、<a href="/blog/the-change-optics-report-is-now-generally-available-in-exchange-online/">Exchange Online で変更可視化レポート (Change Optics Report) が一般提供開始</a>をご覧ください。</p>
 
 変更管理は、サービスの改善を進めるうえで非常に重要な要素です。これらの改善は、ときに利用者に影響を及ぼす可能性があります。そのため、サービス変更をアナウンスされた際に、「どのメッセージが影響を受ける可能性があるのか」を事前に把握できるようにすることが重要です。このような背景から、変更可視化レポート (Change Optics Report) のパブリック プレビューを公開しました。このレポートは、今後のサービス変更により影響を受ける可能性のあるメッセージを確認するための中核的なレポートとなります。
 
