@@ -1,10 +1,13 @@
 ---
 title: "2026 年 10 月の Windows 更新プログラム適用後、Exchange サーバーが不安定になる可能性があります"
 date: 2026-10-19 08:59
+lastupdate: 2026-10-21
 tags:
 - Exchange Server
 ---
 ※ この記事は、[Exchange servers may become unstable after installation of October 2026 Windows updates](https://techcommunity.microsoft.com/blog/exchange/exchange-servers-may-become-unstable-after-installation-of-october-2026-windows-/4565382) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
+<p style="background: #FFFF99; padding: .5em; margin: 1em 0 1em 0;"><strong>2026 年 10 月 20 日更新:</strong> この記事に FAQ を追加しました。</p>
 
 2026 年 10 月 13 日 (Microsoft の「Patch Tuesday」のリリース サイクル) 以降、Windows の 10 月更新プログラムをインストールした後、一部のお客様から Exchange Server が不安定になる問題が発生したとの報告を受けています。
 
@@ -39,8 +42,23 @@ tags:
    ```
 
 3. サーバーを再起動します。
-4. 再起動後、環境を監視し、問題が再発するかどうかを確認します。問題が再発する場合は、上限値を引き上げてください。これまでに支援したお客様からの報告では、この方法で問題が解決しています。
+4. 再起動後、環境を監視し、問題が再発するかどうかを確認します。問題が再発する場合は、上限値を引き上げてください (これまでのところ、引き上げが必要になったケースは確認されていません)。これまでに支援したお客様からの報告では、この方法で問題が解決しています。
 
 詳細については、[Exchange Server で OWA にサインインできない、またはメールを送信できない場合](https://learn.microsoft.com/windows/release-health/status-windows-server-2025#5047msgdesc) (Windows Server の既知の問題と通知) をご確認ください。
+
+## FAQ
+
+**更新された Windows 更新プログラム セットや、翌月の Windows 更新プログラムのリリースを待つべきですか。Windows Server 更新プログラムをアンインストールすべきですか。**<br>
+いいえ。既にリリースされている Windows 更新プログラムは、できるだけ早くインストールしてください。Windows Server 向けの 2026 年 10 月の更新プログラムには重要なセキュリティ更新が含まれているため、Exchange Server の相互運用性に関する 1 つの問題を理由に、インストールを遅らせないでください。この記事の推奨事項に従ってください。
+
+**Exchange サーバーに 2026 年 10 月の Windows Server 更新プログラムをインストールする前に、ここで説明されている Windows レジストリ設定を作成できますか。**<br>
+はい。事前にレジストリ キーを作成しても Windows Server には影響しません。このレジストリ キーは、2026 年 10 月の Windows Server 更新プログラムをインストールした後にのみ読み取られ、使用されます。また、更新プログラムのインストール中もレジストリ キーは保持されます。
+
+**別の修正プログラムは提供されますか。Exchange からですか、Windows からですか。いつ提供されますか。待つべきですか。**<br>
+Windows または Exchange から、近いうちに追加のリリースが行われる予定はありません。両チームは長期的な対応について引き続き分析しています。今後、この領域で改善が行われる可能性はあります。新しいリリースを待たずに、2026 年 10 月の Windows Server 更新プログラムをインストールし、この記事の Exchange Server に関する推奨事項に従ってください。
+
+## 主な更新内容
+
+- 2026 年 10 月 20 日: FAQ セクションを追加しました。上限値を「65536」より引き上げる必要があるケースは、これまで確認されていない旨を追記しました。
 
 The Exchange Team
