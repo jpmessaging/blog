@@ -12,6 +12,8 @@ alias:
 - Exchange 2013 のメール フローについて/index.html
 - Retention-Period-for-Safety-Net-in-Exchange-2013-2016/index.html
 - Exchange 2013-2016 のセーフティネットの保存期間/index.html
+- About-Language-Settings-in-Office-365/index.html
+- Office 365 の言語設定について/index.html
 ---
 
 アクセスされた記事は公開を終了しました。
