@@ -38,7 +38,7 @@ tags:
 英語記事を日本語に翻訳 (抄訳) する場合、フロントマターの直後に必ず以下の注釈を入れる:
 
 ```
-※ この記事は、[英語記事のタイトル](英語記事のURL) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+※ この記事は、[英語記事のタイトル](英語記事のURL) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 ```
 
 ### 翻訳のガイドライン
@@ -116,12 +116,13 @@ Hexo は `date` がない場合にファイル作成日時を使用するが、G
 | Exchange Online | - |
 | Microsoft Entra ID | - |
 | Microsoft Entra Connect | - |
-| Microsoft 365 Copilot | - |
-| Microsoft 365 Copilot Chat | Copilot Chat |
+| Microsoft Copilot | - |
+| Microsoft Copilot Chat | Copilot Chat |
 | Copilot in Outlook | - |
 
 - 初出時はフルネームを使用し、省略表記がある場合は `フルネーム (省略表記)` の形式で記載する
 - 製品名は英語のまま記載する (カタカナに変換しない)
+- 抄訳記事の注釈や本文を新規作成・更新するときは、`Microsoft 365 Copilot` ではなく `Microsoft Copilot` を使用する
 - "Azure AD" は使用せず "Microsoft Entra ID" を使用する
 
 ## リンクの書き方

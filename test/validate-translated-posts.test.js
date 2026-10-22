@@ -234,6 +234,36 @@ test('requires the complete note immediately after front matter', () => {
   assert.match(messages(validateFile(file, site.root)).join('\n'), /抄訳注釈/);
 });
 
+test('rejects the previous translation note wording', () => {
+  const site = fixture();
+  const file = site.write(
+    'source/_posts/old-translation-note.md',
+    article({
+      note: `※ この記事は、[Original](${SOURCE_URL}) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。`
+    })
+  );
+
+  assert.match(messages(validateFile(file, site.root)).join('\n'), /抄訳注釈/);
+});
+
+test('rejects the previous product name in translated prose but ignores code', () => {
+  const site = fixture();
+  const file = site.write(
+    'source/_posts/old-product-name.md',
+    article({
+      body: '`Microsoft 365 Copilot` はコード例です。\n\nMicrosoft 365 Copilot を利用します。'
+    })
+  );
+  const result = validateFile(file, site.root);
+  const errors = messages(result);
+
+  assert.equal(errors.filter((message) => message.includes('旧製品名')).length, 1);
+  assert.equal(
+    result.errors.find((error) => error.message.includes('旧製品名')).fix,
+    '`Microsoft Copilot` に置き換えてください。'
+  );
+});
+
 test('reports an invalid source URL without crashing duplicate detection', () => {
   const site = fixture();
   const file = site.write(

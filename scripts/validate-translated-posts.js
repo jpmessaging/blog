@@ -8,9 +8,9 @@ const yaml = require('js-yaml');
 const POSTS_DIRECTORY = 'source/_posts';
 const TRANSLATION_PREFIX = '※ この記事は、[';
 const TRANSLATION_SUFFIX =
-  ' の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。';
+  ' の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。';
 const TRANSLATION_NOTE_PATTERN =
-  /^※ この記事は、\[([^\]\r\n]+)\]\((https?:\/\/[^\s<>\r\n]+)\) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。$/;
+  /^※ この記事は、\[([^\]\r\n]+)\]\((https?:\/\/[^\s<>\r\n]+)\) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。$/;
 const TRANSLATION_SOURCE_PATTERN =
   /^※ この記事は、\[([^\]\r\n]+)\]\((https?:\/\/[^\s<>\r\n]+)\) の抄訳です。/;
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
@@ -417,6 +417,15 @@ function validateBody(file, frontMatter, root, errors) {
         item.line,
         '禁止用語 `Azure AD` が本文に含まれています。',
         '`Microsoft Entra ID` に置き換えてください。'
+      );
+    }
+    if (/\bMicrosoft 365 Copilot\b/u.test(prose)) {
+      addError(
+        errors,
+        file,
+        item.line,
+        '旧製品名 `Microsoft 365 Copilot` が本文に含まれています。',
+        '`Microsoft Copilot` に置き換えてください。'
       );
     }
     const punctuation = prose.match(FULL_WIDTH_PUNCTUATION_PATTERN);
