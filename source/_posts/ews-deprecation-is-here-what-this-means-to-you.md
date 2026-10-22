@@ -20,7 +20,7 @@ Exchange Online の EWS 廃止は今日から始まります。これは数年�
 | EWSEnabled の状態 | EWSAllowedAppIDs の状態 | 時期 |
 |---|---|---|
 | True | Null | 該当するすべてのテナントに対し、10 月 10 日から 11 日にかけて `EWSAllowedAppIDs` を登録しました。<br><br><span style="color:red">10 月 11 日以降に `EWSEnabled = True` に設定するテナント管理者は、自身で `EWSAllowedAppIDs` を設定する必要があります。 </span>|
-| Null | Null | テナントには変更の 7 日前に Message Center で通知されます。その後、過去 60 日間の利用状況に基づいて `EWSAllowedAppIDs` が設定され、`EWSEnabled` が `False` に設定されます。<br><br><span style="color:red">このプロセスはすでに開始されています。</span>EWS が無効になった場合、テナント管理者は [Exchange Online EWS application stopped working? Do this. \| Microsoft Community Hub](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-application-stopped-working-do-this-/4566215) の手順に従って、一時的に EWS を再度有効にできます。 |
+| Null | Null | テナントには変更の 7 日前に Message Center で通知されます。その後、過去 60 日間の利用状況に基づいて `EWSAllowedAppIDs` が設定され、`EWSEnabled` が `False` に設定されます。<br><br><span style="color:red">このプロセスはすでに開始されています。</span>EWS が無効になった場合、テナント管理者は [Exchange Online で EWS アプリケーションが動作しなくなった場合の対処方法](/blog/exchange-online-ews-application-stopped-working-do-this/) の手順に従って、一時的に EWS を再度有効にできます。 |
 | False | (Any) | テナント管理者がすでに EWS を無効にしているため、Microsoft は変更を加えません。 |
 
 <p style="background: #ffff99">マルチテナント WW クラウドでは、<code>EWSEnabled = True</code> の場合に <code>EWSAllowedAppIDs</code> の設定が<strong>必須</strong>になりました。</p>
@@ -37,7 +37,7 @@ Exchange Online の EWS 廃止は今日から始まります。これは数年�
 - <span style="color:red">`EWSEnabled` の変更が反映されるまで、通常は **1 時間未満** (最長 4 時間) かかります。</span>
 - `EWSAllowList` プロパティは EWS 廃止とは関係ありません。設定や変更は不要です。詳細は[こちらの記事](/blog/notes-from-the-field-testing-ewsallowedappids-safely/)をご確認ください。
 
-<p style="background: #ffff99">Microsoft が EWS を無効にした場合、再度有効にできるのはテナント管理者だけです (Microsoft では再度有効にできません)。手順は <a href="https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-application-stopped-working-do-this-/4566215">Exchange Online EWS application stopped working? Do this. | Microsoft Community Hub</a> で説明されています。</p>
+<p style="background: #ffff99">Microsoft が EWS を無効にした場合、再度有効にできるのはテナント管理者だけです (Microsoft 側では再度有効にできません)。手順は <a href="https://jpmessaging.github.io/blog/exchange-online-ews-application-stopped-working-do-this/">Exchange Online で EWS アプリケーションが動作しなくなった場合の対処方法</a> で説明されています。</p>
 
 #### Microsoft アプリケーションによる EWS の使用
 
