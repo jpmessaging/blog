@@ -37,7 +37,7 @@ Exchange Online の EWS 廃止は今日から始まります。これは数年�
 - <span style="color:red">`EWSEnabled` の変更が反映されるまで、通常は **1 時間未満** (最長 4 時間) かかります。</span>
 - `EWSAllowList` プロパティは EWS 廃止とは関係ありません。設定や変更は不要です。詳細は[こちらの記事](/blog/notes-from-the-field-testing-ewsallowedappids-safely/)をご確認ください。
 
-<p style="background: #ffff99">Microsoft が EWS を無効にした場合、再度有効にできるのはテナント管理者だけです (Microsoft 側では再度有効にできません)。手順は <a href="https://jpmessaging.github.io/blog/exchange-online-ews-application-stopped-working-do-this/">Exchange Online で EWS アプリケーションが動作しなくなった場合の対処方法</a> で説明されています。</p>
+<p style="background: #ffff99;color:red">Microsoft が EWS を無効にした場合、再度有効にできるのはテナント管理者だけです (Microsoft 側では再度有効にできません)。手順は <a href="https://jpmessaging.github.io/blog/exchange-online-ews-application-stopped-working-do-this/">Exchange Online で EWS アプリケーションが動作しなくなった場合の対処方法</a> で説明されています。</p>
 
 #### Microsoft アプリケーションによる EWS の使用
 

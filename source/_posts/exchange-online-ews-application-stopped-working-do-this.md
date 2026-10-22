@@ -29,17 +29,17 @@ Microsoft がテナントの EWS を無効にしたことを示す投稿があ�
 
 - Microsoft 365 管理センターの[ベースライン セキュリティ モード](https://admin.cloud.microsoft/#/baselinesecuritymode)を開きます。
 - [Block access to Exchange Web Services] の行を選択します。
-  - ![「Block access to Exchange Web Services」の設定項目](./exchange-online-ews-application-stopped-working-do-this/tenant-setting.jpg)
+  ![](./exchange-online-ews-application-stopped-working-do-this/tenant-setting.jpg)
 - [Block your entire organization from using EWS] のチェックを外し、[Apply change] を選択します。
-  - ![組織全体での EWS ブロックを解除する設定画面](./exchange-online-ews-application-stopped-working-do-this/unblock-setting.jpg)
+  ![](./exchange-online-ews-application-stopped-working-do-this/unblock-setting.jpg)
 - 同じ [Block your entire organization from using EWS] に再度チェックを入れ、もう一度 [Apply change] を選択します。
-  - ![組織全体での EWS ブロックを再設定する画面](./exchange-online-ews-application-stopped-working-do-this/reblock-setting.jpg)
+  ![](./exchange-online-ews-application-stopped-working-do-this/reblock-setting.jpg)
 - これでテナントの EWS が再度有効になります。<span style="color: red;">通常、設定変更が反映されてアプリケーションが動作し始めるまで 1 時間以内ですが、*まれに 4 時間かかることがあります*。</span>
 
 <span style="background-color: #ffff99;">「Block」の設定にチェックが入っている状態でも、テナントの設定は EWS を許可する状態 (`EWSEnabled = True`) になり、特定のアプリが<I> EWS 許可リスト</I>に登録されます。</span>
 
 - テナントで EWS の使用を許可されているアプリは、[Scope Summary] で確認できます。リストに表示されているアプリは、ブロック対象から除外されています。
-  - ![EWS の対象範囲の概要とブロック対象外アプリの一覧](./exchange-online-ews-application-stopped-working-do-this/scope-summary.jpg)
+  ![](./exchange-online-ews-application-stopped-working-do-this/scope-summary.jpg)
 
 #### 方法 2 (より細かく制御): Exchange Online PowerShell を使う
 
