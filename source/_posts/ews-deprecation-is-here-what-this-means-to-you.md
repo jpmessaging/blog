@@ -19,7 +19,7 @@ Exchange Online の EWS 廃止は今日から始まります。これは数年�
 
 | EWSEnabled の状態 | EWSAllowedAppIDs の状態 | 時期 |
 |---|---|---|
-| True | Null | 該当するすべてのテナントに対し、10 月 10 日から 11 日にかけて `EWSAllowedAppIDs` を登録しました。<br><br><span style="color:red">10 月 11 日以降に `EWSEnabled = True` に設定するテナント管理者は、自身で `EWSAllowedAppIDs` を設定する必要があります。 </span>|
+| True | Null | 該当するすべてのテナントに対し、10 月 10 日から 11 日にかけて `EWSAllowedAppIDs` を登録しました。<br><br><span style="color:red">10 月 11 日以降に `EWSEnabled = True` に設定するテナント管理者は、自身で `EWSAllowedAppIDs` を設定する必要があります。 </span><br><br>すでにテナントで `EWSEnabled = True` に設定されている場合、Microsoft は 2027 年 4 月まで EWS の利用可否を変更しません。|
 | Null | Null | テナントには変更の 7 日前に Message Center で通知されます。その後、過去 60 日間の利用状況に基づいて `EWSAllowedAppIDs` が設定され、`EWSEnabled` が `False` に設定されます。<br><br><span style="color:red">このプロセスはすでに開始されています。</span>EWS が無効になった場合、テナント管理者は [Exchange Online で EWS アプリケーションが動作しなくなった場合の対処方法](/blog/exchange-online-ews-application-stopped-working-do-this/) の手順に従って、一時的に EWS を再度有効にできます。 |
 | False | (Any) | テナント管理者がすでに EWS を無効にしているため、Microsoft は変更を加えません。 |
 
@@ -54,6 +54,7 @@ Exchange Online の EWS 廃止は今日から始まります。これは数年�
 **この記事の更新履歴:**
 
 - 2026 年 10 月 21 日: EWS の無効化が開始されたことを反映し、再度有効にする方法の参照先へのリンクを追加しました。
+- 2026 年 10 月 26 日: テナントで `EWSEnabled = True` に設定済みの場合、Microsoft は 2027 年 4 月まで EWS の利用可否を変更しないことを明確にする注記を追加しました。
 - 2026 年 10 月 15 日: WW テナント向けの次のステップを表に追加し、読みやすさを高めるため情報を再構成しました。
 - 2026 年 10 月 2 日: これまでに数件の事例が確認されたことを踏まえ、`EWSEnabled` の設定が反映されるまでの時間にばらつきがあることを追記しました。
 
