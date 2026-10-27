@@ -7,7 +7,7 @@ tags:
 - Exchange Online
 ---
 
-※ この記事は、[EWS Deprecation Is Here – What This Means To You](https://techcommunity.microsoft.com/blog/exchange/ews-deprecation-is-here-%E2%80%93-what-this-means-to-you/4561431) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+※ この記事は、[EWS Deprecation Is Here – What This Means To You](https://techcommunity.microsoft.com/blog/exchange/ews-deprecation-is-here-%E2%80%93-what-this-means-to-you/4561431) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 Exchange Online の EWS 廃止は今日から始まります。これは数年前から準備されてきた複数段階のプロセスです。この記事には重要な情報が多く含まれており、新しい情報があればこの記事を更新します。
 
@@ -53,8 +53,8 @@ Exchange Online の EWS 廃止は今日から始まります。これは数年�
 
 **この記事の更新履歴:**
 
-- 2026 年 10 月 21 日: EWS の無効化が開始されたことを反映し、再度有効にする方法の参照先へのリンクを追加しました。
 - 2026 年 10 月 26 日: テナントで `EWSEnabled = True` に設定済みの場合、Microsoft は 2027 年 4 月まで EWS の利用可否を変更しないことを明確にする注記を追加しました。
+- 2026 年 10 月 21 日: EWS の無効化が開始されたことを反映し、再度有効にする方法の参照先へのリンクを追加しました。
 - 2026 年 10 月 15 日: WW テナント向けの次のステップを表に追加し、読みやすさを高めるため情報を再構成しました。
 - 2026 年 10 月 2 日: これまでに数件の事例が確認されたことを踏まえ、`EWSEnabled` の設定が反映されるまでの時間にばらつきがあることを追記しました。
 
