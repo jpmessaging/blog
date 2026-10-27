@@ -1,7 +1,7 @@
 ---
 title: "Exchange Online の EWS 廃止が始まりました: 今後の変更と対応"
 date: 2026-10-02 12:00
-lastupdate: 2026-10-22
+lastupdate: 2026-10-27
 tags:
 - Exchange
 - Exchange Online
