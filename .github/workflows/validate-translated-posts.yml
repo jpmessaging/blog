@@ -6,7 +6,8 @@ on:
     paths:
       - 'source/_posts/**'
       - '.github/copilot-instructions.md'
-      - '.github/workflows/validate-translated-posts.yml'
+      - '.github/workflows/**'
+      - '.github/dependabot.yml'
       - 'scripts/validate-translated-posts.js'
       - 'test/validate-translated-posts.test.js'
       - 'package.json'
