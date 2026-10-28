@@ -1,10 +1,12 @@
 ---
 title: "Exchange Online EWS: 廃止期限が迫っています"
 date: 2026-02-06 12:00
-lastupdate: 2026-09-10
+lastupdate: 2026-10-28
 tags: Exchange Online
 ---
 ※ この記事は、[Exchange Online EWS, Your Time is Almost Up](https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-your-time-is-almost-up/4492361) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+
+<p style="background: #FFFF99; padding: .5em; margin: 1em 0 1em 0;">EWS を使用するアプリケーションが動作しなくなり、すぐに復旧する方法をお探しの場合は、<a href="/blog/exchange-online-ews-application-stopped-working-do-this/">Exchange Online で EWS アプリケーションが動作しなくなった場合の対処方法</a>をご確認ください。2027 年 4 月までは EWS を再度有効にできます。</p>
 
 **Exchange Web Services (EWS) は Exchange Online でのサービス終了が近づいています。** この変更については、2018 年に [Exchange Web Services (EWS) の機能更新を終了する](https://techcommunity.microsoft.com/blog/exchange/upcoming-changes-to-exchange-web-services-ews-api-for-office-365/608055) と初めて発表しました。その後 2023 年には、[EWS が 2026 年 10 月に Exchange Online で無効化される](https://devblogs.microsoft.com/microsoft365dev/retirement-of-exchange-web-services-in-exchange-online/) ことを発表しました。
 
@@ -130,6 +132,7 @@ EWSEnabled を True に設定した時点が、Null の値を False に変更す
 EWSAllowList および EWSBlockList 設定は、以前から提供されている [EwsApplicationAccessPolicy](https://learn.microsoft.com/exchange/client-developer/exchange-web-services/how-to-control-access-to-ews-in-exchange) 機能に関連するものであり、Exchange Online における EWS の廃止とは関係ありません。EwsApplicationAccessPolicy は従来の EWS アプリケーション アクセス制御機能で、AppID ではなく User Agent を使用します。EwsApplicationAccessPolicy を変更すると、クライアント アプリケーションが Exchange Online に接続する際に通過する必要がある追加の「ゲート」が設けられます。アプリケーションは、前述の AppID 許可リストを通過した後にのみ、このゲートを通過できます。そのため、EWSAllowedAppIDs と EwsApplicationAccessPolicy を併用する場合、要求の App ID と正しい User Agent の両方が、それぞれの判定条件を満たす必要があります。いずれかを満たさない場合、EWS がブロックされ、要求は拒否されます。
 
 *変更履歴:*
+- **2026/10/27**: EWS を再度有効にする方法を案内するリンクを含むバナーを追加しました。
 - **2026/9/9**: 細かな説明をいくつか明確化し、8 月への言及を削除して 9 月に置き換えました。
 - **2026/9/4**: FAQ および本文を更新し、まだ AppID の許可リストを作成していないテナントに対して Microsoft が AppID の許可リストを作成するタイミングについて、公開済みの情報に合わせて内容を修正しました。詳細は、[EWS アクセス変更に備えて、EWSAllowedAppIDs リストを適切に管理しましょう](/blog/take-control-of-your-ewsallowedappids-list-before-ews-access-changes/) をご覧ください。
 - **2026/9/1**: EWSAllowList 設定は Exchange Online における EWS の廃止とは関係がなく、AppID 許可リスト (`EWSAllowedAppIDs`) とは異なることを明確にする FAQ を追加しました。
