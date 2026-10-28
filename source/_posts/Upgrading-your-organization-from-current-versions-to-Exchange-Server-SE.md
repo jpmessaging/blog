@@ -1,13 +1,13 @@
 title: "現行バージョンから Exchange Server SE へのアップグレード"
 date: 2024-10-15 10:00:00
-lastupdate: 2026-05-25
+lastupdate: 2026-10-28
 tags: Exchange
 alias: Upgrading your organization from current versions to Exchange Server SE/index.html
 ---
 
-<p style="background:#66FF99"><b>2026 年 5 月 22 日更新:</b> Exchange Server SE CU1 および CU2 のタイムラインを更新しました。</p>
+※ この記事は、[Upgrading your organization from current versions to Exchange Server SE](https://techcommunity.microsoft.com/blog/exchange/upgrading-your-organization-from-current-versions-to-exchange-server-se/4241305) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-※ この記事は、[Upgrading your organization from current versions to Exchange Server SE](https://techcommunity.microsoft.com/t5/exchange-team-blog/upgrading-your-organization-from-current-versions-to-exchange/ba-p/4241305) をもとに日本のお客様向けに抄訳したものです。最新の情報は元の Blog を参照してください。
+<p style="background:#66FF99"><b>2026 年 10 月 27 日更新:</b> Exchange Server SE CU3 を追加しました。</p>
 
 こんにちは。日本マイクロソフト Exchange & Outlook サポート チームです。
 
@@ -36,6 +36,7 @@ Exchange Server 2016 および Exchange Server 2019 から Exchange Server Subsc
 - Exchange Server SE RTM ([リリースされました](/blog/exchange-server-subscription-edition-se-is-now-available/))
 - Exchange Server SE CU1
 - Exchange Server SE CU2
+- Exchange Server SE CU3
 
 これらのリリースと以前のバージョンとの共存に関する影響をまとめた表を以下に示します。
 
@@ -44,7 +45,8 @@ Exchange Server 2016 および Exchange Server 2019 から Exchange Server Subsc
 | Exchange Server 2019 CU15 | 2025 年上半期 [リリースされました](/blog/released-2025-h1-cumulative-update-for-exchange-server/) | Exchange Server 2019 の最終 CU：Exchange Server SE RTM と同等のコード (Exchange Server SE RTM 前にリリースされた SU および HU を除く) です。| Exchange Server 2013 との共存はできません (CU15 のセットアップによってブロックされます)。|
 | Exchange Server SE RTM | [リリースされました](/blog/exchange-server-subscription-edition-se-is-now-available/) | Exchange Server 2019 CU14 または CU15 からのインプレース アップグレードを可能にします。 Exchange Server 2019 CU15 + CU15 以降にリリースされた SU および HU と同等のコード (新機能やその他のコード変更はありません) です。| Exchange Server 2013 との共存はできません (RTM のセットアップによってブロックされます)。|
 | Exchange Server SE CU1 | 2026 年下半期 | Exchange Server SE の最初の機能更新です。| 変更はありません。引き続き Exchange Server 2016, 2019 との共存が可能です。 |
-| Exchange Server SE CU2 | 2027 年上半期 | Exchange Server SE の開発プロセスの継続的な更新です。| Exchange Server 2013、Exchange Server 2016、Exchange Server 2019 との共存はできません (CU2 のセットアップによりインストールがブロックされます)。|
+| Exchange Server SE CU2 | 2027 年上半期 | Exchange Server SE の開発プロセスの継続的な更新です。| 変更はありません。引き続き Exchange Server 2016 および 2019 との共存が可能です。|
+| Exchange Server SE CU3 | 2027 年上半期 / 下半期 | Exchange Server SE の開発プロセスの継続的な更新です。| Exchange Server 2013、Exchange Server 2016、Exchange Server 2019 との共存はできません (CU3 のセットアップによりインストールがブロックされます)。|
 
 ## Exchange Server のバージョンごとのサポート状況
 
@@ -64,17 +66,17 @@ Exchange Server の 最後の 3 つのバージョンとそのライフサイク
 私たちは、同じ組織内での古いバージョンとの共存に影響を与える Exchange Server の変更を行っています。これまでは、新しいバージョンの Exchange Server がある組織内で、古い (サポートされていない) バージョンの Exchange Server を引き続き実行することが可能でした。これが 2 つの非常に重要な方法で変更されます。
 
 - Exchange Server 2019 CU15 および Exchange Server SE RTM のセットアップでは、Exchange Server 2013 との共存がブロックされます。
-- Exchange Server SE CU2 のセットアップでは、すべてのサポートされていないバージョン (例：Exchange Server 2013、Exchange Server 2016、Exchange Server 2019) との共存がブロックされ、Exchange Server SE とのみ共存が許可されます。
+- Exchange Server SE CU3 のセットアップでは、すべてのサポートされていないバージョン (例：Exchange Server 2013、Exchange Server 2016、Exchange Server 2019) との共存がブロックされ、Exchange Server SE とのみ共存が許可されます。
 
-2025 年 10 月 14 日に Exchange Server SE 以外のすべてのバージョンの Exchange Server はサポートされなくなり、Exchange Server SE CU2 では Exchange Server SE 以外のバージョンとの共存ができなくなります。以下の表に詳述されているように、CU2 (またはそれ以降) をインストールするには、まず組織内のすべての古いバージョンの Exchange Server を廃止して削除する必要があります。
+2025 年 10 月 14 日に Exchange Server SE 以外のすべてのバージョンの Exchange Server はサポートされなくなり、Exchange Server SE CU3 では Exchange Server SE 以外のバージョンとの共存ができなくなります。以下の表に詳述されているように、CU3 (またはそれ以降) をインストールするには、まず組織内のすべての古いバージョンの Exchange Server を廃止して削除する必要があります。
 
 - <b>共存対応表</b>
 
-|  | Exchange 2019 CU14 | Exchange 2019 CU15 | Exchange SE RTM | Exchange SE CU1 | Exchange SE CU2 |
-| --- | --- | --- | --- | --- | --- |
-| <b>Exchange 2013 (すべての CU)</b> | 可能<br>(非サポート)| 不可<br>(ブロックされる) | 不可<br>(ブロックされる) | 不可<br>(ブロックされる) | 不可<br>(ブロックされる) |
-| <b>Exchange 2016 CU23</b> | 可能 | 可能 | 可能 | 可能<br>(非サポート) | 不可<br>(ブロックされる) |
-| <b>Exchange 2019 CU14/CU15</b>  | 可能 | 可能 | 可能 | 可能<br>(非サポート) | 不可<br>(ブロックされる) |
+|  | Exchange 2019 CU14 | Exchange 2019 CU15 | Exchange SE RTM / CU1 / CU2 | Exchange SE CU3 |
+| --- | --- | --- | --- | --- |
+| <b>Exchange 2013 (すべての CU)</b> | 可能<br>(非サポート) | 不可<br>(ブロックされる) | 不可<br>(ブロックされる) | 不可<br>(ブロックされる) |
+| <b>Exchange 2016 CU23</b> | 可能 | 可能 | 可能 / 可能<br>(非サポート) | 不可<br>(ブロックされる) |
+| <b>Exchange 2019 CU14/CU15</b> | 可能 | 可能 | 可能 / 可能<br>(非サポート) | 不可<br>(ブロックされる) |
 
 
 ## 混在バージョン組織から Exchange Server SE 組織への移行
@@ -91,8 +93,8 @@ Exchange Server 2016 および Exchange Server 2019 から Exchange Server SE �
 | 既存の Exchange Server | Exchange Server SE への移行手順 |
 | --- | --- |
 | Exchange Server 2013 (すべての CU) | 組織内に共存することはサポートされず、セットアップ実行時にブロックされます。Exchange 2019 CU14 サーバーをレガシー アップグレードで組織に参加させ、Exchange 2013 を撤去した後、Exchange Server SE にインプレース アップグレードします。 |
-| Exchange Server 2016 CU23 | Exchange SE RTM/CU1 サーバーをレガシー アップグレードで組織に参加させ、メールボックスを移行します。Exchange SE CU2 より前に Exchange Server 2016 を廃止・削除します。 |
-| Exchange Server 2016 CU22 以前 | Exchange Server 2016 CU23 に更新します。その後、Exchange SE RTM/CU1 サーバーをレガシー アップグレードで組織に参加させ、メールボックスを移行します。Exchange SE CU2 より前に Exchange Server 2016 を廃止・削除します。 |
+| Exchange Server 2016 CU23 | Exchange SE RTM/CU1 サーバーをレガシー アップグレードで組織に参加させ、メールボックスを移行します。Exchange SE CU3 より前に Exchange Server 2016 を廃止・削除します。 |
+| Exchange Server 2016 CU22 以前 | Exchange Server 2016 CU23 に更新します。その後、Exchange SE RTM/CU1 サーバーをレガシー アップグレードで組織に参加させ、メールボックスを移行します。Exchange SE CU3 より前に Exchange Server 2016 を廃止・削除します。 |
 | Exchange Server 2019 CU14/CU15 | Exchange Server SE にインプレース アップグレードします。 |
 | Exchange Server 2019 CU13 以前 | Exchange Server 2019 CU15 に更新し、Exchange Server SE にインプレース アップグレードします。 |
 
@@ -100,7 +102,7 @@ Exchange Server 2016 および Exchange Server 2019 から Exchange Server SE �
 
 下図はいつ何をすべきかのタイムラインをまとめたものです。
 
-![](screenshot004.png)
+![](exchange-se-cu3-upgrade-timeline.jpg)
 
 # FAQs
 
