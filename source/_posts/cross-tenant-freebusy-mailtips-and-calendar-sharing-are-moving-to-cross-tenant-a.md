@@ -5,7 +5,7 @@ lastupdate: 2026-10-30
 tags:
 - Exchange Online
 ---
-※ この記事は、[Cross-tenant Free/Busy, MailTips, and Calendar Sharing are moving to Cross-Tenant Access Policy](https://techcommunity.microsoft.com/blog/exchange/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/4545169) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+※ この記事は、[Cross-tenant Free/Busy, MailTips, and Calendar Sharing are moving to Cross-Tenant Access Policy](https://techcommunity.microsoft.com/blog/exchange/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/4545169) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 <p style="background: #f5ff66ed;"><strong>2026/10/29 更新:</strong> このブログ記事で説明している機能は、まだ完全には利用できる状態ではありません。利用可能予定日については、以下の<strong>クロステナント アクセス ポリシーの展開スケジュール</strong>表をご確認ください。</p>
 
