@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Exchange Online で EWS アプリケーションが動作しなくなった場合の対処方法 | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="※ この記事は、Exchange Online EWS application stopped working? Do this. の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 お知らせしているとおり、Exchange Online では Exchange Web S">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Exchange Online で EWS アプリケーションが動作しなくなった場合の対処方法">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/exchange-online-ews-application-stopped-working-do-this/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、Exchange Online EWS application stopped working? Do this. の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 お知らせしているとおり、Exchange Online では Exchange Web S">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/exchange-online-ews-application-stopped-working-do-this/tenant-setting.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/exchange-online-ews-application-stopped-working-do-this/unblock-setting.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/exchange-online-ews-application-stopped-working-do-this/reblock-setting.jpg">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/exchange-online-ews-application-stopped-working-do-this/scope-summary.jpg">
+<meta property="article:published_time" content="2026-10-22T01:58:00.000Z">
+<meta property="article:modified_time" content="2026-10-22T01:58:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Exchange Online">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/exchange-online-ews-application-stopped-working-do-this/tenant-setting.jpg">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-exchange-online-ews-application-stopped-working-do-this" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/exchange-online-ews-application-stopped-working-do-this/" class="article-date">
+  <time datetime="2026-10-22T01:58:00.000Z" itemprop="datePublished">2026-10-22</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Exchange Online で EWS アプリケーションが動作しなくなった場合の対処方法
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/exchange-online-ews-application-stopped-working-do-this/" class="article-date-single">    
+    
+    <time datetime="2026-10-22T01:58:00.000Z" itemprop="dateUpdated">2026-10-22</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/exchange/exchange-online-ews-application-stopped-working-do-this-/4566215">Exchange Online EWS application stopped working? Do this.</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p><a href="/blog/exchange-online-ews-your-time-is-almost-up/">お知らせ</a>しているとおり、Exchange Online では Exchange Web Services (EWS) プロトコルを無効化しています。EWS は、次のようなアプリケーションで使われています。</p>
+<ul>
+<li>macOS の Apple Mail &#x2F; Calendar</li>
+<li>macOS の従来の Outlook</li>
+<li>Outlook デスクトップ アドイン</li>
+<li>古いバージョンの従来の Outlook for Windows</li>
+<li>お客様がソフトウェア ベンダーから購入したバックアップ アプリケーションなど</li>
+</ul>
+<p>EWS が無効になると、ユーザー名やパスワードを繰り返し求められたり、EWS プロトコルを利用できないというエラーが表示されたりすることがあります。<br>これまでの発表のとおり、EWS の廃止は現在進行中です。進捗については<a href="/blog/ews-deprecation-is-here-what-this-means-to-you/">こちらの記事</a>をご確認ください。</p>
+<h3 id="EWS-アプリケーションが動作しなくなった場合"><a href="#EWS-アプリケーションが動作しなくなった場合" class="headerlink" title="EWS アプリケーションが動作しなくなった場合"></a>EWS アプリケーションが動作しなくなった場合</h3><p><span style="color: red; background-color: #ffff99; font-weight: bold;">なお、Microsoft サポートでは、後述の手順をお客様に代わって実施することはできません。<u>EWS を再度有効化するには、テナント管理者ご自身で以下の手順を実施していただく必要があります。</u></span></p>
+<ul>
+<li>テナントの<a target="_blank" rel="noopener" href="https://admin.cloud.microsoft/#/MessageCenter">メッセージ センター</a>で、件名が「<em>Action may be required: EWS will be disabled in your tenant in 7 days</em>」または「<em>EWS has been disabled in your tenant</em>」の投稿を検索します。これにより、テナントで EWS が無効になった時期を確認できます。</li>
+</ul>
+<p>Microsoft がテナントの EWS を無効にしたことを示す投稿がある場合は、次のいずれかの方法で再度有効にします。</p>
+<h4 id="方法-1-最も簡単-Microsoft-365-管理センターのベースライン-セキュリティ-モードを使う"><a href="#方法-1-最も簡単-Microsoft-365-管理センターのベースライン-セキュリティ-モードを使う" class="headerlink" title="方法 1 (最も簡単): Microsoft 365 管理センターのベースライン セキュリティ モードを使う"></a>方法 1 (最も簡単): Microsoft 365 管理センターのベースライン セキュリティ モードを使う</h4><ul>
+<li>Microsoft 365 管理センターの<a target="_blank" rel="noopener" href="https://admin.cloud.microsoft/#/baselinesecuritymode">ベースライン セキュリティ モード</a>を開きます。</li>
+<li>[Block access to Exchange Web Services] の行を選択します。<br><img src="/blog/./exchange-online-ews-application-stopped-working-do-this/tenant-setting.jpg"></li>
+<li>[Block your entire organization from using EWS] のチェックを外し、[Apply change] を選択します。<br><img src="/blog/./exchange-online-ews-application-stopped-working-do-this/unblock-setting.jpg"></li>
+<li>同じ [Block your entire organization from using EWS] に再度チェックを入れ、もう一度 [Apply change] を選択します。<br><img src="/blog/./exchange-online-ews-application-stopped-working-do-this/reblock-setting.jpg"></li>
+<li>これでテナントの EWS が再度有効になります。<span style="color: red;">通常、設定変更が反映されてアプリケーションが動作し始めるまで 1 時間以内ですが、<em>まれに 4 時間かかることがあります</em>。</span></li>
+</ul>
+<p><span style="background-color: #ffff99;">「Block」の設定にチェックが入っている状態でも、テナントの設定は EWS を許可する状態 (<code>EWSEnabled = True</code>) になり、特定のアプリが<I> EWS 許可リスト</I>に登録されます。</span></p>
+<ul>
+<li>テナントで EWS の使用を許可されているアプリは、[Scope Summary] で確認できます。リストに表示されているアプリは、ブロック対象から除外されています。<br><img src="/blog/./exchange-online-ews-application-stopped-working-do-this/scope-summary.jpg"></li>
+</ul>
+<h4 id="方法-2-より細かく制御-Exchange-Online-PowerShell-を使う"><a href="#方法-2-より細かく制御-Exchange-Online-PowerShell-を使う" class="headerlink" title="方法 2 (より細かく制御): Exchange Online PowerShell を使う"></a>方法 2 (より細かく制御): Exchange Online PowerShell を使う</h4><ul>
+<li><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/powershell/exchange/exchange-online-powershell-v2?view=exchange-ps#install-and-update-the-exchange-online-powershell-module">Exchange Online PowerShell モジュールをインストール</a>し、<a target="_blank" rel="noopener" href="https://learn.microsoft.com/powershell/exchange/connect-to-exchange-online-powershell?view=exchange-ps">Exchange Online PowerShell に接続</a>します。</p>
+</li>
+<li><p>接続した PowerShell ウィンドウで、次のコマンドを実行します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-OrganizationConfig</span> | <span class="built_in">Fl</span> EWSEnabled</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>結果が <code>EwsEnabled : False</code> の場合、テナントで EWS が無効になっています。</p>
+</li>
+<li><p>次のコマンドを実行します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-OrganizationConfig</span> <span class="literal">-EWSEnabled</span> <span class="variable">$true</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>これでテナントの EWS が再度有効になります。通常、設定変更が反映されてアプリケーションが動作し始めるまで 1 時間以内ですが、<em>まれに 4 時間かかることがあります。</em></p>
+</li>
+</ul>
+<h3 id="テナントで許可されている-EWS-アプリケーションを確認する"><a href="#テナントで許可されている-EWS-アプリケーションを確認する" class="headerlink" title="テナントで許可されている EWS アプリケーションを確認する"></a>テナントで許可されている EWS アプリケーションを確認する</h3><p><strong>ベースライン セキュリティ モードを使う場合は</strong>、前述の画面にある [Scope Summary] を確認し、[Exclude specific apps] でリストを編集します。</p>
+<p><strong>Exchange Online PowerShell を使う場合は</strong>、次のコマンドを実行します。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-OrganizationConfig</span> <span class="literal">-RetrieveEwsOperationAccessPolicy</span> | <span class="built_in">Fl</span> EwsAllowedAppIDs</span><br></pre></td></tr></table></figure>
+
+<p>このコマンドでは、過去 60 日間にテナント内で使用されたことを Microsoft が検出した EWS アプリケーションの一覧が表示されます。これらのアプリは EWS 許可リスト (<code>EwsAllowedAppIDs</code>) に追加済みです。前述の手順で EWS を再度有効にした後、すべて正常に動作していれば、この一覧を変更する必要はありません。アプリを追加することもできます。詳しくは<a href="/blog/introducing-ewsallowedappids-preparing-for-the-final-phase-of-ews-retirement/">EWSAllowedAppIDs に関する記事</a>をご確認ください。</p>
+<p><span style="color: red;">許可リストの変更が反映されるまで 24 時間かかります。</span></p>
+<h3 id="上記の手順は、2027-年-4-月までの一時的な対応"><a href="#上記の手順は、2027-年-4-月までの一時的な対応" class="headerlink" title="上記の手順は、2027 年 4 月までの一時的な対応"></a>上記の手順は、2027 年 4 月までの一時的な対応</h3><p>現在は EWS 無効化の最初の段階であり、EWS を再度有効にできます。<strong>この方法で再有効化できるのは 2027 年 4 月までです。</strong></p>
+<p>長期的には、EWS を使わないバージョンのアプリケーションに更新する必要があります。<em>アプリケーション ベンダーに更新版を問い合わせるか、自分で作成したアプリケーションの場合は EWS を使わないようにコードを変更してください</em>。2027 年 4 月以降、クライアント アプリケーションで EWS は利用できなくなります。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/exchange-online-ews-application-stopped-working-do-this/" data-id="cuid57GKt0JC1xw0bffSbLoRG" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/introducing-glint-labs-and-the-next-generation-of-employee-listening-research-re/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Glint Labs の紹介と、次世代の従業員の声を聴くための調査レポート
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/the-change-optics-report-is-now-generally-available-in-exchange-online/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Exchange Online で変更可視化レポート (Change Optics Report) が一般提供開始</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">78</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">82</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Server/" rel="tag">Exchange Server</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-Graph/" rel="tag">Microsoft Graph</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Glint/" rel="tag">Viva Glint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/introducing-glint-labs-and-the-next-generation-of-employee-listening-research-re/">Glint Labs の紹介と、次世代の従業員の声を聴くための調査レポート</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-online-ews-application-stopped-working-do-this/">Exchange Online で EWS アプリケーションが動作しなくなった場合の対処方法</a>
+          </li>
+        
+          <li>
+            <a href="/blog/the-change-optics-report-is-now-generally-available-in-exchange-online/">Exchange Online で変更可視化レポート (Change Optics Report) が一般提供開始</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-servers-may-become-unstable-after-installation-of-october-2026-windows-updates/">2026 年 10 月の Windows 更新プログラム適用後、Exchange サーバーが不安定になる可能性があります</a>
+          </li>
+        
+          <li>
+            <a href="/blog/released-october-2026-exchange-server-security-updates/">2026 年 10 月の Exchange Server のセキュリティ更新プログラムが公開されました</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/10/">2026/10</a>
+            <span class="archive-list-count">10</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/09/">2026/09</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/08/">2026/08</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/07/">2026/07</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
