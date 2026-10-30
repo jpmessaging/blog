@@ -2,17 +2,17 @@
 title: "Glint Labs の紹介と、次世代の従業員の声を聴くための調査レポート"
 date: 2026-10-30 11:23
 tags:
-- Microsoft Viva
+- Viva Glint
 ---
 
 ※ この記事は、[Introducing Glint Labs and The Next Generation of Employee Listening Research Report](https://techcommunity.microsoft.com/blog/microsoftvivablog/introducing-glint-labs-and-the-next-generation-of-employee-listening-research-re/4568202) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-本日、組織が従業員を理解し、変化を乗り越えられるよう支援する調査や AI を活用したツールを Microsoft People Science が提供する専用の場所として、Glint Labs を公開します。従業員の声の収集やエクスペリエンスから、AI トランスフォーメーション、仕事の未来までを扱う Glint Labs は、実務に活用できる根拠を求める人事、ピープル リーダー、ビジネス リーダー向けです。
+本日、組織が従業員を理解し、変化を乗り越えられるよう支援する調査や AI を活用したツールを Microsoft People Science が提供する専用の場所として、[Glint Labs](https://aka.ms/glintlabs) を公開します。従業員の声の収集やエクスペリエンスから、AI トランスフォーメーション、仕事の未来までを扱う Glint Labs は、実務に活用できる根拠を求める人事、ピープル リーダー、ビジネス リーダー向けです。
 
 まず、次の 2 つを公開します。
 
 - 仕事の変化の速さに合わせてリスニング システムをどのように進化させるかを取り上げた最新の調査レポート「The Next Generation of Employee Listening」。
-- 従業員アンケート データを相関分析、因子分析、離職に関するインサイトなどの高度な分析に活用する、AI ガイド付きのノーコード ワークフロー「Analyze Survey」スキル。
+- 従業員アンケート データを相関分析、因子分析、離職に関するインサイトなどの高度な分析に活用する、AI ガイド付きのノーコード ワークフロー「The Analyze Survey skill」。
 
 Research Drop のライブラリも Glint Labs に移行し、新しい Research Drop も公開する予定です。
 
