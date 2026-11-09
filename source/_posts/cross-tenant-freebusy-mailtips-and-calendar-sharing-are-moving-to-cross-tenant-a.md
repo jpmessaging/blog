@@ -1,13 +1,13 @@
 ---
 title: クロステナントの空き時間情報、メール ヒント、予定表共有の管理がクロステナント アクセス ポリシーへ移行
 date: 2026-08-10 15:00
-lastupdate: 2026-10-30
+lastupdate: 2026-11-09
 tags:
 - Exchange Online
 ---
 ※ この記事は、[Cross-tenant Free/Busy, MailTips, and Calendar Sharing are moving to Cross-Tenant Access Policy](https://techcommunity.microsoft.com/blog/exchange/cross-tenant-freebusy-mailtips-and-calendar-sharing-are-moving-to-cross-tenant-a/4545169) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #f5ff66ed;"><strong>2026/10/29 更新:</strong> このブログ記事で説明している機能は、まだ完全には利用できる状態ではありません。利用可能予定日については、以下の<strong>クロステナント アクセス ポリシーの展開スケジュール</strong>表をご確認ください。</p>
+<p style="background: #f5ff66ed;"><strong>2026/11/6 更新:</strong> このブログ記事で説明している機能は、まだ完全には利用できる状態ではありません。利用可能予定日については、以下の<strong>クロステナント アクセス ポリシーの展開スケジュール</strong>表をご確認ください。</p>
 
 他の Microsoft 365 組織との間で空き時間情報、メール ヒント、予定表を共有している場合は、今後予定されている変更について確認し、事前に対応を計画する必要があります。一方、このような組織間共有をご利用でない場合は、最初の 2 つのセクションをご確認いただくだけで十分です。この記事では、[Exchange Online EWS: 廃止期限が迫っています](https://jpmessaging.github.io/blog/exchange-online-ews-your-time-is-almost-up/) に伴って何が変わるのか、従来の仕組みが新しい Microsoft 365 クロステナント アクセス ポリシーのモデルにどのように置き換わるのか、利用中のテナントが影響を受けるかを確認する方法、そして必要な対応について説明します。正式なお知らせはメッセージ センターの [**MC1446796**](https://admin.cloud.microsoft/?ref=MessageCenter/:/messages/MC1446796) に掲載されていますが、本記事ではその内容をより分かりやすく補足し、MC1446796 の投稿だけでは伝えきれなかった背景も含めて説明します。
 
@@ -46,6 +46,16 @@ Exchange Web Services (EWS) の廃止は、2026 年 10 月 1 日より開始さ�
 これらの構成では、これまで EWS を使用して共有先テナントから空き時間情報やメール ヒントを取得していました。今後は、この信頼関係およびデータ共有の仕組みが、Microsoft 365 クロステナント アクセス ポリシーに置き換わります。ただし、どの組織と連携するか、またどの情報を共有するかについては、これまでと変わらず管理者が決定できます。変更されるのは、共有データをやり取りする仕組みのみです。そのため、移行にあたっては、現在の構成を把握し、それに対応するクロステナント アクセス ポリシーを構成して、共有が引き続き機能することを確認したうえで、不要になった従来の構成を削除します。
 
 ### 現在の共有設定を確認する方法
+
+##### オプション 1: CrossTenantAccessPolicyCalendarValidation スクリプトを使用する
+
+組織の関係、可用性アドレス空間、共有ポリシーを Microsoft 365 クロステナント アクセス ポリシー (XTAP) へ移行できるかどうかを評価します。移行の可否を説明するとともに、移行、テスト、ロールバック、クリーンアップ用のコマンドを生成できます。詳細については、[空き時間情報、予定表、およびメール ヒントを共有するための Microsoft 365 クロステナント アクセス ポリシーに移行する](https://learn.microsoft.com/exchange/sharing/migrate-to-m365-xtap) を参照してください。
+
+このスクリプトは読み取り専用です。構成が変更されるのは、生成されたスクリプトの内容を確認して実行した場合のみです。
+
+スクリプトは [CrossTenantAccessPolicyCalendarValidation - Microsoft - CSS-Exchange](https://microsoft.github.io/CSS-Exchange/Calendar/CrossTenantAccessPolicyCalendarValidation/) からダウンロードできます。
+
+##### オプション 2: 手動で確認する
 
 MC1446796 はすべてのテナント管理者を対象に配信されていますが、実際には多くの環境で対応は不要です。そのため、移行を計画する前に、まず自社テナントが今回の変更の対象となるかを確認してください。確認するには、Exchange Online PowerShell に接続し、以下の 3 つのコマンドを実行します。
 ```powershell
@@ -155,6 +165,7 @@ Get-AvailabilityAddressSpace | Format-List ForestName, AccessMethod
 いいえ。Microsoft 365 クロステナント アクセス ポリシー管理 API は Microsoft Graph v1.0 で利用できるようになっており、バージョン 2.40 以降のベータ版ではない Microsoft Graph PowerShell SDK モジュールを使用して構成できます。
 
 *更新履歴*
+- **2026/11/6**: CrossTenantAccessPolicyCalendarValidation スクリプトに関するセクションを追加しました。
 - **2026/10/29**: 展開スケジュールの表に記載した利用可能日を更新しました。
 - **2026/10/20**: 予定表共有機能の利用可能時期を示す表を更新しました。
 - **2026/9/29**: 予定表共有機能の利用可能時期を示す表を追加しました。
