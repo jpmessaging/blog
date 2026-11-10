@@ -6,7 +6,7 @@ tags:
 - Exchange Online
 ---
 
-※ この記事は、[Now available: OAuth authentication for on-premises Exchange mailbox migrations to Microsoft 365](https://techcommunity.microsoft.com/blog/exchange/now-available-oauth-authentication-for-on-premises-exchange-mailbox-migrations-t/4571777) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+※ この記事は、[Now available: OAuth authentication for on-premises Exchange mailbox migrations to Microsoft 365](https://techcommunity.microsoft.com/blog/exchange/now-available-oauth-authentication-for-on-premises-exchange-mailbox-migrations-t/4571777) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 Microsoft 365 Mailbox Replication Service (MRS) で、Microsoft 365 とオンプレミスの Exchange 環境間でメールボックスを移行する際の認証方法として OAuth がサポートされるようになりました。OAuth は、オンプレミスの Active Directory の特権ユーザーの Basic 認証資格情報 (ユーザー名とパスワード) を使用する方法に代わる、安全な選択肢です。
 
