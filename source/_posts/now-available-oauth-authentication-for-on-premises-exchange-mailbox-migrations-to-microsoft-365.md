@@ -8,7 +8,7 @@ tags:
 
 ※ この記事は、[Now available: OAuth authentication for on-premises Exchange mailbox migrations to Microsoft 365](https://techcommunity.microsoft.com/blog/exchange/now-available-oauth-authentication-for-on-premises-exchange-mailbox-migrations-t/4571777) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-Microsoft 365 とオンプレミスの Exchange 環境間でメールボックスを移行する際に、Microsoft 365 Mailbox Replication Service (MRS) が認証方式として OAuth がサポートされるようになりました。OAuth は、オンプレミスの Active Directory の特権ユーザーの Basic 認証資格情報 (ユーザー名とパスワード) を使用する方法に代わる、より安全な認証方式です。
+Microsoft 365 とオンプレミスの Exchange 環境間でメールボックスを移行する際に、Microsoft 365 Mailbox Replication Service (MRS) で認証方式として OAuth がサポートされるようになりました。OAuth は、オンプレミスの Active Directory の特権ユーザーの Basic 認証資格情報 (ユーザー名とパスワード) を使用する方法に代わる、より安全な認証方式です。
 
 これまで、MRS ではこれらの移行において OAuth 認証を使用できませんでした。MRS 向けの OAuth 認証を構成すると、テナント管理者は OAuth 認証を使用する移行エンドポイントを作成し、移行バッチ、またはオンボーディングやオフボーディングの移動ジョブで使用できるようになります。この方法は、ハイブリッド環境と非ハイブリッド環境の両方で利用できます。
 
