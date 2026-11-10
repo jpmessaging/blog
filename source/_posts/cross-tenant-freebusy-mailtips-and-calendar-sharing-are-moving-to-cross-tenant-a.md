@@ -165,7 +165,7 @@ Get-AvailabilityAddressSpace | Format-List ForestName, AccessMethod
 いいえ。Microsoft 365 クロステナント アクセス ポリシー管理 API は Microsoft Graph v1.0 で利用できるようになっており、バージョン 2.40 以降のベータ版ではない Microsoft Graph PowerShell SDK モジュールを使用して構成できます。
 
 *更新履歴*
-- **2026/11/9**: 表の利用可能日を更新しました。
+- **2026/11/9**: "予定表共有の場合" 表の利用可能日を更新しました。
 - **2026/11/6**: CrossTenantAccessPolicyCalendarValidation スクリプトに関するセクションを追加しました。
 - **2026/10/29**: 展開スケジュールの表に記載した利用可能日を更新しました。
 - **2026/10/20**: 予定表共有機能の利用可能時期を示す表を更新しました。
