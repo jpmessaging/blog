@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  
+<!-- Google tag (gtag.js) (Google Analytics)-->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RYH2QM54M7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RYH2QM54M7');
+</script>
+<!-- End Google tag (gtag.js) (Google Analytics) -->
+
+
+  
+  <title>Outlook Search の変化: ランキング、信頼性、フィードバック ループ | Japan Exchange &amp; Outlook Support Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="description" content="※ この記事は、How Outlook Search is changing: ranking, resilience, and the feedback loop の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 検索の精度を説明するのは簡単ですが、実現するのは簡単では">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Outlook Search の変化: ランキング、信頼性、フィードバック ループ">
+<meta property="og:url" content="https://jpmessaging.github.io/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/index.html">
+<meta property="og:site_name" content="Japan Exchange &amp; Outlook Support Blog">
+<meta property="og:description" content="※ この記事は、How Outlook Search is changing: ranking, resilience, and the feedback loop の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。 検索の精度を説明するのは簡単ですが、実現するのは簡単では">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/ranking-results.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/local-fallback.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/calendar-search.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/ranking-distillation.png">
+<meta property="og:image" content="https://jpmessaging.github.io/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/search-feedback.png">
+<meta property="article:published_time" content="2026-11-04T23:49:00.000Z">
+<meta property="article:modified_time" content="2026-11-04T23:49:00.000Z">
+<meta property="article:author" content="jpmessaging">
+<meta property="article:tag" content="Outlook">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jpmessaging.github.io/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/ranking-results.png">
+  
+    <link rel="alternate" href="/blog/atom.xml" title="Japan Exchange &amp; Outlook Support Blog" type="application/atom+xml">
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/icons/favicon-16x16.png">
+    <link rel="manifest" href="/blog/icons/site.webmanifest">
+    <link rel="mask-icon" href="/blog/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/blog/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="msapplication-config" content="/blog/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/blog/css/style.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="site-header-logo"></div>
+  <div id="site-header-blog-wrapper"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/blog/" id="logo">Japan Exchange &amp; Outlook Support Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/blog/" id="subtitle">日本マイクロソフト Exchange &amp; Outlook サポート チームのブログです</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/blog/">Home</a>
+        
+          <a class="main-nav-link" href="/blog/archives">Archives</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://cssjpn.github.io/">サポート情報</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange">US Exchange Blog</a>
+        
+          <a class="main-nav-link" target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook">US Outlook Blog</a>
+        
+          <a class="main-nav-link" href="/blog/about">About</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/blog/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://jpmessaging.github.io/blog"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/" class="article-date">
+  <time datetime="2026-11-04T23:49:00.000Z" itemprop="datePublished">2026-11-05</time>
+</a>
+    <!--  -->
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header-single">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Outlook Search の変化: ランキング、信頼性、フィードバック ループ
+    </h1>
+  
+
+      </header>
+      <div class="article-share">
+        Last Update:
+        <a href="/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/" class="article-date-single">    
+    
+    <time datetime="2026-11-04T23:49:00.000Z" itemprop="dateUpdated">2026-11-05</time>
+    
+</a>
+      </div>
+    
+    <div class="article-entry" itemprop="articleBody" style="overflow-wrap: break-word">
+      
+        <p>※ この記事は、<a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/blog/outlook/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/4568760">How Outlook Search is changing: ranking, resilience, and the feedback loop</a> の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。</p>
+<p>検索の精度を説明するのは簡単ですが、実現するのは簡単ではありません。利用者は、送信者やフレーズ、メッセージを受信したおおよその時期を覚えていても、インデックスが想定する正確な用語を覚えているとは限りません。システムには、大規模でノイズの多いメールボックスから適切な候補を取得し、適切に順位付けして、すばやく応答することが求められます。</p>
+<p>お客様からのフィードバックを注意深く確認し、検索エクスペリエンスが期待に応えられていない点や、改善できる点を調べてきました。フィードバックとエンジニアリング上のシグナルを合わせることで、特に重要な領域に注力できました。ここ数か月、Outlook チームは検索の 3 つの課題、つまり検索結果のランキングの改善、接続状態が悪いときの検索の回復性の向上、ユーザー エクスペリエンスとエンジニアリング上のシグナルを結ぶフィードバック ループの強化に取り組んできました。ここでは、変更内容とその技術的な背景、次にテストする内容を紹介します。</p>
+<h2 id="1-ユーザーが確認できる変更点"><a href="#1-ユーザーが確認できる変更点" class="headerlink" title="1. ユーザーが確認できる変更点"></a>1. ユーザーが確認できる変更点</h2><h3 id="関連度順に表示される検索結果の表示件数を拡大"><a href="#関連度順に表示される検索結果の表示件数を拡大" class="headerlink" title="関連度順に表示される検索結果の表示件数を拡大"></a>関連度順に表示される検索結果の表示件数を拡大</h3><p><strong>ランキング システムでは、検索結果が時系列順に切り替わる前に、関連性が高いと判断された検索結果をより多く表示できるようになりました。</strong></p>
+<p>Outlook では、検索結果の上部に関連性に基づいてランク付けされた結果が最大 7 件表示され、その後に残りの検索結果を日付順に表示するようになりました。ランキングでは、メッセージの新しさ、送信者、過去の操作履歴などのシグナルが考慮されます。関連度順に表示される検索結果の範囲を拡大することは、表示方法の変更であると同時に、ランキング品質を評価できる範囲を広げることにもつながります。ランキング ロジックと、関連性に基づく表示から日付順に切り替わる境界の両方を引き続き調整しながら、その他の並べ替えオプションも利用できるようにしています。</p>
+<p><strong>利用可能な環境:</strong> サブスクリプション版の従来の Outlook for Windows (従来の Outlook) の Current Channel および Monthly Enterprise Channel、Outlook on the web、新しい Outlook for Windows (新しい Outlook)、Outlook for Mobile で利用できます。Outlook for Mac については 11 月に展開予定です。商用環境とコンシューマー向けの両方で利用できます。</p>
+<p><img src="/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/ranking-results.png"></p>
+<p><em>従来の Outlook for Windows で、関連性に基づく検索結果が従来の 3 件から最大 7 件に拡大した比較画像。</em></p>
+<h3 id="クラウド優先の検索とローカル検索への自動フォールバック"><a href="#クラウド優先の検索とローカル検索への自動フォールバック" class="headerlink" title="クラウド優先の検索とローカル検索への自動フォールバック"></a>クラウド優先の検索とローカル検索への自動フォールバック</h3><p><strong>オンライン時には一貫した検索機能を提供し、ネットワークが不安定な場合でも検索機能への影響を最小限に抑えることを目指しています。</strong></p>
+<p>従来の Outlook は Microsoft のクラウド検索サービスと PC 上にローカル インデックスを保持する Windows Desktop Search を組み合わせて検索を行っています。これまで「関連アイテムの検索」(Find Related)、高度な検索構文の一部、およびより幅広い言語でのクエリなど、一部の種類の検索はローカル検索で処理されていました。現在、対象となる検索ではクラウド検索サービスが使用されるようになり、他の Outlook クライアントと同様の検索機能や、サービス側で行われる改善のメリットを活用できるようになりました。一方、オフライン時や、PST ファイル、POP アカウント、IMAP アカウントなどクラウドに保存されていないコンテンツを検索する場合は、引き続きローカル検索が必要です。従来の Outlook の検索では、ネットワーク接続の問題やクラウド サービスの応答遅延により、クラウド検索から一定時間内に応答を得られない場合、自動的にローカル インデックスを使用した検索へフォールバックするようになりました。</p>
+<p><strong>自動フォールバックを利用できる環境:</strong> サブスクリプション版の従来の Outlook for Windows の Current Channel、Outlook for Mobile、Outlook for Mac で利用できます。新しい Outlook では開発中です。</p>
+<p><img src="/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/local-fallback.png"></p>
+<p><em>接続状態やサービスの待ち時間によって、従来の Outlook の検索がローカル インデックスに自動的にフォールバックします。</em></p>
+<h3 id="検索の応答時間の改善"><a href="#検索の応答時間の改善" class="headerlink" title="検索の応答時間の改善"></a>検索の応答時間の改善</h3><p>平均的な応答時間も重要ですが、特に応答が遅い検索は、検索機能全体の信頼性に対するユーザーの印象に大きな影響を与えます。</p>
+<p>従来の Outlook の検索で、応答が遅い上位 5% の検索について、以下の 2 つの変更により大幅な改善が得られました。</p>
+<p><strong>認証経路の最適化:</strong> 法人向けメールボックスでは、応答が遅い上位 5% の検索の待ち時間が 40% 短縮されました。</p>
+<p><strong>クラウド検索への移行:</strong> ローカル インデックスからクラウドに移行した種類のクエリでは、応答が遅い上位 5% の検索の待ち時間が 4.5 秒から 1.3 秒に短縮されました。</p>
+<p><strong>利用可能な環境:</strong> サブスクリプション版の従来の Outlook for Windows の Current Channel および Monthly Enterprise Channel で利用できます。商用環境とコンシューマー向けの両方で利用できます。</p>
+<p>予定表検索スポットライトでは、検索条件に一致したイベントを予定表ビューに直接表示します。このようにカレンダー上で表示することで、検索結果として一致した予定だけでなく、その直前や直後の予定、または時間が重複している予定も確認できます。これらの情報は、検索結果そのものと同じくらい役立つ場合があります。また、ユーザーはワンクリックで従来のリスト表示に戻すこともできます。</p>
+<p><strong>利用可能な環境:</strong> Outlook on the web と新しい Outlook for Windows で 11 月から展開予定です。商用環境とコンシューマー向けの両方で利用できます。Outlook クライアント全体への展開を拡大する前に、フィードバックを評価しています。</p>
+<p><img src="/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/calendar-search.png"></p>
+<p><em>予定表検索スポットライトでは、一致するイベントを前後の予定とともに表示し、リスト表示に戻すこともできます。</em></p>
+<h2 id="2-ランキングの評価と改善方法"><a href="#2-ランキングの評価と改善方法" class="headerlink" title="2. ランキングの評価と改善方法"></a>2. ランキングの評価と改善方法</h2><h3 id="検索機能の改善をどのように評価しているか"><a href="#検索機能の改善をどのように評価しているか" class="headerlink" title="検索機能の改善をどのように評価しているか"></a>検索機能の改善をどのように評価しているか</h3><p>検索機能の改善を本番環境に展開する前に、再現性のある評価を行う必要があります。</p>
+<p>まず、実際の企業ユーザーの受信トレイの特徴を再現するよう設計された生成メールボックスを使って、オフライン テストを実施します。これらのメールボックスには、数千件のメッセージ、会議出席依頼、ニュースレター、グループ メール、複数のプロジェクト間で重複するトピックなどが含まれています。生成されたデータを使うことで、お客様の実際のメールボックスをテスト データとして使用することなく、テスト条件を制御し、再現性のある評価を行うことができます。</p>
+<p>評価用データ セットには、期待される正しい検索結果があらかじめ分かっている数千件の検索クエリが含まれています。その構成には、キーワード、名前、メール アドレス、およびそれらを組み合わせた検索など、実際に使用されている数千種類の検索パターンが反映されています。オフライン評価は、改善を繰り返し行ううえで有効ですが、あらゆるメールボックスの状態やユーザーの検索意図を完全に再現できるわけではありません。そのため、広範囲に展開する前に、制御された実環境での実験とオンライン品質指標を使用して変更内容を検証します。</p>
+<h3 id="Outlook-の規模に対応したランキング-モデルの蒸留"><a href="#Outlook-の規模に対応したランキング-モデルの蒸留" class="headerlink" title="Outlook の規模に対応したランキング モデルの蒸留"></a>Outlook の規模に対応したランキング モデルの蒸留</h3><p>より優れたセマンティック ランキングも、Outlook の規模で利用されるサービスの応答時間と処理能力の要件を満たせなければ、実用的とは言えません。</p>
+<p>現在、Outlook に特化した小規模言語モデルによるランキング モデルを開発しています。このモデルは蒸留という手法を用いてトレーニングされています。より大規模なモデルから小規模なモデルへ知識や判断基準を引き継ぐことで、Outlook に求められるパフォーマンス要件の範囲内で実用的に運用できるモデルを構築しています。エンジニアリング上の目標は、単にモデル単体の品質を向上させることではありません。実際の運用負荷のもとで、検索結果の関連性と応答速度のバランスをより良くすることを目指しています。初期のオフライン評価では有望な結果が得られており、現在、社内テストを進めています。</p>
+<p>この取り組みと並行して、「the」「and」「is」などのストップ ワードをより適切に処理するなど、サービスにいくつかの小さな変更を展開しました。このストップ ワードの改善は、検索の約 3% に影響しました。対象となった検索では、ユーザーが検索結果のメールを開いて操作するなど、実際にメールを利用したことを示す検索結果のクリック数が増加しました。</p>
+<p><strong>ストップ ワード処理を利用できる環境:</strong> すべての Outlook エンドポイントで利用できます。商用環境とコンシューマー向けの両方で利用できます。</p>
+<p><img src="/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/ranking-distillation.png"></p>
+<p><em>知識の蒸留では、大規模な教師モデルの関連性スコアを模倣する Outlook に特化した小規模な生徒モデルをトレーニングし、本番環境の待ち時間要件を満たします。</em></p>
+<h2 id="3-指標とユーザーの検索意図とのギャップを埋める"><a href="#3-指標とユーザーの検索意図とのギャップを埋める" class="headerlink" title="3. 指標とユーザーの検索意図とのギャップを埋める"></a>3. 指標とユーザーの検索意図とのギャップを埋める</h2><p>Outlook では、検索結果ページに高評価または低評価でフィードバックできる機能が追加されました。このフィードバックを適切な診断コンテキストと組み合わせることで、エンジニアは、調査が必要な検索クエリの種類や検索結果のパターンを特定しやすくなります。特に重要な点として、検索結果を開いたり読んだりしたといった行動指標は成功を示していても、ユーザーは検索が失敗したと報告する場合があります。このようなユーザーからの明示的なフィードバックを収集することで、行動データなどの間接的な指標だけでは捉えられない、ユーザーの実際の検索意図とのギャップを把握できるようになります。</p>
+<p><strong>利用可能な環境:</strong> Exchange Online アカウントと Outlook.com アカウントで利用するサブスクリプション版の従来の Outlook for Windows の Current Channel、Outlook on the web、新しい Outlook for Windows、Outlook for Mobile、Outlook for Mac で利用できます。11 月と 12 月に、より多くの Outlook Search 画面に高評価または低評価のフィードバック機能を追加する予定です。商用環境とコンシューマー向けの両方で利用できます。</p>
+<p><img src="/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/search-feedback.png"></p>
+<p><em>製品内のフィードバック プロンプトは、診断コンテキストとともに明示的な品質シグナルを取得します。</em></p>
+<h3 id="明示的なフィードバックが重要な理由"><a href="#明示的なフィードバックが重要な理由" class="headerlink" title="明示的なフィードバックが重要な理由"></a>明示的なフィードバックが重要な理由</h3><p>検索結果が意図と合わない場合は、高評価または低評価のフィードバック機能を使ってお知らせください。企業のメールボックスは、使われる語彙、コミュニケーション パターン、保存期間の履歴、組織構造がそれぞれ大きく異なります。同じ検索クエリでもユーザーによって期待する検索結果が異なる場合や、同じメッセージをまったく異なる情報から思い出す場合があります。そのため、検索は一度完成すれば終わりという機能ではなく、継続的に改善していく必要があるシステム上の課題です。検索結果が意図に合わない場合、高評価／低評価による明示的なフィードバックは、クリック数や検索結果を閲覧していた時間だけでは把握できない情報を提供します。そして、その情報は、次に優先して調査すべき検索上の課題を特定する手がかりとなります。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://jpmessaging.github.io/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/" data-id="cuidGnAqPfaB_hKeb0LAQDqu9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/now-available-oauth-authentication-for-on-premises-exchange-mailbox-migrations-to-microsoft-365/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          オンプレミス Exchange メールボックスの Microsoft 365 への移行で OAuth 認証が利用可能に
+        
+      </div>
+    </a>
+  
+  
+    <a href="/blog/introducing-glint-labs-and-the-next-generation-of-employee-listening-research-re/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Glint Labs の紹介と、次世代の従業員の声を聴くための調査レポート</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/tags">Tags</a></h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Copilot/" rel="tag">Copilot</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange/" rel="tag">Exchange</a><span class="tag-list-count">80</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Online/" rel="tag">Exchange Online</a><span class="tag-list-count">82</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Exchange-Server/" rel="tag">Exchange Server</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hybrid/" rel="tag">Hybrid</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-365-Developer/" rel="tag">Microsoft 365 Developer</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Microsoft-Graph/" rel="tag">Microsoft Graph</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/New-Outlook/" rel="tag">New Outlook</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/O365Identity/" rel="tag">O365Identity</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Outlook/" rel="tag">Outlook</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Glint/" rel="tag">Viva Glint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Viva-Insights/" rel="tag">Viva Insights</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/blog/released-november-2026-exchange-server-security-updates/">2026 年 11 月の Exchange Server セキュリティ更新プログラムが公開されました</a>
+          </li>
+        
+          <li>
+            <a href="/blog/now-available-oauth-authentication-for-on-premises-exchange-mailbox-migrations-to-microsoft-365/">オンプレミス Exchange メールボックスの Microsoft 365 への移行で OAuth 認証が利用可能に</a>
+          </li>
+        
+          <li>
+            <a href="/blog/how-outlook-search-is-changing-ranking-resilience-and-the-feedback-loop/">Outlook Search の変化: ランキング、信頼性、フィードバック ループ</a>
+          </li>
+        
+          <li>
+            <a href="/blog/introducing-glint-labs-and-the-next-generation-of-employee-listening-research-re/">Glint Labs の紹介と、次世代の従業員の声を聴くための調査レポート</a>
+          </li>
+        
+          <li>
+            <a href="/blog/exchange-online-ews-application-stopped-working-do-this/">Exchange Online で EWS アプリケーションが動作しなくなった場合の対処方法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+  <div class="widget-wrap">
+    <h3 class="widget-title"><a href="/blog/archives">Archives</a></h3>
+    <div class="widget">
+      <ul class="archive-list">
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/11/">2026/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/10/">2026/10</a>
+            <span class="archive-list-count">10</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/09/">2026/09</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/08/">2026/08</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/07/">2026/07</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/06/">2026/06</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/05/">2026/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/04/">2026/04</a>
+            <span class="archive-list-count">6</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/03/">2026/03</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/02/">2026/02</a>
+            <span class="archive-list-count">7</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2026/01/">2026/01</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/12/">2025/12</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/11/">2025/11</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/10/">2025/10</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/09/">2025/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/08/">2025/08</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/07/">2025/07</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/06/">2025/06</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/05/">2025/05</a>
+            <span class="archive-list-count">9</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/04/">2025/04</a>
+            <span class="archive-list-count">8</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/03/">2025/03</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/02/">2025/02</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2025/01/">2025/01</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/12/">2024/12</a>
+            <span class="archive-list-count">4</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/11/">2024/11</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/10/">2024/10</a>
+            <span class="archive-list-count">5</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/09/">2024/09</a>
+            <span class="archive-list-count">3</span>
+          </li>
+        
+          <li class="archive-list-item">
+            <a class="archive-list-link" href="/blog/archives/2024/07/">2024/07</a>
+            <span class="archive-list-count">2</span>
+          </li>
+        
+      </ul>
+      
+        <a href="/blog/archives" class="archive-more-link">もっと見る</a>
+      
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2026 jpmessaging<br>      
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/blog/" class="mobile-nav-link">Home</a>
+  
+    <a href="/blog/archives" class="mobile-nav-link">Archives</a>
+  
+    <a target="_blank" rel="noopener" href="https://cssjpn.github.io/" class="mobile-nav-link">サポート情報</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/exchange-team-blog/bg-p/Exchange" class="mobile-nav-link">US Exchange Blog</a>
+  
+    <a target="_blank" rel="noopener" href="https://techcommunity.microsoft.com/t5/outlook-blog/bg-p/Outlook" class="mobile-nav-link">US Outlook Blog</a>
+  
+    <a href="/blog/about" class="mobile-nav-link">About</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<script src="/blog/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
