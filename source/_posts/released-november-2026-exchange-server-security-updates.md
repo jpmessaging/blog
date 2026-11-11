@@ -40,19 +40,19 @@ Exchange Server 2016 および 2019 は脆弱性のテストが終了してお�
 
 ### よくあるご質問
 
-**組織は Exchange Online とのハイブリッド モードです。何か対応が必要ですか？**  
+**組織は Exchange Online とのハイブリッド モードです。何か対応が必要ですか？**<br />
 Exchange Online は既に保護されていますが、管理目的のみで使用している場合も含め、Exchange サーバーにはこの SU をインストールする必要があります。SU のインストール後に認証証明書を変更した場合は、ハイブリッド構成ウィザードを再実行してください。
 
-**最後にインストールした SU/HU は数か月前のものです。最新の SU をインストールするために、すべての SU をインストールする必要がありますか？**  
+**最後にインストールした SU/HU は数か月前のものです。最新の SU をインストールするために、すべての SU をインストールする必要がありますか？**<br />
 SU は累積的です。SU でサポートされている CU を実行している場合、SU や HU を順番にすべてインストールする必要はありません。最新の SU をインストールしてください。詳細については、[こちらのブログ記事](https://techcommunity.microsoft.com/t5/exchange-team-blog/why-exchange-server-updates-matter/ba-p/2280770)を参照してください。
 
-**組織内のすべての Exchange Server に SU をインストールする必要がありますか？「Exchange 管理ツールのみ」がインストールされたマシンはどうなりますか？**  
+**組織内のすべての Exchange Server に SU をインストールする必要がありますか？「Exchange 管理ツールのみ」がインストールされたマシンはどうなりますか？**<br />
 管理ツール クライアントとサーバー間の互換性を確保するため、すべての Exchange Server、および Exchange 管理ツールを実行しているすべてのサーバーとワークステーションに SU をインストールすることを推奨します。稼働中の Exchange Server がない環境で Exchange 管理ツールのみを更新する場合は、[こちら](https://learn.microsoft.com/exchange/manage-hybrid-exchange-recipients-with-management-tools#update-the-exchange-server-management-tools-only-role-with-no-running-exchange-server-to-a-newer-cumulative-or-security-update)を参照してください。
 
-**Exchange SU または HU をインストール済みで、Windows Server 2025 を実行しています。Windows Server 2025 では更新プログラムが一覧に表示されません。どのようにアンインストールできますか？**  
+**Exchange SU または HU をインストール済みで、Windows Server 2025 を実行しています。Windows Server 2025 では更新プログラムが一覧に表示されません。どのようにアンインストールできますか？**<br />
 セキュリティ更新プログラムのアンインストールは推奨しません。詳細については、[Windows Server 2025 のコントロール パネルで Exchange のセキュリティ更新プログラムまたは修正プログラムを表示またはアンインストールできない場合](https://support.microsoft.com/servicing/office/can-t-view-or-uninstall-exchange-security-or-hotfix-updates-in-control-panel-on-windows-server-2025)を参照してください。
 
-**組織では引き続き Exchange Server 2016 または 2019 を使用しています。2026 年 10 月以降、これらのバージョンの更新プログラムや脆弱性に関する記載がありません。脆弱性はないということでしょうか？**  
+**組織では引き続き Exchange Server 2016 または 2019 を使用しています。2026 年 10 月以降、これらのバージョンの更新プログラムや脆弱性に関する記載がありません。脆弱性はないということでしょうか？**<br />
 Exchange Server 2016 および 2019 は[サポートが終了](/blog/support-for-exchange-server-2016-and-exchange-server-2019-ends-today/)しており、[第 2 期 ESU プログラム](/blog/announcing-period-2-exchange-20162019-extended-security-update-esu-program/)も終了しました。Exchange Server 2016 および 2019 は脆弱性のテストが終了しており、更新プログラムはリリースされません。これらのバージョンを使用している場合、恒久的に脆弱な状態にあるものとして、直ちに[組織を Exchange Server SE にアップグレード](/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/)してください。
 
 本記事の公開時点では、関連ドキュメントが完全には公開されていない場合があります。
