@@ -22,7 +22,7 @@ Microsoft は、以下の製品で見つかった脆弱性に対応するセキ�
 
 ### Exchange Server 2016 および 2019 の情報をお探しですか？
 
-Exchange Server 2016 および 2019 は脆弱性のテストが終了しており、更新プログラムはリリースされません。これらのバージョンを使用している場合、恒久的に脆弱な状態にあるものとして、直ちに[組織を Exchange Server Subscription Edition (SE) にアップグレード](/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/)してください。
+Exchange Server 2016 および 2019 はサポートが終了しているため、脆弱性の検証は行われず、更新プログラムもリリースされません。これらのバージョンを使用している場合、恒久的に脆弱な状態にあるものとして、直ちに[組織を Exchange Server Subscription Edition (SE) にアップグレード](/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/)してください。
 
 ### 解決された問題
 
@@ -32,7 +32,7 @@ Exchange Server 2016 および 2019 は脆弱性のテストが終了してお�
 
 利用可能な更新パスは以下のとおりです。
 
-![Exchange Server 2016/2019 は恒久的に脆弱な状態です。Exchange Server SE RTM には 2026 年 11 月の SU を適用し、Exchange Server 2016/2019 は SE RTM にアップグレードしてから SU を適用します。最後に Health Checker で追加の手順が必要か確認します。](November2026SU.jpg)
+![](November2026SU.jpg)
 
 - [Exchange Server Health Checker スクリプト](https://aka.ms/ExchangeHealthChecker)を使用して Exchange サーバーのインベントリを作成し、必要な更新プログラムを確認してください。このスクリプトを実行すると、CU、SU、手動対応の適用漏れがある Exchange サーバーを確認できます。
 - セットアップ完了後、サーバーを再起動し、すべての Exchange サービスが正常に起動したことを確認してください。一部のサービスが無効状態の場合は、更新プログラムのインストールが何らかの理由で中断されたことを示しています。詳細については、[この記事](https://learn.microsoft.com/troubleshoot/exchange/client-connectivity/exchange-security-update-issues#services-dont-start-after-su-installation)の「回避策 1」を参照してください。
@@ -53,7 +53,7 @@ SU は累積的です。SU でサポートされている CU を実行してい�
 セキュリティ更新プログラムのアンインストールは推奨しません。詳細については、[Windows Server 2025 のコントロール パネルで Exchange のセキュリティ更新プログラムまたは修正プログラムを表示またはアンインストールできない場合](https://support.microsoft.com/servicing/office/can-t-view-or-uninstall-exchange-security-or-hotfix-updates-in-control-panel-on-windows-server-2025)を参照してください。
 
 **組織では引き続き Exchange Server 2016 または 2019 を使用しています。2026 年 10 月以降、これらのバージョンの更新プログラムや脆弱性に関する記載がありません。脆弱性はないということでしょうか？**<br />
-Exchange Server 2016 および 2019 は[サポートが終了](/blog/support-for-exchange-server-2016-and-exchange-server-2019-ends-today/)しており、[第 2 期 ESU プログラム](/blog/announcing-period-2-exchange-20162019-extended-security-update-esu-program/)も終了しました。Exchange Server 2016 および 2019 は脆弱性のテストが終了しており、更新プログラムはリリースされません。これらのバージョンを使用している場合、恒久的に脆弱な状態にあるものとして、直ちに[組織を Exchange Server SE にアップグレード](/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/)してください。
+Exchange Server 2016 および 2019 は[サポートが終了](/blog/support-for-exchange-server-2016-and-exchange-server-2019-ends-today/)しており、[第 2 期 ESU プログラム](/blog/announcing-period-2-exchange-20162019-extended-security-update-esu-program/)も終了しました。このため、脆弱性の検証は行われず、更新プログラムもリリースされません。これらのバージョンを使用している場合、恒久的に脆弱な状態にあるものとして、直ちに[組織を Exchange Server SE にアップグレード](/blog/Upgrading-your-organization-from-current-versions-to-Exchange-Server-SE/)してください。
 
 本記事の公開時点では、関連ドキュメントが完全には公開されていない場合があります。
 
