@@ -5,7 +5,7 @@ lastupdate: 2026-11-11
 tags:
 - Exchange Server
 ---
-※ この記事は、[Exchange servers may become unstable after installation of October 2026 Windows updates](https://techcommunity.microsoft.com/blog/exchange/exchange-servers-may-become-unstable-after-installation-of-october-2026-windows-/4565382) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+※ この記事は、[Exchange servers may become unstable after installation of October 2026 Windows updates](https://techcommunity.microsoft.com/blog/exchange/exchange-servers-may-become-unstable-after-installation-of-october-2026-windows-/4565382) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 <p style="background: #FFFF99; padding: .5em; margin: 1em 0 1em 0;"><strong>2026 年 11 月 10 日更新:</strong> この記事を更新し、問題を解決するには Exchange Server が実行されている Windows Server に 2026 年 11 月 (またはそれ以降) の更新プログラムをインストールする必要があることを反映しました。</p>
 
