@@ -97,7 +97,7 @@ TERRL は GCC、GCCH、DoD、および 21Vianet 環境へのロールアウト�
 - **侵害されたアカウント**: 想定していない送信者からのメール送信や、通常のユーザーによる送信量の急増は、アカウント侵害の兆候である可能性があります。すぐに調査してください。
 - **外部アドレスへのメールボックス転送**: これもクォータにカウントされます。
 
-<p style="background: #FFFF99; padding: .5em; margin: 1em 0 1em 0;">このテーブルでは、レポートの他の項目と同じ方法でカウントされます。すべての外部受信者が集計対象となるため、同じ受信者への繰り返し送信や、展開された配布グループの各受信者もそれぞれカウントされます。<code>Get-LimitsEnforcementStatus</code> で返される <code>ObservedValue</code> には、適用時に追加のフィルター処理と重複除外が適用されます。そのため、レポートの合計値とコマンドレットの <code>ObservedValue</code> は一致しない場合があります。</p>
+<p style="background: #eaeae8; padding: .5em; margin: 1em 0 1em 0;">このテーブルでは、レポートの他の項目と同じ方法でカウントされます。すべての外部受信者が集計対象となるため、同じ受信者への繰り返し送信や、展開された配布グループの各受信者もそれぞれカウントされます。<code>Get-LimitsEnforcementStatus</code> で返される <code>ObservedValue</code> には、適用時に追加のフィルター処理と重複除外が適用されます。そのため、レポートの合計値とコマンドレットの <code>ObservedValue</code> は一致しない場合があります。</p>
 
 ## FAQ
 
