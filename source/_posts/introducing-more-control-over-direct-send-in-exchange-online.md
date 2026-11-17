@@ -8,7 +8,7 @@ tags:
 
 ※ この記事は、[Introducing more control over Direct Send in Exchange Online](https://techcommunity.microsoft.com/blog/exchange/introducing-more-control-over-direct-send-in-exchange-online/4408790) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
-<p style="background: #66FF99"><b>2026 年 11 月 16 日更新:</b> Reject Direct Send が Exchange Online の世界中のテナントで一般提供 (GA) になりました。詳細については、<a href="https://techcommunity.microsoft.com/blog/exchange/reject-direct-send-now-generally-available-in-exchange-online/4573787">Reject Direct Send が Exchange Online で一般提供されました</a>をご覧ください。</p>
+<p style="background: #66FF99"><b>2026 年 11 月 16 日更新:</b> ダイレクト送信の拒否機能が Exchange Online ワールドワイドのテナントで一般提供 (GA) になりました。詳細については、<a href="https://jpmessaging.github.io/blog/reject-direct-send-now-generally-available-in-exchange-online/">Exchange Online でダイレクト送信の拒否機能が一般提供開始</a>をご覧ください。</p>
 
 <div style="margin:1.25em;border-left:4px solid #ff7518;padding:.5em">
 <div style="margin:0 0 16px 0;display:flex;align-items:center;line-height:1;color:#ff7518">
@@ -114,7 +114,7 @@ RejectDirectSend は、承認済みドメインで「すべてのサブドメイ
 
 **この投稿の変更点:**
 
-- 2026 年 11 月 16 日: Reject Direct Send が Exchange Online の世界中のテナントで一般提供されたことを追記しました。
+- 2026 年 11 月 16 日: ダイレクト送信の拒否機能が Exchange Online ワールドワイドのテナントで一般提供されたことを追記しました。
 - 2026 年 5 月 20 日: Exchange 管理センター (EAC) の変更可視化レポート (Change Optics Report) に関する注記を追加しました。
 - 2026 年 2 月 4 日: Azure Communication Services (ACS) に関連する既知の問題が解決されたため、削除しました。
 - 2025 年 10 月 6 日: ACS トラフィックを「信頼済み」として扱う方法について詳細を追記しました。
