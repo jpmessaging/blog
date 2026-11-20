@@ -5,7 +5,7 @@ lastupdate: 2026-11-20
 tags:
 - Exchange Online
 ---
-※ この記事は、[Sending From Email Aliases – General Availability](https://techcommunity.microsoft.com/blog/exchange/sending-from-email-aliases-%E2%80%93-general-availability/4562543) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+※ この記事は、[Sending From Email Aliases – General Availability](https://techcommunity.microsoft.com/blog/exchange/sending-from-email-aliases-%E2%80%93-general-availability/4562543) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 本日、Exchange Online でエイリアスからの送信が一般提供 (GA) になったことをお知らせします。多くの要望が寄せられていたこの機能により、メールボックスに関連付けられたプライマリ SMTP アドレスだけでなく、任意のエイリアス (プロキシ アドレス) からメールを送信できるようになります。機能の仕組み、有効化の方法、今後の予定を紹介します。
 
