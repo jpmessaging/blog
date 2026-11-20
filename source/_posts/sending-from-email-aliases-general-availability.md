@@ -1,11 +1,11 @@
 ---
 title: "Exchange Online でエイリアスからのメール送信が一般提供開始"
 date: 2026-10-08 09:24
-lastupdate: 2026-10-09
+lastupdate: 2026-11-20
 tags:
 - Exchange Online
 ---
-※ この記事は、[Sending From Email Aliases – General Availability](https://techcommunity.microsoft.com/blog/exchange/sending-from-email-aliases-%E2%80%93-general-availability/4562543) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft 365 Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
+※ この記事は、[Sending From Email Aliases – General Availability](https://techcommunity.microsoft.com/blog/exchange/sending-from-email-aliases-%E2%80%93-general-availability/4562543) の抄訳です。最新の情報はリンク先をご確認ください。この記事は Microsoft Copilot および GitHub Copilot を使用して抄訳版の作成が行われています。
 
 本日、Exchange Online でエイリアスからの送信が一般提供 (GA) になったことをお知らせします。多くの要望が寄せられていたこの機能により、メールボックスに関連付けられたプライマリ SMTP アドレスだけでなく、任意のエイリアス (プロキシ アドレス) からメールを送信できるようになります。機能の仕組み、有効化の方法、今後の予定を紹介します。
 
@@ -49,6 +49,12 @@ tags:
 返信では、受信したメールの宛先に使われたエイリアスが自動的に使用されます。
 
 ユーザーにエイリアスが割り当てられる理由はさまざまです。何らかの理由で特定のエイリアスからの送信または受信を許可しない場合は、ドメイン全体を「送信のみ」または「受信のみ」に設定できます。ドメインを送信のみまたは受信のみに設定するには、Exchange Online PowerShell の [`Set-Accepteddomain`](https://learn.microsoft.com/powershell/module/exchangepowershell/set-accepteddomain?view=exchange-ps) コマンドレットで `SendingFromDomainDisabled` または `SendingToDomainDisabled` パラメーターを使用します。
+
+たとえば、`onmicrosoft.com` アドレスを使ったメール送信を禁止するには、次のコマンドを実行します。
+
+```powershell
+Set-Accepteddomain contoso.onmicrosoft.com -SendingFromDomainDisabled $true
+```
 
 より詳細な制限は、メール フロー ルールまたはユーザーが従うべき組織のポリシーで実装する必要があります。
 
